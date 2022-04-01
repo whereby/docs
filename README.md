@@ -1,8 +1,8 @@
 ---
 description: >-
   Whereby Embedded is the easiest way to add video calls to your web page or
-  mobile app. Get up and running in minutes not months so you're free focus on
-  what you do best — your business.
+  mobile app. Get up and running in minutes, not months, so you're free to focus
+  on what you do best — your business.
 ---
 
 # Embedded developer resources

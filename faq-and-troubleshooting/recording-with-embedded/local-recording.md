@@ -1,0 +1,23 @@
+# Local Recording
+
+{% hint style="warning" %}
+Our Recording feature has not been built specifically for Embedded solutions, and as such is limited in functionality. We recommend that this isn't used in a live production environment without significant internal testing. Recordings are only created and stored locally. Whereby cannot recover any lost or corrupted recordings.
+{% endhint %}
+
+### Enabling Local Recording
+
+With the Recording feature you'll need to ensure that several different conditions are met so your room hosts are able to see and use the feature.
+
+1. You're generating and the host is using a [`hostUrl`](../../user-roles-and-privileges.md)``
+   * Only a room host will be able to Record in the room so you need to provide this type of link to the host.
+   * When generating this be sure to note that a `hostUrl` is only valid between the meeting creation and [`endDate`](../../creating-and-deleting-rooms/) that you set during your request. These times are in UTC and not your local time zone, unless a timezone was specified in the request.
+2. Your host is using Chrome or Chromium based browser with the [Whereby Chrome Extension](https://chrome.google.com/webstore/detail/whereby/bbpjcfkgapecndkanjcojnldopjlnmjk) installed.
+3. You're including the `recording=on` feature flag in your URLs to enable Recording, or you've enabled Local Recording from the “Configure” → “Recording” section of your dashboard.
+
+### Guides for hosts recording meetings
+
+* [Recording Best Practices](https://whereby.helpscoutdocs.com/article/480-recording-best-practices)
+* [Record a Meeting](https://whereby.helpscoutdocs.com/article/479-how-to-record)
+* [Download your Recordings](https://whereby.helpscoutdocs.com/article/481-download-your-recording)
+* [Share your Recordings with others](https://whereby.helpscoutdocs.com/article/592-how-to-share-your-recordings)
+

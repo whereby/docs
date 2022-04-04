@@ -1,7 +1,13 @@
+---
+description: >-
+  Local Recording is handled completely locally in the host's browser and
+  browser cache.
+---
+
 # Local Recording
 
 {% hint style="warning" %}
-Our Recording feature has not been built specifically for Embedded solutions, and as such is limited in functionality. We recommend that this isn't used in a live production environment without significant internal testing. Recordings are only created and stored locally. Whereby cannot recover any lost or corrupted recordings.
+Our Local Recording feature has not been built specifically for Embedded solutions, and as such is limited in functionality. We recommend that this isn't used in a live production environment without significant internal testing. Recordings are only created and stored locally. Whereby cannot recover any lost or corrupted recordings.
 {% endhint %}
 
 ### Enabling Local Recording

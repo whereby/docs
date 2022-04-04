@@ -1,6 +1,10 @@
-# In iOS apps
+---
+description: >-
+  Below are the recommended approaches to embed a Whereby room depending on the
+  iOS version.
+---
 
-Below are the recommended approaches to embed a room depending on the iOS version.
+# In iOS apps
 
 ## iOS 14.5 and onwards
 

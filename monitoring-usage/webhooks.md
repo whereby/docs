@@ -45,11 +45,12 @@ Properties in `data` that are common to all events:
 
 Additional properties in `data` for both `room.client.joined` and `room.client.left`:
 
-| Property   | Description                                                                |
-| ---------- | -------------------------------------------------------------------------- |
-| roleName   | The client’s role depending on what URL they use to access the meeting.    |
-| numClients | Number of clients connected to the meeting after the event.                |
-| metadata   | String that matches the "metadata" query parameter passed to the room URL. |
+| Property             | Description                                                                         |
+| -------------------- | ----------------------------------------------------------------------------------- |
+| roleName             | The client’s role depending on what URL they use to access the meeting.             |
+| numClients           | Number of clients connected to the meeting after the event.                         |
+| numClientsByRoleName | Number of clients connected to the meeting after the event grouped by the roleName. |
+| metadata             | String that matches the "metadata" query parameter passed to the room URL.          |
 
 
 
@@ -76,6 +77,10 @@ An example of a webhook event object:
         "meetingId": "134",
         "roomName": "/af0b7b66-c738-4981-887a-ad416754f32d",
         "numClients": 8,
+        "numClientsByRoleName": {
+          "host": 1,
+          "visitor": 7
+        },
         "metadata": "<custom-metadata>"
     }
 }

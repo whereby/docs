@@ -7,11 +7,13 @@ description: >-
 
 # Embedding in Squarespace or WordPress
 
+{% hint style="warning" %}
+Due to technical limitations, you are not currently able to embed Whereby rooms within a Wix site.
+{% endhint %}
+
 ## Squarespace
 
 Squarespace allows for you to build simple and beautiful websites with ease. Below are the steps in order to embed Whereby on your site, but if you have additional questions about building your site please review [Squarespace Help Center](https://support.squarespace.com/hc/en-us).
-
-
 
 {% hint style="info" %}
 **Note:** Adding iframes to a Code Block is a Premium feature available in Squarespace's current Website Business plan and higher.

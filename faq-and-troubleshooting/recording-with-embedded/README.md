@@ -18,7 +18,3 @@ Cloud recording allows you to record your meetings and store those files in a st
 As the name implies, Local Recording is handled completely locally in the host's browser and browser cache. This feature wasn't designed for an embedded use case so there are some quirks to using and implementing it into your service.
 
 [Read more](local-recording.md)
-
-\
-
-

@@ -29,9 +29,9 @@ description: >-
 
 <summary>How do I enable integrations in my meetings?</summary>
 
-Integrations are disabled for Whereby Embedded by default while using the [`?minimal`](../customizing-rooms/using-url-parameters.md#minimal) parameter. We set this by default because [Content Security Policy](https://en.wikipedia.org/wiki/Content\_Security\_Policy) restrictions can sometimes cause integrations to fail in unexpected ways.
+Integrations are disabled for Whereby Embedded by default while using the [`?minimal`](../customizing-rooms/using-url-parameters.md#minimal) parameter. We set this by default because [Content Security Policy](https://en.wikipedia.org/wiki/Content\_Security\_Policy) restrictions can sometimes cause integrations to fail in unexpected ways. Currently only our YouTube and Miro integrations will work in an embedded setting.
 
-If you would like to test an integration in an embedded meeting, you can do so by adding the `?roomIntegrations=on` parameter.
+If you would like to test an integration in your embedded meeting, you can do so by adding the `?roomIntegrations=on` parameter.
 
 Please note, we offer limited support for integrations in an embedded meeting, even when enabled. It's highly recommended that you test before using it in a production context.
 

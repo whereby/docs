@@ -24,5 +24,12 @@ Even if you're not specifically looking to restrict which domains can be used to
 Note: Once you add your application origin domain or avatar URL domain to the "Allowed domains" list, you must also add any other domains that should be allowed to embed your rooms. This is needed since the default setting of allowing all domains will no longer be valid once a domain is added to the list, even if you added those domains for a different purpose.
 {% endhint %}
 
+### Verifying Domains
 
+You can use a simple cURL command to review the allowed domains for your Whereby organization via the command line or terminal on your computer.
 
+```
+curl --head "https://<subdomain>.whereby.com/csp"
+```
+
+You can then review the results in the `content-security-policy` section

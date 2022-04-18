@@ -36,5 +36,5 @@ Copy the room URL from the response and open it in your browser.
 Congratulations! You have created a Whereby meeting room!
 
 {% hint style="info" %}
-**Note**: If you want to test a room as a guest/visitor, it can be a good idea to open transient rooms in a private window to make sure you aren't accidentally logged into your subdomain! Being logged into your Whereby account will give you host privileges in rooms under the corresponding subdomain.
+**Note**: If you want to test a room as a guest/visitor, it can be a good idea to open meeting rooms in a private window to make sure you aren't accidentally logged into your subdomain! Being logged into your Whereby account will give you host privileges in rooms under the corresponding subdomain.
 {% endhint %}

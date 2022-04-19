@@ -19,6 +19,7 @@ With the Recording feature you'll need to ensure that several different conditio
    * When generating this be sure to note that a `hostUrl` is only valid between the meeting creation and [`endDate`](../../creating-and-deleting-rooms/) that you set during your request. These times are in UTC and not your local time zone, unless a timezone was specified in the request.
 2. Your host is using Chrome or Chromium based browser with the [Whereby Chrome Extension](https://chrome.google.com/webstore/detail/whereby/bbpjcfkgapecndkanjcojnldopjlnmjk) installed.
 3. You're including the `recording=on` feature flag in your URLs to enable Recording, or you've enabled Local Recording from the “Configure” → “Recording” section of your dashboard.
+4. Your hosts are selecting **only the tab** your meeting is embedded on. If users select the entire screen or app window it can cause files to be corrupted and unable to downloaded.
 
 ### Guides for hosts recording meetings
 
@@ -26,4 +27,3 @@ With the Recording feature you'll need to ensure that several different conditio
 * [Record a Meeting](https://whereby.helpscoutdocs.com/article/479-how-to-record)
 * [Download your Recordings](https://whereby.helpscoutdocs.com/article/481-download-your-recording)
 * [Share your Recordings with others](https://whereby.helpscoutdocs.com/article/592-how-to-share-your-recordings)
-

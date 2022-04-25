@@ -89,7 +89,7 @@ Use a minimal UI but with the leave and screenshare buttons:
 Disable the floating self view:
 
 ```html
-<<whereby-embed room="https://subdomain.whereby.com/your_room" floatSelf=off />
+<whereby-embed room="https://subdomain.whereby.com/your_room" floatSelf=off />
 ```
 
 ### Listening to events

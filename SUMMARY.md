@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Embedded developer resources](README.md)
+* [Getting started with Whereby Embedded](README.md)
 * [Creating and deleting rooms](creating-and-deleting-rooms/README.md)
   * [Using the REST API](creating-and-deleting-rooms/using-the-rest-api.md)
   * [Using Postman](creating-and-deleting-rooms/using-postman.md)

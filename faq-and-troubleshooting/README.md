@@ -1,10 +1,16 @@
 ---
 description: >-
   We've compiled some of the most common questions we receive about Whereby
-  Embedded
+  Embedded.
 ---
 
 # FAQ & Troubleshooting
+
+You can check for service outages and issues on our status page:
+
+{% embed url="https://wherebystatus.com" %}
+
+### Common Questions
 
 <details>
 

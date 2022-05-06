@@ -51,8 +51,17 @@ This is also known as your Bucket name. No URL is required, you can simply copy 
 ![](<../../.gitbook/assets/Bucket name.png>)
 
 **Access Key ID & Access Secret:**\
-You can locate or create your Access Key and Access secret in the "Identity and Access Management" (IAM) section of your console. You can search for that in the services search, or select "My Security Credentials" from the account dropdown menu.
+You can locate or create your Access Key and Access secret in the "Identity and Access Management" (IAM) section of your console.&#x20;
 
-![](<../../.gitbook/assets/access key s3.png>)
+{% hint style="info" %}
+It's recommended and considered best practice to create IAM users with the appropriate permissions for your AWS Access Keys. Sharing the credentials of a Root user can allow unrestricted access to all resources in your AWS account, including billing information.\
+\
+For more information Amazon has a support article here:\
+[Best practices for managing AWS access keys](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html#root-password)
+{% endhint %}
+
+
+
+![Where to create Access Keys](<../../.gitbook/assets/access key s3.png>)
 {% endtab %}
 {% endtabs %}

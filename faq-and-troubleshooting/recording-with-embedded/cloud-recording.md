@@ -56,7 +56,7 @@ You can locate or create your Access Key and Access secret in the "Identity and 
 {% hint style="info" %}
 It's recommended and considered best practice to create IAM users with the appropriate permissions for your AWS Access Keys. Sharing the credentials of a Root user can allow unrestricted access to all resources in your AWS account, including billing information.\
 \
-For more information Amazon has a support article here:\
+For more information, check out Amazon's support article:\
 [Best practices for managing AWS access keys](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html#root-password)
 {% endhint %}
 

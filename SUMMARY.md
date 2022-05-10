@@ -22,7 +22,7 @@
     * [In React Native](embedding-rooms/in-a-mobile-app/in-react-native.md)
   * [Allowed domains](embedding-rooms/allowed-domains.md)
 * [Monitoring usage](monitoring-usage/README.md)
-  * [Insights Dashboard](monitoring-usage/insights-dashboard.md)
+  * [Insights suite & API](monitoring-usage/insights-suite-and-api.md)
   * [Webhooks](monitoring-usage/webhooks.md)
   * [Name prefixes](monitoring-usage/name-prefixes.md)
 * [User roles and privileges](user-roles-and-privileges.md)

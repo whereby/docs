@@ -7,21 +7,17 @@ description: >-
 
 # Monitoring usage
 
-### Insights Dashboard
+### Insights suite & API
 
-The Insights Dashboard is available from the Embedded dashboard, and is the easiest way to access your usage data in one view and understand it faster at a glance - so you can discover trends and report on customer usage easier.
+The Insights suite is available from the Embedded dashboard, and is the easiest way to access your usage data at a glance. You can also access insights data through the Whereby REST API. This way, you can discover trends and report on customer usage easier.
 
-[Read more](insights-dashboard.md)
-
-
+[Read more](insights-suite-and-api.md)
 
 ### Webhooks
 
 With Webhooks you can set up user-defined callbacks that will be triggered by meeting events. A very common way that this is used is to keep track of the number of users that are joining your meetings, or to verify that your hosts are joining on time.
 
 [Read more](webhooks.md)
-
-
 
 ### Name prefixes
 

@@ -8,6 +8,7 @@
 * [Customizing rooms](customizing-rooms/README.md)
   * [On creation](customizing-rooms/on-creation.md)
   * [Using URL parameters](customizing-rooms/using-url-parameters.md)
+  * [Dashboard preferences](customizing-rooms/dashboard-preferences.md)
   * [Branding elements](customizing-rooms/branding-elements.md)
 * [Embedding rooms](embedding-rooms/README.md)
   * [In a web page](embedding-rooms/in-a-web-page/README.md)

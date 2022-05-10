@@ -17,7 +17,7 @@ You can quickly get a clear understanding of what's happening over time and see 
 
 On the Rooms page, you can see a list of all the rooms that currently exist and have been created in your account. Your admins can easily filter the list by searching a room name or choosing a date range to find the insights you’re looking for in seconds.
 
-~~From the Rooms page~~ You can also access details of all the sessions that have happened within a specific room and quickly filter them by date for a more detailed view. ~~This gives you a more detailed view of every session (video call), like what day the session happened, how long it lasted, how many people joined it and how many participant minutes were used.~~
+You can also access details of all the sessions that have happened within a specific room and quickly filter them by date for a more detailed view.&#x20;
 
 To access the Insights suite, log in to your Whereby Embedded account and visit the "Insights" section.
 

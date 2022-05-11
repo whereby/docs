@@ -118,9 +118,9 @@ Set the display name for a participant instead of prompting the user for this in
 
 #### **`?avatarUrl=<url>`**
 
-Set the profile avatar for a participant instead of the automatically assigned name initials. The image can be a png or jpeg, and must be a square maximum of 200x200.
+Set the avatar / profile picture of the participant instead of the automatically assigned name initials. The image can be a .png or .jpeg, and must be a square maximum of 64x64.
 
-**Note:** You must allow the images web domain via the [allowed domains](../embedding-rooms/allowed-domains.md) section of the dashboard. The image URL must be https and cannot contain query params.
+**Note:** You must make sure to list the origin of the image URL in the [allowed domains](../embedding-rooms/allowed-domains.md) section of the dashboard. The image URL must be https and cannot contain query params.
 
 
 

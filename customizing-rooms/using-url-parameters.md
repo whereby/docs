@@ -184,7 +184,7 @@ Hide the “…” button.
 
 Used to toggle the entire top toolbar on/off.
 
-**Use case:** When using the [`minimal`](using-url-parameters.md#minimal) parameter, the top toolbar is hidden along with many other UI elements. Using `topToolbar=on` will cause the top toolbar will reappear, which is required if you want to enable breakout groups using [`breakout=on`](using-url-parameters.md#breakout-less-than-on-or-off-greater-than).
+**Use case:** When using the [`minimal`](using-url-parameters.md#minimal) parameter, the top toolbar is hidden along with many other UI elements. Using `topToolbar=on` will cause the top toolbar to display, which is required if you want to enable breakout groups using [`breakout=on`](using-url-parameters.md#breakout-less-than-on-or-off-greater-than).
 
 
 
@@ -220,7 +220,7 @@ Predefine up to 20 groups for the breakout groups function.
 
 #### `?timer=<on|off>`
 
-Show/hide the breakout room feature for the meeting host.
+Show/hide the meeting timer within the room.
 
 **Use case:** Set this to “on” to have the meeting timer be displayed in the room. When set to “off”, room hosts can still activate the meeting timer from the “…” button, unless this button has been hidden via the `?minimal` or `?moreButton=off` parameters.
 

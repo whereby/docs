@@ -49,7 +49,7 @@ In Viewer Mode, participants joining as Viewers have their camera and microphone
 This is a <mark style="color:orange;">**beta**</mark> feature and might change in the future.
 
 {% hint style="success" %}
-Meetings created in "[group](creating-and-deleting-rooms/#using-the-rest-api)" mode can support up to 100 hosts or participants. Viewer mode can support an additional 400 viewers for a total of 500 viewers, hosts, and participants.&#x20;
+Meetings created in "[group](creating-and-deleting-rooms/#using-the-rest-api)" mode can support up to 200 hosts or participants. Viewer mode can support an additional 400 viewers for a total of 600 viewers, hosts, and participants.&#x20;
 {% endhint %}
 
 

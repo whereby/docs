@@ -18,8 +18,10 @@ You can access recording settings and options from the “Configure” → “Re
 
 After setting up the appropriate information, select how you would like to trigger your recording in rooms.&#x20;
 
-* **Auto-start** \
+* **Auto-start (1 person)**\
   Recordings will start when the first person joins and end when the last person leaves
+* **Auto-start (2 people)**\
+  Recordings will start when 2 people join a room
 * **Prompt host** \
   ****Display a prompt to the host to manually start recording
 * **Manual**\

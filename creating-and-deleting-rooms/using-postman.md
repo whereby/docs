@@ -11,7 +11,7 @@ description: >-
 **Note**: To use the API, you’ll need to [create an API key](creating-an-api-key.md). A new key is generated from the “Configure” section in the Embedded dashboard. Your API key is secret and should only be used from your server.
 {% endhint %}
 
-Postman is an API platform for building and using APIs. You can use Postman to interact with the Whereby REST API. If you don’t have a Postman account already, sign up for one here: [https://www.postman.com/](https://www.postman.com)
+Postman is an API platform for building and using APIs. You can use Postman to interact with the Whereby REST API. If you don’t have a Postman account already, sign up for one here: [https://www.postman.com/](https://www.postman.com/)
 
 Next, open [Whereby’s Embedded API Postman collection](https://www.postman.com/wherebyhq/workspace/whereby-s-public-workspace/collection/15283449-36906103-00b9-43fa-88e4-f2ed52fdedd3?ctx=documentation)
 

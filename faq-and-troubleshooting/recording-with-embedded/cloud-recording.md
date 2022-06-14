@@ -21,7 +21,7 @@ After setting up the appropriate information, select how you would like to trigg
 * **Auto-start (1 person)**\
   Recordings will start when the first person joins and end when the last person leaves
 * **Auto-start (2 people)**\
-  Recordings will start when 2 people join a room
+  Recordings will start when 2 people join a room and end when the last person leaves
 * **Prompt host** \
   ****Display a prompt to the host to manually start recording
 * **Manual**\

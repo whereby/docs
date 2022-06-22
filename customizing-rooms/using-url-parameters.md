@@ -36,6 +36,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | ``[`?pipButton=off`](using-url-parameters.md#pipbutton-off)``                                            | Hide the Picture in Picture button.                                                                                           |
 | ``[`?moreButton=off`](using-url-parameters.md#morebutton-off)``                                          | Hide the more button.                                                                                                         |
 | ``[`?topToolbar=<on\|off>`](using-url-parameters.md#toptoolbar-less-than-on-or-off-greater-than)``       | Show/hide the entire top tool bar.                                                                                            |
+| ``[`?bottomToolbar=<on\|off>`](using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than)`` | Show/hide the entire bottom tool bar.                                                                                         |
 | ``[`?lang=<code>`](using-url-parameters.md#lang-less-than-code-greater-than)``                           | Set the room UI language to either English en, French fr, German de, Norwegian nb, Portuguese pt, Spanish es, or Japanese jp. |
 | ``[`?floatSelf`](using-url-parameters.md#floatself)``                                                    | Float the self view to the bottom right.                                                                                      |
 | ``[`?breakout=<on\|off>`](using-url-parameters.md#breakout-less-than-on-or-off-greater-than)``           | Show/hide the breakout room feature for the meeting host.                                                                     |
@@ -45,7 +46,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | ``[`?personality=<on\|off>`](using-url-parameters.md#personality-less-than-on-or-off-greater-than)``     | Can be used to turn off “cheery” UI language that may not fit certain businesses.                                             |
 | ``[`?subgridLabels=<on\|off>`](using-url-parameters.md#subgridlabels-less-than-on-or-off-greater-than)`` | Enable name labels for participants in the subgrid                                                                            |
 | ``[`?metadata=<string>`](using-url-parameters.md#metadata-less-than-string-greater-than)``               | Gets passed on to the corresponding webhooks.                                                                                 |
-| ``[ `?lowData=<on\|off>`](using-url-parameters.md#metadata-less-than-string-greater-than-1)``            | Use a lower resolution by default                                                                                             |
+| ``[ `?lowData=<on\|off>`](using-url-parameters.md#lowdata-less-than-on-or-off-greater-than)``            | Use a lower resolution by default                                                                                             |
 
 ## Property details
 
@@ -187,7 +188,11 @@ Used to toggle the entire top toolbar on/off.
 
 **Use case:** When using the [`minimal`](using-url-parameters.md#minimal) parameter, the top toolbar is hidden along with many other UI elements. Using `topToolbar=on` will cause the top toolbar to display, which is required if you want to enable breakout groups using [`breakout=on`](using-url-parameters.md#breakout-less-than-on-or-off-greater-than).
 
+#### `?bottomToolbar=<on|off>`
 
+Show/hide the entire bottom tool bar.
+
+**User case:** Hiding the bottom toolbar entirely can be useful in cases where you are hoping to control in room items like camera or microphone via your own websites UI. This can be achieved when embedding Whereby with the [Whereby Embed Element](../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md).
 
 #### `?lang=<code>`
 

@@ -26,6 +26,7 @@
   * [Webhooks](monitoring-usage/webhooks.md)
   * [Name prefixes](monitoring-usage/name-prefixes.md)
 * [User roles and privileges](user-roles-and-privileges.md)
+* [HIPAA compliant setup](hipaa-compliant-setup.md)
 * [FAQ & Troubleshooting](faq-and-troubleshooting/README.md)
   * [Streaming with Embedded](faq-and-troubleshooting/streaming-with-embedded.md)
   * [Breakout Groups with Embedded](faq-and-troubleshooting/breakout-groups-with-embedded.md)

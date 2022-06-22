@@ -45,6 +45,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | ``[`?personality=<on\|off>`](using-url-parameters.md#personality-less-than-on-or-off-greater-than)``     | Can be used to turn off “cheery” UI language that may not fit certain businesses.                                             |
 | ``[`?subgridLabels=<on\|off>`](using-url-parameters.md#subgridlabels-less-than-on-or-off-greater-than)`` | Enable name labels for participants in the subgrid                                                                            |
 | ``[`?metadata=<string>`](using-url-parameters.md#metadata-less-than-string-greater-than)``               | Gets passed on to the corresponding webhooks.                                                                                 |
+| ``[ `?lowData=<on\|off>`](using-url-parameters.md#metadata-less-than-string-greater-than-1)``            | Use a lower resolution by default                                                                                             |
 
 ## Property details
 
@@ -255,4 +256,10 @@ Used to toggle name labels for the participants in the subgrid.
 Can be used to pass any URL-encoded string so that it is included in the corresponding webhooks. The decoded string has a limit of 512 characters.
 
 **Use case:** Set it to the user’s ID so that you can easily track through webhooks when a particular user joins or leaves a room.
+
+#### `?lowData=<on|off>`
+
+Use a lower resolution by default
+
+**User case:** In some situations for customers with poor network connections or devices with CPU constraints, it can be help to have lower resolution video feeds loading on the call. This can sometimes be helpful for users reporting issues with choppy video/audio or connecting to room issues.
 

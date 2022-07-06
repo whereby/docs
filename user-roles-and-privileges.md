@@ -14,7 +14,7 @@ Users joining via the hostRoomURL become meeting hosts and have the following fe
 * Lock and unlock the room.
 * Remove, mute, and spotlight meeting participants.
 * Enter locked rooms without knocking.
-* Start and stopped [d ment](faq-and-troubleshooting/recording-with-embedded/), if available
+* Start and stop [recordings](faq-and-troubleshooting/recording-with-embedded/), if available.
 
 Host privileges are valid immediately on room creation and persist for an hour after the `endDate`.
 

@@ -43,6 +43,33 @@ A hostRoomURL is only available if the `hostRoomURL` is included in the `fields`
 
 Now that you have both a `roomUrl` and a `hostRoomUrl`, you can ensure that both your guests and hosts get the right privileges by using the corresponding URL when [embedding rooms](embedding-rooms/) in your own webpage or app.
 
+### Participants
+
+Users joining via the standard `roomUrl` will have a more typical meeting experience. They will only have access to the features you've set via [URL parameters](customizing-rooms/using-url-parameters.md), and they will need to knock to gain entry to locked rooms.
+
+A `roomUrl` will be included with any POST [meeting creation](https://whereby.dev/http-api/#/paths/\~1meetings/post) requests.
+
+
+
+**Example request body:**
+
+```javascript
+{ 
+    "endDate": "2099-03-25T13:30:00.000Z", 
+}
+```
+
+#### Response:
+
+```javascript
+{
+    "meetingId": "1234",
+    "startDate": "2022-03-09T13:50:00.000Z",
+    "endDate": "2099-03-25T13:30:00.000Z",
+    "roomUrl": "https://example.whereby.com/room",
+}
+```
+
 ### Viewers
 
 In Viewer Mode, participants joining as Viewers have their camera and microphone disabled by default. Viewers can only interact with Hosts and Speakers by using the Chat.

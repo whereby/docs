@@ -27,7 +27,7 @@
   * [Name prefixes](monitoring-usage/name-prefixes.md)
 * [User roles and privileges](user-roles-and-privileges.md)
 * [HIPAA compliant setup](hipaa-compliant-setup.md)
-* [Whereby Embedded SDKs beta](whereby-embedded-sdks-beta.md)
+* [Whereby Embedded SDK beta](whereby-embedded-sdk-beta.md)
 * [FAQ & Troubleshooting](faq-and-troubleshooting/README.md)
   * [Streaming with Embedded](faq-and-troubleshooting/streaming-with-embedded.md)
   * [Breakout Groups with Embedded](faq-and-troubleshooting/breakout-groups-with-embedded.md)

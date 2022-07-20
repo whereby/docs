@@ -5,7 +5,7 @@ description: >-
   SDKs for web, Android, and iOS.
 ---
 
-# Whereby Embedded SDKs beta
+# Whereby Embedded SDK beta
 
 ### Browser SDK
 

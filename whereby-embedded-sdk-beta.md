@@ -5,7 +5,9 @@ description: >-
   SDKs for web, Android, and iOS.
 ---
 
-# Whereby Embedded SDK beta
+# Whereby Embedded SDKs beta
+
+![Whereby Embedded SDKs beta](.gitbook/assets/whereby-embedded-sdks.png)
 
 ### Browser SDK
 

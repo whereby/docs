@@ -60,7 +60,7 @@ There is no need to do anything to enable the HIPAA compliant in-room chat as it
 
 The recording capability means that the meeting, including audio, video and screen-share content will be captured and saved depending on the options chosen.
 
-Whereby offers the HIPAA compliant capability of [local recording](faq-and-troubleshooting/recording-with-embedded/local-recording.md), where the recording can be initiated by a participant of the call and can be stored locally. The reason it is considered compliant is that Whereby does not, in any way, store or process the recording.
+Whereby offers the HIPAA compliant capability of [local recording](customizing-rooms/recording-with-embedded/local-recording.md), where the recording can be initiated by a participant of the call and can be stored locally. The reason it is considered compliant is that Whereby does not, in any way, store or process the recording.
 
 {% hint style="info" %}
 Note: _It is the responsibility of the person that initiated the recording and saved it locally to adhere to HIPAA requirements and Whereby cannot control what happens to a local recording._

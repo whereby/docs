@@ -209,7 +209,7 @@ Float the self view to the bottom right.
 
 #### `?breakout=<on|off>`
 
-Show/hide the [Breakout Groups feature](../faq-and-troubleshooting/breakout-groups-with-embedded.md) for the meeting host.
+Show/hide the [Breakout Groups feature](breakout-groups-with-embedded.md) for the meeting host.
 
 **Use case:** Combine bigger meetings with smaller, collaborative sessions. Your hosts can start breakout sessions where participants are split into smaller groups.
 

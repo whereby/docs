@@ -28,7 +28,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | ``[`?leaveButton=<on\|off>`](using-url-parameters.md#leavebutton-off)``                                  | Show/hide the leave button.                                          |
 | ``[`?displayName=<name>`](using-url-parameters.md#displayname-less-than-name-greater-than)``             | Set display name of participant.                                     |
 | [`?avatarUrl=<url>`](using-url-parameters.md#avatarurl-less-than-url-greater-than)                       | Set the profile avatar of participant.                               |
-| ``[`` ?background=off` ``](using-url-parameters.md#background-off)``                                     | Hide the room background.                                            |
+| ``[`?background=off`](using-url-parameters.md#background-off)``                                          | Hide the room background.                                            |
 | ``[`?logo=off`](using-url-parameters.md#logo-off)``                                                      | Hide the logo in the room header.                                    |
 | ``[`?locking=off`](using-url-parameters.md#locking-off)``                                                | Hide the room lock button.                                           |
 | ``[`?participantCount=off`](using-url-parameters.md#participantcount-off)``                              | Hide the participant counter.                                        |

@@ -254,11 +254,15 @@ Can be used to pass any URL-encoded string so that it is included in the corresp
 
 **Use case:** Set it to the user’s ID so that you can easily track through [webhooks](../monitoring-usage/webhooks.md) when a particular user joins or leaves a room.
 
+
+
 #### `?lowData=<on|off>`
 
 Use a lower resolution by default
 
 **Use case:** In some situations, it can be helpful to have lower resolution video feeds on the call for users with poor network connections or devices with CPU constraints. This parameter will limit the video feeds which can be useful for users reporting issues with choppy video/audio or connecting to rooms.
+
+
 
 #### **`?autoSpotlight`**
 

@@ -6,6 +6,8 @@ description: >-
 
 # Customizing rooms
 
+{% embed url="https://youtu.be/h1ymbX3AcWc" %}
+
 ### On creation
 
 Some key properties of your rooms should be set when the room is created using the API.

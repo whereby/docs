@@ -6,6 +6,8 @@ description: >-
 
 # Using the REST API
 
+{% embed url="https://youtu.be/3-uORdwjlBc" %}
+
 {% hint style="info" %}
 **Note**: To use the API, you’ll need to [create an API key](creating-an-api-key.md). A new key is generated from the “Configure” section in the Embedded dashboard. Your API key is secret and should only be used from your server.
 {% endhint %}

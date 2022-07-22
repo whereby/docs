@@ -6,6 +6,8 @@ description: >-
 
 # Cloud Recording
 
+{% embed url="https://youtu.be/iLRCdQNK7FY" %}
+
 {% hint style="info" %}
 This feature requires the use of Amazon S3 storage. You can review their plans and pricing on the [AWS site](https://aws.amazon.com/s3/pricing/). Amazon also offers some [free tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank\&all-free-tier.sort-order=asc\&awsf.Free%20Tier%20Types=\*all\&awsf.Free%20Tier%20Categories=\*all) options to explore. Note that if you're creating an AWS account from scratch it can sometimes take up to 24 hours.
 {% endhint %}

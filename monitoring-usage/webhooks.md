@@ -7,6 +7,8 @@ description: >-
 
 # Webhooks
 
+{% embed url="https://youtu.be/GGMcPqXdZ8I" %}
+
 Webhooks are managed from the "Configure" section of your account, so they need to be set up by an admin in your organization.
 
 ![Visit the "Configure" section of your Whereby Embedded account dashboard and scroll down to find the Webhooks setup.](../.gitbook/assets/webhooks-dashboard.png)

@@ -46,6 +46,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | ``[`?subgridLabels=<on\|off>`](using-url-parameters.md#subgridlabels-less-than-on-or-off-greater-than)`` | Enable name labels for participants in the subgrid                   |
 | ``[`?metadata=<string>`](using-url-parameters.md#metadata-less-than-string-greater-than)``               | Gets passed on to the corresponding webhooks.                        |
 | ``[ `?lowData=<on\|off>`](using-url-parameters.md#lowdata-less-than-on-or-off-greater-than)``            | Use a lower resolution by default                                    |
+| ``[`?autoSpotlight`](using-url-parameters.md#autospotlight)``                                            | Automatically spotlight the local participant on room join           |
 
 ## Property details
 
@@ -258,4 +259,10 @@ Can be used to pass any URL-encoded string so that it is included in the corresp
 Use a lower resolution by default
 
 **User case:** In some situations for customers with poor network connections or devices with CPU constraints, it can be help to have lower resolution video feeds loading on the call. This can sometimes be helpful for users reporting issues with choppy video/audio or connecting to room issues.
+
+#### **`?autoSpotlight`**
+
+Automatically spotlight the local participant on room join. **Note:** Only works when the participant joining has host privileges.\
+\
+**Use case:** Apply this parameter to ensure focus is directed at the local participant by spotlighting them. The spotlight ensures everyone else in the meeting has a bigger view of this participant.
 

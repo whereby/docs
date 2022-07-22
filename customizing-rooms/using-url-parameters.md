@@ -258,7 +258,7 @@ Can be used to pass any URL-encoded string so that it is included in the corresp
 
 Use a lower resolution by default
 
-**User case:** In some situations for customers with poor network connections or devices with CPU constraints, it can be help to have lower resolution video feeds loading on the call. This can sometimes be helpful for users reporting issues with choppy video/audio or connecting to room issues.
+**Use case:** In some situations for customers with poor network connections or devices with CPU constraints, it can be helpful to have lower resolution video feeds loading on the call. This can alleviate problems for users reporting issues with choppy video/audio or connecting to rooms.
 
 #### **`?autoSpotlight`**
 

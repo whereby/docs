@@ -47,6 +47,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | ``[`?metadata=<string>`](using-url-parameters.md#metadata-less-than-string-greater-than)``               | Gets passed on to the corresponding webhooks.                        |
 | ``[`?lowData=<on\|off>`](using-url-parameters.md#lowdata-less-than-on-or-off-greater-than)``             | Use a lower resolution by default                                    |
 | ``[`?autoSpotlight`](using-url-parameters.md#autospotlight)``                                            | Automatically spotlight the local participant on room join           |
+| ``[`?roomIntegrations=on`](using-url-parameters.md#undefined)``                                          | Enables YouTube and Miro integrations in the meeting                 |
 
 ## Property details
 
@@ -66,8 +67,6 @@ For further adjustments, additional parameters can be combined with `?minimal`. 
 Participants join the meeting with their camera off, they can turn it on whenever they want.
 
 **Use case:** A sales representative showcasing a product to a customer relaxing at home.
-
-
 
 #### `?audio=off`
 
@@ -222,3 +221,9 @@ Automatically spotlight the local participant on room join.&#x20;
 **Note:** Only works when the participant joining has host privileges.\
 \
 **Use case:** Apply this parameter to ensure focus is directed at the local participant by spotlighting them. The spotlight ensures everyone else in the meeting has a bigger view of this participant.
+
+#### `?roomIntegrations`
+
+Integrations are disabled for Whereby Embedded by default while using the [`?minimal`](using-url-parameters.md#minimal) parameter. We set this by default because [Content Security Policy](https://en.wikipedia.org/wiki/Content\_Security\_Policy) restrictions can sometimes cause integrations to fail in unexpected ways. Currently only our YouTube and Miro integrations will work in an embedded setting.
+
+It is recommended you do testing to verify these integrations behave as expected before releasing to your users.

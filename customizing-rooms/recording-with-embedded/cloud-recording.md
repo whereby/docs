@@ -31,10 +31,10 @@ After setting up the appropriate information, select how you would like to trigg
 
 Then select the format that you'd like the recordings to be saved as. We currently offer <mark style="color:blue;">`.mkv`</mark> and <mark style="color:blue;">`.mp4`</mark>.&#x20;
 
-![](<../../.gitbook/assets/recording format.jpg>)
+![](<../../.gitbook/assets/Recording format 2.png>)
 
 {% hint style="warning" %}
-File names will be automatically set to <mark style="color:red;">`[room name]-[HHhMM].mkv`</mark> and where<mark style="color:red;">`[HHhMM]`</mark> is the time when the recording started.
+File names will be automatically set to <mark style="color:red;">`[room name]-[start time in ISO format].mkv`</mark> and is the time when the recording started.
 {% endhint %}
 
 You can also specify recording preferences via the API during the [room creation](https://whereby.dev/http-api/#/paths/\~1meetings/post) request.

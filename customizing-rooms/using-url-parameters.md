@@ -164,7 +164,7 @@ Show/hide the entire bottom tool bar.
 
 #### `?lang=<code>`
 
-Set the meeting UI language to match your product or service. Select from either English `en`, French `fr`, German `de`, Norwegian `nb`, Portuguese `pt`, Spanish `es`, or Japanese `jp`.
+Set the meeting UI language to match your product or service. Select from either English `en`, French `fr`, German `de`, Norwegian `nb`, Dutch `nl`, Portuguese `pt`, Polish `pl`, Spanish `es`, or Japanese `jp`.
 
 #### `?floatSelf`
 

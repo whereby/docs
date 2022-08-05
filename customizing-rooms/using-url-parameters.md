@@ -201,7 +201,7 @@ Determines if users see the pre-call review step.
 
 Skips the request permissions UI and asks for devices
 
-**User case:** This parameter will prevent the "Request Permissions" step during the pre-call phase and cause the browser to automatically request device permissions (if requested in the iFrame).
+**User case:** This parameter will prevent the "Request Permissions" step during the pre-call phase and cause the browser to automatically request device permissions (if requested in the iFrame). This flag is required for [Android app](../embedding-rooms/in-a-mobile-app/in-android-apps.md) integration.
 
 #### `?subgridLabels=<on|off>`
 

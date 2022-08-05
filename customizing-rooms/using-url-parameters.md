@@ -43,6 +43,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | ``[`?groups=Orange,Banana,Coconut`](using-url-parameters.md#groups-orange-banana-coconut)``              | Predefine up to 20 groups for the breakout groups function.          |
 | ``[`?timer=<on\|off>`](using-url-parameters.md#timer-less-than-on-or-off-greater-than)``                 | Show/hide the meeting timer.                                         |
 | ``[`?precallReview=<on\|off>`](using-url-parameters.md#precallreview-less-than-on-or-off-greater-than)`` | Determines if users see the pre-call review step.                    |
+| ``[`?skipMediaPermissionPrompt`](using-url-parameters.md#skipmediapermissionprompt)``                    | Skips the request permissions UI and asks for devices                |
 | ``[`?subgridLabels=<on\|off>`](using-url-parameters.md#subgridlabels-less-than-on-or-off-greater-than)`` | Enable name labels for participants in the subgrid                   |
 | ``[`?metadata=<string>`](using-url-parameters.md#metadata-less-than-string-greater-than)``               | Gets passed on to the corresponding webhooks.                        |
 | ``[`?lowData=<on\|off>`](using-url-parameters.md#lowdata-less-than-on-or-off-greater-than)``             | Use a lower resolution by default                                    |
@@ -195,6 +196,12 @@ Show/hide the meeting timer within the room.
 Determines if users see the pre-call review step.
 
 **Use case:** The pre-call review step will allow users to check their video/audio settings before joining the room, but this can be skipped by setting this parameter to “off”.
+
+#### **`?skipMediaPermissionPrompt`**
+
+Skips the request permissions UI and asks for devices
+
+**User case:** This parameter will prevent the "Request Permissions" step during the pre-call phase and cause the browser to automatically request device permissions (if requested in the iFrame).
 
 #### `?subgridLabels=<on|off>`
 

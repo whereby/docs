@@ -9,6 +9,8 @@ description: >-
 
 ### Hosts
 
+{% embed url="https://www.youtube.com/watch?v=RicAdlE93cc" %}
+
 Users joining via the hostRoomURL become meeting hosts and have the following features available:
 
 * Lock and unlock the room.

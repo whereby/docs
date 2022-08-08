@@ -14,7 +14,9 @@ description: >-
 
 ### Creating rooms
 
-Once you have secured your API key, you can create a room by sending an HTTP request with the necessary parameters in the body. Available parameters and formats can be found in the [API reference](https://whereby.dev/http-api/). `endDate` is interpreted as UTC by default, but other time zones are supported by including an offset in hours and minutes. For example, Eastern Standard Time (EST) would be expressed as `2099-08-11T07:56:01-05:00`.
+Once you have secured your API key, you can create a room by sending an HTTP request with the necessary parameters in the body. Available parameters and formats can be found in the [API reference](https://whereby.dev/http-api/). Some features like the URL pattern of the room name and room size (`roomMode`) can only be set during the meetings creation.
+
+&#x20;`endDate` is interpreted as UTC by default, but other time zones are supported by including an offset in hours and minutes. For example, Eastern Standard Time (EST) would be expressed as `2099-08-11T07:56:01-05:00`.
 
 Rooms are fully functional from the time they are created.
 

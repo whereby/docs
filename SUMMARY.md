@@ -2,6 +2,7 @@
 
 * [Getting started with Whereby Embedded](README.md)
 * [Creating and deleting rooms](creating-and-deleting-rooms/README.md)
+  * [Using “Create a room”](creating-and-deleting-rooms/using-create-a-room.md)
   * [Using the REST API](creating-and-deleting-rooms/using-the-rest-api.md)
   * [Using Postman](creating-and-deleting-rooms/using-postman.md)
   * [Creating an API key](creating-and-deleting-rooms/creating-an-api-key.md)

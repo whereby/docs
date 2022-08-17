@@ -7,6 +7,8 @@ description: >-
 
 # Getting started with Whereby Embedded
 
+{% embed url="https://www.youtube.com/watch?v=kWQDzPdYrBc" %}
+
 ### Creating and deleting rooms
 
 Rooms are where video calls take place. They can be created with a simple API call from your own backend, or by using tools such as [Postman](https://www.postman.com/). All rooms have unique URLs and can be created ahead of time or on demand.

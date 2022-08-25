@@ -47,7 +47,7 @@ Now that you have both a `roomUrl` and a `hostRoomUrl`, you can ensure that both
 
 ### Participants
 
-Users joining via the standard `roomUrl` will have a more typical meeting experience. They will only have access to the features you've set via [URL parameters](customizing-rooms/using-url-parameters.md), and they will need to knock to gain entry to locked rooms.
+Users joining via the standard `roomUrl` will have a more typical meeting experience. They will only have access to the features you've set via [URL parameters](customizing-rooms/using-url-parameters.md) or the [dashboard](customizing-rooms/dashboard-preferences.md), and they will need to knock to gain entry to locked rooms.
 
 A `roomUrl` will be included with any POST [meeting creation](https://whereby.dev/http-api/#/paths/\~1meetings/post) requests.
 

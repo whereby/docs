@@ -1,7 +1,7 @@
 ---
 description: >-
-  We've compiled some of the most common questions we receive about Whereby
-  Embedded.
+  We've compiled some of the most common questions and tips we receive about
+  Whereby Embedded.
 ---
 
 # FAQ & Troubleshooting
@@ -9,6 +9,30 @@ description: >-
 You can check for service outages and issues on our status page:
 
 {% embed url="https://wherebystatus.com" %}
+
+{% hint style="danger" %}
+We're currently aware of an issue with MacOS users using Avast antivirus. The Avast Web Shield feature conflicts with sites using port 443 and can cause video feeds to appear as black frames in Whereby. We're working with Avast on a for them to account for this in their platform
+{% endhint %}
+
+### Tips & Tricks
+
+<details>
+
+<summary>Firewall Settings</summary>
+
+To use Whereby behind a firewall, a network administrator will need to adjust the settings. Port 443 will need to be open to all TCP and UDP traffic.\
+\
+Some enterprise firewalls require more in depth technical information for proper allowance, please contact your Customer Success Manager or embedded@whereby.com
+
+</details>
+
+<details>
+
+<summary>Testing Whereby Embedded</summary>
+
+We always recommend testing Whereby Embedded in an incognito/private browser if possible. If you are logged into your Whereby account, the admin permissions can override some of the features set via parameter or dashboard.
+
+</details>
 
 ### Common Questions
 
@@ -24,10 +48,18 @@ You can check for service outages and issues on our status page:
 
 <details>
 
+<summary>Can I create longstanding meetings?</summary>
+
+Yes! You can create meetings with endDates farther in the future. Please just keep in mind that if you are providing any of your users with hostUrls, you won't be able to revoke host access from those users.
+
+</details>
+
+<details>
+
 <summary>My hosts don't have the correct meeting privileges</summary>
 
 1. Host privileges will only be available while the room is active and until 1 hour after the meeting's `endDate`
-2. Check your [hostRoomUrl](../user-roles-and-privileges.md) to make sure you've properly separated the `roomkey` and `minimal` parameters with "&"
+2. Check your [hostRoomUrl](user-roles-and-privileges.md) to make sure you've properly separated the `roomkey` and `minimal` parameters with "&"
 
 </details>
 
@@ -35,7 +67,7 @@ You can check for service outages and issues on our status page:
 
 <summary>How do I enable integrations in my meetings?</summary>
 
-Integrations are disabled for Whereby Embedded by default while using the [`?minimal`](../customizing-rooms/using-url-parameters.md#minimal) parameter. We set this by default because [Content Security Policy](https://en.wikipedia.org/wiki/Content\_Security\_Policy) restrictions can sometimes cause integrations to fail in unexpected ways. Currently only our YouTube and Miro integrations will work in an embedded setting.
+Integrations are disabled for Whereby Embedded by default while using the [`?minimal`](customizing-rooms/using-url-parameters.md#minimal) parameter. We set this by default because [Content Security Policy](https://en.wikipedia.org/wiki/Content\_Security\_Policy) restrictions can sometimes cause integrations to fail in unexpected ways. Currently only our YouTube and Miro integrations will work in an embedded setting.
 
 If you would like to test an integration in your embedded meeting, you can do so by adding the `?roomIntegrations=on` parameter.
 

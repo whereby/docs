@@ -11,7 +11,7 @@ You can check for service outages and issues on our status page:
 {% embed url="https://wherebystatus.com" %}
 
 {% hint style="danger" %}
-We're currently aware of an issue with MacOS users using Avast antivirus. The Avast Web Shield feature conflicts with sites using port 443 and can cause video feeds to appear as black frames in Whereby. We're working with Avast on a for them to account for this in their platform
+We're currently aware of an issue with users running Avast antivirus. The "Avast Web Shield" feature conflicts with sites using port 443 and can cause video feeds to appear as black frames in Whereby. We're working with Avast on a way for them to account for this in their platform
 {% endhint %}
 
 ### Tips & Tricks

@@ -50,7 +50,7 @@ We always recommend testing Whereby Embedded in an incognito/private browser if 
 
 <summary>Can I create longstanding meetings?</summary>
 
-Yes! You can create meetings with endDates farther in the future. Please just keep in mind that if you are providing any of your users with hostUrls, you won't be able to revoke host access from those users.
+Yes! You can create meetings with [endDates](creating-and-deleting-rooms/) farther in the future. Please keep in mind that if you are providing any of your users with [hostUrls](user-roles-and-privileges.md#hosts), you won't be able to revoke host access from those users.
 
 </details>
 

@@ -18,7 +18,9 @@ Users joining via the hostRoomURL become meeting hosts and have the following fe
 * Enter locked rooms without knocking.
 * Start and stop [recordings](customizing-rooms/recording-with-embedded/), if available.
 
-Host privileges are valid immediately on room creation and persist for an hour after the `endDate`.
+{% hint style="info" %}
+Host privileges are valid immediately on room creation and are disabled one hour after the `endDate`.
+{% endhint %}
 
 A hostRoomURL is only available if the `hostRoomURL` is included in the `fields` parameter when [creating the room via the API](creating-and-deleting-rooms/using-the-rest-api.md).
 

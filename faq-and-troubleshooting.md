@@ -11,7 +11,7 @@ You can check for service outages and issues on our status page:
 {% embed url="https://wherebystatus.com" %}
 
 {% hint style="danger" %}
-We're currently aware of an issue with users running Avast antivirus. The "Avast Web Shield" feature conflicts with sites using port 443 and can cause video feeds to appear as black frames in Whereby. We're working with Avast on a way for them to account for this in their platform
+We're currently aware of an issue with users running Avast antivirus. The "Avast Web Shield" feature conflicts with sites using port 443 and can cause video feeds to appear as black frames in Whereby. We're working with Avast on a way for them to account for this in their platform, however to resolve Whereby related issues you'll need to disable that feature. [Avast Support Article](https://support.avast.com/en-us/article/antivirus-shield-settings/)
 {% endhint %}
 
 ### Tips & Tricks
@@ -40,7 +40,7 @@ We always recommend testing Whereby Embedded in an incognito/private browser if 
 
 <summary>URL parameters aren't working as expected</summary>
 
-1. The most common error we see relating to URL parameters is incorrectly using "?" twice in the meeting room URL. Combining parameters can be achieved by using the ampersand symbol (&) for example:\
+1. The most common error we see relating to [URL parameters](customizing-rooms/#using-url-parameters) is incorrectly using "?" twice in the meeting room URL. Combining parameters can be achieved by using the ampersand symbol (&) for example:\
    `?minimal`**`&`**`screenshare=off`.
 2. If the person using/testing the room is also logged into their Embedded account, it will override any parameters added to the room URL. Try accessing the room via a private or incognito window to verify your links are working as expected.
 
@@ -50,7 +50,7 @@ We always recommend testing Whereby Embedded in an incognito/private browser if 
 
 <summary>Can I create longstanding meetings?</summary>
 
-Yes! You can create meetings with [endDates](creating-and-deleting-rooms/) farther in the future. Please keep in mind that if you are providing any of your users with [hostUrls](user-roles-and-privileges.md#hosts), you won't be able to revoke host access from those users.
+Yes! You can create meetings with [endDates](creating-and-deleting-rooms/) far in the future (_eg. A month or multiple months_). Please keep in mind that if you are providing any of your users with [hostUrls](user-roles-and-privileges.md#hosts), you won't be able to revoke host access from those users.
 
 </details>
 

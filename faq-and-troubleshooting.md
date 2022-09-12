@@ -48,6 +48,14 @@ Unfortunately, because these are government-level restrictions that have been pu
 
 <details>
 
+<summary>Can I customize the page users see when they leave a room?</summary>
+
+Yes! When using our [Embed Element](embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md) or [Embed SDK](whereby-embedded-sdk-beta.md#browser-sdk), you'll have access to "leave" browser event. You can then action on that event to redirect your users to another page of your choosing.
+
+</details>
+
+<details>
+
 <summary>URL parameters aren't working as expected</summary>
 
 1. The most common error we see relating to [URL parameters](customizing-rooms/#using-url-parameters) is incorrectly using "?" twice in the meeting room URL. Combining parameters can be achieved by using the ampersand symbol (&) for example:\
@@ -66,10 +74,10 @@ Yes! You can create meetings with [endDates](creating-and-deleting-rooms/) far i
 
 <details>
 
-<summary>My hosts don't have the correct meeting privileges</summary>
+<summary>My hosts/viewers don't have the correct meeting privileges</summary>
 
-1. Host privileges will only be available while the room is active and until 1 hour after the meeting's `endDate`
-2. Check your [hostRoomUrl](user-roles-and-privileges.md) to make sure you've properly separated the `roomkey` and `minimal` parameters with "&"
+1. Host or Viewer privileges will only be available while the room is active and until 1 hour after the meeting's `endDate`
+2. Check your [hostRoomUrl](user-roles-and-privileges.md) or viewerUrl to make sure you've properly separated the `roomkey` and other parameters with "&"
 
 </details>
 

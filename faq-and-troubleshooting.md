@@ -34,6 +34,16 @@ We always recommend testing Whereby Embedded in an incognito/private browser if 
 
 </details>
 
+<details>
+
+<summary>Connections in UAE, China, and Russia</summary>
+
+We're aware of restrictions that have been put in place for peer to peer applications like Whereby. In these areas we've had reports from users that they have spotty access to Whereby, or that the service doesn't work for them at all.&#x20;
+
+Unfortunately, because these are government-level restrictions that have been put in place on the internet, there isn't anything we can do to address issues like this at this time.&#x20;
+
+</details>
+
 ### Common Questions
 
 <details>

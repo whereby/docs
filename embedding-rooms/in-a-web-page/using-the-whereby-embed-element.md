@@ -154,6 +154,8 @@ For this feature to work, you must add the origin of your application to the "[A
 
 | Method                              | Description                                                                                                 |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `startRecording()`                  | Start cloud recording on behalf of the local user, who needs to be a host in the room.                      |
+| `stopRecording()`                   | Stop cloud recording on behalf of the local user, who needs to be a host in the room.                       |
 | `toggleCamera([true \| false])`     | Toggle the local user's camera on or off. Without any arguments, it toggles depending on current state.     |
 | `toggleMicrophone([true \| false])` | Toggle the local user's microphone on or off. Without any arguments, it toggles depending on current state. |
 
@@ -163,6 +165,8 @@ Here is a small example showing uses of these methods:
 {% tab title="JavaScript" %}
 ```javascript
 const room = document.querySelector("whereby-embed");
+room.startRecording(); // Start cloud recording
+room.stopRecording(); // Stop cloud recording
 room.toggleCamera(); // Camera will be turned on if off, and off if on
 room.toggleMicrophone(); // Microphone will be turned on if off, and off if on
 room.toggleCamera(true); // Turn camera on

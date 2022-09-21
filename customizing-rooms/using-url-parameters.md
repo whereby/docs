@@ -27,7 +27,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | ``[`?people=off`](using-url-parameters.md#chat-less-than-on-or-off-greater-than)``                           | Hide the people button.                                                            |
 | ``[`?leaveButton=<on\|off>`](using-url-parameters.md#leavebutton-off)``                                      | Show/hide the leave button.                                                        |
 | ``[`?displayName=<name>`](using-url-parameters.md#displayname-less-than-name-greater-than)``                 | Set display name of participant.                                                   |
-| [`?avatarUrl=<url>`](using-url-parameters.md#avatarurl-less-than-url-greater-than)                           | Set the profile avatar of participant.                                             |
+| [ `?avatarUrl=<url>`](using-url-parameters.md#avatarurl-less-than-url-greater-than)                          | Set the profile avatar of participant.                                             |
 | ``[`?background=off`](using-url-parameters.md#background-off)``                                              | Hide the room background.                                                          |
 | ``[`?logo=off`](using-url-parameters.md#logo-off)``                                                          | Hide the logo in the room header.                                                  |
 | ``[`?locking=off`](using-url-parameters.md#locking-off)``                                                    | Hide the room lock button.                                                         |
@@ -35,8 +35,8 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | ``[`?settingsButton=off`](using-url-parameters.md#settingsbutton-off)``                                      | Hide the settings button.                                                          |
 | ``[`?pipButton=off`](using-url-parameters.md#pipbutton-off)``                                                | Hide the Picture in Picture button.                                                |
 | ``[`?moreButton=off`](using-url-parameters.md#morebutton-off)``                                              | Hide the more button.                                                              |
-| ``[`?topToolbar=<on\|off>`](using-url-parameters.md#toptoolbar-less-than-on-or-off-greater-than)``           | Show/hide the entire top tool bar.                                                 |
-| ``[`?bottomToolbar=<on\|off>`](using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than)``     | Show/hide the entire bottom tool bar.                                              |
+| ``[`?topToolbar=<on\|off>`](using-url-parameters.md#toptoolbar-less-than-on-or-off-greater-than)``           | Show/hide the entire top toolbar.                                                  |
+| ``[`?bottomToolbar=<on\|off>`](using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than)``     | Show/hide the entire bottom toolbar.                                               |
 | ``[`?lang=<code>`](using-url-parameters.md#lang-less-than-code-greater-than)``                               | Set the room UI language.                                                          |
 | ``[`?floatSelf`](using-url-parameters.md#floatself)``                                                        | Float the self view to the bottom right.                                           |
 | ``[`?breakout=<on\|off>`](using-url-parameters.md#breakout-less-than-on-or-off-greater-than)``               | Show/hide the breakout room feature for the meeting host.                          |

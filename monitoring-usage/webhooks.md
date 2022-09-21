@@ -63,6 +63,7 @@ The property `roleName` will have one of the following values:
 * `granted_visitor`: Same as a `visitor` but can join without knocking if the room is locked.
 * `member`: A user with an account in your Embedded organization.
 * `owner`: A user with an admin account in your Embedded organization.
+* `recorder`: A cloud recording instance has started or stopped.
 
 An example of a webhook event object:
 

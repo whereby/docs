@@ -14,7 +14,9 @@ This feature requires the use of Amazon S3 storage. You can review their plans a
 
 ## Setup in Whereby
 
-You can access recording settings and options from the “Configure” → “Recording” section of your organization's dashboard. Select "Cloud Recording" and input your S3 information.
+You can access recording settings and options from the “Configure” → “Recording” section of your organization's dashboard. You can also specify recording preferences via the API during a [room creation](https://whereby.dev/http-api/#/paths/\~1meetings/post) request.
+
+Select "Cloud Recording" and input your S3 information.
 
 ![](<../../.gitbook/assets/recording dashboard.png>)
 
@@ -33,11 +35,16 @@ Then select the format that you'd like the recordings to be saved as. We current
 
 ![](<../../.gitbook/assets/Recording format 2.png>)
 
-{% hint style="warning" %}
+{% hint style="info" %}
 File names will be automatically set to <mark style="color:red;">`[room name]-[start time in ISO format].mkv`</mark> and is the time when the recording started.
 {% endhint %}
 
-You can also specify recording preferences via the API during the [room creation](https://whereby.dev/http-api/#/paths/\~1meetings/post) request.
+### Managing Recording activity
+
+You can use our [webhook events](../../monitoring-usage/webhooks.md#data-properties) to track when a recording has started and stopped. The roleName will be set to recorder, and will use the `room.client.joined` and `room.client.left` events accordingly.
+
+In addition to tracking recordings, we offer methods to start and stop recordings at your leisure via our SDK and Embed Element. More information on that here: \
+[Sending Commands](../../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md#sending-commands)
 
 ## Setup and information in S3
 

@@ -39,7 +39,7 @@ Then select the format that you'd like the recordings to be saved as. We current
 File names will be automatically set to <mark style="color:red;">`[room name]-[start time in ISO format].mkv`</mark> and is the time when the recording started.
 {% endhint %}
 
-### Managing Recording activity
+### Managing recording activity
 
 You can use our [webhook events](../../monitoring-usage/webhooks.md#data-properties) to track when a recording has started and stopped. The roleName will be set to recorder, and will use the `room.client.joined` and `room.client.left` events accordingly.
 

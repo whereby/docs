@@ -22,3 +22,11 @@ The Room Theme API lets you set up and manage branding settings for individual r
 [Visit the API reference docs](https://whereby.dev/http-api/) for a closer look at how to use the Room Theme API.&#x20;
 
 Note that branding elements configured via the API will override any "global" branding you may have applied via the Embedded Dashboard.
+
+## Additional Branding Options
+
+There are some supplementary branding options available via our [URL parameters](using-url-parameters.md) that may be useful in customizing your meetings look and feel:
+
+* [?background=off](using-url-parameters.md#background-off) - This parameter allows you to hide the meeting background, allowing for your app or websites branding to shine through
+* [?avatarUrl=\<url>](using-url-parameters.md#avatarurl-less-than-url-greater-than) - Set the avatar / profile picture of the participant instead of the automatically assigned name initials.&#x20;
+* [?virtualBackgroundUrl=\<url>](using-url-parameters.md#virtualbackgroundurl-less-than-url-greater-than) - Specify an image url to use as the virtual background for the participant.&#x20;

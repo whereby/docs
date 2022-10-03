@@ -50,7 +50,7 @@ Unfortunately, because these are government-level restrictions that have been pu
 
 <summary>Can I customize the page users see when they leave a room?</summary>
 
-Yes! When using our [Embed Element](embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md) or [Embed SDK](whereby-embedded-sdk-beta.md#browser-sdk), you'll have access to "leave" browser event. You can then action on that event to redirect your users to another page of your choosing.
+Yes! When using our [Embed Element](../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md) or [Embed SDK](../whereby-embedded-sdk-beta.md#browser-sdk), you'll have access to "leave" browser event. You can then action on that event to redirect your users to another page of your choosing.
 
 </details>
 
@@ -58,7 +58,7 @@ Yes! When using our [Embed Element](embedding-rooms/in-a-web-page/using-the-wher
 
 <summary>URL parameters aren't working as expected</summary>
 
-1. The most common error we see relating to [URL parameters](customizing-rooms/#using-url-parameters) is incorrectly using "?" twice in the meeting room URL. Combining parameters can be achieved by using the ampersand symbol (&) for example:\
+1. The most common error we see relating to [URL parameters](../customizing-rooms/#using-url-parameters) is incorrectly using "?" twice in the meeting room URL. Combining parameters can be achieved by using the ampersand symbol (&) for example:\
    `?minimal`**`&`**`screenshare=off`.
 2. If the person using/testing the room is also logged into their Embedded account, it will override any parameters added to the room URL. Try accessing the room via a private or incognito window to verify your links are working as expected.
 
@@ -68,7 +68,7 @@ Yes! When using our [Embed Element](embedding-rooms/in-a-web-page/using-the-wher
 
 <summary>Can I create longstanding meetings?</summary>
 
-Yes! You can create meetings with [endDates](creating-and-deleting-rooms/) far in the future (_eg. A month or multiple months_). Please keep in mind that if you are providing any of your users with [hostUrls](user-roles-and-privileges.md#hosts), you won't be able to revoke host access from those users.
+Yes! You can create meetings with [endDates](../creating-and-deleting-rooms/) far in the future (_eg. A month or multiple months_). Please keep in mind that if you are providing any of your users with [hostUrls](../user-roles-and-privileges.md#hosts), you won't be able to revoke host access from those users.
 
 </details>
 
@@ -77,7 +77,7 @@ Yes! You can create meetings with [endDates](creating-and-deleting-rooms/) far i
 <summary>My hosts/viewers don't have the correct meeting privileges</summary>
 
 1. Host or Viewer privileges will only be available while the room is active and until 1 hour after the meeting's `endDate`
-2. Check your [hostRoomUrl](user-roles-and-privileges.md) or viewerUrl to make sure you've properly separated the `roomkey` and other parameters with "&"
+2. Check your [hostRoomUrl](../user-roles-and-privileges.md) or viewerUrl to make sure you've properly separated the `roomkey` and other parameters with "&"
 
 </details>
 
@@ -85,7 +85,7 @@ Yes! You can create meetings with [endDates](creating-and-deleting-rooms/) far i
 
 <summary>How do I enable integrations in my meetings?</summary>
 
-Integrations are disabled for Whereby Embedded by default while using the [`?minimal`](customizing-rooms/using-url-parameters.md#minimal) parameter. We set this by default because [Content Security Policy](https://en.wikipedia.org/wiki/Content\_Security\_Policy) restrictions can sometimes cause integrations to fail in unexpected ways. Currently only our YouTube and Miro integrations will work in an embedded setting.
+Integrations are disabled for Whereby Embedded by default while using the [`?minimal`](../customizing-rooms/using-url-parameters.md#minimal) parameter. We set this by default because [Content Security Policy](https://en.wikipedia.org/wiki/Content\_Security\_Policy) restrictions can sometimes cause integrations to fail in unexpected ways. Currently only our YouTube and Miro integrations will work in an embedded setting.
 
 If you would like to test an integration in your embedded meeting, you can do so by adding the `?roomIntegrations=on` parameter.
 

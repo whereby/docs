@@ -43,6 +43,8 @@ File names will be automatically set to <mark style="color:red;">`[room name]-[s
 
 You can use our [webhook events](../../monitoring-usage/webhooks.md#data-properties) to track when a recording has started and stopped. The roleName will be set to recorder, and will use the `room.client.joined` and `room.client.left` events accordingly.
 
+<figure><img src="../../.gitbook/assets/recorder webhook.png" alt=""><figcaption></figcaption></figure>
+
 In addition to tracking recordings, we offer methods to start and stop recordings at your leisure via our SDK and Embed Element. More information on that here: \
 [Sending Commands](../../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md#sending-commands)
 

@@ -9,7 +9,7 @@ description: >-
 
 ### Using the “Create a room” UI flow
 
-Easily create Whereby rooms using a straightforward 4-step UI flow without the need to generate an API key.
+Easily create Whereby rooms using a straightforward 4-step UI flow without the need to generate an API key. This can be done directly from your dashboard once you're logged into your account.
 
 [Read more](using-create-a-room.md)
 

@@ -14,8 +14,9 @@ description: >-
 Users joining via the hostRoomURL become meeting hosts and have the following features available:
 
 * Lock and unlock the room.
-* Remove, mute, and spotlight meeting participants.
 * Enter locked rooms without knocking.
+* Respond and allow access to participants that are knocking.
+* Remove, mute, and spotlight meeting participants.
 * Start and stop [recordings](customizing-rooms/recording-with-embedded/), if available.
 
 {% hint style="info" %}

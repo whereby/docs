@@ -21,12 +21,12 @@ The wizard consists of 4 self-explanatory steps:
 
 And that's all there is to it!&#x20;
 
-The Room Overview page that follows gives you a view at a glance of what you have configured, features handy host and participant links, and generates a code snippet you can include in your website.&#x20;
+The Room Overview page that follows gives you a view at a glance of what you have configured, features handy [host and participant links](https://docs.whereby.com/user-roles-and-privileges), and generates a code snippet you can include in your website.&#x20;
 
 If you want to review these room details again at a later point in time, you can find an overview of all rooms you've created (incl. demo rooms and rooms generated through the API) in the new “Rooms” section that's linked from the sidebar.&#x20;
 
 {% hint style="info" %}
-While the “Create a room” flow is perfect for getting started, and is probably sufficient if you only need to create a handful of meeting rooms, we recommend looking into the REST API documentation to generate rooms on-the-fly, and unlock the full power of Whereby Embedded.
+While the “Create a room” flow is perfect for getting started, and is probably sufficient if you only need to create a handful of meeting rooms, we recommend looking into the [REST API documentation](https://whereby.dev/http-api/) to generate rooms on-the-fly, and unlock the full power of Whereby Embedded.
 {% endhint %}
 
 ### Deleting rooms

@@ -31,7 +31,7 @@ After setting up the appropriate information, select how you would like to trigg
 * **Manual**\
   ****Host will manually start by clicking "Record" in the toolbar
 
-Then select the format that you'd like the recordings to be saved as. We currently offer <mark style="color:blue;">`.mkv`</mark> and <mark style="color:blue;">`.mp4`</mark>.&#x20;
+Then select the format that you'd like the recordings to be saved as, we currently offer <mark style="color:blue;">`.mkv`</mark> and <mark style="color:blue;">`.mp4`</mark>. Recording quality is set to 720p, however individual video feeds may appear in lower quality depending on their network connection, device, and preferences.
 
 ![](<../../.gitbook/assets/Recording format 2.png>)
 

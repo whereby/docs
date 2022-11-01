@@ -51,8 +51,11 @@ You can also use the `hostRoomUrl` instead of the `roomUrl`, if you want to give
 | `screenshare`    | Nothing (on) or `"off"` | Enable/disable screenshare                                    |
 | `subgridLabels`  | Nothing (off) or `"on"` | Enable/disable name labels in the subgrid                     |
 | `floatSelf`      | Nothing (on) or `"off"` | Float the self view to the bottom right                       |
+| `lowData`        | Nothing (on) or `"off"` | Use a lower resolution by default                             |
 
-The full list of supported attributes can be found in the [URL parameters](../../customizing-rooms/using-url-parameters.md) section.
+There are additional customizations and options that can be found in the [URL parameters](../../customizing-rooms/using-url-parameters.md) section. These options must be added as parameters on the `room` source URL, and are not currently supported as attributes directly on the element.
+
+
 
 #### Usage examples
 

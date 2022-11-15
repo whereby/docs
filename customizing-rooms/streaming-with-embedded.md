@@ -6,6 +6,8 @@ description: >-
 
 # Streaming with Embedded
 
+{% embed url="https://www.youtube.com/watch?v=wAEwDL6JMMg" %}
+
 ## Create a streaming meeting with the API
 
 Create a meeting with streaming set up for others to use, such as a teacher or an event organizer. The stream is fixed and can not be changed inside the room afterward.

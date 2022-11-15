@@ -60,7 +60,7 @@ The property `roleName` will have one of the following values:
 
 * `host`: A user joined using the `hostRoomUrl`.
 * `visitor`: A user joined using the regular `roomUrl`.
-* `granted_visitor`: The `roleName` that is assigned to a Participant after they have Knocked and been let in by a Host.
+* `granted_visitor`: The `roleName` that is assigned to a Participant after they have knocked and been let in by a Host.
 * `member`: A user with an account in your Embedded organization.
 * `owner`: A user with an admin account in your Embedded organization.
 * `recorder`: A cloud recording instance has started or stopped.

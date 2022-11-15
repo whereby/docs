@@ -38,3 +38,9 @@ It can be helpful to have an understanding of how much usage your rooms are expe
 Whereby Embedded allows your participants to join a video meeting without creating accounts or logins. If you want some users to have elevated privileges in the meeting, you can use hostRoomURLs.
 
 [Read more](user-roles-and-privileges.md)
+
+### Joining our Developer Community
+
+We have recently launched a Developer Community on Discord where you'll have a chance to interact with some other users that are utilizing Whereby in their solution. If you'd like to discuss some new features or talk to people about Whereby you're more than welcome to join.
+
+[Read more](https://whereby.helpscoutdocs.com/article/737-joining-wherebys-dev-community)

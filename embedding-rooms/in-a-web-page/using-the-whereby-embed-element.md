@@ -101,17 +101,18 @@ Disable the floating self view:
 
 You can listen for events on the `<whereby-embed>` element. The following events are supported:
 
-| Event type          | Description                                                     | Properties (from "detail")            |
-| ------------------- | --------------------------------------------------------------- | ------------------------------------- |
-| `ready`             | Basic dependencies have loaded and the room is ready to be used | –                                     |
-| `knock`             | The local user knocks to get into the room                      | –                                     |
-| `participantupdate` | A new participant join/leave                                    | { count: Number }                     |
-| `join`              | The local user joins                                            | –                                     |
-| `leave`             | The local user leaves                                           | { removed: Boolean }                  |
-| `participant_join`  | A new participant joins the room                                | { participant: { metadata: String } } |
-| `participant_leave` | A participant leaves the room                                   | { participant: { metadata: String } } |
-| `microphone_toggle` | The local user toggles the microphone                           | { enabled: Boolean }                  |
-| `camera_toggle`     | The local user toggles the camera                               | { enabled: Boolean }                  |
+| Event type               | Description                                                                      | Properties (from "detail")            |
+| ------------------------ | -------------------------------------------------------------------------------- | ------------------------------------- |
+| `ready`                  | Basic dependencies have loaded and the room is ready to be used                  | –                                     |
+| `knock`                  | The local user knocks to get into the room                                       | –                                     |
+| `participantupdate`      | A new participant join/leave                                                     | { count: Number }                     |
+| `join`                   | The local user joins                                                             | –                                     |
+| `leave`                  | The local user leaves                                                            | { removed: Boolean }                  |
+| `participant_join`       | A new participant joins the room                                                 | { participant: { metadata: String } } |
+| `participant_leave`      | A participant leaves the room                                                    | { participant: { metadata: String } } |
+| `microphone_toggle`      | The local user toggles the microphone                                            | { enabled: Boolean }                  |
+| `camera_toggle`          | The local user toggles the camera                                                | { enabled: Boolean }                  |
+| `deny_device_permission` | The local user denies permission to camera and microphone in the pre-call screen | { denied: Boolean }                   |
 
 
 
@@ -135,6 +136,7 @@ You can use standard JavaScript to listen to the events. Here's a small demo:
   elm.addEventListener("participant_leave", logEvent)
   elm.addEventListener("microphone_toggle", logEvent)
   elm.addEventListener("camera_toggle", logEvent)
+  elm.addEventListener("deny_device_permission", logEvent)
 ```
 {% endtab %}
 {% endtabs %}
@@ -147,6 +149,7 @@ got event {"type":"join","detail":null}
 got event {"type":"leave","detail":{"removed":false}}
 got event {"type":"participant_join","detail":{"metadata":"userId"}}
 got event {"type":"participant_leave","detail":{"metadata":"userId"}}
+got event {"type":"deny_device_permission","detail":{"denied":false}}
 ```
 
 ### Sending commands

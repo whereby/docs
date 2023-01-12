@@ -113,6 +113,7 @@ You can listen for events on the `<whereby-embed>` element. The following events
 | `microphone_toggle`      | The local user toggles the microphone                                            | { enabled: Boolean }                  |
 | `camera_toggle`          | The local user toggles the camera                                                | { enabled: Boolean }                  |
 | `deny_device_permission` | The local user denies permission to camera and microphone in the pre-call screen | { denied: Boolean }                   |
+| `screenshare_toggle`     | The local user toggles the screenshare                                           | { enabled: Boolean }                  |
 
 
 
@@ -137,6 +138,7 @@ You can use standard JavaScript to listen to the events. Here's a small demo:
   elm.addEventListener("microphone_toggle", logEvent)
   elm.addEventListener("camera_toggle", logEvent)
   elm.addEventListener("deny_device_permission", logEvent)
+  elm.addEventListener("screenshare_toggle", logEvent)
 ```
 {% endtab %}
 {% endtabs %}
@@ -160,12 +162,13 @@ The `<whereby-embed>` element exposes a set of methods your application can invo
 For this feature to work, you must add the origin of your application to the "[Allowed domains](../allowed-domains.md)" section in your Whereby account. If not present, the following methods will not do anything.
 {% endhint %}
 
-| Method                              | Description                                                                                                 |
-| ----------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `startRecording()`                  | Start cloud recording on behalf of the local user, who needs to be a host in the room.                      |
-| `stopRecording()`                   | Stop cloud recording on behalf of the local user, who needs to be a host in the room.                       |
-| `toggleCamera([true \| false])`     | Toggle the local user's camera on or off. Without any arguments, it toggles depending on current state.     |
-| `toggleMicrophone([true \| false])` | Toggle the local user's microphone on or off. Without any arguments, it toggles depending on current state. |
+| Method                               | Description                                                                                                  |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `startRecording()`                   | Start cloud recording on behalf of the local user, who needs to be a host in the room.                       |
+| `stopRecording()`                    | Stop cloud recording on behalf of the local user, who needs to be a host in the room.                        |
+| `toggleCamera([true \| false])`      | Toggle the local user's camera on or off. Without any arguments, it toggles depending on current state.      |
+| `toggleMicrophone([true \| false])`  | Toggle the local user's microphone on or off. Without any arguments, it toggles depending on current state.  |
+| `toggleScreenshare([true \| false])` | Toggle the local user's screenshare on or off. Without any arguments, it toggles depending on current state. |
 
 Here is a small example showing uses of these methods:
 
@@ -177,12 +180,13 @@ room.startRecording(); // Start cloud recording
 room.stopRecording(); // Stop cloud recording
 room.toggleCamera(); // Camera will be turned on if off, and off if on
 room.toggleMicrophone(); // Microphone will be turned on if off, and off if on
+room.toggleScreenshare(); // Screenshare will be turned on if off, and off if on
 room.toggleCamera(true); // Turn camera on
 room.toggleMicrophone(true); // Turn microphone on
+room.toggleScreenshare(true); // Turn screenshare on
 room.toggleCamera(false); // Turn camera off
 room.toggleMicrophone(false); // Turn microphone off
-
-
+room.toggleScreenshare(false); // Turn screenshare off
 ```
 {% endtab %}
 {% endtabs %}

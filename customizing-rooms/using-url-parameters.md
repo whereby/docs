@@ -22,7 +22,8 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | ``[`?minimal`](using-url-parameters.md#minimal)``                                                                      | Applies a minimal UI. Turns off all controls except for cam and mic.                        |
 | ``[`?video=off`](using-url-parameters.md#video-off)``                                                                  | Participant joins the room with camera turned off.                                          |
 | ``[`?audio=off`](using-url-parameters.md#audio-off)``                                                                  | Participant joins the room with microphone turned off.                                      |
-| ``[`?screenshare=<on\|off>`](using-url-parameters.md#screenshare-less-than-on-or-off-greater-than)``                   | Show/hide the screenshare button.                                                           |
+| ``[`?cameraAccess=<on\|off>`](using-url-parameters.md#cameraaccess-less-than-on-or-off-greater-than)                   | Camera permissions are not requested or used at all. On by default.                         |
+| ``[`?screenshare=<on\|off>`](using-url-parameters.md#screenshare-less-than-on-or-off-greater-than)``                   | Show/hide the screenshare[^1] button.                                                       |
 | ``[`?chat=<on\|off>`](using-url-parameters.md#chat-less-than-on-or-off-greater-than)``                                 | Show/hide the chat button.                                                                  |
 | ``[`?people=off`](using-url-parameters.md#chat-less-than-on-or-off-greater-than)``                                     | Hide the people button.                                                                     |
 | ``[`?leaveButton=<on\|off>`](using-url-parameters.md#leavebutton-off)``                                                | Show/hide the leave button.                                                                 |
@@ -76,6 +77,12 @@ Participants join the meeting with their camera off, they can turn it on wheneve
 Participants join the meeting with their microphone off, they can turn it on whenever they want.
 
 **Use case:** A presentation is being given in a big meeting where attendees are not expected to participate verbally.
+
+#### `?cameraAccess=<on|off>`
+
+Whereby will not request access to participants' cameras when this is set to off, and there are no video controls.
+
+**Use case:** A voice-only meeting where attendees are not expected to show themselves on camera.
 
 #### `?screenshare=<on|off>`
 
@@ -246,3 +253,5 @@ Specify a image url to use as the virtual background for the participant. The im
 Specify custom help link on the pre-call review step pointing users to additional support pages. This parameter should only be applied when pre-call review is enabled.
 
 **Use case:** Apply this parameter to point users with camera or mic permission problems to bespoke help pages published on your own domain and brand, rather than to Whereby's help docs.&#x20;
+
+[^1]: 

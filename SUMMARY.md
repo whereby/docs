@@ -33,7 +33,7 @@
   * [Name prefixes](monitoring-usage/name-prefixes.md)
 * [User roles and privileges](user-roles-and-privileges.md)
 * [HIPAA compliant setup](hipaa-compliant-setup.md)
-* [Whereby Embedded SDKs beta](whereby-embedded-sdk-beta.md)
+* [Whereby Embedded SDKs](whereby-embedded-sdk-beta.md)
 * [FAQ & Troubleshooting](faq-and-troubleshooting/README.md)
   * [End User documentation](faq-and-troubleshooting/end-user-documentation.md)
 * [Examples](examples.md)

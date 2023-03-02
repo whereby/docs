@@ -1,13 +1,13 @@
 ---
 description: >-
   The Whereby Embedded SDKs allow you to easily add video conferencing
-  capabilities to your application. We currently offer beta versions of these
-  SDKs for web, Android, and iOS.
+  capabilities to your application. We currently offer versions of these SDKs
+  for web, Android, and iOS.
 ---
 
-# Whereby Embedded SDKs beta
+# Whereby Embedded SDKs
 
-![Whereby Embedded SDKs beta](.gitbook/assets/whereby-embedded-sdks.png)
+![Whereby Embedded SDKs](<.gitbook/assets/whereby-embedded-sdks updated.png>)
 
 ### Browser SDK
 
@@ -29,4 +29,4 @@ To get started, check out the [SDK documentation on GitHub](https://github.com/w
 
 ### Feedback
 
-We're keen to hear what you think about the Whereby Embedded SDK beta! Give us feedback and help us understand your SDK needs by [filling out this quick form](https://form.typeform.com/to/E3YWItP6). You can also email [embedded@whereby.com](mailto:embedded@whereby.com) or ping [@whereby](https://twitter.com/whereby) on Twitter.
+We're keen to hear what you think about the Whereby Embedded SDK! Give us feedback and help us understand your SDK needs by [filling out this quick form](https://form.typeform.com/to/E3YWItP6). You can also email [embedded@whereby.com](mailto:embedded@whereby.com) or ping [@whereby](https://twitter.com/whereby) on Twitter.

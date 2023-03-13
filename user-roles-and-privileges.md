@@ -77,7 +77,7 @@ A `roomUrl` will be included with any POST [meeting creation](https://whereby.de
 
 ### Viewers
 
-In Viewer Mode, participants joining as Viewers have their camera and microphone access disabled. Viewers can gain access to locked rooms without locking and can only interact with Hosts and Speakers by using the Chat, if you've enabled that in the room.
+In Viewer Mode, participants joining as Viewers have their camera and microphone access disabled. Viewers can gain access to locked rooms without knocking and can only interact with Hosts and Participants by using the Chat, if you've enabled that in the room.
 
 This is a <mark style="color:orange;">**beta**</mark> feature and might change in the future.
 

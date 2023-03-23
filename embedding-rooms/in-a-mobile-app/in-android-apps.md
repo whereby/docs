@@ -6,6 +6,11 @@ description: >-
 
 # In Android apps
 
+{% hint style="info" %}
+We offer native SDKs that allow you to tap into powerful features such as listening to room events and use custom buttons to send commands to the room from your application.\
+[Read more](../../whereby-embedded-sdk-beta.md#android-sdk)
+{% endhint %}
+
 In order to embed a room in Android, add these permissions to the manifest:
 
 {% tabs %}

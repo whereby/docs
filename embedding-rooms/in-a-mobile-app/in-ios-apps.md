@@ -6,6 +6,11 @@ description: >-
 
 # In iOS apps
 
+{% hint style="info" %}
+We offer native SDKs that allow you to tap into powerful features such as listening to room events and use custom buttons to send commands to the room from your application.\
+[Read more](../../whereby-embedded-sdk-beta.md#ios-sdk)
+{% endhint %}
+
 ## iOS 14.5 and onwards
 
 [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) supports embedding pages that use WebRTC from iOS 14.5 onwards. To access the microphone and camera, it is necessary to add both [NSMicrophoneUsageDescription](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple\_ref/doc/uid/TP40009251-SW25) and [NSCameraUsageDescription](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple\_ref/doc/plist/info/NSCameraUsageDescription) keys to the app’s Info.plist file.

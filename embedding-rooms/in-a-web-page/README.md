@@ -6,6 +6,11 @@ description: >-
 
 # In a web page
 
+{% hint style="info" %}
+We offer more ways to quickly integrate customized video calls into your mobile and web apps with Native SDKs. With these SDKs, you can tap into powerful features such as listening to room events and use custom buttons to send commands to the room from your application.\
+[Read more](../../whereby-embedded-sdk-beta.md)
+{% endhint %}
+
 ### Using an iframe
 
 If you want to embed video rooms in a website using HTML or a framework that supports HTML elements like React.js, a great option for doing this is by using a simple iframe.

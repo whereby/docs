@@ -8,7 +8,15 @@ description: >-
 
 The feature preferences can be found under "**Configure**” **→** “**Features**”. Any adjustments made here will be applied to all your rooms, unless overridden by specific [URL parameters](using-url-parameters.md) added to the meeting URL.
 
-![](../.gitbook/assets/DashboardV2.jpg)
+![](../.gitbook/assets/dashboard-features-updatedmar29.png)
+
+### Pre-call review
+
+We provide options for your users to verify their device permissions and even test their internet connection in preparation for a call. By enabling pre-call review, you can specify if you'd like a simpler, single page standard review.&#x20;
+
+Or, a dedicated test for each device including camera, microphone, and speakers, as well as a connectivity test. This can also be enabled for specific rooms with the [?precallCeremony parameter](using-url-parameters.md#precallceremony-less-than-on-or-off-greater-than).
+
+<figure><img src="../.gitbook/assets/precall-test.png" alt=""><figcaption></figcaption></figure>
 
 ### Help me fix this
 

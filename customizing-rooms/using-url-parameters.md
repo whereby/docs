@@ -52,6 +52,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | ``[`?roomIntegrations=on`](using-url-parameters.md#roomintegrations)``                                                 | Enables YouTube and Miro integrations in the meeting                                        |
 | ``[`?virtualBackgroundUrl=<url>`](using-url-parameters.md#virtualbackgroundurl-less-than-url-greater-than)``           | Specify custom virtual background which should be applied to the local participant          |
 | ``[`?precallPermissionHelpLink=<url>`](using-url-parameters.md#precallpermissionhelplink-less-than-url-greater-than)`` | Specify custom help link in pre-call review step pointing users to additional support pages |
+| ``[`?precallCeremony=<on\|off>`](using-url-parameters.md#precallceremony-less-than-on-or-off-greater-than)``           | Determines if users see the pre-call device and connectivity test.                          |
 
 ## Property details
 
@@ -205,6 +206,12 @@ Show/hide the meeting timer within the room.
 Determines if users see the pre-call review step.
 
 **Use case:** The pre-call review step will allow users to check their video/audio settings before joining the room, but this can be skipped by setting this parameter to “off”.
+
+#### `?precallCeremony=<on|off>`
+
+Determines if users see the pre-call device and connectivity test.
+
+**Use case:** The pre-call test will provide users a test of each device; camera, microphone, and speakers, before joining the room. It will also run a connectivity test to assess the reliability of the participants network. This can be skipped by setting this parameter to “off”.
 
 #### **`?skipMediaPermissionPrompt`**
 

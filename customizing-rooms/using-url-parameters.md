@@ -17,42 +17,42 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 
 ## URL parameters
 
-| URL Parameter                                                                                                          | Description                                                                                 |
-| ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| ``[`?minimal`](using-url-parameters.md#minimal)``                                                                      | Applies a minimal UI. Turns off all controls except for cam and mic.                        |
-| ``[`?video=off`](using-url-parameters.md#video-off)``                                                                  | Participant joins the room with camera turned off.                                          |
-| ``[`?audio=off`](using-url-parameters.md#audio-off)``                                                                  | Participant joins the room with microphone turned off.                                      |
-| ``[`?cameraAccess=<on\|off>`](using-url-parameters.md#cameraaccess-less-than-on-or-off-greater-than)                   | Camera permissions are not requested or used at all. On by default.                         |
-| ``[`?screenshare=<on\|off>`](using-url-parameters.md#screenshare-less-than-on-or-off-greater-than)``                   | Show/hide the screenshare[^1] button.                                                       |
-| ``[`?chat=<on\|off>`](using-url-parameters.md#chat-less-than-on-or-off-greater-than)``                                 | Show/hide the chat button.                                                                  |
-| ``[`?people=off`](using-url-parameters.md#chat-less-than-on-or-off-greater-than)``                                     | Hide the people button.                                                                     |
-| ``[`?leaveButton=<on\|off>`](using-url-parameters.md#leavebutton-off)``                                                | Show/hide the leave button.                                                                 |
-| ``[`?displayName=<name>`](using-url-parameters.md#displayname-less-than-name-greater-than)``                           | Set display name of participant.                                                            |
-| [ `?avatarUrl=<url>`](using-url-parameters.md#avatarurl-less-than-url-greater-than)                                    | Set the profile avatar of participant.                                                      |
-| ``[`?background=off`](using-url-parameters.md#background-off)``                                                        | Hide the room background.                                                                   |
-| ``[`?logo=off`](using-url-parameters.md#logo-off)``                                                                    | Hide the logo in the room header.                                                           |
-| ``[`?locking=off`](using-url-parameters.md#locking-off)``                                                              | Hide the room lock button.                                                                  |
-| ``[`?participantCount=off`](using-url-parameters.md#participantcount-off)``                                            | Hide the participant counter.                                                               |
-| ``[`?settingsButton=off`](using-url-parameters.md#settingsbutton-off)``                                                | Hide the settings button.                                                                   |
-| ``[`?pipButton=off`](using-url-parameters.md#pipbutton-off)``                                                          | Hide the Picture in Picture button.                                                         |
-| ``[`?moreButton=off`](using-url-parameters.md#morebutton-off)``                                                        | Hide the more button.                                                                       |
-| ``[`?topToolbar=<on\|off>`](using-url-parameters.md#toptoolbar-less-than-on-or-off-greater-than)``                     | Show/hide the entire top toolbar.                                                           |
-| ``[`?bottomToolbar=<on\|off>`](using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than)``               | Show/hide the entire bottom toolbar.                                                        |
-| ``[`?lang=<code>`](using-url-parameters.md#lang-less-than-code-greater-than)``                                         | Set the room UI language.                                                                   |
-| ``[`?floatSelf`](using-url-parameters.md#floatself)``                                                                  | Float the self view to the bottom right.                                                    |
-| ``[`?breakout=<on\|off>`](using-url-parameters.md#breakout-less-than-on-or-off-greater-than)``                         | Show/hide the breakout room feature for the meeting host.                                   |
-| ``[`?groups=Orange,Banana,Coconut`](using-url-parameters.md#groups-orange-banana-coconut)``                            | Predefine up to 20 groups for the breakout groups function.                                 |
-| ``[`?timer=<on\|off>`](using-url-parameters.md#timer-less-than-on-or-off-greater-than)``                               | Show/hide the meeting timer.                                                                |
-| ``[`?precallReview=<on\|off>`](using-url-parameters.md#precallreview-less-than-on-or-off-greater-than)``               | Determines if users see the pre-call review step.                                           |
-| ``[`?skipMediaPermissionPrompt`](using-url-parameters.md#skipmediapermissionprompt)``                                  | Skips the request permissions UI and asks for devices                                       |
-| ``[`?subgridLabels=<on\|off>`](using-url-parameters.md#subgridlabels-less-than-on-or-off-greater-than)``               | Enable name labels for participants in the subgrid                                          |
-| ``[`?metadata=<string>`](using-url-parameters.md#metadata-less-than-string-greater-than)``                             | Gets passed on to the corresponding webhooks.                                               |
-| ``[`?lowData=<on\|off>`](using-url-parameters.md#lowdata-less-than-on-or-off-greater-than)``                           | Use a lower resolution by default                                                           |
-| ``[`?autoSpotlight`](using-url-parameters.md#autospotlight)``                                                          | Automatically spotlight the local participant on room join                                  |
-| ``[`?roomIntegrations=on`](using-url-parameters.md#roomintegrations)``                                                 | Enables YouTube and Miro integrations in the meeting                                        |
-| ``[`?virtualBackgroundUrl=<url>`](using-url-parameters.md#virtualbackgroundurl-less-than-url-greater-than)``           | Specify custom virtual background which should be applied to the local participant          |
-| ``[`?precallPermissionHelpLink=<url>`](using-url-parameters.md#precallpermissionhelplink-less-than-url-greater-than)`` | Specify custom help link in pre-call review step pointing users to additional support pages |
-| ``[`?precallCeremony=<on\|off>`](using-url-parameters.md#precallceremony-less-than-on-or-off-greater-than)``           | Determines if users see the pre-call device and connectivity test.                          |
+| URL Parameter                                                                                                      | Description                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| [`?minimal`](using-url-parameters.md#minimal)                                                                      | Applies a minimal UI. Turns off all controls except for cam and mic.                        |
+| [`?video=off`](using-url-parameters.md#video-off)                                                                  | Participant joins the room with camera turned off.                                          |
+| [`?audio=off`](using-url-parameters.md#audio-off)                                                                  | Participant joins the room with microphone turned off.                                      |
+| [`?cameraAccess=<on\|off>`](using-url-parameters.md#cameraaccess-less-than-on-or-off-greater-than)                 | Camera permissions are not requested or used at all. On by default.                         |
+| [`?screenshare=<on\|off>`](using-url-parameters.md#screenshare-less-than-on-or-off-greater-than)                   | Show/hide the screenshare[^1] button.                                                       |
+| [`?chat=<on\|off>`](using-url-parameters.md#chat-less-than-on-or-off-greater-than)                                 | Show/hide the chat button.                                                                  |
+| [`?people=off`](using-url-parameters.md#chat-less-than-on-or-off-greater-than)                                     | Hide the people button.                                                                     |
+| [`?leaveButton=<on\|off>`](using-url-parameters.md#leavebutton-off)                                                | Show/hide the leave button.                                                                 |
+| [`?displayName=<name>`](using-url-parameters.md#displayname-less-than-name-greater-than)                           | Set display name of participant.                                                            |
+| [ `?avatarUrl=<url>`](using-url-parameters.md#avatarurl-less-than-url-greater-than)                                | Set the profile avatar of participant.                                                      |
+| [`?background=off`](using-url-parameters.md#background-off)                                                        | Hide the room background.                                                                   |
+| [`?logo=off`](using-url-parameters.md#logo-off)                                                                    | Hide the logo in the room header.                                                           |
+| [`?locking=off`](using-url-parameters.md#locking-off)                                                              | Hide the room lock button.                                                                  |
+| [`?participantCount=off`](using-url-parameters.md#participantcount-off)                                            | Hide the participant counter.                                                               |
+| [`?settingsButton=off`](using-url-parameters.md#settingsbutton-off)                                                | Hide the settings button.                                                                   |
+| [`?pipButton=off`](using-url-parameters.md#pipbutton-off)                                                          | Hide the Picture in Picture button.                                                         |
+| [`?moreButton=off`](using-url-parameters.md#morebutton-off)                                                        | Hide the more button.                                                                       |
+| [`?topToolbar=<on\|off>`](using-url-parameters.md#toptoolbar-less-than-on-or-off-greater-than)                     | Show/hide the entire top toolbar.                                                           |
+| [`?bottomToolbar=<on\|off>`](using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than)               | Show/hide the entire bottom toolbar.                                                        |
+| [`?lang=<code>`](using-url-parameters.md#lang-less-than-code-greater-than)                                         | Set the room UI language.                                                                   |
+| [`?floatSelf`](using-url-parameters.md#floatself)                                                                  | Float the self view to the bottom right.                                                    |
+| [`?breakout=<on\|off>`](using-url-parameters.md#breakout-less-than-on-or-off-greater-than)                         | Show/hide the breakout room feature for the meeting host.                                   |
+| [`?groups=Orange,Banana,Coconut`](using-url-parameters.md#groups-orange-banana-coconut)                            | Predefine up to 20 groups for the breakout groups function.                                 |
+| [`?timer=<on\|off>`](using-url-parameters.md#timer-less-than-on-or-off-greater-than)                               | Show/hide the meeting timer.                                                                |
+| [`?precallReview=<on\|off>`](using-url-parameters.md#precallreview-less-than-on-or-off-greater-than)               | Determines if users see the pre-call review step.                                           |
+| [`?skipMediaPermissionPrompt`](using-url-parameters.md#skipmediapermissionprompt)                                  | Skips the request permissions UI and asks for devices                                       |
+| [`?subgridLabels=<on\|off>`](using-url-parameters.md#subgridlabels-less-than-on-or-off-greater-than)               | Enable name labels for participants in the subgrid                                          |
+| [`?metadata=<string>`](using-url-parameters.md#metadata-less-than-string-greater-than)                             | Gets passed on to the corresponding webhooks.                                               |
+| [`?lowData=<on\|off>`](using-url-parameters.md#lowdata-less-than-on-or-off-greater-than)                           | Use a lower resolution by default                                                           |
+| [`?autoSpotlight`](using-url-parameters.md#autospotlight)                                                          | Automatically spotlight the local participant on room join                                  |
+| [`?roomIntegrations=on`](using-url-parameters.md#roomintegrations)                                                 | Enables YouTube and Miro integrations in the meeting                                        |
+| [`?virtualBackgroundUrl=<url>`](using-url-parameters.md#virtualbackgroundurl-less-than-url-greater-than)           | Specify custom virtual background which should be applied to the local participant          |
+| [`?precallPermissionHelpLink=<url>`](using-url-parameters.md#precallpermissionhelplink-less-than-url-greater-than) | Specify custom help link in pre-call review step pointing users to additional support pages |
+| [`?precallCeremony=<on\|off>`](using-url-parameters.md#precallceremony-less-than-on-or-off-greater-than)           | Determines if users see the pre-call device and connectivity test.                          |
 
 ## Property details
 
@@ -247,7 +247,7 @@ Automatically spotlight the local participant on room join.&#x20;
 
 #### `?roomIntegrations`
 
-Integrations are disabled for Whereby Embedded by default while using the [`?minimal`](using-url-parameters.md#minimal) parameter. We set this by default because [Content Security Policy](https://en.wikipedia.org/wiki/Content\_Security\_Policy) restrictions can sometimes cause integrations to fail in unexpected ways. Currently only our YouTube and Miro integrations will work in an embedded setting.
+Integrations are disabled for Whereby Embedded by default while using the [`?minimal`](using-url-parameters.md#minimal) parameter. We set this by default because [Content Security Policy](https://en.wikipedia.org/wiki/Content\_Security\_Policy) restrictions can sometimes cause integrations to fail in unexpected ways. Currently **only our YouTube and Miro** integrations will work in an embedded setting.
 
 It is recommended you do testing to verify these integrations behave as expected before releasing to your users.
 

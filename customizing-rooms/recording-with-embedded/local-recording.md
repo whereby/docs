@@ -14,7 +14,7 @@ Our Local Recording feature has not been built specifically for Embedded solutio
 
 With the Recording feature you'll need to ensure that several different conditions are met so your room hosts are able to see and use the feature.
 
-1. You're generating and the host is using a [`hostUrl`](../../user-roles-and-privileges.md)``
+1. You're generating and the host is using a [`hostUrl`](../../user-roles-and-privileges.md)
    * Only a room host will be able to Record in the room so you need to provide this type of link to the host.
    * When generating this be sure to note that a `hostUrl` is only valid between the meeting creation and [`endDate`](../../creating-and-deleting-rooms/) that you set during your request. These times are in UTC and not your local time zone, unless a timezone was specified in the request.
 2. Your host is using Chrome or Chromium based browser with the [Whereby Chrome Extension](https://chrome.google.com/webstore/detail/whereby/bbpjcfkgapecndkanjcojnldopjlnmjk) installed.

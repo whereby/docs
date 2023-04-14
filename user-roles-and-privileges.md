@@ -80,7 +80,7 @@ A `roomUrl` will be included with any POST [meeting creation](https://whereby.de
 
 In Viewer Mode, participants joining as Viewers have their camera and microphone access disabled. Viewers can gain access to locked rooms without knocking and can only interact with Hosts and Participants by using the Chat, if you've enabled that in the room.
 
-This is a <mark style="color:orange;">**beta**</mark> feature and might change in the future.
+This is a 1.0 feature and might change in the future.
 
 {% hint style="success" %}
 Meetings created in "[group](creating-and-deleting-rooms/#using-the-rest-api)" mode can support up to 200 hosts or participants. Viewer mode can support an additional 400 viewers for a total of 600 viewers, hosts, and participants.&#x20;

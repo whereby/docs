@@ -33,7 +33,7 @@ Once you have Breakout Groups implemented, it will be important that Hosts know 
 4. When you're ready, select "Start breakout session"
 {% endtab %}
 
-{% tab title="Assignments" %}
+{% tab title="Group Assignments" %}
 1. Before selecting start, drag and drop participants names to assign them to a group.
 2. Or, select "Assign all" to have Whereby do the work for you. You can press "Shuffle" to re-assign the groups until you're happy with the allocation.
 3.  Leave your participants in the unassigned section to allow them the freedom of choice.\

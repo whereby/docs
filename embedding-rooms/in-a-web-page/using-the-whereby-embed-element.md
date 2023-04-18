@@ -102,19 +102,20 @@ Disable the floating self view:
 
 You can listen for events on the `<whereby-embed>` element. The following events are supported:
 
-| Event type               | Description                                                                      | Properties (from "detail")            |
-| ------------------------ | -------------------------------------------------------------------------------- | ------------------------------------- |
-| `ready`                  | Basic dependencies have loaded and the room is ready to be used                  | –                                     |
-| `knock`                  | The local user knocks to get into the room                                       | –                                     |
-| `participantupdate`      | A new participant join/leave                                                     | { count: Number }                     |
-| `join`                   | The local user joins                                                             | –                                     |
-| `leave`                  | The local user leaves                                                            | { removed: Boolean }                  |
-| `participant_join`       | A new participant joins the room                                                 | { participant: { metadata: String } } |
-| `participant_leave`      | A participant leaves the room                                                    | { participant: { metadata: String } } |
-| `microphone_toggle`      | The local user toggles the microphone                                            | { enabled: Boolean }                  |
-| `camera_toggle`          | The local user toggles the camera                                                | { enabled: Boolean }                  |
-| `deny_device_permission` | The local user denies permission to camera and microphone in the pre-call screen | { denied: Boolean }                   |
-| `screenshare_toggle`     | The local user toggles the screenshare                                           | { enabled: Boolean }                  |
+| Event type                | Description                                                                                                | Properties (from "detail")            |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `ready`                   | Basic dependencies have loaded and the room is ready to be used                                            | –                                     |
+| `knock`                   | The local user knocks to get into the room                                                                 | –                                     |
+| `participantupdate`       | A new participant join/leave                                                                               | { count: Number }                     |
+| `join`                    | The local user joins                                                                                       | –                                     |
+| `leave`                   | The local user leaves                                                                                      | { removed: Boolean }                  |
+| `participant_join`        | A new participant joins the room                                                                           | { participant: { metadata: String } } |
+| `participant_leave`       | A participant leaves the room                                                                              | { participant: { metadata: String } } |
+| `microphone_toggle`       | The local user toggles the microphone                                                                      | { enabled: Boolean }                  |
+| `camera_toggle`           | The local user toggles the camera                                                                          | { enabled: Boolean }                  |
+| `deny_device_permission`  | The local user denies permission to camera and microphone in the pre-call screen                           | { denied: Boolean }                   |
+| `screenshare_toggle`      | The local user toggles the screenshare                                                                     | { enabled: Boolean }                  |
+| `streaming_status_change` | Streaming status changes. Possible values: "" \| requested \| starting \| streaming \| stopping \| stopped | { status: String }                    |
 
 
 
@@ -140,6 +141,7 @@ You can use standard JavaScript to listen to the events. Here's a small demo:
   elm.addEventListener("camera_toggle", logEvent)
   elm.addEventListener("deny_device_permission", logEvent)
   elm.addEventListener("screenshare_toggle", logEvent)
+  elm.addEventListener("streaming_status_change", logEvent)
 ```
 {% endtab %}
 {% endtabs %}
@@ -153,6 +155,7 @@ got event {"type":"leave","detail":{"removed":false}}
 got event {"type":"participant_join","detail":{"metadata":"userId"}}
 got event {"type":"participant_leave","detail":{"metadata":"userId"}}
 got event {"type":"deny_device_permission","detail":{"denied":false}}
+got event {"type":"streaming_status_change","detail":{"status":"starting"}}
 ```
 
 ### Sending commands
@@ -170,6 +173,8 @@ For this feature to work, you must add the origin of your application to the "[A
 | `toggleCamera([true \| false])`      | Toggle the local user's camera on or off. Without any arguments, it toggles depending on current state.      |
 | `toggleMicrophone([true \| false])`  | Toggle the local user's microphone on or off. Without any arguments, it toggles depending on current state.  |
 | `toggleScreenshare([true \| false])` | Toggle the local user's screenshare on or off. Without any arguments, it toggles depending on current state. |
+| `startStreaming()`                   | Start streaming on behalf of the local user, who needs to be a host in the room.                             |
+| `stopStreaming()`                    | Stop streaming on behalf of the local user, who needs to be a host in the room.                              |
 
 Here is a small example showing uses of these methods:
 
@@ -188,6 +193,8 @@ room.toggleScreenshare(true); // Turn screenshare on
 room.toggleCamera(false); // Turn camera off
 room.toggleMicrophone(false); // Turn microphone off
 room.toggleScreenshare(false); // Turn screenshare off
+room.startStreaming(); // Start streaming
+room.stopStreaming(); // Stop streaming
 ```
 {% endtab %}
 {% endtabs %}

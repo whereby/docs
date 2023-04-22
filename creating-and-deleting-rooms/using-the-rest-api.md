@@ -124,7 +124,7 @@ response = requests.post(
 print("Status code:", response.status_code)
 data = json.loads(response.text)
 print("Room URL:", data["roomUrl"])
-print("Host room URL:", data["hostRoomUrl"])p
+print("Host room URL:", data["hostRoomUrl"])
 ```
 {% endtab %}
 

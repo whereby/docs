@@ -8,13 +8,17 @@ description: >-
 
 {% embed url="https://youtu.be/iLRCdQNK7FY" %}
 
-{% hint style="info" %}
+{% hint style="warning" %}
 This feature requires the use of Amazon S3 storage. You can review their plans and pricing on the [AWS site](https://aws.amazon.com/s3/pricing/). Amazon also offers some [free tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank\&all-free-tier.sort-order=asc\&awsf.Free%20Tier%20Types=\*all\&awsf.Free%20Tier%20Categories=\*all) options to explore. Note that if you're creating an AWS account from scratch it can sometimes take up to 24 hours.
 {% endhint %}
 
 ## Setup in Whereby
 
 You can access recording settings and options from the “Configure” → “Recording” section of your organization's dashboard. You can also specify recording preferences via the API during a [room creation](https://whereby.dev/http-api/#/paths/\~1meetings/post) request.
+
+{% hint style="info" %}
+When configuring cloud recording options via the dashboard, it will apply these as default settings for all rooms created. However, you can override the defaults by specifying different preferences within the POST requests used to create meetings.
+{% endhint %}
 
 Select "Cloud Recording" and input your S3 information.
 
@@ -45,8 +49,7 @@ You can use our [webhook events](../../monitoring-usage/webhooks.md#data-propert
 
 <figure><img src="../../.gitbook/assets/recorder webhook.png" alt=""><figcaption></figcaption></figure>
 
-In addition to tracking recordings, we offer methods to start and stop recordings at your leisure via our SDK and Embed Element. More information on that here: \
-[Sending Commands](../../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md#sending-commands)
+In addition to tracking recordings, we offer [browser methods](https://docs.whereby.com/embedding-rooms/in-a-web-page/using-the-whereby-embed-element#sending-commands) to start and stop recordings at your leisure via our SDK's Embed Element.&#x20;
 
 ## Setup and information in S3
 

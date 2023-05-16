@@ -336,7 +336,7 @@
       },
       "get": {
         "summary": "Get meetings",
-        "description": "Returns the meetings.\n",
+        "description": "Returns a list of meetings.\n",
         "parameters": [
           {
             "in": "query",

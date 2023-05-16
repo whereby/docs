@@ -1,0 +1,1003 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Whereby REST API",
+    "version": "1.0.0",
+    "description": "These are the reference docs for the Whereby REST API.\n\nIf you haven't already read the [embedded developer resources](\nhttps://docs.whereby.com/), you will want to\nread that first for a high level overview over the\nWhereby APIs.\n\n# Rate limiting (throttling)\nWe rate limit our APIs, returning a `429` status code response when your request has been throttled.\nYou will have to wait and retry the request later.\n\nWe use a point system to limit the number of requests that you can make.  \nA read request consumes 1 point, a delete consumes 2 points and a write request consumes 3 points.  \nHere are some examples of how a 1000 point budget could be spent within **1 minute**:\n* 1000 GET requests (1000 x 1 = 1000 points)\n* 500 DELETE requests (500 x 2 = 1000 points)\n* 333 POST requests (333 x 3 = 999 points)\n* 200 DELETE + 100 POST + 300 GET requests (200 x 2 + 100 x 3 + 300 x 1 = 1000 points)\n\n*Grow* plans have 1000 points in total per minute, and *Build* plans have 100. The limits are global and are shared across all your API keys. Talk to us if you need higher limits.\n\nYou may read the `Retry-After` (seconds) or `X-RateLimit-Reset` (date) response headers in order to know when you can restart your requests.\nIn addition, the `X-RateLimit-Limit` header includes the total number of points for your organization, and the\n`X-RateLimit-Remaining` header displays the remaining available points.\n"
+  },
+  "servers": [
+    {
+      "url": "https://api.whereby.dev/v1",
+      "description": "Production server"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "The bearer token will be provided upon request and it is up to the client to keep it secret. Every API call needs to contain this token in order to authenticate and authorize the client.\n"
+      }
+    },
+    "responses": {
+      "UnauthorizedError": {
+        "description": "Access token is missing or invalid"
+      },
+      "ThrottleError": {
+        "description": "You are rate limited",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "description": "Error description"
+                },
+                "data": {
+                  "type": "object",
+                  "description": "Extra info about the rate limit",
+                  "properties": {
+                    "msLeft": {
+                      "type": "integer",
+                      "description": "Milliseconds left until rate limit is finished.\nWait this long until trying again.\n"
+                    }
+                  }
+                }
+              },
+              "example": {
+                "error": "Rate limit active for throttle key: organization:1",
+                "data": {
+                  "msLeft": 38689
+                }
+              }
+            }
+          }
+        }
+      },
+      "NotFoundError": {
+        "description": "The requested resource doesn't exist"
+      }
+    },
+    "security": [
+      {
+        "BearerAuth": []
+      }
+    ],
+    "parameters": {
+      "meetingId": {
+        "name": "meetingId",
+        "in": "path",
+        "description": "meeting ID.",
+        "required": true,
+        "example": "1"
+      },
+      "roomName": {
+        "name": "roomName",
+        "in": "path",
+        "description": "Room name.",
+        "required": true,
+        "example": "913c4449-c904-4313-b560-ae5bf0b04a39"
+      }
+    },
+    "schemas": {
+      "Fields": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "hostRoomUrl",
+            "viewerRoomUrl"
+          ]
+        },
+        "description": "Additional fields that should be populated.\n- `hostRoomUrl` - Include hostRoomUrl field in the meeting response.\n- `viewerRoomUrl` - Include viewerRoomUrl field in the meeting response.\n"
+      },
+      "Meeting": {
+        "type": "object",
+        "required": [
+          "meetingId",
+          "roomUrl",
+          "endDate"
+        ],
+        "properties": {
+          "meetingId": {
+            "type": "string",
+            "description": "The ID of the meeting."
+          },
+          "roomName": {
+            "type": "string",
+            "description": "The name of the room.",
+            "example": "/4b3bd908-cb88-11ec-9d64-0242ac120002"
+          },
+          "roomUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "The URL to room where the meeting will be hosted."
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the meeting starts. Always in UTC, regardless of the input timezone."
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the meeting ends. Always in UTC, regardless of the input timezone."
+          },
+          "hostRoomUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "The URL to the room where the meeting will be hosted which will also make the user the host of the\nmeeting. A host will get additional privileges like locking the room, and removing and muting participants, so you should\nbe careful with whom you share this URL. The user will only become a host if the meeting is on-going (some additional\nslack is added to allow a host joining the meeting ahead of time or if the meeting goes over time).\nThis field is optional and will only be returned if requested through the fields parameter.\n"
+          },
+          "viewerRoomUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "The URL to the room where the meeting will be hosted which will make the user a viewer of the meeting. A viewer will not be able\nto turn on the camera or microphone, but will be able to join the meeting. This field is optional and will only be returned if requested through the fields parameter.\n"
+          }
+        },
+        "example": {
+          "meetingId": "1",
+          "startDate": "2020-05-12T16:42:49Z",
+          "endDate": "2020-05-12T17:42:49Z",
+          "roomUrl": "https://subdomain.whereby.com/dda1beca-af37-11eb-ac88-372b6869f077"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/meetings": {
+      "post": {
+        "summary": "Create meeting",
+        "description": "Creates a transient room that is available between creation and an hour after the given end date. After this time the room will be automatically deleted.\nThe URL to this room is present in the response.\n",
+        "requestBody": {
+          "description": "Meeting to add.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "endDate"
+                ],
+                "properties": {
+                  "templateType": {
+                    "type": "string",
+                    "enum": [
+                      "viewerMode"
+                    ],
+                    "description": "[BETA]: This is a beta feature, and might change in the future. If provided, the room will be created with the given template type.\nEach template defines a set of properties needed for a particular use-case. Currently the only supported template type is \"viewerMode\". This will set up a room with properties that are\nneeded to create a viewer mode room. The room will be locked, roomMode set to \"group\"\nand fields like hostRoomUrl and viewerRoomUrl will be added to the response.\n"
+                  },
+                  "isLocked": {
+                    "type": "boolean",
+                    "description": "The initial lock state of the room. If true, only hosts will be able to let in other participants\nand change lock state.\n"
+                  },
+                  "roomNamePrefix": {
+                    "type": "string",
+                    "maxLength": 39,
+                    "pattern": "[a-z0-9]{0,39}",
+                    "example": "example-prefix",
+                    "description": "This will be used as the prefix for the room name. The string should be lowercase, and spaces\nwill be automatically removed.\n"
+                  },
+                  "roomNamePattern": {
+                    "type": "string",
+                    "default": "uuid",
+                    "enum": [
+                      "uuid",
+                      "human-short"
+                    ],
+                    "example": "uuid",
+                    "description": "The format of the randomly generated room name.\n`uuid` is the default room name pattern and follows the usual 8-4-4-4-12 pattern.\n`human-short` generates a shorter string made up of six distinguishable characters.\n"
+                  },
+                  "roomMode": {
+                    "type": "string",
+                    "default": "normal",
+                    "enum": [
+                      "group",
+                      "normal"
+                    ],
+                    "example": "normal",
+                    "description": "The mode of the created transient room.\n`normal` is the default room mode and should be used for meetings up to 4 participants.\n`group` should be used for meetings that require more than 4 participants.\n"
+                  },
+                  "startDate": {
+                    "type": "string",
+                    "deprecated": true,
+                    "format": "date-time",
+                    "description": "When the meeting starts.\nBy default in UTC but a timezone can be specified, e.g. 2021-05-07T17:42:49-05:00.\nThis date must be in the future.  (DEPRECATED - value is ignored)\n"
+                  },
+                  "endDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the meeting ends. By default in UTC but a timezone can be specified, e.g. 2021-05-07T17:42:49-05:00.\nThis has to be the same or after the current date.\n"
+                  },
+                  "recording": {
+                    "type": "object",
+                    "required": [
+                      "type",
+                      "destination",
+                      "startTrigger"
+                    ],
+                    "description": "Options for how a meeting should be recorded.\n",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "none",
+                          "local",
+                          "cloud"
+                        ],
+                        "description": "The type of recording that should take place.\n  \"none\" - Recording should be disabled\n  \"local\" - Recording should happen in the browser\n  \"cloud\" - Recording should happen in the cloud\n"
+                      },
+                      "destination": {
+                        "type": "object",
+                        "required": [
+                          "provider"
+                        ],
+                        "description": "Information regarding where the recording should be stored. If this is not required, or should\nbe inherited, it should be set to null.\n",
+                        "properties": {
+                          "provider": {
+                            "type": "string",
+                            "enum": [
+                              "s3",
+                              "whereby"
+                            ],
+                            "description": "The provider being used to store the stream.\n- `s3` - Use your S3 bucket to store recordings. The `bucket`, `accessKeyId` and\n`accessKeySecret` fields are required for this option.\n- `whereby` - Store recordings on Whereby hosted storage. The `bucket`, `accessKeyId`\nand `accessKeySecret` fields are not required for this option. This is a beta feature and\nit needs to be enabled manually on our end. Reach out to us if you want to try this feature.\n"
+                          },
+                          "bucket": {
+                            "type": "string",
+                            "description": "The name of the s3 bucket.\nOptionally subfolders can be also specified here, e.g. \"my-bucket/recordings\" will upload\nrecordings to the \"recordings\" folder of the \"my-bucket\" bucket.\n"
+                          },
+                          "accessKeyId": {
+                            "type": "string",
+                            "description": "The s3 access key id\n"
+                          },
+                          "accessKeySecret": {
+                            "type": "string",
+                            "description": "The s3 access key secret\n"
+                          },
+                          "fileFormat": {
+                            "type": "string",
+                            "enum": [
+                              "mkv",
+                              "mp4"
+                            ],
+                            "description": "The format of the recording. By default the value should be taken from the\norganization settings.\n"
+                          }
+                        }
+                      },
+                      "startTrigger": {
+                        "type": "string",
+                        "enum": [
+                          "none",
+                          "prompt",
+                          "automatic",
+                          "automatic-2nd-participant"
+                        ],
+                        "description": "What type of trigger should happen in the meeting when all the information required to start a\nrecording has been provided. This only has effect when recording.type is set to `\"cloud\"`\n- `null` - The value should be taken from the organization settings\n- `\"none\"` - A user should manually start the recording using the UI in the meeting\n- `\"prompt\"` - A prompt to start the recording will be shown to the first user with permission to start\n             the recording.\n- `\"automatic\"` - The recording will be automatically started as soon as the first participant joins the\n                meeting.\n- `\"automatic-2nd-participant\"` - The recording will be automatically started as soon as the second\n                                participant joins the meeting.\n"
+                      }
+                    }
+                  },
+                  "streaming": {
+                    "type": "object",
+                    "required": [
+                      "destination",
+                      "startTrigger"
+                    ],
+                    "description": "A configuration object for live RTMP streaming of the meeting\n",
+                    "properties": {
+                      "destination": {
+                        "type": "object",
+                        "required": [
+                          "url"
+                        ],
+                        "description": "The destination of the stream\n",
+                        "properties": {
+                          "url": {
+                            "type": "string",
+                            "description": "The destination RTMP URI of the stream. This should be set to match the inject url of your streaming provider (Youtube, Facebook, Twitch, etc). Example `rtmp://a.rtmp.youtube.com/live2/<stream_key>`\n"
+                          }
+                        }
+                      },
+                      "startTrigger": {
+                        "type": "string",
+                        "enum": [
+                          "none",
+                          "prompt",
+                          "automatic"
+                        ],
+                        "description": "Specify the condition when live streaming should be started. null should be passed when this is not required or should be inherited\nfrom the organization preferences\n  \"none\" - The meeting host is able to manually start and stop the stream.\n  \"prompt\" - The meeting host will be prompted to start the stream once joined.\n  \"automatic\" - The stream will be automatically started as soon as the first participant joins the\n                meeting.\n"
+                      }
+                    }
+                  },
+                  "fields": {
+                    "$ref": "#/components/schemas/Fields"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The resource was created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Meeting"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get meetings",
+        "description": "Returns the meetings.\n",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "schema": {
+              "type": "string",
+              "description": "The cursor for paginating through the results. To fetch the next page,\nset the `cursor` to the `cursor` returned by the previous request.\n",
+              "example": "8f4031bfc7640c5f267b11b6fe0c2507"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer",
+              "description": "The limit for the pagination - the maximum number of results that will be returned within a single API response.",
+              "default": 50,
+              "maximum": 100,
+              "minimum": 1
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "schema": {
+              "$ref": "#/components/schemas/Fields"
+            },
+            "explode": false,
+            "style": "form"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON object with the page containing the array with the meetings results.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "results",
+                    "cursor"
+                  ],
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Meeting"
+                      }
+                    },
+                    "cursor": {
+                      "type": "string",
+                      "description": "The cursor for paginating through the results. To fetch the next page,\nset the `cursor` to the `cursor` returned by the previous request.\nIf there are no more results, the value returned is `null`.\n"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "/meetings/{meetingId}": {
+      "delete": {
+        "summary": "Delete meeting",
+        "description": "Deletes the specified meeting. The endpoint is idempotent, meaning it will return the same response even if the meeting has already been deleted.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/meetingId"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The resource was deleted successfully."
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get meeting",
+        "description": "Returns the specified meeting.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/meetingId"
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "schema": {
+              "$ref": "#/components/schemas/Fields"
+            },
+            "explode": false,
+            "style": "form"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON object representing the meeting.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Meeting"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "/rooms/{roomName}/theme/tokens": {
+      "put": {
+        "summary": "Set room colors",
+        "description": "Set primary and secondary room colors.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/roomName"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "tokens": {
+                    "type": "object",
+                    "description": "Room colors defined in an object.\n",
+                    "properties": {
+                      "colors": {
+                        "type": "object",
+                        "properties": {
+                          "primary": {
+                            "type": "string",
+                            "pattern": "#[a-fA-F0-9]{6}",
+                            "description": "The HEX color code of the primary color.\n"
+                          },
+                          "secondary": {
+                            "type": "string",
+                            "pattern": "#[a-fA-F0-9]{6}",
+                            "description": "The HEX color code of the secondary color.\n"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "tokensPreset": {
+                    "type": "string",
+                    "enum": [
+                      "custom",
+                      "default"
+                    ],
+                    "description": "Use the given primary or secondary colors when `custom`. Use organization defaults when `default`\nor not defined.\n"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "The tokens were saved successfully."
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "/rooms/{roomName}/theme/logo": {
+      "put": {
+        "summary": "Set room logo",
+        "description": "Upload room logo.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/roomName"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "The logo image. We recommend PNG images at least 400px wide.\n"
+                  }
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "Reset room logo to default.",
+                "properties": {
+                  "theme": {
+                    "type": "string",
+                    "enum": [
+                      "default"
+                    ],
+                    "description": "Reset room logo to default."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "The logo was saved successfully."
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "/rooms/{roomName}/theme/room-background": {
+      "put": {
+        "summary": "Set room background",
+        "description": "Set room background.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/roomName"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "description": "Set a custom image as background.",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "The background image. We recommend PNG images at least 1400px wide (max 600 kb).\n"
+                  }
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "Set a pre-defined background color and image.",
+                "properties": {
+                  "palette": {
+                    "type": "string",
+                    "enum": [
+                      "default",
+                      "grey",
+                      "purple",
+                      "burgund"
+                    ],
+                    "description": "Background color name."
+                  },
+                  "theme": {
+                    "type": "string",
+                    "enum": [
+                      "default",
+                      "mountains",
+                      "characters",
+                      "rocks"
+                    ],
+                    "description": "Background image. `default` means no image."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "The background image was saved successfully."
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "/rooms/{roomName}/theme/room-knock-page-background": {
+      "put": {
+        "summary": "Set room knock page background",
+        "description": "Set room knock page background.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/roomName"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "description": "Set a custom image as knock page background.",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "The knock page background image. We recommend PNG\nimages at least 1400px wide (max 600 kb).\n"
+                  }
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "Set a pre-defined knock page background color and image.",
+                "properties": {
+                  "palette": {
+                    "type": "string",
+                    "enum": [
+                      "default",
+                      "grey",
+                      "purple",
+                      "burgund"
+                    ],
+                    "description": "Knock page background color name."
+                  },
+                  "theme": {
+                    "type": "string",
+                    "enum": [
+                      "default",
+                      "mountains",
+                      "characters",
+                      "rocks"
+                    ],
+                    "description": "Knock page background image. `default` means no image."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "The knock page background image was saved successfully."
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "/insights/rooms": {
+      "get": {
+        "summary": "Get room insights",
+        "description": "Gets a summary of insights collected for rooms.\n",
+        "parameters": [
+          {
+            "name": "roomName",
+            "in": "query",
+            "description": "Filter results by room name.",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exact": {
+                  "type": "string",
+                  "description": "Example: roomName[exact]=/4b3bd908-cb88-11ec-9d64-0242ac120002"
+                },
+                "startsWith": {
+                  "type": "string",
+                  "description": "Example: roomName[startsWith]=/room-prefix"
+                }
+              }
+            }
+          },
+          {
+            "name": "createdAt",
+            "in": "query",
+            "description": "Filter rooms by the date they were created.",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "from": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Example: createdAt[from]=2022-01-01T00:00:00.000Z"
+                },
+                "to": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Example: createdAt[to]=2022-05-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Sort results by a field.",
+            "required": false,
+            "example": "totalSessions:asc"
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "The cursor for paginating through the results. To fetch the next page,\nset the `cursor` to the `cursor` returned by the previous request.\n",
+            "required": false,
+            "example": "8f4031bfc7640c5f267b11b6fe0c2507"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit the number of results.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 10,
+              "example": 30
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of sorted rooms with their insights.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "cursor": {
+                      "type": "string",
+                      "description": "The cursor for paginating through the results. To fetch the next page,\nset the `cursor` to the `cursor` returned by the previous request.\nIf there are no more results, the value returned is `null`.\n"
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "roomName",
+                          "createdAt",
+                          "endAt",
+                          "totalParticipantMinutes",
+                          "totalRecorderMinutes",
+                          "totalStreamerMinutes",
+                          "totalUniqueParticipants",
+                          "totalSessions"
+                        ],
+                        "properties": {
+                          "roomName": {
+                            "type": "string",
+                            "description": "The name of the room.",
+                            "example": "/4b3bd908-cb88-11ec-9d64-0242ac120002"
+                          },
+                          "createdAt": {
+                            "type": "string",
+                            "description": "The date the room was created.",
+                            "example": "2020-01-01T00:00:00.000Z"
+                          },
+                          "endAt": {
+                            "type": "string",
+                            "description": "The date the room was set to expire.",
+                            "example": "2020-01-01T01:00:00.000Z"
+                          },
+                          "totalParticipantMinutes": {
+                            "type": "integer",
+                            "description": "The total number of minutes participants have been in the room, rounded up per individual connection.",
+                            "example": 124
+                          },
+                          "totalRecorderMinutes": {
+                            "type": "integer",
+                            "description": "The total number of minutes the room was recorded.",
+                            "example": 120
+                          },
+                          "totalStreamerMinutes": {
+                            "type": "integer",
+                            "description": "The total number of minutes the room was streamed.",
+                            "example": 120
+                          },
+                          "totalUniqueParticipants": {
+                            "type": "integer",
+                            "description": "The total number of distinct participants in the room.",
+                            "example": 4
+                          },
+                          "totalSessions": {
+                            "type": "integer",
+                            "description": "The total number of sessions in the room.",
+                            "example": 2
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "/insights/room-sessions": {
+      "get": {
+        "summary": "Get room session insights",
+        "description": "Gets a summary of usage for each session of a given room.\n",
+        "parameters": [
+          {
+            "name": "roomName",
+            "in": "query",
+            "description": "Room name .",
+            "required": true,
+            "example": "/4b3bd908-cb88-11ec-9d64-0242ac120002"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Sort results by a field.",
+            "required": false,
+            "example": "totalUniqueParticipants:asc"
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "The cursor for paginating through the results. To fetch the next page,\nset the `cursor` to the `cursor` returned by the previous request.\n",
+            "required": false,
+            "example": "8f4031bfc7640c5f267b11b6fe0c2507"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit the number of results.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 10,
+              "example": 30
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of sorted sessions with their insights.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "cursor": {
+                      "type": "string",
+                      "description": "The cursor for paginating through the results. To fetch the next page,\nset the `cursor` to the `cursor` returned by the previous request.\nIf there are no more results, the value returned is `null`.\n"
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "roomSessionId",
+                          "roomName",
+                          "createdAt",
+                          "endAt",
+                          "totalParticipantMinutes",
+                          "totalRecorderMinutes",
+                          "totalStreamerMinutes",
+                          "totalUniqueParticipants"
+                        ],
+                        "properties": {
+                          "roomSessionId": {
+                            "type": "string",
+                            "description": "The identifier of the session.",
+                            "example": "32ba120a-a691-4e8e-aec3-a610239271de"
+                          },
+                          "roomName": {
+                            "type": "string",
+                            "description": "The name of the room.",
+                            "example": "/4b3bd908-cb88-11ec-9d64-0242ac120002"
+                          },
+                          "startedAt": {
+                            "type": "string",
+                            "description": "The date the session started.",
+                            "example": "2020-01-01T00:00:00.000Z"
+                          },
+                          "endedAt": {
+                            "type": "string",
+                            "description": "The date when the session ended.",
+                            "example": "2020-01-01T01:00:00.000Z"
+                          },
+                          "totalParticipantMinutes": {
+                            "type": "integer",
+                            "description": "The total number of minutes participants have been in the session, rounded up per individual connection.",
+                            "example": 124
+                          },
+                          "totalRecorderMinutes": {
+                            "type": "integer",
+                            "description": "The total number of minutes the session was recorded.",
+                            "example": 120
+                          },
+                          "totalStreamerMinutes": {
+                            "type": "integer",
+                            "description": "The total number of minutes the session was streamed.",
+                            "example": 120
+                          },
+                          "totalUniqueParticipants": {
+                            "type": "integer",
+                            "description": "The total number of distinct participants in the session.",
+                            "example": 4
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    }
+  },
+  "tags": []
+}

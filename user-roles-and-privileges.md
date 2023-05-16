@@ -15,7 +15,7 @@ Users joining via the hostRoomURL become meeting hosts and have the following fe
 
 * Lock and unlock the room.
 * Enter locked rooms without knocking.
-* Respond and allow access to participants that are knocking.
+* [Respond and allow access](https://whereby.helpscoutdocs.com/article/464-lock-knock) to participants that are knocking.
 * Remove, mute, and spotlight meeting participants.
 * Start and stop [recordings](customizing-rooms/recording-with-embedded/), if available.
 * Start and stop [breakout groups](customizing-rooms/breakout-groups-with-embedded.md), if available.

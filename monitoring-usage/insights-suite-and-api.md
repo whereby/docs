@@ -22,3 +22,7 @@ You can also access details of all the sessions that have happened within a spec
 To access the Insights suite, log in to your Whereby Embedded account and visit the "Insights" section.
 
 You can also query the Insights suite data through the [Whereby REST API](https://whereby.dev/http-api/), which allows you to programmatically use it for things like billing, operations, or even to create a dashboard of your own.
+
+{% hint style="info" %}
+Insights can take 10-15 minutes to update accordingly on the dashboard and via the GET endpoints
+{% endhint %}

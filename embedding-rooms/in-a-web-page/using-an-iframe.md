@@ -18,6 +18,10 @@ Use the `roomUrl` as the `src` attribute as in the example below.
 ></iframe>
 ```
 
+{% hint style="success" %}
+If you'd like more programmatic control over the meeting experience with things like browser events and commands, we recommend reviewing our documentation about the [Embed Element](using-the-whereby-embed-element.md) from our [SDK](../../whereby-embedded-sdk-beta.md)
+{% endhint %}
+
 When embedding, you can customize the room by [toggling features and behaviors via URL parameters](../../customizing-rooms/using-url-parameters.md).&#x20;
 
 To learn how to restrict which domains are allowed to embed your rooms, read the [Allowed domains section](../allowed-domains.md).

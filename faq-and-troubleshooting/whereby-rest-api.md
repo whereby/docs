@@ -35,48 +35,48 @@ The bearer token will be provided upon request and it is up to the client to kee
 
 Creates a transient room that is available between creation and an hour after the given `endDate`. After this time the room will be automatically deleted. The URL to this room is present in the response.
 
-{% swagger src="../.gitbook/assets/externalapi-openapi copy.json" path="/meetings" method="post" %}
-[externalapi-openapi copy.json](<../.gitbook/assets/externalapi-openapi copy.json>)
+{% swagger src="../.gitbook/assets/externalapi-openapi copy (2).json" path="/meetings" method="post" %}
+[externalapi-openapi copy (2).json](<../.gitbook/assets/externalapi-openapi copy (2).json>)
 {% endswagger %}
 
 ### Get meetings
 
-{% swagger src="../.gitbook/assets/externalapi-openapi copy.json" path="/meetings/{meetingId}" method="get" %}
-[externalapi-openapi copy.json](<../.gitbook/assets/externalapi-openapi copy.json>)
+{% swagger src="../.gitbook/assets/externalapi-openapi copy (2).json" path="/meetings/{meetingId}" method="get" %}
+[externalapi-openapi copy (2).json](<../.gitbook/assets/externalapi-openapi copy (2).json>)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi copy.json" path="/meetings" method="get" %}
-[externalapi-openapi copy.json](<../.gitbook/assets/externalapi-openapi copy.json>)
+{% swagger src="../.gitbook/assets/externalapi-openapi copy (2).json" path="/meetings" method="get" %}
+[externalapi-openapi copy (2).json](<../.gitbook/assets/externalapi-openapi copy (2).json>)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi copy.json" path="/insights/rooms" method="get" %}
-[externalapi-openapi copy.json](<../.gitbook/assets/externalapi-openapi copy.json>)
+{% swagger src="../.gitbook/assets/externalapi-openapi copy (2).json" path="/insights/rooms" method="get" %}
+[externalapi-openapi copy (2).json](<../.gitbook/assets/externalapi-openapi copy (2).json>)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi copy.json" path="/insights/room-sessions" method="get" %}
-[externalapi-openapi copy.json](<../.gitbook/assets/externalapi-openapi copy.json>)
+{% swagger src="../.gitbook/assets/externalapi-openapi copy (2).json" path="/insights/room-sessions" method="get" %}
+[externalapi-openapi copy (2).json](<../.gitbook/assets/externalapi-openapi copy (2).json>)
 {% endswagger %}
 
 ### Delete meeting
 
-{% swagger src="../.gitbook/assets/externalapi-openapi copy.json" path="/meetings/{meetingId}" method="delete" %}
-[externalapi-openapi copy.json](<../.gitbook/assets/externalapi-openapi copy.json>)
+{% swagger src="../.gitbook/assets/externalapi-openapi copy (2).json" path="/meetings/{meetingId}" method="delete" %}
+[externalapi-openapi copy (2).json](<../.gitbook/assets/externalapi-openapi copy (2).json>)
 {% endswagger %}
 
 ### Put requests
 
-{% swagger src="../.gitbook/assets/externalapi-openapi copy.json" path="/rooms/{roomName}/theme/logo" method="put" %}
-[externalapi-openapi copy.json](<../.gitbook/assets/externalapi-openapi copy.json>)
+{% swagger src="../.gitbook/assets/externalapi-openapi copy (2).json" path="/rooms/{roomName}/theme/logo" method="put" %}
+[externalapi-openapi copy (2).json](<../.gitbook/assets/externalapi-openapi copy (2).json>)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi copy.json" path="/rooms/{roomName}/theme/tokens" method="put" %}
-[externalapi-openapi copy.json](<../.gitbook/assets/externalapi-openapi copy.json>)
+{% swagger src="../.gitbook/assets/externalapi-openapi copy (2).json" path="/rooms/{roomName}/theme/tokens" method="put" %}
+[externalapi-openapi copy (2).json](<../.gitbook/assets/externalapi-openapi copy (2).json>)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi copy.json" path="/rooms/{roomName}/theme/room-background" method="put" %}
-[externalapi-openapi copy.json](<../.gitbook/assets/externalapi-openapi copy.json>)
+{% swagger src="../.gitbook/assets/externalapi-openapi copy (2).json" path="/rooms/{roomName}/theme/room-background" method="put" %}
+[externalapi-openapi copy (2).json](<../.gitbook/assets/externalapi-openapi copy (2).json>)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi copy.json" path="/rooms/{roomName}/theme/room-knock-page-background" method="put" %}
-[externalapi-openapi copy.json](<../.gitbook/assets/externalapi-openapi copy.json>)
+{% swagger src="../.gitbook/assets/externalapi-openapi copy (2).json" path="/rooms/{roomName}/theme/room-knock-page-background" method="put" %}
+[externalapi-openapi copy (2).json](<../.gitbook/assets/externalapi-openapi copy (2).json>)
 {% endswagger %}

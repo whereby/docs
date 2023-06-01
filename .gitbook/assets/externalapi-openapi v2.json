@@ -159,12 +159,16 @@
                   "endDate"
                 ],
                 "properties": {
-                  "templateType": {
+                  "startDate": {
                     "type": "string",
-                    "enum": [
-                      "viewerMode"
-                    ],
-                    "description": "[BETA]: This is a beta feature, and might change in the future. If provided, the room will be created with the given template type.\nEach template defines a set of properties needed for a particular use-case. Currently the only supported template type is \"viewerMode\". This will set up a room with properties that are\nneeded to create a viewer mode room. The room will be locked, roomMode set to \"group\"\nand fields like hostRoomUrl and viewerRoomUrl will be added to the response.\n"
+                    "deprecated": true,
+                    "format": "date-time",
+                    "description": "(DEPRECATED - value is ignored)\n"
+                  },
+                  "endDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the meeting ends. By default in UTC but a timezone can be specified, e.g. 2021-05-07T17:42:49-05:00.\nThis has to be the same or after the current date.\n"
                   },
                   "isLocked": {
                     "type": "boolean",
@@ -197,16 +201,12 @@
                     "example": "normal",
                     "description": "The mode of the created transient room.\n`normal` is the default room mode and should be used for meetings up to 4 participants.\n`group` should be used for meetings that require more than 4 participants.\n"
                   },
-                  "startDate": {
+                  "templateType": {
                     "type": "string",
-                    "deprecated": true,
-                    "format": "date-time",
-                    "description": "When the meeting starts.\nBy default in UTC but a timezone can be specified, e.g. 2021-05-07T17:42:49-05:00.\nThis date must be in the future.  (DEPRECATED - value is ignored)\n"
-                  },
-                  "endDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "When the meeting ends. By default in UTC but a timezone can be specified, e.g. 2021-05-07T17:42:49-05:00.\nThis has to be the same or after the current date.\n"
+                    "enum": [
+                      "viewerMode"
+                    ],
+                    "description": "This feature is in early development and might change in the future. If provided, the room will be created with the given template type.\nEach template defines a set of properties needed for a particular use-case. Currently the only supported template type is \"viewerMode\". This will set up a room with properties that are\nneeded to create a viewer mode room. The room will be locked, roomMode set to \"group\"\nand fields like hostRoomUrl and viewerRoomUrl will be added to the response.\n"
                   },
                   "recording": {
                     "type": "object",

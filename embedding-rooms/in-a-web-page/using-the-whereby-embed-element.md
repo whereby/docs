@@ -102,20 +102,7 @@ Disable the floating self view:
 
 You can listen for events on the `<whereby-embed>` element. The following events are supported:
 
-| Event type                | Description                                                                                                | Properties (from "detail")            |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| `ready`                   | Basic dependencies have loaded and the room is ready to be used                                            | –                                     |
-| `knock`                   | The local user knocks to get into the room                                                                 | –                                     |
-| `participantupdate`       | A new participant join/leave                                                                               | { count: Number }                     |
-| `join`                    | The local user joins                                                                                       | –                                     |
-| `leave`                   | The local user leaves                                                                                      | { removed: Boolean }                  |
-| `participant_join`        | A new participant joins the room                                                                           | { participant: { metadata: String } } |
-| `participant_leave`       | A participant leaves the room                                                                              | { participant: { metadata: String } } |
-| `microphone_toggle`       | The local user toggles the microphone                                                                      | { enabled: Boolean }                  |
-| `camera_toggle`           | The local user toggles the camera                                                                          | { enabled: Boolean }                  |
-| `deny_device_permission`  | The local user denies permission to camera and microphone in the pre-call screen                           | { denied: Boolean }                   |
-| `screenshare_toggle`      | The local user toggles the screenshare                                                                     | { enabled: Boolean }                  |
-| `streaming_status_change` | Streaming status changes. Possible values: "" \| requested \| starting \| streaming \| stopping \| stopped | { status: String }                    |
+<table><thead><tr><th width="277.3333333333333">Event type</th><th>Description</th><th>Properties (from "detail")</th></tr></thead><tbody><tr><td><code>ready</code></td><td>Basic dependencies have loaded and the room is ready to be used</td><td>–</td></tr><tr><td><code>knock</code></td><td>The local user knocks to get into the room</td><td>–</td></tr><tr><td><code>participantupdate</code></td><td>A new participant join/leave</td><td>{ count: Number }</td></tr><tr><td><code>join</code></td><td>The local user joins</td><td>–</td></tr><tr><td><code>leave</code></td><td>The local user leaves</td><td>{ removed: Boolean }</td></tr><tr><td><code>participant_join</code></td><td>A new participant joins the room</td><td>{ participant: { metadata: String } }</td></tr><tr><td><code>participant_leave</code></td><td>A participant leaves the room</td><td>{ participant: { metadata: String } }</td></tr><tr><td><code>microphone_toggle</code></td><td>The local user toggles the microphone</td><td>{ enabled: Boolean }</td></tr><tr><td><code>camera_toggle</code></td><td>The local user toggles the camera</td><td>{ enabled: Boolean }</td></tr><tr><td><code>deny_device_permission</code></td><td>The local user denies permission to camera and microphone in the pre-call screen</td><td>{ denied: Boolean }</td></tr><tr><td><code>screenshare_toggle</code></td><td>The local user toggles the screenshare</td><td>{ enabled: Boolean }</td></tr><tr><td><code>streaming_status_change</code></td><td>Streaming status changes. Possible values: "" | requested | starting | streaming | stopping | stopped</td><td>{ status: String }</td></tr></tbody></table>
 
 
 

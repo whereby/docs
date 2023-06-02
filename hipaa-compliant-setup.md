@@ -154,7 +154,6 @@ To support the HIPAA compliance of our customers, we will gladly provide our ISO
 
 Whereby Embedded can be used in a HIPAA compliant setup by our customers, however this comes with limitations that need to be in place to have adequate security and compliance with the requirements of the law.&#x20;
 
-* **Insights information** - We will stop tracking usage data from meetings, allowing you to stay compliant at the cost of us and yourself having less information when debugging issues. Tracking will be disabled as soon as the on-demand HIPAA compliant setup is activated.
 * **Streaming** - Whereby meetings cannot be live streamed (using RTMP) and we also do not envision scenarios where a private, health related discussion will need to be live-streamed. Make sure you don't include any streaming config when you create rooms.
 
 Return to [creating HIPAA compliant rooms](hipaa-compliant-setup.md#creating-hipaa-compliant-rooms)

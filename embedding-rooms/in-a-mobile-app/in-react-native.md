@@ -28,6 +28,7 @@ export default class App extends Component {
         startInLoadingState
         source={{ uri: roomUrl + roomParameters }}
         mediaPlaybackRequiresUserAction={false}
+        mediaCapturePermissionGrantType={'grant'}
 
         // iOS specific:
         allowsInlineMediaPlayback

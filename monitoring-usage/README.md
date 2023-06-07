@@ -11,7 +11,7 @@ description: >-
 
 The Insights suite is available from the Embedded dashboard, and is the easiest way to access your usage data at a glance. You can also access insights data through the Whereby REST API. This way, you can discover trends and report on customer usage easier.
 
-[Read more](insights-suite-and-api.md)
+[Read more](insights-suite-and-api/)
 
 ### Webhooks
 

@@ -64,7 +64,7 @@ If the participant is using HD video, we expect to see 1 - 1.5Mbps send bitrate.
 
 We calculate the sum of all of the streams for _bitrate sending_, and we display the max packet loss for any stream in _packet loss sending_. This is important to be aware of if you are using `"roomMode": "normal"` rooms.
 
-If you are creating `normal` rooms, each participant is sending a video stream to every other participant. This means if you have 4 people on a call in a `normal` room, each participant is sending 3 video streams. The the _bitrate sending_ chart will be calculated as the sum of those 3 streams and _packet loss sending_ chart will display the stream with the maximum packet loss during the call.&#x20;
+If you use `normal` rooms, each participant on the call is sending a video stream to every other participant. This means if you have 4 participants in a `normal` room, each participant is sending 3 video streams. Then the _bitrate sending_ chart will be calculated as the sum of those 3 streams and _packet loss sending_ chart will display the stream with the maximum packet loss during the call.&#x20;
 
 Every room created with  `"roomMode": "group"` is using our selective forwarding unit (SFU) mesh for data transfer. This means that every participant is sending only one single video stream to our SFU which then forwards the stream on to every other participant. This is one of [many reasons](https://docs.whereby.com/monitoring-usage/insights-suite-and-api/improving-call-quality#use-group-rooms) why we recommend using `"roomMode": "group"` for better call quality.
 

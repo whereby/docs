@@ -1,9 +1,3 @@
----
-description: >-
-  You can use our call metrics data or participant rating feature to gauge the
-  your call quality.
----
-
 # Measuring call quality
 
 ## Using Insights dashboard charts

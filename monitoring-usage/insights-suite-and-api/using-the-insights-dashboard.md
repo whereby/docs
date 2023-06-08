@@ -1,10 +1,4 @@
----
-description: >-
-  This page is used to better understand the call quality insights provided on
-  our dashboard.
----
-
-# Using the insights dashboard
+# Using the Insights dashboard
 
 ## User agent string
 
@@ -28,7 +22,7 @@ We've separated packet loss and bitrate out into separate charts for sending and
 
 {% tabs %}
 {% tab title="Packet Loss" %}
-### &#x20;Packet loss
+### Packet loss
 
 Packet loss is a measure of how many data packets sent over a network are lost in transit. Packets are small chunks of data that are used to transmit information over a network.&#x20;
 
@@ -66,9 +60,7 @@ If the participant is using HD video, we expect to see the sending stream around
 {% endtab %}
 {% endtabs %}
 
-
-
-**Group and normal rooms**
+#### **Group and normal rooms**
 
 Any room created with  `"roomMode": "group"` is using our selective forwarding unit (SFU) mesh for data transfer. This means that every participant sends one single video stream to our SFU which then forwards the stream on to every other participant.
 
@@ -76,7 +68,7 @@ If you are creating `normal` rooms instead, each participant needs to send a vid
 
 This is one of [many reasons](https://docs.whereby.com/monitoring-usage/insights-suite-and-api/improving-call-quality#use-group-rooms) why we recommend using `"roomMode": "group"` for better call quality.
 
-The packet loss and bitrate sending charts for `normal` rooms will generally have higher values than those for `group` rooms if there are more than 2 people on the call. For the bitrate sending, we show the sum of all of the streams. And for the packet loss sending, we display the stream with the highest packet loss.&#x20;
+If there are more than 2 people on the call, packet loss and bitrate sending charts for `normal` rooms will generally have higher values than those for `group` rooms. When there is more than one stream, we calculate the sum of all of the streams for _bitrate sending_, and we display only the stream with the highest packet loss for _packet loss sending_.
 
 ## Running into issues?
 

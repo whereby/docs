@@ -31,6 +31,7 @@
 * [Monitoring usage](monitoring-usage/README.md)
   * [Insights suite & API](monitoring-usage/insights-suite-and-api/README.md)
     * [Using the insights dashboard](monitoring-usage/insights-suite-and-api/using-the-insights-dashboard.md)
+    * [Measuring call quality](monitoring-usage/insights-suite-and-api/measuring-call-quality.md)
     * [Improving call quality](monitoring-usage/insights-suite-and-api/improving-call-quality.md)
   * [Webhooks](monitoring-usage/webhooks.md)
   * [Name prefixes](monitoring-usage/name-prefixes.md)

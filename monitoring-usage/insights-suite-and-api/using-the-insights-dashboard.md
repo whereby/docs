@@ -28,6 +28,8 @@ We've separated packet loss and bitrate out into separate charts for sending and
 
 {% tabs %}
 {% tab title="Packet Loss" %}
+### Packet loss
+
 Packet loss is a measure of how many data packets sent over a network are lost in transit. Packets are small chunks of data that are used to transmit information over a network.&#x20;
 
 Packet loss can have a significant impact on the quality of video calls. When packets are lost, the video stream can become choppy or pixelated. In some cases, the video call may even drop altogether.
@@ -38,9 +40,9 @@ Packet loss can occur for a variety of reasons, including:
 * **Hardware failure:** A faulty network device, such as a router or switch, can cause packets to be lost.
 * **Interference:** Electromagnetic interference from other devices, such as microwaves or cell phones, can also cause packet loss.
 
-#### How to interpret packet loss values
+### How to interpret packet loss values
 
-The amount of packet loss is measured in percentage. For example, 1% packet loss means that 1 out of every 100 packets are lost. 0% packet loss is ideal for video calls, but some amount of packet loss is tolerable and expected.&#x20;
+The amount of packet loss is measured in percentage. For example, 1% packet loss means that 1 out of every 100 packets were lost. 0% packet loss is ideal for video calls, but some amount of packet loss between 0% - 2% is tolerable and expected.&#x20;
 
 {% hint style="info" %}
 We consider 3% packet loss to be our threshold for quality. Any value at or exceeding 3% means that the participant likely experienced reduced call quality.
@@ -48,6 +50,8 @@ We consider 3% packet loss to be our threshold for quality. Any value at or exce
 {% endtab %}
 
 {% tab title="Bitrate" %}
+### Bitrate
+
 Bitrate is a measure of the amount of data that is transmitted over a network per unit of time. In the context of video calls, bitrate refers to the amount of data that is used to transmit the video and audio streams.
 
 In general, a higher bitrate will result in a better quality video call. However, a higher bitrate also requires more bandwidth. If your user's internet connection does not have enough bandwidth, they may experience choppy or pixelated video.

@@ -26,7 +26,7 @@ We've separated packet loss and bitrate out into separate charts for sending and
 
 Packet loss is a measure of how many data packets sent over a network are lost in transit. Packets are small chunks of data that are used to transmit information over a network.&#x20;
 
-Packet loss can have a significant impact on the quality of video calls. When packets are lost, the video stream can become choppy or pixelated. In some cases, the video call may even drop altogether.
+Packet loss can have a significant impact on the quality of video calls. When packets are lost, the video can become choppy or pixelated. In some cases, the video call may even drop altogether.
 
 Packet loss can occur for a variety of reasons, including:
 
@@ -46,7 +46,7 @@ We consider 3% packet loss to be our threshold for quality. Any value at or exce
 {% tab title="Bitrate" %}
 ### Bitrate
 
-Bitrate is a measure of the amount of data that is transmitted over a network per unit of time. In the context of video calls, bitrate refers to the amount of data that is used to transmit the video and audio streams.
+Bitrate is a measure of the amount of data that is transmitted over a network per unit of time. In the context of video calls, bitrate refers to the amount of data that is used to transmit audio and video.
 
 In general, a higher bitrate will result in a better quality video call. However, a higher bitrate also requires more bandwidth. If your user's internet connection does not have enough bandwidth, they may experience choppy or pixelated video.
 
@@ -54,21 +54,19 @@ In general, a higher bitrate will result in a better quality video call. However
 
 We measure bitrate in bits per second (bps), and a "good" value can vary depending on whether participants in the call had turned on HD video, if the call was in `normal` or `group` mode, how many participants joined the call, and whether someone was screensharing.&#x20;
 
-Generally, we expect to see at least 500 thousand bps for a _`bitrate sending stream`_ if the participant has their video turned on. If the bitrate is below this value and their video was on, they may have sent blurry or pixelated video, choppy audio, or dropped frames. Our first suspicion would be that the participant has a slow internet connection or a poor quality webcam.
+Generally, we expect to see at least 500kbps sending bitrate if the participant has their video turned on. If the bitrate is below this value and their video was on, they may have sent blurry or pixelated video, choppy audio, or dropped frames. Our first suspicion would be that the participant has a slow internet connection or a poor quality webcam.
 
-If the participant is using HD video, we expect to see the sending stream around 1 - 1.5 million bps.
+If the participant is using HD video, we expect to see 1 - 1.5Mbps send bitrate.
 {% endtab %}
 {% endtabs %}
 
 #### **Group and normal rooms**
 
-Any room created with  `"roomMode": "group"` is using our selective forwarding unit (SFU) mesh for data transfer. This means that every participant sends one single video stream to our SFU which then forwards the stream on to every other participant.
+We calculate the sum of all of the streams for _bitrate sending_, and we display the max packet loss for any stream in _packet loss sending_. This is important to be aware of if you are using `"roomMode": "normal"` rooms.
 
-If you are creating `normal` rooms instead, each participant needs to send a video stream to every other participant. This means if you have 4 people on a call in a `normal` room, each participant is sending 3 video streams.&#x20;
+If you are creating `normal` rooms, each participant is sending a video stream to every other participant. This means if you have 4 people on a call in a `normal` room, each participant is sending 3 video streams. The the _bitrate sending_ chart will be calculated as the sum of those 3 streams and _packet loss sending_ chart will display the stream with the maximum packet loss during the call.&#x20;
 
-This is one of [many reasons](https://docs.whereby.com/monitoring-usage/insights-suite-and-api/improving-call-quality#use-group-rooms) why we recommend using `"roomMode": "group"` for better call quality.
-
-If there are more than 2 people on the call, packet loss and bitrate sending charts for `normal` rooms will generally have higher values than those for `group` rooms. When there is more than one stream, we calculate the sum of all of the streams for _bitrate sending_, and we display only the stream with the highest packet loss for _packet loss sending_.
+Every room created with  `"roomMode": "group"` is using our selective forwarding unit (SFU) mesh for data transfer. This means that every participant is sending only one single video stream to our SFU which then forwards the stream on to every other participant. This is one of [many reasons](https://docs.whereby.com/monitoring-usage/insights-suite-and-api/improving-call-quality#use-group-rooms) why we recommend using `"roomMode": "group"` for better call quality.
 
 ## Running into issues?
 

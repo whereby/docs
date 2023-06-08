@@ -28,7 +28,7 @@ We've separated packet loss and bitrate out into separate charts for sending and
 
 {% tabs %}
 {% tab title="Packet Loss" %}
-### Packet loss
+### &#x20;Packet loss
 
 Packet loss is a measure of how many data packets sent over a network are lost in transit. Packets are small chunks of data that are used to transmit information over a network.&#x20;
 
@@ -65,6 +65,18 @@ Generally, we expect to see at least 500 thousand bps for a _`bitrate sending st
 If the participant is using HD video, we expect to see the sending stream around 1 - 1.5 million bps.
 {% endtab %}
 {% endtabs %}
+
+
+
+**Group and normal rooms**
+
+Any room created with  `"roomMode": "group"` is using our selective forwarding unit (SFU) mesh for data transfer. This means that every participant sends one single video stream to our SFU which then forwards the stream on to every other participant.
+
+If you are creating `normal` rooms instead, each participant needs to send a video stream to every other participant. This means if you have 4 people on a call in a `normal` room, each participant is sending 3 video streams.&#x20;
+
+This is one of [many reasons](https://docs.whereby.com/monitoring-usage/insights-suite-and-api/improving-call-quality#use-group-rooms) why we recommend using `"roomMode": "group"` for better call quality.
+
+The packet loss and bitrate sending charts for `normal` rooms will generally have higher values than those for `group` rooms if there are more than 2 people on the call. For the bitrate sending, we show the sum of all of the streams. And for the packet loss sending, we display the stream with the highest packet loss.&#x20;
 
 ## Running into issues?
 

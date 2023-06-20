@@ -36,10 +36,12 @@ Packet loss can occur for a variety of reasons, including:
 
 ### How to interpret packet loss values
 
-The amount of packet loss is measured in percentage. For example, 1% packet loss means that 1 out of every 100 packets were lost. 0% packet loss is ideal for video calls, but some amount of packet loss between 0% - 2% is tolerable and expected.&#x20;
+The amount of packet loss is measured in percentage. For example, 1% packet loss means that 1 out of every 100 packets were lost. 0% packet loss is ideal for video calls, but some amount of packet loss between 0% - 2.5% is tolerable and expected.&#x20;
 
 {% hint style="info" %}
-We consider 3% packet loss to be our threshold for quality. Any value at or exceeding 3% means that the participant likely experienced reduced call quality.
+We consider 3% packet loss to be our threshold for quality. Any value at or exceeding 3% for a sustained period of time means that the participant likely experienced reduced call quality.\
+\
+Very short periods (2 to 4s) of high packet loss are normal and expected. They will show up on the charts as sharp spikes. It is unlikely the participant noticed a dip in video quality during this short period.
 {% endhint %}
 {% endtab %}
 

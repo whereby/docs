@@ -40,6 +40,6 @@
 * [Whereby Embedded SDKs](whereby-embedded-sdk-beta.md)
 * [FAQ & Troubleshooting](faq-and-troubleshooting/README.md)
   * [End User documentation](faq-and-troubleshooting/end-user-documentation.md)
-* [Examples](examples.md)
+* [Github Examples](examples.md)
 * [Whereby REST API reference](whereby-rest-api-reference.md)
 * [Whereby.com](https://whereby.com/)

@@ -159,16 +159,30 @@
                   "endDate"
                 ],
                 "properties": {
-                  "templateType": {
+                  "endDate": {
                     "type": "string",
-                    "enum": [
-                      "viewerMode"
-                    ],
-                    "description": "If provided, the room will be created with the given template type.\nEach template defines a set of properties needed for a particular use-case. Currently the only supported template type is \"viewerMode\". This will set up a room with properties that are\nneeded to create a viewer mode room. The room will be locked, roomMode set to \"group\"\nand fields like hostRoomUrl and viewerRoomUrl will be added to the response.\n"
+                    "format": "date-time",
+                    "description": "When the meeting ends. By default in UTC but a timezone can be specified, e.g. 2021-05-07T17:42:49-05:00.\nThis has to be the same or after the current date.\n"
+                  },
+                  "startDate": {
+                    "type": "string",
+                    "deprecated": true,
+                    "format": "date-time",
+                    "description": "(DEPRECATED - value is ignored) Start time now defaults to time of request\n"
                   },
                   "isLocked": {
                     "type": "boolean",
                     "description": "The initial lock state of the room. If true, only hosts will be able to let in other participants\nand change lock state.\n"
+                  },
+                  "roomMode": {
+                    "type": "string",
+                    "default": "normal",
+                    "enum": [
+                      "group",
+                      "normal"
+                    ],
+                    "example": "normal",
+                    "description": "The mode and size of the created transient room.\n`normal` is the default room mode and should be used for meetings up to 4 participants.\n`group` should be used for meetings that require more than 4 participants.\n"
                   },
                   "roomNamePrefix": {
                     "type": "string",
@@ -187,26 +201,12 @@
                     "example": "uuid",
                     "description": "The format of the randomly generated room name.\n`uuid` is the default room name pattern and follows the usual 8-4-4-4-12 pattern.\n`human-short` generates a shorter string made up of six distinguishable characters.\n"
                   },
-                  "roomMode": {
+                  "templateType": {
                     "type": "string",
-                    "default": "normal",
                     "enum": [
-                      "group",
-                      "normal"
+                      "viewerMode"
                     ],
-                    "example": "normal",
-                    "description": "The mode of the created transient room.\n`normal` is the default room mode and should be used for meetings up to 4 participants.\n`group` should be used for meetings that require more than 4 participants.\n"
-                  },
-                  "startDate": {
-                    "type": "string",
-                    "deprecated": true,
-                    "format": "date-time",
-                    "description": "When the meeting starts.\nBy default in UTC but a timezone can be specified, e.g. 2021-05-07T17:42:49-05:00.\nThis date must be in the future.  (DEPRECATED - value is ignored)\n"
-                  },
-                  "endDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "When the meeting ends. By default in UTC but a timezone can be specified, e.g. 2021-05-07T17:42:49-05:00.\nThis has to be the same or after the current date.\n"
+                    "description": "If provided, the room will be created with the given template type.\nEach template defines a set of properties needed for a particular use-case. Currently the only supported template type is \"viewerMode\". This will set up a room with properties that are\nneeded to create a viewer mode room. The room will be locked, roomMode set to \"group\"\nand fields like hostRoomUrl and viewerRoomUrl will be added to the response.\n"
                   },
                   "recording": {
                     "type": "object",

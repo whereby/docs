@@ -14,7 +14,7 @@ This feature requires the use of Amazon S3 storage. You can review their plans a
 
 ## Setup in Whereby
 
-You can access recording settings and options from the “Configure” → “Recording” section of your organization's dashboard. You can also specify recording preferences via the API during a [room creation](https://whereby.dev/http-api/#/paths/\~1meetings/post) request.
+You can access recording settings and options from the “Configure” → “Recording” section of your organization's dashboard. You can also specify recording preferences via the API during a [room creation](../../whereby-rest-api-reference.md#create-meeting) request.
 
 {% hint style="info" %}
 When configuring cloud recording options via the dashboard, it will apply these as default settings for all rooms created. However, you can override the defaults by specifying different preferences within the POST requests used to create meetings.

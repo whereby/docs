@@ -9,7 +9,7 @@ description: >-
 
 {% embed url="https://youtu.be/kNhhpA_RXg4" %}
 
-Use the `roomUrl` as the `src` attribute as in the example below.
+Use a `roomUrl` you've created as the `src` attribute as in the example below.
 
 ```html
 <iframe

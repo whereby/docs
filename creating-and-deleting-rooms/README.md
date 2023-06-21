@@ -15,7 +15,7 @@ Easily create Whereby rooms using a straightforward 4-step UI flow without the n
 
 ### Using the REST API
 
-Create or delete Whereby rooms programmatically using a simple API request. Rooms can be created on demand, or ahead of time for scheduled meetings.&#x20;
+Create or delete Whereby rooms programmatically using an [API request](../whereby-rest-api-reference.md). Rooms can be created on demand, or ahead of time for scheduled meetings.&#x20;
 
 [Read more](using-the-rest-api.md)
 

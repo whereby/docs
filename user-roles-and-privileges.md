@@ -24,7 +24,7 @@ Users joining via the hostRoomURL become meeting hosts and have the following fe
 Host privileges are valid immediately on room creation and are disabled one hour after the `endDate`.
 {% endhint %}
 
-A hostRoomURL is only available if the `hostRoomURL` is included in the `fields` parameter when [creating the room via the API](creating-and-deleting-rooms/using-the-rest-api.md).
+A hostRoomURL is only available if the `hostRoomURL` is included in the `fields` parameter when [creating a meeting via the API](whereby-rest-api-reference.md#create-meeting).
 
 **Example request body:**
 
@@ -53,7 +53,7 @@ Now that you have both a `roomUrl` and a `hostRoomUrl`, you can ensure that both
 
 Users joining via the standard `roomUrl` will have a more typical meeting experience. They will only have access to the features you've set via [URL parameters](customizing-rooms/using-url-parameters.md) or the [dashboard](customizing-rooms/dashboard-preferences.md), and they will need to knock to gain entry to locked rooms.
 
-A `roomUrl` will be included with any POST [meeting creation](https://whereby.dev/http-api/#/paths/\~1meetings/post) requests.
+A `roomUrl` will be included with any POST [meeting creation](whereby-rest-api-reference.md#create-meeting) requests.
 
 
 
@@ -110,4 +110,4 @@ Meetings created in "[group](creating-and-deleting-rooms/#using-the-rest-api)" m
 }
 ```
 
-[Explore more in the API reference](https://whereby.dev/http-api/).
+Explore more in the [API reference](whereby-rest-api-reference.md).

@@ -42,4 +42,4 @@ Response:
 Note that any upper-case letters in the roomNamePrefix will be transformed to lower-case, and any whitespace will be stripped away.
 {% endhint %}
 
-Read more about [creating rooms using the API](../creating-and-deleting-rooms/using-the-rest-api.md), and refer to our [API reference](https://whereby.dev/http-api/) for further details.
+Read more about [creating rooms using the API](../creating-and-deleting-rooms/using-the-rest-api.md), and refer to our [API reference](../whereby-rest-api-reference.md) for further details.

@@ -14,9 +14,9 @@ description: >-
 
 ### Creating rooms
 
-Once you have secured your API key, you can create a room by sending an HTTP request with the necessary parameters in the body. Available parameters and formats can be found in the [API reference](https://whereby.dev/http-api/). Some features like the URL pattern of the room name and room size (`roomMode`) can only be set during the [meetings creation](../customizing-rooms/on-creation.md).
+Once you have secured your API key, you can create a room by sending an HTTP request with the necessary properties in the body. Available properties and formats can be found in the [API reference](../whereby-rest-api-reference.md). Some features like the URL pattern of the room name and room size (`roomMode`) can only be set during the [meetings creation](../customizing-rooms/on-creation.md).
 
-&#x20;`endDate` is interpreted as UTC by default, but other time zones are supported by including an offset in hours and minutes. For example, Eastern Standard Time (EST) would be expressed as `2099-08-11T07:56:01-05:00`.
+`endDate` is interpreted as UTC by default, but other time zones are supported by including an offset in hours and minutes. For example, Eastern Standard Time (EST) would be expressed as `2099-08-11T07:56:01-05:00`.
 
 Rooms are fully functional from the time they are created.
 
@@ -179,9 +179,8 @@ System.out.println("Body: " + response.body());
 
 ### Deleting rooms
 
-For many scenarios, it makes sense to create rooms to be used for a limited time or even just a single meeting, after which the rooms should be deactivated. With each room having a unique URL and a limited lifespan, there's no need to worry about meetings conflicting or rooms being used for other purposes after the intended session.&#x20;
+For many scenarios, it makes sense to create rooms to be used for a limited time or even just a single meeting, after which the rooms should be deactivated. With each room having a unique URL and a limited lifespan, there's no need to worry about meetings conflicting or rooms being used for other purposes after the intended session.
 
 When creating a room using the API, the `endDate` parameter is used to indicate the time at which the room should be marked for deactivation. The room will then automatically be deleted within 24 hours of the `endDate` provided. [Webhook](../monitoring-usage/webhooks.md) events and [hostRoomURL](../user-roles-and-privileges.md) privileges will also end an hour after the `endDate` is met.
 
-You can also [delete a room at any time using the API](https://whereby.dev/http-api/#/paths/\~1meetings\~1{meetingId}/delete) as described in the API reference.
-
+You can also [delete a room at any time using the API](../whereby-rest-api-reference.md#delete-meeting) as described in the API reference.

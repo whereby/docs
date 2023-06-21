@@ -164,7 +164,7 @@
                     "enum": [
                       "viewerMode"
                     ],
-                    "description": "[BETA]: This is a beta feature, and might change in the future. If provided, the room will be created with the given template type.\nEach template defines a set of properties needed for a particular use-case. Currently the only supported template type is \"viewerMode\". This will set up a room with properties that are\nneeded to create a viewer mode room. The room will be locked, roomMode set to \"group\"\nand fields like hostRoomUrl and viewerRoomUrl will be added to the response.\n"
+                    "description": "If provided, the room will be created with the given template type.\nEach template defines a set of properties needed for a particular use-case. Currently the only supported template type is \"viewerMode\". This will set up a room with properties that are\nneeded to create a viewer mode room. The room will be locked, roomMode set to \"group\"\nand fields like hostRoomUrl and viewerRoomUrl will be added to the response.\n"
                   },
                   "isLocked": {
                     "type": "boolean",
@@ -239,7 +239,7 @@
                               "s3",
                               "whereby"
                             ],
-                            "description": "The provider being used to store the stream.\n- `s3` - Use your S3 bucket to store recordings. The `bucket`, `accessKeyId` and\n`accessKeySecret` fields are required for this option.\n- `whereby` - Store recordings on Whereby hosted storage. The `bucket`, `accessKeyId`\nand `accessKeySecret` fields are not required for this option. This is a beta feature and\nit needs to be enabled manually on our end. Reach out to us if you want to try this feature.\n"
+                            "description": "The provider being used to store the stream.\n- `s3` - Use your S3 bucket to store recordings. The `bucket`, `accessKeyId` and\n`accessKeySecret` fields are required for this option.\n- `whereby` - Store recordings on Whereby hosted storage. The `bucket`, `accessKeyId`\nand `accessKeySecret` fields are not required for this option."
                           },
                           "bucket": {
                             "type": "string",

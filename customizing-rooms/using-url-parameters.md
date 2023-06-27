@@ -52,7 +52,8 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?roomIntegrations=on`](using-url-parameters.md#roomintegrations)                                                 | Enables YouTube and Miro integrations in the meeting                                        |
 | [`?virtualBackgroundUrl=<url>`](using-url-parameters.md#virtualbackgroundurl-less-than-url-greater-than)           | Specify custom virtual background which should be applied to the local participant          |
 | [`?precallPermissionHelpLink=<url>`](using-url-parameters.md#precallpermissionhelplink-less-than-url-greater-than) | Specify custom help link in pre-call review step pointing users to additional support pages |
-| [`?precallCeremony=<on\|off>`](using-url-parameters.md#precallceremony-less-than-on-or-off-greater-than)           | Determines if users see the pre-call device and connectivity test.                          |
+| [`?precallCeremony=<on\|off>`](using-url-parameters.md#precallceremony-less-than-on-or-off-greater-than)           | Determines if users see the pre-call device and connectivity test                           |
+| [`?precallCeremonyCanSkip=on`](using-url-parameters.md#precallceremonycanskip-on)                                  | Adds functionality for participants to skip the connectivity test                           |
 
 ## Property details
 
@@ -212,6 +213,12 @@ Determines if users see the pre-call review step.
 Determines if users see the pre-call device and connectivity test.
 
 **Use case:** The pre-call test will provide users a test of each device; camera, microphone, and speakers, before joining the room. It will also run a connectivity test to assess the reliability of the participants network. This can be skipped by setting this parameter to “off”.
+
+#### `?precallCeremonyCanSkip=on`
+
+Adds functionality for participants to also skip the connectivity test. Hosts are already able to skip the test.
+
+**Use case:** You have users without host privileges who will be attending multiple calls on your platform using Whereby. They may not need to test their device connectivity as often as they attend calls, so may be useful to give them the ability to skip the test.&#x20;
 
 #### **`?skipMediaPermissionPrompt`**
 

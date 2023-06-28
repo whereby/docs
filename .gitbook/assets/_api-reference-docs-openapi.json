@@ -514,7 +514,7 @@
     "/recordings/{recordingId}": {
       "delete": {
         "summary": "Delete recording",
-        "description": "Deletes the specified recording. The endpoint is idempotent, meaning it will return the same response even if the meeting has already been deleted.\n",
+        "description": "Deletes the specified recording. The endpoint is idempotent, meaning it will return the same response even if the recording has already been deleted.\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/recordingId"

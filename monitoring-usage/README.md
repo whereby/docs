@@ -9,7 +9,7 @@ description: >-
 
 ### Insights suite & API
 
-The Insights suite is available from the Embedded dashboard, and is the easiest way to access your usage data at a glance. You can also access insights data through the [Whereby REST API](../whereby-rest-api-reference.md#get-meetings). This way, you can discover trends and report on customer usage easier.
+The Insights suite is available from the Embedded dashboard, and is the easiest way to access your usage data at a glance. You can also access insights data through the [Whereby REST API](../whereby-rest-api-reference/#get-meetings). This way, you can discover trends and report on customer usage easier.
 
 [Read more](insights-suite-and-api/)
 
@@ -21,6 +21,6 @@ With Webhooks you can set up user-defined callbacks that will be triggered by me
 
 ### Name prefixes
 
-When [creating meetings](../whereby-rest-api-reference.md#create-meeting) using the REST API, you can send an extra identifier as part of your API request (`roomNamePrefix`).This identifier will become part of the URL for the room, which you can then use for generating your own usage metrics.
+When [creating meetings](../whereby-rest-api-reference/#create-meeting) using the REST API, you can send an extra identifier as part of your API request (`roomNamePrefix`).This identifier will become part of the URL for the room, which you can then use for generating your own usage metrics.
 
 [Read more](name-prefixes.md)

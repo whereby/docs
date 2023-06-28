@@ -13,7 +13,7 @@ description: >-
 Create a meeting with streaming set up for others to use, such as a teacher or an event organizer. The stream is fixed and can not be changed inside the room afterward.
 
 \
-When creating a meeting [via our API](../whereby-rest-api-reference.md#create-meeting), you can pass your platforms `RTMP URL` and include the `stream key` separated by a forward slash. Then specify how you'd like the stream to begin. "**Automatic**", "**Manual**", or "**Prompt**" by including an in room message to the host.
+When creating a meeting [via our API](../whereby-rest-api-reference/#create-meeting), you can pass your platforms `RTMP URL` and include the `stream key` separated by a forward slash. Then specify how you'd like the stream to begin. "**Automatic**", "**Manual**", or "**Prompt**" by including an in room message to the host.
 
 You'll have these same options when creating a meeting [via our dashboard](../creating-and-deleting-rooms/using-create-a-room.md).
 

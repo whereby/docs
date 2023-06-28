@@ -18,7 +18,7 @@ With the Recording feature you'll need to ensure that several different conditio
    * Only a room host will be able to Record in the room so you need to provide this type of link to the host.
    * When generating this be sure to note that a `hostUrl` is only valid between the meeting creation and [`endDate`](../../creating-and-deleting-rooms/) that you set during your request. These times are in UTC and not your local time zone, unless a timezone was specified in the request.
 2. Your host is using Chrome or Chromium based browser with the [Whereby Chrome Extension](https://chrome.google.com/webstore/detail/whereby/bbpjcfkgapecndkanjcojnldopjlnmjk) installed.
-3. You've enabled Local Recording from the “Configure” → “Recording” section of your dashboard and are using `?recording=on` in your room URLs. Or you've set the recording type to <mark style="color:blue;">`local`</mark> during the meeting creation [API request](../../whereby-rest-api-reference.md#create-meeting).
+3. You've enabled Local Recording from the “Configure” → “Recording” section of your dashboard and are using `?recording=on` in your room URLs. Or you've set the recording type to <mark style="color:blue;">`local`</mark> during the meeting creation [API request](../../whereby-rest-api-reference/#create-meeting).
 4. Your hosts are selecting **only the tab** your meeting is embedded on. <mark style="color:red;">If users select the entire screen or app window it can cause files to be corrupted and unable to be downloaded.</mark>
 
 ### Guides for hosts recording meetings

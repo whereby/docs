@@ -19,7 +19,7 @@ The branding tools can be found under “Configure” → “Appearance”. Any 
 
 The Room Theme API lets you set up and manage branding settings for individual rooms. This could be used for tailoring the video call experience to your client's own branding, or simply to apply different visual styles for rooms used for different purposes.
 
-Visit the [API reference docs](../whereby-rest-api-reference.md#put-requests) for a closer look at how to use the Room Theme API.&#x20;
+Visit the [API reference docs](../whereby-rest-api-reference/#put-requests) for a closer look at how to use the Room Theme API.&#x20;
 
 Note that branding elements configured via the API will override any "global" branding you may have applied via the Embedded Dashboard.
 

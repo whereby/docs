@@ -60,7 +60,7 @@ The recording capability means that the meeting, including audio, video and scre
 
 The reason our recording options are considered compliant is that Whereby does not, in any way store the recordings.
 
-To ensure that recording is enabled, refer to the [Whereby REST API documentation](whereby-rest-api-reference.md) to specify your desired `recording.type` equal to `local` or `cloud`.&#x20;
+To ensure that recording is enabled, refer to the [Whereby REST API documentation](whereby-rest-api-reference/) to specify your desired `recording.type` equal to `local` or `cloud`.&#x20;
 
 <details>
 
@@ -107,13 +107,13 @@ Whereby cannot control what happens to a local recording.&#x20;
 
 </details>
 
-The use of recording is not required and if preferred can be disabled entirely. Please refer to the [Whereby REST API documentation](whereby-rest-api-reference.md) and use `recording.type = none`&#x20;
+The use of recording is not required and if preferred can be disabled entirely. Please refer to the [Whereby REST API documentation](whereby-rest-api-reference/) and use `recording.type = none`&#x20;
 
 ### Room names&#x20;
 
 For our HIPAA compliant customers, we recommend the use of random names to avoid accidental usage of [PHI ](https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html)(protected health information) or PII (personal identifiable information). This also ensures there is no pattern in place that can be used to identify the purpose of a meeting.
 
-To do this, refer to the [Whereby REST API documentation](whereby-rest-api-reference.md) and use `roomNamePattern = uuid`&#x20;
+To do this, refer to the [Whereby REST API documentation](whereby-rest-api-reference/) and use `roomNamePattern = uuid`&#x20;
 
 ### Display name&#x20;
 

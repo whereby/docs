@@ -45,6 +45,10 @@ Creates a transient room that is available between creation and an hour after th
 [_api-reference-docs-openapi.json](.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
+{% swagger src=".gitbook/assets/_api-reference-docs-openapi.json" path="/recordings" method="get" %}
+[_api-reference-docs-openapi.json](.gitbook/assets/_api-reference-docs-openapi.json)
+{% endswagger %}
+
 {% swagger src=".gitbook/assets/_api-reference-docs-openapi.json" path="/insights/rooms" method="get" %}
 [_api-reference-docs-openapi.json](.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
@@ -53,9 +57,17 @@ Creates a transient room that is available between creation and an hour after th
 [_api-reference-docs-openapi.json](.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
+{% swagger src=".gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}/access-link" method="get" %}
+[_api-reference-docs-openapi.json](.gitbook/assets/_api-reference-docs-openapi.json)
+{% endswagger %}
+
 ### Delete meeting
 
 {% swagger src=".gitbook/assets/_api-reference-docs-openapi.json" path="/meetings/{meetingId}" method="delete" %}
+[_api-reference-docs-openapi.json](.gitbook/assets/_api-reference-docs-openapi.json)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}" method="delete" %}
 [_api-reference-docs-openapi.json](.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 

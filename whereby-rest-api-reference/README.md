@@ -31,64 +31,64 @@ The bearer token will be provided upon request and it is up to the client to kee
 
 Creates a transient room that is available between creation and an hour after the given `endDate`. After this time the room will be automatically deleted. The URL to this room is present in the response.
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/meetings" method="post" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/meetings" method="post" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/meetings" method="get" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/meetings" method="get" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/meetings/{meetingId}" method="get" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/meetings/{meetingId}" method="get" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/meetings/{meetingId}" method="delete" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/meetings/{meetingId}" method="delete" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
 ### /insights
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/insights/rooms" method="get" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/insights/rooms" method="get" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/insights/room-sessions" method="get" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/insights/room-sessions" method="get" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
 ### /recordings
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/recordings" method="get" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings" method="get" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/recordings/{recordingId}" method="get" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}" method="get" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/recordings/{recordingId}/access-link" method="get" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}/access-link" method="get" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/recordings/{recordingId}" method="delete" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}" method="delete" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
 ### /rooms
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/rooms/{roomName}/theme/logo" method="put" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/rooms/{roomName}/theme/logo" method="put" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/rooms/{roomName}/theme/tokens" method="put" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/rooms/{roomName}/theme/tokens" method="put" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/rooms/{roomName}/theme/room-background" method="put" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/rooms/{roomName}/theme/room-background" method="put" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/externalapi-openapi-main-dashupload.json" path="/rooms/{roomName}/theme/room-knock-page-background" method="put" %}
-[externalapi-openapi-main-dashupload.json](../.gitbook/assets/externalapi-openapi-main-dashupload.json)
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/rooms/{roomName}/theme/room-knock-page-background" method="put" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}

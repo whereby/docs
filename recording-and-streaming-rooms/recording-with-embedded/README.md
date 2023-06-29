@@ -9,7 +9,9 @@ description: >-
 
 ### Cloud Recording
 
-Cloud recording allows you to record your meetings and store those files in a storage bucket owned by you and your organization. This feature is currently limited to Amazon S3 storage. You can review their plans and pricing on the [AWS site](https://aws.amazon.com/s3/pricing/).&#x20;
+Cloud recording allows you to record your meetings and store those files in a cloud storage bucket. You can choose to store the recording files in Whereby-provided storage or in external storage owned and managed by you and your organization. &#x20;
+
+Currently we only support Amazon S3 as the external storage for cloud recordings. You can review their plans and pricing on the [AWS site](https://aws.amazon.com/s3/pricing/).&#x20;
 
 [Read more](cloud-recording.md)
 

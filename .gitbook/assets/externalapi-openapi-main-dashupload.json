@@ -78,13 +78,6 @@
         "description": "Room name.",
         "required": true,
         "example": "913c4449-c904-4313-b560-ae5bf0b04a39"
-      },
-      "recordingId": {
-        "name": "recordingId",
-        "in": "path",
-        "description": "Recording ID.",
-        "required": true,
-        "example": "1"
       }
     },
     "schemas": {
@@ -92,13 +85,20 @@
         "type": "array",
         "items": {
           "type": "string",
-          "enum": ["hostRoomUrl", "viewerRoomUrl"]
+          "enum": [
+            "hostRoomUrl",
+            "viewerRoomUrl"
+          ]
         },
         "description": "Additional fields that should be populated.\n- `hostRoomUrl` - Include hostRoomUrl field in the meeting response.\n- `viewerRoomUrl` - Include viewerRoomUrl field in the meeting response.\n"
       },
       "Meeting": {
         "type": "object",
-        "required": ["meetingId", "roomUrl", "endDate"],
+        "required": [
+          "meetingId",
+          "roomUrl",
+          "endDate"
+        ],
         "properties": {
           "meetingId": {
             "type": "string",
@@ -141,25 +141,6 @@
           "endDate": "2020-05-12T17:42:49Z",
           "roomUrl": "https://subdomain.whereby.com/dda1beca-af37-11eb-ac88-372b6869f077"
         }
-      },
-      "Recording": {
-        "type": "object",
-        "required": [
-          "recordingId",
-          "roomSessionId",
-          "filename",
-          "startDate",
-          "endDate",
-          "sizeInMegaBytes"
-        ],
-        "example": {
-          "recordingId": "1",
-          "roomSessionId": "1",
-          "filename": "recording.mp4",
-          "startDate": "2020-01-01T00:00:00.000Z",
-          "endDate": "2020-01-01T00:00:00.000Z",
-          "sizeInMegaBytes": 100
-        }
       }
     }
   },
@@ -174,7 +155,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["endDate"],
+                "required": [
+                  "endDate"
+                ],
                 "properties": {
                   "endDate": {
                     "type": "string",
@@ -194,7 +177,10 @@
                   "roomMode": {
                     "type": "string",
                     "default": "normal",
-                    "enum": ["group", "normal"],
+                    "enum": [
+                      "group",
+                      "normal"
+                    ],
                     "example": "normal",
                     "description": "The mode and size of the created transient room.\n`normal` is the default room mode and should be used for meetings up to 4 participants.\n`group` should be used for meetings that require more than 4 participants.\n"
                   },
@@ -208,33 +194,51 @@
                   "roomNamePattern": {
                     "type": "string",
                     "default": "uuid",
-                    "enum": ["uuid", "human-short"],
+                    "enum": [
+                      "uuid",
+                      "human-short"
+                    ],
                     "example": "uuid",
                     "description": "The format of the randomly generated room name.\n`uuid` is the default room name pattern and follows the usual 8-4-4-4-12 pattern.\n`human-short` generates a shorter string made up of six distinguishable characters.\n"
                   },
                   "templateType": {
                     "type": "string",
-                    "enum": ["viewerMode"],
+                    "enum": [
+                      "viewerMode"
+                    ],
                     "description": "If provided, the room will be created with the given template type.\nEach template defines a set of properties needed for a particular use-case. Currently the only supported template type is \"viewerMode\". This will set up a room with properties that are\nneeded to create a viewer mode room. The room will be locked, roomMode set to \"group\"\nand fields like hostRoomUrl and viewerRoomUrl will be added to the response.\n"
                   },
                   "recording": {
                     "type": "object",
-                    "required": ["type", "destination", "startTrigger"],
+                    "required": [
+                      "type",
+                      "destination",
+                      "startTrigger"
+                    ],
                     "description": "Options for how a meeting should be recorded.\n",
                     "properties": {
                       "type": {
                         "type": "string",
-                        "enum": ["none", "local", "cloud"],
+                        "enum": [
+                          "none",
+                          "local",
+                          "cloud"
+                        ],
                         "description": "The type of recording that should take place.\n  \"none\" - Recording should be disabled\n  \"local\" - Recording should happen in the browser\n  \"cloud\" - Recording should happen in the cloud\n"
                       },
                       "destination": {
                         "type": "object",
-                        "required": ["provider"],
+                        "required": [
+                          "provider"
+                        ],
                         "description": "Information regarding where the recording should be stored. If this is not required, or should\nbe inherited, it should be set to null.\n",
                         "properties": {
                           "provider": {
                             "type": "string",
-                            "enum": ["s3", "whereby"],
+                            "enum": [
+                              "s3",
+                              "whereby"
+                            ],
                             "description": "The provider being used to store the stream.\n- `s3` - Use your S3 bucket to store recordings. The `bucket`, `accessKeyId` and\n`accessKeySecret` fields are required for this option.\n- `whereby` - Store recordings on Whereby hosted storage. The `bucket`, `accessKeyId`\nand `accessKeySecret` fields are not required for this option."
                           },
                           "bucket": {
@@ -251,7 +255,10 @@
                           },
                           "fileFormat": {
                             "type": "string",
-                            "enum": ["mkv", "mp4"],
+                            "enum": [
+                              "mkv",
+                              "mp4"
+                            ],
                             "description": "The format of the recording. By default the value should be taken from the\norganization settings.\n"
                           }
                         }
@@ -270,12 +277,17 @@
                   },
                   "streaming": {
                     "type": "object",
-                    "required": ["destination", "startTrigger"],
+                    "required": [
+                      "destination",
+                      "startTrigger"
+                    ],
                     "description": "A configuration object for live RTMP streaming of the meeting\n",
                     "properties": {
                       "destination": {
                         "type": "object",
-                        "required": ["url"],
+                        "required": [
+                          "url"
+                        ],
                         "description": "The destination of the stream\n",
                         "properties": {
                           "url": {
@@ -286,7 +298,11 @@
                       },
                       "startTrigger": {
                         "type": "string",
-                        "enum": ["none", "prompt", "automatic"],
+                        "enum": [
+                          "none",
+                          "prompt",
+                          "automatic"
+                        ],
                         "description": "Specify the condition when live streaming should be started. null should be passed when this is not required or should be inherited\nfrom the organization preferences\n  \"none\" - The meeting host is able to manually start and stop the stream.\n  \"prompt\" - The meeting host will be prompted to start the stream once joined.\n  \"automatic\" - The stream will be automatically started as soon as the first participant joins the\n                meeting.\n"
                       }
                     }
@@ -359,7 +375,10 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "required": ["results", "cursor"],
+                  "required": [
+                    "results",
+                    "cursor"
+                  ],
                   "properties": {
                     "results": {
                       "type": "array",
@@ -449,176 +468,6 @@
         }
       }
     },
-    "/recordings": {
-      "get": {
-        "summary": "Get recordings",
-        "description": "Returns the recordings.\n",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "cursor",
-            "schema": {
-              "type": "string",
-              "description": "The cursor for paginating through the results. To fetch the next page,\nset the `cursor` to the `cursor` returned by the previous request.\n",
-              "example": "8f4031bfc7640c5f267b11b6fe0c2507"
-            }
-          },
-          {
-            "in": "query",
-            "name": "limit",
-            "schema": {
-              "type": "integer",
-              "description": "The limit for the pagination - the maximum number of results that will be returned within a single API response.",
-              "default": 50,
-              "maximum": 100,
-              "minimum": 1
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A JSON object with the page containing the array with the recordings results.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "required": ["results", "cursor"],
-                  "properties": {
-                    "results": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Recording"
-                      }
-                    },
-                    "cursor": {
-                      "type": "string",
-                      "description": "The cursor for paginating through the results. To fetch the next page,\nset the `cursor` to the `cursor` returned by the previous request.\nIf there are no more results, the value returned is `null`.\n"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFoundError"
-          },
-          "429": {
-            "$ref": "#/components/responses/ThrottleError"
-          }
-        }
-      }
-    },
-    "/recordings/{recordingId}": {
-      "delete": {
-        "summary": "Delete recording",
-        "description": "Deletes the specified recording. The endpoint is idempotent, meaning it will return the same response even if the meeting has already been deleted.\n",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/recordingId"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "The resource was deleted successfully."
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          },
-          "429": {
-            "$ref": "#/components/responses/ThrottleError"
-          }
-        }
-      },
-      "get": {
-        "summary": "Get recording",
-        "description": "Returns the specified recording.\n",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/recordingId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A JSON object representing the recording.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Recording"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFoundError"
-          },
-          "429": {
-            "$ref": "#/components/responses/ThrottleError"
-          }
-        }
-      }
-    },
-    "/recordings/{recordingId}/access-link": {
-      "get": {
-        "summary": "Get recording access link",
-        "description": "Returns the access link for the specified recording.",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/recordingId"
-          },
-          {
-            "in": "query",
-            "name": "validForSeconds",
-            "schema": {
-              "type": "integer",
-              "description": "The number of seconds the access link is valid for.",
-              "default": 3600,
-              "minimum": 1,
-              "maximum": 43200
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A JSON object representing the access link.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "required": ["accessLink", "expires"],
-                  "properties": {
-                    "accessLink": {
-                      "type": "string",
-                      "description": "The access link.",
-                      "example": "https://s3.eu-central-1.amazonaws.com/recordings/1.mp4?AWSAccessKeyId=AKIAJ..."
-                    },
-                    "expires": {
-                      "type": "integer",
-                      "description": "The timestamp when the access link expires.",
-                      "example": 1588262400000
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFoundError"
-          },
-          "429": {
-            "$ref": "#/components/responses/ThrottleError"
-          }
-        }
-      }
-    },
     "/rooms/{roomName}/theme/tokens": {
       "put": {
         "summary": "Set room colors",
@@ -657,7 +506,10 @@
                   },
                   "tokensPreset": {
                     "type": "string",
-                    "enum": ["custom", "default"],
+                    "enum": [
+                      "custom",
+                      "default"
+                    ],
                     "description": "Use the given primary or secondary colors when `custom`. Use organization defaults when `default`\nor not defined.\n"
                   }
                 }
@@ -708,7 +560,9 @@
                 "properties": {
                   "theme": {
                     "type": "string",
-                    "enum": ["default"],
+                    "enum": [
+                      "default"
+                    ],
                     "description": "Reset room logo to default."
                   }
                 }
@@ -760,12 +614,22 @@
                 "properties": {
                   "palette": {
                     "type": "string",
-                    "enum": ["default", "grey", "purple", "burgund"],
+                    "enum": [
+                      "default",
+                      "grey",
+                      "purple",
+                      "burgund"
+                    ],
                     "description": "Background color name."
                   },
                   "theme": {
                     "type": "string",
-                    "enum": ["default", "mountains", "characters", "rocks"],
+                    "enum": [
+                      "default",
+                      "mountains",
+                      "characters",
+                      "rocks"
+                    ],
                     "description": "Background image. `default` means no image."
                   }
                 }
@@ -817,12 +681,22 @@
                 "properties": {
                   "palette": {
                     "type": "string",
-                    "enum": ["default", "grey", "purple", "burgund"],
+                    "enum": [
+                      "default",
+                      "grey",
+                      "purple",
+                      "burgund"
+                    ],
                     "description": "Knock page background color name."
                   },
                   "theme": {
                     "type": "string",
-                    "enum": ["default", "mountains", "characters", "rocks"],
+                    "enum": [
+                      "default",
+                      "mountains",
+                      "characters",
+                      "rocks"
+                    ],
                     "description": "Knock page background image. `default` means no image."
                   }
                 }

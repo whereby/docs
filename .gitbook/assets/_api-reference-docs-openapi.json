@@ -936,10 +936,14 @@
                           "roomName",
                           "createdAt",
                           "endAt",
+                          "firstSessionStartedAt",
+                          "lastSessionStartedAt",
                           "totalParticipantMinutes",
                           "totalRecorderMinutes",
                           "totalStreamerMinutes",
                           "totalUniqueParticipants",
+                          "totalUniqueRecorders",
+                          "totalUniqueStreamers",
                           "totalSessions"
                         ],
                         "properties": {
@@ -957,6 +961,16 @@
                             "type": "string",
                             "description": "The date the room was set to expire.",
                             "example": "2020-01-01T01:00:00.000Z"
+                          },
+                          "firstSessionStartedAt": {
+                            "type": "string",
+                            "description": "The date the first session started in this room.",
+                            "example": "2020-01-01T00:15:00.000Z"
+                          },
+                          "lastSessionStartedAt": {
+                            "type": "string",
+                            "description": "The date the last session started in this room.",
+                            "example": "2020-01-01T00:45:00.000Z"
                           },
                           "totalParticipantMinutes": {
                             "type": "integer",
@@ -977,6 +991,16 @@
                             "type": "integer",
                             "description": "The total number of distinct participants in the room.",
                             "example": 4
+                          },
+                          "totalUniqueRecorders": {
+                            "type": "integer",
+                            "description": "The total number of distinct recorders in the room.",
+                            "example": 2
+                          },
+                          "totalUniqueStreamers": {
+                            "type": "integer",
+                            "description": "The total number of distinct streamers in the room.",
+                            "example": 1
                           },
                           "totalSessions": {
                             "type": "integer",
@@ -1064,7 +1088,9 @@
                           "totalParticipantMinutes",
                           "totalRecorderMinutes",
                           "totalStreamerMinutes",
-                          "totalUniqueParticipants"
+                          "totalUniqueParticipants",
+                          "totalUniqueRecorders",
+                          "totalUniqueStreamers"
                         ],
                         "properties": {
                           "roomSessionId": {
@@ -1106,6 +1132,16 @@
                             "type": "integer",
                             "description": "The total number of distinct participants in the session.",
                             "example": 4
+                          },
+                          "totalUniqueRecorders": {
+                            "type": "integer",
+                            "description": "The total number of distinct recorders in the session.",
+                            "example": 3
+                          },
+                          "totalUniqueStreamers": {
+                            "type": "integer",
+                            "description": "The total number of distinct streamers in the session.",
+                            "example": 2
                           }
                         }
                       }

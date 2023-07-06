@@ -1032,9 +1032,16 @@
           {
             "name": "roomName",
             "in": "query",
-            "description": "Room name .",
+            "description": "Room name.",
             "required": true,
             "example": "/4b3bd908-cb88-11ec-9d64-0242ac120002"
+          },
+          {
+            "name": "roomSessionId",
+            "in": "query",
+            "description": "Room session identifier.",
+            "required": false,
+            "example": "32ba120a-a691-4e8e-aec3-a610239271de"
           },
           {
             "name": "sortBy",

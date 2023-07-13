@@ -1,12 +1,20 @@
 # Using the Insights dashboard
 
-## User agent string
+## Rooms and sessions
 
-We receive the UA string from each participant's browser. This includes the browser and operating system they were using during the call. You can use this information to determine if there were any compatibility issues, since not all devices or browsers fully support WebRTC.&#x20;
+On the Rooms page, you can see a list of all the rooms that currently exist and have been created in your account. They are listed by most to least recently used. You can easily filter the list by searching a room name.&#x20;
+
+You can also access details of all the sessions that have happened within a specific room. A session starts once there are two or more people in a call.&#x20;
+
+## Participants
+
+Within a session, you can find the participants that attended the session. Each time your user reconnects to the room, they will receive a new, unique participant ID from us. You will be able to match participant IDs based on the display name they enter the room with, which is currently available in the event logs.&#x20;
+
+## Browser and operating system
+
+You can use this information to determine if there were any compatibility issues, since not all devices or browsers fully support WebRTC.&#x20;
 
 You can find our list of supported browsers and devices here: [https://whereby.helpscoutdocs.com/article/415-supported-devices](https://whereby.helpscoutdocs.com/article/415-supported-devices)
-
-Note that every browser decides how to pass the UA and values can be frozen. For example, your user might be on MacOS Ventura (13.2), but the Safari browser will pass `Intel Mac OS X 10_15_7` as part of the UA. Because of this, we plan to derive browser and OS differently in the future in order to improve the accuracy of the data. Providing the UA to you in the meantime can be helpful as a hint for determining call quality issues.&#x20;
 
 ## Reading the charts
 
@@ -24,7 +32,7 @@ We've separated packet loss and bitrate out into separate charts for sending and
 {% tab title="Packet Loss" %}
 ### Packet loss
 
-Packet loss is a measure of how many data packets sent over a network are lost in transit. Packets are small chunks of data that are used to transmit information over a network.&#x20;
+Packet loss is a great indicator if a user had poor network. It is a measure of how many data packets sent over a network are lost in transit. Packets are small chunks of data that are used to transmit information over a network.&#x20;
 
 Packet loss can have a significant impact on the quality of video calls. When packets are lost, the video can become choppy or pixelated. In some cases, the video call may even drop altogether.
 

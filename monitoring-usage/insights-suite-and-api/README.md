@@ -24,13 +24,5 @@ You can also query the Insights suite data through the [Whereby REST API](../../
 Insights can take 10-15 minutes to update accordingly on the dashboard and via the GET endpoints
 {% endhint %}
 
-## Rooms and sessions
 
-On the Rooms page, you can see a list of all the rooms that currently exist and have been created in your account. Your admins can easily filter the list by searching a room name or choosing a date range to find the insights you’re looking for in seconds.
-
-You can also access details of all the sessions that have happened within a specific room and quickly filter them by date for a more detailed view.&#x20;
-
-## Participants
-
-Within a session, you can find the participants that attended the session. Each time your user reconnects to the room, they will receive a new, unique participant ID from us.
 

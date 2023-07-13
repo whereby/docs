@@ -19,6 +19,8 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 
 | URL Parameter                                                                                                      | Description                                                                                 |
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| [`?aec=off`](using-url-parameters.md#aec-off)                                                                      | Turn off acoustic echo cancellation on audio                                                |
+| [`?agc=off`](using-url-parameters.md#agc-off)                                                                      | Turn off automatic gain control on audio                                                    |
 | [`?audio=off`](using-url-parameters.md#audio-off)                                                                  | Participant joins the room with microphone turned off.                                      |
 | [`?audioDenoiser=<on\|off>`](using-url-parameters.md#audiodenoiser-less-than-on-or-off-greater-than)               | Enables/Disables the noise cancelation feature                                              |
 | [`?autoSpotlight`](using-url-parameters.md#autospotlight)                                                          | Automatically spotlight the local participant on room join                                  |
@@ -57,6 +59,22 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?video=off`](using-url-parameters.md#video-off)                                                                  | Participant joins the room with camera turned off.                                          |
 
 ## Property details
+
+#### `?aec=off`
+
+Turn off acoustic echo cancellation on audio.&#x20;
+
+**Note:** AEC must be on in order to use the in room "Noise Reduction" feature.
+
+**Use case:** In situations where clearer audio is required, like music lessons, disabling echo cancellation can improve audio clarity overall.
+
+#### `?agc=off`
+
+Turn off automatic gain control on audio.
+
+**Note:** AGC must be on in order to use the in room "Noise Reduction" feature.
+
+**Use case:** In situations where clearer audio is required, like music lessons, disabling gain control can improve audio clarity overall by not auto adjusting volumes.
 
 #### `?audio=off`
 

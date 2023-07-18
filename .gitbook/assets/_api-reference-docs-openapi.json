@@ -534,7 +534,7 @@
       },
       "get": {
         "summary": "Get recording",
-        "description": "Returns the specified recording.\n",
+        "description": "Returns the specified recording metadata.\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/recordingId"

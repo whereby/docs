@@ -229,11 +229,15 @@ Hide the Picture in Picture button.
 
 Determines if users see the pre-call device and connectivity test.
 
+**Note:** This feature is a subset of the Pre-call review. This means in order for the pre-call tests to appear, pre-call cannot be turned off.
+
 **Use case:** The pre-call test will provide users a test of each device; camera, microphone, and speakers, before joining the room. It will also run a connectivity test to assess the reliability of the participants network. This can be skipped by setting this parameter to “off”.
 
 #### `?precallCeremonyCanSkip=on`
 
 Adds functionality for participants to also skip the connectivity test. Hosts are already able to skip the test.
+
+**Note:** This feature is a subset of the Pre-call review. This means in order for the pre-call tests to appear, pre-call cannot be turned off.
 
 **Use case:** You have users without host privileges who will be attending multiple calls on your platform using Whereby. They may not need to test their device connectivity as often as they attend calls, so may be useful to give them the ability to skip the test.&#x20;
 

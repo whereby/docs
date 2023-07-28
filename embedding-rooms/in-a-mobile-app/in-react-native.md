@@ -27,6 +27,7 @@ export default class App extends Component {
       <WebView
         startInLoadingState
         source={{ uri: roomUrl + roomParameters }}
+        // If using html as source, you need to include baseUrl: "https://whereby.com" as a secondary prop
         mediaPlaybackRequiresUserAction={false}
         mediaCapturePermissionGrantType={'grant'}
 

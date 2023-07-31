@@ -10,6 +10,14 @@ You can also access details of all the sessions that have happened within a spec
 
 Within a session, you can find the participants that attended the session. Each time your user reconnects to the room, they will receive a new, unique participant ID from us. You will be able to match participant IDs based on the display name they enter the room with, which is currently available in the event logs.&#x20;
 
+## Display name
+
+The display name of the participant is the name they enter the call with. Your users can either enter this name themselves or you can pass in for them using the [displayName parameter](https://docs.whereby.com/customizing-rooms/using-url-parameters#displayname-less-than-name-greater-than).&#x20;
+
+Some customers choose to use generic names, such as `Doctor`  or `Patient` for added anonymity. If you would like for names not to appear in your Insights, please reach out and we can turn this feature off for you.&#x20;
+
+Only room sessions after July 20, 2023 will include display name in the session details pages.&#x20;
+
 ## Browser and operating system
 
 You can use this information to determine if there were any compatibility issues, since not all devices or browsers fully support WebRTC.&#x20;

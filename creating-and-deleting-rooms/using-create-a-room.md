@@ -26,7 +26,7 @@ The Room Overview page that follows gives you a view at a glance of what you hav
 If you want to review these room details again at a later point in time, you can find an overview of all rooms you've created (incl. demo rooms and rooms generated through the API) in the new “Rooms” section that's linked from the sidebar.&#x20;
 
 {% hint style="info" %}
-While the “Create a room” flow is perfect for getting started, and is probably sufficient if you only need to create a handful of meeting rooms, we recommend looking into the [REST API documentation](https://whereby.dev/http-api/) to generate rooms on-the-fly, and unlock the full power of Whereby Embedded.
+While the “Create a room” flow is perfect for getting started, and is probably sufficient if you only need to create a handful of meeting rooms, we recommend looking into the [REST API documentation](../whereby-rest-api-reference/) to generate rooms on-the-fly, and unlock the full power of Whereby Embedded.
 {% endhint %}
 
 ### Deleting rooms
@@ -35,4 +35,4 @@ For many scenarios, it makes sense to create rooms to be used for a limited time
 
 When creating a room through the “Create a room” flow, you have define a “Room end date”. The room will automatically be deleted within 24 hours of this date.
 
-Currently, we don't support deleting a specific room through our dashboard, but you can [delete a room at any time using the API](https://whereby.dev/http-api/#/paths/\~1meetings\~1{meetingId}/delete) as described in the API reference documentation.
+Currently, we don't support deleting a specific room through our dashboard, but you can [delete a room at any time using the API](../whereby-rest-api-reference/#meetings) as described in the API reference documentation.

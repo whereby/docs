@@ -181,6 +181,8 @@ System.out.println("Body: " + response.body());
 
 For many scenarios, it makes sense to create rooms to be used for a limited time or even just a single meeting, after which the rooms should be deactivated. With each room having a unique URL and a limited lifespan, there's no need to worry about meetings conflicting or rooms being used for other purposes after the intended session.
 
-When creating a room using the API, the `endDate` parameter is used to indicate the time at which the room should be marked for deactivation. The room will then automatically be deleted within 24 hours of the `endDate` provided. [Webhook](../monitoring-usage/webhooks.md) events and [hostRoomURL](../user-roles-and-privileges.md) privileges will also end an hour after the `endDate` is met.
+When creating a room using the API, the `endDate` parameter is used to indicate the time at which the room should be marked for deactivation. This means [Webhook](../monitoring-usage/webhooks.md) events, [host](../user-roles-and-privileges.md) privileges, and minutes consumption will also end an hour after the `endDate` is met.&#x20;
+
+The room will then automatically be deleted within 24 hours of the `endDate` provided.
 
 You can also [delete a room at any time using the API](../whereby-rest-api-reference/#delete-meeting) as described in the API reference.

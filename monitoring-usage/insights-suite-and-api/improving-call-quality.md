@@ -21,7 +21,7 @@ Read more about this feature in our [release notes](https://whereby.launchnotes.
 
 Turning on [low data mode](https://docs.whereby.com/customizing-rooms/using-url-parameters#lowdata-less-than-on-or-off-greater-than) will set the participant's video resolution lower by default. This means there is less data to send and receive, which is helpful with poor network conditions.
 
-We always surface an option to the participant to toggle this mode on themselves before they join the call.&#x20;
+With [pre-call ceremony](../../customizing-rooms/using-url-parameters.md#precallceremony-less-than-on-or-off-greater-than) enabled, we surface an option for the participant to toggle this mode on themselves before they join the call.&#x20;
 
 ## **Recommended troubleshooting steps for end users**
 

@@ -8,7 +8,6 @@ When [creating rooms](../../whereby-rest-api-reference/#create-meeting), we reco
 
 * Our SFU rooms are generally less intensive on network usage, especially when there are more than 2 people in a call or when cloud recording/streaming are being used.
 * The mesh can make changes on the fly to participants' calls in order to manage the bandwidth usage of different resources and prioritize audio transmission. For example, if a participant decreases the size of their browser window during a call, the SFU will adjust the resolution of the videos they are receiving in order to optimize the quality of the call. &#x20;
-* You will have more ability to troubleshoot and Whereby can better support you when you do run into issues.
 * Your calls will benefit from the continuous improvements we make to our SFU mesh.
 
 #### **Turn on our device and connectivity test**

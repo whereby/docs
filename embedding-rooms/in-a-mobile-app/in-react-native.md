@@ -10,7 +10,13 @@ Before starting, you will need to add the corresponding permissions to be able t
 
 Follow this [guide](https://github.com/react-native-webview/react-native-webview/blob/master/docs/Getting-Started.md#react-native-webview-getting-started-guide) to add and setup the `react-native-webview` library in your React Native project.
 
-Finally, add the WebView component to your code, setup the properties and fill the room URL and parameters. Here is a short example:
+Finally, add the WebView component to your code, setup the properties and fill the room URL and parameters.&#x20;
+
+{% hint style="warning" %}
+It's been reported that the Whereby camera and microphone modals that appear on hover, don't always properly close while running in the Android Simulator. If you experience this issue, try running your application on a device natively.
+{% endhint %}
+
+Here is a short example:
 
 {% tabs %}
 {% tab title="React native" %}

@@ -40,6 +40,7 @@
 * [Whereby Embedded SDKs](whereby-embedded-sdk-beta.md)
 * [FAQ & Troubleshooting](faq-and-troubleshooting/README.md)
   * [End User documentation](faq-and-troubleshooting/end-user-documentation.md)
+  * [Screen Sharing](faq-and-troubleshooting/screen-sharing.md)
 * [Github Examples](examples.md)
 * [Whereby REST API reference](whereby-rest-api-reference/README.md)
   * [/meetings](https://docs.whereby.com/whereby-rest-api-reference#meetings)

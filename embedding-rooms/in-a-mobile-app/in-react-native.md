@@ -13,7 +13,7 @@ Follow this [guide](https://github.com/react-native-webview/react-native-webview
 Finally, add the WebView component to your code, setup the properties and fill the room URL and parameters.&#x20;
 
 {% hint style="warning" %}
-It's been reported that the Whereby camera and microphone modals that appear on hover, don't always properly close while running in the Android Simulator. If you experience this issue, try running your application on a device natively.
+It's been reported that the Whereby camera and microphone modals that appear on hover, don't always properly close while running in the Android Simulator. If you experience this issue, try running your application on a physical device.
 {% endhint %}
 
 Here is a short example:

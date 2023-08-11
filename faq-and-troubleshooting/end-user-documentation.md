@@ -49,6 +49,12 @@ If you lock your phone while in the call, you can experience a disconnect from t
 
 If you have Apple's iCloud Private relay feature turned on for your device, you may also get disconnected from the room every 5 minutes. You can either [turn this feature off](https://support.apple.com/guide/icloud/mm7dc25cb68f/icloud) or join the call from another browser such as Chrome. Only calls on Safari are impacted by this feature.&#x20;
 
+## In-room call quality indicator
+
+When we detect a network issue during the call, you will see a yellow indicator appear. The indicator doesn’t mean that you will perceive any reduced quality; it means your network conditions are in such a state where you _might_ experience reduced quality.&#x20;
+
+![](../.gitbook/assets/image.png)
+
 ## Additional steps & information
 
 If previously mentioned steps aren't successful in resolving the issue, here are some supplementary tips and actions to try:

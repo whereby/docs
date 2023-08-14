@@ -19,7 +19,7 @@ As the platform holder, there are few options you have for managing the availabl
 * Listening for the [screen sharing event](../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md#listening-to-events) with our embed element to facilitate in app messages or notifications
 * Using the [browser method](../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md#sending-commands) for stopping/starting screen sharing
 
-## Browser features
+## Browser sharing options
 
 {% tabs %}
 {% tab title="Chrome/Chromium" %}
@@ -39,7 +39,7 @@ Firefox allows for the sharing of an entire screen, or of an app window. Options
 {% endtab %}
 
 {% tab title="Safari" %}
-SafariFirefox allows for the sharing of an entire screen, or of an app window. When selecting the "Share Window" option, you'll hover your mouse over and click the window you'd like to share.
+Safari allows for the sharing of an entire screen, or of an app window. When selecting the "Share Window" option, you'll hover your mouse over and click the window you'd like to share.
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-08-11 at 3.36.32 PM.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}

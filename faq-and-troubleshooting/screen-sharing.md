@@ -19,10 +19,6 @@ As the platform holder, there are few options you have for managing the availabl
 * Listening for the [screen sharing event](../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md#listening-to-events) with our embed element to facilitate in app messages or notifications
 * Using the [browser method](../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md#sending-commands) for stopping/starting screen sharing
 
-{% hint style="success" %}
-Allowing the use of "[Picture in Picture](https://docs.whereby.com/customizing-rooms/using-url-parameters#pipbutton-off)" can be helpful for users that want to screen share content and view others within the room
-{% endhint %}
-
 ## Browser features
 
 {% tabs %}
@@ -49,7 +45,9 @@ SafariFirefox allows for the sharing of an entire screen, or of an app window. W
 {% endtab %}
 {% endtabs %}
 
-## Screen sharing with audio
+## Screen sharing additional features
+
+### Screen sharing with audio
 
 Sharing computer audio is possible while screen sharing and using Chrome or Chromium browsers.&#x20;
 
@@ -74,3 +72,18 @@ Sharing the audio of the entire screen that contains a Whereby room will cause a
 <figure><img src="../.gitbook/assets/file-KljwIMe85O (1).png" alt="" width="375"><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
+
+### Picture in picture
+
+Allowing the use of "[Picture in Picture](https://docs.whereby.com/customizing-rooms/using-url-parameters#pipbutton-off)" can be helpful for users that want to screen share content and still be able to view others within the room.
+
+<figure><img src="../.gitbook/assets/file-I2HcA3GVNZ.png" alt="" width="480"><figcaption></figcaption></figure>
+
+This activates a pop-out of the currently active videos within the meeting room.&#x20;
+
+### Annotating Screen share
+
+Users can extend the capability of screen sharing by installing extensions in Chrome or Chromium browsers. Tools like "[Draw on page](https://chrome.google.com/webstore/detail/draw-on-page/ngmfehckdahhmlbabjemcepfhgnoddlo?utm\_source=ext\_sidebar\&hl=en-US)" or "[Paint](https://chrome.google.com/webstore/detail/paint/ejllkedmklophclpgonojjkaliafeilj)" work well to highlight and indicate content in your browser while screen sharing.
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-14 at 2.29.27 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+

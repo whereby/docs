@@ -75,17 +75,17 @@ Creates a transient room that is available between creation and an hour after th
 [_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="recordings/bulk-delete" method="post" %}
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/bulk-delete" method="post" %}
 [_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
 ### /transcriptions
 
-{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="transcriptions" method="post" %}
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/transcriptions" method="post" %}
 [_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="transcriptions" method="get" %}
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/transcriptions" method="get" %}
 [_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
@@ -101,7 +101,7 @@ Creates a transient room that is available between creation and an hour after th
 [_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="transcriptions/bulk-delete" method="post" %}
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/transcriptions/bulk-delete" method="post" %}
 [_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 

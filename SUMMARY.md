@@ -46,4 +46,5 @@
   * [/meetings](https://docs.whereby.com/whereby-rest-api-reference#meetings)
   * [/insights](https://docs.whereby.com/whereby-rest-api-reference#insights)
   * [/recordings](https://docs.whereby.com/whereby-rest-api-reference#recordings)
+  * [/transcriptions](https://docs.whereby.com/whereby-rest-api-reference#transcriptions)
   * [/rooms](https://docs.whereby.com/whereby-rest-api-reference#rooms)

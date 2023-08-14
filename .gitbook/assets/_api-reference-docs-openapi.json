@@ -652,7 +652,7 @@
     "transcriptions": {
       "post": {
         "summary": "Create transcription",
-        "description": "Creates a new transcription for the specified recording.\n",
+        "description": "Creates a new transcription for the specified recording.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
         "parameters": [
           {
             "$ref": "#/components/parameters/recordingId"
@@ -701,7 +701,7 @@
       },
       "get": {
         "summary": "Get transcriptions",
-        "description": "Returns a list of transcriptions\n",
+        "description": "Returns a list of transcriptions\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
         "parameters": [
           {
             "in": "query",
@@ -760,7 +760,7 @@
     "/transcriptions/{transcriptionId}": {
       "delete": {
         "summary": "Delete transcription",
-        "description": "Deletes the specified transcription. The endpoint is idempotent, meaning it will return the same response even if the transcription has already been deleted.\n",
+        "description": "Deletes the specified transcription. The endpoint is idempotent, meaning it will return the same response even if the transcription has already been deleted.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
         "parameters": [
           {
             "$ref": "#/components/parameters/transcriptionId"
@@ -780,7 +780,7 @@
       },
       "get": {
         "summary": "Get transcription",
-        "description": "Returns the specified transcription metadata.\n",
+        "description": "Returns the specified transcription metadata.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
         "parameters": [
           {
             "$ref": "#/components/parameters/transcriptionId"
@@ -812,7 +812,7 @@
     "/transcriptions/{transcriptionId}/access-link": {
       "get": {
         "summary": "Get transcription access link",
-        "description": "Returns the access link for the specified transcription.",
+        "description": "Returns the access link for the specified transcription.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
         "parameters": [
           {
             "$ref": "#/components/parameters/transcriptionId"

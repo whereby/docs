@@ -649,6 +649,43 @@
         }
       }
     },
+    "recordings/bulk-delete": {
+      "post": {
+        "summary": "Bulk delete recordings",
+        "description": "Deletes multiple recordings at once. This is an asynchronous operation. The endpoint returns immediately, and schedules a background job to delete the recordings.\n The endpoint is idempotent, meaning it will return the same response even if the recordings have already been deleted, or the recordings doesn't exist.\n",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["recordingIds"],
+                "properties": {
+                  "recordingIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The recording ID to delete.\n",
+                      "example": "1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "The resources are scheduled for deletion."
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
     "transcriptions": {
       "post": {
         "summary": "Create transcription",
@@ -858,6 +895,43 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFoundError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "transcriptions/bulk-delete": {
+      "post": {
+        "summary": "Bulk delete transcriptions",
+        "description": "Deletes multiple transcriptions at once. This is an asynchronous operation. The endpoint returns immediately, and schedules a background job to delete the transcriptions.\n The endpoint is idempotent, meaning it will return the same response even if the transcriptions have already been deleted, or the transcriptions doesn't exist.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["transcriptionIds"],
+                "properties": {
+                  "transcriptionIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The transcription ID to delete.\n",
+                      "example": "1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "The resources are scheduled for deletion."
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
           },
           "429": {
             "$ref": "#/components/responses/ThrottleError"

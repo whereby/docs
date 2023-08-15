@@ -85,6 +85,13 @@
         "description": "Recording ID.",
         "required": true,
         "example": "1"
+      },
+      "transcriptionId": {
+        "name": "transcriptionId",
+        "in": "path",
+        "description": "Transcription ID.",
+        "required": true,
+        "example": "1"
       }
     },
     "schemas": {
@@ -159,6 +166,29 @@
           "startDate": "2020-01-01T00:00:00.000Z",
           "endDate": "2020-01-01T00:00:00.000Z",
           "sizeInMegaBytes": 100
+        }
+      },
+      "Transcription": {
+        "type": "object",
+        "required": [
+          "transcriptionId",
+          "roomSessionId",
+          "filename",
+          "roomName",
+          "startDate",
+          "endDate",
+          "state",
+          "createdAt"
+        ],
+        "example": {
+          "transcriptionId": "1",
+          "roomSessionId": "1",
+          "filename": "transcription.md",
+          "roomName": "room-name",
+          "startDate": "2020-01-01T00:00:00.000Z",
+          "endDate": "2020-01-01T00:00:00.000Z",
+          "state": "completed",
+          "createdAt": "2020-01-01T00:00:00.000Z"
         }
       }
     }
@@ -612,6 +642,296 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFoundError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "/recordings/bulk-delete": {
+      "post": {
+        "summary": "Bulk delete recordings",
+        "description": "Deletes multiple recordings at once. This is an asynchronous operation. The endpoint returns immediately, and schedules a background job to delete the recordings.\n The endpoint is idempotent, meaning it will return the same response even if the recordings have already been deleted, or the recordings doesn't exist.\n",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["recordingIds"],
+                "properties": {
+                  "recordingIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The recording ID to delete.\n",
+                      "example": "1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "The resources are scheduled for deletion."
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "/transcriptions": {
+      "post": {
+        "summary": "Create transcription",
+        "description": "Creates a new transcription for the specified recording.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/recordingId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["recordingId"],
+                "properties": {
+                  "recordingId": {
+                    "type": "string",
+                    "description": "The recording ID for which the transcription should be created.\n",
+                    "example": "1"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The transcription job was scheduled successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "description": "The transcription ID.",
+                  "example": "1"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get transcriptions",
+        "description": "Returns a list of transcriptions\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "schema": {
+              "type": "string",
+              "description": "The cursor for paginating through the results. To fetch the next page,\nset the `cursor` to the `cursor` returned by the previous request.\n",
+              "example": "8f4031bfc7640c5f267b11b6fe0c2507"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer",
+              "description": "The limit for the pagination - the maximum number of results that will be returned within a single API response.",
+              "default": 50,
+              "maximum": 100,
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON array representing the transcriptions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["results", "cursor"],
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Transcription"
+                      }
+                    }
+                  },
+                  "cursor": {
+                    "type": "string",
+                    "description": "The cursor for paginating through the results. To fetch the next page,\nset the `cursor` to the `cursor` returned by the previous request.\nIf there are no more results, the value returned is `null`.\n"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "/transcriptions/{transcriptionId}": {
+      "delete": {
+        "summary": "Delete transcription",
+        "description": "Deletes the specified transcription. The endpoint is idempotent, meaning it will return the same response even if the transcription has already been deleted.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/transcriptionId"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The resource was deleted successfully."
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get transcription",
+        "description": "Returns the specified transcription metadata.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/transcriptionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON object representing the transcription.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Transcription"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "/transcriptions/{transcriptionId}/access-link": {
+      "get": {
+        "summary": "Get transcription access link",
+        "description": "Returns the access link for the specified transcription.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/transcriptionId"
+          },
+          {
+            "in": "query",
+            "name": "validForSeconds",
+            "schema": {
+              "type": "integer",
+              "description": "The number of seconds the access link is valid for.",
+              "default": 3600,
+              "minimum": 1,
+              "maximum": 43200
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON object representing the access link.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["accessLink", "expires"],
+                  "properties": {
+                    "accessLink": {
+                      "type": "string",
+                      "description": "The access link.",
+                      "example": "https://s3.eu-central-1.amazonaws.com/recordings/1.mp4?AWSAccessKeyId=AKIAJ..."
+                    },
+                    "expires": {
+                      "type": "integer",
+                      "description": "The timestamp when the access link expires.",
+                      "example": 1588262400000
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "/transcriptions/bulk-delete": {
+      "post": {
+        "summary": "Bulk delete transcriptions",
+        "description": "Deletes multiple transcriptions at once. This is an asynchronous operation. The endpoint returns immediately, and schedules a background job to delete the transcriptions.\n The endpoint is idempotent, meaning it will return the same response even if the transcriptions have already been deleted, or the transcriptions doesn't exist.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["transcriptionIds"],
+                "properties": {
+                  "transcriptionIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "The transcription ID to delete.\n",
+                      "example": "1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "The resources are scheduled for deletion."
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
           },
           "429": {
             "$ref": "#/components/responses/ThrottleError"

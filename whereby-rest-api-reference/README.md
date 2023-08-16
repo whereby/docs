@@ -81,6 +81,8 @@ Creates a transient room that is available between creation and an hour after th
 
 ### /transcriptions
 
+Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).
+
 {% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/transcriptions" method="post" %}
 [\_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}

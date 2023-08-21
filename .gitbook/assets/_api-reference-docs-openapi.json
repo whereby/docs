@@ -503,6 +503,13 @@
               "maximum": 100,
               "minimum": 1
             }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Sort results by a field. Accepted fields are: `roomName`, `startDate` and `sizeInMegaBytes`. Accepted sort values are 'asc' and 'desc'.",
+            "required": false,
+            "example": "roomName:asc"
           }
         ],
         "responses": {
@@ -759,6 +766,13 @@
               "maximum": 100,
               "minimum": 1
             }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Sort results by a field. Accepted fields are: `roomName`, `startDate`. Accepted sort values are 'asc' and 'desc'.",
+            "required": false,
+            "example": "roomName:asc"
           }
         ],
         "responses": {

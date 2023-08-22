@@ -507,7 +507,7 @@
           {
             "name": "sortBy",
             "in": "query",
-            "description": "Sort results by a field. Accepted fields are: `roomName`, `startDate` and `sizeInMegaBytes`. Accepted sort values are 'asc' and 'desc'.",
+            "description": "Sort results by a field. Accepted fields are: `roomName`, `startDate`, `duration` and `sizeInMegaBytes`. Accepted sort values are 'asc' and 'desc'.",
             "required": false,
             "example": "roomName:asc"
           }

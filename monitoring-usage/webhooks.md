@@ -23,6 +23,7 @@ At the moment the following event types are supported:
 - `room.session.ended`: Sent when a room session ends. Currently, a session will end when the number of participants has been less than 2 for some time. This heuristic could change in the future to better determine that a session has ended.
 - `transcription.finished`: Sent when a transcription has finished processing.
 - `transcription.failed`: Sent when a transcription has failed to process.
+- `recording.finished`: Sent when a cloud recording has finished and the recording has uploaded successfully.
 
 ## Event objects
 
@@ -125,6 +126,16 @@ Additional properties in data for just `transcription.failed`:
 | Property | Description                                                               |
 | -------- | ------------------------------------------------------------------------- |
 | error    | The error message that describes why the transcription failed to process. |
+
+## Cloud Recording Data properties
+
+Properties in `data` for the `recording.finished` webhook event:
+
+| Property      | Description                                                            |
+| ------------- | ---------------------------------------------------------------------- |
+| `filename`    | The name and extension of the recording.                               |
+| `recordingId` | The identifier of the recording.                                       |
+| `status`      | The final status of the recording. It can be only `completed` for now. |
 
 ## Validating events
 

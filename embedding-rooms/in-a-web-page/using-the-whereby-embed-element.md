@@ -102,7 +102,7 @@ Disable the floating self view:
 
 You can listen for events on the `<whereby-embed>` element. The following events are supported:
 
-<table><thead><tr><th width="277.3333333333333">Event type</th><th>Description</th><th>Properties (from "detail")</th></tr></thead><tbody><tr><td><code>ready</code></td><td>Basic dependencies have loaded and the room is ready to be used</td><td>–</td></tr><tr><td><code>knock</code></td><td>The local user knocks to get into the room</td><td>–</td></tr><tr><td><code>participantupdate</code></td><td>A new participant join/leave</td><td>{ count: Number }</td></tr><tr><td><code>join</code></td><td>The local user joins</td><td>–</td></tr><tr><td><code>leave</code></td><td>The local user leaves</td><td>{ removed: Boolean }</td></tr><tr><td><code>participant_join</code></td><td>A new participant joins the room</td><td>{ participant: { metadata: String } }</td></tr><tr><td><code>participant_leave</code></td><td>A participant leaves the room</td><td>{ participant: { metadata: String } }</td></tr><tr><td><code>microphone_toggle</code></td><td>The local user toggles the microphone</td><td>{ enabled: Boolean }</td></tr><tr><td><code>camera_toggle</code></td><td>The local user toggles the camera</td><td>{ enabled: Boolean }</td></tr><tr><td><code>deny_device_permission</code></td><td>The local user denies permission to camera and microphone in the pre-call screen</td><td>{ denied: Boolean }</td></tr><tr><td><code>screenshare_toggle</code></td><td>The local user toggles the screenshare</td><td>{ enabled: Boolean }</td></tr><tr><td><code>streaming_status_change</code></td><td>Streaming status changes. Possible values: "" | requested | starting | streaming | stopping | stopped</td><td>{ status: String }</td></tr></tbody></table>
+<table><thead><tr><th width="289.3333333333333">Event type</th><th width="237">Description</th><th>Properties (from "detail")</th></tr></thead><tbody><tr><td><code>ready</code></td><td>Basic dependencies have loaded and the room is ready to be used</td><td>–</td></tr><tr><td><code>knock</code></td><td>The local user knocks to get into the room</td><td>–</td></tr><tr><td><code>participantupdate</code></td><td>A new participant join/leave</td><td>{ count: Number }</td></tr><tr><td><code>join</code></td><td>The local user joins</td><td>–</td></tr><tr><td><code>leave</code></td><td>The local user leaves</td><td>{ removed: Boolean }</td></tr><tr><td><code>participant_join</code></td><td>A new participant joins the room</td><td>{ participant: { metadata: String } }</td></tr><tr><td><code>participant_leave</code></td><td>A participant leaves the room</td><td>{ participant: { metadata: String } }</td></tr><tr><td><code>microphone_toggle</code></td><td>The local user toggles the microphone</td><td>{ enabled: Boolean }</td></tr><tr><td><code>camera_toggle</code></td><td>The local user toggles the camera</td><td>{ enabled: Boolean }</td></tr><tr><td><code>deny_device_permission</code></td><td>The local user denies permission to camera and microphone in the pre-call screen</td><td>{ denied: Boolean }</td></tr><tr><td><code>screenshare_toggle</code></td><td>The local user toggles the screenshare</td><td>{ enabled: Boolean }</td></tr><tr><td><code>streaming_status_change</code></td><td>Streaming status changes. Possible values: " | requested | starting | streaming | stopping | stopped"</td><td>{ status: String }</td></tr><tr><td><code>connection_status_change</code></td><td>User connection status changes. Possible values: "stable | unstable"</td><td>{ status: String }</td></tr></tbody></table>
 
 
 
@@ -129,6 +129,7 @@ You can use standard JavaScript to listen to the events. Here's a small demo:
   elm.addEventListener("deny_device_permission", logEvent)
   elm.addEventListener("screenshare_toggle", logEvent)
   elm.addEventListener("streaming_status_change", logEvent)
+  elm.addEventListener("connection_status_change", logEvent)
 ```
 {% endtab %}
 {% endtabs %}
@@ -143,6 +144,7 @@ got event {"type":"participant_join","detail":{"metadata":"userId"}}
 got event {"type":"participant_leave","detail":{"metadata":"userId"}}
 got event {"type":"deny_device_permission","detail":{"denied":false}}
 got event {"type":"streaming_status_change","detail":{"status":"starting"}}
+got event {"type":"connection_status_change","detail":{"status":"stable"}}
 ```
 
 ### Sending commands

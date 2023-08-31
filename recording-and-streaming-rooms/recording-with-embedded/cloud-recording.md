@@ -61,6 +61,12 @@ File names will be automatically set to <mark style="color:red;">`[room name]-[s
 
 ### Managing recording activity
 
+With our `recording.finished` [webhook event](https://docs.whereby.com/monitoring-usage/webhooks#cloud-recording-data-properties), you can be aware of when a recording has finished _and_ successfully uploaded to your AWS or Whereby hosted storage. More importantly, you can know the filename to programmatically use or manage that recording for your platform needs.
+
+<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+
+
+
 You can use our [webhook events](../../monitoring-usage/webhooks.md#data-properties) to track when a recording has started and stopped. The roleName will be set to recorder, and will use the `room.client.joined` and `room.client.left` events accordingly.
 
 <figure><img src="../../.gitbook/assets/recorder webhook.png" alt=""><figcaption></figcaption></figure>

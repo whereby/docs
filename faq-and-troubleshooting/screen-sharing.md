@@ -53,6 +53,10 @@ Sharing computer audio is possible while screen sharing and using Chrome or Chro
 
 Depending on the sharing option selected and the operating system, a checkbox that says "Share Audio" will be present that you can check to share audio.
 
+{% hint style="success" %}
+**Tip:** Many audio and video files (_eg mp3, mp4, webm_) can be opened into Chrome for viewing and playback. Simply drag and drop the local files into a new tab, and share tab audio as previously mentioned
+{% endhint %}
+
 {% tabs %}
 {% tab title="macOS" %}
 **macOS**

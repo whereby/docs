@@ -14,7 +14,7 @@ Use a `roomUrl` you've created as the `src` attribute as in the example below.
 ```html
 <iframe
   src="https://subdomain.whereby.com/room?minimal"
-  allow="camera; microphone; fullscreen; speaker; display-capture; autoplay"
+  allow="camera; microphone; fullscreen; speaker; display-capture; autoplay; compute-pressure"
 ></iframe>
 ```
 

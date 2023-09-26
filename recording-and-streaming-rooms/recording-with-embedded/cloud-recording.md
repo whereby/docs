@@ -34,7 +34,7 @@ You can access recording settings and options from the “Configure” → “Re
 When configuring cloud recording options via the dashboard, it will apply these as default settings for all rooms created. However, you can override the defaults by specifying different preferences within the POST requests used to create meetings.
 {% endhint %}
 
-![](<../../.gitbook/assets/Screenshot 2023-06-26 at 13.17.15 (1).png>)
+![](<../../.gitbook/assets/Screenshot 2023-06-26 at 13.17.15.png>)
 
 After setting up the appropriate information, select how you would like to trigger your recording in rooms.&#x20;
 

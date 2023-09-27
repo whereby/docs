@@ -1,6 +1,6 @@
 # Screen Sharing
 
-Screen sharing is a great way to share content to other/hosts participants in the room.
+Screen sharing is a great way to share content to other hosts/participants in the room.
 
 To keep an optimal level of performance in the room, screen sharing will broadcast from 1-5 FPS (frames per second) by default, and up to 1080p based on network and CPU restraints.
 

@@ -8,7 +8,7 @@ description: >-
 
 {% hint style="info" %}
 We offer native SDKs that allow you to tap into powerful features such as listening to room events and use custom buttons to send commands to the room from your application.\
-[Read more](../../whereby-embedded-sdk-beta.md#ios-sdk)
+[Read more](../../whereby-embedded-sdk-beta/#ios-sdk)
 {% endhint %}
 
 ## iOS 14.5 and onwards

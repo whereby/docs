@@ -4,7 +4,7 @@ description: >-
   Whereby Embedded.
 ---
 
-# FAQ & Troubleshooting
+# FAQ
 
 You can check for service outages and issues on our status page:
 
@@ -50,7 +50,7 @@ Unfortunately, because these are government-level restrictions that have been pu
 
 <summary>Can I customize the page users see when they leave a room?</summary>
 
-Yes! When using our [Embed Element](../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md) or [Embed SDK](../whereby-embedded-sdk-beta.md#browser-sdk), you'll have access to "leave" browser event. You can then action on that event to redirect your users to another page of your choosing.
+Yes! When using our [Embed Element](../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md) or [Embed SDK](../whereby-embedded-sdk-beta/#browser-sdk), you'll have access to "leave" browser event. You can then action on that event to redirect your users to another page of your choosing.
 
 </details>
 

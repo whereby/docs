@@ -245,7 +245,7 @@ Adds functionality for participants to also skip the connectivity test. Hosts ar
 
 Specify custom help link on the pre-call review step pointing users to additional support pages. This parameter should only be applied when pre-call review is enabled. This preference can also be set globally via the [Dashboard](dashboard-preferences.md#help-me-fix-this).
 
-**Use case:** Apply this parameter to point users with camera or mic permission problems to bespoke [help pages](../faq-and-troubleshooting/end-user-documentation.md) published on your own domain and brand, rather than to Whereby's help docs.&#x20;
+**Use case:** Apply this parameter to point users with camera or mic permission problems to bespoke [help pages](../end-user-documentation/) published on your own domain and brand, rather than to Whereby's help docs.&#x20;
 
 #### `?precallReview=<on|off>`
 

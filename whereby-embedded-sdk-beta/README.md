@@ -7,7 +7,7 @@ description: >-
 
 # Whereby Embedded SDKs
 
-![Whereby Embedded SDKs](<.gitbook/assets/whereby-embedded-sdks updated.png>)
+![Whereby Embedded SDKs](<../.gitbook/assets/whereby-embedded-sdks updated.png>)
 
 ### Browser SDK
 
@@ -17,7 +17,7 @@ We are actively developing the next major version of our browser SDK, which will
 
 The Whereby Embedded Browser SDK is [available from npm](https://www.npmjs.com/package/@whereby.com/browser-sdk) and can also be found on [GitHub](https://github.com/whereby/browser-sdk). It adds syntactic sugar to make it easier to customize the Whereby Embedded experience, and allows you to hook into powerful features such as listening to room events and sending commands to the room from the host application.&#x20;
 
-To get started, [get it from npm](https://www.npmjs.com/package/@whereby.com/browser-sdk) and check out the [example code on GitHub](https://github.com/whereby/browser-sdk). We have additional information about available attributes, events, and commands outlined in our [Embed Element documentation](embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md).
+To get started, [get it from npm](https://www.npmjs.com/package/@whereby.com/browser-sdk) and check out the [example code on GitHub](https://github.com/whereby/browser-sdk). We have additional information about available attributes, events, and commands outlined in our [Embed Element documentation](../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md).
 
 ### Android SDK
 

@@ -24,7 +24,7 @@ This element changed location in October 2021, use the new URL\
 `https://cdn.srv.whereby.com/embed/v1.js` \
 to make sure you are on the latest version.\
 \
-You can also explore our [browser SDK](../../whereby-embedded-sdk-beta.md#browser-sdk) if you'd prefer that to external script linking
+You can also explore our [browser SDK](../../whereby-embedded-sdk-beta/#browser-sdk) if you'd prefer that to external script linking
 {% endhint %}
 
 You can also use the `hostRoomUrl` instead of the `roomUrl`, if you want to give the user host privileges:

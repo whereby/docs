@@ -23,6 +23,9 @@
       "UnauthorizedError": {
         "description": "Access token is missing or invalid"
       },
+      "ForbiddenError": {
+        "description": "Not allowed to perform action. Check if Recording or Streaming are available in your plan"
+      },
       "ThrottleError": {
         "description": "You are rate limited",
         "content": {
@@ -317,7 +320,7 @@
                       "startTrigger": {
                         "type": "string",
                         "enum": ["none", "prompt", "automatic"],
-                        "description": "Specify the condition when live streaming should be started. null should be passed when this is not required or should be inherited\nfrom the organization preferences\n  \"none\" - The meeting host is able to manually start and stop the stream.\n  \"prompt\" - The meeting host will be prompted to start the stream once joined.\n  \"automatic\" - The stream will be automatically started as soon as the first participant joins the\n                meeting.\n"
+                        "description": "Specify the condition when live streaming should be started.- `null` - Should be passed when this is not required or should be inherited\nfrom the organization preferences\n-  `none` - The meeting host is able to manually start and stop the stream.\n-  `prompt` - The meeting host will be prompted to start the stream once joined.\n-  `automatic` - The stream will be automatically started as soon as the first participant joins the\n                meeting.\n"
                       }
                     }
                   },
@@ -342,6 +345,9 @@
           },
           "401": {
             "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
           },
           "429": {
             "$ref": "#/components/responses/ThrottleError"

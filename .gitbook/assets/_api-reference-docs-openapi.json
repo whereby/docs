@@ -1072,7 +1072,7 @@
     "/rooms/{roomName}/theme/room-background": {
       "put": {
         "summary": "Set room background",
-        "description": "Set room background.\n",
+        "description": "Use [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/append) to upload a custom background image. JSON objects can be used to set Whereby provided defaults. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/roomName"
@@ -1101,12 +1101,12 @@
                   "palette": {
                     "type": "string",
                     "enum": ["default", "grey", "purple", "burgund"],
-                    "description": "Background color name."
+                    "description": "Background color name. ['default', 'grey', 'purple', 'burgund']"
                   },
                   "theme": {
                     "type": "string",
                     "enum": ["default", "mountains", "characters", "rocks"],
-                    "description": "Background image. `default` means no image."
+                    "description": "Background image. ['default', 'mountains', 'characters', 'rocks']"
                   }
                 }
               }

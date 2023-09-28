@@ -228,7 +228,7 @@
                     "type": "string",
                     "default": "normal",
                     "enum": ["group", "normal"],
-                    "example": "normal",
+                    "example": "group",
                     "description": "The mode and size of the created transient room.\n`normal` is the default room mode and should be used for meetings up to 4 participants.\n`group` should be used for meetings that require more than 4 participants.\n"
                   },
                   "roomNamePrefix": {

@@ -228,7 +228,7 @@
                     "type": "string",
                     "default": "normal",
                     "enum": ["group", "normal"],
-                    "example": "group",
+                    "example": "normal",
                     "description": "The mode and size of the created transient room.\n`normal` is the default room mode and should be used for meetings up to 4 participants.\n`group` should be used for meetings that require more than 4 participants.\n"
                   },
                   "roomNamePrefix": {
@@ -1072,7 +1072,7 @@
     "/rooms/{roomName}/theme/room-background": {
       "put": {
         "summary": "Set room background",
-        "description": "Use [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/append) to upload a custom background image. JSON objects can be used to set Whereby provided defaults. ",
+        "description": "Set room background.\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/roomName"
@@ -1101,12 +1101,12 @@
                   "palette": {
                     "type": "string",
                     "enum": ["default", "grey", "purple", "burgund"],
-                    "description": "Background color name. ['default', 'grey', 'purple', 'burgund']"
+                    "description": "Background color name."
                   },
                   "theme": {
                     "type": "string",
                     "enum": ["default", "mountains", "characters", "rocks"],
-                    "description": "Background image. ['default', 'mountains', 'characters', 'rocks']"
+                    "description": "Background image. `default` means no image."
                   }
                 }
               }
@@ -1129,7 +1129,7 @@
     "/rooms/{roomName}/theme/room-knock-page-background": {
       "put": {
         "summary": "Set room knock page background",
-        "description": "Use [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/append) to upload a custom knock background image. JSON objects can be used to set Whereby provided defaults. ",
+        "description": "Set room knock page background.\n",
         "parameters": [
           {
             "$ref": "#/components/parameters/roomName"
@@ -1158,12 +1158,12 @@
                   "palette": {
                     "type": "string",
                     "enum": ["default", "grey", "purple", "burgund"],
-                    "description": "Knock page background color name. ['default', 'grey', 'purple', 'burgund']"
+                    "description": "Knock page background color name."
                   },
                   "theme": {
                     "type": "string",
                     "enum": ["default", "mountains", "characters", "rocks"],
-                    "description": "Knock page background image. ['default', 'mountains', 'characters', 'rocks']"
+                    "description": "Knock page background image. `default` means no image."
                   }
                 }
               }

@@ -28,6 +28,7 @@
     * [Cloud Recording](recording-and-streaming-rooms/recording-with-embedded/cloud-recording.md)
     * [Local Recording](recording-and-streaming-rooms/recording-with-embedded/local-recording.md)
   * [Streaming with Embedded](recording-and-streaming-rooms/streaming-with-embedded.md)
+* [Transcribing sessions](transcribing-sessions.md)
 * [Monitoring usage](monitoring-usage/README.md)
   * [Insights suite & API](monitoring-usage/insights-suite-and-api/README.md)
     * [Using the Insights dashboard](monitoring-usage/insights-suite-and-api/using-the-insights-dashboard.md)

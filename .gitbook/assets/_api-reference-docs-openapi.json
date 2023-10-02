@@ -236,7 +236,7 @@
                     "maxLength": 39,
                     "pattern": "[a-z0-9]{0,39}",
                     "example": "example-prefix",
-                    "description": "This will be used as the prefix for the room name. The string should be lowercase, and spaces\nwill be automatically removed.\n"
+                    "description": "This will be used as the prefix for the room name. The string should be lowercase, and spaces\nwill be automatically removed. Max character limit is 39\n"
                   },
                   "roomNamePattern": {
                     "type": "string",
@@ -1083,7 +1083,7 @@
             "multipart/form-data": {
               "schema": {
                 "type": "object",
-                "description": "Set a custom image as background.",
+                "description": "Use [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/append) to upload a custom background image. JSON objects can be used to set Whereby provided defaults. ",
                 "properties": {
                   "image": {
                     "type": "string",
@@ -1101,12 +1101,11 @@
                   "palette": {
                     "type": "string",
                     "enum": ["default", "grey", "purple", "burgund"],
-                    "description": "Background color name."
-                  },
+                    "description": "Background color name. ['default', 'grey', 'purple', 'burgund']", 
                   "theme": {
                     "type": "string",
                     "enum": ["default", "mountains", "characters", "rocks"],
-                    "description": "Background image. `default` means no image."
+                    "description": "Background image. ['default', 'mountains', 'characters', 'rocks']"
                   }
                 }
               }
@@ -1129,7 +1128,7 @@
     "/rooms/{roomName}/theme/room-knock-page-background": {
       "put": {
         "summary": "Set room knock page background",
-        "description": "Set room knock page background.\n",
+        "description": "Use [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/append) to upload a custom knock background image. JSON objects can be used to set Whereby provided defaults. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/roomName"
@@ -1158,12 +1157,12 @@
                   "palette": {
                     "type": "string",
                     "enum": ["default", "grey", "purple", "burgund"],
-                    "description": "Knock page background color name."
+                    "description": "Knock page background color name. ['default', 'grey', 'purple', 'burgund']"
                   },
                   "theme": {
                     "type": "string",
                     "enum": ["default", "mountains", "characters", "rocks"],
-                    "description": "Knock page background image. `default` means no image."
+                    "description": "Knock page background image. ['default', 'mountains', 'characters', 'rocks']"
                   }
                 }
               }

@@ -19,17 +19,19 @@ The Whereby Embedded Browser SDK is [available from npm](https://www.npmjs.com/p
 
 To get started, [get it from npm](https://www.npmjs.com/package/@whereby.com/browser-sdk) and check out the [example code on GitHub](https://github.com/whereby/browser-sdk). We have additional information about available attributes, events, and commands outlined in our [Embed Element documentation](../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md).
 
+### iOS SDK
+
+{% embed url="https://www.youtube.com/watch?v=ZX27LEH_Ut4" %}
+
+The Whereby iOS SDK is available through [Swift Package Manager](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app), [CocoaPods](https://cocoapods.org/) and can also be found on [GitHub](https://github.com/whereby/ios-sdk). It enables you to integrate Whereby as a native iOS component using Xcode, and allows you to hook into powerful features such as listening to room events and sending commands to the room from the host application.&#x20;
+
+To get started, check out the [SDK documentation on GitHub](https://github.com/whereby/ios-sdk) and play around with our [iOS demo app](https://github.com/whereby/ios-sdk-demo).
+
 ### Android SDK
 
 The Whereby Android SDK is [available through Jitpack](https://jitpack.io/#whereby/android-sdk) and can also be found on [GitHub](https://github.com/whereby/android-sdk). It loads the Whereby web component through a WebView, integrates with your editor to make it easier to customize the Whereby Embedded experience, and allows you to hook into powerful features such as listening to room events and sending commands to the room from the host application.&#x20;
 
 To get started, check out the [SDK documentation on GitHub](https://github.com/whereby/android-sdk) and play around with our [Android demo app](https://github.com/whereby/android-sdk-demo).&#x20;
-
-### iOS SDK
-
-The Whereby iOS SDK is available through [Swift Package Manager](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app), [CocoaPods](https://cocoapods.org/) and can also be found on [GitHub](https://github.com/whereby/ios-sdk). It enables you to integrate Whereby as a native iOS component using Xcode, and allows you to hook into powerful features such as listening to room events and sending commands to the room from the host application.&#x20;
-
-To get started, check out the [SDK documentation on GitHub](https://github.com/whereby/ios-sdk) and play around with our [iOS demo app](https://github.com/whereby/ios-sdk-demo).
 
 ### Feedback
 

@@ -10,7 +10,7 @@ Some features of the meeting rooms can be set at the time of creation, within th
 
 * **Lock State** (`isLocked`) - This set the initial lock status of the rooms to create a type of waiting room for your participants. [Hosts](../user-roles-and-privileges.md#hosts) are able to gain access to locked room and are able to adjust the lock status, if the setting is [exposed](using-url-parameters.md#locking-off).&#x20;
 * **Pattern of the room name** (`roomNamePattern`) and **Prefix** (`roomNamePrefix`) - Adjust the random string used for room names. You can also include a prefix for easier link searching and management within [insights](../monitoring-usage/insights-suite-and-api/), [webhooks](../monitoring-usage/webhooks.md), or your own database.
-* **Room size** (roomMode) - Adjust the capacity (4 vs 200) and underlying connection type (P2P vs SFU) of your rooms being generated. Review our [blog post](https://whereby.com/blog/p2p-vs-sfu-video-calls-which-is-best/) for further clarifications and information.
+* **Room size** (`roomMode`) - Adjust the capacity (4 vs 200) and connection type (P2P vs SFU) of your rooms being generated. Specify `normal` for a capacity of 4 and P2P. Or, `group` for a capacity of 200 and SFU. Review our [blog post](https://whereby.com/blog/p2p-vs-sfu-video-calls-which-is-best/) for further clarifications and information.
 
 Have a look at our [API reference](../whereby-rest-api-reference/) for a complete overview of properties that can be set on meeting creation.
 

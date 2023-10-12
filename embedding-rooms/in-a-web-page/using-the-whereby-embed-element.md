@@ -159,11 +159,12 @@ For this feature to work, you must add the origin of your application to the "[A
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | `startRecording()`                   | Start cloud recording on behalf of the local user, who needs to be a host in the room.                       |
 | `stopRecording()`                    | Stop cloud recording on behalf of the local user, who needs to be a host in the room.                        |
+| `startStreaming()`                   | Start streaming on behalf of the local user, who needs to be a host in the room.                             |
+| `stopStreaming()`                    | Stop streaming on behalf of the local user, who needs to be a host in the room.                              |
 | `toggleCamera([true \| false])`      | Toggle the local user's camera on or off. Without any arguments, it toggles depending on current state.      |
 | `toggleMicrophone([true \| false])`  | Toggle the local user's microphone on or off. Without any arguments, it toggles depending on current state.  |
 | `toggleScreenshare([true \| false])` | Toggle the local user's screenshare on or off. Without any arguments, it toggles depending on current state. |
-| `startStreaming()`                   | Start streaming on behalf of the local user, who needs to be a host in the room.                             |
-| `stopStreaming()`                    | Stop streaming on behalf of the local user, who needs to be a host in the room.                              |
+| `toggleChat([true \| false])`        | Toggle the local user's chat open or closed. Without any arguments, it toggles depending on current state.   |
 
 Here is a small example showing uses of these methods:
 
@@ -173,17 +174,18 @@ Here is a small example showing uses of these methods:
 const room = document.querySelector("whereby-embed");
 room.startRecording(); // Start cloud recording
 room.stopRecording(); // Stop cloud recording
+room.startStreaming(); // Start streaming
+room.stopStreaming(); // Stop streaming
 room.toggleCamera(); // Camera will be turned on if off, and off if on
 room.toggleMicrophone(); // Microphone will be turned on if off, and off if on
 room.toggleScreenshare(); // Screenshare will be turned on if off, and off if on
+room.toggleChat(); // Chat will be opened if on, and closed if off
 room.toggleCamera(true); // Turn camera on
 room.toggleMicrophone(true); // Turn microphone on
 room.toggleScreenshare(true); // Turn screenshare on
 room.toggleCamera(false); // Turn camera off
 room.toggleMicrophone(false); // Turn microphone off
 room.toggleScreenshare(false); // Turn screenshare off
-room.startStreaming(); // Start streaming
-room.stopStreaming(); // Stop streaming
 ```
 {% endtab %}
 {% endtabs %}

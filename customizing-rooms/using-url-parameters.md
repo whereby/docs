@@ -31,6 +31,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?cameraAccess=<on\|off>`](using-url-parameters.md#cameraaccess-less-than-on-or-off-greater-than)                 | Camera permissions are not requested or used at all. On by default.                         |
 | [`?chat=<on\|off>`](using-url-parameters.md#chat-less-than-on-or-off-greater-than)                                 | Show/hide the chat button.                                                                  |
 | [`?displayName=<name>`](using-url-parameters.md#displayname-less-than-name-greater-than)                           | Set display name of participant.                                                            |
+| [`?externalId=<id>`](using-url-parameters.md#externalid-less-than-id-greater-than)                                 | A custom identifier for the participant. Gets saved in Insights data.                       |
 | [`?floatSelf`](using-url-parameters.md#floatself)                                                                  | Float the self view to the bottom right.                                                    |
 | [`?groups=Orange,Banana,Coconut`](using-url-parameters.md#groups-orange-banana-coconut)                            | Predefine up to 20 groups for the breakout groups function.                                 |
 | [`?lang=<code>`](using-url-parameters.md#lang-less-than-code-greater-than)                                         | Set the room UI language.                                                                   |
@@ -137,6 +138,14 @@ Show/hide the chat button. Messages are not stored after the meeting has ended.
 Set the display name for a participant instead of prompting the user for this information.
 
 **Use case:** A participant’s name may be known before they join the meeting. Including this information as a parameter will save the user from entering their name again.
+
+#### `?externalId=<id>`
+
+Pass in a custom identifier for the participant. This will be propagated through and returned in Insights API requests and webhook data.
+
+This supports **alphanumeric characters** (`A-Za-z0-9-_`) and can be **up to 36 characters long**.
+
+**Use case:** Passing in the participant's ID used on a different platform to more easily retrieve & search through usage and insight data later on.
 
 #### `?floatSelf`
 

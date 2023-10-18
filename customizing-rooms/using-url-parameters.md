@@ -143,7 +143,7 @@ Set the display name for a participant instead of prompting the user for this in
 
 Pass in a custom identifier for the participant. This will be propagated through and returned in Insights API requests and webhook data.
 
-This supports **alphanumeric characters** (`A-Za-z0-9-_`) and can be **up to 36 characters long**.
+This supports **alphanumeric characters** (`A-Za-z0-9-_`) and can be **up to 36 characters long**. Strings not in this format will be rejected and return an error. We recommend the UUID v4 format.&#x20;
 
 **Use case:** Passing in the participant's ID used on a different platform to more easily retrieve & search through usage and insight data later on.
 

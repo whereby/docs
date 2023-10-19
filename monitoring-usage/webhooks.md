@@ -29,13 +29,13 @@ At the moment the following event types are supported:
 
 Events are delivered to their corresponding webhook endpoint in JSON format, as the body of an HTTP request. The table below describes their top-level attributes.
 
-| Property     | Description                                              |
-| ------------ | -------------------------------------------------------- |
-| `id`         | String that uniquely identifies the event.               |
-| `apiVersion` | The Whereby API version used to populate data.           |
-| `createdAt`  | ISO representation of the creation date of the event.    |
-| `type`       | The event’s type identifier, e.g. `room.client.joined`   |
-| `data`       | Object containing information associated with the event. |
+| Property     | Description                                                                                                                                                     |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`         | String that uniquely identifies the event.                                                                                                                      |
+| `apiVersion` | The Whereby API version used to populate data. Refer to the details on [Versioning](../whereby-rest-api-reference/#versioning) for how webhook data may change. |
+| `createdAt`  | ISO representation of the creation date of the event.                                                                                                           |
+| `type`       | The event’s type identifier, e.g. `room.client.joined`                                                                                                          |
+| `data`       | Object containing information associated with the event.                                                                                                        |
 
 ## In-Room Data properties
 

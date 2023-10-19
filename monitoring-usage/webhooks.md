@@ -15,15 +15,15 @@ Webhooks are managed from the "Configure" section of your account, so they need 
 
 At the moment the following event types are supported:
 
-- `room.client.joined` - this is sent when a user joins the meeting room
-- `room.client.left` - this is sent when a user leaves the meeting room (this could be via the leave button or by closing the browser tab)
-- `room.client.knocked`- this is sent when a visitor knocks the meeting room from the waiting room
-- `room.client.knockCancelled`- this is sent when a visitor cancels their knock from the waiting room (this could be via the cancel button or a result of network issues)
-- `room.session.started`: Sent when a room session starts, which is when there are at least 2 users in a room.
-- `room.session.ended`: Sent when a room session ends. Currently, a session will end when the number of participants has been less than 2 for some time. This heuristic could change in the future to better determine that a session has ended.
-- `transcription.finished`: Sent when a transcription has finished processing.
-- `transcription.failed`: Sent when a transcription has failed to process.
-- `recording.finished`: Sent when a cloud recording has finished and the recording has uploaded successfully.
+* `room.client.joined` - this is sent when a user joins the meeting room
+* `room.client.left` - this is sent when a user leaves the meeting room (this could be via the leave button or by closing the browser tab)
+* `room.client.knocked`- this is sent when a visitor knocks the meeting room from the waiting room
+* `room.client.knockCancelled`- this is sent when a visitor cancels their knock from the waiting room (this could be via the cancel button or a result of network issues)
+* `room.session.started`: Sent when a room session starts, which is when there are at least 2 users in a room.
+* `room.session.ended`: Sent when a room session ends. Currently, a session will end when the number of participants has been less than 2 for some time. This heuristic could change in the future to better determine that a session has ended.
+* `transcription.finished`: Sent when a transcription has finished processing.
+* `transcription.failed`: Sent when a transcription has failed to process.
+* `recording.finished`: Sent when a cloud recording has finished and the recording has uploaded successfully.
 
 ## Event objects
 
@@ -54,6 +54,7 @@ Additional properties in `data` for `room.client.joined` , `room.client.left roo
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | displayName                                                                                     | The visible name displayed to others in the meeting.                                                                                                              |
 | [metadata](../customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than) | String that matches the "[metadata](../customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than)" query parameter passed to the room URL. |
+| [externalId](../customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than) | String that matches the "[externalId](../customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than)" query parameter passed to the room URL. |
 
 Additional properties in data for just `room.client.joined` and `room.client.left`:
 
@@ -65,21 +66,20 @@ Additional properties in data for just `room.client.joined` and `room.client.lef
 
 The property `roleName` will have one of the following values:
 
-- `owner`: A user with an admin account in your Embedded organization.
-- `member`: A user with an account in your Embedded organization.
-- `host`: A user joined using the `hostRoomUrl`.
-- `visitor`: A user joined using the regular `roomUrl`.
-- `granted_visitor`: The `roleName` that is assigned to a Participant after they have knocked and been let in by a Host.
-- `viewer`: A user joined using the `viewerRoomUrl`.
-- `granted_viewer`: The `roleName` that is assigned to a Participant if they are queued before a Host joins.
-- `recorder`: A cloud recording instance has started or stopped.
-- `streamer`: A streaming instance has started or stopped.
+* `owner`: A user with an admin account in your Embedded organization.
+* `member`: A user with an account in your Embedded organization.
+* `host`: A user joined using the `hostRoomUrl`.
+* `visitor`: A user joined using the regular `roomUrl`.
+* `granted_visitor`: The `roleName` that is assigned to a Participant after they have knocked and been let in by a Host.
+* `viewer`: A user joined using the `viewerRoomUrl`.
+* `granted_viewer`: The `roleName` that is assigned to a Participant if they are queued before a Host joins.
+* `recorder`: A cloud recording instance has started or stopped.
+* `streamer`: A streaming instance has started or stopped.
 
 An example of a webhook event object:
 
 {% tabs %}
 {% tab title="JSON" %}
-
 ```json
 {
   "id": "d7c4df48b85318352b47d2df45872bf9be87595af379e2a8ad8f1ad28b2a482e",
@@ -96,11 +96,11 @@ An example of a webhook event object:
       "host": 1,
       "visitor": 7
     },
-    "metadata": "<custom-metadata>"
+    "metadata": "<custom-metadata>",
+    "externalId": "<custom-id>"
   }
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -139,17 +139,15 @@ Properties in `data` for the `recording.finished` webhook event:
 
 ## Validating events
 
-To prevent from [man-in-the-middle attacks ↗](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) , webhook requests to your endpoint contain a signature in the `Whereby-Signature` header. This string is generated with a unique secret that only you can view when creating or editing a webhook in the Embedded dashboard. Only Whereby and you have access to this secret, and no third party can send forged events to your endpoint. On top of that the header also includes a timestamp to help you prevent replay attacks. The header is composed of a timestamp and the signature itself, for example:
+To prevent from [man-in-the-middle attacks ↗](https://en.wikipedia.org/wiki/Man-in-the-middle\_attack) , webhook requests to your endpoint contain a signature in the `Whereby-Signature` header. This string is generated with a unique secret that only you can view when creating or editing a webhook in the Embedded dashboard. Only Whereby and you have access to this secret, and no third party can send forged events to your endpoint. On top of that the header also includes a timestamp to help you prevent replay attacks. The header is composed of a timestamp and the signature itself, for example:
 
 {% tabs %}
 {% tab title="Text" %}
-
 ```
 Whereby-Signature:
 t=1606227791,v1=94a23dc9d73e8e6abdf9d4095aee954697e9317e9649e742361b35707edd45a3
 
 ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -164,7 +162,6 @@ An example of a webhook event validation:
 
 {% tabs %}
 {% tab title="Node" %}
-
 ```javascript
 import crypto from "crypto";
 
@@ -198,7 +195,6 @@ function isWebhookEventValid({ body, headers }) {
   );
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 

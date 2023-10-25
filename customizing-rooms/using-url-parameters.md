@@ -103,7 +103,7 @@ Automatically spotlight the local participant on room join.&#x20;
 
 Set the avatar / profile picture of the participant instead of the automatically assigned name initials. The image can be a .png or .jpeg, and must be a square maximum of 64x64.
 
-**Note:** You must make sure to list the origin of the image URL in the [allowed domains](../embedding-rooms/allowed-domains.md) section of the dashboard. The image URL must be https and cannot contain query params.
+**Note:** You must make sure to list the origin of the image URL in the [allowed domains](../tbd-archive/embedding-rooms/allowed-domains.md) section of the dashboard. The image URL must be https and cannot contain query params.
 
 #### `?background=off`
 
@@ -115,7 +115,7 @@ Hide the default meeting background.
 
 Show/hide the entire bottom tool bar.
 
-**User case:** Hiding the bottom toolbar entirely can be useful in cases where you are hoping to control in room items like camera or microphone via your own websites UI. This can be achieved when embedding Whereby with the [Whereby Embed Element](../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md).
+**User case:** Hiding the bottom toolbar entirely can be useful in cases where you are hoping to control in room items like camera or microphone via your own websites UI. This can be achieved when embedding Whereby with the [Whereby Embed Element](../create-your-video-experience-with-the-whereby-sdk/in-a-web-page/using-the-whereby-embed-element/).
 
 #### `?breakout=<on|off>`
 
@@ -191,7 +191,7 @@ Use a lower resolution by default
 
 Can be used to pass any URL-encoded string so that it is included in the corresponding webhooks. The decoded string has a **limit of 512 characters**.
 
-**Use case:** Set it to the user’s ID so that you can easily track through [webhooks](../monitoring-usage/webhooks.md) when a particular user joins or leaves a room.
+**Use case:** Set it to the user’s ID so that you can easily track through [webhooks](../webhooks.md) when a particular user joins or leaves a room.
 
 #### `?minimal`
 
@@ -278,7 +278,7 @@ Hide the settings button.
 
 Skips the request permissions UI and asks for devices
 
-**Use case:** This parameter will prevent the "Request Permissions" step during the pre-call phase and cause the browser to automatically request device permissions (if requested in the iFrame). This flag is required for [Android app](../embedding-rooms/in-a-mobile-app/in-android-apps.md) integration.
+**Use case:** This parameter will prevent the "Request Permissions" step during the pre-call phase and cause the browser to automatically request device permissions (if requested in the iFrame). This flag is required for [Android app](../create-your-video-experience-with-the-whereby-sdk/in-a-mobile-app/in-android-apps/) integration.
 
 #### `?subgridLabels=<on|off>`
 

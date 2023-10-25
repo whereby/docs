@@ -1,4 +1,4 @@
-# Recording and streaming rooms
+# Recording, RTMP, and Transcriptions
 
 ### Recording with Embedded
 
@@ -11,3 +11,9 @@ Recording allows for you or your hosts to capture a recording of a meeting as it
 Our Streaming feature allows for you to share your meeting feed to an external service like YouTube or Twitch via RTMP.
 
 [Read more](streaming-with-embedded.md)
+
+### Transcribing Sessions
+
+Transcribing allows you to get a verbatim transcript of what was said in the Whereby meeting.
+
+[Read more](transcribing-sessions.md)

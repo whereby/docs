@@ -702,7 +702,7 @@
     "/transcriptions": {
       "post": {
         "summary": "Create transcription",
-        "description": "Creates a new transcription for the specified recording.",
+        "description": "Creates a new transcription for the specified recording.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
         "parameters": [
           {
             "$ref": "#/components/parameters/recordingId"
@@ -751,7 +751,7 @@
       },
       "get": {
         "summary": "Get transcriptions",
-        "description": "Returns a list of transcriptions.",
+        "description": "Returns a list of transcriptions\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
         "parameters": [
           {
             "in": "query",
@@ -817,7 +817,7 @@
     "/transcriptions/{transcriptionId}": {
       "delete": {
         "summary": "Delete transcription",
-        "description": "Deletes the specified transcription. The endpoint is idempotent, meaning it will return the same response even if the transcription has already been deleted.",
+        "description": "Deletes the specified transcription. The endpoint is idempotent, meaning it will return the same response even if the transcription has already been deleted.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
         "parameters": [
           {
             "$ref": "#/components/parameters/transcriptionId"
@@ -837,7 +837,7 @@
       },
       "get": {
         "summary": "Get transcription",
-        "description": "Returns the specified transcription metadata.",
+        "description": "Returns the specified transcription metadata.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
         "parameters": [
           {
             "$ref": "#/components/parameters/transcriptionId"
@@ -869,7 +869,7 @@
     "/transcriptions/{transcriptionId}/access-link": {
       "get": {
         "summary": "Get transcription access link",
-        "description": "Returns the access link for the specified transcription.",
+        "description": "Returns the access link for the specified transcription.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
         "parameters": [
           {
             "$ref": "#/components/parameters/transcriptionId"
@@ -925,7 +925,7 @@
     "/transcriptions/bulk-delete": {
       "post": {
         "summary": "Bulk delete transcriptions",
-        "description": "Deletes multiple transcriptions at once. This is an asynchronous operation. The endpoint returns immediately, and schedules a background job to delete the transcriptions.\n The endpoint is idempotent, meaning it will return the same response even if the transcriptions have already been deleted, or the transcriptions doesn't exist.",
+        "description": "Deletes multiple transcriptions at once. This is an asynchronous operation. The endpoint returns immediately, and schedules a background job to delete the transcriptions.\n The endpoint is idempotent, meaning it will return the same response even if the transcriptions have already been deleted, or the transcriptions doesn't exist.\n\n Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
         "requestBody": {
           "content": {
             "application/json": {

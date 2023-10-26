@@ -16,8 +16,8 @@ As the platform holder, there are few options you have for managing the availabl
 
 * Enabling screen sharing for all rooms via a [dashboard preference](../customizing-rooms/dashboard-preferences.md)
 * Enabling screen sharing on a per room/user basis with a [URL parameter](../customizing-rooms/using-url-parameters.md#screenshare-less-than-on-or-off-greater-than)
-* Listening for the [screen sharing event](../create-your-video-experience-with-the-whereby-sdk/in-a-web-page/using-the-whereby-embed-element/#listening-to-events) with our embed element to facilitate in app messages or notifications
-* Using the [browser method](../create-your-video-experience-with-the-whereby-sdk/in-a-web-page/using-the-whereby-embed-element/#sending-commands) for stopping/starting screen sharing
+* Listening for the [screen sharing event](../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md#listening-to-events) with our embed element to facilitate in app messages or notifications
+* Using the [browser method](../embedding-rooms/in-a-web-page/using-the-whereby-embed-element.md#sending-commands) for stopping/starting screen sharing
 
 ## Browser sharing options
 

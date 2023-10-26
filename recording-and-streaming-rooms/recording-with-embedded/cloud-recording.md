@@ -67,7 +67,7 @@ With our `recording.finished` [webhook event](https://docs.whereby.com/monitorin
 
 
 
-You can use our [webhook events](../../webhooks.md#data-properties) to track when a recording has started and stopped. The roleName will be set to recorder, and will use the `room.client.joined` and `room.client.left` events accordingly.
+You can use our [webhook events](../../monitoring-usage/webhooks.md#data-properties) to track when a recording has started and stopped. The roleName will be set to recorder, and will use the `room.client.joined` and `room.client.left` events accordingly.
 
 <figure><img src="../../.gitbook/assets/recorder webhook.png" alt=""><figcaption></figcaption></figure>
 

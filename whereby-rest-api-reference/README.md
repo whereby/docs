@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: false
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Whereby REST API reference
 
 ### Versioning
@@ -86,6 +72,14 @@ Creates a transient room that is available between creation and an hour after th
 
 {% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/insights/room-sessions" method="get" %}
 [_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
+{% endswagger %}
+
+{% swagger src="../.gitbook/assets/externalapi-openapi.json" path="/insights/participants" method="get" %}
+[externalapi-openapi.json](../.gitbook/assets/externalapi-openapi.json)
+{% endswagger %}
+
+{% swagger src="../.gitbook/assets/externalapi-openapi (1).json" path="/insights/participant" method="get" %}
+[externalapi-openapi (1).json](<../.gitbook/assets/externalapi-openapi (1).json>)
 {% endswagger %}
 
 ### /recordings

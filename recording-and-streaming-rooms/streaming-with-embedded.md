@@ -4,7 +4,7 @@ description: >-
   service like YouTube or Twitch via RTMP.
 ---
 
-# Streaming RTMP with Embedded
+# Streaming with Embedded
 
 {% embed url="https://www.youtube.com/watch?v=wAEwDL6JMMg" %}
 
@@ -15,7 +15,7 @@ Create a meeting with streaming set up for others to use, such as a teacher or a
 \
 When creating a meeting [via our API](../whereby-rest-api-reference/#create-meeting), you can pass your platforms `RTMP URL` and include the `stream key` separated by a forward slash. Then specify how you'd like the stream to begin. "**Automatic**", "**Manual**", or "**Prompt**" by including an in room message to the host.
 
-You'll have these same options when creating a meeting [via our dashboard](../creating-and-deleting-rooms/manually/using-create-a-room.md).
+You'll have these same options when creating a meeting [via our dashboard](../creating-and-deleting-rooms/using-create-a-room.md).
 
 ## Obtaining Streaming info
 

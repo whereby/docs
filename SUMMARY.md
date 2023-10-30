@@ -1,10 +1,8 @@
 # Table of contents
 
-* [Whereby Embedded SDKs](README.md)
-
 ## 📹 Whereby 101
 
-* [Create Your Video Experience](whereby-101/create-your-video-experience/README.md)
+* [Create Your Video Experience](README.md)
   * [In a web App](whereby-101/create-your-video-experience/in-a-web-page/README.md)
     * [Using Whereby's Web Component](whereby-101/create-your-video-experience/in-a-web-page/using-the-whereby-embed-element.md)
     * [Using Whereby React Hooks - Build a Telehealth app](whereby-101/create-your-video-experience/in-a-web-page/using-whereby-react-hooks-build-a-telehealth-app.md)
@@ -47,6 +45,7 @@
   * [Using the Insights dashboard](meeting-content-and-quality/insights-suite-and-api/using-the-insights-dashboard.md)
   * [Measuring call quality](meeting-content-and-quality/insights-suite-and-api/measuring-call-quality.md)
   * [Improving call quality](meeting-content-and-quality/insights-suite-and-api/improving-call-quality.md)
+* [Tracking room events with Webhooks](reference/webhooks.md)
 
 ## 🤷 End User
 

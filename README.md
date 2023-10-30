@@ -1,38 +1,26 @@
 ---
 description: >-
-  The Whereby Embedded SDKs allow you to easily add video conferencing
-  capabilities to your application. We currently offer versions of these SDKs
-  for web, Android, and iOS.
+  Whereby is the easiest way to add video calls to your web page or mobile app.
+  Get up and running in minutes, not months, so you're free to focus on what you
+  do best — your business.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
-# Whereby Embedded SDKs
+# Create Your Video Experience
 
-![Whereby Embedded SDKs](<.gitbook/assets/whereby-embedded-sdks updated.png>)
+Whereby is the easiest way to add video calls to your web page or mobile app. Get up and running in minutes, not months, so you're free to focus on what you do best — your business.
 
-### Browser SDK
+As a web based solution, we offer a variety of ways to implement Whereby meeting rooms into your platform.
 
-{% hint style="info" %}
-We are actively developing the next major version of our browser SDK, which will enable customers to build a **fully custom video UX using React**. Feel free to check it out by pulling the latest [beta-version from npm](https://www.npmjs.com/package/@whereby.com/browser-sdk?activeTab=versions), or review the code from our [development branch](https://github.com/whereby/browser-sdk/tree/development) on Github.
-{% endhint %}
+<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Web apps &#x26; Web sites</td><td></td><td>Web apps &#x26; Web sites</td><td><a href="whereby-101/create-your-video-experience/in-a-web-page/">in-a-web-page</a></td><td><a href=".gitbook/assets/teleheath1.png">teleheath1.png</a></td></tr><tr><td>Mobile Apps</td><td>Mobile Apps</td><td></td><td><a href="whereby-101/create-your-video-experience/in-a-mobile-app/">in-a-mobile-app</a></td><td><a href=".gitbook/assets/Mental health hero 1.png">Mental health hero 1.png</a></td></tr><tr><td>Reference Documentation</td><td></td><td></td><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/easy to implement.png">easy to implement.png</a></td></tr></tbody></table>
 
-The Whereby Embedded Browser SDK is [available from npm](https://www.npmjs.com/package/@whereby.com/browser-sdk) and can also be found on [GitHub](https://github.com/whereby/browser-sdk). It adds syntactic sugar to make it easier to customize the Whereby Embedded experience, and allows you to hook into powerful features such as listening to room events and sending commands to the room from the host application.&#x20;
-
-To get started, [get it from npm](https://www.npmjs.com/package/@whereby.com/browser-sdk) and check out the [example code on GitHub](https://github.com/whereby/browser-sdk). We have additional information about available attributes, events, and commands outlined in our [Embed Element documentation](whereby-101/create-your-video-experience/in-a-web-page/using-the-whereby-embed-element.md).
-
-### iOS SDK
-
-{% embed url="https://www.youtube.com/watch?v=ZX27LEH_Ut4" %}
-
-The Whereby iOS SDK is available through [Swift Package Manager](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app), [CocoaPods](https://cocoapods.org/) and can also be found on [GitHub](https://github.com/whereby/ios-sdk). It enables you to integrate Whereby as a native iOS component using Xcode, and allows you to hook into powerful features such as listening to room events and sending commands to the room from the host application.&#x20;
-
-To get started, check out the [SDK documentation on GitHub](https://github.com/whereby/ios-sdk) and play around with our [iOS demo app](https://github.com/whereby/ios-sdk-demo).
-
-### Android SDK
-
-The Whereby Android SDK is [available through Jitpack](https://jitpack.io/#whereby/android-sdk) and can also be found on [GitHub](https://github.com/whereby/android-sdk). It loads the Whereby web component through a WebView, integrates with your editor to make it easier to customize the Whereby Embedded experience, and allows you to hook into powerful features such as listening to room events and sending commands to the room from the host application.&#x20;
-
-To get started, check out the [SDK documentation on GitHub](https://github.com/whereby/android-sdk) and play around with our [Android demo app](https://github.com/whereby/android-sdk-demo).&#x20;
-
-### Feedback
-
-We're keen to hear what you think about the Whereby Embedded SDK! Give us feedback and help us understand your SDK needs by [filling out this quick form](https://form.typeform.com/to/E3YWItP6). You can also email [embedded@whereby.com](mailto:embedded@whereby.com) or ping [@whereby](https://twitter.com/whereby) on Twitter.

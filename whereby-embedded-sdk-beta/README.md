@@ -12,7 +12,7 @@ description: >-
 ### Browser SDK
 
 {% hint style="info" %}
-We are actively developing the next major version of our browser SDK, which will enable customers to build a **fully custom video UX using React**. Feel free to check it out by pulling the latest [alpha-version from npm](https://www.npmjs.com/package/@whereby.com/browser-sdk?activeTab=versions), or review the code from our [development branch](https://github.com/whereby/browser-sdk/tree/development) on Github.
+We are actively developing the next major version of our browser SDK, which will enable customers to build a **fully custom video UX using React**. Feel free to check it out by pulling the latest [beta-version from npm](https://www.npmjs.com/package/@whereby.com/browser-sdk?activeTab=versions), or review the code from our [development branch](https://github.com/whereby/browser-sdk/tree/development) on Github.
 {% endhint %}
 
 The Whereby Embedded Browser SDK is [available from npm](https://www.npmjs.com/package/@whereby.com/browser-sdk) and can also be found on [GitHub](https://github.com/whereby/browser-sdk). It adds syntactic sugar to make it easier to customize the Whereby Embedded experience, and allows you to hook into powerful features such as listening to room events and sending commands to the room from the host application.&#x20;

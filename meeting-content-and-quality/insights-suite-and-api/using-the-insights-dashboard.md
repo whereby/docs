@@ -10,6 +10,14 @@ You can also access details of all the sessions that have happened within a spec
 
 Within a session, you can find the participants that attended the session. Each time your user reconnects to the room, they will receive a new, unique participant ID from us. You will be able to match participant IDs based on the display name they enter the room with, which is currently available in the event logs.&#x20;
 
+{% hint style="success" %}
+#### Participant Call Ratings
+
+Whereby has a call ratings feature in **beta** that you can ask us to turn on for your account.
+
+If you have this feature turned on, each participant will be asked at the end of their call to rate the call quality, and you can track these ratings in a dashboard will will provide to you. Contact Whereby to get this feature enabled.
+{% endhint %}
+
 ## Display name
 
 The display name of the participant is the name they enter the call with. Your users can either enter this name themselves or you can pass in for them using the [displayName parameter](https://docs.whereby.com/customizing-rooms/using-url-parameters#displayname-less-than-name-greater-than).&#x20;

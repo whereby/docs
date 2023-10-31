@@ -80,7 +80,7 @@ room.addEventListener("leave", () => location.href = "https://whereby.com")
 
 #### participantupdate
 
-Keep track of the number of participants in a room. Once a room has reached it's capacity (200), you can swap the room source URL to a viewerRoomUrl for additional capacity.
+Keep track of the number of participants in a room. Once a room has reached it's capacity (200), you can swap the room source URL to a [viewerRoomUrl](../../user-roles-and-privileges.md#viewers) for additional capacity.
 
 {% code overflow="wrap" %}
 ```javascript
@@ -104,8 +104,8 @@ if(participantCount <= 200){
 A few other ideas:
 
 * Display an in app greeting banner whenever there is a new `participant_join` event
-* Display an in app message directing users to certain support document whenever they accidentally `deny_device_permission`
-* Make a log for support or success teams if a user frequently experiences `connection_status_change` errors so they can proactively reach out or investigate connection issues
+* Display an in app message directing users to certain support documentation whenever they accidentally `deny_device_permission`
+* Make a log for support or success teams if a user frequently experiences `connection_status_change` errors so they can proactively reach out and investigate connection issues
 
 ### Sending commands
 

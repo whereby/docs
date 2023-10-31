@@ -63,9 +63,11 @@ There are additional room customizations and options that can be found in the [U
 {% endtab %}
 
 {% tab title="Room w/ minimal UI" %}
+{% code overflow="wrap" %}
 ```html
 <whereby-embed room="https://subdomain.whereby.com/your_room" minimal />
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Room w/ multiple customizations" %}

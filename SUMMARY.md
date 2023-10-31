@@ -43,7 +43,6 @@
   * [Transcribing sessions](meeting-content-and-quality/recording-and-streaming-rooms/transcribing-sessions.md)
 * [Quality Insights](meeting-content-and-quality/insights-suite-and-api/README.md)
   * [Using the Insights dashboard](meeting-content-and-quality/insights-suite-and-api/using-the-insights-dashboard.md)
-  * [Measuring call quality](meeting-content-and-quality/insights-suite-and-api/measuring-call-quality.md)
   * [Improving call quality](meeting-content-and-quality/insights-suite-and-api/improving-call-quality.md)
 * [Tracking room events with Webhooks](reference/webhooks.md)
 

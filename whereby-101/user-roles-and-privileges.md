@@ -47,7 +47,7 @@ A hostRoomURL is only available if the `hostRoomURL` is included in the `fields`
 }
 ```
 
-Now that you have both a `roomUrl` and a `hostRoomUrl`, you can ensure that both your guests and hosts get the right privileges by using the corresponding URL when [embedding rooms](broken-reference) in your own webpage or app.
+Now that you have both a `roomUrl` and a `hostRoomUrl`, you can ensure that both your guests and hosts get the right privileges by using the corresponding URL when [embedding rooms](../) in your own webpage or app.
 
 ### Participants
 

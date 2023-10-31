@@ -63,7 +63,7 @@ File names will be automatically set to <mark style="color:red;">`[room name]-[s
 
 With our `recording.finished` [webhook event](https://docs.whereby.com/monitoring-usage/webhooks#cloud-recording-data-properties), you can be aware of when a recording has finished _and_ successfully uploaded to your AWS or Whereby hosted storage. More importantly, you can know the filename to programmatically use or manage that recording for your platform needs.
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/recording-finished-webhook.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -71,7 +71,7 @@ You can use our [webhook events](../../../reference/webhooks.md#data-properties)
 
 <figure><img src="../../../.gitbook/assets/recorder webhook.png" alt=""><figcaption></figcaption></figure>
 
-In addition to tracking recordings, we offer [browser methods](https://docs.whereby.com/embedding-rooms/in-a-web-page/using-the-whereby-embed-element#sending-commands) to start and stop recordings at your leisure via our SDK's Embed Element.&#x20;
+In addition to tracking recordings, we offer [commands](../../../reference/using-the-whereby-embed-element/#sending-commands) to start and stop recordings at your leisure via our SDK's Web Component.&#x20;
 
 ## Downloading from Whereby-provided storage
 

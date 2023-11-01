@@ -115,7 +115,7 @@ Hide the default meeting background.
 
 Show/hide the entire bottom tool bar.
 
-**User case:** Hiding the bottom toolbar entirely can be useful in cases where you are hoping to control in room items like camera or microphone via your own websites UI. This can be achieved when embedding Whereby with the [Whereby Embed Element](../create-your-video-experience/in-a-web-page/using-the-whereby-embed-element.md).
+**User case:** Hiding the bottom toolbar entirely can be useful in cases where you are hoping to control in room items like camera or microphone via your own websites UI. This can be achieved when embedding Whereby with our [Web Component](../../reference/using-the-whereby-embed-element/#sending-commands).
 
 #### `?breakout=<on|off>`
 
@@ -199,7 +199,7 @@ The minimal parameter applies a combination of UI adjustments to simplify the em
 
 **Hidden items:** Status bar, chat button, screensharing button, leave button, and Whereby’s branding.
 
-**Shown items:** Video and audio buttons.
+**Shown items:** Video, audio, and people buttons.
 
 For further adjustments, additional parameters can be combined with `?minimal`. For example\
 `?minimal&chat=on` will show the chat button.

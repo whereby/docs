@@ -6,6 +6,8 @@ In this tutorial you will build a fully functional video-conferencing app using 
 
 Here is a preview of what you will achieve:
 
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Screenshot of the final app</p></figcaption></figure>
+
 {% embed url="https://codesandbox.io/embed/whereby-react-sdk-final-pdf972?fontsize=14&hidenavigation=1&theme=dark&view=editor" %}
 Codesandbox with the finished code.
 {% endembed %}

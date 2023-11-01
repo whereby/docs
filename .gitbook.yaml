@@ -1,0 +1,4 @@
+root: ./
+
+redirects:  
+    whereby-embedded-sdk-beta: whereby-101/create-your-video-experience/in-a-mobile-app/in-android-apps/using-wherebys-native-sdk.md

@@ -1,5 +1,4 @@
 root: ./
 
 redirects:  
-    whereby-embedded-sdk-beta#ios-sdk: whereby-101/readme/in-a-mobile-app/in-ios-apps/using-wherebys-native-sdk.md
-    whereby-embedded-sdk-beta#android-sdk: whereby-101/readme/in-a-mobile-app/in-android-apps/using-wherebys-native-sdk.md
+    whereby-embedded-sdk-beta: whereby-101/readme.md

@@ -28,7 +28,7 @@ Below are a few examples of how you can use some of the client events and comman
 
 ## Installation
 
-When using React or a bundler like Webpack, Rollup, Parcel, etc
+When using React or a bundler like Webpack, Rollup, Parcel, etc.
 
 ```bash
 npm install @whereby.com/browser-sdk

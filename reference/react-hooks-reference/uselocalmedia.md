@@ -36,7 +36,7 @@ The actions property contains a map of functions which can be invoked to perform
 ## Usage
 
 ```tsx
-import { useLocalMedia, VideoView } from "@whereby.com/browser-sdk";
+import { useLocalMedia, VideoView } from "@whereby.com/browser-sdk/react";
 
 function MyPreCallUX() {
     const localMedia = useLocalMedia({ audio: false, video: true });

@@ -30,21 +30,17 @@ The hook returns a `RoomConnectionReference` object with the following propertie
 
 The current state of the room. Use this state to render your custom video experience.
 
-
-
-| Property               | Type                                                        | Description                                                          |
-| ---------------------- | ----------------------------------------------------------- | -------------------------------------------------------------------- |
-| chatMessages           | [`ChatMessage[]`](types.md#chatmessage)                     | The chat messages which have been sent in the room since connecting. |
-| cloudRecording         | [`CloudRecordingState`](types.md#cloudrecordingstate)       | Indicates whether cloud recording is active in the room.             |
-| connectionStatus       | [`RoomConnectionStatus`](types.md#roomconnectionstatus)     | Overall status of the room connection                                |
-| localScreenshareStatus | <mark style="color:red;">`LocalScreenshareStatus`</mark>`?` | Status of your local screen share                                    |
-| localParticipant       | [`LocalParticipant`](types.md#localparticipant)`?`          | A representation of the local participant in the call (you)          |
-| remoteParticipants     | [`RemoteParticipant`](broken-reference)`[]`                 | A list of the remote participants in the room                        |
-| screenshares           | [`Screenshare`](types.md#screenshare)`[]`                   | List of active screenshares in the room                              |
-| liveStream             | <mark style="color:red;">`LiveStreamState`</mark>`?`        | Set if live stream is enabled for the room                           |
-| waitingParticipants    | [`WaitingParticipant`](types.md#waitingparticipant)`[]`     | A list of participants waiting to enter a locked room.               |
-
-###
+| Property               | Type                                                                                                                          | Description                                                          |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| chatMessages           | [`ChatMessage[]`](types.md#chatmessage)                                                                                       | The chat messages which have been sent in the room since connecting. |
+| cloudRecording         | [`CloudRecordingState`](types.md#cloudrecordingstate)                                                                         | Indicates whether cloud recording is active in the room.             |
+| connectionStatus       | [`RoomConnectionStatus`](types.md#roomconnectionstatus)                                                                       | Overall status of the room connection                                |
+| localScreenshareStatus | [<mark style="color:blue;">`LocalScreenshareStatus`</mark>](types.md#localscreensharestatus-less-than-string-greater-than)`?` | Status of your local screen share                                    |
+| localParticipant       | [`LocalParticipant`](types.md#localparticipant)`?`                                                                            | A representation of the local participant in the call (you)          |
+| remoteParticipants     | [`RemoteParticipant`](broken-reference)`[]`                                                                                   | A list of the remote participants in the room                        |
+| screenshares           | [`Screenshare`](types.md#screenshare)`[]`                                                                                     | List of active screenshares in the room                              |
+| liveStream             | [<mark style="color:blue;">`LiveStreamState`</mark>](types.md#livestreamstate-less-than-object-greater-than)`?`               | Set if live stream is enabled for the room                           |
+| waitingParticipants    | [`WaitingParticipant`](types.md#waitingparticipant)`[]`                                                                       | A list of participants waiting to enter a locked room.               |
 
 ### actions
 
@@ -63,7 +59,7 @@ Components are JSX elements bound to the room connection to make it easier for y
 ## Usage
 
 ```tsx
-import { useRoomConnection } from "@whereby.com/browser-sdk";
+import { useRoomConnection } from "@whereby.com/browser-sdk/react";
 
 function MyCallUX( { roomUrl, localStream }) {
     const { state, actions, components } = useRoomConnection(

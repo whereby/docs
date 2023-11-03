@@ -15,7 +15,7 @@ The `VideoView` component renders a `<video>` element within your application.
 ## Usage
 
 ```tsx
-import { useLocalMedia, VideoView } from "@whereby.com/browser-sdk";
+import { useLocalMedia, VideoView } from "@whereby.com/browser-sdk/react";
 
 function SelfView() {
     const localMedia = useLocalMedia({ audio: false, video: true });

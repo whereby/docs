@@ -6,6 +6,10 @@ description: >-
 
 # Cloud Recording
 
+{% hint style="warning" %}
+Cloud recording does not properly support our [Breakout Groups](../../../whereby-101/customizing-rooms/breakout-groups-with-embedded.md) feature. When using Breakout Groups, the recorder will remain in the main room and will not capture any of the meeting content from individual groups.
+{% endhint %}
+
 ## Storage options
 
 We offer two storage options for our cloud recording feature.&#x20;

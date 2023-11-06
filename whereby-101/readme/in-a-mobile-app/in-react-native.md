@@ -7,7 +7,7 @@ description: >-
 # Using React Native
 
 {% hint style="success" %}
-Before starting, you will need to add the corresponding permissions to be able to access both the camera and microphone as described in the [Android](../in-android-apps/) and [iOS](./) sections.
+Before starting, you will need to add the corresponding permissions to be able to access both the camera and microphone as described in the [Android](../../create-your-video-experience/in-a-mobile-app/in-android-apps/) and [iOS](../../create-your-video-experience/in-a-mobile-app/in-ios-apps/) sections.
 {% endhint %}
 
 Follow this [guide](https://github.com/react-native-webview/react-native-webview/blob/master/docs/Getting-Started.md#react-native-webview-getting-started-guide) to add and setup the `react-native-webview` library in your React Native project.

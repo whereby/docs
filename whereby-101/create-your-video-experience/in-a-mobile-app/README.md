@@ -5,7 +5,7 @@ description: >-
   access meetings wherever life takes them.
 ---
 
-# In a mobile app
+# Embedding Whereby in a mobile app
 
 {% hint style="info" %}
 Embedding into an app is not required in order for mobile users to join calls, as both Safari (iOS) and Chrome (iOS and Android) can be used to access Whereby rooms, even when embedded on your website. However, below you'll find information on integrating Whereby in your own native Android or iOS app.
@@ -17,8 +17,6 @@ Learn how to embed Whereby rooms in your native iOS app.&#x20;
 
 * [WebView and SFSafariViewController](in-ios-apps/)
 * [Whereby's Native SDK](in-ios-apps/using-wherebys-native-sdk.md)
-* [Using React Native](in-ios-apps/in-react-native.md)
-* [Using Flutter](in-ios-apps/in-flutter.md)
 
 ### In Android apps
 
@@ -26,6 +24,6 @@ Learn how to embed Whereby rooms in your native Android app.
 
 * [WebView](in-android-apps/)
 * [Whereby's Native SDK](in-android-apps/using-wherebys-native-sdk.md)
-* [Using React Native](in-android-apps/in-react-native.md)
-* [Using Flutter](in-android-apps/in-flutter.md)
+
+
 

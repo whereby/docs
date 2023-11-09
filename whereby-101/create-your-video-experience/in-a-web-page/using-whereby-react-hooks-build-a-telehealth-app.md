@@ -1,4 +1,4 @@
-# Using Whereby React Hooks - Build a Telehealth app
+# Using React Hooks for a fully custom UI
 
 ### What are you building?
 
@@ -82,7 +82,7 @@ The browser SDK exposes a `useRoomConnection` React hook to connect to any Where
 
 ```tsx
 import "./styles.css";
-import { useRoomConnection } from "@whereby.com/browser-sdk";
+import { useRoomConnection } from "@whereby.com/browser-sdk/react";
 
 export default function App() {
     //...
@@ -93,18 +93,18 @@ The `useRoomConnection` hook accepts two parameters: a Whereby room URL and a se
 
 For the Whereby room URL you need to provide the link to the unlocked Whereby room that you created initially. Declare it as a constant named `ROOM_URL`.
 
-You can then use `localMediaConstraints` parameter to control the access to the camera and microphone of the meeting participant. Here, you can set the video and audio properties to `true` to allow the app access to both devices:
+You can then use `localMediaOptions` parameter to control the access to the camera and microphone of the meeting participant. Here, you can set the video and audio properties to `true` to allow the app access to both devices:
 
 ```tsx
 import "./styles.css";
-import { useRoomConnection } from "@whereby.com/browser-sdk";
+import { useRoomConnection } from "@whereby.com/browser-sdk/react";
 
 // Put your room URL here.
 const ROOM_URL = "";
 
 export default function App() {
     const roomConnection = useRoomConnection(ROOM_URL, {
-        localMediaConstraints: {
+        localMediaOptions: {
             audio: true,
             video: true,
         }

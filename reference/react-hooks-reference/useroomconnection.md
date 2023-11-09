@@ -65,7 +65,7 @@ function MyCallUX( { roomUrl, localStream }) {
     const { state, actions, components } = useRoomConnection(
         "<room_url>"
         {
-            localMediaConstraints: {
+            localMediaOptions: {
                 audio: true,
                 video: true,
             }

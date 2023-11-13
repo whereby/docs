@@ -62,7 +62,7 @@ When using `viewerRoomUrls` you can have an additional 400 passive users within 
 
 <summary>Can I customize the page users see when they leave a room?</summary>
 
-Yes! When using our [Web Component](../../reference/using-the-whereby-embed-element/), you'll have access to "leave" browser [event](../../reference/using-the-whereby-embed-element/#listening-to-events). You can then action on that event to redirect your users to another page of your choosing.
+Yes! When using our [Web Component](../../reference/using-the-whereby-embed-element.md), you'll have access to "leave" browser [event](../../reference/using-the-whereby-embed-element.md#listening-to-events). You can then action on that event to redirect your users to another page of your choosing.
 
 </details>
 

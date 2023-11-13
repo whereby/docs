@@ -16,14 +16,14 @@ layout:
     visible: false
 ---
 
-# Using Whereby's Web Component
+# Using Whereby's Web Component & Pre-built UI
 
 The Web Component offering in our SDK allows you to leverage the thoughtfully designed, pre-built Whereby interface and user experience we've developed over the last 10+ years.&#x20;
 
 Below are a few examples of how you can use some of the client events and commands that can be sent to a room. We have information on how to get started and install, but for a full document about events, attributes, and commands you can view our Web Component Reference documentation.
 
-{% content-ref url="../../../reference/using-the-whereby-embed-element/" %}
-[using-the-whereby-embed-element](../../../reference/using-the-whereby-embed-element/)
+{% content-ref url="../../../../reference/using-the-whereby-embed-element.md" %}
+[using-the-whereby-embed-element.md](../../../../reference/using-the-whereby-embed-element.md)
 {% endcontent-ref %}
 
 ## Installation
@@ -46,7 +46,7 @@ import "@whereby.com/browser-sdk"
 ```
 {% endcode %}
 
-You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the user [host privileges](../../user-roles-and-privileges.md#hosts)
+You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the user [host privileges](../../../user-roles-and-privileges.md#hosts)
 {% endtab %}
 
 {% tab title="JSX" %}
@@ -58,13 +58,17 @@ const MyComponent = ({ roomUrl }) => {
 export default MyComponent
 ```
 
-You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the user [host privileges](../../user-roles-and-privileges.md#hosts)
+You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the user [host privileges](../../../user-roles-and-privileges.md#hosts)
 {% endtab %}
 {% endtabs %}
 
+{% hint style="info" %}
+If you aren't using a bundler or a library containing a bundler you can access the component code directly from our CDN using a [simple Script tag](script-tags.md) in your site
+{% endhint %}
+
 ### Listening to events
 
-You can listen for events on the `<whereby-embed>` component. Here are a few examples how the events might be useful, but there are lots of creative ways these might be useful! Let us know in an email or our discord how you've implemented these.
+You can [listen for events](../../../../reference/using-the-whereby-embed-element.md#listening-to-events) on the `<whereby-embed>` component. Here are a few examples how the events might be useful, but there are lots of creative ways these might be useful! Let us know in an email or our discord how you've implemented these.
 
 #### leave
 
@@ -80,7 +84,7 @@ room.addEventListener("leave", () => location.href = "https://whereby.com")
 
 #### participantupdate
 
-Keep track of the number of participants in a room. Once a room has reached it's capacity (200), you can swap the room source URL to a [viewerRoomUrl](../../user-roles-and-privileges.md#viewers) for additional capacity.
+Keep track of the number of participants in a room. Once a room has reached it's capacity (200), you can swap the room source URL to a [viewerRoomUrl](../../../user-roles-and-privileges.md#viewers) for additional capacity.
 
 {% code overflow="wrap" %}
 ```javascript
@@ -113,9 +117,9 @@ A few other ideas:
 For this feature to work, you must add the origin of your application to the "Allowed domains" section on your Whereby dashboard. If not present, the following methods will not function.
 {% endhint %}
 
-The `<whereby-embed>` component exposes a set of methods your application can invoke to perform actions in the room.&#x20;
+The `<whereby-embed>` component exposes a set of [methods](../../../../reference/using-the-whereby-embed-element.md#sending-commands) your application can invoke to perform actions in the room.&#x20;
 
-For example, using a [URL parameter](../../customizing-rooms/using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than) you can hide the bottom toolbar and create your own buttons for taking actions in the room:
+For example, using a [URL parameter](../../../customizing-rooms/using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than) you can hide the bottom toolbar and create your own buttons for taking actions in the room:
 
 ```javascript
 const room = document.querySelector("whereby-embed");

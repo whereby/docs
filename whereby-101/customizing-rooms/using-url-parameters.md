@@ -36,6 +36,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?groups=Orange,Banana,Coconut`](using-url-parameters.md#groups-orange-banana-coconut)                            | Predefine up to 20 groups for the breakout groups function.                                 |
 | [`?lang=<code>`](using-url-parameters.md#lang-less-than-code-greater-than)                                         | Set the room UI language.                                                                   |
 | [`?leaveButton=<on\|off>`](using-url-parameters.md#leavebutton-off)                                                | Show/hide the leave button.                                                                 |
+| ?localization=off                                                                                                  | Show/hide the language picker                                                               |
 | [`?locking=off`](using-url-parameters.md#locking-off)                                                              | Hide the room lock button.                                                                  |
 | [`?logo=off`](using-url-parameters.md#logo-off)                                                                    | Hide the logo in the room header.                                                           |
 | [`?lowData=<on\|off>`](using-url-parameters.md#lowdata-less-than-on-or-off-greater-than)                           | Use a lower resolution by default                                                           |
@@ -115,7 +116,7 @@ Hide the default meeting background.
 
 Show/hide the entire bottom tool bar.
 
-**User case:** Hiding the bottom toolbar entirely can be useful in cases where you are hoping to control in room items like camera or microphone via your own websites UI. This can be achieved when embedding Whereby with our [Web Component](../../reference/using-the-whereby-embed-element/#sending-commands).
+**User case:** Hiding the bottom toolbar entirely can be useful in cases where you are hoping to control in room items like camera or microphone via your own websites UI. This can be achieved when embedding Whereby with our [Web Component](../../reference/using-the-whereby-embed-element.md#sending-commands).
 
 #### `?breakout=<on|off>`
 
@@ -168,6 +169,14 @@ Set the meeting UI language to match your product or service. Select from either
 Hide the leave button.
 
 **Use case:** Can be used if you want to control the leave flow in other ways, like adding a custom link or button outside the embedded room to control what happens when users leave the call.
+
+#### `?localization=off`
+
+Hide the language picker.
+
+**Use case:** Can be used to hide the language picker in the upper right portion of the pre-call flow, as well as room settings. This can be helpful if a [specific language](using-url-parameters.md#lang-less-than-code-greater-than) is desired in your app experience.&#x20;
+
+**Note:** Hiding the localization options means the user will not be able to change their language preference.&#x20;
 
 #### `?locking=off`
 

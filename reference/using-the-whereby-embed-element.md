@@ -27,7 +27,7 @@ import "@whereby.com/browser-sdk"
 ```
 {% endcode %}
 
-You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the user [host privileges](../../whereby-101/user-roles-and-privileges.md#hosts)
+You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the user [host privileges](../whereby-101/user-roles-and-privileges.md#hosts)
 {% endtab %}
 
 {% tab title="JSX" %}
@@ -39,19 +39,19 @@ const MyComponent = ({ roomUrl }) => {
 export default MyComponent
 ```
 
-You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the user [host privileges](../../whereby-101/user-roles-and-privileges.md#hosts)
+You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the user [host privileges](../whereby-101/user-roles-and-privileges.md#hosts)
 {% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
-If you aren't using a bundler or a library containing a bundler you can access the component code directly from our CDN using a [simple Script tag](broken-reference) in your site
+If you aren't using a bundler or a library containing a bundler you can access the component code directly from our CDN using a [simple Script tag](../whereby-101/readme/in-a-web-page/using-the-whereby-embed-element/script-tags.md) in your site
 {% endhint %}
 
 ### Attributes of the component
 
-<table><thead><tr><th width="215.33333333333331">Attribute</th><th>Value</th><th>Description</th></tr></thead><tbody><tr><td><code>room</code></td><td>A room URL</td><td>The full URL of the room you want to embed (required)</td></tr><tr><td><code>minimal</code></td><td>Nothing (on) or <code>"off"</code></td><td>Apply minimal UI for embed scenarios</td></tr><tr><td><code>displayName</code></td><td>Any string</td><td>Set displayname of participant</td></tr><tr><td><code>externalId</code></td><td>Up to 36 alphanumeric characters (<a href="../../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than">details</a>)</td><td>Custom identifier for the participant.</td></tr><tr><td><code>audio=off</code></td><td><code>"off"</code></td><td>Enter meeting with audio off</td></tr><tr><td><code>video=off</code></td><td><code>"off"</code></td><td>Enter meeting with video off</td></tr><tr><td><code>background=off</code></td><td><code>"off"</code></td><td>Render without background to let embedding app render its own</td></tr><tr><td><code>chat</code></td><td>Nothing (on) or <code>"off"</code></td><td>Enable/disable chat</td></tr><tr><td><code>people</code></td><td><code>"off"</code></td><td>Disable the participant list</td></tr><tr><td><code>leaveButton</code></td><td>Nothing (on) or <code>"off"</code></td><td>Enable/disable the leave button</td></tr><tr><td><code>screenshare</code></td><td>Nothing (on) or <code>"off"</code></td><td>Enable/disable screenshare</td></tr><tr><td><code>subgridLabels</code></td><td>Nothing (off) or <code>"on"</code></td><td>Enable/disable name labels in the subgrid</td></tr><tr><td><code>floatSelf</code></td><td>Nothing (on) or <code>"off"</code></td><td>Float the self view to the bottom right</td></tr><tr><td><code>lowData</code></td><td>Nothing (on) or <code>"off"</code></td><td>Use a lower resolution by default</td></tr><tr><td><code>cameraAccess</code></td><td>Nothing (on) or <code>"off"</code></td><td>Disable camera access for the local participant, allowing for only audio input</td></tr></tbody></table>
+<table><thead><tr><th width="215.33333333333331">Attribute</th><th>Value</th><th>Description</th></tr></thead><tbody><tr><td><code>room</code></td><td>A room URL</td><td>The full URL of the room you want to embed (required)</td></tr><tr><td><code>minimal</code></td><td>Nothing (on) or <code>"off"</code></td><td>Apply minimal UI for embed scenarios</td></tr><tr><td><code>displayName</code></td><td>Any string</td><td>Set displayname of participant</td></tr><tr><td><code>externalId</code></td><td>Up to 36 alphanumeric characters (<a href="../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than">details</a>)</td><td>Custom identifier for the participant.</td></tr><tr><td><code>audio=off</code></td><td><code>"off"</code></td><td>Enter meeting with audio off</td></tr><tr><td><code>video=off</code></td><td><code>"off"</code></td><td>Enter meeting with video off</td></tr><tr><td><code>background=off</code></td><td><code>"off"</code></td><td>Render without background to let embedding app render its own</td></tr><tr><td><code>chat</code></td><td>Nothing (on) or <code>"off"</code></td><td>Enable/disable chat</td></tr><tr><td><code>people</code></td><td><code>"off"</code></td><td>Disable the participant list</td></tr><tr><td><code>leaveButton</code></td><td>Nothing (on) or <code>"off"</code></td><td>Enable/disable the leave button</td></tr><tr><td><code>screenshare</code></td><td>Nothing (on) or <code>"off"</code></td><td>Enable/disable screenshare</td></tr><tr><td><code>subgridLabels</code></td><td>Nothing (off) or <code>"on"</code></td><td>Enable/disable name labels in the subgrid</td></tr><tr><td><code>floatSelf</code></td><td>Nothing (on) or <code>"off"</code></td><td>Float the self view to the bottom right</td></tr><tr><td><code>lowData</code></td><td>Nothing (on) or <code>"off"</code></td><td>Use a lower resolution by default</td></tr><tr><td><code>cameraAccess</code></td><td>Nothing (on) or <code>"off"</code></td><td>Disable camera access for the local participant, allowing for only audio input</td></tr></tbody></table>
 
-There are additional room customizations and options that can be found in the [URL parameters](../../whereby-101/customizing-rooms/using-url-parameters.md) section. These options must be added as parameters on the `room` source URL, and are not currently supported as attributes directly on the component.
+There are additional room customizations and options that can be found in the [URL parameters](../whereby-101/customizing-rooms/using-url-parameters.md) section. These options must be added as parameters on the `room` source URL, and are not currently supported as attributes directly on the component.
 
 #### Usage examples
 

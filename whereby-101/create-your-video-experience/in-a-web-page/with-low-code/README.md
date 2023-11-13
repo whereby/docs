@@ -19,9 +19,9 @@ Use a `roomUrl` you've created as the `src` attribute as in the example below.
 ```
 
 {% hint style="success" %}
-If you'd like more programmatic control around the meeting experience with things like browser events and commands, we recommend reviewing our documentation about the [Web Component](../using-the-whereby-embed-element.md) from our SDK
+If you'd like more programmatic control around the meeting experience with things like browser events and commands, we recommend reviewing our documentation about the [Web Component](../../../readme/in-a-web-page/using-the-whereby-embed-element/) from our SDK
 {% endhint %}
 
-When embedding, you can customize the room by [toggling features and behaviors via URL parameters](../../../customizing-rooms/using-url-parameters.md).&#x20;
+The above code can be used for in website builders like [Squarespace or wordpress](embedding-in-squarespace-or-wordpress.md). When embedding, you can customize the room by [toggling features and behaviors via URL parameters](../../../customizing-rooms/using-url-parameters.md).&#x20;
 
 You can restrict which domains are allowed to embed your rooms via the Allowed domains feature on your dashboard.

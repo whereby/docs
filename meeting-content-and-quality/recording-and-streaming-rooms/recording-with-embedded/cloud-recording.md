@@ -75,7 +75,7 @@ You can use our [webhook events](../../../reference/webhooks.md#data-properties)
 
 <figure><img src="../../../.gitbook/assets/recorder webhook.png" alt=""><figcaption></figcaption></figure>
 
-In addition to tracking recordings, we offer [commands](../../../reference/using-the-whereby-embed-element/#sending-commands) to start and stop recordings at your leisure via our SDK's Web Component.&#x20;
+In addition to tracking recordings, we offer [commands](../../../reference/using-the-whereby-embed-element.md#sending-commands) to start and stop recordings at your leisure via our SDK's Web Component.&#x20;
 
 ## Downloading from Whereby-provided storage
 

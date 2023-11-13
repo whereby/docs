@@ -4,7 +4,8 @@
 
 * [Create Your Video Experience](README.md)
   * [Embedding Whereby in a web app](whereby-101/create-your-video-experience/in-a-web-page/README.md)
-    * [Using Whereby's Web Component & Pre-built UI](whereby-101/create-your-video-experience/in-a-web-page/using-the-whereby-embed-element.md)
+    * [Using Whereby's Web Component & Pre-built UI](whereby-101/readme/in-a-web-page/using-the-whereby-embed-element/README.md)
+      * [Script Tags](whereby-101/readme/in-a-web-page/using-the-whereby-embed-element/script-tags.md)
     * [Using React Hooks for a fully custom UI](whereby-101/create-your-video-experience/in-a-web-page/using-whereby-react-hooks-build-a-telehealth-app.md)
     * [With Low Code](whereby-101/create-your-video-experience/in-a-web-page/with-low-code/README.md)
       * [Embedding in Squarespace or Wordpress](whereby-101/create-your-video-experience/in-a-web-page/with-low-code/embedding-in-squarespace-or-wordpress.md)
@@ -53,8 +54,7 @@
 ## 🖥 Reference
 
 * [REST API Reference](reference/whereby-rest-api-reference.md)
-* [Web Component Reference](reference/using-the-whereby-embed-element/README.md)
-  * [Script Tags](reference/using-the-whereby-embed-element/script-tags.md)
+* [Web Component Reference](reference/using-the-whereby-embed-element.md)
 * [React Hooks Reference](reference/react-hooks-reference/README.md)
   * [useRoomConnection](reference/react-hooks-reference/useroomconnection.md)
   * [useLocalMedia](reference/react-hooks-reference/uselocalmedia.md)

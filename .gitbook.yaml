@@ -1,4 +1,4 @@
 root: ./
 
 redirects:  
-    embedding-rooms: whereby-101/in-a-web-page
+    embedding-rooms: whereby-101/in-a-web-page.md

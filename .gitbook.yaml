@@ -1,5 +1,0 @@
-root: ./
-
-redirects:  
-    # whereby-embedded-sdk-beta: README.md
-    embedding-rooms: whereby-101/in-a-web-page

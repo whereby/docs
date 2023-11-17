@@ -9,10 +9,11 @@ description: >-
 
 When using HTML or a static project:
 
+{% code overflow="wrap" %}
 ```html
 <html>
     <head>
-        <script src="...."></script>
+        <script src="https://cdn.srv.whereby.com/embed/v1.js"></script>
     </head>
     <body>
         <div class="container">
@@ -21,6 +22,7 @@ When using HTML or a static project:
     </body>
 </html>
 ```
+{% endcode %}
 
 You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the user [host privileges](../../../user-roles-and-privileges.md#hosts)
 

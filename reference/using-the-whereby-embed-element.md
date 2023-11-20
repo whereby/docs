@@ -44,7 +44,7 @@ You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the us
 {% endtabs %}
 
 {% hint style="info" %}
-If you aren't using a bundler or a library containing a bundler you can access the component code directly from our CDN using a [simple Script tag](../whereby-101/readme/in-a-web-page/using-the-whereby-embed-element/script-tags.md) in your site
+If you aren't using a bundler or a library containing a bundler you can access the component code directly from our CDN using a [simple Script tag](broken-reference) in your site
 {% endhint %}
 
 ### Attributes of the component

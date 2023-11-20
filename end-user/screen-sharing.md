@@ -16,8 +16,8 @@ As the platform holder, there are few options you have for managing the availabl
 
 * Enabling screen sharing for all rooms via a [dashboard preference](../whereby-101/customizing-rooms/dashboard-preferences.md)
 * Enabling screen sharing on a per room/user basis with a [URL parameter](../whereby-101/customizing-rooms/using-url-parameters.md#screenshare-less-than-on-or-off-greater-than)
-* Listening for the [screen sharing event](../whereby-101/readme/in-a-web-page/using-the-whereby-embed-element/#listening-to-events) with our embed element to facilitate in app messages or notifications
-* Using the [browser method](../whereby-101/readme/in-a-web-page/using-the-whereby-embed-element/#sending-commands) for stopping/starting screen sharing
+* Listening for the [screen sharing event](broken-reference) with our embed element to facilitate in app messages or notifications
+* Using the [browser method](broken-reference) for stopping/starting screen sharing
 
 ## Browser sharing options
 

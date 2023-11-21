@@ -21,15 +21,15 @@ Squarespace allows for you to build simple and beautiful websites with ease. Bel
 
 **1** In the section you'd like to Embed Whereby, select the "+" to create a new block
 
-<figure><img src="../../../../.gitbook/assets/squarespace1.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/squarespace1.png" alt="" width="563"><figcaption></figcaption></figure>
 
 **2** Select the "Code" option
 
-<figure><img src="../../../../.gitbook/assets/Squarespace code block.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/Squarespace code block.png" alt="" width="563"><figcaption></figcaption></figure>
 
 **3** Enter in your iframe code into the block. You can see an [example iframe code here](./). You may need to include a height and width attribute to fit your site accordingly.
 
-<figure><img src="../../../../.gitbook/assets/squarespace3.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/squarespace3.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Wordpress
 
@@ -43,12 +43,12 @@ HTML tags like script, iframe, form, input, and style are not available on Premi
 
 w
 
-<figure><img src="../../../../.gitbook/assets/wordpress1.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/wordpress1.png" alt="" width="563"><figcaption></figcaption></figure>
 
 **2** In the search box, enter "code" and select the "Custom HTML" block
 
-<figure><img src="../../../../.gitbook/assets/Word press html block.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/Word press html block.png" alt="" width="563"><figcaption></figcaption></figure>
 
 **3** Enter in your iframe code into the block. You can see an [example iframe code here](broken-reference). You may need to include height and width attributes to fit your site accordingly.
 
-<figure><img src="../../../../.gitbook/assets/wordpress3.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/wordpress3.png" alt="" width="563"><figcaption></figcaption></figure>

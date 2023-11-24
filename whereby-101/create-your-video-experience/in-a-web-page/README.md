@@ -10,7 +10,7 @@ description: >-
 
 The Web component included in our SDK will allow you to embed a Whereby room in any webpage. It provides a more readable integration, and we’ve also exposed local client events that are sent from the room to the component.
 
-[Read more](broken-reference)
+[Read more](using-the-whereby-embed-element/)
 
 ### Using the Whereby SDK's React hooks for a fully custom UI
 

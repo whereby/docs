@@ -18,7 +18,7 @@ layout:
 
 # Using Whereby's Web Component & Pre-built UI
 
-The Web Component offering in our SDK allows you to leverage the thoughtfully designed, pre-built Whereby interface and user experience we've developed over the last 10+ years.&#x20;
+The Web Component offering in our SDK allows you to leverage the thoughtfully designed, pre-built Whereby interface and user experience we've developed over the last 10+ years.
 
 Below are a few examples of how you can use some of the client events and commands that can be sent to a room. We have information on how to get started and install, but for a full document about events, attributes, and commands you can view our Web Component Reference documentation.
 
@@ -28,15 +28,19 @@ Below are a few examples of how you can use some of the client events and comman
 
 ## Installation
 
-When using React or a bundler like Webpack, Rollup, Parcel, etc.
+When using React or a bundler like Webpack, Rollup, Parcel, etc. you can install the Whereby Browser SDK in your project using npm:
 
 ```bash
 npm install @whereby.com/browser-sdk
 ```
 
+You can then import it as follows:
+
 ```javascript
 import "@whereby.com/browser-sdk"
 ```
+
+And embed your room using our `<whereby-embed>` web component:
 
 {% tabs %}
 {% tab title="HTML" %}
@@ -84,7 +88,7 @@ room.addEventListener("leave", () => location.href = "https://whereby.com")
 
 #### participantupdate
 
-Keep track of the number of participants in a room. Once a room has reached it's capacity (200), you can swap the room source URL to a [viewerRoomUrl](../../../user-roles-and-privileges.md#viewers) for additional capacity.
+Keep track of the number of participants in a room. Once a room has reached its capacity (200 participants), you can swap the room source URL to a [viewerRoomUrl](../../../user-roles-and-privileges.md#viewers) for additional capacity.
 
 {% code overflow="wrap" %}
 ```javascript
@@ -117,7 +121,7 @@ A few other ideas:
 For this feature to work, you must add the origin of your application to the "Allowed domains" section on your Whereby dashboard. If not present, the following methods will not function.
 {% endhint %}
 
-The `<whereby-embed>` component exposes a set of [methods](../../../../reference/using-the-whereby-embed-element.md#sending-commands) your application can invoke to perform actions in the room.&#x20;
+The `<whereby-embed>` web component exposes a set of [methods](../../../../reference/using-the-whereby-embed-element.md#sending-commands) your application can invoke to perform actions in the room.
 
 For example, using a [URL parameter](../../../customizing-rooms/using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than) you can hide the bottom toolbar and create your own buttons for taking actions in the room:
 
@@ -135,4 +139,3 @@ const room = document.querySelector("whereby-embed");
 <button onclick="room.toggleChat()">CHAT</button>
 ```
 {% endcode %}
-

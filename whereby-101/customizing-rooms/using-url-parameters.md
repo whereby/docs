@@ -36,7 +36,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?groups=Orange,Banana,Coconut`](using-url-parameters.md#groups-orange-banana-coconut)                            | Predefine up to 20 groups for the breakout groups function.                                 |
 | [`?lang=<code>`](using-url-parameters.md#lang-less-than-code-greater-than)                                         | Set the room UI language.                                                                   |
 | [`?leaveButton=<on\|off>`](using-url-parameters.md#leavebutton-off)                                                | Show/hide the leave button.                                                                 |
-| `?localization=off`                                                                                                | Show/hide the language picker                                                               |
+| <mark style="color:blue;">`?localization=off`</mark>                                                               | Show/hide the language picker                                                               |
 | [`?locking=off`](using-url-parameters.md#locking-off)                                                              | Hide the room lock button.                                                                  |
 | [`?logo=off`](using-url-parameters.md#logo-off)                                                                    | Hide the logo in the room header.                                                           |
 | [`?lowData=<on\|off>`](using-url-parameters.md#lowdata-less-than-on-or-off-greater-than)                           | Use a lower resolution by default                                                           |

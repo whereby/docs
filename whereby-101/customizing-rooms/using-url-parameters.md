@@ -162,7 +162,7 @@ Predefine up to 20 groups for the breakout groups function.
 
 #### `?lang=<code>`
 
-Set the meeting UI language to match your product or service. Select from either English `en`, French `fr`, Italian `it`, German `de`, Norwegian `nb`, Danish `da`, Dutch `nl`, Portuguese `pt`, Polish `pl`, Spanish `es`, Hindi `hi`, Czech `cs` or Japanese `jp`.
+Set the meeting UI language to match your product or service. Select from either English `en`, French `fr`, Italian `it`, German `de`, Norwegian `nb`, Danish `da`, Dutch `nl`, Portuguese `pt`, Polish `pl`, Spanish `es`, Hindi `hi`, Czech `cs`, Chinese (Traditional) `zh-hant` or Japanese `jp`.
 
 #### `?leaveButton=off`
 

@@ -1,6 +1,6 @@
 # useLocalMedia
 
-The `useLocalMedia` hook enables preview and selection of local devices (camera & microphone) prior to establishing a connection within a Whereby room. Use this hook to build rich pre-call experiences, allowing end users to confirm their device selection up-front. This hook works seamlessly with the [Broken link](broken-reference "mention") hook.
+The `useLocalMedia` hook enables preview and selection of local devices (camera & microphone) prior to establishing a connection within a Whereby room. Use this hook to build rich pre-call and waiting room experiences, allowing end users to confirm their device selection up-front. This hook works seamlessly with the [useroomconnection.md](useroomconnection.md "mention") hook.
 
 
 

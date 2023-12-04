@@ -31,6 +31,7 @@
 * [User roles & Meeting Permissions](whereby-101/user-roles-and-privileges.md)
 * [FAQ](whereby-101/faq-and-troubleshooting/README.md)
   * [HIPAA compliant setup](whereby-101/faq-and-troubleshooting/hipaa-compliant-setup.md)
+  * [Allowed Domains & Localhost](whereby-101/faq-and-troubleshooting/allowed-domains-and-localhost.md)
 
 ## 🔍 Meeting Content & Quality
 

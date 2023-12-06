@@ -2,4 +2,4 @@ root: ./
 
 redirects:  
     embedding-rooms: whereby-101/in-a-web-page.md
-    whereby-embedded-sdk-beta: whereby-101/create-your-video-experience/
+    whereby-embedded-sdk-beta: whereby-101/readme.md

@@ -135,6 +135,7 @@ Properties in `data` for the `recording.finished` webhook event:
 | ------------- | ---------------------------------------------------------------------- |
 | `filename`    | The name and extension of the recording.                               |
 | `recordingId` | The identifier of the recording.                                       |
+| `roomName`    | The string that identifies the room assigned to the meeting.           |
 | `status`      | The final status of the recording. It can be only `completed` for now. |
 
 ## Validating events

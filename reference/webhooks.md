@@ -5,7 +5,7 @@ description: >-
   events and actions happening around your meetings.
 ---
 
-# Webhooks Reference
+# Tracking room events with Webhooks
 
 ## Configuration
 
@@ -53,6 +53,8 @@ Additional properties in `data` for `room.client.joined` , `room.client.left roo
 | Property                                                                                                    | Description                                                                                                                                                                   |
 | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | displayName                                                                                                 | The visible name displayed to others in the meeting.                                                                                                                          |
+| roomSessionId                                                                                               | The roomSessionId for the meeting.                                                                                                                                            |
+| participantId                                                                                               | The current user's participantId. Can be used for insights data.                                                                                                              |
 | [metadata](../whereby-101/customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than) | String that matches the "[metadata](../whereby-101/customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than)" query parameter passed to the room URL. |
 | [externalId](../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than) | String that matches the "[externalId](../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than)" query parameter passed to the room URL. |
 

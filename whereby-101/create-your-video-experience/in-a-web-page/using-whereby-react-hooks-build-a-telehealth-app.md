@@ -1,4 +1,8 @@
-# Using React Hooks for a fully custom UI
+# Using Whereby's Browser SDK with React Hooks for a fully custom UI
+
+{% embed url="https://www.youtube.com/watch?v=bojiydinLTg" %}
+Video version of the tutorial below
+{% endembed %}
 
 ### What are you building?
 

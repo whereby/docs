@@ -5,7 +5,7 @@ description: >-
   information to your own documentation!
 ---
 
-# End User documentation
+# Troubleshooting & Basics
 
 {% hint style="success" %}
 The information in this document is intentionally brief and neutral to allow for your team to more easily add your voice and tone.
@@ -17,7 +17,7 @@ We've compiled a list of best practices we believe to be worth reviewing in orde
 
 * Try using headphones or a headset to reduce background noise and improve focus
 * Mute yourself when you aren't speaking, so as not to distract from those currently speaking or cause echo
-* Use a browser that is up to date, preferably Chrome or a Chromium based application
+* Use a browser that is up to date. Chrome or a Chromium based applications provide the best user experience
 *   Verify your browser has access to the Camera and Microphone, then be sure to test before your call:
 
     Mac: [Camera Permissions](https://support.apple.com/guide/mac-help/control-access-to-the-camera-mchlf6d108da/mac) | [Microphone Permissions](https://support.apple.com/guide/mac-help/control-access-to-the-microphone-on-mac-mchla1b1e1fe/mac)\
@@ -31,7 +31,7 @@ Many of the most common issues experienced while on a video call can be resolved
 * Try loading the page in a private or incognito window
 * Quit/close your current browser and try joining from a different browser
 * Close any other applications or tabs that may be controlling access to the camera or microphone
-* Try clearing your browser cache and cookies, then reboot your computer
+* Sometimes bad browser data can interfere with the Whereby user experience. Try clearing your cache and cookies to correct the issue. Instructions for clearing your cache and cookies for supported browsers: [Google Chrome](https://support.google.com/accounts/answer/32050?co=GENIE.Platform=Desktop\&hl=en), [Mozilla Firefox](https://support.mozilla.org/en-US/kb/how-clear-firefox-cache), [Microsoft Edge](https://support.microsoft.com/en-us/help/10607/microsoft-edge-view-delete-browser-history), [Opera](http://help.opera.com/Windows/12.10/en/cache.html)
 
 ## Resolving choppy audio or video
 
@@ -42,6 +42,14 @@ There are a number of factors that can contribute to inconsistent quality on a c
 * If possible, try connecting via another network temporarily (for example a hotspot connection)
 * Close any applications or browser tabs that you aren't actively using on the call
 * Disable any background [video effects](https://whereby.helpscoutdocs.com/article/712-background-effects) or [noise reduction](https://whereby.helpscoutdocs.com/article/711-noise-reduction)
+* Turn off your video while on the call
+
+## Difficulty joining the room or not receiving any audio/video
+
+In some cases privacy and security tools or settings can interfere with the media being exchanged in a meeting. Check the options on your device or your network to make sure you're able to connect to a call:
+
+* Disable any ad-blockers, VPN, or privacy extensions. Occasionally browser extensions can interfere with how Whereby loads, which can manifest as video, audio, or room joining issues.
+* Check your firewall, proxy, or other security softwares (like anti-virus) to make sure they aren't blocking connection requests. You can try temporarily disabling them to see if it improves the connection. Port 443 will need to be open to all TCP and UDP traffic for a meeting to work.&#x20;
 
 ## Resolving disconnects on mobile
 
@@ -53,12 +61,5 @@ If you have Apple's iCloud Private relay feature turned on for your device, you 
 
 When we detect a network issue during the call, you will see a yellow indicator appear. The indicator doesn’t mean that you will perceive any reduced quality; it means your network conditions are in such a state where you _might_ experience reduced quality.&#x20;
 
-![](../.gitbook/assets/image.png)
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-## Additional steps & information
-
-If previously mentioned steps aren't successful in resolving the issue, here are some supplementary tips and actions to try:
-
-* Disable any ad-blockers, VPN, or privacy extensions. Occasionally browser extensions can interfere with how Whereby loads, which can manifest as video, audio, or room joining issues.
-* Check your firewall or other security softwares (like anti-virus) to make sure they aren't blocking connection requests. You can try temporarily disabling them to see if it improves the connection. Port 443 will need to be open to all TCP and UDP traffic.&#x20;
-* Sometimes bad browser data can interfere with the Whereby user experience. Try clearing your cache and cookies to correct the issue. Instructions for clearing your cache and cookies for our supported browsers: [Google Chrome](https://support.google.com/accounts/answer/32050?co=GENIE.Platform=Desktop\&hl=en), [Mozilla Firefox](https://support.mozilla.org/en-US/kb/how-clear-firefox-cache), [Microsoft Edge](https://support.microsoft.com/en-us/help/10607/microsoft-edge-view-delete-browser-history), [Opera](http://help.opera.com/Windows/12.10/en/cache.html)

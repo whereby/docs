@@ -44,6 +44,52 @@ There are a number of factors that can contribute to inconsistent quality on a c
 * Disable any background [video effects](https://whereby.helpscoutdocs.com/article/712-background-effects) or [noise reduction](https://whereby.helpscoutdocs.com/article/711-noise-reduction)
 * Turn off your video while on the call
 
+## Blocked Camera & Microphone access
+
+You may have accidentally blocked the meetings permission to use your camera and microphone for the meeting. Or, your browser doesn't have your device permission to utilize the camera and microphone. Follow the recommendations below to correct common problems:
+
+* Check to see if you've accidentally blocked permissions. For Chrome, Edge, and Firefox you can find a camera icon in the address bar. Select it and then allow.&#x20;
+  * Safari you can select **Safari** in the menu bar and then **Settings -> Websites** then select the camera and microphone options and make sure your website is set to allow
+
+### Operating system permissions
+
+If you've verified the website has proper permissions, it's possible your browser does not have proper permissions from your device operating system. Select your platform below to verify your device settings:
+
+{% tabs %}
+{% tab title="macOS" %}
+Apple has system-level privacy controls for your mic and camera. These are great for privacy, but it is possible that your browser was mistakenly blocked from accessing your devices after an update or accidental answer of a prompt.&#x20;
+
+You can check on this and allow your browser to access them from the **Privacy & Security** section in your System Settings (_System Preferences on older operating systems_).&#x20;
+
+To access these settings, do the following:&#x20;
+
+1. Click on the Apple in the top left of your desktop -> select **System Settings**
+2. Click on the **Privacy & Security** section
+3. Click on **Camera** in the list of options and enable the toggle next to your browser to allow access
+4. Repeat Step 3 for your Microphone
+5. After the above, restart your browser for the updates to take effect
+{% endtab %}
+
+{% tab title="Windows" %}
+In Windows 10, you're able to set a default Microphone, but there are also system-level Camera permissions on what applications can access your camera. For either of these settings, the first  step is open your system settings by clicking on the **Start** menu and selecting the **Settings gear.**
+
+
+
+**Default Mic**
+
+1. Type "Mic" into the search bar&#x20;
+2. Select the Sound settings
+3. Scroll down to Input and use the dropdown to select the proper input device
+
+**Camera Permissions**
+
+1. Type "Cam" into the search bar
+2. Select camera in the app permissions
+3. Verify your browser has permission to access your camera\
+
+{% endtab %}
+{% endtabs %}
+
 ## Difficulty joining the room or not receiving any audio/video
 
 In some cases privacy and security tools or settings can interfere with the media being exchanged in a meeting. Check the options on your device or your network to make sure you're able to connect to a call:

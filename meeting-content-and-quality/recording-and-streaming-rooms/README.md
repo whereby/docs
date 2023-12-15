@@ -2,7 +2,7 @@
 
 ### Recording with Embedded
 
-Recording allows for you or your hosts to capture a recording of a meeting as it appears within the Whereby room. We offer both options for recording locally in the browser or cloud based solution.
+Recording allows for you or your hosts to capture a recording of a meeting as it appears within the Whereby room. We offer options for recording locally in the browser or using a cloud-based solution.
 
 [Read more](recording-with-embedded/)
 

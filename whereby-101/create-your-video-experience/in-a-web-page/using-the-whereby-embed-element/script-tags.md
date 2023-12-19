@@ -13,7 +13,7 @@ When using HTML or a static project:
 ```html
 <html>
     <head>
-        <script src="https://cdn.srv.whereby.com/embed/v1.js"></script>
+        <script src="https://cdn.srv.whereby.com/embed/v1.js" type="module"></script>
     </head>
     <body>
         <div class="container">
@@ -31,4 +31,3 @@ You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the us
 * [Attributes of the Component](./#attributes-of-the-component)
 * [Listening to events](./#listening-to-events)
 * [Sending commands](./#sending-commands)
-

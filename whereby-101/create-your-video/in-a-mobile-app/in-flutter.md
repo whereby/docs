@@ -7,7 +7,7 @@ description: >-
 # Using Flutter
 
 {% hint style="success" %}
-Before starting, you will need to add the corresponding permissions to be able to access both the camera and microphone as described in the [Android](../../create-your-video-experience/in-a-mobile-app/in-android-apps/) and [iOS](../../create-your-video-experience/in-a-mobile-app/in-ios-apps/) sections.
+Before starting, you will need to add the corresponding permissions to be able to access both the camera and microphone as described in the [Android](in-android-apps/) and [iOS](in-ios-apps/) sections.
 {% endhint %}
 
 We recommend using the [flutter\_inappwebview](https://pub.dev/packages/flutter\_inappwebview) and [permission\_handler](https://pub.dev/packages/permission\_handler) modules to handle media permissions in the webview. Update the settings in your iOS and Android projects to match the requirements. Note that there is a [known issue](https://github.com/flutter/flutter/issues/19718) to show the keyboard in Android webviews.

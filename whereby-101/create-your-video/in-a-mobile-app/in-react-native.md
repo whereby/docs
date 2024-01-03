@@ -7,12 +7,12 @@ description: >-
 # Using React Native
 
 {% hint style="success" %}
-Before starting, you will need to add the corresponding permissions to be able to access both the camera and microphone as described in the [Android](../../create-your-video-experience/in-a-mobile-app/in-android-apps/) and [iOS](../../create-your-video-experience/in-a-mobile-app/in-ios-apps/) sections.
+Before starting, you will need to add the corresponding permissions to be able to access both the camera and microphone as described in the [Android](in-android-apps/) and [iOS](in-ios-apps/) sections.
 {% endhint %}
 
 Follow this [guide](https://github.com/react-native-webview/react-native-webview/blob/master/docs/Getting-Started.md#react-native-webview-getting-started-guide) to add and setup the `react-native-webview` library in your React Native project.
 
-Finally, add the WebView component to your code, setup the properties and fill the room URL and parameters.&#x20;
+Finally, add the WebView component to your code, setup the properties and fill the room URL and parameters.
 
 {% hint style="warning" %}
 It's been reported that the Whereby camera and microphone modals that appear on hover, don't always properly close while running in the Android Simulator. If you experience this issue, try running your application on a physical device.

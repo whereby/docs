@@ -287,7 +287,7 @@ Hide the settings button.
 
 Skips the request permissions UI and asks for devices
 
-**Use case:** This parameter will prevent the "Request Permissions" step during the pre-call phase and cause the browser to automatically request device permissions (if requested in the iFrame). This flag is required for [Android app](../create-your-video-experience/in-a-mobile-app/in-android-apps/) integration.
+**Use case:** This parameter will prevent the "Request Permissions" step during the pre-call phase and cause the browser to automatically request device permissions (if requested in the iFrame). This flag is required for [Android app](../create-your-video/in-a-mobile-app/in-android-apps/) integration.
 
 #### `?subgridLabels=<on|off>`
 

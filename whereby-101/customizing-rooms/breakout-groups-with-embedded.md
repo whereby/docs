@@ -8,7 +8,7 @@ description: >-
 # Breakout Groups with Embedded
 
 {% hint style="warning" %}
-Cloud recording does not properly support our [Breakout Groups](breakout-groups-with-embedded.md) feature. When using Breakout Groups, the recorder will remain in the main room and will not capture any of the meeting content from individual groups.
+Cloud recording does not support our [Breakout Groups](breakout-groups-with-embedded.md) feature. When using Breakout Groups, the recorder will remain in the main room and will not capture any of the meeting content from individual groups.
 {% endhint %}
 
 ## Breakout Groups

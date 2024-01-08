@@ -1,16 +1,20 @@
 ---
 description: >-
-  Cloud recording allows your users to record their meetings and save the
-  recordings to a storage bucket accessible by you.
+  Cloud recording is a feature of our paid Embedded plans and allows you to
+  record meetings that are saved to a storage bucket accessible by you.
 ---
 
 # Cloud Recording
 
 {% hint style="warning" %}
-Cloud recording does not properly support our [Breakout Groups](../../../whereby-101/customizing-rooms/breakout-groups-with-embedded.md) feature. When using Breakout Groups, the recorder will remain in the main room and will not capture any of the meeting content from individual groups.
+Cloud recording does not support our [Breakout Groups](../../../whereby-101/customizing-rooms/breakout-groups-with-embedded.md) feature. When using Breakout Groups, the recorder will remain in the main room and will not capture any of the meeting content from individual groups.
 {% endhint %}
 
 ## Storage options
+
+{% hint style="success" %}
+Cloud recording is a feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).
+{% endhint %}
 
 We offer two storage options for our cloud recording feature.&#x20;
 

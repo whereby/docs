@@ -108,8 +108,6 @@ An example of a webhook event object:
 
 ## Transcription Data properties
 
-Whereby transcriptions are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).
-
 Properties in `data` that are common to all transcription webhook events:
 
 | Property          | Description                                                                            |

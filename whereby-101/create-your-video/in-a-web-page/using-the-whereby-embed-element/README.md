@@ -37,7 +37,7 @@ npm install @whereby.com/browser-sdk
 You can then import it as follows:
 
 ```javascript
-import "@whereby.com/browser-sdk"
+import "@whereby.com/browser-sdk/embed"
 ```
 
 And embed your room using our `<whereby-embed>` web component:

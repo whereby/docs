@@ -16,7 +16,7 @@ npm install @whereby.com/browser-sdk
 ```
 
 ```javascript
-import "@whereby.com/browser-sdk"
+import "@whereby.com/browser-sdk/embed"
 ```
 
 {% tabs %}

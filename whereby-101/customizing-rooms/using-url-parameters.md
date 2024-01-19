@@ -55,6 +55,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?settingsButton=off`](using-url-parameters.md#settingsbutton-off)                                                | Hide the settings button.                                                                   |
 | [`?skipMediaPermissionPrompt`](using-url-parameters.md#skipmediapermissionprompt)                                  | Skips the request permissions UI and asks for devices                                       |
 | [`?subgridLabels=<on\|off>`](using-url-parameters.md#subgridlabels-less-than-on-or-off-greater-than)               | Enable name labels for participants in the subgrid                                          |
+| [`?toolbarDarkText`](using-url-parameters.md#toolbardarktext)                                                      | Sets button icon labels color to black.                                                     |
 | [`?topToolbar=<on\|off>`](using-url-parameters.md#toptoolbar-less-than-on-or-off-greater-than)                     | Show/hide the entire top toolbar.                                                           |
 | [`?timer=<on\|off>`](using-url-parameters.md#timer-less-than-on-or-off-greater-than)                               | Show/hide the meeting timer.                                                                |
 | [`?virtualBackgroundUrl=<url>`](using-url-parameters.md#virtualbackgroundurl-less-than-url-greater-than)           | Specify custom virtual background which should be applied to the local participant          |
@@ -302,6 +303,12 @@ Used to toggle name labels for the participants in the subgrid.
 Show/hide the meeting timer within the room.
 
 **Use case:** Set this to “on” to have the meeting timer be displayed in the room. When set to “off”, room hosts can still activate the meeting timer from the “…” button, unless this button has been hidden via the `?minimal` or `?moreButton=off` parameters.
+
+#### `?toolbarDarkText`
+
+Sets button icon labels color to black.
+
+**Use case:** Helpful if you've either added a light background image to your room, or have turned off the background with `?background=off` parameter and are embedding on a light colored web page.
 
 #### `?topToolbar=<on|off>`
 

@@ -60,6 +60,16 @@ When using `viewerRoomUrls` you can have an additional 400 passive users within 
 
 <details>
 
+<summary>What is the video quality in Whereby?</summary>
+
+We support up to 720p with 30fps at both 4:3 and 16:9 aspect ratios for video.&#x20;
+
+Screen sharing will broadcast from 1-5 FPS (frames per second) by default, and up to 1080p based on network and CPU restraints.
+
+</details>
+
+<details>
+
 <summary>Can I customize the page users see when they leave a room?</summary>
 
 Yes! When using our [Web Component](../../reference/using-the-whereby-embed-element.md), you'll have access to "leave" browser [event](../../reference/using-the-whereby-embed-element.md#listening-to-events). You can then action on that event to redirect your users to another page of your choosing.

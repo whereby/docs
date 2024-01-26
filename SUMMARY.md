@@ -48,6 +48,7 @@
 
 ## 🤷 End User
 
+* [Supported Browser & Devices](end-user/supported-browser-and-devices.md)
 * [Troubleshooting & Basics](end-user/end-user-documentation.md)
 * [Screen Sharing Setup & Usage](end-user/screen-sharing.md)
 * [Using Breakout Groups](end-user/using-breakout-groups.md)

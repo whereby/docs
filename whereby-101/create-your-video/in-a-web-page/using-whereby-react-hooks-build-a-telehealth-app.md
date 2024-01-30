@@ -6,7 +6,7 @@ Video version of the tutorial below
 
 ### What are you building?
 
-In this tutorial you will build a fully functional video-conferencing app using the Whereby browser SDK with React hooks. This sample app will connect two participants in a video chat with custom UI, which is the most common scenario in telehealth video solutions. The app will allow the participants to control their camera and microphone, share their screen and send chat messages.  &#x20;
+In this tutorial you will build a fully functional video-conferencing app using the Whereby browser SDK with [React hooks](../../../reference/react-hooks-reference/). This sample app will connect two participants in a video chat with custom UI, which is the most common scenario in telehealth video solutions. The app will allow the participants to control their camera and microphone, share their screen and send chat messages.  &#x20;
 
 Here is a preview of what you will achieve:
 

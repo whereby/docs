@@ -6,14 +6,14 @@ description: >-
 
 # Embedding Whereby in a web app
 
-### Using Whereby's Web Component with our Pre-Built UI&#x20;
+### Using Whereby's Web Component & Pre-built UI&#x20;
 
-The Web component included in our SDK will allow you to embed a Whereby room in any webpage. It provides a more readable integration, and we’ve also exposed local client events that are sent from the room to the component.
+The [Web Component](../../../reference/using-the-whereby-embed-element.md) included in our SDK will allow you to embed a Whereby room in any webpage. It provides a more readable integration, and we’ve also exposed local client events that are sent from the room to the component.
 
 [Read more](using-the-whereby-embed-element/)
 
-### Using the Whereby SDK's React hooks for a fully custom UI
+### Using Whereby's Browser SDK with React Hooks for a fully custom UI
 
-The Whereby browser SDK includes React hooks and components which allow for integrating a fully custom video experience into your web application.
+The Whereby browser SDK's [React Hooks](../../../reference/react-hooks-reference/) will allow you to create a completely custom integration of Whereby-powered video calls into your web application.
 
-[Read more](../../../reference/react-hooks-reference/)
+[Read more](using-whereby-react-hooks-build-a-telehealth-app.md)

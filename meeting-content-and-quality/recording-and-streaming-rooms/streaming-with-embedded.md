@@ -7,6 +7,12 @@ description: >-
 # Streaming RTMP with Embedded
 
 {% embed url="https://www.youtube.com/watch?v=wAEwDL6JMMg" %}
+How to set up streaming in Whereby Embedded
+{% endembed %}
+
+{% hint style="info" %}
+Streaming is a complementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).
+{% endhint %}
 
 ## Create a streaming meeting with the API
 

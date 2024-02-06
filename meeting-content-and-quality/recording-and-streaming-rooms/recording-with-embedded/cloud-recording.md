@@ -6,14 +6,10 @@ description: >-
 
 # Cloud Recording
 
-{% hint style="warning" %}
-Cloud recording does not support our [Breakout Groups](../../../whereby-101/customizing-rooms/breakout-groups-with-embedded.md) feature. When using Breakout Groups, the recorder will remain in the main room and will not capture any of the meeting content from individual groups.
-{% endhint %}
-
 ## Storage options
 
-{% hint style="success" %}
-Cloud recording is a feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).
+{% hint style="info" %}
+Cloud recording is a complementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).
 {% endhint %}
 
 We offer two storage options for our cloud recording feature.&#x20;
@@ -98,6 +94,8 @@ This feature requires the use of Amazon S3 storage. You can review their plans a
 {% endhint %}
 
 {% embed url="https://youtu.be/iLRCdQNK7FY" %}
+How to setup Amazon S3 bucket for Cloud Recording storage
+{% endembed %}
 
 If you choose to use your own storage, there are a few pieces of information to gather from your S3 instance to create and connect your bucket with Whereby. We'll outline each one briefly below and how to locate the information.
 
@@ -131,3 +129,9 @@ For more information, check out Amazon's support article:\
 ![Where to create Access Keys](<../../../.gitbook/assets/access key s3.png>)
 {% endtab %}
 {% endtabs %}
+
+### Known limitations
+
+{% hint style="warning" %}
+Cloud recording does not support our [Breakout Groups](../../../whereby-101/customizing-rooms/breakout-groups-with-embedded.md) feature. When using Breakout Groups, the recorder will remain in the main room and will not capture any of the meeting content from individual groups.
+{% endhint %}

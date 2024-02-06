@@ -8,6 +8,10 @@ description: >-
 
 Transcriptions are derived from session recordings stored in Whereby-provided storage and saved as text files accessible through the customer portal or via the API. They can be used as a standalone resource (eg. for compliance purposes) or sent to an external service for post processing (eg. to derive key topics or create a session summary).
 
+{% hint style="info" %}
+Transcriptions in Whereby Embedded are a complementary feature, and priced at $0.024 for each minute of the transcribed recording.
+{% endhint %}
+
 In order to produce a transcript from a Whereby session you need to follow these steps:
 
 1. create a Whereby room with cloud recording enabled and configured to use Whereby-provided storage

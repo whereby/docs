@@ -102,8 +102,8 @@ Creates a transient room that is available between creation and an hour after th
 [_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}" method="get" %}
-[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
+{% swagger src="../.gitbook/assets/externalapi-openapi (3).json" path="/recordings/{recordingId}" method="get" %}
+[externalapi-openapi (3).json](<../.gitbook/assets/externalapi-openapi (3).json>)
 {% endswagger %}
 
 {% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}/access-link" method="get" %}

@@ -23,7 +23,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?agc=off`](using-url-parameters.md#agc-off)                                                                      | Turn off automatic gain control on audio                                                    |
 | [`?audio=off`](using-url-parameters.md#audio-off)                                                                  | Participant joins the room with microphone turned off.                                      |
 | [`?audioDenoiser=<on\|off>`](using-url-parameters.md#audiodenoiser-less-than-on-or-off-greater-than)               | Enables/Disables the noise cancelation feature                                              |
-| `?autoHideSelfView`                                                                                                | Automatically hide the self view in the bottom right                                        |
+| [`?autoHideSelfView`](using-url-parameters.md#autohideselfview)                                                    | Automatically hide the self view in the bottom right                                        |
 | [`?autoSpotlight`](using-url-parameters.md#autospotlight)                                                          | Automatically spotlight the local participant on room join                                  |
 | [ `?avatarUrl=<url>`](using-url-parameters.md#avatarurl-less-than-url-greater-than)                                | Set the profile avatar of participant.                                                      |
 | [`?background=off`](using-url-parameters.md#background-off)                                                        | Hide the room background.                                                                   |

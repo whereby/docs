@@ -12,6 +12,10 @@ Before starting, you will need to add the corresponding permissions to be able t
 
 We recommend using the [flutter\_inappwebview](https://pub.dev/packages/flutter\_inappwebview) and [permission\_handler](https://pub.dev/packages/permission\_handler) modules to handle media permissions in the webview. Update the settings in your iOS and Android projects to match the requirements. Note that there is a [known issue](https://github.com/flutter/flutter/issues/19718) to show the keyboard in Android webviews.
 
+{% hint style="info" %}
+In order for "Sign in with Google" to work in your app, you may need to add the [userAgent property](https://inappwebview.dev/docs/webview/in-app-weview-settings/#useragent) to your <mark style="color:purple;">`InAppWebViewSettings`</mark>
+{% endhint %}
+
 Finally, add the WebView component to your code, setup the properties and fill the room URL and parameters. Here is a short example:
 
 {% tabs %}

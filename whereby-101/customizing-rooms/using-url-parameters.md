@@ -23,6 +23,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?agc=off`](using-url-parameters.md#agc-off)                                                                      | Turn off automatic gain control on audio                                                    |
 | [`?audio=off`](using-url-parameters.md#audio-off)                                                                  | Participant joins the room with microphone turned off.                                      |
 | [`?audioDenoiser=<on\|off>`](using-url-parameters.md#audiodenoiser-less-than-on-or-off-greater-than)               | Enables/Disables the noise cancelation feature                                              |
+| `?autoHideSelfView`                                                                                                | Automatically hide the self view in the bottom right                                        |
 | [`?autoSpotlight`](using-url-parameters.md#autospotlight)                                                          | Automatically spotlight the local participant on room join                                  |
 | [ `?avatarUrl=<url>`](using-url-parameters.md#avatarurl-less-than-url-greater-than)                                | Set the profile avatar of participant.                                                      |
 | [`?background=off`](using-url-parameters.md#background-off)                                                        | Hide the room background.                                                                   |
@@ -92,6 +93,12 @@ Enables/Disables the noise cancelation feature (disabled by default).&#x20;
 **Note**: Can increase CPU load, particularly for older/slower devices\
 \
 **Use case:** Apply this parameter to manually enable/disable our built-in noise cancelation feature. This is useful in environments with significant background noise.
+
+#### `?autoHideSelfView`
+
+Automatically hide the local users self view in the bottom right of the room. Self view can still be viewed with hovering and selecting arrow icon
+
+**Note:** Floating the self view to the bottom right is required in order to hide the self view. So you must use **?floatSelf\&autoHideSelfView** together for this feature to work.
 
 #### **`?autoSpotlight`**
 

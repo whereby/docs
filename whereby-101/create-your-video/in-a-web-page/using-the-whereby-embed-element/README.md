@@ -80,9 +80,9 @@ When a user leaves the room, you can redirect them to a page of your choosing
 
 {% code overflow="wrap" %}
 ```javascript
-const room = document.querySelector("whereby-embed");
+const whereby = document.querySelector("whereby-embed");
 
-room.addEventListener("leave", () => location.href = "https://whereby.com")
+whereby.addEventListener("leave", () => location.href = "https://whereby.com")
 ```
 {% endcode %}
 
@@ -99,7 +99,7 @@ function logEvent(event) {
     participantCount = event.detail.count
   }
   
-room.addEventListener("participantupdate", logEvent)
+whereby.addEventListener("participantupdate", logEvent)
 
 if(participantCount <= 200){
   whereby.room = "https://subdomain.whereby.com/roomname-123"
@@ -126,16 +126,16 @@ The `<whereby-embed>` web component exposes a set of [methods](../../../../refer
 For example, using a [URL parameter](../../../customizing-rooms/using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than) you can hide the bottom toolbar and create your own buttons for taking actions in the room:
 
 ```javascript
-const room = document.querySelector("whereby-embed");
+const whereby = document.querySelector("whereby-embed");
 ```
 
 {% code overflow="wrap" %}
 ```markup
 <whereby-embed floatSelf background=off displayName="Rick Astley" room="https://subdomain.whereby.com/roomname-123-xyz?bottomToolbar=off"></whereby-embed>
 
-<button onclick="room.toggleCamera()">CAMERA</button>
-<button onclick="room.toggleMicrophone()">MIC</button>   
-<button onclick="room.toggleScreenshare()">SCREENSHARE</button>
-<button onclick="room.toggleChat()">CHAT</button>
+<button onclick="whereby.toggleCamera()">CAMERA</button>
+<button onclick="whereby.toggleMicrophone()">MIC</button>   
+<button onclick="whereby.toggleScreenshare()">SCREENSHARE</button>
+<button onclick="whereby.toggleChat()">CHAT</button>
 ```
 {% endcode %}

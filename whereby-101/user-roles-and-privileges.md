@@ -24,7 +24,7 @@ Users joining via the hostRoomURL become meeting hosts and have the following fe
 Host privileges are valid immediately on room creation and are disabled one hour after the `endDate`.
 {% endhint %}
 
-A hostRoomURL is only available if the `hostRoomURL` is included in the `fields` parameter when [creating a meeting via the API](../reference/whereby-rest-api-reference.md#create-meeting).
+A hostRoomURL is only available if the `hostRoomURL` is included in the `fields` parameter when [creating a meeting via the API](using-the-rest-api/#creating-rooms).
 
 **Example request body:**
 
@@ -53,7 +53,7 @@ Now that you have both a `roomUrl` and a `hostRoomUrl`, you can ensure that both
 
 Users joining via the standard `roomUrl` will have a more typical meeting experience. They will only have access to the features you've set via [URL parameters](customizing-rooms/using-url-parameters.md) or the [dashboard](customizing-rooms/dashboard-preferences.md), and they will need to knock to gain entry to locked rooms.
 
-A `roomUrl` will be included with any POST [meeting creation](../reference/whereby-rest-api-reference.md#create-meeting) requests.
+A `roomUrl` will be included with any POST [meeting creation](using-the-rest-api/#creating-rooms) requests.
 
 
 
@@ -83,7 +83,7 @@ In Viewer Mode, participants joining as Viewers have their camera and microphone
 This is a 1.0 feature and might change in the future.
 
 {% hint style="success" %}
-Meetings created in "[group](creating-and-deleting-rooms/#using-the-rest-api)" mode can support up to 200 hosts or participants. Viewer mode can support an additional 400 viewers for a total of 600 viewers, hosts, and participants.&#x20;
+Meetings created in "[group](using-the-rest-api/#creating-rooms)" mode can support up to 200 hosts or participants. Viewer mode can support an additional 400 viewers for a total of 600 viewers, hosts, and participants.&#x20;
 {% endhint %}
 
 

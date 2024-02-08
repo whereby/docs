@@ -90,7 +90,7 @@ Yes! When using our [Web Component](../../reference/using-the-whereby-embed-elem
 
 <summary>Can I create longstanding meetings?</summary>
 
-Yes! You can create meetings with [endDates](../creating-and-deleting-rooms/) far in the future (_eg. A month or multiple months_). Please keep in mind that if you are providing any of your users with [hostUrls](../user-roles-and-privileges.md#hosts), you won't be able to revoke host access from those users.
+Yes! You can create meetings with [endDates](../using-the-rest-api/#enddate-and-deleting-rooms) far in the future (_eg. A month or multiple months_). Please keep in mind that if you are providing any of your users with [hostUrls](../user-roles-and-privileges.md#hosts), you won't be able to revoke host access from those users.
 
 </details>
 

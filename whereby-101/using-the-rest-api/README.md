@@ -1,10 +1,22 @@
 ---
 description: >-
-  Create or delete Whereby rooms programmatically using a simple API request.
-  Rooms can be created on demand, or ahead of time for scheduled meetings.
+  Rooms are where video calls (sessions) take place. Create or delete Whereby
+  rooms programmatically using a simple API request. Rooms can be created on
+  demand, or ahead of time for scheduled meetings.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
-# Programmatically with REST API
+# Generating Room URLs
 
 {% embed url="https://youtu.be/3-uORdwjlBc" %}
 
@@ -14,7 +26,7 @@ To use the API, you’ll need to create an API key. A new key is generated from 
 
 ### Creating rooms
 
-Once you have secured your API key, you can create a room by sending an HTTP request with the necessary properties in the body. Available properties and formats can be found in the [API reference](../../../reference/whereby-rest-api-reference.md). Some features like the URL pattern of the room name and room size (`roomMode`) can only be set during the meetings creation.
+Once you have secured your API key, you can create a room by sending an HTTP request with the necessary properties in the body. Available properties and formats can be found in the [API reference](../../reference/whereby-rest-api-reference.md). Some features like the URL pattern of the room name and room size (`roomMode`) can only be set during the meetings creation.
 
 `endDate` is interpreted as UTC by default, but other time zones are supported by including an offset in hours and minutes. For example, Eastern Standard Time (EST) would be expressed as `2099-08-11T07:56:01-05:00`.
 
@@ -173,14 +185,12 @@ System.out.println("Body: " + response.body());
 {% endtab %}
 {% endtabs %}
 
-### Deleting rooms and endDate
+### endDate and deleting rooms
 
-Creating rooms via the API, produces a room with a unique URL and a limited lifespan. There's no need to worry about meetings conflicting or rooms being used for other purposes after the intended session.
+Creating rooms via the API, produces a room with a unique URL and a limited lifespan. The `endDate` property is used to indicate the time at which the room will be marked for deactivation. It **does not** indicate when a meeting will end and remove participants.&#x20;
 
-The `endDate` property is used to indicate the time at which the room will be marked for deactivation. It **does not** indicate when a meeting will end and remove participants.&#x20;
-
-One hour after the `endDate` things like [Webhook](../../../reference/webhooks.md) events, [host](../../user-roles-and-privileges.md) privileges, new cloud recordings, and minutes consumption will no longer function. The room will then automatically be deleted within 24 hours of the `endDate` provided.
+One hour after the `endDate` the room will be deactivated and things like [Webhook](../../reference/webhooks.md) events, [host](../user-roles-and-privileges.md) privileges, new cloud recordings, and participant minutes consumption will no longer function. The room will then automatically be deleted within 24 hours of the `endDate` provided.
 
 {% hint style="success" %}
-If you'd like to limit the length of a meeting and verify a room is no longer being used, you can delete a room [via API request](../../../reference/whereby-rest-api-reference.md#meetings-meetingid-1). A deletion request will remove all participants and prevent any further use. You can also keep track of when a session start via [webhooks](../../../reference/webhooks.md) to limit a meeting by length.
+If you'd like to limit the length of a meeting and ensure a room is no longer being used, you can delete a room [via API request](../../reference/whereby-rest-api-reference.md#meetings-meetingid-1). Deleting a room will remove all participants and prevent any further use. You can also keep track of when a session (meeting) starts and ends via [webhooks](../../reference/webhooks.md) to limit a meeting by length.
 {% endhint %}

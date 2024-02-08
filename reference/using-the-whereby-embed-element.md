@@ -93,10 +93,11 @@ You can use standard JavaScript to listen to the events. Here's an example:
 
 ```javascript
   const elm = document.querySelector("whereby-embed");
-  const output = document.querySelector("output");
+  let output = "";
 
   function logEvent(event) {
-    output.innerText += `got event ${JSON.stringify({ type: event.type, detail: event.detail })}\n`;
+    output = `got event ${JSON.stringify({ type: event.type, detail: event.detail })}\n`;
+    console.log(output)
   }
   elm.addEventListener("ready", logEvent)
   elm.addEventListener("knock", logEvent)

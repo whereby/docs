@@ -99,7 +99,7 @@ function logEvent(event) {
     participantCount = event.detail.count
   }
   
-whereby.addEventListener("participantupdate", logEvent)
+whereby.addEventListener("participantupdate", logEvent, { once: true }) // Adding the once option prevents repetitive refreshes
 
 if(participantCount <= 200){
   whereby.room = "https://subdomain.whereby.com/roomname-123"

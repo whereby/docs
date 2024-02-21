@@ -31,6 +31,7 @@
 * [FAQ](whereby-101/faq-and-troubleshooting/README.md)
   * [HIPAA compliant setup](whereby-101/faq-and-troubleshooting/hipaa-compliant-setup.md)
   * [Allowed Domains & Localhost](whereby-101/faq-and-troubleshooting/allowed-domains-and-localhost.md)
+  * [Whereby Embedded Feature Comparison](whereby-101/faq-and-troubleshooting/whereby-embedded-feature-comparison.md)
 
 ## 🔍 Meeting Content & Quality
 

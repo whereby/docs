@@ -53,7 +53,13 @@
 * [Screen Sharing Setup & Usage](end-user/screen-sharing.md)
 * [Using Breakout Groups](end-user/using-breakout-groups.md)
 
-## 🖥 Reference
+## 🚚 Migration Guides
+
+* [Migrating from Twilio](migration-guides/migrate-twilio/README.md)
+  * [Twilio JS SDK Quick Migration](migration-guides/migrate-twilio/twilio-js-sdk-quick-migration.md)
+  * [Twilio JS SDK Direct Migration](migration-guides/migrate-twilio/twilio-js-sdk-direct-migration.md)
+
+## 🖥️ Reference
 
 * [REST API Reference](reference/whereby-rest-api-reference.md)
 * [Web Component Reference](reference/using-the-whereby-embed-element.md)

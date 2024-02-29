@@ -14,9 +14,9 @@ Transcriptions in Whereby Embedded are a complementary feature, and priced at $0
 
 In order to produce a transcript from a Whereby session you need to follow these steps:
 
-1. create a Whereby room with cloud recording enabled and configured to use Whereby-provided storage
-2. record the session
-3. trigger the transcription for the recording
+1. Create a Whereby room with cloud recording enabled and configured to use Whereby-provided storage.
+2. Record the session.
+3. Trigger the transcription for the recording.
 
 You can use Whereby transcriptions manually through the customer portal, or programatically with the combination of API requests and webhook events.
 
@@ -42,7 +42,7 @@ You can also download or delete transcriptions that have been already created fr
 
 ## Programmatic Transcriptions
 
-If you want to automate the process of transcribing Whereby meetings, you can do so with a combination of API queries and webhook events.&#x20;
+If you want to automate the process of transcribing Whereby sessions, you can do so with a combination of API requests and webhook events.&#x20;
 
 #### Configure session recoding
 

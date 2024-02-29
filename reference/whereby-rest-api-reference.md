@@ -144,6 +144,24 @@ Creates a transient room that is available between creation and an hour after th
 [_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
+### /summaries
+
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/summaries" method="get" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
+{% endswagger %}
+
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/summaries" method="post" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
+{% endswagger %}
+
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/summaries/{summaryId}" method="get" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
+{% endswagger %}
+
+{% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/summaries/{summaryId}" method="delete" %}
+[_api-reference-docs-openapi.json](../.gitbook/assets/_api-reference-docs-openapi.json)
+{% endswagger %}
+
 ### /rooms
 
 {% swagger src="../.gitbook/assets/_api-reference-docs-openapi.json" path="/rooms/{roomName}/theme/logo" method="put" %}

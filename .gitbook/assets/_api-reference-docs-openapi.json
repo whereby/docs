@@ -95,6 +95,13 @@
         "description": "Transcription ID.",
         "required": true,
         "example": "1"
+      },
+      "summaryId": {
+        "name": "summaryId",
+        "in": "path",
+        "description": "Summary ID.",
+        "required": true,
+        "example": "1"
       }
     },
     "schemas": {
@@ -192,6 +199,35 @@
           "endDate": "2020-01-01T00:00:00.000Z",
           "state": "completed",
           "createdAt": "2020-01-01T00:00:00.000Z"
+        }
+      },
+      "Summary": {
+        "type": "object",
+        "required": [
+          "summaryId",
+          "transcriptionId",
+          "summary",
+          "roomSessionId",
+          "roomName",
+          "startDate",
+          "endDate",
+          "state",
+          "createdAt",
+          "modifiedAt",
+          "template"
+        ],
+        "example": {
+          "summaryId": "1",
+          "transcriptionId": "1",
+          "summary": { "summary": "This is a meeting summary" },
+          "roomSessionId": "1",
+          "roomName": "room-name",
+          "startDate": "2020-01-01T00:00:00.000Z",
+          "endDate": "2020-01-01T00:00:00.000Z",
+          "state": "completed",
+          "createdAt": "2020-01-01T00:00:00.000Z",
+          "modifiedAt": "2020-01-01T00:00:00.000Z",
+          "template": "General Narrative"
         }
       }
     }
@@ -731,9 +767,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string",
-                  "description": "The transcription ID.",
-                  "example": "1"
+                  "transcriptionId": {
+                    "type": "string",
+                    "description": "The transcription ID.",
+                    "example": "1"
+                  }
                 }
               }
             }
@@ -952,6 +990,189 @@
           },
           "401": {
             "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+
+    "/summaries": {
+      "post": {
+        "summary": "Create summary",
+        "description": "Creates a new summary for the specified transcription.\n\n Session summaries are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/transcriptionId"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["transcriptionId"],
+                "properties": {
+                  "transcriptionId": {
+                    "type": "string",
+                    "description": "The transcription ID for which the summary should be created.\n",
+                    "example": "1"
+                  },
+                  "template": {
+                    "type": "string",
+                    "enum": [
+                      "SOAP",
+                      "Extended SOAP",
+                      "General Narrative",
+                      "General Bulleted",
+                      "Educational Lecture",
+                      "Educational Tutoring"
+                    ],
+                    "description": "The template that the summary should be created from. \n",
+                    "example": "General Narrative"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The summary job was scheduled successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "summaryId": {
+                    "type": "string",
+                    "description": "The summaryId ID.",
+                    "example": "1"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get summaries",
+        "description": "Returns a list of summaries\n\n Session summaries are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "cursor",
+            "schema": {
+              "type": "string",
+              "description": "The cursor for paginating through the results. To fetch the next page,\nset the `cursor` to the `cursor` returned by the previous request.\n",
+              "example": "8f4031bfc7640c5f267b11b6fe0c2507"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer",
+              "description": "The limit for the pagination - the maximum number of results that will be returned within a single API response.",
+              "default": 50,
+              "maximum": 100,
+              "minimum": 1
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Sort results by a field. Accepted fields are: `roomName`, `startDate` and `durationInSeconds`. Accepted sort values are 'asc' and 'desc'.",
+            "required": false,
+            "example": "roomName:asc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON array representing the summaries.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["results", "cursor"],
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Summary"
+                      }
+                    }
+                  },
+                  "cursor": {
+                    "type": "string",
+                    "description": "The cursor for paginating through the results. To fetch the next page,\nset the `cursor` to the `cursor` returned by the previous request.\nIf there are no more results, the value returned is `null`.\n"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      }
+    },
+    "/summaries/{summaryId}": {
+      "delete": {
+        "summary": "Delete summary",
+        "description": "Deletes the specified summary. The endpoint is idempotent, meaning it will return the same response even if the summary has already been deleted.\n\n Session summaries are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/summaryId"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The resource was deleted successfully."
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/ThrottleError"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get summary",
+        "description": "Returns the specified summary.\n\n Session summaries are currently in Beta and available to selected customers only. Email us at embedded@whereby.com to join our pilot program (terms and conditions apply).",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/summaryId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON object representing the summary.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Summary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
           },
           "429": {
             "$ref": "#/components/responses/ThrottleError"

@@ -41,6 +41,7 @@
     * [Local Recording](meeting-content-and-quality/recording-and-streaming-rooms/recording-with-embedded/local-recording.md)
   * [Streaming RTMP with Embedded](meeting-content-and-quality/recording-and-streaming-rooms/streaming-with-embedded.md)
   * [Transcribing sessions](meeting-content-and-quality/recording-and-streaming-rooms/transcribing-sessions.md)
+  * [Session summaries](meeting-content-and-quality/recording-and-streaming-rooms/transcribing-sessions-1.md)
 * [Quality Insights](meeting-content-and-quality/insights-suite-and-api/README.md)
   * [Using the Insights dashboard](meeting-content-and-quality/insights-suite-and-api/using-the-insights-dashboard.md)
   * [Improving call quality](meeting-content-and-quality/insights-suite-and-api/improving-call-quality.md)

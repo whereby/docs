@@ -35,7 +35,7 @@
 
 ## 🔍 Meeting Content & Quality
 
-* [Recording, RTMP, & Transcriptions](meeting-content-and-quality/recording-and-streaming-rooms/README.md)
+* [Recording, RTMP, Transcriptions & Summaries](meeting-content-and-quality/recording-and-streaming-rooms/README.md)
   * [Recording with Embedded](meeting-content-and-quality/recording-and-streaming-rooms/recording-with-embedded/README.md)
     * [Cloud Recording](meeting-content-and-quality/recording-and-streaming-rooms/recording-with-embedded/cloud-recording.md)
     * [Local Recording](meeting-content-and-quality/recording-and-streaming-rooms/recording-with-embedded/local-recording.md)

@@ -17,3 +17,9 @@ Our Streaming feature allows for you to share your meeting feed to an external s
 Transcribing allows you to get a verbatim transcript of what was said in the Whereby meeting.
 
 [Read more](transcribing-sessions.md)
+
+### Session Summaries
+
+Turn the content of Whereby sessions into meeting notes, clinical documentation and educational material with the power of AI.
+
+[Read more](transcribing-sessions-1.md)

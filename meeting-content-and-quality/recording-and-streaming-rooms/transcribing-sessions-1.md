@@ -194,5 +194,9 @@ Session summaries are stored in Whereby database until you delete them.
 
 You can delete a summary with a [DELETE /summaries/{summaryId} ](../../reference/whereby-rest-api-reference.md#summaries-summaryid-1)request where you expect a `204 No Content` response.
 
+## Known limitations
 
+{% hint style="warning" %}
+Session transcriptions and summaries are only available for session recordings stored in Whereby-provided storage. If you store session recordings in your own Amazon S3 bucket, it will be not possible to trigger transcriptions and summaries for these recordings. [Learn more how to set-up cloud recording to use Whereby-provided storage.](recording-with-embedded/cloud-recording.md#setup)
+{% endhint %}
 

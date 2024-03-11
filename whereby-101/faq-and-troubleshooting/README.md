@@ -48,7 +48,7 @@ Unfortunately, because these are government-level restrictions that have been pu
 
 <details>
 
-<summary>Can I remove the "powered by Whereby" banner in my rooms?</summary>
+<summary>Can I remove the <em><strong>Powered by Whereby</strong></em> banner in my rooms?</summary>
 
 Yes! The powered by Whereby is automatically removed when you upgrade to a paid plan. You can review our [pricing options](https://whereby.com/information/embedded/pricing/) and upgrade via the "subscription" option on your dashboard!
 

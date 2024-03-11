@@ -156,6 +156,7 @@ Whereby Embedded can be used in a HIPAA compliant setup by our customers, howeve
 
 * **Streaming** - Whereby meetings cannot be live streamed (using RTMP) and we also do not envision scenarios where a private, health related discussion will need to be live-streamed. Make sure you don't include any streaming config when you create rooms.
 * **Integrations -** We have integrations built with Miro and YouTube that can be used in Whereby meeting rooms. Because these providers are not HIPAA compliant, you must make sure to disable integrations with [roomIntegrations=off](../customizing-rooms/using-url-parameters.md#roomintegrations) unless you're using another parameter that hides them like ?minimal.
+* **Transcriptions and Summaries** - Whereby session transcriptions and summaries are derived from session recordings stored in Whereby-provided storage. Since cloud recordings stored in Whereby-provided storage are not considered to be HIPAA compliant, therefore features that require such recording setup are not HIPAA compliant either. Avoid using session transcriptions and session summaries to maintain HIPAA compliance of your usage of Whereby.
 
 Return to [creating HIPAA compliant rooms](hipaa-compliant-setup.md#creating-hipaa-compliant-rooms)
 

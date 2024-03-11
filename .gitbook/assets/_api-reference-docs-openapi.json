@@ -1029,7 +1029,7 @@
                       "Educational Lecture",
                       "Educational Tutoring"
                     ],
-                    "description": "The template that the summary should be created from. \n",
+                    "description": "The template that the summary should be created from. The following summary templates are currently available:\n- `General Bulleted`\n- `General Narrative`\n- `SOAP`\n- `Extended SOAP`\n- `General Narrative`\n- `Educational Lecture`\n- `Educational Tutoring` \n",
                     "example": "General Narrative"
                   }
                 }

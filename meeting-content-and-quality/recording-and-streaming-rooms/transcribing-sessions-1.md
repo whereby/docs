@@ -200,3 +200,7 @@ You can delete a summary with a [DELETE /summaries/{summaryId} ](../../reference
 Session transcriptions and summaries are only available for session recordings stored in Whereby-provided storage. If you store session recordings in your own Amazon S3 bucket, it will be not possible to trigger transcriptions and summaries for these recordings. [Learn more how to set-up cloud recording to use Whereby-provided storage.](recording-with-embedded/cloud-recording.md#setup)
 {% endhint %}
 
+{% hint style="warning" %}
+Since summaries are derived from recordings saved in Whereby-provided storage, this feature is not considered to be HIPAA compliant. Avoid using Session Summaries in order to maintain HIPAA compliance of your Whereby sessions. [Learn more about Whereby HIPAA compliant setup](../../whereby-101/faq-and-troubleshooting/hipaa-compliant-setup.md).
+{% endhint %}
+

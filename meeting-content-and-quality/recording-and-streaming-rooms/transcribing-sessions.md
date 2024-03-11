@@ -81,3 +81,16 @@ Both the recording and the transcript of the session will be stored in the Where
 * [DELETE /recordings/{recordingId}](../../reference/whereby-rest-api-reference.md#recordings-recordingid-1)
 * [DELETE /transcriptions/{transcriptionId}](../../reference/whereby-rest-api-reference.md#transcriptions-transcriptionid-1)    &#x20;
 
+## Supported Languages
+
+Whereby Transcriptions feature automatically identifies the dominant language spoken in the session and creates a transcript in this language. The following languages are supported: Chinese, Dutch, English, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Portuguese, Russian, Spanish, Swedish, Turkish, Ukrainian.
+
+## Known limitations
+
+{% hint style="warning" %}
+Session transcriptions are only available for session recordings stored in Whereby-provided storage. If you store session recordings in your own Amazon S3 bucket, it will be not possible to trigger transcriptions for these recordings.
+{% endhint %}
+
+{% hint style="warning" %}
+Since transcriptions are derived from recordings saved in Whereby-provided storage, this feature is not considered to be HIPAA compliant. Avoid using Session Transcriptions in order to maintain HIPAA compliance of your Whereby sessions. [Learn more about Whereby HIPAA compliant setup](../../whereby-101/faq-and-troubleshooting/hipaa-compliant-setup.md).
+{% endhint %}

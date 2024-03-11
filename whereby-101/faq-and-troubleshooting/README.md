@@ -48,6 +48,14 @@ Unfortunately, because these are government-level restrictions that have been pu
 
 <details>
 
+<summary>Can I remove the "powered by Whereby" banner in my rooms?</summary>
+
+Yes! The powered by Whereby is automatically removed when you upgrade to a paid plan. You can review our [pricing options](https://whereby.com/information/embedded/pricing/) and upgrade via the "subscription" option on your dashboard!
+
+</details>
+
+<details>
+
 <summary>How many people can be in a room/meeting?</summary>
 
 When creating a room you can specify two different modes, `normal` and `group`. Normal has a capacity of 4 and group has a capacity of 200. There is a limit of 24 active cameras at one time in any meeting room.

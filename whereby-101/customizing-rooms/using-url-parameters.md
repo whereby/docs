@@ -146,7 +146,7 @@ Show/hide the chat button. Messages are not stored after the meeting has ended.
 
 Set the display name for a participant instead of prompting the user for this information.
 
-This supports strings **up to 100 characters** in length. Strings not in this format will be rejected and return an error.&#x20;
+This supports **any characters except code characters `$!<>:;`** and can be **up to 100 characters long**. Strings not in this format will be rejected and the user will be prompted to enter a different display name instead.
 
 **Use case:** A participant’s name may be known before they join the meeting. Including this information as a parameter will save the user from entering their name again.
 

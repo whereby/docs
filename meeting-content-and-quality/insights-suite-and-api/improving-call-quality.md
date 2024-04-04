@@ -30,4 +30,4 @@ With [pre-call ceremony](../../whereby-101/customizing-rooms/using-url-parameter
 * Move closer to the Wifi router or use a wired connection if one is available, as it is less prone to interference than wireless networks.
 * Try joining the call with video turned off.
 
-Our support team has also provided some additional suggestions in our [Troubleshooting guide](../../end-user/end-user-documentation.md).
+Our support team has also provided some additional suggestions in our [Troubleshooting guide](../../end-user/end-user-support-guides/end-user-documentation.md).

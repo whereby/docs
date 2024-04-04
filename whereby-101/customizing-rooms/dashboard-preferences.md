@@ -24,7 +24,7 @@ The device and connectivity tests are a subset of the pre-call review feature. P
 
 ### Help me fix this
 
-You can add a custom link that appears when users accidentally block their permissions. This can be managed for all meetings via the dashboard, or set for individual meetings via our [URL parameter](using-url-parameters.md#precallpermissionhelplink-less-than-url-greater-than). If you need help building some support documentation we have some [End User Troubleshooting](../../end-user/end-user-documentation.md) information that may prove helpful!
+You can add a custom link that appears when users accidentally block their permissions. This can be managed for all meetings via the dashboard, or set for individual meetings via our [URL parameter](using-url-parameters.md#precallpermissionhelplink-less-than-url-greater-than). If you need help building some support documentation we have some [End User Troubleshooting](../../end-user/end-user-support-guides/end-user-documentation.md) information that may prove helpful!
 
 <figure><img src="../../.gitbook/assets/helpmefixthis.png" alt=""><figcaption></figcaption></figure>
 

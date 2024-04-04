@@ -24,6 +24,6 @@ To use Breakout Groups you'll need to ensure the following is true. All of these
 
 You can also programmatically predefine the number of groups and their names before the meeting using our [?groups](using-url-parameters.md#groups-orange-banana-coconut) parameter in the URL.
 
-After you've implemented, we have a [series of guides](../../end-user/using-breakout-groups.md) you can use to train your hosts on using the Breakout Groups feature.
+After you've implemented, we have a [series of guides](../../end-user/end-user-support-guides/using-breakout-groups.md) you can use to train your hosts on using the Breakout Groups feature.
 
 \

@@ -25,7 +25,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?audioDenoiser=<on\|off>`](using-url-parameters.md#audiodenoiser-less-than-on-or-off-greater-than)               | Enables/Disables the noise cancelation feature                                              |
 | [`?autoHideSelfView`](using-url-parameters.md#autohideselfview)                                                    | Automatically hide the self view in the bottom right                                        |
 | [`?autoSpotlight`](using-url-parameters.md#autospotlight)                                                          | Automatically spotlight the local participant on room join                                  |
-| [ `?avatarUrl=<url>`](using-url-parameters.md#avatarurl-less-than-url-greater-than)                                | Set the profile avatar of participant.                                                      |
+| [`?avatarUrl=<url>`](using-url-parameters.md#avatarurl-less-than-url-greater-than)                                 | Set the profile avatar of participant.                                                      |
 | [`?background=off`](using-url-parameters.md#background-off)                                                        | Hide the room background.                                                                   |
 | [`?bottomToolbar=<on\|off>`](using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than)               | Show/hide the entire bottom toolbar.                                                        |
 | [`?breakout=<on\|off>`](using-url-parameters.md#breakout-less-than-on-or-off-greater-than)                         | Show/hide the breakout room feature for the meeting host.                                   |
@@ -52,7 +52,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?precallPermissionHelpLink=<url>`](using-url-parameters.md#precallpermissionhelplink-less-than-url-greater-than) | Specify custom help link in pre-call review step pointing users to additional support pages |
 | [`?precallReview=<on\|off>`](using-url-parameters.md#precallreview-less-than-on-or-off-greater-than)               | Determines if users see the pre-call review step.                                           |
 | [`?roomIntegrations=on`](using-url-parameters.md#roomintegrations)                                                 | Enables YouTube and Miro integrations in the meeting                                        |
-| [`?screenshare=<on\|off>`](using-url-parameters.md#screenshare-less-than-on-or-off-greater-than)                   | Show/hide the screenshare[^1] button.                                                       |
+| [`?screenshare=<on\|off>`](using-url-parameters.md#screenshare-less-than-on-or-off-greater-than)                   | Show/hide the screenshare button.                                                           |
 | [`?settingsButton=off`](using-url-parameters.md#settingsbutton-off)                                                | Hide the settings button.                                                                   |
 | [`?skipMediaPermissionPrompt`](using-url-parameters.md#skipmediapermissionprompt)                                  | Skips the request permissions UI and asks for devices                                       |
 | [`?subgridLabels=<on\|off>`](using-url-parameters.md#subgridlabels-less-than-on-or-off-greater-than)               | Enable name labels for participants in the subgrid                                          |
@@ -66,7 +66,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 
 #### `?aec=off`
 
-Turn off acoustic echo cancellation on audio.&#x20;
+Turn off acoustic echo cancellation on audio.
 
 **Note:** AEC must be on in order to use the in room "Noise Reduction" feature.
 
@@ -88,7 +88,7 @@ Participants join the meeting with their microphone off, they can turn it on whe
 
 #### **`?audioDenoiser=<on|off>`**
 
-Enables/Disables the noise cancelation feature (disabled by default).&#x20;
+Enables/Disables the noise cancelation feature (disabled by default).
 
 **Note**: Can increase CPU load, particularly for older/slower devices\
 \
@@ -102,7 +102,7 @@ Automatically hide the local users self view in the bottom right of the room. Se
 
 #### **`?autoSpotlight`**
 
-Automatically spotlight the local participant on room join.&#x20;
+Automatically spotlight the local participant on room join.
 
 **Note:** Only works when the participant joining has host privileges.\
 \
@@ -112,7 +112,7 @@ Automatically spotlight the local participant on room join.&#x20;
 
 Set the avatar / profile picture of the participant instead of the automatically assigned name initials. The image can be a .png or .jpeg, and must be a square maximum of 64x64.
 
-**Note:** You must make sure to list the origin of the image URL in the [allowed domains](broken-reference) section of the dashboard. The image URL must be https and cannot contain query params.
+**Note:** You must make sure to list the origin of the image URL in the [allowed domains](broken-reference/) section of the dashboard. The image URL must be https and cannot contain query params.
 
 #### `?background=off`
 
@@ -154,7 +154,7 @@ This supports **any characters except code characters `$!<>:;`** and can be **up
 
 Pass in a custom identifier for the participant. This will be propagated through and returned in Insights API requests and webhook data.
 
-This supports **alphanumeric characters** (`A-Za-z0-9-_`) and can be **up to 36 characters long**. Strings not in this format will be rejected and return an error. We recommend the UUID v4 format.&#x20;
+This supports **alphanumeric characters** (`A-Za-z0-9-_`) and can be **up to 36 characters long**. Strings not in this format will be rejected and return an error. We recommend the UUID v4 format.
 
 **Use case:** Passing in the participant's ID used on a different platform to more easily retrieve & search through usage and insight data later on.
 
@@ -184,9 +184,9 @@ Hide the leave button.
 
 Hide the language picker.
 
-**Use case:** Can be used to hide the language picker in the upper right portion of the pre-call flow, as well as room settings. This can be helpful if a [specific language](using-url-parameters.md#lang-less-than-code-greater-than) is desired in your app experience.&#x20;
+**Use case:** Can be used to hide the language picker in the upper right portion of the pre-call flow, as well as room settings. This can be helpful if a [specific language](using-url-parameters.md#lang-less-than-code-greater-than) is desired in your app experience.
 
-**Note:** Hiding the localization options means the user will not be able to change their language preference.&#x20;
+**Note:** Hiding the localization options means the user will not be able to change their language preference.
 
 #### `?locking=off`
 
@@ -267,13 +267,13 @@ Adds functionality for participants to also skip the connectivity test. Hosts ar
 
 **Note:** This feature is a subset of the Pre-call review. This means in order for the pre-call tests to appear, pre-call cannot be turned off.
 
-**Use case:** You have users without host privileges who will be attending multiple calls on your platform using Whereby. They may not need to test their device connectivity as often as they attend calls, so may be useful to give them the ability to skip the test.&#x20;
+**Use case:** You have users without host privileges who will be attending multiple calls on your platform using Whereby. They may not need to test their device connectivity as often as they attend calls, so may be useful to give them the ability to skip the test.
 
 #### `?precallPermissionHelpLink=<url>`
 
 Specify custom help link on the pre-call review step pointing users to additional support pages. This parameter should only be applied when pre-call review is enabled. This preference can also be set globally via the [Dashboard](dashboard-preferences.md#help-me-fix-this).
 
-**Use case:** Apply this parameter to point users with camera or mic permission problems to bespoke [help pages](../../end-user/end-user-documentation.md) published on your own domain and brand, rather than to Whereby's help docs.&#x20;
+**Use case:** Apply this parameter to point users with camera or mic permission problems to bespoke [help pages](../../end-user/end-user-support-guides/end-user-documentation.md) published on your own domain and brand, rather than to Whereby's help docs.
 
 #### `?precallReview=<on|off>`
 
@@ -334,5 +334,3 @@ Participants join the meeting with their camera off, they can turn it on wheneve
 Specify a image url to use as the virtual background for the participant. The image must be provided in **1280x720** resolution in either `image/jpeg` or `image/png` format. In addition, the image should be retrievable using CORS.
 
 ####
-
-[^1]: 

@@ -49,10 +49,11 @@
 
 ## 🤷 End User
 
-* [Supported Browsers & Devices](end-user/supported-browsers-and-devices.md)
-* [Troubleshooting & Basics](end-user/end-user-documentation.md)
-* [Screen Sharing Setup & Usage](end-user/screen-sharing.md)
-* [Using Breakout Groups](end-user/using-breakout-groups.md)
+* [End User Support Guides](end-user/end-user-support-guides/README.md)
+  * [Supported Browsers & Devices](end-user/end-user-support-guides/supported-browsers-and-devices.md)
+  * [Screen Sharing Setup & Usage](end-user/end-user-support-guides/screen-sharing.md)
+  * [Using Breakout Groups](end-user/end-user-support-guides/using-breakout-groups.md)
+  * [Troubleshooting & Basics](end-user/end-user-support-guides/end-user-documentation.md)
 
 ## 🚚 Migration Guides
 

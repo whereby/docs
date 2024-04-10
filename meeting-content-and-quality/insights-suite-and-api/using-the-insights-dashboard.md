@@ -30,7 +30,7 @@ Only room sessions after July 20, 2023 will include display name in the session 
 
 You can use this information to determine if there were any compatibility issues, since not all devices or browsers fully support WebRTC.&#x20;
 
-You can find our list of supported browsers and devices here: [https://whereby.helpscoutdocs.com/article/415-supported-devices](https://whereby.helpscoutdocs.com/article/415-supported-devices)
+Check out our list of [supported browsers and devices](../../end-user/end-user-support-guides/supported-browsers-and-devices.md)
 
 ## Reading the charts
 

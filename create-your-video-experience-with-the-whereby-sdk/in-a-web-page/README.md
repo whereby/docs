@@ -21,4 +21,4 @@ We offer a web component that will allow you to embed a Whereby room in any webp
 
 The Whereby browser SDK includes React hooks and components which allow for integrating a fully custom video experience into your web application.
 
-[Read more](using-wherebys-react-sdk-for-full-custom-ui/)
+[Read more](/reference/react-hooks-reference)

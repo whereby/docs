@@ -30,6 +30,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?bottomToolbar=<on\|off>`](using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than)               | Show/hide the entire bottom toolbar.                                                        |
 | [`?breakout=<on\|off>`](using-url-parameters.md#breakout-less-than-on-or-off-greater-than)                         | Show/hide the breakout room feature for the meeting host.                                   |
 | [`?cameraAccess=<on\|off>`](using-url-parameters.md#cameraaccess-less-than-on-or-off-greater-than)                 | Camera permissions are not requested or used at all. On by default.                         |
+| [`?cameraEffect=<effect>`](using-url-parameters.md#cameraeffect-less-than-effect-greater-than)                     | Set default camera effect to be used. Still user changeable.                                |
 | [`?chat=<on\|off>`](using-url-parameters.md#chat-less-than-on-or-off-greater-than)                                 | Show/hide the chat button.                                                                  |
 | [`?displayName=<name>`](using-url-parameters.md#displayname-less-than-name-greater-than)                           | Set display name of participant.                                                            |
 | [`?externalId=<id>`](using-url-parameters.md#externalid-less-than-id-greater-than)                                 | A custom identifier for the participant. Gets saved in Insights data.                       |
@@ -37,7 +38,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?groups=Orange,Banana,Coconut`](using-url-parameters.md#groups-orange-banana-coconut)                            | Predefine up to 20 groups for the breakout groups function.                                 |
 | [`?lang=<code>`](using-url-parameters.md#lang-less-than-code-greater-than)                                         | Set the room UI language.                                                                   |
 | [`?leaveButton=<on\|off>`](using-url-parameters.md#leavebutton-off)                                                | Show/hide the leave button.                                                                 |
-| <mark style="color:blue;">`?localization=off`</mark>                                                               | Show/hide the language picker                                                               |
+| [<mark style="color:blue;">`?localization=off`</mark>](using-url-parameters.md#localization-off)                   | Show/hide the language picker                                                               |
 | [`?locking=off`](using-url-parameters.md#locking-off)                                                              | Hide the room lock button.                                                                  |
 | [`?logo=off`](using-url-parameters.md#logo-off)                                                                    | Hide the logo in the room header.                                                           |
 | [`?lowData=<on\|off>`](using-url-parameters.md#lowdata-less-than-on-or-off-greater-than)                           | Use a lower resolution by default                                                           |
@@ -137,6 +138,14 @@ Show/hide the [Breakout Groups feature](breakout-groups-with-embedded.md) for th
 Whereby will not request access to participants' cameras when this is set to off, and there are no video controls.
 
 **Use case:** A voice-only meeting where attendees are not expected to show themselves on camera.
+
+#### `?cameraEffect=<effect>`
+
+Set the default camera effect to be used.&#x20;
+
+**Values:** <mark style="color:red;">`slight-blur`</mark>, <mark style="color:red;">`blur`</mark>, <mark style="color:red;">`image-cabin`</mark>, <mark style="color:red;">`image-concrete`</mark>, <mark style="color:red;">`image-brick`</mark>, <mark style="color:red;">`image-sunrise`</mark>, <mark style="color:red;">`image-day`</mark>, <mark style="color:red;">`image-night`</mark>
+
+**Use case:** For some users it can be nice to set a camera effect without user interaction. This might be to improve the user experience or set a background for privacy concerns.
 
 #### `?chat=<on|off>`
 

@@ -14,12 +14,13 @@
 
 ### RoomConnectionOptions: <mark style="color:green;">\<Object></mark>
 
-| Property                                                                              | Description                                                                                                                                                      |
-| ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `displayName?: string`                                                                | <p>The name to use for the local participant </p><p>(you) in the call</p>                                                                                        |
-| `localMediaConstraints?:` [`MediaStreamConstraints`](types.md#mediastreamconstraints) | Constraints to use for the local participant media (camera and microphone)                                                                                       |
-| `localMedia:` [`LocalMedia`](broken-reference)                                        | Existing local media to use, as provided by the [`useLocalMedia`](uselocalmedia.md) hook                                                                         |
-| `roomKey?: string`                                                                    | Room key to use if the local participant should assume a non-standard role in the room, such as [host or viewer](../../whereby-101/user-roles-and-privileges.md) |
+| Property                                                                              | Description                                                                                                                                                                       |
+| ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `displayName?: string`                                                                | The name to use for the local participant </p><p>(you) in the call                                                                                                                |
+| `roleName: string`                                                                    | The role of the user in the call. Will be one of the following values: <br/><br/>`none`, `visitor`, `granted_visitor`, `viewer`, `granted_viewer`, `host`, `recorder`, `streamer` |
+| `localMediaConstraints?:` [`MediaStreamConstraints`](types.md#mediastreamconstraints) | Constraints to use for the local participant media (camera and microphone)                                                                                                        |
+| `localMedia:` [`LocalMedia`](broken-reference)                                        | Existing local media to use, as provided by the [`useLocalMedia`](uselocalmedia.md) hook                                                                                          |
+| `roomKey?: string`                                                                    | Room key to use if the local participant should assume a non-standard role in the room, such as [host or viewer](../../whereby-101/user-roles-and-privileges.md)                  |
 
 ### ChatMessage: <mark style="color:green;">\<Object></mark>
 
@@ -39,7 +40,7 @@
 
 ### RemoteParticipant: <mark style="color:green;">\<Object></mark>
 
-<table><thead><tr><th>Property</th><th width="294.3333333333333">Types</th><th>Description</th></tr></thead><tbody><tr><td>displayName</td><td><code>string</code></td><td>Display name of the remote participant</td></tr><tr><td>id</td><td><code>string</code></td><td><p>Id of the remote </p><p>participant</p></td></tr><tr><td>stream</td><td><a href="types.md#mediastream"><code>MediaStream</code></a><code>?</code></td><td>Stream of the remote participant</td></tr><tr><td>isAudioEnabled</td><td><code>boolean</code></td><td>Stream of the remote participant</td></tr><tr><td>isVideoEnabled</td><td><code>boolean</code></td><td>The remote participant has their microphone enabled</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th width="294.3333333333333">Types</th><th>Description</th></tr></thead><tbody><tr><td>displayName</td><td><code>string</code></td><td>Display name of the remote participant</td></tr><tr><td>id</td><td><code>string</code></td><td><p>Id of the remote </p><p>participant</p></td></tr><tr><td>roleName</td><td><code>string</code></td><td>The role of the user in the call. Will be one of the following values: <br/><br/><code>none</code>, <code>visitor</code>, <code>granted_visitor</code>, <code>viewer</code>, <code>granted_viewer</code>, <code>host</code>, <code>recorder</code>, <code>streamer</code></td></tr><tr><td>stream</td><td><a href="types.md#mediastream"><code>MediaStream</code></a><code>?</code></td><td>Stream of the remote participant</td></tr><tr><td>isAudioEnabled</td><td><code>boolean</code></td><td>Stream of the remote participant</td></tr><tr><td>isVideoEnabled</td><td><code>boolean</code></td><td>The remote participant has their microphone enabled</td></tr></tbody></table>
 
 ### Screenshare: <mark style="color:green;">\<Object></mark>
 

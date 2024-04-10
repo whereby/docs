@@ -139,7 +139,7 @@ Whereby will not request access to participants' cameras when this is set to off
 
 **Use case:** A voice-only meeting where attendees are not expected to show themselves on camera.
 
-#### `?cameraEffect=<effect>`
+#### `?cameraEffect=<effect>` <a href="#cameraeffect" id="cameraeffect"></a>
 
 Set the default camera effect to be used.&#x20;
 

@@ -19,6 +19,8 @@ If your firewall or proxy requires or allows whitelisting via domain, the follow
 
 Whereby servers don't currently have a static range of IP addresses. We can provide a list of current server IPs to our annual an enterprise customers upon request. Partner with your dedicated Success Manager or Solutions Engineer to obtain relevant information for your clients and discuss eligibility.
 
+### Additional Info
+
 #### Signaling (wss)
 
 Control messages between the clients and Whereby servers when in a call ("signaling") is transmitted over secure websockets (wss). These utilize the same ports as HTTPS, but will set up persistent two-way connections. Proxies and firewalls that intercept HTTPS traffic should be configured to allow websocket traffic towards these hosts/domains:

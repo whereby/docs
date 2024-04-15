@@ -29,6 +29,7 @@
   * [Breakout Groups with Embedded](whereby-101/customizing-rooms/breakout-groups-with-embedded.md)
 * [User roles & Meeting Permissions](whereby-101/user-roles-and-privileges.md)
 * [FAQ](whereby-101/faq-and-troubleshooting/README.md)
+  * [Firewall & Security](whereby-101/faq-and-troubleshooting/firewall-and-security.md)
   * [HIPAA compliant setup](whereby-101/faq-and-troubleshooting/hipaa-compliant-setup.md)
   * [Allowed Domains & Localhost](whereby-101/faq-and-troubleshooting/allowed-domains-and-localhost.md)
   * [Whereby Embedded Feature Comparison](whereby-101/faq-and-troubleshooting/whereby-embedded-feature-comparison.md)

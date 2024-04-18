@@ -69,13 +69,12 @@ class _InAppWebViewPageState extends State<InAppWebViewPage> {
                     ios: IOSInAppWebViewOptions(
                       allowsInlineMediaPlayback: true,
                     )),
-                androidOnPermissionRequest: (InAppWebViewController controller,
-                    String origin, List<String> resources) async {
+                onPermissionRequest: (controller, permissionRequest) async {
                   await Permission.camera.request();
                   await Permission.microphone.request();
-                  return PermissionRequestResponse(
-                      resources: resources,
-                      action: PermissionRequestResponseAction.GRANT);
+                  return PermissionResponse(
+                      resources: permissionRequest.resources,
+                      action: PermissionResponseAction.GRANT);
                 },
               ),
             ),

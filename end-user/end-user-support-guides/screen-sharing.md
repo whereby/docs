@@ -91,3 +91,59 @@ Users can extend the capability of screen sharing by installing extensions in Ch
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-08-14 at 2.29.27 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
+## Troubleshooting Screen Sharing
+
+#### "Could not start screen share"
+
+If you are seeing the above error message, it could mean a few things. Either the request was canceled or your browser doesn't have permission to access screen sharing.
+
+{% hint style="info" %}
+**Windows Permissions**:  At the moment Windows doesn't have any system-level permissions for screen access. if you're running into problems or getting an error, double-check your browser settings.
+
+**Chrome and Chromium**: At the moment Chrome doesn't have any specific settings related to screen access.
+{% endhint %}
+
+{% tabs %}
+{% tab title="macOS permissions" %}
+In the more recent versions of macOS, Apple has introduced system-level permissions for applications like your browser for accessing screen sharing.&#x20;
+
+If you've recently updated or upgraded your device and can't screen share anymore, you'll need to update the preferences by doing the following:
+
+1. Open up **System Settings** on your Mac
+2. Click on the "**Privacy & Security**" section
+3. Scroll to the "**Screen & System Audio Recording**" section, and ensure that your browser is toggled on. You will likely need to restart your browser after enabling.
+
+<figure><img src="../../.gitbook/assets/Screen share permissions.png" alt="" width="563"><figcaption></figcaption></figure>
+{% endtab %}
+
+{% tab title="Safari Permissions" %}
+In some cases you may have accidentally blocked screen sharing for the site at a browser level. In Safari you can fix that with the following:
+
+1. In your menu bar, select **Safari->Settings**
+2. Select the "**Websites**" option
+3. Scroll down to the "**Screen Sharing**" section
+4. Find your website and verify it is set to "**Ask**"
+
+<figure><img src="../../.gitbook/assets/safari screen share permissions.png" alt=""><figcaption></figcaption></figure>
+{% endtab %}
+
+{% tab title="FireFox Permissions" %}
+When using screen sharing in Firefox, you'll see a pop up that asks if you'd like to allow Whereby (or your site) to access your screen
+
+<figure><img src="../../.gitbook/assets/Firefox screen share.png" alt="" width="375"><figcaption></figcaption></figure>
+
+If you accidentally selected "Always block", Firefox won't show this prompt again. In this case, you'll need to manually reset the permissions for screen access by doing the following:
+
+1. Click on the "Site information" area, just to the left of the website address
+2. Locate the "Share the Screen" item in the list, and select the "**X**" next to Blocked
+
+<figure><img src="../../.gitbook/assets/Firefox screen share 2.png" alt="" width="375"><figcaption></figcaption></figure>
+
+3. Refresh the tab
+{% endtab %}
+{% endtabs %}
+
+#### "Screen share is hard to read"
+
+If you're having trouble reading smaller text on a screen share, try making the window or content that you are sharing smaller. That might mean instead of sharing your entire screen, you share a browser window/tab that you resize slightly. Or, if you have a large monitor, not using an app/tab that is full size for the monitor
+

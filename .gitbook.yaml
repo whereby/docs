@@ -3,8 +3,8 @@ root: ./
 redirects:  
     embedding-rooms: whereby-101/in-a-web-page.md
     whereby-embedded-sdk-beta: README.md
-    creating-and-deleting-rooms: whereby-101/using-the-rest-api.md
-    creating-and-deleting-rooms/creating-an-api-key: whereby-101/using-the-rest-api.md
-    embedding-rooms/in-a-web-page/using-the-whereby-embed-element: whereby-101/create-your-video/in-a-web-page/using-the-whereby-embed-element.md
+    creating-and-deleting-rooms: whereby-101/using-the-rest-api/README.md
+    creating-and-deleting-rooms/creating-an-api-key: whereby-101/using-the-rest-api/README.md
+    embedding-rooms/in-a-web-page/using-the-whereby-embed-element: whereby-101/create-your-video/in-a-web-page/using-the-whereby-embed-element/README.md
     whereby-embedded-sdks-beta: whereby-101/create-your-video/in-a-web-page/using-whereby-react-hooks-build-a-telehealth-app.md
     monitoring-usage: meeting-content-and-quality/webhooks.md

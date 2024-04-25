@@ -79,6 +79,10 @@ Sharing the audio of the entire screen that contains a Whereby room will cause a
 
 ### Picture in picture
 
+{% hint style="warning" %}
+Due to a bug in Safari for macOS, we've temporarily disabled our Picture in Picture feature for versions 17.x
+{% endhint %}
+
 Allowing the use of "[Picture in Picture](https://docs.whereby.com/customizing-rooms/using-url-parameters#pipbutton-off)" can be helpful for users that want to screen share content and still be able to view others within the room.
 
 <figure><img src="../../.gitbook/assets/file-I2HcA3GVNZ.png" alt="" width="480"><figcaption></figcaption></figure>

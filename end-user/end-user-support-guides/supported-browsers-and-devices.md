@@ -4,6 +4,10 @@ As a browser-based platform, we're able to support any operating system that's c
 
 Whether it's macOS, Linux, or Windows, we've got you covered as long as you can run an up-to-date and supported browser!
 
+{% hint style="warning" %}
+Due to a bug in Safari for macOS, we've temporarily disabled our [Picture in Picture](screen-sharing.md#picture-in-picture) feature for versions 17.x
+{% endhint %}
+
 ## Desktop Browsers
 
 All of the below browsers have full support for WebRTC. For the best experience, we recommend Chrome or Chromium-based browsers such as Edge, Vivaldi, Opera, Brave or Arc.
@@ -16,7 +20,7 @@ Older versions of the below browsers will generally work as they support the bas
 If your users are experiencing problems, instruct them to update their browser as a first step. We recommend testing on older devices when possible, if you expect your user base to use predominately out of date software.&#x20;
 {% endhint %}
 
-<table><thead><tr><th width="152">Browser</th><th width="118" align="center">Supported</th><th>Notes</th></tr></thead><tbody><tr><td>Chrome</td><td align="center">✅</td><td></td></tr><tr><td>Firefox</td><td align="center">✅</td><td>Whereby's <a href="screen-sharing.md#picture-in-picture">PiP</a> feature does not work in Firefox. Firefox has their own native <a href="https://support.mozilla.org/en-US/kb/about-picture-picture-firefox">PiP</a> with slightly less functionality.</td></tr><tr><td>Edge</td><td align="center">✅</td><td>Edge Legacy is unsupported</td></tr><tr><td>Safari</td><td align="center">✅</td><td>Safari is a supported browser. However, Apple is slower to release updates and added WebRTC support later than other vendors. If Safari users are reporting problems, instruct them to try another browser.</td></tr><tr><td><strong>Other Chromium browsers:</strong> Opera, Brave, Arc, Vivaldi</td><td align="center">✅</td><td>In some cases Brave's stricter security settings can cause connection issues. Cross-site cookies must be enabled in Brave's "Shield" feature</td></tr><tr><td>Internet Explorer</td><td align="center">❌</td><td>Unsupported</td></tr></tbody></table>
+<table><thead><tr><th width="152">Browser</th><th width="118" align="center">Supported</th><th>Notes</th></tr></thead><tbody><tr><td>Chrome</td><td align="center">✅</td><td></td></tr><tr><td>Firefox</td><td align="center">✅</td><td>Whereby's <a href="screen-sharing.md#picture-in-picture">PiP</a> feature does not work in Firefox. Firefox has their own native <a href="https://support.mozilla.org/en-US/kb/about-picture-picture-firefox">PiP</a> with slightly less functionality.</td></tr><tr><td>Edge</td><td align="center">✅</td><td>Edge Legacy is unsupported</td></tr><tr><td><a data-footnote-ref href="#user-content-fn-1">Safari</a></td><td align="center">✅</td><td>Safari is a supported browser. However, Apple is slower to release updates and added WebRTC support later than other vendors. If Safari users are reporting problems, instruct them to try another browser.</td></tr><tr><td><strong>Other Chromium browsers:</strong> Opera, Brave, Arc, Vivaldi</td><td align="center">✅</td><td>In some cases Brave's stricter security settings can cause connection issues. Cross-site cookies must be enabled in Brave's "Shield" feature</td></tr><tr><td>Internet Explorer</td><td align="center">❌</td><td>Unsupported</td></tr></tbody></table>
 
 ## Mobile Browsers
 
@@ -31,3 +35,5 @@ Screen sharing is currently unavailable on Mobile devices due to browser API lim
 ### Android
 
 <table><thead><tr><th width="122">Browser</th><th width="118" align="center">Supported</th><th>Notes</th></tr></thead><tbody><tr><td>Chrome</td><td align="center">✅</td><td></td></tr><tr><td>Firefox</td><td align="center">✅</td><td></td></tr><tr><td>Edge</td><td align="center">✅</td><td></td></tr><tr><td>Samsung Internet</td><td align="center">✅</td><td>Has a slower release cycle than other major browser vendors. If issues are experienced, try using Chrome to see if things improve</td></tr></tbody></table>
+
+[^1]: 

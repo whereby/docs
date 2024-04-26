@@ -20,7 +20,11 @@ Whereby is the easiest way to add video calls to your web page or mobile app. Ge
 
 Stay informed or collaborate with other builders! Join our community today
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Discord</td><td></td><td></td><td><a href="https://discord.gg/uWRcPWbGJB">https://discord.gg/uWRcPWbGJB</a></td><td><a href=".gitbook/assets/whereby-discord.webp">whereby-discord.webp</a></td></tr><tr><td>Launch Notes</td><td></td><td></td><td></td><td><a href=".gitbook/assets/Launch Notes share image.png">Launch Notes share image.png</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Discord</td><td></td><td></td><td><a href="https://discord.gg/uWRcPWbGJB">https://discord.gg/uWRcPWbGJB</a></td><td><a href=".gitbook/assets/whereby-discord.webp">whereby-discord.webp</a></td></tr><tr><td>Launch Notes</td><td></td><td></td><td><a href="https://whereby.launchnotes.io/">https://whereby.launchnotes.io/</a></td><td><a href=".gitbook/assets/Launch Notes share image.png">Launch Notes share image.png</a></td></tr></tbody></table>
+
+
+
+***
 
 Follow the links below to explore the various ways you can build, integrate, and customize the perfect video experience for your users.
 

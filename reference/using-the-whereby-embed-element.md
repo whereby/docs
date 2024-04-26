@@ -1,7 +1,7 @@
 ---
 description: >-
-  Our web component allows you to embed a Whereby room in any webpage. It
-  provides a simple readable integration and exposes local client events and
+  Our web component allows you to embed Whereby's pre-built UI on any webpage.
+  It provides a simple readable integration and exposes local client events and
   commands between our platform and yours.
 ---
 
@@ -58,6 +58,14 @@ There are additional room customizations and options that can be found in the [U
 #### Usage examples
 
 {% tabs %}
+{% tab title="Room w/ multiple customizations" %}
+{% code overflow="wrap" %}
+```html
+<whereby-embed room="https://subdomain.whereby.com/your_room" displayName="John Smith" audio=off video=off background=off chat=off />
+```
+{% endcode %}
+{% endtab %}
+
 {% tab title="Basic room embed" %}
 ```html
 <whereby-embed room="https://subdomain.whereby.com/your_room" />
@@ -68,14 +76,6 @@ There are additional room customizations and options that can be found in the [U
 {% code overflow="wrap" %}
 ```html
 <whereby-embed room="https://subdomain.whereby.com/your_room" minimal />
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Room w/ multiple customizations" %}
-{% code overflow="wrap" %}
-```html
-<whereby-embed room="https://subdomain.whereby.com/your_room" displayName="John Smith" audio=off video=off background=off chat=off />
 ```
 {% endcode %}
 {% endtab %}

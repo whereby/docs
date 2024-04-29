@@ -16,8 +16,8 @@ As the platform holder, there are few options you have for managing the availabl
 
 * Enabling screen sharing for all rooms via a [dashboard preference](../../whereby-101/customizing-rooms/dashboard-preferences.md)
 * Enabling screen sharing on a per room/user basis with a [URL parameter](../../whereby-101/customizing-rooms/using-url-parameters.md#screenshare-less-than-on-or-off-greater-than)
-* Listening for the [screen sharing event](broken-reference) with our embed element to facilitate in app messages or notifications
-* Using the [browser method](broken-reference) for stopping/starting screen sharing
+* Listening for the [screen sharing event](../../reference/using-the-whereby-embed-element.md#listening-to-events) with our Web Component to facilitate in app messages or notifications
+* Using the [browser method](../../reference/using-the-whereby-embed-element.md#sending-commands) for stopping/starting screen sharing
 
 ## Browser sharing options
 
@@ -115,7 +115,8 @@ If you've recently updated or upgraded your device and can't screen share anymor
 
 1. Open up **System Settings** on your Mac
 2. Click on the "**Privacy & Security**" section
-3. Scroll to the "**Screen & System Audio Recording**" section, and ensure that your browser is toggled on. You will likely need to restart your browser after enabling.
+3. Scroll to the "**Screen & System Audio Recording**" section, and ensure that your browser is toggled on
+4. Restart your browser
 
 <figure><img src="../../.gitbook/assets/Screen share permissions.png" alt="" width="563"><figcaption></figcaption></figure>
 {% endtab %}
@@ -149,5 +150,5 @@ If you accidentally selected "Always block", Firefox won't show this prompt agai
 
 #### "Screen share is hard to read"
 
-If you're having trouble reading smaller text on a screen share, try making the window or content that you are sharing smaller. That might mean instead of sharing your entire screen, you share a browser window/tab that you resize slightly. Or, if you have a large monitor, not using an app/tab that is full size for the monitor
+If you're having trouble reading smaller text on a screen share, try making the window or content that is being shared smaller. That might mean instead of sharing the entire screen, share a browser window/tab that has been resized slightly. Or, if you have a large monitor try to not use an app window or browser tab that is stretched to the full size of the monitor.
 

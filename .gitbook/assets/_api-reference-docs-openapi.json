@@ -528,6 +528,14 @@
         "parameters": [
           {
             "in": "query",
+            "name": "roomName",
+            "schema": {
+              "type": "string",
+              "description": "The name of the room"
+            }
+          },
+          {
+            "in": "query",
             "name": "cursor",
             "schema": {
               "type": "string",

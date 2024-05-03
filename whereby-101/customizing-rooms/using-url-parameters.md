@@ -30,7 +30,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?bottomToolbar=<on\|off>`](using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than)               | Show/hide the entire bottom toolbar.                                                        |
 | [`?breakout=<on\|off>`](using-url-parameters.md#breakout-less-than-on-or-off-greater-than)                         | Show/hide the breakout room feature for the meeting host.                                   |
 | [`?cameraAccess=<on\|off>`](using-url-parameters.md#cameraaccess-less-than-on-or-off-greater-than)                 | Camera permissions are not requested or used at all. On by default.                         |
-| [`?cameraEffect=<effect>`](using-url-parameters.md#cameraeffect-less-than-effect-greater-than)                     | Set default camera effect to be used. Still user changeable.                                |
+| [`?cameraEffect=<effect>`](using-url-parameters.md#cameraeffect)                                                   | Set default camera effect to be used. Still user changeable.                                |
 | [`?chat=<on\|off>`](using-url-parameters.md#chat-less-than-on-or-off-greater-than)                                 | Show/hide the chat button.                                                                  |
 | [`?displayName=<name>`](using-url-parameters.md#displayname-less-than-name-greater-than)                           | Set display name of participant.                                                            |
 | [`?externalId=<id>`](using-url-parameters.md#externalid-less-than-id-greater-than)                                 | A custom identifier for the participant. Gets saved in Insights data.                       |

@@ -37,11 +37,12 @@ Follow the steps below to verify you've created rooms that are HIPAA compliant. 
 
 1. In the API request set `isLocked: true`&#x20;
 2. Set the [room name](hipaa-compliant-setup.md#room-names) pattern in the API request `roomNamePattern = uuid`&#x20;
-3.  Disable [RTMP streaming](hipaa-compliant-setup.md#features-you-cannot-use-with-a-hipaa-compliant-setup) by including the following in your POST creation requests:
+3.  Disable [RTMP streaming](hipaa-compliant-setup.md#features-you-cannot-use-with-a-hipaa-compliant-setup) and room integrations by including the following in your POST creation requests:
 
-    ```postman_json
+    ```
         "roomPreferences": {
-          "streaming": false
+          "streaming": false,
+          "roomIntegrations": false
       }
     ```
 4. Consult our team for any additional security preferences or parameters

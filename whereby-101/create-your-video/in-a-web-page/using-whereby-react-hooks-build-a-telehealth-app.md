@@ -134,7 +134,7 @@ Once we are connected to the room, we can begin rendering the video UI. A logica
 
 #### `actions`
 
-Actions consist of a set of functions that you can trigger inside a room, such as `toggleCamera`, `toggleMicrophone`, `startScreenshare`, `stopScreenshare`, `sendChatMessage`, and more. A full list of available actions can be [found in our docs](../../../reference/react-hooks-reference/useroomconnection.md#actions).
+Actions consist of a set of functions that you can trigger inside a room, such as `toggleCamera`, `toggleMicrophone`, `startScreenshare`, `stopScreenshare`, `sendChatMessage`, and more. A full list of available actions can be [found in our docs](../../../reference/react-hooks-reference/api-reference/useroomconnection.md#actions).
 
 #### `components`
 
@@ -142,7 +142,7 @@ Components expose a `VideoView` component that can be used to render video cells
 
 #### `state`
 
-This is the state of the provided room. Here you have access to your own video stream through the `localParticipant` object, as well as a list of remote participants in the `remoteParticipants` array. This is [also includes features](../../../reference/react-hooks-reference/useroomconnection.md#state) such as screenshare and cloud recording status.
+This is the state of the provided room. Here you have access to your own video stream through the `localParticipant` object, as well as a list of remote participants in the `remoteParticipants` array. This is [also includes features](../../../reference/react-hooks-reference/api-reference/useroomconnection.md#state) such as screenshare and cloud recording status.
 
 ***
 

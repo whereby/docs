@@ -18,7 +18,7 @@
 | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `displayName?: string`                                                                | <p>The name to use for the local participant </p><p>(you) in the call</p>                                                                                        |
 | `localMediaConstraints?:` [`MediaStreamConstraints`](types.md#mediastreamconstraints) | Constraints to use for the local participant media (camera and microphone)                                                                                       |
-| `localMedia:` [`LocalMedia`](broken-reference)                                        | Existing local media to use, as provided by the [`useLocalMedia`](uselocalmedia.md) hook                                                                         |
+| `localMedia: LocalMedia`                                                              | Existing local media to use, as provided by the [`useLocalMedia`](api-reference/uselocalmedia.md) hook                                                           |
 | `roomKey?: string`                                                                    | Room key to use if the local participant should assume a non-standard role in the room, such as [host or viewer](../../whereby-101/user-roles-and-privileges.md) |
 
 ### ChatMessage: <mark style="color:green;">\<Object></mark> <a href="#chatmessage" id="chatmessage"></a>
@@ -39,7 +39,13 @@
 
 ### RemoteParticipant: <mark style="color:green;">\<Object></mark> <a href="#remoteparticipant" id="remoteparticipant"></a>
 
-<table><thead><tr><th>Property</th><th width="294.3333333333333">Types</th><th>Description</th></tr></thead><tbody><tr><td>displayName</td><td><code>string</code></td><td>Display name of the remote participant</td></tr><tr><td>id</td><td><code>string</code></td><td><p>Id of the remote </p><p>participant</p></td></tr><tr><td>roleName</td><td><code>string</code></td><td>The role of the local participant. This will be one of the following values:<br><br><code>none</code>, <code>visitor</code>, <code>granted_visitor</code>, <code>viewer</code>, <code>granted_viewer</code>, <code>host</code>, <code>recorder</code>, <code>streamer</code></td></tr><tr><td>stream</td><td><a href="types.md#mediastream"><code>MediaStream</code></a><code>?</code></td><td>Stream of the remote participant</td></tr><tr><td>isAudioEnabled</td><td><code>boolean</code></td><td>Stream of the remote participant</td></tr><tr><td>isVideoEnabled</td><td><code>boolean</code></td><td>The remote participant has their microphone enabled</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th width="294.3333333333333">Types</th><th>Description</th></tr></thead><tbody><tr><td>displayName</td><td><code>string</code></td><td>Display name of the remote participant</td></tr><tr><td>id</td><td><code>string</code></td><td><p>Id of the remote </p><p>participant</p></td></tr><tr><td>roleName</td><td><code>string</code></td><td>The role of the local participant. This will be one of the following values:<br><br><code>none</code>, <code>visitor</code>, <code>granted_visitor</code>, <code>viewer</code>, <code>granted_viewer</code>, <code>host</code>, <code>recorder</code>, <code>streamer</code></td></tr><tr><td>stream</td><td><a href="types.md#mediastream"><code>MediaStream</code></a><code>?</code></td><td>Stream of the remote participant</td></tr><tr><td>isAudioEnabled</td><td><code>boolean</code></td><td>The remote participant has their camera enabled</td></tr><tr><td>isVideoEnabled</td><td><code>boolean</code></td><td>The remote participant has their microphone enabled</td></tr></tbody></table>
+
+### ClientView: <mark style="color:green;">\<Object></mark> <a href="#clientview" id="clientview"></a>
+
+A client view can be either a participant or a screenshare.
+
+<table><thead><tr><th>Property</th><th width="294.3333333333333">Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td><code>string</code></td><td>Internal id</td></tr><tr><td>clientId</td><td><code>string</code></td><td>Id of the participant</td></tr><tr><td>displayName</td><td><code>string</code></td><td>Display name of the participant or screenshare</td></tr><tr><td>stream</td><td><a href="types.md#mediastream"><code>MediaStream</code></a><code>?</code></td><td></td></tr><tr><td>isLocalClient</td><td><code>boolean</code></td><td>Is the client view owned by the local participant?</td></tr><tr><td>isAudioEnabled</td><td><code>boolean</code></td><td>The client view has their microphone enabled</td></tr><tr><td>isVideoEnabled</td><td><code>boolean</code></td><td>The client view has their camera enabled</td></tr><tr><td>isPresentation</td><td><code>boolean</code></td><td>The client view is a presentation (screenshare)</td></tr></tbody></table>
 
 ### Screenshare: <mark style="color:green;">\<Object></mark> <a href="#screenshare" id="screenshare"></a>
 
@@ -56,3 +62,48 @@
 ### WaitingParticipant: <mark style="color:green;">\<Object></mark> <a href="#waitingparticipant" id="waitingparticipant"></a>
 
 <table><thead><tr><th>Property</th><th width="294.3333333333333">Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td><code>string</code></td><td>Id of the participant waiting to be let in</td></tr><tr><td>displayName</td><td><code>string</code></td><td></td></tr></tbody></table>
+
+
+
+## Events
+
+### NotificationEvent
+
+All events are of type `NotificationEvent`, with&#x20;
+
+| Property | Type                               | Description |
+| -------- | ---------------------------------- | ----------- |
+| type     | `string`                           |             |
+| message  | `string`                           |             |
+| props    | [EventProps](types.md#event-props) |             |
+
+## Event Props
+
+### StickyReactionEvent
+
+| Property       | Type                                              | Description |
+| -------------- | ------------------------------------------------- | ----------- |
+| client         | [RemoteParticipant](types.md#remoteparticipant)   |             |
+| stickyReaction | `{ reaction: string, timestamp: string } \| null` |             |
+
+### RequestAudioEvent
+
+| Property | Type                                            | Description |
+| -------- | ----------------------------------------------- | ----------- |
+| client   | [RemoteParticipant](types.md#remoteparticipant) |             |
+| enable   | `boolean`                                       |             |
+
+### SignalStatusEvent
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+|          |      |             |
+|          |      |             |
+
+### ChatMessageEvent
+
+| Property    | Type                                            | Description |
+| ----------- | ----------------------------------------------- | ----------- |
+| client      | [RemoteParticipant](types.md#remoteparticipant) |             |
+| chatMessage | [ChatMessage](types.md#chatmessage)             |             |
+

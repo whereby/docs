@@ -4,7 +4,7 @@
 <VideoView stream={participant.stream} />
 ```
 
-The `VideoView` component renders a `<video>` element within your application.
+The `VideoView` component renders a `<video>` and `<audio>` element within your application.
 
 ## Properties
 

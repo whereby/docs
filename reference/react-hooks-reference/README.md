@@ -6,6 +6,10 @@ description: >-
 
 # React Hooks Reference
 
+{% hint style="info" %}
+This is the documentation for version 3x of Whereby's browser-sdk. If you are still on version 2x, please refer to the [legacy documentation here](https://whereby.gitbook.io/legacy-docs). If you are upgrading from version 2x, please see the [migration guide](guides-and-concepts/migrate-from-version-2.x-to-3.md).
+{% endhint %}
+
 ## Getting started
 
 ### Installation
@@ -32,20 +36,32 @@ pnpm add @whereby.com/browser-sdk
 {% endtab %}
 {% endtabs %}
 
-While in beta, you need to explicitly install new versions in order to get new features and fixes. If you want to stay up-to-date, please visit the [npm versions page](https://www.npmjs.com/package/@whereby.com/browser-sdk?activeTab=versions) regularly.
+## Quick Start
+
+{% content-ref url="quick-start.md" %}
+[quick-start.md](quick-start.md)
+{% endcontent-ref %}
 
 ## Available hooks
 
-{% content-ref url="useroomconnection.md" %}
-[useroomconnection.md](useroomconnection.md)
+{% content-ref url="api-reference/useroomconnection.md" %}
+[useroomconnection.md](api-reference/useroomconnection.md)
 {% endcontent-ref %}
 
-{% content-ref url="uselocalmedia.md" %}
-[uselocalmedia.md](uselocalmedia.md)
+{% content-ref url="api-reference/uselocalmedia.md" %}
+[uselocalmedia.md](api-reference/uselocalmedia.md)
 {% endcontent-ref %}
 
 ## Available components
 
-{% content-ref url="videoview.md" %}
-[videoview.md](videoview.md)
+{% content-ref url="api-reference/wherebyprovider.md" %}
+[wherebyprovider.md](api-reference/wherebyprovider.md)
+{% endcontent-ref %}
+
+{% content-ref url="api-reference/videoview.md" %}
+[videoview.md](api-reference/videoview.md)
+{% endcontent-ref %}
+
+{% content-ref url="api-reference/videogrid.md" %}
+[videogrid.md](api-reference/videogrid.md)
 {% endcontent-ref %}

@@ -61,16 +61,23 @@ Event emitter which emits notification events as they are happening inside of th
 
 It's possible to subscribe and unsubscribe to events using the `events.on` and `events.off` methods.
 
-| Event               | Payload                                                                                                    | Description           |
-| ------------------- | ---------------------------------------------------------------------------------------------------------- | --------------------- |
-| \*                  | [NotificationEvent](../types.md#notificationevent)                                                         | Listen for all events |
-| remoteHandRaised    | [NotificationEvent](../types.md#notificationevent)<[StickyReactionEvent](../types.md#stickyreactionevent)> |                       |
-| remoteHandLowered   | [NotificationEvent](../types.md#notificationevent)<[StickyReactionEvent](../types.md#stickyreactionevent)> |                       |
-| requestAudioEnable  | [NotificationEvent](../types.md#notificationevent)<[RequestAudioEvent](../types.md#requestaudioevent)>     |                       |
-| requestAudioDisable | [NotificationEvent](../types.md#notificationevent)<[RequestAudioEvent](../types.md#requestaudioevent)>     |                       |
-| signalTrouble       | [NotificationEvent](../types.md#notificationevent)<[SignalStatusEvent](../types.md#signalstatusevent)>     |                       |
-| signalOk            | [NotificationEvent](../types.md#notificationevent)<[SignalStatusEvent](../types.md#signalstatusevent)>     |                       |
-| chatMessageReceived | [NotificationEvent](../types.md#notificationevent)<[ChatMessageEvent](../types.md#chatmessageevent)>       |                       |
+| Event               | Payload                                                                                                | Description                                                                                                                                                                                                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| \*                  | [NotificationEvent](../types.md#notificationevent)                                                     | Listen for all events                                                                                                                                                                                                                                                |
+| requestAudioEnable  | [NotificationEvent](../types.md#notificationevent)<[RequestAudioEvent](../types.md#requestaudioevent)> | <p>A host is asking for the local participant to speak in the meeting. </p><p></p><p>The local participant should be notified when this event is received and prompted to trigger <code>actions.toggleMicrophone(true)</code> if or when they are ready to speak</p> |
+| requestAudioDisable | [NotificationEvent](../types.md#notificationevent)<[RequestAudioEvent](../types.md#requestaudioevent)> |  A host has forcibly muted your microphone                                                                                                                                                                                                                           |
+| signalTrouble       | [NotificationEvent](../types.md#notificationevent)<[SignalStatusEvent](../types.md#signalstatusevent)> | There is a problem with the internet connection and a connection to our signal server can not be established                                                                                                                                                         |
+| signalOk            | [NotificationEvent](../types.md#notificationevent)<[SignalStatusEvent](../types.md#signalstatusevent)> | Internet connectivity is present or it has been restored after `signalTrouble`                                                                                                                                                                                       |
+| chatMessageReceived | [NotificationEvent](../types.md#notificationevent)<[ChatMessageEvent](../types.md#chatmessageevent)>   | A chat message was sent by a remote participant                                                                                                                                                                                                                      |
+
+#### Host-only events
+
+When a participant provides a valid "host" `roomKey` in the [`RoomConnectionOptions`](../types.md#roomconnectionoptions-less-than-object-greater-than) when the [useRoomConnection](useroomconnection.md) hook was created, they will have access to a number of addition host-only events in rooms:
+
+| Event             | Payload                                                                                                    | Description                                                                                                                                                                                                                                                                                                                        |
+| ----------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| remoteHandRaised  | [NotificationEvent](../types.md#notificationevent)<[StickyReactionEvent](../types.md#stickyreactionevent)> | <p>A remote participant has raised their hand to request to speak in the meeting.</p><p></p><p>The local host participant should be notified when this event is received and prompted to trigger <code>actions.askToSpeak(participantId)</code> if or when they want to invite the remote participant to speak in the meeting.</p> |
+| remoteHandLowered | [NotificationEvent](../types.md#notificationevent)<[StickyReactionEvent](../types.md#stickyreactionevent)> | <p>A remote participant who previously had their hand raised has now lowered their hand.</p><p></p><p>Any previous raised hand notifications shown for this remote participant should be cancelled and no further action is needed from the local host participant.</p>                                                            |
 
 ## Usage
 
@@ -97,10 +104,13 @@ function MyCallUX( { roomUrl, localStream }) {
         return () => leaveRoom();
     }, []);
 
-    // listen to all notification events and log them to the console
+    // listen to all notification events on mount and unlisten on unmount
     React.useEffect(() => {
-        events?.on("*", (e) => console.log(e));
-    }, [events]);
+        if(!events) return;
+        const handleEvents = (e) => console.log(e);
+        events.on("*", handleEvents);
+        return () => events && events.off("*", handleEvents);
+    }, []);
 
     return <div className="videoGrid">
         { /* Render any UI, making use of state */ }

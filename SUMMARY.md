@@ -8,6 +8,7 @@
       * [Script Tags](whereby-101/create-your-video/in-a-web-page/using-the-whereby-embed-element/script-tags.md)
       * [With Low Code](whereby-101/create-your-video/in-a-web-page/using-the-whereby-embed-element/with-low-code/README.md)
         * [Embedding in Squarespace or Wordpress](whereby-101/create-your-video/in-a-web-page/using-the-whereby-embed-element/with-low-code/embedding-in-squarespace-or-wordpress.md)
+        * [No code video conferencing in Bubble](whereby-101/readme/in-a-web-page/using-the-whereby-embed-element/with-low-code/no-code-video-conferencing-in-bubble.md)
     * [Using Whereby's Browser SDK with React Hooks for a fully custom UI](whereby-101/create-your-video/in-a-web-page/using-whereby-react-hooks-build-a-telehealth-app.md)
   * [Embedding Whereby in a mobile app](whereby-101/create-your-video/in-a-mobile-app/README.md)
     * [Embedding Whereby in iOS](whereby-101/create-your-video/in-a-mobile-app/in-ios-apps/README.md)

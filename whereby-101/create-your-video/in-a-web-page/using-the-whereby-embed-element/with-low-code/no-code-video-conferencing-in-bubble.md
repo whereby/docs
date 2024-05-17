@@ -14,7 +14,11 @@ Our friends at Planet No Code have put together a robust series of tutorials to 
 
 ### [Bubble setup](https://www.planetnocode.com/tutorial/plugins/api-connector/whereby-embedded-api/no-code-video-conferencing-app-with-whereby-part-1/)
 
+{% embed url="https://www.youtube.com/watch?v=JqKl4KFRzJE" %}
+
 ### [Whereby API setup](https://www.planetnocode.com/tutorial/plugins/api-connector/whereby-embedded-api/no-code-video-conferencing-app-with-whereby-part-2/)
+
+{% embed url="https://www.youtube.com/watch?v=XcPhKGUf8KA" %}
 
 ### [Meeting page setup](https://www.planetnocode.com/tutorial/plugins/api-connector/whereby-embedded-api/no-code-video-conferencing-app-with-whereby-part-3/)
 

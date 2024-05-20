@@ -1,4 +1,4 @@
-# Recording, RTMP, & Transcriptions
+# Recording, RTMP, Transcriptions & Summaries
 
 ### Recording with Embedded
 
@@ -14,7 +14,7 @@ Our Streaming feature allows for you to share your meeting feed to an external s
 
 ### Transcribing Sessions
 
-Transcribing allows you to get a verbatim transcript of what was said in the Whereby meeting.
+Transcribing allows you to get a verbatim transcript of what was said in the Whereby meeting. You can get a transcript directly from the session or from a session recording.
 
 [Read more](transcribing-sessions.md)
 

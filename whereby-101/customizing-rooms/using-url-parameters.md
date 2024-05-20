@@ -219,7 +219,7 @@ Use a lower resolution by default
 
 Can be used to pass any URL-encoded string so that it is included in the corresponding webhooks. The decoded string has a **limit of 512 characters**.
 
-**Use case:** Set it to the user’s ID so that you can easily track through [webhooks](../../reference/webhooks.md) when a particular user joins or leaves a room.
+**Use case:** Set it to the user’s ID so that you can easily track through [webhooks](../../meeting-content-and-quality/insights-suite-and-api/webhooks.md) when a particular user joins or leaves a room.
 
 #### `?minimal`
 

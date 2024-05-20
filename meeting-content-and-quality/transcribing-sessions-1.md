@@ -12,11 +12,9 @@ Session summaries are currently in closed Beta and available to selected custome
 
 Session summaries are derived from session transcriptions and provided as json responses available through the customer portal or via the API.&#x20;
 
-In order to produce a summary from a Whereby session you need to follow this workflow:
+In order to produce a summary from a Whereby session you need to first create a session transcript. You can get a live transcript directly from the session or you can transcribe any recording, which was saved in Whereby-provided storage. [Learn more about transcribing sessions.](transcribing/)
 
-1. Record the Whereby session using cloud recording with Whereby-provided storage. [Learn more...](recording-with-embedded/cloud-recording.md#whereby-provided-storage)&#x20;
-2. Transcribe the recording. [Learn more...](transcribing-sessions.md)
-3. Trigger the summary of the transcript using the desired summary template.
+Once you have the transcript you can create the summary using the desired summary template.
 
 You can use Whereby session summaries manually through the customer portal, or programatically with the combination of API requests.
 
@@ -139,8 +137,6 @@ This template is designed for use in medical sessions involving two participants
 
 ## Manual Session Summaries
 
-In order to use Whereby session summaries you need to first record and transcribe the session. [Learn how to transcribe Whereby sessions manually](transcribing-sessions.md#manual-transcriptions).
-
 Go to "Transcriptions" page of your customer portal to access all existing transcriptions of Whereby sessions. Find the transcription of a session that you want to summarise and select the template which you want to use for the summary.&#x20;
 
 The processing time, especially for longer sessions, may take up to a minute. Once the summary is generated, you can download it in the form of a .json file.
@@ -153,17 +149,15 @@ For each session transcript, only one summary can be created at a time. If you w
 
 If you want to automate the process of summarising Whereby sessions, you can do so with a combination of API requests.&#x20;
 
-In order to use Whereby session summaries you need to first record and transcribe the session. [Learn how to setup an automated workflow for session transcriptions.](transcribing-sessions.md#programmatic-transcriptions)
-
 #### Select the transcript to summarise
 
 Summaries are derived from session transcriptions, so you need to find the `transcriptionId` of the session to be summarised.
 
-You can get the `transcriptionId` of an individual session from the `transcription.finished` [webhook](../../reference/webhooks.md#transcription-data-properties) event. Alternatively, you can fetch the list of all transcriptions with a [GET /transcriptions](../../reference/whereby-rest-api-reference.md#transcriptions-1) request.
+You can get the `transcriptionId` of an individual session from the `transcription.finished` [webhook](insights-suite-and-api/webhooks.md#transcription-data-properties) event. Alternatively, you can fetch the list of all transcriptions with a [GET /transcriptions](../reference/whereby-rest-api-reference.md#transcriptions-1) request.
 
 #### Trigger the summary process
 
-In order to summarise the transcript, send a [POST request to /summaries](../../reference/whereby-rest-api-reference.md#summaries-2) endpoint with the `transcriptionId` and the desired summary template in the request body:
+In order to summarise the transcript, send a [POST request to /summaries](../reference/whereby-rest-api-reference.md#summaries-2) endpoint with the `transcriptionId` and the desired summary template in the request body:
 
 ```json
 { 
@@ -180,9 +174,9 @@ For each session transcript, only one summary can be created at a time. If you w
 
 #### Fetch the summary
 
-You can fetch an individual summary with a [GET /summaries/{summaryId} ](../../reference/whereby-rest-api-reference.md#summaries-summaryid)request.&#x20;
+You can fetch an individual summary with a [GET /summaries/{summaryId} ](../reference/whereby-rest-api-reference.md#summaries-summaryid)request.&#x20;
 
-Alternatively, you can fetch all summaries with a [GET /summaries](../../reference/whereby-rest-api-reference.md#summaries) request, witch returns a paginated response containing 25 items per page.
+Alternatively, you can fetch all summaries with a [GET /summaries](../reference/whereby-rest-api-reference.md#summaries) request, witch returns a paginated response containing 25 items per page.
 
 The summarisation process is running in the background and usually takes about a minute to complete. There is no webhook event sent when the summary is finished, so you need to poll the endpoint and read the `state` field of the response.
 
@@ -192,15 +186,11 @@ For `state: in_progress` the `summary` field is empty. Once the process is compl
 
 Session summaries are stored in Whereby database until you delete them.
 
-You can delete a summary with a [DELETE /summaries/{summaryId} ](../../reference/whereby-rest-api-reference.md#summaries-summaryid-1)request where you expect a `204 No Content` response.
+You can delete a summary with a [DELETE /summaries/{summaryId} ](../reference/whereby-rest-api-reference.md#summaries-summaryid-1)request where you expect a `204 No Content` response.
 
 ## Known limitations
 
 {% hint style="warning" %}
-Session transcriptions and summaries are only available for session recordings stored in Whereby-provided storage. If you store session recordings in your own Amazon S3 bucket, it will be not possible to trigger transcriptions and summaries for these recordings. [Learn more how to set-up cloud recording to use Whereby-provided storage.](recording-with-embedded/cloud-recording.md#setup)
-{% endhint %}
-
-{% hint style="warning" %}
-Since summaries are derived from recordings saved in Whereby-provided storage, this feature is not considered to be HIPAA compliant. Avoid using Session Summaries in order to maintain HIPAA compliance of your Whereby sessions. [Learn more about Whereby HIPAA compliant setup](../../whereby-101/faq-and-troubleshooting/hipaa-compliant-setup.md).
+Session summaries are currently not considered to be HIPAA compliant. Avoid using Session Summaries in order to maintain HIPAA compliance of your Whereby sessions. [Learn more about Whereby HIPAA compliant setup](../whereby-101/faq-and-troubleshooting/hipaa-compliant-setup.md).
 {% endhint %}
 

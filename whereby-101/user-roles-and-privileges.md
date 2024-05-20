@@ -17,7 +17,7 @@ Users joining via the hostRoomURL become meeting hosts and have the following fe
 * Enter locked rooms without knocking.
 * Respond and allow access to participants that are knocking.
 * Remove, mute, and spotlight meeting participants.
-* Start and stop [recordings](../meeting-content-and-quality/recording-and-streaming-rooms/recording-with-embedded/), if available.
+* Start and stop [recordings](../meeting-content-and-quality/recording-with-embedded/), if available.
 * Start and stop [breakout groups](customizing-rooms/breakout-groups-with-embedded.md), if available.
 
 {% hint style="info" %}

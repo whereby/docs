@@ -32,13 +32,13 @@ You may also choose to store cloud recordings in an Amazon S3 bucket owned and m
 
 ## Setup
 
-You can access recording settings and options from the “Configure” → “Recording” section of your customer portal. You can also specify recording preferences via the API during a [room creation](../../../reference/whereby-rest-api-reference.md#create-meeting) request.
+You can access recording settings and options from the “Configure” → “Recording” section of your customer portal. You can also specify recording preferences via the API during a [room creation](../../reference/whereby-rest-api-reference.md#create-meeting) request.
 
 {% hint style="info" %}
 When configuring cloud recording options via the dashboard, it will apply these as default settings for all rooms created. However, you can override the defaults by specifying different preferences within the POST requests used to create meetings.
 {% endhint %}
 
-![](<../../../.gitbook/assets/Screenshot 2023-06-26 at 13.17.15.png>)
+![](<../../.gitbook/assets/Screenshot 2023-06-26 at 13.17.15.png>)
 
 After setting up the appropriate information, select how you would like to trigger your recording in rooms.&#x20;
 
@@ -57,7 +57,7 @@ You can choose the format in which you want to save the recordings. Currently yo
 
 Recording quality is set to 720p, however individual video feeds may appear in lower quality depending on their network connection, device, and preferences.
 
-![](<../../../.gitbook/assets/Recording format 2.png>)
+![](<../../.gitbook/assets/Recording format 2.png>)
 
 {% hint style="info" %}
 File names will be automatically set to <mark style="color:red;">`[room name]-[start time in ISO format].mkv`</mark> and is the time when the recording started.
@@ -67,15 +67,15 @@ File names will be automatically set to <mark style="color:red;">`[room name]-[s
 
 With our `recording.finished` [webhook event](https://docs.whereby.com/monitoring-usage/webhooks#cloud-recording-data-properties), you can be aware of when a recording has finished _and_ successfully uploaded to your AWS or Whereby hosted storage. More importantly, you can know the filename to programmatically use or manage that recording for your platform needs.
 
-<figure><img src="../../../.gitbook/assets/recording-finished-webhook.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/recording-finished-webhook.png" alt=""><figcaption></figcaption></figure>
 
 
 
-You can use our [webhook events](../../../reference/webhooks.md#data-properties) to track when a recording has started and stopped. The roleName will be set to recorder, and will use the `room.client.joined` and `room.client.left` events accordingly.
+You can use our [webhook events](../insights-suite-and-api/webhooks.md#data-properties) to track when a recording has started and stopped. The roleName will be set to recorder, and will use the `room.client.joined` and `room.client.left` events accordingly.
 
-<figure><img src="../../../.gitbook/assets/recorder webhook.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/recorder webhook.png" alt=""><figcaption></figcaption></figure>
 
-In addition to tracking recordings, we offer [commands](../../../reference/using-the-whereby-embed-element.md#sending-commands) to start and stop recordings at your leisure via our SDK's Web Component.&#x20;
+In addition to tracking recordings, we offer [commands](../../reference/using-the-whereby-embed-element.md#sending-commands) to start and stop recordings at your leisure via our SDK's Web Component.&#x20;
 
 ## Downloading from Whereby-provided storage
 
@@ -83,7 +83,7 @@ If you choose to save your cloud recordings in Whereby-provided storage you can 
 
 You can access all recordings saved in the Whereby-provided storage from the “Recordings” page of your customer portal.
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-06-27 at 13.09.27.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-06-27 at 13.09.27.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -103,7 +103,7 @@ If you choose to use your own storage, there are a few pieces of information to 
 {% tab title="Creating a Bucket" %}
 Creating an S3 bucket can be done from the [Amazon S3 console](https://console.aws.amazon.com/console/home) page. If S3 isn't presented as an option you can search for it within the services search at the top of the page.
 
-![](<../../../.gitbook/assets/S3 bucket.png>)
+![](<../../.gitbook/assets/S3 bucket.png>)
 
 For in depth instructions about bucket naming conventions and settings, please follow the Amazon support guide "[Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html)".
 {% endtab %}
@@ -112,7 +112,7 @@ For in depth instructions about bucket naming conventions and settings, please f
 **Host:**\
 This is also known as your Bucket name. No URL is required, you can simply copy and paste your bucket name found in your S3 console.
 
-![](<../../../.gitbook/assets/Bucket name.png>)
+![](<../../.gitbook/assets/Bucket name.png>)
 
 **Access Key ID & Access Secret:**\
 You can locate or create your Access Key and Access secret in the "Identity and Access Management" (IAM) section of your console.&#x20;
@@ -126,12 +126,12 @@ For more information, check out Amazon's support article:\
 
 
 
-![Where to create Access Keys](<../../../.gitbook/assets/access key s3.png>)
+![Where to create Access Keys](<../../.gitbook/assets/access key s3.png>)
 {% endtab %}
 {% endtabs %}
 
 ### Known limitations
 
 {% hint style="warning" %}
-Cloud recording does not support our [Breakout Groups](../../../whereby-101/customizing-rooms/breakout-groups-with-embedded.md) feature. When using Breakout Groups, the recorder will remain in the main room and will not capture any of the meeting content from individual groups.
+Cloud recording does not support our [Breakout Groups](../../whereby-101/customizing-rooms/breakout-groups-with-embedded.md) feature. When using Breakout Groups, the recorder will remain in the main room and will not capture any of the meeting content from individual groups.
 {% endhint %}

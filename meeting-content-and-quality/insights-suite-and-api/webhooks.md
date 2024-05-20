@@ -11,7 +11,7 @@ description: >-
 
 Webhooks are managed from the "Configure" section of your account, so they need to be set up by an admin in your organization.
 
-![Visit the "Configure" section of your Whereby Embedded account dashboard and scroll down to find the Webhooks setup.](../.gitbook/assets/webhooks-dashboard.png)
+![Visit the "Configure" section of your Whereby Embedded account dashboard and scroll down to find the Webhooks setup.](../../.gitbook/assets/webhooks-dashboard.png)
 
 At the moment the following event types are supported:
 
@@ -29,13 +29,13 @@ At the moment the following event types are supported:
 
 Events are delivered to their corresponding webhook endpoint in JSON format, as the body of an HTTP request. The table below describes their top-level attributes.
 
-| Property     | Description                                                                                                                                                    |
-| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`         | String that uniquely identifies the event.                                                                                                                     |
-| `apiVersion` | The Whereby API version used to populate data. Refer to the details on [Versioning](whereby-rest-api-reference.md#versioning) for how webhook data may change. |
-| `createdAt`  | ISO representation of the creation date of the event.                                                                                                          |
-| `type`       | The event’s type identifier, e.g. `room.client.joined`                                                                                                         |
-| `data`       | Object containing information associated with the event.                                                                                                       |
+| Property     | Description                                                                                                                                                                    |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`         | String that uniquely identifies the event.                                                                                                                                     |
+| `apiVersion` | The Whereby API version used to populate data. Refer to the details on [Versioning](../../reference/whereby-rest-api-reference.md#versioning) for how webhook data may change. |
+| `createdAt`  | ISO representation of the creation date of the event.                                                                                                                          |
+| `type`       | The event’s type identifier, e.g. `room.client.joined`                                                                                                                         |
+| `data`       | Object containing information associated with the event.                                                                                                                       |
 
 ## In-Room Data properties
 
@@ -50,13 +50,13 @@ Properties in `data` that are common to all in-room webhook events:
 
 Additional properties in `data` for `room.client.joined` , `room.client.left room.client.knocked` and `room.client.knockCancelled`:
 
-| Property                                                                                                    | Description                                                                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| displayName                                                                                                 | The visible name displayed to others in the meeting.                                                                                                                          |
-| roomSessionId                                                                                               | The roomSessionId for the meeting.                                                                                                                                            |
-| participantId                                                                                               | The current user's participantId. Can be used for insights data.                                                                                                              |
-| [metadata](../whereby-101/customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than) | String that matches the "[metadata](../whereby-101/customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than)" query parameter passed to the room URL. |
-| [externalId](../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than) | String that matches the "[externalId](../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than)" query parameter passed to the room URL. |
+| Property                                                                                                       | Description                                                                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| displayName                                                                                                    | The visible name displayed to others in the meeting.                                                                                                                             |
+| roomSessionId                                                                                                  | The roomSessionId for the meeting.                                                                                                                                               |
+| participantId                                                                                                  | The current user's participantId. Can be used for insights data.                                                                                                                 |
+| [metadata](../../whereby-101/customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than) | String that matches the "[metadata](../../whereby-101/customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than)" query parameter passed to the room URL. |
+| [externalId](../../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than) | String that matches the "[externalId](../../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than)" query parameter passed to the room URL. |
 
 Additional properties in data for just `room.client.joined` and `room.client.left`:
 

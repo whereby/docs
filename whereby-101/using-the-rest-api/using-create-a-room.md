@@ -35,8 +35,8 @@ Creating rooms via the API, produces a room with a unique URL and a limited life
 
 The `endDate` property is used to indicate the time at which the room will be marked for deactivation. It **does not** indicate when a meeting will end and remove participants.&#x20;
 
-One hour after the `endDate` things like [Webhook](../../reference/webhooks.md) events, [host](../user-roles-and-privileges.md) privileges, new cloud recordings, and minutes consumption will no longer function. The room will then automatically be deleted within 24 hours of the `endDate` provided.
+One hour after the `endDate` things like [Webhook](../../meeting-content-and-quality/insights-suite-and-api/webhooks.md) events, [host](../user-roles-and-privileges.md) privileges, new cloud recordings, and minutes consumption will no longer function. The room will then automatically be deleted within 24 hours of the `endDate` provided.
 
 {% hint style="success" %}
-If you'd like to limit the length of a meeting and verify a room is no longer being used, you can delete a room [via API request](../../reference/whereby-rest-api-reference.md#meetings-meetingid-1). A deletion request will remove all participants and prevent any further use. You can also keep track of when a session start via [webhooks](../../reference/webhooks.md) to limit a meeting by length.
+If you'd like to limit the length of a meeting and verify a room is no longer being used, you can delete a room [via API request](../../reference/whereby-rest-api-reference.md#meetings-meetingid-1). A deletion request will remove all participants and prevent any further use. You can also keep track of when a session start via [webhooks](../../meeting-content-and-quality/insights-suite-and-api/webhooks.md) to limit a meeting by length.
 {% endhint %}

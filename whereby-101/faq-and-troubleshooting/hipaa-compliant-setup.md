@@ -56,7 +56,7 @@ Follow the steps below to verify you've created rooms that are HIPAA compliant. 
 The recording capability means that the meeting, including audio, video and screen-share content will be captured and saved depending on the options chosen.
 
 {% hint style="success" %}
-**Update:** Whereby is proud to now offer HIPAA compliant [cloud recording](../../meeting-content-and-quality/recording-and-streaming-rooms/recording-with-embedded/cloud-recording.md), in addition to our previously available HIPAA compliant [local recording](../../meeting-content-and-quality/recording-and-streaming-rooms/recording-with-embedded/local-recording.md). To remain HIPPA compliant while using cloud recording, you need to store the recordings in an S3 storage managed by your organisation.
+**Update:** Whereby is proud to now offer HIPAA compliant [cloud recording](../../meeting-content-and-quality/recording-with-embedded/cloud-recording.md), in addition to our previously available HIPAA compliant [local recording](../../meeting-content-and-quality/recording-with-embedded/local-recording.md). To remain HIPPA compliant while using cloud recording, you need to store the recordings in an S3 storage managed by your organisation.
 {% endhint %}
 
 The reason our recording options are considered compliant is that Whereby does not, in any way store the recordings.
@@ -104,7 +104,7 @@ It is the responsibility of the person that initiated the recording and saved it
 
 Whereby cannot control what happens to a local recording.&#x20;
 
-[Local recording setup and instruction](../../meeting-content-and-quality/recording-and-streaming-rooms/recording-with-embedded/local-recording.md#enabling-local-recording)
+[Local recording setup and instruction](../../meeting-content-and-quality/recording-with-embedded/local-recording.md#enabling-local-recording)
 
 </details>
 

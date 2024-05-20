@@ -37,17 +37,18 @@
 
 ## 🔍 Meeting Content & Quality
 
-* [Recording, RTMP, Transcriptions & Summaries](meeting-content-and-quality/recording-and-streaming-rooms/README.md)
-  * [Recording with Embedded](meeting-content-and-quality/recording-and-streaming-rooms/recording-with-embedded/README.md)
-    * [Cloud Recording](meeting-content-and-quality/recording-and-streaming-rooms/recording-with-embedded/cloud-recording.md)
-    * [Local Recording](meeting-content-and-quality/recording-and-streaming-rooms/recording-with-embedded/local-recording.md)
-  * [Streaming RTMP with Embedded](meeting-content-and-quality/recording-and-streaming-rooms/streaming-with-embedded.md)
-  * [Transcribing sessions](meeting-content-and-quality/recording-and-streaming-rooms/transcribing-sessions.md)
-  * [Session summaries](meeting-content-and-quality/recording-and-streaming-rooms/transcribing-sessions-1.md)
+* [Recording](meeting-content-and-quality/recording-with-embedded/README.md)
+  * [Cloud Recording](meeting-content-and-quality/recording-with-embedded/cloud-recording.md)
+  * [Local Recording](meeting-content-and-quality/recording-with-embedded/local-recording.md)
+* [Transcribing](meeting-content-and-quality/transcribing/README.md)
+  * [Live Transcription](meeting-content-and-quality/transcribing/live-transcription.md)
+  * [Recording Transcription](meeting-content-and-quality/transcribing/transcribing-sessions.md)
+* [Session summaries](meeting-content-and-quality/transcribing-sessions-1.md)
+* [Streaming RTMP](meeting-content-and-quality/streaming-with-embedded.md)
 * [Quality Insights](meeting-content-and-quality/insights-suite-and-api/README.md)
   * [Using the Insights dashboard](meeting-content-and-quality/insights-suite-and-api/using-the-insights-dashboard.md)
   * [Improving call quality](meeting-content-and-quality/insights-suite-and-api/improving-call-quality.md)
-* [Tracking room events with Webhooks](reference/webhooks.md)
+  * [Tracking room events with Webhooks](meeting-content-and-quality/insights-suite-and-api/webhooks.md)
 
 ## 🤷 End User
 
@@ -79,4 +80,4 @@
     * [useLocalMedia](reference/react-hooks-reference/api-reference/uselocalmedia.md)
     * [useRoomConnection](reference/react-hooks-reference/api-reference/useroomconnection.md)
   * [Types](reference/react-hooks-reference/types.md)
-* [Webhooks Reference](reference/webhooks.md)
+* [Webhooks Reference](meeting-content-and-quality/insights-suite-and-api/webhooks.md)

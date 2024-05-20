@@ -1,18 +1,18 @@
 ---
 description: >-
-  Transcribing allows you to get a verbatim transcript of what was said in the
-  Whereby meeting.
+  Recording Transcription allows you to get a transcript of any session
+  recording stored in Whereby-provided storage
 ---
 
-# Transcribing sessions
+# Recording Transcription
+
+{% hint style="info" %}
+Transcription is a complementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).
+{% endhint %}
 
 Transcriptions are derived from session recordings stored in Whereby-provided storage and saved as text files accessible through the customer portal or via the API. They can be used as a standalone resource (eg. for compliance purposes) or sent to an external service for post processing (eg. to derive key topics or create a session summary).
 
-{% hint style="info" %}
-Transcriptions in Whereby Embedded are a complementary feature, and priced at $0.024 for each minute of the transcribed recording.
-{% endhint %}
-
-In order to produce a transcript from a Whereby session you need to follow these steps:
+In order to produce a transcript from a recording of Whereby session you need to follow these steps:
 
 1. Create a Whereby room with cloud recording enabled and configured to use Whereby-provided storage.
 2. Record the session.
@@ -22,7 +22,7 @@ You can use Whereby transcriptions manually through the customer portal, or prog
 
 ## Manual Transcriptions
 
-In order to use Whereby transcriptions you need to first configure meeting recordings to use cloud recording with Whereby-provided storage.  Go to “Configure” → “Recording” section of your customer portal and choose "Whereby-hosted cloud recording" option with the trigger and recording format of your choice. [Learn more about recording options](recording-with-embedded/cloud-recording.md).
+In order to use Whereby transcriptions you need to first configure meeting recordings to use cloud recording with Whereby-provided storage.  Go to “Configure” → “Recording” section of your customer portal and choose "Whereby-hosted cloud recording" option with the trigger and recording format of your choice. [Learn more about recording options](../recording-with-embedded/cloud-recording.md).
 
 {% hint style="info" %}
 When configuring cloud recording options via the customer portal, they will be applied as default settings for all rooms and meetings. However, you can override the defaults by specifying different preferences in the POST requests used to create meetings.
@@ -66,11 +66,11 @@ First make sure that meetings which should be transcribed are configured to use 
 
 Depending on the type of recording trigger specified for the meeting, it will be recorded automatically or the host will need to start the recording manually.&#x20;
 
-When the recording is completed, Whereby sends a `recording.finished` [webhook](../../reference/webhooks.md#cloud-recording-data-properties) event. Hook onto that event to fetch the `recordingId` of the session that you want to transcribe.&#x20;
+When the recording is completed, Whereby sends a `recording.finished` [webhook](../insights-suite-and-api/webhooks.md#cloud-recording-data-properties) event. Hook onto that event to fetch the `recordingId` of the session that you want to transcribe.&#x20;
 
 Then send a [POST /transcriptions](../../reference/whereby-rest-api-reference.md#transcriptions-1) request with the  `recordingId` to start the transcription job.&#x20;
 
-The transcription process may take some time, especially for recordings longer than 30 minutes. Once the transcript is ready, Whereby sends a `transcription.finished` [webhook](../../reference/webhooks.md#transcription-data-properties) event. Hook onto that event to fetch the `transcriptionId` of the session that you want to transcribe.&#x20;
+The transcription process may take some time, especially for recordings longer than 30 minutes. Once the transcript is ready, Whereby sends a `transcription.finished` [webhook](../insights-suite-and-api/webhooks.md#transcription-data-properties) event. Hook onto that event to fetch the `transcriptionId` of the session that you want to transcribe.&#x20;
 
 Send a [GET /transcriptions/{transcriptionId}/access-link](../../reference/whereby-rest-api-reference.md#transcriptions-transcriptionid-access-link) request to get the download link of the transcription file. Transcripts are downloaded as .md files.&#x20;
 
@@ -83,14 +83,18 @@ Both the recording and the transcript of the session will be stored in the Where
 
 ## Supported Languages
 
-Whereby Transcriptions feature automatically identifies the dominant language spoken in the session and creates a transcript in this language. The following languages are supported: Chinese, Dutch, English, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Portuguese, Russian, Spanish, Swedish, Turkish, Ukrainian.
+Recording Transcriptions feature automatically identifies the dominant language spoken in the session and creates a transcript in this language. The following languages are supported: Chinese, Dutch, English, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Portuguese, Russian, Spanish, Swedish, Turkish, Ukrainian.
 
 ## Known limitations
 
 {% hint style="warning" %}
-Session transcriptions are only available for session recordings stored in Whereby-provided storage. If you store session recordings in your own Amazon S3 bucket, it will be not possible to trigger transcriptions for these recordings.
+Recording Transcriptions are only available for session recordings stored in Whereby-provided storage. If you store session recordings in your own Amazon S3 bucket, it will be not possible to trigger transcriptions for these recordings.
 {% endhint %}
 
 {% hint style="warning" %}
-Since transcriptions are derived from recordings saved in Whereby-provided storage, this feature is not considered to be HIPAA compliant. Avoid using Session Transcriptions in order to maintain HIPAA compliance of your Whereby sessions. [Learn more about Whereby HIPAA compliant setup](../../whereby-101/faq-and-troubleshooting/hipaa-compliant-setup.md).
+Since recording transcripts are derived from recordings saved in Whereby-provided storage, this feature is not considered to be HIPAA compliant. Avoid using recording transcription in order to maintain HIPAA compliance of your Whereby sessions. [Learn more about Whereby HIPAA compliant setup](../../whereby-101/faq-and-troubleshooting/hipaa-compliant-setup.md).
+{% endhint %}
+
+{% hint style="info" %}
+Recording Transcriptions sometimes fail for recordings of sessions longer than 45 minutes, so it is recommended to use this feature for shorter sessions. We will not charge you for failed transcriptions.&#x20;
 {% endhint %}

@@ -10,7 +10,7 @@ description: >-
 Transcription is a complementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).
 {% endhint %}
 
-Transcriptions are derived from session recordings stored in Whereby-provided storage and saved as text files accessible through the customer portal or via the API. They can be used as a standalone resource (eg. for compliance purposes) or sent to an external service for post processing (eg. to derive key topics or create a session summary).
+Recording Transcription is available by default for all session recordings stored in Whereby-provided storage and there is no need to enable or configure this feature. Recording transcripts are derived from  recordings and saved as text files accessible through the customer portal or via the API. They can be used as a standalone resource (eg. for compliance purposes) or sent to an external service for post processing (eg. to derive key topics or create a session summary).
 
 In order to produce a transcript from a recording of Whereby session you need to follow these steps:
 
@@ -18,11 +18,11 @@ In order to produce a transcript from a recording of Whereby session you need to
 2. Record the session.
 3. Trigger the transcription for the recording.
 
-You can use Whereby transcriptions manually through the customer portal, or programatically with the combination of API requests and webhook events.
+You can use Recording Transcription manually through the customer portal, or programatically with the combination of API requests and webhook events.
 
 ## Manual Transcriptions
 
-In order to use Whereby transcriptions you need to first configure meeting recordings to use cloud recording with Whereby-provided storage.  Go to “Configure” → “Recording” section of your customer portal and choose "Whereby-hosted cloud recording" option with the trigger and recording format of your choice. [Learn more about recording options](../recording-with-embedded/cloud-recording.md).
+In order to use Recording Transcription you need to first configure meeting recordings to use cloud recording with Whereby-provided storage.  Go to “Configure” → “Recording” section of your customer portal and choose "Whereby-hosted cloud recording" option with the trigger and recording format of your choice. [Learn more about recording options](../recording-with-embedded/cloud-recording.md).
 
 {% hint style="info" %}
 When configuring cloud recording options via the customer portal, they will be applied as default settings for all rooms and meetings. However, you can override the defaults by specifying different preferences in the POST requests used to create meetings.
@@ -40,13 +40,13 @@ The transcription process may take some time, especially for recordings longer t
 
 You can also download or delete transcriptions that have been already created from the “Recordings” page of your customer portal.
 
-## Programmatic Transcriptions
+## Programmatic Recording Transcriptions
 
-If you want to automate the process of transcribing Whereby sessions, you can do so with a combination of API requests and webhook events.&#x20;
+If you want to automate the process of transcribing recorded Whereby sessions, you can do so with a combination of API requests and webhook events.&#x20;
 
 #### Configure session recoding
 
-First make sure that meetings which should be transcribed are configured to use cloud recording with Whereby-provided storage:&#x20;
+First make sure that meetings are configured to use cloud recording with Whereby-provided storage:&#x20;
 
 * If you want to use cloud recording with Whereby-provided storage **globally for all rooms**, go to “Configure” → “Recording” section of your customer portal and choose "Whereby-hosted cloud recording" option with the trigger and recording format of your choice.
 * If you prefer to set the **recording type for each room or meeting individually**, create the meeting with [POST /meetings](../../reference/whereby-rest-api-reference.md#meetings-1) request using the following parameters for recording (with the `"startTrigger"` and `"fileFormat"` of your choice):&#x20;

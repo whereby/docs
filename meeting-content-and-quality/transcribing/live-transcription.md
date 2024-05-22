@@ -27,12 +27,14 @@ When you enable Live Transcription globally through the customer portal, these s
 
 If you want to use Live Transcription for all your sessions, you can enable it globally for your account. Go to “Configure” → “Live Transcription” section of your customer portal and choose "Live Transcription" option with the trigger of your choice and the main language of your sessions.
 
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
 You can choose between the following transcription triggers:
 
 * **Auto-start (1 person)** \
-  Transcription will start when the first person joins and end when the last person leaves&#x20;
+  Transcription will start when the first person joins and end when the last person leaves.&#x20;
 * **Auto-start (2 people)**\
-  Transcription will start when 2 people join a room and end when the last person leaves
+  Transcription will start when 2 people join a room and end when the last person leaves.
 
 If you want to use Live Transcription for some of your sessions, or if you need a different configuration for some of the sessions, you can configure Live Transcription individually for the room. Room parameters will override the global Live Transcription settings.&#x20;
 

@@ -25,7 +25,7 @@ You can enable and configure Live Transcription globally for your account, or in
 When you enable Live Transcription globally through the customer portal, these settings become the default for all rooms and sessions. Specifically, enabling Live Transcription globally will result in all sessions being transcribed, including sessions in rooms created previously. You can override these global settings by specifying the transcription options for each room individually in the [POST /meetings](https://www.notion.so/o/UqLY7vLb01EgY68ZG0GF/s/c7hN8ZKHNZris5300KEl/\~/changes/551/reference/whereby-rest-api-reference#meetings-1) requests.
 {% endhint %}
 
-If you want to use Live Transcription for all your sessions, you can enable it globally for your account. Go to “Configure” → “Live Transcription” section of your customer portal and choose "Live Transcription" option with the trigger of your choice and the main language of your sessions.
+If you want to use Live Transcription for all your sessions, you can enable it globally for your account. Go to “Configure” → “Transcription” section of your customer portal and choose "Live Transcription" option. Then choose the trigger and the main language of your sessions.
 
 <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 

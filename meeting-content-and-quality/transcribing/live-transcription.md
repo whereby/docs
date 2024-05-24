@@ -47,6 +47,10 @@ To do so, create the room with [POST /meetings](../../reference/whereby-rest-api
     },
 ```
 
+When the session is transcribed, the participants see a notification circle in the top-left meeting status bar:
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Red circle in the top-left panel indicates live transcription in progress.</p></figcaption></figure>
+
 ## Download and delete transcripts
 
 Transcripts are saved in Whereby-provided storage, and they are available for download soon after the session is finished.&#x20;
@@ -75,6 +79,10 @@ Live Transcriptions are not compatible with [Breakout Groups](../../whereby-101/
 
 {% hint style="warning" %}
 Live Transcriptions are currently not considered to be HIPAA compliant. Avoid using Live Transcriptions in order to maintain HIPAA compliance of your Whereby sessions. [Learn more about Whereby HIPAA compliant setup](../../whereby-101/faq-and-troubleshooting/hipaa-compliant-setup.md).
+{% endhint %}
+
+{% hint style="info" %}
+Live Transcription is available for sessions up to 12 hours long.
 {% endhint %}
 
 ## Coming soon

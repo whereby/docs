@@ -12,7 +12,7 @@ Live Transcription is currently in closed Beta and available to selected custome
 {% endhint %}
 
 {% hint style="info" %}
-Transcription is a complementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).&#x20;
+Live Transcription is a complementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).&#x20;
 {% endhint %}
 
 Live transcripts are created from live streaming of Whereby session audio in real time, and once the session is finished they are saved as text files accessible through the customer portal or via the API. You can use the transcripts as a standalone resource (eg. for compliance purposes) or send to an external service for post processing (eg. to derive key topics or create a session summary).&#x20;

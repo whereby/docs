@@ -17,7 +17,7 @@ Session transcripts can be used as a standalone resource (eg. for compliance pur
 
 Live Transcription allows you to produce a transcript directly from the live session, without the need to record it. Full transcript is available right after the session is finished.&#x20;
 
-[Read more](./#live-transcription)
+[Read more](live-transcription.md)
 
 ### Recording Transcription
 

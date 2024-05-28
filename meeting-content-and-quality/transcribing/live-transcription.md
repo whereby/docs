@@ -49,6 +49,11 @@ To do so, create the room with [POST /meetings](../../reference/whereby-rest-api
 
 You can choose between `"automatic"` and `"automatic-2nd-participant"` triggers, and below you will find the [list of supported languages](live-transcription.md#supported-languages).
 
+{% hint style="warning" %}
+Currently, Live Transcriptions are only available for rooms in the 'group' mode. \
+Make sure to set `"roomMode": "group"` in your  [POST /meetings](../../reference/whereby-rest-api-reference.md#meetings-1) requests.
+{% endhint %}
+
 When the session is transcribed, the participants see a notification circle in the top-left meeting status bar:
 
 <figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Red circle in the top-left panel indicates live transcription in progress.</p></figcaption></figure>
@@ -74,16 +79,6 @@ Live Transcription generates a transcript in the specified language. You need to
 The following languages are supported by Live Transcription: Bulgarian (bg), Catalan (ca), Chinese (Mandarin, Simplified) (zh), Chinese (Mandarin, Traditional) (zh-TW), Czech (cs), Danish (da), Dutch (nl), English (en), Estonian (et), Finnish (fi), Flemish (nl-BE), French (fr), German (de), Greek (el), Hindi (hi), Hungarian (hu), Indonesian (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Malay (ms), Norwegian (no), Polish (pl), Portuguese (pt), Romanian (ro), Russian (ru), Slovak (sk), Spanish (es), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk), Vietnamese (vi)
 
 ## Known limitations
-
-{% hint style="warning" %}
-Currently, Live Transcriptions are only available for rooms in the 'group' mode. Make sure to set&#x20;
-
-```postman_json
-"roomMode": "group"
-```
-
-in your  [POST /meetings](../../reference/whereby-rest-api-reference.md#meetings-1) requests.
-{% endhint %}
 
 {% hint style="warning" %}
 Live Transcriptions are not compatible with [Breakout Groups](../../whereby-101/customizing-rooms/breakout-groups-with-embedded.md) feature. When using Breakout Groups, the transcript will cover the conversation from the main room, but the audio from individual groups will not be transcribed.&#x20;

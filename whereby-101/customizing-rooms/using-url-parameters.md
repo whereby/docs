@@ -29,6 +29,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?background=off`](using-url-parameters.md#background-off)                                                        | Hide the room background.                                                                   |
 | [`?bottomToolbar=<on\|off>`](using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than)               | Show/hide the entire bottom toolbar.                                                        |
 | [`?breakout=<on\|off>`](using-url-parameters.md#breakout-less-than-on-or-off-greater-than)                         | Show/hide the breakout room feature for the meeting host.                                   |
+| `?callQualityMonitoring=<on\|off>`                                                                                 | Show/hide the meeting diagnostics button, sidebar, and indicators                           |
 | [`?cameraAccess=<on\|off>`](using-url-parameters.md#cameraaccess-less-than-on-or-off-greater-than)                 | Camera permissions are not requested or used at all. On by default.                         |
 | [`?cameraEffect=<effect>`](using-url-parameters.md#cameraeffect)                                                   | Set default camera effect to be used. Still user changeable.                                |
 | [`?chat=<on\|off>`](using-url-parameters.md#chat-less-than-on-or-off-greater-than)                                 | Show/hide the chat button.                                                                  |
@@ -132,6 +133,14 @@ Show/hide the entire bottom tool bar.
 Show/hide the [Breakout Groups feature](breakout-groups-with-embedded.md) for the meeting host.
 
 **Use case:** Combine bigger meetings with smaller, collaborative sessions. Your hosts can start breakout sessions where participants are split into smaller groups.
+
+**`?callQualityMonitoring=<on|off>`**
+
+Show/hide the [meeting diagnostics](../../meeting-content-and-quality/insights-suite-and-api/real-time-troubleshooting.md) button, sidebar, and indicators
+
+**Note**: The rooms top toolbar is required to use the meeting diagnostics feature. It is in compatible with `topToolbar=off`
+
+**Use case**:  Enhance the user experience with real-time monitoring and troubleshooting tools. These tools allows participants and hosts to troubleshoot connection issues during calls, aiming to reduce your team’s support tickets and ensure high-quality experiences.&#x20;
 
 #### `?cameraAccess=<on|off>`
 

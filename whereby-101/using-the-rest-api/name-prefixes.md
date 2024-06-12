@@ -42,7 +42,7 @@ Response:
 }
 ```
 
-### Searching for rooms with a prefix
+### Searching insights for rooms with a prefix
 
 After you've applied `roomNamePrefix` to your URLs, you can then use our [API](../../reference/whereby-rest-api-reference.md#meetings-2) to search for rooms containing that prefix.
 

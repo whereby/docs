@@ -13,11 +13,11 @@ Transcription is a complementary feature of our paid Whereby Embedded plans. You
 
 Session transcripts can be used as a standalone resource (eg. for compliance purposes) or sent to an external service for post processing (eg. to derive key topics or create a session summary). You can create transcripts directly from the session (without the need to record it) or you can transcribe any session recording saved in Whereby-provided storage. Transcripts are saved as text files accessible through the customer portal or via the API.&#x20;
 
-### Live Transcription
+### Session Transcription
 
-Live Transcription allows you to produce a transcript directly from the live session, without the need to record it. Full transcript is available right after the session is finished.&#x20;
+Session Transcription allows you to produce a transcript directly from the live session, without the need to record it. Full transcript is available right after the session is finished.&#x20;
 
-[Read more](live-transcription.md)
+[Read more](session-transcription.md)
 
 ### Recording Transcription
 

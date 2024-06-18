@@ -9,11 +9,11 @@ description: >-
 
 ## Telehealth App example
 
-{% @github-files/github-code-block url="https://github.com/whereby/browser-sdk/blob/development/examples/telehealth-tutorial-app/README.md" %}
+{% @github-files/github-code-block url="https://github.com/whereby/sdk/blob/main/apps/telehealth-tutorial-app/README.md" %}
 
 ## React Hooks Quiz Game
 
-{% @github-files/github-code-block url="https://github.com/whereby/hackday-sdk-demo/blob/main/README.md" %}
+{% @github-files/github-code-block url="https://github.com/whereby/sdk/blob/main/apps/quiz-app/README.md" %}
 
 ## iOS SDK demo
 

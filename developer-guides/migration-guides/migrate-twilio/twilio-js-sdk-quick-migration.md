@@ -49,7 +49,7 @@ const MyComponent = ({ roomUrl }) => {
 export default MyComponent
 ```
 
-Create roomUrl's via [POST request to our REST API](../../reference/whereby-rest-api-reference.md#meetings)
+Create roomUrl's via [POST request to our REST API](../../../reference/whereby-rest-api-reference.md#meetings)
 
 You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the user host privileges
 {% endtab %}
@@ -73,11 +73,11 @@ You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the us
 2.  From the **Configure** section of the dashboard, select **Generate Key**\
 
 
-    <figure><img src="../../.gitbook/assets/Twilio JS SDK Quick migration screenshot.jpg" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/Twilio JS SDK Quick migration screenshot.jpg" alt=""><figcaption></figcaption></figure>
 
 ### Create Rooms
 
-Once you have created your API key, you can create a room by sending an HTTP request with the necessary properties in the body. Available properties and formats can be found in the [API reference](../../reference/whereby-rest-api-reference.md). Some features like the URL pattern of the room name and room size (`roomMode`) can only be set during the meetings creation.
+Once you have created your API key, you can create a room by sending an HTTP request with the necessary properties in the body. Available properties and formats can be found in the [API reference](../../../reference/whereby-rest-api-reference.md). Some features like the URL pattern of the room name and room size (`roomMode`) can only be set during the meetings creation.
 
 `endDate` is the only required property and is interpreted as UTC by default, but other time zones are supported by including an offset in hours and minutes. For example, Eastern Standard Time (EST) would be expressed as `2099-08-11T07:56:01-05:00`.
 
@@ -245,6 +245,6 @@ When leveraging Whereby's pre-built experience, there are multiple portions of T
 
 * [Set up local media](https://www.twilio.com/docs/video/javascript-getting-started#set-up-local-media) -> Built in as part of our pre-call waiting room experience. Users are prompted to provide cam and mic access, and can manage I/O devices as they see fit. Enable pre-call review globally via the features section of your dashboard, or on a per room basis with the [?precallReview](https://docs.whereby.com/whereby-101/customizing-rooms/using-url-parameters#precallreview-less-than-on-or-off-greater-than)\
 
-* [Connect to a room](https://www.twilio.com/docs/video/javascript-getting-started#connect-to-a-room) & [Join a room](https://www.twilio.com/docs/video/javascript-getting-started#join-a-room) -> This logic is handled for you in our PWA and pre-call experience. Based on the lock status of the room, they will either have the option to "join meeting" or "knock". Set `"isLocked": true` in the body of your API request to require your participants to knock. Then provide your [hosts](../../whereby-101/user-roles-and-privileges.md), speakers, doctors, etc with a corresponding `hostRoomUrl` so they can join a locked room to provide others access!
+* [Connect to a room](https://www.twilio.com/docs/video/javascript-getting-started#connect-to-a-room) & [Join a room](https://www.twilio.com/docs/video/javascript-getting-started#join-a-room) -> This logic is handled for you in our PWA and pre-call experience. Based on the lock status of the room, they will either have the option to "join meeting" or "knock". Set `"isLocked": true` in the body of your API request to require your participants to knock. Then provide your [hosts](../../../whereby-101/user-roles-and-privileges.md), speakers, doctors, etc with a corresponding `hostRoomUrl` so they can join a locked room to provide others access!
 * [Working with remote participants](https://www.twilio.com/docs/video/javascript-getting-started#working-with-remote-participants) events, media, etc -> All participants follow the above mentioned pre-call experience and connect in the rooms via the underlying Whereby `roomUrl`. No rendering, grid, or connection logic is required from your engineering team!
 

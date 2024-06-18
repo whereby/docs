@@ -60,11 +60,13 @@
   * [Using Breakout Groups](end-user/end-user-support-guides/using-breakout-groups.md)
   * [Troubleshooting & Basics](end-user/end-user-support-guides/end-user-documentation.md)
 
-## 🚚 Migration Guides
+## 🚚 Developer Guides
 
-* [Migrating from Twilio](migration-guides/migrate-twilio/README.md)
-  * [Twilio JS SDK Quick Migration](migration-guides/migrate-twilio/twilio-js-sdk-quick-migration.md)
-  * [Twilio JS SDK Direct Migration](migration-guides/migrate-twilio/twilio-js-sdk-direct-migration.md)
+* [Tracking Customer Usage](developer-guides/tracking-customer-usage.md)
+* [Migration Guides](developer-guides/migration-guides/README.md)
+  * [Migrating from Twilio](developer-guides/migration-guides/migrate-twilio/README.md)
+    * [Twilio JS SDK Quick Migration](developer-guides/migration-guides/migrate-twilio/twilio-js-sdk-quick-migration.md)
+    * [Twilio JS SDK Direct Migration](developer-guides/migration-guides/migrate-twilio/twilio-js-sdk-direct-migration.md)
 
 ## 🖥️ Reference
 

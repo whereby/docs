@@ -27,7 +27,7 @@ When you enable Session Transcription globally through the customer portal, thes
 
 If you want to use Session Transcription for all your sessions, you can enable it globally for your account. Go to “Configure” → “Transcription” section of your customer portal and choose "Session Transcription" option. Then choose the trigger and the main language of your sessions.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption><p>Global configuration of transcriptions for all your sessions</p></figcaption></figure>
 
 You can choose between the following transcription triggers:
 

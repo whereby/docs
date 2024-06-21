@@ -29,7 +29,7 @@ https://subdomain.whereby.com/room?screenshare=off&people=off
 | [`?background=off`](using-url-parameters.md#background-off)                                                        | Hide the room background.                                                                   |
 | [`?bottomToolbar=<on\|off>`](using-url-parameters.md#bottomtoolbar-less-than-on-or-off-greater-than)               | Show/hide the entire bottom toolbar.                                                        |
 | [`?breakout=<on\|off>`](using-url-parameters.md#breakout-less-than-on-or-off-greater-than)                         | Show/hide the breakout room feature for the meeting host.                                   |
-| `?callQualityMonitoring=<on\|off>`                                                                                 | Show/hide the meeting diagnostics button, sidebar, and indicators                           |
+| [`?callQualityMonitoring=<on\|off>`](using-url-parameters.md#callqualitymonitoring)                                | Show/hide the meeting diagnostics button, sidebar, and indicators                           |
 | [`?cameraAccess=<on\|off>`](using-url-parameters.md#cameraaccess-less-than-on-or-off-greater-than)                 | Camera permissions are not requested or used at all. On by default.                         |
 | [`?cameraEffect=<effect>`](using-url-parameters.md#cameraeffect)                                                   | Set default camera effect to be used. Still user changeable.                                |
 | [`?chat=<on\|off>`](using-url-parameters.md#chat-less-than-on-or-off-greater-than)                                 | Show/hide the chat button.                                                                  |
@@ -134,7 +134,7 @@ Show/hide the [Breakout Groups feature](breakout-groups-with-embedded.md) for th
 
 **Use case:** Combine bigger meetings with smaller, collaborative sessions. Your hosts can start breakout sessions where participants are split into smaller groups.
 
-**`?callQualityMonitoring=<on|off>`**
+#### **`?callQualityMonitoring=<on|off>`** <a href="#callqualitymonitoring" id="callqualitymonitoring"></a>
 
 Show/hide the [meeting diagnostics](../../meeting-content-and-quality/insights-suite-and-api/real-time-troubleshooting.md) button, sidebar, and indicators
 

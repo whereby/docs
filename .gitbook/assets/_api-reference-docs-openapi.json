@@ -188,8 +188,52 @@
           "startDate",
           "endDate",
           "state",
-          "createdAt"
+          "createdAt",
+          "type"
         ],
+        "properties": {
+          "transcriptionId": {
+            "type": "string",
+            "description": "The ID of the transcription."
+          },
+          "roomSessionId": {
+            "type": "string",
+            "description": "The ID of the room session."
+          },
+          "filename": {
+            "type": "string",
+            "description": "The filename of the transcription."
+          },
+          "roomName": {
+            "type": "string",
+            "description": "The name of the room."
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the transcription starts. Always in UTC, regardless of the input timezone."
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the transcription ends. Always in UTC, regardless of the input timezone."
+          },
+          "state": {
+            "type": "string",
+            "enum": ["ready", "failed", "in_progress"],
+            "description": "The state of the transcription\n - `ready` - The transcription is ready to be downloaded\n - `failed` - The transcription failed to be generated\n - `in_progress` - The transcription is still being generated\n"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the transcription was created. Always in UTC, regardless of the input timezone."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["RECORDING_TRANSCRIPTION", "RECORDING_TRANSCRIPTION"],
+            "description": "The type of the transcription\n - `RECORDING_TRANSCRIPTION` - Session Transcription\n - `RECORDING_TRANSCRIPTION` - generated based on a recording"
+          }
+        },
         "example": {
           "transcriptionId": "1",
           "roomSessionId": "1",

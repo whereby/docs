@@ -243,68 +243,91 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["endDate"],
+                "required": [
+                  "endDate"
+                ],
                 "properties": {
-                  "endDate": {
+                  "templateType": {
                     "type": "string",
-                    "format": "date-time",
-                    "description": "When the meeting ends. By default in UTC but a timezone can be specified, e.g. 2021-05-07T17:42:49-05:00.\nThis has to be the same or after the current date.\n"
-                  },
-                  "startDate": {
-                    "type": "string",
-                    "deprecated": true,
-                    "format": "date-time",
-                    "description": "(DEPRECATED - value is ignored) Start time now defaults to time of request\n"
+                    "enum": [
+                      "viewerMode"
+                    ],
+                    "description": "[BETA]: This is a beta feature, and might change in the future. If provided, the room will be created with the given template type.\nEach template defines a set of properties needed for a particular use-case. Currently the only supported template type is \"viewerMode\". This will set up a room with properties that are\nneeded to create a viewer mode room. The room will be locked, roomMode set to \"group\"\nand fields like hostRoomUrl and viewerRoomUrl will be added to the response.\n"
                   },
                   "isLocked": {
                     "type": "boolean",
                     "description": "The initial lock state of the room. If true, only hosts will be able to let in other participants\nand change lock state.\n"
-                  },
-                  "roomMode": {
-                    "type": "string",
-                    "default": "normal",
-                    "enum": ["group", "normal"],
-                    "example": "group",
-                    "description": "The mode and size of the created transient room.\n`normal` is the default room mode and should be used for meetings up to 4 participants.\n`group` should be used for meetings that require more than 4 participants.\n"
                   },
                   "roomNamePrefix": {
                     "type": "string",
                     "maxLength": 39,
                     "pattern": "[a-z0-9]{0,39}",
                     "example": "example-prefix",
-                    "description": "This will be used as the prefix for the room name. The string should be lowercase, and spaces\nwill be automatically removed. 39 character max\n"
+                    "description": "This will be used as the prefix for the room name. The string should be lowercase, and spaces\nwill be automatically removed.\n"
                   },
                   "roomNamePattern": {
                     "type": "string",
                     "default": "uuid",
-                    "enum": ["uuid", "human-short"],
+                    "enum": [
+                      "uuid",
+                      "human-short"
+                    ],
                     "example": "uuid",
                     "description": "The format of the randomly generated room name.\n`uuid` is the default room name pattern and follows the usual 8-4-4-4-12 pattern.\n`human-short` generates a shorter string made up of six distinguishable characters.\n"
                   },
-                  "templateType": {
+                  "roomMode": {
                     "type": "string",
-                    "enum": ["viewerMode"],
-                    "description": "If provided, the room will be created with the given template type.\nEach template defines a set of properties needed for a particular use-case. Currently the only supported template type is \"viewerMode\". This will set up a room with properties that are\nneeded to create a viewer mode room. The room will be locked, roomMode set to \"group\"\nand fields like hostRoomUrl and viewerRoomUrl will be added to the response.\n"
+                    "default": "normal",
+                    "enum": [
+                      "group",
+                      "normal"
+                    ],
+                    "example": "normal",
+                    "description": "The mode of the created transient room.\n`normal` is the default room mode and should be used for meetings up to 4 participants.\n`group` should be used for meetings that require more than 4 participants.\n"
+                  },
+                  "startDate": {
+                    "type": "string",
+                    "deprecated": true,
+                    "format": "date-time",
+                    "description": "When the meeting starts.\nBy default in UTC but a timezone can be specified, e.g. 2021-05-07T17:42:49-05:00.\nThis date must be in the future.  (DEPRECATED - value is ignored)\n"
+                  },
+                  "endDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the meeting ends. By default in UTC but a timezone can be specified, e.g. 2021-05-07T17:42:49-05:00.\nThis has to be the same or after the current date.\n"
                   },
                   "recording": {
                     "type": "object",
-                    "required": ["type", "destination", "startTrigger"],
+                    "required": [
+                      "type",
+                      "destination",
+                      "startTrigger"
+                    ],
                     "description": "Options for how a meeting should be recorded.\n",
                     "properties": {
                       "type": {
                         "type": "string",
-                        "enum": ["none", "local", "cloud"],
+                        "enum": [
+                          "none",
+                          "local",
+                          "cloud"
+                        ],
                         "description": "The type of recording that should take place.\n  \"none\" - Recording should be disabled\n  \"local\" - Recording should happen in the browser\n  \"cloud\" - Recording should happen in the cloud\n"
                       },
                       "destination": {
                         "type": "object",
-                        "required": ["provider"],
+                        "required": [
+                          "provider"
+                        ],
                         "description": "Information regarding where the recording should be stored. If this is not required, or should\nbe inherited, it should be set to null.\n",
                         "properties": {
                           "provider": {
                             "type": "string",
-                            "enum": ["s3", "whereby"],
-                            "description": "The provider being used to store the stream.\n- `s3` - Use your S3 bucket to store recordings. The `bucket`, `accessKeyId` and\n`accessKeySecret` fields are required for this option.\n- `whereby` - Store recordings on Whereby hosted storage. The `bucket`, `accessKeyId`\nand `accessKeySecret` fields are not required for this option."
+                            "enum": [
+                              "s3",
+                              "whereby"
+                            ],
+                            "description": "The provider being used to store the stream.\n- `s3` - Use your S3 bucket to store recordings. The `bucket`, `accessKeyId` and\n`accessKeySecret` fields are required for this option.\n- `whereby` - Store recordings on Whereby hosted storage. The `bucket`, `accessKeyId`\nand `accessKeySecret` fields are not required for this option. This is a beta feature and\nit needs to be enabled manually on our end. Reach out to us if you want to try this feature.\n"
                           },
                           "bucket": {
                             "type": "string",
@@ -320,7 +343,10 @@
                           },
                           "fileFormat": {
                             "type": "string",
-                            "enum": ["mkv", "mp4"],
+                            "enum": [
+                              "mkv",
+                              "mp4"
+                            ],
                             "description": "The format of the recording. By default the value should be taken from the\norganization settings.\n"
                           }
                         }
@@ -339,12 +365,17 @@
                   },
                   "streaming": {
                     "type": "object",
-                    "required": ["destination", "startTrigger"],
+                    "required": [
+                      "destination",
+                      "startTrigger"
+                    ],
                     "description": "A configuration object for live RTMP streaming of the meeting\n",
                     "properties": {
                       "destination": {
                         "type": "object",
-                        "required": ["url"],
+                        "required": [
+                          "url"
+                        ],
                         "description": "The destination of the stream\n",
                         "properties": {
                           "url": {
@@ -355,8 +386,75 @@
                       },
                       "startTrigger": {
                         "type": "string",
-                        "enum": ["none", "prompt", "automatic"],
-                        "description": "Specify the condition when live streaming should be started.- `null` - Should be passed when this is not required or should be inherited\nfrom the organization preferences\n-  `none` - The meeting host is able to manually start and stop the stream.\n-  `prompt` - The meeting host will be prompted to start the stream once joined.\n-  `automatic` - The stream will be automatically started as soon as the first participant joins the\n                meeting.\n"
+                        "enum": [
+                          "none",
+                          "prompt",
+                          "automatic"
+                        ],
+                        "description": "Specify the condition when live streaming should be started. null should be passed when this is not required or should be inherited\nfrom the organization preferences\n  \"none\" - The meeting host is able to manually start and stop the stream.\n  \"prompt\" - The meeting host will be prompted to start the stream once joined.\n  \"automatic\" - The stream will be automatically started as soon as the first participant joins the\n                meeting.\n"
+                      }
+                    }
+                  },
+                  "liveTranscription": {
+                    "type": "object",
+                    "required": [
+                      "startTrigger"
+                    ],
+                    "description": "A configuration object for Session Transcription\n",
+                    "properties": {
+                      "startTrigger": {
+                        "type": "string",
+                        "enum": [
+                          "none",
+                          "automatic",
+                          "automatic-2nd-participant"
+                        ],
+                        "description": "What type of trigger should happen in the meeting when all the information required to start a\nSession Transcription has been provided.\n- `null` - The value should be taken from the organization settings\n- `\"none\"` - Session Transcription will not be available for the meeting\n- `\"automatic\"` - The Session Transcription will be automatically started as soon as the first participant joins the\n                meeting.\n- `\"automatic-2nd-participant\"` - The Session Transcription will be automatically started as soon as the second\n                                participant joins the meeting.\n"
+                      },
+                      "language": {
+                        "type": "string",
+                        "enum": [
+                          "bg,",
+                          "ca,",
+                          "zh,",
+                          "zh-TW,",
+                          "cs,",
+                          "da,",
+                          "nl,",
+                          "en,",
+                          "en-US,",
+                          "en-GB,",
+                          "et,",
+                          "fi,",
+                          "nl-BE,",
+                          "fr,",
+                          "de,",
+                          "de-CH,",
+                          "el,",
+                          "hi,",
+                          "hu,",
+                          "id,",
+                          "it,",
+                          "ja,",
+                          "ko,",
+                          "lv,",
+                          "lt,",
+                          "ms,",
+                          "no,",
+                          "pl,",
+                          "pt,",
+                          "pt-BR,",
+                          "ro,",
+                          "ru,",
+                          "sk,",
+                          "es,",
+                          "sv,",
+                          "th,",
+                          "tr,",
+                          "uk,",
+                          "vi,"
+                        ],
+                        "description": "What language should be used for the Session Transcription.\n- `null` - The value should be taken from the organization settings\n"
                       }
                     }
                   },
@@ -381,9 +479,6 @@
           },
           "401": {
             "$ref": "#/components/responses/UnauthorizedError"
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenError"
           },
           "429": {
             "$ref": "#/components/responses/ThrottleError"

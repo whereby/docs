@@ -28,6 +28,7 @@
   * [Dashboard preferences](whereby-101/customizing-rooms/dashboard-preferences.md)
   * [Branding elements](whereby-101/customizing-rooms/branding-elements.md)
   * [Breakout Groups with Embedded](whereby-101/customizing-rooms/breakout-groups-with-embedded.md)
+  * [Waiting Rooms](whereby-101/customizing-rooms/waiting-rooms.md)
 * [User roles & Meeting Permissions](whereby-101/user-roles-and-privileges.md)
 * [FAQ](whereby-101/faq-and-troubleshooting/README.md)
   * [Accessibility](whereby-101/faq-and-troubleshooting/accessibility.md)

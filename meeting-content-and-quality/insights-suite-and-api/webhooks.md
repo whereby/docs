@@ -110,9 +110,10 @@ An example of a webhook event object:
 
 Properties in `data` that are common to all transcription webhook events:
 
-| Property          | Description                                                                            |
-| ----------------- | -------------------------------------------------------------------------------------- |
-| `transcriptionId` | The identifier of the transcription that has finished processing or failed to process. |
+| Property          | Description                                                                                                                              |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `transcriptionId` | The identifier of the transcription that has finished processing or failed to process.                                                   |
+| `type`            | The type of transcription, `LIVE_TRANSCRIPTION` for Session Transcription or `RECORDING_TRANSCRIPTION` for recording based transcription |  
 
 Additional properties in data for just `transcription.finished`:
 

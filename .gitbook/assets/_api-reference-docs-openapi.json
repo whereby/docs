@@ -337,6 +337,69 @@
                       }
                     }
                   },
+                  "liveTranscription": {
+                    "type": "object",
+                    "required": [
+                      "startTrigger"
+                    ],
+                    "description": "A configuration object for Session Transcription\n",
+                    "properties": {
+                      "startTrigger": {
+                        "type": "string",
+                        "enum": [
+                          "none",
+                          "automatic",
+                          "automatic-2nd-participant"
+                        ],
+                        "description": "What type of trigger should happen in the meeting when all the information required to start a\nSession Transcription has been provided.\n- `null` - The value should be taken from the organization settings\n- `\"none\"` - Session Transcription will not be available for the meeting\n- `\"automatic\"` - The Session Transcription will be automatically started as soon as the first participant joins the\n                meeting.\n- `\"automatic-2nd-participant\"` - The Session Transcription will be automatically started as soon as the second\n                                participant joins the meeting.\n"
+                      },
+                      "language": {
+                        "type": "string",
+                        "enum": [
+                          "bg,",
+                          "ca,",
+                          "zh,",
+                          "zh-TW,",
+                          "cs,",
+                          "da,",
+                          "nl,",
+                          "en,",
+                          "en-US,",
+                          "en-GB,",
+                          "et,",
+                          "fi,",
+                          "nl-BE,",
+                          "fr,",
+                          "de,",
+                          "de-CH,",
+                          "el,",
+                          "hi,",
+                          "hu,",
+                          "id,",
+                          "it,",
+                          "ja,",
+                          "ko,",
+                          "lv,",
+                          "lt,",
+                          "ms,",
+                          "no,",
+                          "pl,",
+                          "pt,",
+                          "pt-BR,",
+                          "ro,",
+                          "ru,",
+                          "sk,",
+                          "es,",
+                          "sv,",
+                          "th,",
+                          "tr,",
+                          "uk,",
+                          "vi,"
+                        ],
+                        "description": "What language should be used for the Session Transcription.\n- `null` - The value should be taken from the organization settings\n"
+                      }
+                    }
+                  },
                   "streaming": {
                     "type": "object",
                     "required": ["destination", "startTrigger"],

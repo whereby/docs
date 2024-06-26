@@ -188,8 +188,52 @@
           "startDate",
           "endDate",
           "state",
-          "createdAt"
+          "createdAt",
+          "type"
         ],
+        "properties": {
+          "transcriptionId": {
+            "type": "string",
+            "description": "The ID of the transcription."
+          },
+          "roomSessionId": {
+            "type": "string",
+            "description": "The ID of the room session."
+          },
+          "filename": {
+            "type": "string",
+            "description": "The filename of the transcription."
+          },
+          "roomName": {
+            "type": "string",
+            "description": "The name of the room."
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the transcription starts. Always in UTC, regardless of the input timezone."
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the transcription ends. Always in UTC, regardless of the input timezone."
+          },
+          "state": {
+            "type": "string",
+            "enum": ["ready", "failed", "in_progress"],
+            "description": "The state of the transcription\n - `ready` - The transcription is ready to be downloaded\n - `failed` - The transcription failed to be generated\n - `in_progress` - The transcription is still being generated\n"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the transcription was created. Always in UTC, regardless of the input timezone."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["RECORDING_TRANSCRIPTION", "RECORDING_TRANSCRIPTION"],
+            "description": "The type of the transcription\n - `RECORDING_TRANSCRIPTION` - Session Transcription\n - `RECORDING_TRANSCRIPTION` - generated based on a recording"
+          }
+        },
         "example": {
           "transcriptionId": "1",
           "roomSessionId": "1",
@@ -334,6 +378,69 @@
                           "automatic-2nd-participant"
                         ],
                         "description": "What type of trigger should happen in the meeting when all the information required to start a\nrecording has been provided. This only has effect when recording.type is set to `\"cloud\"`\n- `null` - The value should be taken from the organization settings\n- `\"none\"` - A user should manually start the recording using the UI in the meeting\n- `\"prompt\"` - A prompt to start the recording will be shown to the first user with permission to start\n             the recording.\n- `\"automatic\"` - The recording will be automatically started as soon as the first participant joins the\n                meeting.\n- `\"automatic-2nd-participant\"` - The recording will be automatically started as soon as the second\n                                participant joins the meeting.\n"
+                      }
+                    }
+                  },
+                  "liveTranscription": {
+                    "type": "object",
+                    "required": [
+                      "startTrigger"
+                    ],
+                    "description": "A configuration object for Session Transcription\n",
+                    "properties": {
+                      "startTrigger": {
+                        "type": "string",
+                        "enum": [
+                          "none",
+                          "automatic",
+                          "automatic-2nd-participant"
+                        ],
+                        "description": "What type of trigger should happen in the meeting when all the information required to start a\nSession Transcription has been provided.\n- `null` - The value should be taken from the organization settings\n- `\"none\"` - Session Transcription will not be available for the meeting\n- `\"automatic\"` - The Session Transcription will be automatically started as soon as the first participant joins the\n                meeting.\n- `\"automatic-2nd-participant\"` - The Session Transcription will be automatically started as soon as the second\n                                participant joins the meeting.\n"
+                      },
+                      "language": {
+                        "type": "string",
+                        "enum": [
+                          "bg,",
+                          "ca,",
+                          "zh,",
+                          "zh-TW,",
+                          "cs,",
+                          "da,",
+                          "nl,",
+                          "en,",
+                          "en-US,",
+                          "en-GB,",
+                          "et,",
+                          "fi,",
+                          "nl-BE,",
+                          "fr,",
+                          "de,",
+                          "de-CH,",
+                          "el,",
+                          "hi,",
+                          "hu,",
+                          "id,",
+                          "it,",
+                          "ja,",
+                          "ko,",
+                          "lv,",
+                          "lt,",
+                          "ms,",
+                          "no,",
+                          "pl,",
+                          "pt,",
+                          "pt-BR,",
+                          "ro,",
+                          "ru,",
+                          "sk,",
+                          "es,",
+                          "sv,",
+                          "th,",
+                          "tr,",
+                          "uk,",
+                          "vi,"
+                        ],
+                        "description": "What language should be used for the Session Transcription.\n- `null` - The value should be taken from the organization settings\n"
                       }
                     }
                   },

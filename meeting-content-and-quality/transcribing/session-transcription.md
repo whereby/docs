@@ -76,7 +76,7 @@ All transcripts will be stored in the Whereby-provided storage until you delete 
 
 Session Transcription generates a transcript in the specified language. You need to declare the language used by your session participants in advance - in the global configuration or individually for each room with [POST /meetings](../../reference/whereby-rest-api-reference.md#meetings-1) request. Once the room is created, you cannot change the language of the Session Transcription.&#x20;
 
-The following languages are supported by Session Transcription: Bulgarian (bg), Catalan (ca), Chinese (Mandarin, Simplified) (zh), Chinese (Mandarin, Traditional) (zh-TW), Czech (cs), Danish (da), Dutch (nl), English (en), Estonian (et), Finnish (fi), Flemish (nl-BE), French (fr), German (de), Greek (el), Hindi (hi), Hungarian (hu), Indonesian (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Malay (ms), Norwegian (no), Polish (pl), Portuguese (pt), Romanian (ro), Russian (ru), Slovak (sk), Spanish (es), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk), Vietnamese (vi)
+The following languages are supported by Session Transcription: Bulgarian (bg), Catalan (ca), Chinese (Mandarin, Simplified) (zh), Chinese (Mandarin, Traditional) (zh-TW), Czech (cs), Danish (da), Dutch (nl), English (en), Estonian (et), Finnish (fi), Flemish (nl-BE), French (fr), German (de), Greek (el), Hindi (hi), Hungarian (hu), Indonesian (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Malay (ms), Norwegian (no), Polish (pl), Portuguese (pt), Brazilian Portuguese (pt-BR), Romanian (ro), Russian (ru), Slovak (sk), Spanish (es), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk), Vietnamese (vi).
 
 ## Known limitations
 

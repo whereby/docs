@@ -66,7 +66,7 @@ In order to download the transcript manually go to “Transcriptions” section 
 
 If you want to automate your transcription process, you can do so programatically with a combination  of API requests and webhook events.
 
-&#x20;<mark style="background-color:yellow;">COMING SOON</mark>  Once the transcript is ready, Whereby sends a `transcription.finished` [webhook](../insights-suite-and-api/webhooks.md#transcription-data-properties) event. Hook onto that event to fetch the `transcriptionId` of the session that you want to transcribe.&#x20;
+Once the transcript is ready, Whereby sends a `transcription.finished` [webhook](../insights-suite-and-api/webhooks.md#transcription-data-properties) event. Hook onto that event to fetch the `transcriptionId` of the session that you want to transcribe.&#x20;
 
 Send a [GET /transcriptions/{transcriptionId}/access-link](../../reference/whereby-rest-api-reference.md#transcriptions-transcriptionid-access-link) request to get the download link of the transcription file. Transcripts are downloaded as .md files.&#x20;
 

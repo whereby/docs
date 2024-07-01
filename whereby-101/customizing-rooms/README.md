@@ -8,15 +8,15 @@ description: >-
 
 {% embed url="https://youtu.be/h1ymbX3AcWc" %}
 
-### On creation
+### During creation
 
-Some key properties of your rooms should be set when the room is created using the API.
+Some key properties of your rooms can be set when the room is created using the API or via the Dashboard.
 
 [Read more](on-creation.md)
 
-### Using URL parameters
+### During Implementation
 
-With Whereby Embedded you can use URL parameters to customize the meeting experience for your users. It’s possible for each participant in a meeting to have different parameter combinations.
+With Attributes or URL Parameters you can customize the meeting experience for each individual user after the room has been created.  Features can be enabled/disabled on a per user basis by using different combinations of Attributes or URL Parameters for each user.
 
 [Read more](using-url-parameters.md)
 

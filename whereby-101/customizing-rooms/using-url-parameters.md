@@ -8,6 +8,10 @@ description: >-
 
 Attributes can be used on Whereby's pre-built Web Component by adding them to the \<whereby-embed> element.&#x20;
 
+{% hint style="info" %}
+Note that Attributes and URL Parameters are _only_ compatible with Whereby's pre-built UI and will not work with the React SDK.
+{% endhint %}
+
 For example, the following component would open the room with the screenshare and people buttons hidden:
 
 <pre class="language-html" data-overflow="wrap" data-line-numbers><code class="lang-html">&#x3C;whereby-embed 

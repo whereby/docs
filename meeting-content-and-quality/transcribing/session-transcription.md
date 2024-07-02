@@ -8,7 +8,7 @@ description: >-
 # Session Transcription
 
 {% hint style="info" %}
-Session Transcription is currently in closed Beta and available to selected customers only. Email us at embedded@whereby.com to join our beta testing program (terms and conditions apply).
+Session Transcription for Growth plan customers is currently in closed Beta and available upon request. Email us at embedded@whereby.com to join our beta testing program (terms and conditions apply).
 {% endhint %}
 
 {% hint style="info" %}
@@ -48,11 +48,6 @@ To do so, create the room with [POST /meetings](../../reference/whereby-rest-api
 ```
 
 You can choose between `"automatic"` and `"automatic-2nd-participant"` triggers, and below you will find the [list of supported languages](session-transcription.md#supported-languages).
-
-{% hint style="warning" %}
-Currently, Session Transcriptions are only available for rooms in the 'group' mode. \
-Make sure to set `"roomMode": "group"` in your  [POST /meetings](../../reference/whereby-rest-api-reference.md#meetings-1) requests.
-{% endhint %}
 
 When the session is transcribed, the participants see a notification circle in the top-left meeting status bar:
 

@@ -92,6 +92,8 @@ Session Transcription is available for sessions up to 12 hours long.
 We’re excited about the future of API-assisted content processing and wanted to give you a sneak peek at what’s on the horizon. Here’s a quick look at the features and improvements we’re actively working on to enhance Session Transcriptions of Whereby sessions:
 
 * Manual trigger, so that the host can start and stop transcribing the session.
+* `<whereby-embed>` methods to start and stop transcribing programatically.
+* Abiliy to save the transcript into customer-managed AWS S3 bucket.
 * Live preview of the transcript, visible to all session participants.
 * Ability to download the transcript by the host or participants.
 * Integration point to plug into the live transcript in real-time (eg. to send it into 3rd party processing tool like a chatbot).

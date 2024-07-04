@@ -9,7 +9,7 @@ description: >-
 ## Storage options
 
 {% hint style="info" %}
-Cloud recording is a complementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).
+Cloud recording is a supplementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).
 {% endhint %}
 
 We offer two storage options for our cloud recording feature.&#x20;

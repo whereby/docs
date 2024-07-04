@@ -12,7 +12,7 @@ Session Transcription for Grow plan customers is currently in closed Beta and av
 {% endhint %}
 
 {% hint style="info" %}
-Session Transcription is a complementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).&#x20;
+Session Transcription is a supplementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).&#x20;
 {% endhint %}
 
 Session transcripts are created from live streaming of Whereby session audio in real time, and once the session is finished they are saved as text files accessible through the customer portal or via the API. You can use the transcripts as a standalone resource (eg. for compliance purposes) or send to an external service for post processing (eg. to derive key topics or create a session summary).&#x20;

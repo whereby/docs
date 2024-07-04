@@ -7,7 +7,7 @@ description: >-
 # Recording Transcription
 
 {% hint style="info" %}
-Recording Transcription is a complementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).
+Recording Transcription is a supplementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).
 {% endhint %}
 
 Recording Transcription is available by default for all session recordings stored in Whereby-provided storage and there is no need to enable or configure this feature. Recording transcripts are derived from  recordings and saved as text files accessible through the customer portal or via the API. They can be used as a standalone resource (eg. for compliance purposes) or sent to an external service for post processing (eg. to derive key topics or create a session summary).

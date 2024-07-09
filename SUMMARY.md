@@ -68,6 +68,7 @@
   * [Migrating from Twilio](developer-guides/migration-guides/migrate-twilio/README.md)
     * [Twilio JS SDK Quick Migration](developer-guides/migration-guides/migrate-twilio/twilio-js-sdk-quick-migration.md)
     * [Twilio JS SDK Direct Migration](developer-guides/migration-guides/migrate-twilio/twilio-js-sdk-direct-migration.md)
+* [Add Video Conferencing to Your Website in 3 Easy Steps](developer-guides/add-video-conferencing-to-your-website-in-3-easy-steps.md)
 
 ## 🖥️ Reference
 

@@ -64,10 +64,9 @@
 ## 🚚 Developer Guides
 
 * [Tracking Customer Usage](developer-guides/tracking-customer-usage.md)
-* [Migration Guides](developer-guides/migration-guides/README.md)
-  * [Migrating from Twilio](developer-guides/migration-guides/migrate-twilio/README.md)
-    * [Twilio JS SDK Quick Migration](developer-guides/migration-guides/migrate-twilio/twilio-js-sdk-quick-migration.md)
-    * [Twilio JS SDK Direct Migration](developer-guides/migration-guides/migrate-twilio/twilio-js-sdk-direct-migration.md)
+* [Migrating from Twilio](developer-guides/migrate-twilio/README.md)
+  * [Twilio JS SDK Quick Migration](developer-guides/migrate-twilio/twilio-js-sdk-quick-migration.md)
+  * [Twilio JS SDK Direct Migration](developer-guides/migrate-twilio/twilio-js-sdk-direct-migration.md)
 * [Add Video Conferencing to Your Website in 3 Easy Steps](developer-guides/add-video-conferencing-to-your-website-in-3-easy-steps.md)
 
 ## 🖥️ Reference

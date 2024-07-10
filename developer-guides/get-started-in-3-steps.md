@@ -4,7 +4,7 @@ description: >-
   conferencing to your website in three easy steps.
 ---
 
-# Add Video Conferencing to Your Website in 3 Easy Steps
+# Get started in 3 steps
 
 ## Introduction
 
@@ -162,5 +162,3 @@ const Meeting = () => {
 
 export default Meeting;
 ```
-
-Our tutorial [How To Add Video Conferencing to Your Web App Using the Whereby Browser SDK](https://whereby.com/blog/how-to-add-video-conferencing-to-your-web-app-using-the-whereby-browser-sdk/) teaches you how to build a custom interface using the SDK, while [Browser SDK Tutorial: How to Customize Video Tiles](https://whereby.com/blog/browser-sdk-tutorial-how-to-customize-video-tiles/) features techniques for styling video tiles.

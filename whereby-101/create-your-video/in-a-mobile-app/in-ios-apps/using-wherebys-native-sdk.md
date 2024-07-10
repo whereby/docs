@@ -4,6 +4,8 @@
 The native iOS SDK is currently in beta and actively being developed. For any comments, suggestions or questions, please [submit an Issue to the GitHub repo](https://github.com/whereby/ios-sdk/issues), or reach out to our solutions team at embedded@whereby.com.
 {% endhint %}
 
+{% embed url="https://www.youtube.com/watch?v=ZX27LEH_Ut4" %}
+
 The Whereby iOS SDK enables you to integrate Whereby into your iOS app as a native component, rather than a web-based experience. This offers much more control and customization over the meeting experience, and allows you to hook into powerful features such as listening to room events and sending commands to the room from the host application.&#x20;
 
 ## Basic Project Setup

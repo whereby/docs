@@ -69,6 +69,7 @@
   * [Twilio JS SDK Direct Migration](developer-guides/migrate-twilio/twilio-js-sdk-direct-migration.md)
 * [Get started in 3 steps](developer-guides/get-started-in-3-steps.md)
 * [Custom Video Tiles with React](developer-guides/custom-video-tiles-with-react.md)
+* [Getting start with the Browser SDK](developer-guides/getting-start-with-the-browser-sdk.md)
 
 ## 🖥️ Reference
 

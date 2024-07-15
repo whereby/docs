@@ -44,7 +44,7 @@
   * [Local Recording](meeting-content-and-quality/recording-with-embedded/local-recording.md)
 * [Transcribing](meeting-content-and-quality/transcribing/README.md)
   * [Session Transcription](meeting-content-and-quality/transcribing/session-transcription.md)
-  * [Recording Transcription](meeting-content-and-quality/transcribing/transcribing-sessions.md)
+  * [Recording Transcription](meeting-content-and-quality/transcribing/recording-transcriptions.md)
 * [Session summaries](meeting-content-and-quality/transcribing-sessions-1.md)
 * [Streaming RTMP](meeting-content-and-quality/streaming-with-embedded.md)
 * [Quality Insights](meeting-content-and-quality/insights-suite-and-api/README.md)

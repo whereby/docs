@@ -23,5 +23,5 @@ Session Transcription allows you to produce a transcript directly from the live 
 
 Recording Transcription allows you to get a transcript of any recording that was saved in Whereby-provided storage. It is useful if you want to transcribe the sessions recorded in the past.
 
-[Read more](transcribing-sessions.md)
+[Read more](recording-transcriptions.md)
 

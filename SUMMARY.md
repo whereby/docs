@@ -76,7 +76,7 @@
 * [React Hooks Reference](reference/react-hooks-reference/README.md)
   * [Quick Start](reference/react-hooks-reference/quick-start/README.md)
     * [Getting started with the Browser SDK](reference/react-hooks-reference/quick-start/getting-started-with-the-browser-sdk.md)
-  * [Guides and concepts](reference/react-hooks-reference/guides-and-concepts/README.md)
+  * [Guides & Tutorials](reference/react-hooks-reference/guides-and-concepts/README.md)
     * [Migrate from version 2.x to 3](reference/react-hooks-reference/guides-and-concepts/migrate-from-version-2.x-to-3.md)
     * [Grid logic](reference/react-hooks-reference/guides-and-concepts/grid-logic.md)
     * [Custom Video Tiles with React](reference/react-hooks-reference/guides-and-concepts/custom-video-tiles-with-react.md)

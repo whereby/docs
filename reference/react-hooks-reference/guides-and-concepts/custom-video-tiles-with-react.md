@@ -28,7 +28,7 @@ You'll need this background to understand some of the code examples here.
 
 Whereby is well-suited to coaching, telehealth, remote classrooms, and virtual meetings. We'll use the Whereby Browser SDK and CSS to create video tiles for a remote 1-to-1 coaching business, BreatheCoaching. The image below illustrates what we're going to build.
 
-<figure><img src="../.gitbook/assets/CustomizeVideoTiles-01.webp" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CustomizeVideoTiles-01.webp" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Create a Participant component <a href="#createaparticipantcomponent" id="createaparticipantcomponent"></a>
 
@@ -64,7 +64,7 @@ export default Participant;
 
 At this point, the video tile should fill your entire browser, as in Figure 2. By default, the `VideoView` component expands to fit the width of its container. Let's constrain its width with some CSS.
 
-<figure><img src="../.gitbook/assets/CustomizeVideoTiles-02.webp" alt="" width="563"><figcaption><p>Figure 2</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CustomizeVideoTiles-02.webp" alt="" width="563"><figcaption><p>Figure 2</p></figcaption></figure>
 
 ### Managing the video tile's dimensions <a href="#managingthevideotilesdimensions" id="managingthevideotilesdimensions"></a>
 
@@ -104,7 +104,7 @@ Since the design specs for BreatheCoaching require square video tiles with round
 
 Now our video tile is 200 pixels wide by 200 pixels tall. Our video _source_ however, is only 112.5 pixels tall (Figure 3).
 
-<figure><img src="../.gitbook/assets/CustomizeVideoTiles-03.webp" alt="" width="563"><figcaption><p>Figure 3</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CustomizeVideoTiles-03.webp" alt="" width="563"><figcaption><p>Figure 3</p></figcaption></figure>
 
 Videos maintain their aspect ratio regardless of the dimensions of the `video` element or its containing ancestors. To resolve this, use the [`object-fit`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) CSS property and the `cover` value.
 
@@ -116,7 +116,7 @@ Videos maintain their aspect ratio regardless of the dimensions of the `video` e
 
 Using `object-fit: cover` causes the browser to scale the video source so that it fills the container, but maintains its aspect ratio. Your video tile should now resemble Figure 4.
 
-<figure><img src="../.gitbook/assets/CustomizeVideoTiles-04.webp" alt="" width="563"><figcaption><p>Figure 4</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CustomizeVideoTiles-04.webp" alt="" width="563"><figcaption><p>Figure 4</p></figcaption></figure>
 
 ### Rounding the corner <a href="#roundingthecorner" id="roundingthecorner"></a>
 
@@ -133,7 +133,7 @@ Our design also calls for rounded video tile corners. Add a `border-radius` decl
 
 Your video tile should now resemble Figure 5.
 
-<figure><img src="../.gitbook/assets/CustomizeVideoTiles-05.webp" alt="" width="563"><figcaption><p>Figure 5</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CustomizeVideoTiles-05.webp" alt="" width="563"><figcaption><p>Figure 5</p></figcaption></figure>
 
 Although the local and remote participant tiles are different sizes, there's a lot of overlap in their appearance. Instead of creating a separate component, let's add some code to support a remote participant variation.
 
@@ -188,6 +188,8 @@ Finally, add a `.remote` rule set to `Participants.css`. Override the `width` pr
 
 Your remote participant tile should look a bit like Figure 6.
 
-<figure><img src="../.gitbook/assets/CustomizeVideoTiles-06.webp" alt="" width="563"><figcaption><p>Figure 6</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CustomizeVideoTiles-06.webp" alt="" width="563"><figcaption><p>Figure 6</p></figcaption></figure>
 
 Put it together with the rest of our UI design, and you can launch BreatheCoaching in no time.
+
+> Written by [Tiffany Brown](https://whereby.com/blog/author-tiffany-brown/)

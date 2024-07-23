@@ -3,6 +3,7 @@
 ## 📹 Whereby 101
 
 * [Create Your Video Experience](README.md)
+  * [Get started in 3 steps](whereby-101/readme/get-started-in-3-steps.md)
   * [Embedding Whereby in a web app](whereby-101/create-your-video/in-a-web-page/README.md)
     * [Using Whereby's Web Component & Pre-built UI](whereby-101/create-your-video/in-a-web-page/using-the-whereby-embed-element/README.md)
       * [Script Tags](whereby-101/create-your-video/in-a-web-page/using-the-whereby-embed-element/script-tags.md)
@@ -67,19 +68,18 @@
 * [Migrating from Twilio](developer-guides/migrate-twilio/README.md)
   * [Twilio JS SDK Quick Migration](developer-guides/migrate-twilio/twilio-js-sdk-quick-migration.md)
   * [Twilio JS SDK Direct Migration](developer-guides/migrate-twilio/twilio-js-sdk-direct-migration.md)
-* [Get started in 3 steps](developer-guides/get-started-in-3-steps.md)
-* [Custom Video Tiles with React](developer-guides/custom-video-tiles-with-react.md)
-* [Getting start with the Browser SDK](developer-guides/getting-start-with-the-browser-sdk.md)
 
 ## 🖥️ Reference
 
 * [REST API Reference](reference/whereby-rest-api-reference.md)
 * [Web Component Reference](reference/using-the-whereby-embed-element.md)
 * [React Hooks Reference](reference/react-hooks-reference/README.md)
-  * [Quick Start](reference/react-hooks-reference/quick-start.md)
+  * [Quick Start](reference/react-hooks-reference/quick-start/README.md)
+    * [Getting started with the Browser SDK](reference/react-hooks-reference/quick-start/getting-started-with-the-browser-sdk.md)
   * [Guides and concepts](reference/react-hooks-reference/guides-and-concepts/README.md)
     * [Migrate from version 2.x to 3](reference/react-hooks-reference/guides-and-concepts/migrate-from-version-2.x-to-3.md)
     * [Grid logic](reference/react-hooks-reference/guides-and-concepts/grid-logic.md)
+    * [Custom Video Tiles with React](reference/react-hooks-reference/guides-and-concepts/custom-video-tiles-with-react.md)
   * [API Reference](reference/react-hooks-reference/api-reference/README.md)
     * [WherebyProvider](reference/react-hooks-reference/api-reference/wherebyprovider.md)
     * [VideoView](reference/react-hooks-reference/api-reference/videoview.md)

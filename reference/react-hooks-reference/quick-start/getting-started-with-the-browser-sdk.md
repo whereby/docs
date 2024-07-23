@@ -4,7 +4,7 @@ description: >-
   customizing layout and features to fit your use case and brand.
 ---
 
-# Getting start with the Browser SDK
+# Getting started with the Browser SDK
 
 ## **What you'll need**
 
@@ -31,7 +31,7 @@ If you're using yarn as your package manager, replace `npm i` with `yarn` add (e
 
 ### **Connecting to your room**
 
-Next, connect to your room. The Whereby Browser SDK exposes a custom React hook — [`useRoomConnection`](../reference/react-hooks-reference/api-reference/useroomconnection.md) — that connects participants in a meeting room. Import both React and `useRoomConnection` into your project file as shown below.
+Next, connect to your room. The Whereby Browser SDK exposes a custom React hook — [`useRoomConnection`](../api-reference/useroomconnection.md) — that connects participants in a meeting room. Import both React and `useRoomConnection` into your project file as shown below.
 
 ```jsx
 import React from "react";
@@ -72,7 +72,7 @@ export default Meeting;
 ```
 {% endcode %}
 
-`useRoomConnection` returns a [`RoomConnectionReference`](../reference/react-hooks-reference/api-reference/useroomconnection.md#return-type) object that contains three properties:
+`useRoomConnection` returns a [`RoomConnectionReference`](../api-reference/useroomconnection.md#return-type) object that contains three properties:
 
 * `state`, an object that reflects the status of the current room, including the call's participants;
 * `components`, an object containing the pre-bound components available in the room; and
@@ -82,14 +82,14 @@ This tutorial will introduce you to all three.
 
 ### **See yourself on screen**
 
-[`RoomConnectionReference.state`](../reference/react-hooks-reference/api-reference/useroomconnection.md#state) includes two properties that represent participants in the meeting:
+[`RoomConnectionReference.state`](../api-reference/useroomconnection.md#state) includes two properties that represent participants in the meeting:
 
 * `localParticipant`, an object that represents the individual meeting attendee (you, in this case); and
 * `remoteParticipants`, an array of objects representing other meeting participants.
 
 Each `localParticipant` and `remoteParticipants` object contains a `stream` property, that you'll use with the `VideoView` component to display video for each participant.
 
-To see your own video stream, use the `localParticipant` property. Check whether `localParticipant` has an active stream, then conditionally render the [`VideoView`](../reference/react-hooks-reference/api-reference/videoview.md) component as shown below.
+To see your own video stream, use the `localParticipant` property. Check whether `localParticipant` has an active stream, then conditionally render the [`VideoView`](../api-reference/videoview.md) component as shown below.
 
 {% hint style="info" %}
 **Note**: The examples in this tutorial use [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring\_assignment), a syntax that allows you to extract Object properties into variables.&#x20;
@@ -274,3 +274,5 @@ export default Meeting;
 From here, you're ready to add CSS to change your meeting layout. Or, you can replace the default browser buttons with custom icon components.
 
 Whereby's Browser SDK is a truly ["white-label" solution for video calling](https://whereby.com/information/embedded). It decouples the video stream from the standard Whereby UI so that you can create rich video conferencing, [virtual classrooms](https://whereby.com/information/embedded/elearning), or [telehealth](https://whereby.com/information/embedded/healthcare) experiences that reflect you or your brand.
+
+> Written by [Tiffany Brown](https://whereby.com/blog/author-tiffany-brown/)

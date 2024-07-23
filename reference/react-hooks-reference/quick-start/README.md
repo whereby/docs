@@ -45,7 +45,7 @@ function MyVideoApp( { roomUrl, localStream }) {
 
 This is the most basic functionality of the library. Each of the concepts and more advanced usage is explained in the next sections of the documentation:
 
-* [Guides and Concepts](guides-and-concepts/)
-* [API Reference](api-reference/)
-* [Types](types.md)
+* [Guides and Concepts](../guides-and-concepts/)
+* [API Reference](../api-reference/)
+* [Types](../types.md)
 

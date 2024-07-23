@@ -32,7 +32,7 @@ Your API key is only displayed once. Copy the key and save it to your secrets ma
 
 Although you can create rooms from your account dashboard, using the [REST API](https://docs.whereby.com/reference/whereby-rest-api-reference) lets you automate the process.
 
-To create a meeting room, send a POST request to the [`/meetings`](../reference/whereby-rest-api-reference.md#meetings) end point. Whereby's REST API uses [Bearer Token authentication](https://datatracker.ietf.org/doc/html/rfc6750). Send your API key as part of the `Authorization` header.
+To create a meeting room, send a POST request to the [`/meetings`](../../reference/whereby-rest-api-reference.md#meetings) end point. Whereby's REST API uses [Bearer Token authentication](https://datatracker.ietf.org/doc/html/rfc6750). Send your API key as part of the `Authorization` header.
 
 The request body should include a JSON-formatted string, with an [\[endDate\] field.](https://docs.whereby.com/reference/whereby-rest-api-reference#meetings-1) `endDate` should be a valid date string. It tells Whereby when the meeting room should expire. Here's an example using [cURL](https://curl.se/).
 
@@ -162,3 +162,5 @@ const Meeting = () => {
 
 export default Meeting;
 ```
+
+> Written by [Tiffany Brown](https://whereby.com/blog/author-tiffany-brown/)

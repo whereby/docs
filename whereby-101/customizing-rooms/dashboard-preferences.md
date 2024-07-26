@@ -1,10 +1,10 @@
 ---
 description: >-
-  Some organization preferences can be enabled or disabled from the dashboard,
-  eliminating the need for a corresponding URL parameter on every link.
+  Some preferences can be enabled or disabled globally in the customer portal
+  and therefore apply to all rooms and sessions.
 ---
 
-# Dashboard preferences
+# Global preferences
 
 The feature preferences can be found under "**Configure**” **→** “**Features**”. Any adjustments made here will be applied to all your rooms, unless overridden by specific [URL parameters](using-url-parameters.md) added to the meeting URL.
 

@@ -26,7 +26,7 @@
 * [Customize Your Video Experience](whereby-101/customizing-rooms/README.md)
   * [During room creation](whereby-101/customizing-rooms/on-creation.md)
   * [Using Attributes/URL Params](whereby-101/customizing-rooms/using-url-parameters.md)
-  * [Dashboard preferences](whereby-101/customizing-rooms/dashboard-preferences.md)
+  * [Global preferences](whereby-101/customizing-rooms/dashboard-preferences.md)
   * [Branding elements](whereby-101/customizing-rooms/branding-elements.md)
   * [Breakout Groups with Embedded](whereby-101/customizing-rooms/breakout-groups-with-embedded.md)
   * [Waiting Rooms](whereby-101/customizing-rooms/waiting-rooms.md)

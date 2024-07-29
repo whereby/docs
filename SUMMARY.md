@@ -3,7 +3,7 @@
 ## 📹 Whereby 101
 
 * [Create Your Video Experience](README.md)
-  * [Get started in 3 steps](whereby-101/readme/get-started-in-3-steps.md)
+  * [Get started in 3 steps](whereby-101/create-your-video/get-started-in-3-steps.md)
   * [Embedding Whereby in a web app](whereby-101/create-your-video/in-a-web-page/README.md)
     * [Using Whereby's Web Component & Pre-built UI](whereby-101/create-your-video/in-a-web-page/using-the-whereby-embed-element/README.md)
       * [Script Tags](whereby-101/create-your-video/in-a-web-page/using-the-whereby-embed-element/script-tags.md)

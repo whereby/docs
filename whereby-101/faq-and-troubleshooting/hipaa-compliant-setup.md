@@ -139,6 +139,12 @@ Customers can choose to either rely on the Whereby chat knowing that the informa
 
 There is no need to do anything to enable the HIPAA compliant in-room chat as it is already enabled and available for all customers, regardless of using the Whereby Embedded HIPAA compliant package or not.
 
+### File sharing
+
+[Sharing files through Whereby chat ](hipaa-compliant-setup.md#file-sharing)is considered to be HIPAA compliant, as files are securely stored and only available to the participants for the duration of the session. All files are permanently deleted within 1 minute from the end of the session or from the moment when there is only 1 participant left in the room. They are not backed up and cannot be retrieved after the session.
+
+There is no need to do anything to enable the HIPAA compliant file sharing as it is already enabled and available for all customers, regardless of using the Whereby Embedded HIPAA compliant package or not.
+
 ### Encryption in transit&#x20;
 
 By default and through enforcement of our infrastructure's encryption capabilities, Whereby is accessible only via TLS 1.2 with specific ciphers enabled, [as described in our advisories](https://whereby.helpscoutdocs.com/article/710-whereby-tls-cipher-update) and as it can be seen from our [A+ grading on SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=whereby.com\&latest).

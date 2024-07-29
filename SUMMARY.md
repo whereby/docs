@@ -28,6 +28,7 @@
   * [Using Attributes/URL Params](whereby-101/customizing-rooms/using-url-parameters.md)
   * [Global preferences](whereby-101/customizing-rooms/dashboard-preferences.md)
   * [Branding elements](whereby-101/customizing-rooms/branding-elements.md)
+  * [File sharing](whereby-101/customizing-rooms/file-sharing.md)
   * [Breakout Groups with Embedded](whereby-101/customizing-rooms/breakout-groups-with-embedded.md)
   * [Waiting Rooms](whereby-101/customizing-rooms/waiting-rooms.md)
 * [User roles & Meeting Permissions](whereby-101/user-roles-and-privileges.md)

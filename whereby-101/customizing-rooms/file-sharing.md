@@ -10,13 +10,13 @@ description: >-
 This feature is coming soon to all paid Whereby Embedded plans.
 {% endhint %}
 
-File sharing is a feature of Whereby's chat and allows all participants in a video session to exchange media files (images, documents, audio, and video) of up to 15 MB. Files are available for download throughout the session, making it easier to collaborate and share resources in real-time.
+File sharing is a feature of Whereby's chat and allows all participants in a video session to attach media files (images, documents, audio, and video) of up to 15 MB. Files are available for download throughout the session, making it easier to collaborate and share resources in real-time.
 
 {% hint style="info" %}
 Files are available for download for the duration of the session only. All files are encrypted and securely stored in Whereby-managed cloud storage, and are **automatically deleted** within 1 minute from the end of the session. They are not backed up and cannot be retrieved after the session.
 {% endhint %}
 
-When file sharing is enabled, any session participant can share files from their computer, using a file picker or drag and drop into the chat. Each file is presented in the chat window as an individual message and all session participants can download them. Hosts are able to delete any file shared, removing any unnecessary or incorrect files to keep the session organised.
+When file sharing is enabled, any session participant can attach files from their computer, using a file picker or drag and drop into the chat. Each file is presented in the chat window as an individual message and all session participants can download them. Hosts are able to delete any file shared, removing any unnecessary or incorrect files to keep the session organised.
 
 #### Supported file types
 
@@ -51,7 +51,7 @@ You can override global configuration for individual rooms via the API during a 
 
 ## Restrictions and Limitations
 
-* Files can only be shared when there are at least two participants in the session, ensuring that the sharing feature is used for its intended collaborative purpose.
+* Files can only be attached when there are at least two participants in the session, ensuring that the sharing feature is used for its intended collaborative purpose.
 * File sharing is available in both room modes - P2P rooms called 'normal' and SFU rooms called 'group'. However please note, in both room modes the files being shared are temporarily stored in Whereby-managed cloud storage. [Learn more about P2P and SFU video sessions.](https://whereby.com/blog/p2p-vs-sfu-video-calls-which-is-best/)
 
 {% hint style="info" %}

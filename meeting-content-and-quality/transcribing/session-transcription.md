@@ -8,7 +8,7 @@ description: >-
 # Session Transcription
 
 {% hint style="info" %}
-Session Transcription for Grow plan customers is currently in closed Beta and available upon request. Email us at embedded@whereby.com to join our beta testing program (terms and conditions apply).
+Session Transcription for Grow plan customers is currently available on demand (terms and conditions apply). Email us at embedded@whereby.com if you want to start using Session Transcription.
 {% endhint %}
 
 {% hint style="info" %}

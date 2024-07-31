@@ -3,7 +3,7 @@
 ## 📹 Whereby 101
 
 * [Create Your Video Experience](README.md)
-  * [Get started in 3 steps](whereby-101/create-your-video/get-started-in-3-steps.md)
+  * [Get started in 3 steps](whereby-101/readme/get-started-in-3-steps.md)
   * [Embedding Whereby in a web app](whereby-101/create-your-video/in-a-web-page/README.md)
     * [Using Whereby's Web Component & Pre-built UI](whereby-101/create-your-video/in-a-web-page/using-the-whereby-embed-element/README.md)
       * [Script Tags](whereby-101/create-your-video/in-a-web-page/using-the-whereby-embed-element/script-tags.md)
@@ -72,7 +72,14 @@
 
 ## 🖥️ Reference
 
-* [REST API Reference](reference/whereby-rest-api-reference.md)
+* [test ref docs](reference/test-ref-docs.md)
+* [REST API Reference](reference/whereby-rest-api-reference/README.md)
+  * [/meetings](reference/whereby-rest-api-reference/meetings.md)
+  * [/insights](reference/whereby-rest-api-reference/insights.md)
+  * [/recordings](reference/whereby-rest-api-reference/recordings.md)
+  * [/transcriptions](reference/whereby-rest-api-reference/transcriptions.md)
+  * [/summaries](reference/whereby-rest-api-reference/summaries.md)
+  * [/rooms](reference/whereby-rest-api-reference/rooms.md)
 * [Web Component Reference](reference/using-the-whereby-embed-element.md)
 * [React Hooks Reference](reference/react-hooks-reference/README.md)
   * [Quick Start](reference/react-hooks-reference/quick-start/README.md)

@@ -44,7 +44,7 @@ Response:
 
 ### Searching insights for rooms with a prefix
 
-After you've applied `roomNamePrefix` to your URLs, you can then use our [API](../../reference/whereby-rest-api-reference.md#meetings-2) to search for rooms containing that prefix.
+After you've applied `roomNamePrefix` to your URLs, you can then use our [API](../../reference/whereby-rest-api-reference/#meetings-2) to search for rooms containing that prefix.
 
 Example GET request URL:
 
@@ -72,4 +72,4 @@ Response
 }
 ```
 
-Read more about [creating rooms using the API](./), and refer to our [API reference](../../reference/whereby-rest-api-reference.md) for further details.
+Read more about [creating rooms using the API](./), and refer to our [API reference](../../reference/whereby-rest-api-reference/) for further details.

@@ -29,13 +29,13 @@ At the moment the following event types are supported:
 
 Events are delivered to their corresponding webhook endpoint in JSON format, as the body of an HTTP request. The table below describes their top-level attributes.
 
-| Property     | Description                                                                                                                                                                    |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`         | String that uniquely identifies the event.                                                                                                                                     |
-| `apiVersion` | The Whereby API version used to populate data. Refer to the details on [Versioning](../../reference/whereby-rest-api-reference.md#versioning) for how webhook data may change. |
-| `createdAt`  | ISO representation of the creation date of the event.                                                                                                                          |
-| `type`       | The event’s type identifier, e.g. `room.client.joined`                                                                                                                         |
-| `data`       | Object containing information associated with the event.                                                                                                                       |
+| Property     | Description                                                                                                                                                                  |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`         | String that uniquely identifies the event.                                                                                                                                   |
+| `apiVersion` | The Whereby API version used to populate data. Refer to the details on [Versioning](../../reference/whereby-rest-api-reference/#versioning) for how webhook data may change. |
+| `createdAt`  | ISO representation of the creation date of the event.                                                                                                                        |
+| `type`       | The event’s type identifier, e.g. `room.client.joined`                                                                                                                       |
+| `data`       | Object containing information associated with the event.                                                                                                                     |
 
 ## In-Room Data properties
 
@@ -110,10 +110,10 @@ An example of a webhook event object:
 
 Properties in `data` that are common to all transcription webhook events:
 
-| Property          | Description                                                                            |
-| ----------------- | -------------------------------------------------------------------------------------- |
-| `transcriptionId` | The identifier of the transcription that has finished processing or failed to process. |
-| `type`            | The type of transcription, `LIVE_TRANSCRIPTION` for Session Transcription or `RECORDING_TRANSCRIPTION` for recording based transcription |  
+| Property          | Description                                                                                                                              |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `transcriptionId` | The identifier of the transcription that has finished processing or failed to process.                                                   |
+| `type`            | The type of transcription, `LIVE_TRANSCRIPTION` for Session Transcription or `RECORDING_TRANSCRIPTION` for recording based transcription |
 
 Additional properties in data for just `transcription.finished`:
 

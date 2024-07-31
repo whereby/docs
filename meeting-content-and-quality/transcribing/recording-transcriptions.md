@@ -49,7 +49,7 @@ If you want to automate the process of transcribing recorded Whereby sessions, y
 First make sure that meetings are configured to use cloud recording with Whereby-provided storage:&#x20;
 
 * If you want to use cloud recording with Whereby-provided storage **globally for all rooms**, go to “Configure” → “Recording” section of your customer portal and choose "Whereby-hosted cloud recording" option with the trigger and recording format of your choice.
-* If you prefer to set the **recording type for each room or meeting individually**, create the meeting with [POST /meetings](../../reference/whereby-rest-api-reference.md#meetings-1) request using the following parameters for recording (with the `"startTrigger"` and `"fileFormat"` of your choice):&#x20;
+* If you prefer to set the **recording type for each room or meeting individually**, create the meeting with [POST /meetings](../../reference/whereby-rest-api-reference/#meetings-1) request using the following parameters for recording (with the `"startTrigger"` and `"fileFormat"` of your choice):&#x20;
 
 ```json
 "recording": {
@@ -68,18 +68,18 @@ Depending on the type of recording trigger specified for the meeting, it will be
 
 When the recording is completed, Whereby sends a `recording.finished` [webhook](../insights-suite-and-api/webhooks.md#cloud-recording-data-properties) event. Hook onto that event to fetch the `recordingId` of the session that you want to transcribe.&#x20;
 
-Then send a [POST /transcriptions](../../reference/whereby-rest-api-reference.md#transcriptions-1) request with the  `recordingId` to start the transcription job.&#x20;
+Then send a [POST /transcriptions](../../reference/whereby-rest-api-reference/#transcriptions-1) request with the  `recordingId` to start the transcription job.&#x20;
 
 The transcription process may take some time, especially for recordings longer than 30 minutes. Once the transcript is ready, Whereby sends a `transcription.finished` [webhook](../insights-suite-and-api/webhooks.md#transcription-data-properties) event. Hook onto that event to fetch the `transcriptionId` of the session that you want to transcribe.&#x20;
 
-Send a [GET /transcriptions/{transcriptionId}/access-link](../../reference/whereby-rest-api-reference.md#transcriptions-transcriptionid-access-link) request to get the download link of the transcription file. Transcripts are downloaded as .md files.&#x20;
+Send a [GET /transcriptions/{transcriptionId}/access-link](../../reference/whereby-rest-api-reference/#transcriptions-transcriptionid-access-link) request to get the download link of the transcription file. Transcripts are downloaded as .md files.&#x20;
 
 #### Delete the recording and transcription files
 
 Both the recording and the transcript of the session will be stored in the Whereby-provided storage until you delete them. If you want to optimise the cost or minimise the time when your sessions' content is stored in the Whereby-provided storage you can delete the assets with 2 API requests:
 
-* [DELETE /recordings/{recordingId}](../../reference/whereby-rest-api-reference.md#recordings-recordingid-1)
-* [DELETE /transcriptions/{transcriptionId}](../../reference/whereby-rest-api-reference.md#transcriptions-transcriptionid-1)    &#x20;
+* [DELETE /recordings/{recordingId}](../../reference/whereby-rest-api-reference/#recordings-recordingid-1)
+* [DELETE /transcriptions/{transcriptionId}](../../reference/whereby-rest-api-reference/#transcriptions-transcriptionid-1)    &#x20;
 
 ## Supported Languages
 

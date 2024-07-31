@@ -41,7 +41,7 @@ After you've created a locked room, there are a variety of ways you can customiz
 
 1. Choose the device review options that hosts and participants experience during the pre-call phase. We offer standard device reviews or full device and connectivity tests. These options can be  managed globally via [the dashboard](https://docs.whereby.com/whereby-101/customizing-rooms/dashboard-preferences#pre-call-review) or various [URL parameters](https://docs.whereby.com/whereby-101/customizing-rooms/using-url-parameters#precallceremonycanskip-on)\
    ![](../../.gitbook/assets/precall-screenshot.png)<img src="../../.gitbook/assets/precall-screenshot2.png" alt="" data-size="original">
-2. Add a unique background image for the waiting room precall flow with our [API endpoint](../../reference/whereby-rest-api-reference.md#rooms-roomname-theme-room-knock-page-background)
+2. Add a unique background image for the waiting room precall flow with our [API endpoint](../../reference/whereby-rest-api-reference/#rooms-roomname-theme-room-knock-page-background)
 
 ### User Experience
 

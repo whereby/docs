@@ -18,7 +18,7 @@ You can quickly get a clear understanding of what's happening over time and see 
 
 To access the Insights suite, log in to your Whereby Embedded account and visit the "Insights" section.
 
-You can also query the Insights suite data through the [Whereby REST API](../../reference/whereby-rest-api-reference.md#get-meetings), which allows you to programmatically use it for things like billing, operations, or even to create a dashboard of your own.
+You can also query the Insights suite data through the [Whereby REST API](../../reference/whereby-rest-api-reference/#get-meetings), which allows you to programmatically use it for things like billing, operations, or even to create a dashboard of your own.
 
 {% hint style="info" %}
 Insights can take 10-15 minutes to update accordingly on the dashboard and via the GET endpoints

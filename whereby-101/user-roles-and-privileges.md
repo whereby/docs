@@ -111,4 +111,4 @@ Meetings created in "[group](using-the-rest-api/#creating-rooms)" mode can suppo
 }
 ```
 
-Explore more in the [API reference](../reference/whereby-rest-api-reference.md).
+Explore more in the [API reference](../reference/whereby-rest-api-reference/).

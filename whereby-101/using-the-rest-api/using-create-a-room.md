@@ -26,7 +26,7 @@ The Room Overview page that follows gives you a view at a glance of what you hav
 If you want to review these room details again at a later point in time, you can find an overview of all rooms you've created (incl. demo rooms and rooms generated through the API) in the new “Rooms” section that's linked from the sidebar.&#x20;
 
 {% hint style="info" %}
-While the “Create a room” flow is perfect for getting started, and is probably sufficient if you only need to create a handful of meeting rooms, we recommend looking into the [REST API documentation](../../reference/whereby-rest-api-reference.md) to generate rooms on-the-fly, and unlock the full power of Whereby Embedded.
+While the “Create a room” flow is perfect for getting started, and is probably sufficient if you only need to create a handful of meeting rooms, we recommend looking into the [REST API documentation](../../reference/whereby-rest-api-reference/) to generate rooms on-the-fly, and unlock the full power of Whereby Embedded.
 {% endhint %}
 
 ### Deleting rooms and endDate
@@ -38,5 +38,5 @@ The `endDate` property is used to indicate the time at which the room will be ma
 One hour after the `endDate` things like [Webhook](../../meeting-content-and-quality/insights-suite-and-api/webhooks.md) events, [host](../user-roles-and-privileges.md) privileges, new cloud recordings, and minutes consumption will no longer function. The room will then automatically be deleted within 24 hours of the `endDate` provided.
 
 {% hint style="success" %}
-If you'd like to limit the length of a meeting and verify a room is no longer being used, you can delete a room [via API request](../../reference/whereby-rest-api-reference.md#meetings-meetingid-1). A deletion request will remove all participants and prevent any further use. You can also keep track of when a session start via [webhooks](../../meeting-content-and-quality/insights-suite-and-api/webhooks.md) to limit a meeting by length.
+If you'd like to limit the length of a meeting and verify a room is no longer being used, you can delete a room [via API request](../../reference/whereby-rest-api-reference/#meetings-meetingid-1). A deletion request will remove all participants and prevent any further use. You can also keep track of when a session start via [webhooks](../../meeting-content-and-quality/insights-suite-and-api/webhooks.md) to limit a meeting by length.
 {% endhint %}

@@ -153,11 +153,11 @@ If you want to automate the process of summarising Whereby sessions, you can do 
 
 Summaries are derived from session transcriptions, so you need to find the `transcriptionId` of the session to be summarised.
 
-You can get the `transcriptionId` of an individual session from the `transcription.finished` [webhook](insights-suite-and-api/webhooks.md#transcription-data-properties) event. Alternatively, you can fetch the list of all transcriptions with a [GET /transcriptions](../reference/whereby-rest-api-reference.md#transcriptions-1) request.
+You can get the `transcriptionId` of an individual session from the `transcription.finished` [webhook](insights-suite-and-api/webhooks.md#transcription-data-properties) event. Alternatively, you can fetch the list of all transcriptions with a [GET /transcriptions](../reference/whereby-rest-api-reference/#transcriptions-1) request.
 
 #### Trigger the summary process
 
-In order to summarise the transcript, send a [POST request to /summaries](../reference/whereby-rest-api-reference.md#summaries-2) endpoint with the `transcriptionId` and the desired summary template in the request body:
+In order to summarise the transcript, send a [POST request to /summaries](../reference/whereby-rest-api-reference/#summaries-2) endpoint with the `transcriptionId` and the desired summary template in the request body:
 
 ```json
 { 
@@ -174,9 +174,9 @@ For each session transcript, only one summary can be created at a time. If you w
 
 #### Fetch the summary
 
-You can fetch an individual summary with a [GET /summaries/{summaryId} ](../reference/whereby-rest-api-reference.md#summaries-summaryid)request.&#x20;
+You can fetch an individual summary with a [GET /summaries/{summaryId} ](../reference/whereby-rest-api-reference/#summaries-summaryid)request.&#x20;
 
-Alternatively, you can fetch all summaries with a [GET /summaries](../reference/whereby-rest-api-reference.md#summaries) request, witch returns a paginated response containing 25 items per page.
+Alternatively, you can fetch all summaries with a [GET /summaries](../reference/whereby-rest-api-reference/#summaries) request, witch returns a paginated response containing 25 items per page.
 
 The summarisation process is running in the background and usually takes about a minute to complete. There is no webhook event sent when the summary is finished, so you need to poll the endpoint and read the `state` field of the response.
 
@@ -186,7 +186,7 @@ For `state: in_progress` the `summary` field is empty. Once the process is compl
 
 Session summaries are stored in Whereby database until you delete them.
 
-You can delete a summary with a [DELETE /summaries/{summaryId} ](../reference/whereby-rest-api-reference.md#summaries-summaryid-1)request where you expect a `204 No Content` response.
+You can delete a summary with a [DELETE /summaries/{summaryId} ](../reference/whereby-rest-api-reference/#summaries-summaryid-1)request where you expect a `204 No Content` response.
 
 ## Known limitations
 

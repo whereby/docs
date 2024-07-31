@@ -32,7 +32,7 @@ You may also choose to store cloud recordings in an Amazon S3 bucket owned and m
 
 ## Setup
 
-You can access recording settings and options from the “Configure” → “Recording” section of your customer portal. You can also specify recording preferences via the API during a [room creation](../../reference/whereby-rest-api-reference.md#create-meeting) request.
+You can access recording settings and options from the “Configure” → “Recording” section of your customer portal. You can also specify recording preferences via the API during a [room creation](../../reference/whereby-rest-api-reference/#create-meeting) request.
 
 {% hint style="info" %}
 When configuring cloud recording options via the dashboard, it will apply these as default settings for all rooms created. However, you can override the defaults by specifying different preferences within the POST requests used to create meetings.

@@ -47,7 +47,7 @@ Chat must be enabled for file sharing to work. You can enable chat for all rooms
 
 #### Per room configuration
 
-You can override global configuration for individual rooms via the API during a [room creation](../../reference/whereby-rest-api-reference.md#create-meeting) request or with an [attribute or parameter](using-url-parameters.md) of `fileSharing=<on|off>`.
+You can override global configuration for individual rooms via the API during a [room creation](../../reference/whereby-rest-api-reference/#create-meeting) request or with an [attribute or parameter](using-url-parameters.md) of `fileSharing=<on|off>`.
 
 ## Restrictions and Limitations
 

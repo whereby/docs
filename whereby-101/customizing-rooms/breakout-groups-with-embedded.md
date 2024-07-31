@@ -17,7 +17,7 @@ With Breakout Groups in Whereby Embedded you can easily implement collaborative 
 
 To use Breakout Groups you'll need to ensure the following is true. All of these conditions must be met for Breakout Groups to function properly, so if you're having issues implementing Breakout Groups these are good things to double check:
 
-* The meeting is set to the `group` roomMode during [meeting creation](../../reference/whereby-rest-api-reference.md#create-meeting)&#x20;
+* The meeting is set to the `group` roomMode during [meeting creation](../../reference/whereby-rest-api-reference/#create-meeting)&#x20;
 * You are using the [`?breakout=on`](using-url-parameters.md#breakout-less-than-on-or-off-greater-than) parameter/attribute if you have `?minimal` enabled
 * The meeting will happen between the meeting creation and `endDate` that was defined in the API request to create the room
 * You are using [Host URLs](../user-roles-and-privileges.md) and will have a Host in the meeting to start the breakout session

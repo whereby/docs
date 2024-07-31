@@ -44,7 +44,7 @@ You can choose between the following transcription triggers:
 
 If you want to use Session Transcription for some of your sessions, or if you need a different configuration for some of the sessions, you can configure Session Transcription individually for the room. Room parameters will override the global Session Transcription settings.&#x20;
 
-To do so, create the room with [POST /meetings](../../reference/whereby-rest-api-reference.md#meetings-1) request and specify the transcription options (with the `"startTrigger"` and language of your choice):&#x20;
+To do so, create the room with [POST /meetings](../../reference/whereby-rest-api-reference/#meetings-1) request and specify the transcription options (with the `"startTrigger"` and language of your choice):&#x20;
 
 ```json
 "liveTranscription": { 
@@ -73,13 +73,13 @@ If you want to automate your transcription process, you can do so programaticall
 
 Once the transcript is ready, Whereby sends a `transcription.finished` [webhook](../insights-suite-and-api/webhooks.md#transcription-data-properties) event. Hook onto that event to fetch the `transcriptionId` of the session that you want to transcribe.&#x20;
 
-Send a [GET /transcriptions/{transcriptionId}/access-link](../../reference/whereby-rest-api-reference.md#transcriptions-transcriptionid-access-link) request to get the download link of the transcription file. Transcripts are downloaded as .md files.&#x20;
+Send a [GET /transcriptions/{transcriptionId}/access-link](../../reference/whereby-rest-api-reference/#transcriptions-transcriptionid-access-link) request to get the download link of the transcription file. Transcripts are downloaded as .md files.&#x20;
 
-All transcripts will be stored in the Whereby-provided storage until you delete them. If you want to  minimise the time when your sessions' content is stored in the Whereby-provided storage, you can delete the transcript with [DELETE /transcriptions/{transcriptionId}](../../reference/whereby-rest-api-reference.md#transcriptions-transcriptionid-1) request.
+All transcripts will be stored in the Whereby-provided storage until you delete them. If you want to  minimise the time when your sessions' content is stored in the Whereby-provided storage, you can delete the transcript with [DELETE /transcriptions/{transcriptionId}](../../reference/whereby-rest-api-reference/#transcriptions-transcriptionid-1) request.
 
 ## Supported languages
 
-Session Transcription generates a transcript in the specified language. You need to declare the language used by your session participants in advance - in the global configuration or individually for each room with [POST /meetings](../../reference/whereby-rest-api-reference.md#meetings-1) request. Once the room is created, you cannot change the language of the Session Transcription.&#x20;
+Session Transcription generates a transcript in the specified language. You need to declare the language used by your session participants in advance - in the global configuration or individually for each room with [POST /meetings](../../reference/whereby-rest-api-reference/#meetings-1) request. Once the room is created, you cannot change the language of the Session Transcription.&#x20;
 
 The following languages are supported by Session Transcription: Bulgarian (bg), Catalan (ca), Chinese (Mandarin, Simplified) (zh), Chinese (Mandarin, Traditional) (zh-TW), Czech (cs), Danish (da), Dutch (nl), English (en), Estonian (et), Finnish (fi), Flemish (nl-BE), French (fr), German (de), Greek (el), Hindi (hi), Hungarian (hu), Indonesian (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Malay (ms), Norwegian (no), Polish (pl), Portuguese (pt), Brazilian Portuguese (pt-BR), Romanian (ro), Russian (ru), Slovak (sk), Spanish (es), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk), Vietnamese (vi).
 

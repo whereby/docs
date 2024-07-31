@@ -21,6 +21,8 @@ Session transcripts are created from live streaming of Whereby session audio in 
 
 You can enable and configure Session Transcription globally for your account, or individually for each room. All transcripts can be downloaded manually through the customer portal, or programatically with the API requests.
 
+### Global configuration
+
 {% hint style="info" %}
 When you enable Session Transcription globally through the customer portal, these settings become the default for all rooms and sessions. Specifically, enabling Session Transcription globally will result in all sessions being transcribed, including sessions in rooms created previously. You can override these global settings by specifying the transcription options for each room individually in the [POST /meetings](https://www.notion.so/o/UqLY7vLb01EgY68ZG0GF/s/c7hN8ZKHNZris5300KEl/\~/changes/551/reference/whereby-rest-api-reference#meetings-1) requests.
 {% endhint %}
@@ -35,6 +37,10 @@ You can choose between the following transcription triggers:
   Transcription will start when the first person joins and end when the last person leaves.&#x20;
 * **Auto-start (2 people)**\
   Transcription will start when 2 people join a room and end when the last person leaves.
+* **Manual**\
+  The host will start and stop transcription using 'Transcribe' button in the meeting toolbar.
+
+### Per room configuration
 
 If you want to use Session Transcription for some of your sessions, or if you need a different configuration for some of the sessions, you can configure Session Transcription individually for the room. Room parameters will override the global Session Transcription settings.&#x20;
 
@@ -47,7 +53,11 @@ To do so, create the room with [POST /meetings](../../reference/whereby-rest-api
     },
 ```
 
-You can choose between `"automatic"` and `"automatic-2nd-participant"` triggers, and below you will find the [list of supported languages](session-transcription.md#supported-languages).
+You can choose between `"automatic"`, `"automatic-2nd-participant"` and `"manual"` triggers, and below you will find the [list of supported languages](session-transcription.md#supported-languages).
+
+{% hint style="info" %}
+It is not possible to combine multiple transcription triggers. If you choose one of the automatic triggers, the host will not be able to stop the transcription during the session.&#x20;
+{% endhint %}
 
 When the session is transcribed, the participants see a notification circle in the top-left meeting status bar:
 

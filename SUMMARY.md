@@ -72,7 +72,6 @@
 
 ## 🖥️ Reference
 
-* [test ref docs](reference/test-ref-docs.md)
 * [REST API Reference](reference/whereby-rest-api-reference/README.md)
   * [/meetings](reference/whereby-rest-api-reference/meetings.md)
   * [/insights](reference/whereby-rest-api-reference/insights.md)

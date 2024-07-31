@@ -6,10 +6,6 @@ description: >-
 
 # File sharing
 
-{% hint style="warning" %}
-This feature is coming soon to all paid Whereby Embedded plans.
-{% endhint %}
-
 File sharing is a feature of Whereby's chat and allows all participants in a video session to attach media files (images, documents, audio, and video) of up to 15 MB. Files are available for download throughout the session, making it easier to collaborate and share resources in real-time.
 
 {% hint style="info" %}

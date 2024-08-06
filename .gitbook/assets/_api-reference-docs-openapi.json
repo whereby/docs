@@ -383,19 +383,18 @@
                   },
                   "liveTranscription": {
                     "type": "object",
-                    "required": [
-                      "startTrigger"
-                    ],
+                    "required": ["startTrigger"],
                     "description": "A configuration object for Session Transcription\n",
                     "properties": {
                       "startTrigger": {
                         "type": "string",
                         "enum": [
                           "none",
+                          "manual",
                           "automatic",
                           "automatic-2nd-participant"
                         ],
-                        "description": "What type of trigger should happen in the meeting when all the information required to start a\nSession Transcription has been provided.\n- `null` - The value should be taken from the organization settings\n- `\"none\"` - Session Transcription will not be available for the meeting\n- `\"automatic\"` - The Session Transcription will be automatically started as soon as the first participant joins the\n                meeting.\n- `\"automatic-2nd-participant\"` - The Session Transcription will be automatically started as soon as the second\n                                participant joins the meeting.\n"
+                        "description": "What type of trigger should happen in the meeting when all the information required to start a\nSession Transcription has been provided.\n- `null` - The value should be taken from the organization settings\n- `\"none\"` - Session Transcription will not be available for the meeting\n- `\"manual\"` - Host can manually start/stop the Session Transcription via the UI in the meeting\n- `\"automatic\"` - The Session Transcription will be automatically started as soon as the first participant joins the\n                meeting.\n- `\"automatic-2nd-participant\"` - The Session Transcription will be automatically started as soon as the second\n                                participant joins the meeting.\n"
                       },
                       "language": {
                         "type": "string",

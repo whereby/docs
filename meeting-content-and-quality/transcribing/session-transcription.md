@@ -29,10 +29,12 @@ When you enable Session Transcription globally through the dashboard, these sett
 
 If you want to use Session Transcription for all your sessions, you can enable it globally for your account. Go to “Configure” → “Transcription” section of your customer portal and choose "Session Transcription" option. Then choose the trigger and the main language of your sessions.
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption><p>Global configuration of transcriptions for all your sessions</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-08-08 at 12.45.05.png" alt=""><figcaption><p>Global configuration of Session Transcription</p></figcaption></figure>
 
 You can choose between the following transcription triggers:
 
+* **Manual**\
+  The host will start and stop the transcription manually.&#x20;
 * **Auto-start (1 person)** \
   Transcription will start when the first person joins and end when the last person leaves.&#x20;
 * **Auto-start (2 people)**\
@@ -51,7 +53,7 @@ To do so, create the room with [POST /meetings](../../reference/whereby-rest-api
     },
 ```
 
-You can choose `"automatic"` or `"automatic-2nd-participant"` triggers, and below you will find the [list of supported languages](session-transcription.md#supported-languages).
+You can choose between `"manual"`, `"automatic"` or `"automatic-2nd-participant"` triggers, and below you will find the [list of supported languages](session-transcription.md#supported-languages).
 
 {% hint style="info" %}
 It is not possible to combine multiple transcription triggers. If you choose one of the automatic triggers, the host will not be able to stop the transcription during the session.&#x20;
@@ -134,7 +136,6 @@ You can to automate your transcription process programmatically with a combinati
 
 We’re excited about the future of API-assisted content processing and wanted to give you a sneak peek at what’s on the horizon. Upcoming features and improvements we’re actively working on:
 
-* Manual trigger, so that the host can start and stop transcribing the session.
 * [`<whereby-embed>` methods](../../reference/using-the-whereby-embed-element.md#sending-commands) to start and stop transcribing programatically.
 * Ability to save the transcript into customer-managed AWS S3 bucket.
 * Live preview of the transcript, visible to all session participants.

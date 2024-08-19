@@ -142,7 +142,7 @@ got event {"type":"leave","detail":{"removed":false}}
 ### Sending commands
 
 {% hint style="warning" %}
-For this feature to work, you must add the origin of your application to the "[Allowed domains](broken-reference)" section in your Whereby account. If not present, the following methods will not do anything.
+For this feature to work, you must add the origin of your application to the "[Allowed domains](../whereby-101/faq-and-troubleshooting/allowed-domains-and-localhost.md)" section in your Whereby account. If not present, the following methods will not do anything.
 {% endhint %}
 
 The `<whereby-embed>` component exposes a set of methods your application can invoke to perform actions in the room. Currently, the following methods are available:

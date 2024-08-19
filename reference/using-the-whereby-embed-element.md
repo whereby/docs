@@ -155,6 +155,8 @@ The `<whereby-embed>` component exposes a set of methods your application can in
 | `stopRecording()`                    | Stop cloud recording on behalf of the local user, who needs to be a host in the room.                        |
 | `startStreaming()`                   | Start streaming on behalf of the local user, who needs to be a host in the room.                             |
 | `stopStreaming()`                    | Stop streaming on behalf of the local user, who needs to be a host in the room.                              |
+| `startLiveTranscription()`           | Start live transcription on behalf of the local user, who needs to be a host in the room.                    |
+| `stopLiveTranscription()`            | Stop live transcription on behalf of the local user, who needs to be a host in the room.                     |
 | `toggleCamera([true \| false])`      | Toggle the local user's camera on or off. Without any arguments, it toggles depending on current state.      |
 | `toggleMicrophone([true \| false])`  | Toggle the local user's microphone on or off. Without any arguments, it toggles depending on current state.  |
 | `toggleScreenshare([true \| false])` | Toggle the local user's screenshare on or off. Without any arguments, it toggles depending on current state. |
@@ -168,6 +170,8 @@ room.startRecording(); // Start cloud recording
 room.stopRecording(); // Stop cloud recording
 room.startStreaming(); // Start streaming
 room.stopStreaming(); // Stop streaming
+room.startLiveTranscription(); // Start live transcription
+room.stopLiveTranscription(); // Stop live transcription
 room.toggleCamera(); // Camera will be turned on if off, and off if on
 room.toggleMicrophone(); // Microphone will be turned on if off, and off if on
 room.toggleScreenshare(); // Screenshare will be turned on if off, and off if on

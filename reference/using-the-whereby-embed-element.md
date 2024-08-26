@@ -150,6 +150,7 @@ The `<whereby-embed>` component exposes a set of methods your application can in
 | Method                               | Description                                                                                                  |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | `endMeeting()`                       | End meeting for all on behalf of the local user, who needs to be a host in the room.                         |
+| `knock()`                            | Knock on a locker room, on behalf of the local user.                                                         |
 | `leaveRoom()`                        | Allows local user to leave the room.                                                                         |
 | `startRecording()`                   | Start cloud recording on behalf of the local user, who needs to be a host in the room.                       |
 | `stopRecording()`                    | Stop cloud recording on behalf of the local user, who needs to be a host in the room.                        |

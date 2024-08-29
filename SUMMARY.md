@@ -35,6 +35,7 @@
 * [User roles & Meeting Permissions](whereby-101/user-roles-and-privileges.md)
 * [FAQ](whereby-101/faq-and-troubleshooting/README.md)
   * [Accessibility](whereby-101/faq-and-troubleshooting/accessibility.md)
+  * [Whereby Words](whereby-101/faq-and-troubleshooting/whereby-words.md)
   * [Firewall & Security](whereby-101/faq-and-troubleshooting/firewall-and-security.md)
   * [HIPAA compliant setup](whereby-101/faq-and-troubleshooting/hipaa-compliant-setup.md)
   * [Allowed Domains & Localhost](whereby-101/faq-and-troubleshooting/allowed-domains-and-localhost.md)

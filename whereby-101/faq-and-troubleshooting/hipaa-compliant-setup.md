@@ -125,7 +125,7 @@ To ensure HIPAA compliance, the display name can simply be used as is.
 For an added measure of pseudo-anonymization or as a way of more easily integrating Whereby Embedded with your own app, the display name for a participant can be preset. This can be useful in several scenarios:
 
 * **Scenario 1:** if you want to use various identifiers for a user rather than the actual name, e.g. instead of `Jane Doe`, it will be `participant 1` , thus adding a pseudo-anonymization measure to fit in with your current setup.
-* **Scenario 2:** if you want a seamless integration with with your user handling flow, where e.g. one user is logged into your web app and you would like to pick up their `userId` or `userName` and have it as the display name in Whereby.
+* **Scenario 2:** if you want a seamless integration with your user handling flow, where e.g. one user is logged into your web app and you would like to pick up their `userId` or `userName` and have it as the display name in Whereby.
 
 To do either of the above, you can refer to the "[Using URL parameters](../customizing-rooms/using-url-parameters.md)" section of the Whereby Developer documentation and use the URL parameter `?displayName=` &#x20;
 

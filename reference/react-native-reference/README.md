@@ -21,7 +21,7 @@ yarn add @whereby.com/react-native-sdk
 ```
 {% endtab %}
 
-{% tab title="Untitled" %}
+{% tab title="pnpm" %}
 ```bash
 pnpm add @whereby.com/react-native-sdk
 ```

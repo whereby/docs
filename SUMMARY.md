@@ -19,6 +19,7 @@
     * [Using Flutter](whereby-101/create-your-video/in-a-mobile-app/in-flutter.md)
     * [Using React Native](whereby-101/create-your-video/in-a-mobile-app/in-react-native.md)
   * [Github SDK Examples](whereby-101/create-your-video/examples.md)
+  * [Meeting scheduling with Cronofy](whereby-101/create-your-video/meeting-scheduling-with-cronofy.md)
 * [Generating Room URLs](whereby-101/using-the-rest-api/README.md)
   * [Name prefixes](whereby-101/using-the-rest-api/name-prefixes.md)
   * [Using “Create a room”](whereby-101/using-the-rest-api/using-create-a-room.md)

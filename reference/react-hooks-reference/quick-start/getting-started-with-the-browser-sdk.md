@@ -78,7 +78,32 @@ export default Meeting;
 * `components`, an object containing the pre-bound components available in the room; and
 * `actions`, an object representing the available actions in the room.
 
-This tutorial will introduce you to all three.
+This tutorial will introduce you to all three in more detail later, but first we need to join the room.
+
+The `actions` object contains `joinRoom` and `leaveRoom` functions.
+
+`joinRoom` does what it says on the tin, it tells the SDK to join the provided room. You can attach this to a button if you like, but for now we'll add a simple `useEffect` hook to join the room as soon as the component is rendered.
+
+```tsx
+//…
+const connection = useRoomConnection(MEETING_URL, mediaOptions);
+
+const { actions: { joinRoom, leaveRoom } } = connection;
+
+useEffect(() => {
+  joinRoom();
+  return () => {
+    leaveRoom();
+  }
+}, []);
+
+return (
+  <>
+  </>
+)
+```
+
+We also provide a cleanup function to `useEffect` that will leave the room if the component is unmounted.
 
 ### **See yourself on screen**
 
@@ -274,5 +299,60 @@ export default Meeting;
 From here, you're ready to add CSS to change your meeting layout. Or, you can replace the default browser buttons with custom icon components.
 
 Whereby's Browser SDK is a truly ["white-label" solution for video calling](https://whereby.com/information/embedded). It decouples the video stream from the standard Whereby UI so that you can create rich video conferencing, [virtual classrooms](https://whereby.com/information/embedded/elearning), or [telehealth](https://whereby.com/information/embedded/healthcare) experiences that reflect you or your brand.
+
+### Join a locked room
+
+Whereby rooms can be locked, allowing room hosts to control who enters a room.&#x20;
+
+The `actions` object has a `knock` function that we can use to let the host know we'd like to join their room.
+
+When the room `state.connectionStatus` is `room_locked`, we can render a button to `knock`, and the `connectionState` will update to `knocking` until the host lets us in. A simple implementation of this might look like this:
+
+```tsx
+const Meeting = () => {
+    const { state, actions } = useRoomConnection(roomUrl);
+    const { joinRoom, leaveRoom } = actions
+    const handleKnock = async () => {
+        actions.knock();
+    };
+
+    React.useEffect(() => {
+        joinRoom();
+        return () => {
+            leaveRoom()
+        };
+    }, [joinRoom, leaveRoom]);
+
+    if (state.connectionStatus === "ready") {
+        return (
+            <div>
+                Loading...
+            </div>
+        );
+    }
+
+    if (state.connectionStatus === "room_locked") {
+        return (
+            <div>
+                <button onClick={() => handleKnock()}>Knock</button>
+            </div>
+        );
+    }
+
+    if (state.connectionStatus === "knocking") {
+        return (
+            <div>
+                Knocking
+            </div>
+        );
+    }
+    
+    return (
+        <div style={{width: "100%", height: "100%"}}>
+            <VideoGrid />
+         </div>
+    );
+}
+```
 
 > Written by [Tiffany Brown](https://whereby.com/blog/author-tiffany-brown/)

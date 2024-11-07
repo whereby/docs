@@ -7,12 +7,12 @@ description: >-
 
 # Session Transcription
 
-{% hint style="info" %}
-Session Transcription for Grow (custom) plan customers is currently available on demand. Email us at embedded@whereby.com if you want to start using Session Transcription. _Terms and conditions apply_
+{% hint style="warning" %}
+Session Transcriptions is currently in beta testing and access is currently limited.
 {% endhint %}
 
-{% hint style="success" %}
-Session Transcription is a supplementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).&#x20;
+{% hint style="info" %}
+Session Transcription for Grow (custom) plan customers is currently available on demand. Email us at embedded@whereby.com if you want to start using Session Transcription. _Terms and conditions apply_
 {% endhint %}
 
 Session transcripts are created by live streaming Whereby session audio in real time. After the session is finished they are saved as text files accessible from the dashboard or via [the API](../../reference/whereby-rest-api-reference/transcriptions.md). You can use the transcripts as a standalone resource (eg. for compliance purposes) or send to an external service for post processing (eg. to derive key topics or create a session summary).&#x20;

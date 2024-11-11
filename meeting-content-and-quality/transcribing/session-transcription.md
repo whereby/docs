@@ -25,13 +25,7 @@ We offer two storage options for the Session Transcription feature.&#x20;
 
 By choosing Whereby-provided storage for session transcriptions, you can can take full advantage of Whereby's session transcriptions without the need to configure and maintain your own Amazon S3 bucket for transcription storage.
 
-Depending on your plan, you will have some Whereby-provided storage quota available for free. For example, Whereby Build customers have 30 GB days of storage included in their plan. They can store 1 GB of recordings for 30 days, 2 GB of recordings for 15 days or 30 GB of recordings for 1 day each month for free, at no additional cost.
-
-There is an additional storage fee applied to transcriptions saved in Whereby-provided storage above the free storage quota available in your plan. You can check the current price of Whereby-provided storage as well as available free storage quota on [Whereby's pricing page](https://whereby.com/information/embedded/pricing) or in the "Subscription" section of your customer portal.  &#x20;
-
-Whereby would not delete your transcription files automatically, so we recommend that you periodically delete the obsolete transcriptions from Whereby storage or download them to the storage of your choice.
-
-You can delete or download the transcriptions either through the "Transcriptions" page in Whereby customer portal or using our [Transcriptions API](../../reference/whereby-rest-api-reference/transcriptions.md).
+You can view, delete or download these transcriptions either through the "Transcriptions" page in Whereby customer portal or using our [Transcriptions API](../../reference/whereby-rest-api-reference/transcriptions.md).
 
 ### Your Amazon S3 bucket
 

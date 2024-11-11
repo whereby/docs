@@ -17,6 +17,26 @@ Session Transcription for Grow (custom) plan customers is currently available on
 
 Session transcripts are created by live streaming Whereby session audio in real time. After the session is finished they are saved as text files accessible from the dashboard or via [the API](../../reference/whereby-rest-api-reference/transcriptions.md). You can use the transcripts as a standalone resource (eg. for compliance purposes) or send to an external service for post processing (eg. to derive key topics or create a session summary).&#x20;
 
+## Storage options
+
+We offer two storage options for the Session Transcription feature.&#x20;
+
+### Whereby-provided storage
+
+By choosing Whereby-provided storage for session transcriptions, you can can take full advantage of the flexibility of cloud recording without the need to configure and maintain your own Amazon S3 bucket for transcription storage.
+
+Depending on your plan, you will have some Whereby-provided storage quota available for free. For example, Whereby Build customers have 30 GB days of storage included in their plan. They can store 1 GB of recordings for 30 days, 2 GB of recordings for 15 days or 30 GB of recordings for 1 day each month for free, at no additional cost.
+
+There is an additional storage fee applied to transcriptions saved in Whereby-provided storage above the free storage quota available in your plan. You can check the current price of Whereby-provided storage as well as available free storage quota on [Whereby's pricing page](https://whereby.com/information/embedded/pricing) or in the "Subscription" section of your customer portal.  &#x20;
+
+Whereby would not delete your transcription files automatically, so we recommend that you periodically delete the obsolete transcriptions from Whereby storage or download them to the storage of your choice.
+
+You can delete or download the transcriptions either through the "Transcriptions" page in Whereby customer portal or using our [Transcriptions API](../../reference/whereby-rest-api-reference/transcriptions.md).
+
+### Your Amazon S3 bucket
+
+You may also choose to store session transcriptions in an Amazon S3 bucket owned and managed by you. This is more technical to set up, but may suite your business needs better if you already own and manage Amazon S3 storage.
+
 ## Setup
 
 You can enable and configure Session Transcription globally for your account, or individually for each room. All transcripts can be downloaded manually through the dashboard, or programmatically with the API requests.
@@ -27,9 +47,11 @@ You can enable and configure Session Transcription globally for your account, or
 When you enable Session Transcription globally through the dashboard, these settings become the default for all rooms and sessions. Enabling Session Transcription globally will result in all sessions being transcribed, including sessions in rooms created previously. You can override these global settings by specifying the transcription on a [per room](session-transcription.md#per-room-configuration) basis
 {% endhint %}
 
-If you want to use Session Transcription for all your sessions, you can enable it globally for your account. Go to “Configure” → “Transcription” section of your customer portal and choose "Session Transcription" option. Then choose the trigger and the main language of your sessions.
+If you want to use Session Transcription for all your sessions, you can enable it globally for your account. Go to “Configure” → “Transcription” section of your customer portal and choose either "Whereby-hosted session transcriptions" or "Self-hosted session transcriptions" options. Then choose the trigger and the main language of your sessions.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-08-08 at 12.45.05.png" alt=""><figcaption><p>Global configuration of Session Transcription</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-11-11 at 11.45.38.png" alt=""><figcaption><p>Global configuration of Session Transcription</p></figcaption></figure>
+
+To set up your own self-hosted storage option for Session Transcription you will need AWS S3 credentials. Please refer to the guide provided for self-hosted recordings [here](../recording-with-embedded/cloud-recording.md#setup-and-information-in-s3) for further information on obtaining these credentials from AWS directly.
 
 You can choose between the following transcription triggers:
 
@@ -40,20 +62,27 @@ You can choose between the following transcription triggers:
 * **Auto-start (2 people)**\
   Transcription will start when 2 people join a room and end when the last person leaves.
 
+
+
 ### Per room configuration
 
 If you want to use Session Transcription for some of your sessions, or if you need a different configuration for some of the sessions, you can configure Session Transcription individually for the room. Room parameters will override the global Session Transcription settings.&#x20;
 
-To do so, create the room with [POST /meetings](../../reference/whereby-rest-api-reference/meetings.md) request and specify the transcription options with the `"startTrigger"` and language of your choice:&#x20;
+To do so, create the room with [POST /meetings](../../reference/whereby-rest-api-reference/meetings.md) request and specify the transcription options of your choice:&#x20;
 
 ```json
 "liveTranscription": { 
     "language": "en", 
-    "startTrigger": "automatic" 
-    },
+    "startTrigger": "automatic",
+    "destination": {
+        "provider": "whereby"
+    }
+},
 ```
 
-You can choose between `"manual"`, `"automatic"` or `"automatic-2nd-participant"` triggers, and below you will find the [list of supported languages](session-transcription.md#supported-languages).
+In the `"destination.provider"` option you can choose between `"whereby"` and `"s3"`. Please refer to the [POST /meetings](../../reference/whereby-rest-api-reference/meetings.md) API reference docs for further `"destination"` configuration options.
+
+For the `"startTrigger"` option you can choose between `"manual"`, `"automatic"` or `"automatic-2nd-participant"` triggers.&#x20;
 
 {% hint style="info" %}
 It is not possible to combine multiple transcription triggers. If you choose one of the automatic triggers, the host will not be able to stop the transcription during the session.&#x20;
@@ -62,6 +91,8 @@ It is not possible to combine multiple transcription triggers. If you choose one
 When the session is transcribed, the participants see a notification circle in the top-left meeting status bar:
 
 <figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Red circle in the top-left panel indicates session transcription in progress.</p></figcaption></figure>
+
+For the `"language"` option please refer to the [list of supported languages](session-transcription.md#supported-languages).
 
 ### Supported languages
 
@@ -137,7 +168,6 @@ You can to automate your transcription process programmatically with a combinati
 We’re excited about the future of API-assisted content processing and wanted to give you a sneak peek at what’s on the horizon. Upcoming features and improvements we’re actively working on:
 
 * [`<whereby-embed>` methods](../../reference/using-the-whereby-embed-element.md#sending-commands) to start and stop transcribing programatically.
-* Ability to save the transcript into customer-managed AWS S3 bucket.
 * Live preview of the transcript, visible to all session participants.
 * Ability to download the transcript by the host or participants.
 * Integration point to plug into the live transcript in real-time (eg. to send it into 3rd party processing tool like a chatbot).

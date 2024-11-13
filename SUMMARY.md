@@ -91,6 +91,7 @@
     * [Grid logic](reference/react-hooks-reference/guides-and-concepts/grid-logic.md)
     * [Custom Video Tiles with React](reference/react-hooks-reference/guides-and-concepts/custom-video-tiles-with-react.md)
     * [Usage with Next.js](reference/react-hooks-reference/guides-and-concepts/usage-with-next.js.md)
+    * [How to customize the toolbar](reference/react-hooks-reference/guides-and-concepts/how-to-customize-the-toolbar.md)
   * [API Reference](reference/react-hooks-reference/api-reference/README.md)
     * [WherebyProvider](reference/react-hooks-reference/api-reference/wherebyprovider.md)
     * [VideoView](reference/react-hooks-reference/api-reference/videoview.md)

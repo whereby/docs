@@ -1,17 +1,18 @@
 # /summaries
 
-{% swagger src="https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json" path="/summaries" method="post" %}
-[https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json](https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json)
+{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/summaries" method="post" %}
+[_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json" path="/summaries" method="get" %}
-[https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json](https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json)
+{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/summaries" method="get" %}
+[_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json" path="/summaries/{summaryId}" method="get" %}
-[https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json](https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json)
+{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/summaries/{summaryId}" method="get" %}
+[_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json" path="/summaries/{summaryId}" method="delete" %}
-[https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json](https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json)
+{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/summaries/{summaryId}" method="delete" %}
+[_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
+

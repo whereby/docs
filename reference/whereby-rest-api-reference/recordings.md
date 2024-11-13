@@ -1,21 +1,22 @@
 # /recordings
 
-{% swagger src="https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json" path="/recordings" method="get" %}
-[https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json](https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json)
+{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings" method="get" %}
+[_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json" path="/recordings/{recordingId}" method="get" %}
-[https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json](https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json)
+{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}" method="get" %}
+[_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json" path="/recordings/{recordingId}/access-link" method="get" %}
-[https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json](https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json)
+{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}/access-link" method="get" %}
+[_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json" path="/recordings/bulk-delete" method="post" %}
-[https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json](https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json)
+{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/bulk-delete" method="post" %}
+[_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json" path="/recordings/{recordingId}" method="delete" %}
-[https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json](https://raw.githubusercontent.com/nrolls/test-reference-docs/main/Whereby-api-reference.json)
+{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}" method="delete" %}
+[_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
 {% endswagger %}
+

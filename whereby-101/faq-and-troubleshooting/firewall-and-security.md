@@ -11,9 +11,12 @@ Connections are initiated in the **outbound** direction. There is no requirement
 If your firewall or proxy requires or allows whitelisting via domain, the following are relevant domains:
 
 * `*.sfu.whereby.com`
+* `*.sfu.svc.whereby.com`
 * `*.srv.whereby.com`
+* `*.svc.whereby.com`
 * `*.appearin.net`
 * `*.turn.whereby.com`
+* `*.turn.svc.whereby.com`
 
 ### IP Whitelisting
 
@@ -26,7 +29,9 @@ Whereby servers don't currently have a static range of IP addresses. We can prov
 Control messages between the clients and Whereby servers when in a call ("signaling") is transmitted over secure websockets (wss). These utilize the same ports as HTTPS, but will set up persistent two-way connections. Proxies and firewalls that intercept HTTPS traffic should be configured to allow websocket traffic towards these hosts/domains:
 
 * `*.sfu.whereby.com`
+* `*.sfu.svc.whereby.com`
 * `*.srv.whereby.com`
+* `*.svc.whereby.com`
 * `*.appearin.net`
 
 #### TURN/SFU (media)
@@ -36,4 +41,5 @@ In order to transmit video and audio, participants must be allowed to send and r
 These servers are placed across the globe and participants will connect to the closest ones. Participants will connect to port 443 on these servers, using either UDP or TCP. For call quality and experience, UDP is the preferred protocol. The TURN servers are identified by the hostname patterns:
 
 * `*.turn.whereby.com`
+* `*.turn.svc.whereby.com`
 * `turnserver.appearin.net`

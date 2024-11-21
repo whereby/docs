@@ -77,6 +77,7 @@ The property `roleName` will have one of the following values:
 * `granted_viewer`: The `roleName` that is assigned to a Participant if they are queued before a Host joins.
 * `recorder`: A cloud recording instance has started or stopped.
 * `streamer`: A streaming instance has started or stopped.
+* `captioner`: The meeting has been captioned or transcribed.
 
 An example of a webhook event object:
 

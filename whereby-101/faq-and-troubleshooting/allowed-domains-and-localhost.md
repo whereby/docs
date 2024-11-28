@@ -22,9 +22,13 @@ By default, embedding Whereby rooms will load from any domain they are hosted in
 
 <figure><img src="../../.gitbook/assets/allowed-domain-dashboard.png" alt=""><figcaption><p>Under "Configure", scroll down to the "Allowed domains" section </p></figcaption></figure>
 
-Remember that you also have to allow `localhost` if you wish to test the integration during development.
+Please note that domains **must** be prefixed with `https://` (except `localhost` which can be prefixed with `http://`) and have no path. Wildcards to allow all subdomains under a domain are permitted, for example `https://*.domain.com`.
 
-Please note that domains must be prefixed by `https://` (except `http://localhost`), and have no path. Wildcards to allow all subdomains under a domain are permitted, for example `https://*.domain.com`.
+{% hint style="info" %}
+For local development, you should also add `localhost:[port]` domains if you wish to test the integration during development. The`[port]` is mandatory when configuring for `localhost`. For example:&#x20;
+
+`https://mydomain.com http://localhost:3000 https://localhost:443`
+{% endhint %}
 
 {% hint style="success" %}
 If you are using another port than 443 for https, you need to include a line allowing it, for example `https://dev.domain.com:8080`.

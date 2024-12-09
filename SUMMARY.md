@@ -68,6 +68,7 @@
 
 ## 🚚 Developer Guides
 
+* [Quickly deploy Whereby to your domain](developer-guides/quickly-deploy-whereby-to-your-domain.md)
 * [Tracking Customer Usage](developer-guides/tracking-customer-usage.md)
 * [Migrating from Twilio](developer-guides/migrate-twilio/README.md)
   * [Twilio JS SDK Quick Migration](developer-guides/migrate-twilio/twilio-js-sdk-quick-migration.md)

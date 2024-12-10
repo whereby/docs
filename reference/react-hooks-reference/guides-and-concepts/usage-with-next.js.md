@@ -38,7 +38,15 @@ export default Provider;
 
 ```
 
-The next step is to include this provider anywhere in the app, but it needs to be above (a parent of), any component that will utilize the Whereby SDK. The root level `layout.tsx` is a natural place to put it, and that gives all pages and components access to it.
+The next step is to include this provider anywhere in the app, but it needs to be above (a parent of), any component that will utilize the Whereby SDK. The root level `layout.tsx` is a natural place to put it, and that gives all pages and components access to it. We need to import it using Next.js dynamic import, like this:
+
+`app/layout.tsx`
+
+```tsx
+const Provider = dynamic(() => import("../components/provider"), { ssr: false });
+```
+
+
 
 ### The room component
 

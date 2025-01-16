@@ -63,7 +63,9 @@ A client view can be either a participant or a screenshare.
 
 <table><thead><tr><th>Property</th><th width="294.3333333333333">Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td><code>string</code></td><td>Id of the participant waiting to be let in</td></tr><tr><td>displayName</td><td><code>string</code></td><td></td></tr></tbody></table>
 
+### Breakout: <mark style="color:green;">\<Object></mark> <a href="#waitingparticipant" id="waitingparticipant"></a>
 
+<table><thead><tr><th>Property</th><th width="294.3333333333333">Type</th><th>Description</th></tr></thead><tbody><tr><td>isActive</td><td><code>boolean</code></td><td>The state of the breakout session. If it's true, a breakout session is currently ongoing in the room</td></tr><tr><td>currentGroup</td><td>{ id: string, name: string } <code>| null</code></td><td>An object containing the information of the breakout group that the participant is currently in. <code>null</code>if the SDK participant is not in a group.</td></tr><tr><td>groupedParticipants</td><td>{ clients: <a data-mention href="types.md#remoteparticipant">#remoteparticipant</a>[],<br>group: { id: string, name: string}<br>} [] <br></td><td>List of the groups in the current breakout session, including the participants in each group.</td></tr><tr><td>participantsInCurrentGroup</td><td><a data-mention href="types.md#remoteparticipant">#remoteparticipant</a>[]</td><td>Participants in the current breakout group. Empty list if the SDK participants is not currently in a group.</td></tr></tbody></table>
 
 ## Events
 

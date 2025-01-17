@@ -42,7 +42,7 @@ The current state of the room. Use this state to render your custom video experi
 | liveStream              | [<mark style="color:blue;">`LiveStreamState`</mark>](../types.md#livestreamstate)`?`               | Set if live stream is enabled for the room                           |
 | waitingParticipants     | [`WaitingParticipant`](../types.md#waitingparticipant)`[]`                                         | A list of participants waiting to enter a locked room.               |
 | spotlightedParticipants | [ClientView](../types.md#clientview)\[]                                                            | A list of spotlighted participants                                   |
-| breakout                | [Breakout](../types.md#waitingparticipant-1)                                                       | The breakout group state of the room                                 |
+| breakout                | [Breakout](../types.md#breakout)                                                                   | The breakout group state of the room                                 |
 
 ### actions
 

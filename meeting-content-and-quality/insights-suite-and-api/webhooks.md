@@ -43,28 +43,23 @@ Please note that in-room webhook events are sent for interactions that happen be
 
 Properties in `data` that are common to all in-room webhook events:
 
-| Property    | Description                                                                                               |
-| ----------- | --------------------------------------------------------------------------------------------------------- |
-| `meetingId` | The identifier of the meeting that the user has joined/left or where the session has started/ended.       |
-| `roomName`  | The string that identifies the room assigned to the meeting. It’s the last path parameter of the roomUrl. |
+| Property    | Description                                                                                                 |
+| ----------- | ----------------------------------------------------------------------------------------------------------- |
+| `meetingId` | The identifier of the meeting that the user has joined/left or where the session has started/ended.         |
+| `roomName`  | The string that identifies the room assigned to the meeting. It’s the last path parameter of the `roomUrl`. |
 
 Additional properties in `data` for `room.client.joined` , `room.client.left room.client.knocked` and `room.client.knockCancelled`:
 
-| Property                                                                                                       | Description                                                                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| displayName                                                                                                    | The visible name displayed to others in the meeting.                                                                                                                             |
-| roomSessionId                                                                                                  | The roomSessionId for the meeting.                                                                                                                                               |
-| participantId                                                                                                  | The current user's participantId. Can be used for insights data.                                                                                                                 |
-| [metadata](../../whereby-101/customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than) | String that matches the "[metadata](../../whereby-101/customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than)" query parameter passed to the room URL. |
-| [externalId](../../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than) | String that matches the "[externalId](../../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than)" query parameter passed to the room URL. |
+<table><thead><tr><th width="374">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>displayName</code></td><td>The visible name displayed to others in the meeting.</td></tr><tr><td><code>roomSessionId</code></td><td>The <code>roomSessionId</code> for the meeting.</td></tr><tr><td><code>participantId</code></td><td>The current user's <code>participantId</code>. Can be used for insights data.</td></tr><tr><td><a href="../../whereby-101/customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than"><code>metadata</code></a></td><td>String that matches the "<a href="../../whereby-101/customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than">metadata</a>" query parameter passed to the room URL.</td></tr><tr><td><a href="../../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than"><code>externalId</code></a></td><td>String that matches the "<a href="../../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than">externalId</a>" query parameter passed to the room URL.</td></tr></tbody></table>
 
 Additional properties in data for just `room.client.joined` and `room.client.left`:
 
-| Property             | Description                                                                          |
-| -------------------- | ------------------------------------------------------------------------------------ |
-| roleName             | The client’s role depending on what URL they use to access the meeting.              |
-| numClients           | Number of clients connected to the meeting after the event.                          |
-| numClientsByRoleName | Number of clients connected to the meeting after the event, grouped by the roleName. |
+| Property               | Description                                                                                                                                                                 |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `roleName`             | The client’s role depending on what URL they use to access the meeting.                                                                                                     |
+| `numClients`           | Number of clients connected to the meeting after the event.                                                                                                                 |
+| `numClientsByRoleName` | Number of clients connected to the meeting after the event, grouped by the `roleName`.                                                                                      |
+| `isDialIn`             | `true`when a client has called into the room from a telephone with our [dial-in](https://docs.whereby.com/whereby-101/customizing-rooms/dial-in) feature, `false`otherwise. |
 
 The property `roleName` will have one of the following values:
 
@@ -142,7 +137,7 @@ Properties in `data` for the `recording.finished` webhook event:
 
 ## Validating events
 
-To prevent from [man-in-the-middle attacks ↗](https://en.wikipedia.org/wiki/Man-in-the-middle\_attack) , webhook requests to your endpoint contain a signature in the `Whereby-Signature` header. This string is generated with a unique secret that only you can view when creating or editing a webhook in the Embedded dashboard. Only Whereby and you have access to this secret, and no third party can send forged events to your endpoint. On top of that the header also includes a timestamp to help you prevent replay attacks. The header is composed of a timestamp and the signature itself, for example:
+To prevent from [man-in-the-middle attacks ↗](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) , webhook requests to your endpoint contain a signature in the `Whereby-Signature` header. This string is generated with a unique secret that only you can view when creating or editing a webhook in the Embedded dashboard. Only Whereby and you have access to this secret, and no third party can send forged events to your endpoint. On top of that the header also includes a timestamp to help you prevent replay attacks. The header is composed of a timestamp and the signature itself, for example:
 
 {% tabs %}
 {% tab title="Text" %}

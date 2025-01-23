@@ -137,6 +137,10 @@ Session Transcription generates a transcript in the specified language. You need
 
 ## Download and delete transcripts
 
+{% hint style="warning" %}
+This section only applies when you have chosen **Whereby-provided storage** in your transcription setup. There are no webhooks for S3 storage currently.
+{% endhint %}
+
 Transcripts are saved in Whereby-provided storage and are available for download soon after the session is finished.&#x20;
 
 Download the transcript manually from the **Configure->Transcriptions** section of your dashboard.

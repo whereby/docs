@@ -165,7 +165,6 @@ You can to automate your transcription process programmatically with a combinati
 
 We’re excited about the future of API-assisted content processing and wanted to give you a sneak peek at what’s on the horizon. Upcoming features and improvements we’re actively working on:
 
-* [`<whereby-embed>` methods](../../reference/using-the-whereby-embed-element.md#sending-commands) to start and stop transcribing programatically.
 * Live preview of the transcript, visible to all session participants.
 * Ability to download the transcript by the host or participants.
 * Integration point to plug into the live transcript in real-time (eg. to send it into 3rd party processing tool like a chatbot).

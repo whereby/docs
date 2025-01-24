@@ -178,7 +178,6 @@
         "required": [
           "transcriptionId",
           "roomSessionId",
-          "filename",
           "roomName",
           "startDate",
           "endDate",
@@ -197,7 +196,7 @@
           },
           "filename": {
             "type": "string",
-            "description": "The filename of the transcription."
+            "description": "The filename of the transcription. This parameter is only set if Whereby storage is selected."
           },
           "roomName": {
             "type": "string",

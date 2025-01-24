@@ -178,7 +178,6 @@
         "required": [
           "transcriptionId",
           "roomSessionId",
-          "filename",
           "roomName",
           "startDate",
           "endDate",
@@ -197,7 +196,7 @@
           },
           "filename": {
             "type": "string",
-            "description": "The filename of the transcription."
+            "description": "The filename of the transcription. This parameter is only set if Whereby storage is selected."
           },
           "roomName": {
             "type": "string",
@@ -225,8 +224,8 @@
           },
           "type": {
             "type": "string",
-            "enum": ["RECORDING_TRANSCRIPTION", "RECORDING_TRANSCRIPTION"],
-            "description": "The type of the transcription\n - `RECORDING_TRANSCRIPTION` - Session Transcription\n - `RECORDING_TRANSCRIPTION` - generated based on a recording"
+            "enum": ["LIVE_TRANSCRIPTION", "RECORDING_TRANSCRIPTION"],
+            "description": "The type of the transcription\n - `LIVE_TRANSCRIPTION` - Session Transcription\n - `RECORDING_TRANSCRIPTION` - generated based on a recording"
           }
         },
         "example": {
@@ -236,7 +235,8 @@
           "roomName": "room-name",
           "startDate": "2020-01-01T00:00:00.000Z",
           "endDate": "2020-01-01T00:00:00.000Z",
-          "state": "completed",
+          "state": "ready",
+          "type": "LIVE_TRANSCRIPTION",
           "createdAt": "2020-01-01T00:00:00.000Z"
         }
       },

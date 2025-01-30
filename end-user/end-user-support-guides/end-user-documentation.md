@@ -88,6 +88,16 @@ In Windows 10, you're able to set a default Microphone, but there are also syste
 3. Verify your browser has permission to access your camera\
 
 {% endtab %}
+
+{% tab title="Mobile" %}
+When permissions have been denied, you can tap the "Try Again" button and select to Allow.
+
+If they are still blocked, the only way to reset them is to go in to the Settings app of your device and find the permissions to reset. Here are the general steps to do so:
+
+1. On your device, open the Settings app
+2. Search for the application by its name
+3. Toggle on the microphone and camera permissions
+{% endtab %}
 {% endtabs %}
 
 ## Difficulty joining the room or not receiving any audio/video

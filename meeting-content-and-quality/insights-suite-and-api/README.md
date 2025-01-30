@@ -9,12 +9,12 @@ description: >-
 
 You can quickly get a clear understanding of what's happening over time and see the big picture, or get a more granular view for data points like:
 
-* 📈 How many Participant, Recording and Streaming minutes have been used
+* 📈 How many Participant, Recording and Live Streaming minutes have been used
 * 👨‍💻 The number of sessions/meetings happening over time
 * 👥 How many participants have joined video calls
 * :woman\_technologist:Each participant's call quality experience
 
-![Visit the "Insights" section of your Whereby Embedded account to access these reports. ](../../.gitbook/assets/insights\_suite\_1920x1250.webp)
+![Visit the "Insights" section of your Whereby Embedded account to access these reports. ](../../.gitbook/assets/insights_suite_1920x1250.webp)
 
 To access the Insights suite, log in to your Whereby Embedded account and visit the "Insights" section.
 

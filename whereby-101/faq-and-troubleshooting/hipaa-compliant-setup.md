@@ -37,7 +37,7 @@ Follow the steps below to verify you've created rooms that are HIPAA compliant. 
 
 1. In the API request set `isLocked: true`&#x20;
 2. Set the [room name](hipaa-compliant-setup.md#room-names) pattern in the API request `roomNamePattern = uuid`&#x20;
-3.  Disable [RTMP streaming](hipaa-compliant-setup.md#features-you-cannot-use-with-a-hipaa-compliant-setup) and room integrations by including the following in your POST creation requests:
+3.  Disable [RTMP live streaming](hipaa-compliant-setup.md#features-you-cannot-use-with-a-hipaa-compliant-setup) and room integrations by including the following in your POST creation requests:
 
     ```
         "roomPreferences": {
@@ -161,7 +161,7 @@ To support the HIPAA compliance of our customers, we will gladly provide our ISO
 
 Whereby Embedded can be used in a HIPAA compliant setup by our customers, however this comes with limitations that need to be in place to have adequate security and compliance with the requirements of the law.&#x20;
 
-* **Streaming** - Whereby meetings cannot be live streamed (using RTMP) and we also do not envision scenarios where a private, health related discussion will need to be live-streamed. Make sure you don't include any streaming config when you create rooms.
+* **Live Streaming** - Whereby meetings cannot be live streamed (using RTMP), and we also do not envision scenarios where a private, health-related discussion will need to be live streamed. Make sure you don't include any live streaming config when you create rooms.
 * **Integrations -** We have integrations built with Miro and YouTube that can be used in Whereby meeting rooms. Because these providers are not HIPAA compliant, you must make sure to disable integrations with [roomIntegrations=off](../customizing-rooms/using-url-parameters.md#roomintegrations) unless you're using another parameter that hides them like ?minimal.
 * **Transcriptions and Summaries** - Whereby session transcriptions and summaries are stored in Whereby-provided storage, which is currently not considered to be HIPAA compliant. Avoid using session transcriptions and session summaries to maintain HIPAA compliance of your usage of Whereby.
 

@@ -51,7 +51,7 @@
   * [Session Transcription](meeting-content-and-quality/transcribing/session-transcription.md)
   * [Recording Transcription](meeting-content-and-quality/transcribing/recording-transcriptions.md)
 * [Session summaries](meeting-content-and-quality/transcribing-sessions-1.md)
-* [Streaming RTMP](meeting-content-and-quality/streaming-with-embedded.md)
+* [Live streaming RTMP](meeting-content-and-quality/streaming-with-embedded.md)
 * [Quality Insights](meeting-content-and-quality/insights-suite-and-api/README.md)
   * [Real-time troubleshooting](meeting-content-and-quality/insights-suite-and-api/real-time-troubleshooting.md)
   * [Using the Insights dashboard](meeting-content-and-quality/insights-suite-and-api/using-the-insights-dashboard.md)

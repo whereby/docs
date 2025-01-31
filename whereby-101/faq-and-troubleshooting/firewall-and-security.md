@@ -17,6 +17,11 @@ If your firewall or proxy requires or allows whitelisting via domain, the follow
 * `*.appearin.net`
 * `*.turn.whereby.com`
 * `*.turn.svc.whereby.com`
+* `*.posthog.com`
+* `*.sentry.io`
+* `*.helpscout.net`
+* `*.amazonaws.net` (for user avatars)
+* `*.cloudfront.net`
 
 ### IP Whitelisting
 
@@ -36,7 +41,7 @@ Control messages between the clients and Whereby servers when in a call ("signal
 
 #### TURN/SFU (media)
 
-In order to transmit video and audio, participants must be allowed to send and receive packets containing media content. The optimal path for these packets is directly between participants, but where this is not possible or allowed Whereby provides a network of TURN servers that act as relays.&#x20;
+In order to transmit video and audio, participants must be allowed to send and receive packets containing media content. The optimal path for these packets is directly between participants, but where this is not possible or allowed Whereby provides a network of TURN servers that act as relays.
 
 These servers are placed across the globe and participants will connect to the closest ones. Participants will connect to port 443 on these servers, using either UDP or TCP. For call quality and experience, UDP is the preferred protocol. The TURN servers are identified by the hostname patterns:
 

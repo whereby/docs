@@ -15,6 +15,10 @@ Session Transcriptions is currently in beta testing and access is currently limi
 Session Transcription for Grow (custom) plan customers is currently available on demand. Email us at embedded@whereby.com if you want to start using Session Transcription. _Terms and conditions apply_
 {% endhint %}
 
+{% hint style="info" %}
+_What is an unmuted participant minute?_ This is calculated using the number of participants who are unmuted during a call. For example, a 60 minute meeting containing 2 people who are unmuted for the whole meeting would use 120 unmuted participant minutes. Alternatively, a 60 minute meeting with 3 participants, where only 2 participants were unmuted and the third participant was muted for the whole meeting, would also use 120 unmuted participant minutes. From the moment a participant is unmuted, this usage counts towards the number of unmuted participant minutes, even if they do not actively talk or engage on the call.
+{% endhint %}
+
 Session transcripts are created by live streaming Whereby session audio in real time. After the session is finished they are saved as text files accessible from the dashboard or via [the API](../../reference/whereby-rest-api-reference/transcriptions.md). You can use the transcripts as a standalone resource (eg. for compliance purposes) or send to an external service for post processing (eg. to derive key topics or create a session summary).&#x20;
 
 ## Storage options
@@ -43,7 +47,7 @@ When you enable Session Transcription globally through the dashboard, these sett
 
 If you want to use Session Transcription for all your sessions, you can enable it globally for your account. Go to “Configure” → “Transcription” section of your customer portal and choose either "Whereby-hosted session transcriptions" or "Self-hosted session transcriptions" options. Then choose the trigger and the main language of your sessions.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-11-11 at 11.45.38.png" alt=""><figcaption><p>Global configuration of Session Transcription</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/396a9990-7860-4967-ac50-f999c453f7b8.png" alt=""><figcaption><p>Global configuration of Session Transcription</p></figcaption></figure>
 
 To set up your own self-hosted storage option for Session Transcription you will need AWS S3 credentials. Please refer to the guide provided for self-hosted recordings [here](../recording-with-embedded/cloud-recording.md#setup-and-information-in-s3) for further information on obtaining these credentials from AWS directly.
 

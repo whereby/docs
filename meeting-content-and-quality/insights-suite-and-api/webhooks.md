@@ -21,6 +21,7 @@ At the moment the following event types are supported:
 * `room.client.knockCancelled`- this is sent when a visitor cancels their knock from the waiting room (this could be via the cancel button or a result of network issues)
 * `room.session.started`: Sent when a room session starts, which is when there are at least 2 users in a room.
 * `room.session.ended`: Sent when a room session ends. Currently, a session will end when the number of participants has been less than 2 for some time. This heuristic could change in the future to better determine that a session has ended.
+* `transcription.started`: Sent when a transcription has started.
 * `transcription.finished`: Sent when a transcription has finished processing.
 * `transcription.failed`: Sent when a transcription has failed to process.
 * `recording.finished`: Sent when a cloud recording has finished and the recording has uploaded successfully.

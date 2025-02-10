@@ -100,7 +100,6 @@ Session Transcription generates a transcript in the specified language. You need
 
 <summary>Session Transcription supported languages</summary>
 
-* Bulgarian (bg)
 * Catalan (ca)
 * Chinese (Mandarin, Simplified) (zh)
 * Chinese (Mandarin, Traditional) (zh-TW)
@@ -108,20 +107,16 @@ Session Transcription generates a transcript in the specified language. You need
 * Danish (da)
 * Dutch (nl)
 * English (en)
-* Estonian (et)
 * Finnish (fi)
-* Flemish (nl-BE)
 * French (fr)
 * German (de)
 * Greek (el)
 * Hindi (hi)
-* Hungarian (hu)
 * Indonesian (id)
 * Italian (it)
 * Japanese (ja)
 * Korean (ko)
 * Latvian (lv)
-* Lithuanian (lt)
 * Malay (ms)
 * Norwegian (no)
 * Polish (pl)
@@ -133,7 +128,6 @@ Session Transcription generates a transcript in the specified language. You need
 * Spanish (es)
 * Swedish (sv)
 * Thai (th)
-* Turkish (tr)
 * Ukrainian (uk)
 * Vietnamese (vi)
 

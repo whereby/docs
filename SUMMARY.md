@@ -50,6 +50,7 @@
 * [Transcribing](meeting-content-and-quality/transcribing/README.md)
   * [Session Transcription](meeting-content-and-quality/transcribing/session-transcription.md)
   * [Recording Transcription](meeting-content-and-quality/transcribing/recording-transcriptions.md)
+* [Live Captions](meeting-content-and-quality/live-captions.md)
 * [Session summaries](meeting-content-and-quality/transcribing-sessions-1.md)
 * [Live streaming RTMP](meeting-content-and-quality/streaming-with-embedded.md)
 * [Quality Insights](meeting-content-and-quality/insights-suite-and-api/README.md)

@@ -39,7 +39,7 @@ Go to the **Configure → Features** section of your dashboard to disable or ena
 Chat must be enabled for file sharing to work. You can enable chat for all rooms on the dashboard or per room.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/filesharingconfig.png" alt=""><figcaption><p>Global configuration of file sharing </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/file share.png" alt=""><figcaption><p>Global configuration of file sharing </p></figcaption></figure>
 
 #### Per room configuration
 

@@ -124,5 +124,3 @@ You can use webhook testing tools to inspect, debug, and validate webhook events
 
 If a webhook delivery fails with a `5xx` HTTP response, Whereby retries the request up to two times with an exponential backoff. A webhook request also times out if it takes longer than 5 seconds, triggering a retry.
 
----
-This enhanced guide makes it easier for developers to integrate and test Whereby webhooks while ensuring security and reliability.

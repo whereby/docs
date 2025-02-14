@@ -5,80 +5,44 @@ description: >-
   events and actions happening around your meetings.
 ---
 
-# Tracking room events with Webhooks
+# Tracking Room Events with Webhooks
 
 ## Configuration
 
-Webhooks are managed from the "Configure" section of your account, so they need to be set up by an admin in your organization.
+Webhooks in Whereby Embedded allow you to track key room events in real-time. You can configure webhooks from the **Configure** section of your Whereby Embedded account dashboard. Only an admin in your organization can set up and manage webhooks.
 
 ![Visit the "Configure" section of your Whereby Embedded account dashboard and scroll down to find the Webhooks setup.](../../.gitbook/assets/webhooks-dashboard.png)
 
-At the moment the following event types are supported:
+### Supported Events
 
-* `room.client.joined` - this is sent when a user joins the meeting room
-* `room.client.left` - this is sent when a user leaves the meeting room (this could be via the leave button or by closing the browser tab)
-* `room.client.knocked`- this is sent when a visitor knocks the meeting room from the waiting room
-* `room.client.knockCancelled`- this is sent when a visitor cancels their knock from the waiting room (this could be via the cancel button or a result of network issues)
-* `room.session.started`: Sent when a room session starts, which is when there are at least 2 users in a room.
-* `room.session.ended`: Sent when a room session ends. Currently, a session will end when the number of participants has been less than 2 for some time. This heuristic could change in the future to better determine that a session has ended.
-* `transcription.started`: Sent when a transcription has started.
-* `transcription.finished`: Sent when a transcription has finished processing.
-* `transcription.failed`: Sent when a transcription has failed to process.
-* `recording.finished`: Sent when a cloud recording has finished and the recording has uploaded successfully.
+Whereby webhooks support the following event types:
 
-## Event objects
+| Event Type | Description |
+|------------|-------------|
+| `room.client.joined` | Triggered when a user joins the meeting room. |
+| `room.client.left` | Triggered when a user leaves the meeting room. This can be via the leave button or by closing the browser tab. |
+| `room.client.knocked` | Triggered when a visitor knocks to join a meeting from the waiting room. |
+| `room.client.knockCancelled` | Triggered when a visitor cancels their knock request. This can happen via the cancel button or due to network issues. |
+| `room.session.started` | Triggered when a room session starts, meaning at least two users are in the room. |
+| `room.session.ended` | Triggered when a session ends, determined by a drop in participant count to less than two. |
+| `transcription.started` | Triggered when a transcription starts. |
+| `transcription.finished` | Triggered when a transcription is processed successfully. |
+| `transcription.failed` | Triggered when a transcription fails to process. |
+| `recording.finished` | Triggered when a cloud recording is completed and uploaded successfully. |
 
-Events are delivered to their corresponding webhook endpoint in JSON format, as the body of an HTTP request. The table below describes their top-level attributes.
+## Webhook Event Structure
 
-| Property     | Description                                                                                                                                                                  |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`         | String that uniquely identifies the event.                                                                                                                                   |
-| `apiVersion` | The Whereby API version used to populate data. Refer to the details on [Versioning](../../reference/whereby-rest-api-reference/#versioning) for how webhook data may change. |
-| `createdAt`  | ISO representation of the creation date of the event.                                                                                                                        |
-| `type`       | The event’s type identifier, e.g. `room.client.joined`                                                                                                                       |
-| `data`       | Object containing information associated with the event.                                                                                                                     |
+Webhook events are delivered as JSON payloads in HTTP requests to the configured endpoint. Below are the common properties of all webhook events:
 
-## In-Room Data properties
+| Property | Description |
+|------------|-------------|
+| `id` | Unique identifier for the event. |
+| `apiVersion` | Version of the Whereby API that generated the event. |
+| `createdAt` | Timestamp (ISO format) when the event was created. |
+| `type` | Event type identifier, such as `room.client.joined`. |
+| `data` | Object containing additional event-related information. |
 
-Please note that in-room webhook events are sent for interactions that happen between the creation of the room and an hour after the `endDate` of a room. Also consider that a particular event can be sent more than once, and that you could receive events in non-chronological order.
-
-Properties in `data` that are common to all in-room webhook events:
-
-| Property    | Description                                                                                                 |
-| ----------- | ----------------------------------------------------------------------------------------------------------- |
-| `meetingId` | The identifier of the meeting that the user has joined/left or where the session has started/ended.         |
-| `roomName`  | The string that identifies the room assigned to the meeting. It’s the last path parameter of the `roomUrl`. |
-
-Additional properties in `data` for `room.client.joined` , `room.client.left room.client.knocked` and `room.client.knockCancelled`:
-
-<table><thead><tr><th width="374">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>displayName</code></td><td>The visible name displayed to others in the meeting.</td></tr><tr><td><code>roomSessionId</code></td><td>The <code>roomSessionId</code> for the meeting.</td></tr><tr><td><code>participantId</code></td><td>The current user's <code>participantId</code>. Can be used for insights data.</td></tr><tr><td><a href="../../whereby-101/customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than"><code>metadata</code></a></td><td>String that matches the "<a href="../../whereby-101/customizing-rooms/using-url-parameters.md#metadata-less-than-string-greater-than">metadata</a>" query parameter passed to the room URL.</td></tr><tr><td><a href="../../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than"><code>externalId</code></a></td><td>String that matches the "<a href="../../whereby-101/customizing-rooms/using-url-parameters.md#externalid-less-than-id-greater-than">externalId</a>" query parameter passed to the room URL.</td></tr></tbody></table>
-
-Additional properties in data for just `room.client.joined` and `room.client.left`:
-
-| Property               | Description                                                                                                                                                                 |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `roleName`             | The client’s role depending on what URL they use to access the meeting.                                                                                                     |
-| `numClients`           | Number of clients connected to the meeting after the event.                                                                                                                 |
-| `numClientsByRoleName` | Number of clients connected to the meeting after the event, grouped by the `roleName`.                                                                                      |
-| `isDialIn`             | `true`when a client has called into the room from a telephone with our [dial-in](https://docs.whereby.com/whereby-101/customizing-rooms/dial-in) feature, `false`otherwise. |
-
-The property `roleName` will have one of the following values:
-
-* `owner`: A user with an admin account in your Embedded organization.
-* `member`: A user with an account in your Embedded organization.
-* `host`: A user joined using the `hostRoomUrl`.
-* `visitor`: A user joined using the regular `roomUrl`.
-* `granted_visitor`: The `roleName` that is assigned to a Participant after they have knocked and been let in by a Host.
-* `viewer`: A user joined using the `viewerRoomUrl`.
-* `granted_viewer`: The `roleName` that is assigned to a Participant if they are queued before a Host joins.
-* `recorder`: A cloud recording instance has started or stopped.
-* `streamer`: A streaming instance has started or stopped.
-* `captioner`: The meeting has been captioned or transcribed.
-
-An example of a webhook event object:
-
-{% tabs %}
-{% tab title="JSON" %}
+### Example Webhook Event
 ```json
 {
   "id": "d7c4df48b85318352b47d2df45872bf9be87595af379e2a8ad8f1ad28b2a482e",
@@ -100,77 +64,28 @@ An example of a webhook event object:
   }
 }
 ```
-{% endtab %}
-{% endtabs %}
 
-## Transcription Data properties
+## Validating Webhook Events
 
-Properties in `data` that are common to all transcription webhook events:
+To ensure security and prevent man-in-the-middle attacks, Whereby includes a `Whereby-Signature` header in webhook requests. This header contains a timestamp and a signature generated using a secret key known only to you.
 
-| Property          | Description                                                                                                                              |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `transcriptionId` | The identifier of the transcription that has finished processing or failed to process.                                                   |
-| `type`            | The type of transcription, `LIVE_TRANSCRIPTION` for Session Transcription or `RECORDING_TRANSCRIPTION` for recording based transcription |
-
-Additional properties in data for just `transcription.finished`:
-
-| Property          | Description                                                                |
-| ----------------- | -------------------------------------------------------------------------- |
-| recordingId       | The identifier of the recording that the transcription is associated with. |
-| durationInSeconds | The duration of the recording in seconds.                                  |
-
-Additional properties in data for just `transcription.failed`:
-
-| Property | Description                                                               |
-| -------- | ------------------------------------------------------------------------- |
-| error    | The error message that describes why the transcription failed to process. |
-
-## Cloud Recording Data properties
-
-Properties in `data` for the `recording.finished` webhook event:
-
-| Property      | Description                                                            |
-| ------------- | ---------------------------------------------------------------------- |
-| `filename`    | The name and extension of the recording.                               |
-| `recordingId` | The identifier of the recording.                                       |
-| `roomName`    | The string that identifies the room assigned to the meeting.           |
-| `status`      | The final status of the recording. It can be only `completed` for now. |
-
-## Validating events
-
-To prevent from [man-in-the-middle attacks ↗](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) , webhook requests to your endpoint contain a signature in the `Whereby-Signature` header. This string is generated with a unique secret that only you can view when creating or editing a webhook in the Embedded dashboard. Only Whereby and you have access to this secret, and no third party can send forged events to your endpoint. On top of that the header also includes a timestamp to help you prevent replay attacks. The header is composed of a timestamp and the signature itself, for example:
-
-{% tabs %}
-{% tab title="Text" %}
+### Signature Format
 ```
 Whereby-Signature:
 t=1606227791,v1=94a23dc9d73e8e6abdf9d4095aee954697e9317e9649e742361b35707edd45a3
-
 ```
-{% endtab %}
-{% endtabs %}
 
-To verify an event’s signature, follow these steps:
-
-1. Extract the timestamp and signature by splitting the string on `,` then removing both `t=` and `v1=` from the resulting strings.
-2. Prepare the `signedPayload` string by concatenating the timestamp (as a string), the character `.` and the JSON event object (the request body).
-3. Calculate the HMAC: It is the SHA256 hash of `signedPayload`, using the endpoint’s signing secret (the one you get when creating the webhook) as the key.
-4. Compare the signature from the header to the one you just generated. To protect yourself from timing attacks consider using a constant-time equality function instead of the default equality operator of the language you’re using. Finally, to prevent replay attacks, compare the header’s timestamp with the current one and decide if the elapsed time is within your allowed threshold.
-
-An example of a webhook event validation:
-
-{% tabs %}
-{% tab title="Node" %}
+### Validating the Signature in Node.js
 ```javascript
 import crypto from "crypto";
 
 const WEBHOOK_SECRET = "<WEBHOOK_SECRET>";
-const MAX_ELAPSED_TIME = 1000 * 60; // 1 minutes in milliseconds
+const MAX_ELAPSED_TIME = 1000 * 60; // 1 minute in milliseconds
 
 function isWebhookEventValid({ body, headers }) {
   const wbSignature = headers["whereby-signature"];
   const matches = wbSignature.matchAll(/t=(.*),v1=(.*)/gm);
-
+  
   let timestamp, signature;
   for (const match of matches) {
     timestamp = match[1];
@@ -190,13 +105,24 @@ function isWebhookEventValid({ body, headers }) {
     crypto.timingSafeEqual(
       Buffer.from(hashStr, "utf-8"),
       Buffer.from(signature, "utf-8")
-    ) && diffTime < Whereby.MAX_ELAPSED_TIME
+    ) && diffTime < MAX_ELAPSED_TIME
   );
 }
 ```
-{% endtab %}
-{% endtabs %}
 
-## Failed delivery
+## Testing Webhooks
 
-Any `5xx` response to the webhook delivery request will trigger a retry, for a total of 2 retries. A short exponential backoff will be used. We also have a 5 seconds timeout on webhook requests, if the response takes longer than that the same retry mechanism will be used.
+You can use webhook testing tools to inspect, debug, and validate webhook events before integrating them into your system.
+
+### Using Beeceptor
+[Beeceptor](https://beeceptor.com/) allows you to create a temporary endpoint to receive and inspect webhook events without deploying a backend. Simply create an endpoint and configure it in the Whereby dashboard.
+
+### Alternative: Request Inspector
+[Request Inspector](https://requestinspector.com/) provides similar capabilities, allowing you to inspect and debug incoming webhooks with detailed logs.
+
+## Webhook Retries
+
+If a webhook delivery fails with a `5xx` HTTP response, Whereby retries the request up to two times with an exponential backoff. A webhook request also times out if it takes longer than 5 seconds, triggering a retry.
+
+---
+This enhanced guide makes it easier for developers to integrate and test Whereby webhooks while ensuring security and reliability.

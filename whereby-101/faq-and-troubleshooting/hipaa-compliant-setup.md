@@ -133,7 +133,7 @@ To do either of the above, you can refer to the "[Using URL parameters](../custo
 
 ### In-room Chat text&#x20;
 
-The Whereby Embedded chat is HIPAA compliant by default, as information is not stored and is only available for the participants for the duration of the call.
+The Whereby Embedded chat is HIPAA compliant, as long as you have '**Make chat downloadable**' toggled off in your Configuration settings and do not use the URL parameters to turn on chat export. With these settings turned off, information is not stored and is only available for the participants for the duration of the call.&#x20;
 
 Customers can choose to either rely on the Whereby chat knowing that the information will not be stored nor accessible after the call OR they can build their own elsewhere in their platform.
 

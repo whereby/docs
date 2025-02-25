@@ -33,7 +33,7 @@ You can view, delete or download these transcriptions either through the "Transc
 
 ### Your Amazon S3 bucket
 
-You may also choose to store session transcriptions in an Amazon S3 bucket owned and managed by you. This is more technical to set up, but may suite your business needs better if you already own and manage Amazon S3 storage.
+You may also choose to store session transcriptions in an Amazon S3 bucket owned and managed by you. This is more technical to set up, but may suit your business needs better if you already own and manage Amazon S3 storage.
 
 ## Setup
 

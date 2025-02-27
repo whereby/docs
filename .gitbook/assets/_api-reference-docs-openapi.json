@@ -149,8 +149,8 @@
         },
         "example": {
           "meetingId": "1",
-          "startDate": "2020-05-12T16:42:49Z",
-          "endDate": "2020-05-12T17:42:49Z",
+          "startDate": "2025-05-12T16:42:49Z",
+          "endDate": "2025-05-12T17:42:49Z",
           "roomUrl": "https://subdomain.whereby.com/dda1beca-af37-11eb-ac88-372b6869f077"
         }
       },
@@ -168,8 +168,8 @@
           "recordingId": "1",
           "roomSessionId": "1",
           "filename": "recording.mp4",
-          "startDate": "2020-01-01T00:00:00.000Z",
-          "endDate": "2020-01-01T00:00:00.000Z",
+          "startDate": "2025-01-01T00:00:00.000Z",
+          "endDate": "2025-01-01T00:00:00.000Z",
           "sizeInMegaBytes": 100
         }
       },
@@ -196,7 +196,7 @@
           },
           "filename": {
             "type": "string",
-            "description": "The filename of the transcription. This parameter is only set if Whereby storage is selected."
+            "description": "The filename of the transcription that was written to either Whereby or self hosted storage buckets (see: `storageType`)."
           },
           "roomName": {
             "type": "string",
@@ -222,22 +222,34 @@
             "format": "date-time",
             "description": "When the transcription was created. Always in UTC, regardless of the input timezone."
           },
+          "durationInSeconds": {
+            "type": "number",
+            "description": "The total billable time in seconds for this transcription.",
+            "example": 42
+          },
           "type": {
             "type": "string",
             "enum": ["LIVE_TRANSCRIPTION", "RECORDING_TRANSCRIPTION"],
             "description": "The type of the transcription\n - `LIVE_TRANSCRIPTION` - Session Transcription\n - `RECORDING_TRANSCRIPTION` - generated based on a recording"
+          },
+          "storageType": {
+            "type": "string",
+            "enum": ["WHEREBY_HOSTED", "SELF_HOSTED"],
+            "description": "The storage type of the transcription\n - `WHEREBY_HOSTED` - files kept with Whereby\n - `SELF_HOSTED` - files stored in external location"
           }
         },
         "example": {
           "transcriptionId": "1",
           "roomSessionId": "1",
-          "filename": "transcription.md",
-          "roomName": "room-name",
-          "startDate": "2020-01-01T00:00:00.000Z",
-          "endDate": "2020-01-01T00:00:00.000Z",
+          "filename": "roomName-startTimestamp.md",
+          "roomName": "roomName",
+          "createdAt": "2025-01-01T00:00:00.000Z",
+          "startDate": "2025-01-01T00:00:00.000Z",
+          "endDate": "2025-01-01T00:01:00.000Z",
           "state": "ready",
+          "durationInSeconds": 60,
           "type": "LIVE_TRANSCRIPTION",
-          "createdAt": "2020-01-01T00:00:00.000Z"
+          "storageType": "WHEREBY_HOSTED"
         }
       },
       "Summary": {
@@ -261,11 +273,11 @@
           "summary": { "summary": "This is a meeting summary" },
           "roomSessionId": "1",
           "roomName": "room-name",
-          "startDate": "2020-01-01T00:00:00.000Z",
-          "endDate": "2020-01-01T00:00:00.000Z",
+          "startDate": "2025-01-01T00:00:00.000Z",
+          "endDate": "2025-01-01T00:00:00.000Z",
           "state": "completed",
-          "createdAt": "2020-01-01T00:00:00.000Z",
-          "modifiedAt": "2020-01-01T00:00:00.000Z",
+          "createdAt": "2025-01-01T00:00:00.000Z",
+          "modifiedAt": "2025-01-01T00:00:00.000Z",
           "template": "General Narrative"
         }
       }
@@ -1045,8 +1057,8 @@
     },
     "/transcriptions/{transcriptionId}/access-link": {
       "get": {
-        "summary": "Get transcription access link",
-        "description": "Returns the access link for the specified transcription.\n\n ",
+        "summary": "Get transcription access link (for Whereby-hosted transcriptions only)",
+        "description": "Returns a URL that can be used to download the specified transcription.\n\n ",
         "parameters": [
           {
             "$ref": "#/components/parameters/transcriptionId"
@@ -1089,6 +1101,9 @@
           },
           "401": {
             "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
           },
           "404": {
             "$ref": "#/components/responses/NotFoundError"
@@ -1663,22 +1678,22 @@
                           "createdAt": {
                             "type": "string",
                             "description": "The date the room was created.",
-                            "example": "2020-01-01T00:00:00.000Z"
+                            "example": "2025-01-01T00:00:00.000Z"
                           },
                           "endAt": {
                             "type": "string",
                             "description": "The date the room was set to expire.",
-                            "example": "2020-01-01T01:00:00.000Z"
+                            "example": "2025-01-01T01:00:00.000Z"
                           },
                           "firstSessionStartedAt": {
                             "type": "string",
                             "description": "The date the first session started in this room.",
-                            "example": "2020-01-01T00:15:00.000Z"
+                            "example": "2025-01-01T00:15:00.000Z"
                           },
                           "lastSessionStartedAt": {
                             "type": "string",
                             "description": "The date the last session started in this room.",
-                            "example": "2020-01-01T00:45:00.000Z"
+                            "example": "2025-01-01T00:45:00.000Z"
                           },
                           "totalParticipantMinutes": {
                             "type": "integer",
@@ -1821,12 +1836,12 @@
                           "startedAt": {
                             "type": "string",
                             "description": "The date the session started.",
-                            "example": "2020-01-01T00:00:00.000Z"
+                            "example": "2025-01-01T00:00:00.000Z"
                           },
                           "endedAt": {
                             "type": "string",
                             "description": "The date when the session ended.",
-                            "example": "2020-01-01T01:00:00.000Z"
+                            "example": "2025-01-01T01:00:00.000Z"
                           },
                           "totalParticipantMinutes": {
                             "type": "integer",
@@ -1979,12 +1994,12 @@
                           "joinedAt": {
                             "type": "string",
                             "description": "The timestamp the participant joined the session.",
-                            "example": "2020-01-01T00:00:00.000Z"
+                            "example": "2025-01-01T00:00:00.000Z"
                           },
                           "leftAt": {
                             "type": "string",
                             "description": "The timestamp the participant left the session.",
-                            "example": "2020-01-01T01:00:00.000Z"
+                            "example": "2025-01-01T01:00:00.000Z"
                           },
                           "externalId": {
                             "type": "string",

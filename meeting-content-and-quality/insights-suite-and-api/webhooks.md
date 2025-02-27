@@ -107,23 +107,26 @@ An example of a webhook event object:
 
 Properties in `data` that are common to all transcription webhook events:
 
-| Property          | Description                                                                                                                              |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `transcriptionId` | The identifier of the transcription that has finished processing or failed to process.                                                   |
-| `type`            | The type of transcription, `LIVE_TRANSCRIPTION` for Session Transcription or `RECORDING_TRANSCRIPTION` for recording based transcription |
+| Property          | Description                                                                                                                                                                                                                                        |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `transcriptionId` | The identifier of the transcription that has finished processing or failed to process.                                                                                                                                                             |
+| `type`            | The type of transcription, `LIVE_TRANSCRIPTION` for Session Transcription or `RECORDING_TRANSCRIPTION` for recording based transcription                                                                                                           |
+| status            | The status of the transcription. Starts in `in_progress` and transitions to `ready` once the transcript has been successfully written to storage. If any errors occurred in the processing of the transcription then this will be set to `failed`. |
 
 Additional properties in data for just `transcription.finished`:
 
-| Property          | Description                                                                |
-| ----------------- | -------------------------------------------------------------------------- |
-| recordingId       | The identifier of the recording that the transcription is associated with. |
-| durationInSeconds | The duration of the recording in seconds.                                  |
+| Property            | Description                                                                                                                                                                         |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `filename`          | The file name and extension of the transcript.                                                                                                                                      |
+| `storageType`       | The storage type of the transcription, `WHEREBY_HOSTED` for transcript files that are stored with Whereby or `SELF_HOSTED` for transcript files that were written to other storage. |
+| `durationInSeconds` | The total billable time used for the transcription in seconds.                                                                                                                      |
+| `recordingId`       | The identifier of the recording that the transcription is associated with. Only set if `type` is `RECORDING_TRANSCRIPTION`.                                                         |
 
 Additional properties in data for just `transcription.failed`:
 
 | Property | Description                                                               |
 | -------- | ------------------------------------------------------------------------- |
-| error    | The error message that describes why the transcription failed to process. |
+| `error`  | The error message that describes why the transcription failed to process. |
 
 ## Cloud Recording Data properties
 
@@ -131,7 +134,7 @@ Properties in `data` for the `recording.finished` webhook event:
 
 | Property      | Description                                                            |
 | ------------- | ---------------------------------------------------------------------- |
-| `filename`    | The name and extension of the recording.                               |
+| `filename`    | The file name and extension of the recording.                          |
 | `recordingId` | The identifier of the recording.                                       |
 | `roomName`    | The string that identifies the room assigned to the meeting.           |
 | `status`      | The final status of the recording. It can be only `completed` for now. |

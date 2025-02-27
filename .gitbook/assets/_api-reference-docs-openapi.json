@@ -24,7 +24,7 @@
         "description": "Access token is missing or invalid"
       },
       "ForbiddenError": {
-        "description": "Not allowed to perform action. Check if Recording or Streaming are available in your plan"
+        "description": "Not allowed to perform action"
       },
       "ThrottleError": {
         "description": "You are rate limited",
@@ -66,37 +66,52 @@
       "meetingId": {
         "name": "meetingId",
         "in": "path",
+        "schema": {
+          "type": "string"
+        },
         "description": "meeting ID.",
         "required": true,
-        "example": "1"
+        "example": "9cf691bf-f2d5-4420-bda9-ee8607bb558b"
       },
       "roomName": {
         "name": "roomName",
         "in": "path",
+        "schema": {
+          "type": "string"
+        },
         "description": "Room name.",
         "required": true,
-        "example": "913c4449-c904-4313-b560-ae5bf0b04a39"
+        "example": "/room-prefix-793e9ec1-c686-423d-9043-9b7a10c553fd"
       },
       "recordingId": {
         "name": "recordingId",
         "in": "path",
+        "schema": {
+          "type": "string"
+        },
         "description": "Recording ID.",
         "required": true,
-        "example": "1"
+        "example": "a56f6ad7-37fe-4a37-9319-3174630ba57a"
       },
       "transcriptionId": {
         "name": "transcriptionId",
         "in": "path",
+        "schema": {
+          "type": "string"
+        },
         "description": "Transcription ID.",
         "required": true,
-        "example": "1"
+        "example": "b438fda0-83e2-4835-92f9-c845ee3d5ea7"
       },
       "summaryId": {
         "name": "summaryId",
         "in": "path",
+        "schema": {
+          "type": "string"
+        },
         "description": "Summary ID.",
         "required": true,
-        "example": "1"
+        "example": "c429ff78-9f03-49de-b427-546bcd848050"
       }
     },
     "schemas": {
@@ -119,7 +134,7 @@
           "roomName": {
             "type": "string",
             "description": "The name of the room.",
-            "example": "/4b3bd908-cb88-11ec-9d64-0242ac120002"
+            "example": "/room-prefix-793e9ec1-c686-423d-9043-9b7a10c553fd"
           },
           "roomUrl": {
             "type": "string",
@@ -148,10 +163,10 @@
           }
         },
         "example": {
-          "meetingId": "1",
+          "meetingId": "9cf691bf-f2d5-4420-bda9-ee8607bb558b",
           "startDate": "2025-05-12T16:42:49Z",
           "endDate": "2025-05-12T17:42:49Z",
-          "roomUrl": "https://subdomain.whereby.com/dda1beca-af37-11eb-ac88-372b6869f077"
+          "roomUrl": "https://subdomain.whereby.com/room-prefix-793e9ec1-c686-423d-9043-9b7a10c553fd"
         }
       },
       "Recording": {
@@ -165,8 +180,8 @@
           "sizeInMegaBytes"
         ],
         "example": {
-          "recordingId": "1",
-          "roomSessionId": "1",
+          "recordingId": "a56f6ad7-37fe-4a37-9319-3174630ba57a",
+          "roomSessionId": "e2f29530-46ec-4cee-8b27-e565cb5bb2e9",
           "filename": "recording.mp4",
           "startDate": "2025-01-01T00:00:00.000Z",
           "endDate": "2025-01-01T00:00:00.000Z",
@@ -239,16 +254,16 @@
           }
         },
         "example": {
-          "transcriptionId": "1",
-          "roomSessionId": "1",
-          "filename": "roomName-startTimestamp.md",
-          "roomName": "roomName",
+          "transcriptionId": "b438fda0-83e2-4835-92f9-c845ee3d5ea7",
+          "roomSessionId": "e2f29530-46ec-4cee-8b27-e565cb5bb2e9",
+          "roomName": "/room-prefix-793e9ec1-c686-423d-9043-9b7a10c553fd",
           "createdAt": "2025-01-01T00:00:00.000Z",
           "startDate": "2025-01-01T00:00:00.000Z",
           "endDate": "2025-01-01T00:01:00.000Z",
           "state": "ready",
           "durationInSeconds": 60,
           "type": "LIVE_TRANSCRIPTION",
+          "filename": "room-prefix-793e9ec1-c686-423d-9043-9b7a10c553fd-2025-01-01T00:00:00.000Z.md",
           "storageType": "WHEREBY_HOSTED"
         }
       },
@@ -268,15 +283,15 @@
           "template"
         ],
         "example": {
-          "summaryId": "1",
-          "transcriptionId": "1",
+          "summaryId": "c429ff78-9f03-49de-b427-546bcd848050",
+          "transcriptionId": "b438fda0-83e2-4835-92f9-c845ee3d5ea7",
           "summary": { "summary": "This is a meeting summary" },
-          "roomSessionId": "1",
-          "roomName": "room-name",
-          "startDate": "2025-01-01T00:00:00.000Z",
-          "endDate": "2025-01-01T00:00:00.000Z",
-          "state": "completed",
+          "roomSessionId": "e2f29530-46ec-4cee-8b27-e565cb5bb2e9",
+          "roomName": "/room-prefix-793e9ec1-c686-423d-9043-9b7a10c553fd",
           "createdAt": "2025-01-01T00:00:00.000Z",
+          "startDate": "2025-01-01T00:00:00.000Z",
+          "endDate": "2025-01-01T00:01:00.000Z",
+          "state": "completed",
           "modifiedAt": "2025-01-01T00:00:00.000Z",
           "template": "General Narrative"
         }
@@ -299,7 +314,7 @@
                   "endDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "When the meeting ends. By default in UTC but a timezone can be specified, e.g. 2021-05-07T17:42:49-05:00.\nThis has to be the same or after the current date.\n"
+                    "description": "When the meeting ends. By default in UTC but a timezone can be specified, e.g. 2025-05-07T17:42:49-05:00.\nThis has to be the same or after the current date.\n"
                   },
                   "startDate": {
                     "type": "string",
@@ -788,7 +803,7 @@
     "/recordings/{recordingId}/access-link": {
       "get": {
         "summary": "Get recording access link",
-        "description": "Returns the access link for the specified recording.",
+        "description": "Returns the access link for the specified recording. **Available for Whereby-hosted recordings only**",
         "parameters": [
           {
             "$ref": "#/components/parameters/recordingId"
@@ -822,7 +837,7 @@
                     "expires": {
                       "type": "integer",
                       "description": "The timestamp when the access link expires.",
-                      "example": 1588262400000
+                      "example": 1740819600000
                     }
                   }
                 }
@@ -831,6 +846,9 @@
           },
           "401": {
             "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenError"
           },
           "404": {
             "$ref": "#/components/responses/NotFoundError"
@@ -857,7 +875,7 @@
                     "items": {
                       "type": "string",
                       "description": "The recording ID to delete.\n",
-                      "example": "1"
+                      "example": "a56f6ad7-37fe-4a37-9319-3174630ba57a"
                     }
                   }
                 }
@@ -897,7 +915,7 @@
                   "recordingId": {
                     "type": "string",
                     "description": "The recording ID for which the transcription should be created.\n",
-                    "example": "1"
+                    "example": "a56f6ad7-37fe-4a37-9319-3174630ba57a"
                   }
                 }
               }
@@ -913,7 +931,7 @@
                   "transcriptionId": {
                     "type": "string",
                     "description": "The transcription ID.",
-                    "example": "1"
+                    "example": "b438fda0-83e2-4835-92f9-c845ee3d5ea7"
                   }
                 }
               }
@@ -1057,8 +1075,8 @@
     },
     "/transcriptions/{transcriptionId}/access-link": {
       "get": {
-        "summary": "Get transcription access link (for Whereby-hosted transcriptions only)",
-        "description": "Returns a URL that can be used to download the specified transcription.\n\n ",
+        "summary": "Get transcription access link",
+        "description": "Returns a URL that can be used to download the specified transcription. **Available for Whereby-hosted transcriptions only**.\n\n ",
         "parameters": [
           {
             "$ref": "#/components/parameters/transcriptionId"
@@ -1092,7 +1110,7 @@
                     "expires": {
                       "type": "integer",
                       "description": "The timestamp when the access link expires.",
-                      "example": 1588262400000
+                      "example": 1740819600000
                     }
                   }
                 }
@@ -1130,7 +1148,7 @@
                     "items": {
                       "type": "string",
                       "description": "The transcription ID to delete.\n",
-                      "example": "1"
+                      "example": "b438fda0-83e2-4835-92f9-c845ee3d5ea7"
                     }
                   }
                 }
@@ -1170,7 +1188,7 @@
                   "transcriptionId": {
                     "type": "string",
                     "description": "The transcription ID for which the summary should be created.\n",
-                    "example": "1"
+                    "example": "b438fda0-83e2-4835-92f9-c845ee3d5ea7"
                   },
                   "template": {
                     "type": "string",
@@ -1199,7 +1217,7 @@
                   "summaryId": {
                     "type": "string",
                     "description": "The summaryId ID.",
-                    "example": "1"
+                    "example": "c429ff78-9f03-49de-b427-546bcd848050"
                   }
                 }
               }
@@ -1577,7 +1595,7 @@
               "properties": {
                 "exact": {
                   "type": "string",
-                  "description": "Example: roomName[exact]=/4b3bd908-cb88-11ec-9d64-0242ac120002"
+                  "description": "Example: roomName[exact]=/room-prefix-793e9ec1-c686-423d-9043-9b7a10c553fd"
                 },
                 "startsWith": {
                   "type": "string",
@@ -1585,7 +1603,7 @@
                 },
                 "contains": {
                   "type": "string",
-                  "description": "Example: roomName[contains]=room-suffix"
+                  "description": "Example: roomName[contains]=793e9ec1"
                 }
               }
             }
@@ -1601,12 +1619,12 @@
                 "from": {
                   "type": "string",
                   "format": "date-time",
-                  "description": "Example: createdAt[from]=2022-01-01T00:00:00.000Z"
+                  "description": "Example: createdAt[from]=2025-01-01T00:00:00.000Z"
                 },
                 "to": {
                   "type": "string",
                   "format": "date-time",
-                  "description": "Example: createdAt[to]=2022-05-01T00:00:00.000Z"
+                  "description": "Example: createdAt[to]=2025-05-01T00:01:00.000Z"
                 }
               }
             }
@@ -1673,7 +1691,7 @@
                           "roomName": {
                             "type": "string",
                             "description": "The name of the room.",
-                            "example": "/4b3bd908-cb88-11ec-9d64-0242ac120002"
+                            "example": "/room-prefix-793e9ec1-c686-423d-9043-9b7a10c553fd"
                           },
                           "createdAt": {
                             "type": "string",
@@ -1757,14 +1775,14 @@
             "in": "query",
             "description": "Room name.",
             "required": true,
-            "example": "/4b3bd908-cb88-11ec-9d64-0242ac120002"
+            "example": "/room-prefix-793e9ec1-c686-423d-9043-9b7a10c553fd"
           },
           {
             "name": "roomSessionId",
             "in": "query",
             "description": "Room session identifier.",
             "required": false,
-            "example": "32ba120a-a691-4e8e-aec3-a610239271de"
+            "example": "e2f29530-46ec-4cee-8b27-e565cb5bb2e9"
           },
           {
             "name": "sortBy",
@@ -1826,12 +1844,12 @@
                           "roomSessionId": {
                             "type": "string",
                             "description": "The identifier of the session.",
-                            "example": "32ba120a-a691-4e8e-aec3-a610239271de"
+                            "example": "e2f29530-46ec-4cee-8b27-e565cb5bb2e9"
                           },
                           "roomName": {
                             "type": "string",
                             "description": "The name of the room.",
-                            "example": "/4b3bd908-cb88-11ec-9d64-0242ac120002"
+                            "example": "/room-prefix-793e9ec1-c686-423d-9043-9b7a10c553fd"
                           },
                           "startedAt": {
                             "type": "string",
@@ -1900,7 +1918,7 @@
             "in": "query",
             "description": "session ID. Either roomSessionId or externalId is required.",
             "required": true,
-            "example": "4b3bd908-cb88-11ec-9d64-0242ac120002"
+            "example": "e2f29530-46ec-4cee-8b27-e565cb5bb2e9"
           },
           {
             "name": "externalId",
@@ -1965,7 +1983,7 @@
                           "roomSessionId": {
                             "type": "string",
                             "description": "The identifier of the session.",
-                            "example": "32ba120a-a691-4e8e-aec3-a610239271de"
+                            "example": "e2f29530-46ec-4cee-8b27-e565cb5bb2e9"
                           },
                           "participantId": {
                             "type": "string",
@@ -2032,7 +2050,7 @@
             "in": "query",
             "description": "session ID.",
             "required": true,
-            "example": "4b3bd908-cb88-11ec-9d64-0242ac120002"
+            "example": "e2f29530-46ec-4cee-8b27-e565cb5bb2e9"
           },
           {
             "name": "participantId",

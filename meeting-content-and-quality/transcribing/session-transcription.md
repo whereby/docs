@@ -144,7 +144,7 @@ Transcripts are saved in Whereby-provided storage and are available for download
 Download the transcript manually from the **Configure->Transcriptions** section of your dashboard.
 
 {% hint style="success" %}
-Transcripts are downloaded as .`md` files. From the Transcriptiosn section you can also [create a session summary](../transcribing-sessions-1.md#manual-session-summaries) or delete the transcript.
+Transcripts are downloaded as .`md` files. From the Transcriptions section you can also [create a session summary](../transcribing-sessions-1.md#manual-session-summaries) or delete the transcript.
 {% endhint %}
 
 You can to automate your transcription process programmatically with a combination of [API requests](../../reference/whereby-rest-api-reference/transcriptions.md) and webhook events:

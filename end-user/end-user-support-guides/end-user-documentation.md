@@ -106,6 +106,7 @@ In some cases, privacy and security tools or settings can interfere with the med
 
 * Disable any ad-blockers, VPN, or privacy extensions. Occasionally, browser extensions can interfere with how Whereby loads, which can manifest as video, audio, or room joining issues.
 * Check your firewall, proxy, or other security softwares (like anti-virus) to make sure they aren't blocking connection requests. You can try temporarily disabling them to see if it improves the connection. Port 443 will need to be open to all TCP and UDP traffic for a meeting to work.&#x20;
+* If you aren't receiving any audio/video (i.e. can't see/hear everyone), then we recommend going through the troubleshooting steps in the '[Resolving choppy audio or video](end-user-documentation.md#resolving-choppy-audio-or-video)' section above, too.
 
 ## Resolving disconnects on mobile
 

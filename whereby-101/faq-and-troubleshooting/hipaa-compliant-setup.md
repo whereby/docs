@@ -56,7 +56,7 @@ Follow the steps below to verify you've created rooms that are HIPAA compliant. 
 The recording capability means that the meeting, including audio, video and screen-share content will be captured and saved depending on the options chosen.
 
 {% hint style="success" %}
-**Update:** Whereby is proud to now offer HIPAA compliant [cloud recording](../../meeting-content-and-quality/recording-with-embedded/cloud-recording.md), in addition to our previously available HIPAA compliant [local recording](../../meeting-content-and-quality/recording-with-embedded/local-recording.md). To remain HIPPA compliant while using cloud recording, you need to store the recordings in an S3 storage managed by your organisation.
+**Update:** Whereby is proud to now offer HIPAA compliant [cloud recording](../../meeting-content-and-quality/recording-with-embedded/cloud-recording.md), in addition to our previously available HIPAA compliant [local recording](../../meeting-content-and-quality/recording-with-embedded/local-recording.md). To remain HIPAA compliant while using cloud recording, you need to store the recordings in an S3 storage managed by your organisation.
 {% endhint %}
 
 The reason our recording options are considered compliant is that Whereby does not, in any way store the recordings.
@@ -145,6 +145,10 @@ There is no need to do anything to enable the HIPAA compliant in-room chat as it
 
 There is no need to do anything to enable the HIPAA compliant file sharing as it is already enabled and available for all customers, regardless of using the Whereby Embedded HIPAA compliant package or not.
 
+### Session Transcriptions
+
+[Session Transcriptions](../../meeting-content-and-quality/transcribing/session-transcription.md) is designed to protect ePHI (Electronic protected health information) and supports compliance with the HIPAA Security Rule.
+
 ### Encryption in transit&#x20;
 
 By default and through enforcement of our infrastructure's encryption capabilities, Whereby is accessible only via TLS 1.2 with specific ciphers enabled, [as described in our advisories](https://whereby.helpscoutdocs.com/article/710-whereby-tls-cipher-update) and as it can be seen from our [A+ grading on SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=whereby.com\&latest).
@@ -163,7 +167,6 @@ Whereby Embedded can be used in a HIPAA compliant setup by our customers, howeve
 
 * **Live Streaming** - Whereby meetings cannot be live streamed (using RTMP), and we also do not envision scenarios where a private, health-related discussion will need to be live streamed. Make sure you don't include any live streaming config when you create rooms.
 * **Integrations -** We have integrations built with Miro and YouTube that can be used in Whereby meeting rooms. Because these providers are not HIPAA compliant, you must make sure to disable integrations with [roomIntegrations=off](../customizing-rooms/using-url-parameters.md#roomintegrations) unless you're using another parameter that hides them like ?minimal.
-* **Transcriptions and Summaries** - Whereby session transcriptions and summaries are stored in Whereby-provided storage, which is currently not considered to be HIPAA compliant. Avoid using session transcriptions and session summaries to maintain HIPAA compliance of your usage of Whereby.
 
 Return to [creating HIPAA compliant rooms](hipaa-compliant-setup.md#creating-hipaa-compliant-rooms)
 

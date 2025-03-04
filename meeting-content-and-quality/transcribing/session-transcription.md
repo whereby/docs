@@ -156,8 +156,7 @@ You can to automate your transcription process programmatically with a combinati
 ## Known limitations
 
 1. Session Transcriptions **are not compatible with** [**Breakout Groups**](../../whereby-101/customizing-rooms/breakout-groups-with-embedded.md) **feature**. When using Breakout Groups, the transcript will cover the conversation from the main room, but the audio from individual groups will not be transcribed.&#x20;
-2. Session Transcriptions are **currently not considered to be HIPAA compliant**. Avoid using Session Transcriptions in order to maintain HIPAA compliance of your Whereby sessions. [Learn more about Whereby HIPAA compliant setup](../../whereby-101/faq-and-troubleshooting/hipaa-compliant-setup.md).
-3. Session Transcription is available for sessions up to 12 hours long.
+2. Session Transcription is available for sessions up to 12 hours long.
 
 ### Coming soon...
 

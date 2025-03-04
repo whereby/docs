@@ -17,8 +17,8 @@ We've compiled a list of best practices we believe to be worth reviewing in orde
 
 * Try using headphones or a headset to reduce background noise and improve focus
 * Mute yourself when you aren't speaking, so as not to distract from those currently speaking or cause echo
-* Use a browser that is up to date. Chrome or a Chromium based applications provide the best user experience
-*   Verify your browser has access to the Camera and Microphone, then be sure to test before your call:
+* Use a browser that is up to date. Chrome or a Chromium-based application provide the best user experience
+*   Verify your browser has access to Camera and Microphone, then be sure to test before your call:
 
     Mac: [Camera Permissions](https://support.apple.com/guide/mac-help/control-access-to-the-camera-mchlf6d108da/mac) | [Microphone Permissions](https://support.apple.com/guide/mac-help/control-access-to-the-microphone-on-mac-mchla1b1e1fe/mac)\
     Windows: [Camera and Microphone Privacy](https://support.microsoft.com/en-us/windows/windows-camera-microphone-and-privacy-a83257bc-e990-d54a-d212-b5e41beba857)
@@ -39,17 +39,17 @@ There are a number of factors that can contribute to inconsistent quality on a c
 
 * Try restarting your WiFi router
 * Get closer to the router, or connect via ethernet
-* If possible, try connecting via another network temporarily (for example a hotspot connection)
+* If possible, try connecting via another network temporarily (for example, a hotspot connection)
 * Close any applications or browser tabs that you aren't actively using on the call
-* Disable any background [video effects](https://whereby.helpscoutdocs.com/article/712-background-effects) or [noise reduction](https://whereby.helpscoutdocs.com/article/711-noise-reduction)
+* Disable any background video effects or noise reduction
 * Turn off your video while on the call
 
 ## Blocked Camera & Microphone access
 
-You may have accidentally blocked the meetings permission to use your camera and microphone for the meeting. Or, your browser doesn't have your device permission to utilize the camera and microphone. Follow the recommendations below to correct common problems:
+You may have accidentally blocked the meeting's permission to use your camera and microphone for the meeting. Or, your browser doesn't have your device's permission to utilize the camera and microphone. Follow the recommendations below to correct common problems:
 
-* Check to see if you've accidentally blocked permissions. For Chrome, Edge, and Firefox you can find a camera icon in the address bar. Select it and then allow.&#x20;
-  * Safari you can select **Safari** in the menu bar and then **Settings -> Websites** then select the camera and microphone options and make sure your website is set to allow
+* Check to see if you've accidentally blocked permissions. For Chrome, Edge, and Firefox, you can find a camera icon in the address bar. Select it and then click 'allow'.&#x20;
+  * For Safari, you can select **Safari** in the menu bar and then **Settings -> Websites** then select the camera and microphone options and make sure your website is set to allow.
 
 ### Operating system permissions
 
@@ -102,16 +102,16 @@ If they are still blocked, the only way to reset them is to go in to the Setting
 
 ## Difficulty joining the room or not receiving any audio/video
 
-In some cases privacy and security tools or settings can interfere with the media being exchanged in a meeting. Check the options on your device or your network to make sure you're able to connect to a call:
+In some cases, privacy and security tools or settings can interfere with the media being exchanged in a meeting. Check the options on your device or your network to make sure you're able to connect to a call:
 
-* Disable any ad-blockers, VPN, or privacy extensions. Occasionally browser extensions can interfere with how Whereby loads, which can manifest as video, audio, or room joining issues.
+* Disable any ad-blockers, VPN, or privacy extensions. Occasionally, browser extensions can interfere with how Whereby loads, which can manifest as video, audio, or room joining issues.
 * Check your firewall, proxy, or other security softwares (like anti-virus) to make sure they aren't blocking connection requests. You can try temporarily disabling them to see if it improves the connection. Port 443 will need to be open to all TCP and UDP traffic for a meeting to work.&#x20;
 
 ## Resolving disconnects on mobile
 
 If you lock your phone while in the call, you can experience a disconnect from the room a few minutes later. We suggest keeping the call active with your screen on in order to prevent this from happening.&#x20;
 
-If you have Apple's iCloud Private relay feature turned on for your device, you may also get disconnected from the room every 5 minutes. You can either [turn this feature off](https://support.apple.com/guide/icloud/mm7dc25cb68f/icloud) or join the call from another browser such as Chrome. Only calls on Safari are impacted by this feature.&#x20;
+If you have Apple's iCloud Private relay feature turned on for your device, you may also get disconnected from the room every 5 minutes. You can either [turn this feature off](https://support.apple.com/guide/icloud/mm7dc25cb68f/icloud) or join the call from another browser, such as Chrome. Only calls on Safari are impacted by this feature.&#x20;
 
 ## In-room call quality indicator
 

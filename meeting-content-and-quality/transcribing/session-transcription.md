@@ -8,11 +8,7 @@ description: >-
 # Session Transcription
 
 {% hint style="warning" %}
-Session Transcriptions is currently in beta testing and access is currently limited.
-{% endhint %}
-
-{% hint style="info" %}
-Session Transcription for Grow (custom) plan customers is currently available on demand. Email us at embedded@whereby.com if you want to start using Session Transcription. _Terms and conditions apply_
+Session Transcriptions is currently in Public Beta.
 {% endhint %}
 
 {% hint style="info" %}

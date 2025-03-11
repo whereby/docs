@@ -7,8 +7,8 @@ description: >-
 
 # Live Captions
 
-{% hint style="info" %}
-Live captions are currently in closed Beta and available to selected customers only. Email us at embedded@whereby.com to join our beta testing program (terms and conditions apply).
+{% hint style="warning" %}
+Live captions are currently in Public Beta.
 {% endhint %}
 
 Live captions automatically generate real-time text on the screen of a meeting room during the meeting itself. It usually focuses on key spoken content and may not include every single word, like filler words.&#x20;
@@ -23,9 +23,27 @@ Live captions is a supplementary feature of our paid Whereby Embedded plans. You
 _What is an unmuted participant minute?_ This is calculated using the number of participants who are unmuted during a call. For example, a 60 minute meeting containing 2 people who are unmuted for the whole meeting would use 120 unmuted participant minutes. Alternatively, a 60 minute meeting with 3 participants, where only 2 participants were unmuted and the third participant was muted for the whole meeting, would also use 120 unmuted participant minutes. From the moment a participant is unmuted, this usage counts towards the number of unmuted participant minutes, even if they do not actively talk or engage on the call.
 {% endhint %}
 
+## Setup <a href="#setup" id="setup"></a>
+
+You can enable and configure Live Captions globally for your account, or individually for each room.&#x20;
+
+### Global configuration <a href="#global-configuration" id="global-configuration"></a>
+
+When you enable Live Captions globally through the dashboard, these settings become the default for all rooms and sessions. Enabling Live Captions globally will result in all meetings being captioned. You can override these global settings by specifying the caption on a per room basis.
+
+If you want to use Live Captions for all of your meetings, you can enable it globally for your account. Go to “Configure” → “Transcription” section of your customer portal and scroll down to the "Live Captions" section. Then, toggle the Live Captions on:
+
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+
+### Per room configuration <a href="#per-room-configuration" id="per-room-configuration"></a>
+
+If you want to use Live Captions for some of your meetings, or if you need a different configuration for some of them, you can configure Live Captions individually for the room. Room parameters will override the global Live Captions settings.
+
+To do so, create the room with [POST /meetings](https://docs.whereby.com/reference/whereby-rest-api-reference/meetings) request and specify the live caption configuration.&#x20;
+
 ### Supported languages
 
-Live captions generate real-time speech to text in the specified language. You need to declare the language used by your session participants in advance - in the global configuration or per room.&#x20;
+Live captions generate real-time speech to text in the specified language. You need to declare the language used by your session participants in advance - in the [global configuration](live-captions.md#global-configuration) or [per room](live-captions.md#per-room-configuration).&#x20;
 
 <details>
 

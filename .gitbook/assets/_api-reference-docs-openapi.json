@@ -484,6 +484,10 @@
                           "vi,"
                         ],
                         "description": "What language should be used for the Session Transcription.\n- `null` - The value should be taken from the organization settings\n"
+                      },
+                      "liveCaptions": {
+                        "type": "boolean",
+                        "description": "If true, live captions will be enabled for the meeting. This will be available for all participants.\n"
                       }
                     }
                   },

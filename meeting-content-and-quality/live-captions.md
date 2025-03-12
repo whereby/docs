@@ -39,7 +39,18 @@ If you want to use Live Captions for all of your meetings, you can enable it glo
 
 If you want to use Live Captions for some of your meetings, or if you need a different configuration for some of them, you can configure Live Captions individually for the room. Room parameters will override the global Live Captions settings.
 
-To do so, create the room with [POST /meetings](https://docs.whereby.com/reference/whereby-rest-api-reference/meetings) request and specify the live caption configuration.&#x20;
+To do so, create the room with [POST /meetings](https://docs.whereby.com/reference/whereby-rest-api-reference/meetings) request and specify the live caption configuration. It's a sub-property of the `liveTranscription`object.
+
+For example, if you want a meeting with just live captions, and not live transcriptions, you can specify the `liveCaptions`option in the `liveTranscription`property, but set the `startTrigger`to `none`.
+
+```json
+    "liveTranscription": {
+        "startTrigger": "none",
+        "liveCaptions": true
+    }
+```
+
+
 
 ### Supported languages
 

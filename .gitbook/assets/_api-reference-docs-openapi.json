@@ -1995,7 +1995,7 @@
                             "example": "/4b3bd908-cb88-11ec-9d64-0242ac120002"
                           },
                           "deviceId": {
-                            "type": "string",
+                            "type": ["string", "null"],
                             "description": "The identifier of the device."
                           },
                           "userId": {

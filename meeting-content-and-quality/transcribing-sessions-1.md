@@ -16,7 +16,7 @@ In order to produce a summary from a Whereby session you need to first create a 
 
 Once you have the transcript you can create the summary using the desired summary template.
 
-You can use Whereby session summaries manually through the customer portal, or programatically with the combination of API requests.
+You can use Whereby session summaries manually through the customer portal, or programmatically with the combination of API requests.
 
 ## Summary Templates
 
@@ -189,6 +189,10 @@ Session summaries are stored in Whereby database until you delete them.
 You can delete a summary with a [DELETE /summaries/{summaryId} ](../reference/whereby-rest-api-reference/#summaries-summaryid-1)request where you expect a `204 No Content` response.
 
 ## Known limitations
+
+{% hint style="warning" %}
+Session summaries are only compatible with Whereby-hosted transcriptions. It will not be possible to trigger session summaries for transcriptions stored in your own Amazon S3 bucket.
+{% endhint %}
 
 {% hint style="warning" %}
 Session summaries are currently not considered to be HIPAA compliant. Avoid using Session Summaries in order to maintain HIPAA compliance of your Whereby sessions. [Learn more about Whereby HIPAA compliant setup](../whereby-101/faq-and-troubleshooting/hipaa-compliant-setup.md).

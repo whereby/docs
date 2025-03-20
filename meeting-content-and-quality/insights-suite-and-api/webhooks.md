@@ -109,9 +109,11 @@ Properties in `data` that are common to all transcription webhook events:
 
 | Property          | Description                                                                                                                                                                                                                                        |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `roomName`        | The string that identifies the room assigned to the meeting. It’s the last path parameter of the `roomUrl`.                                                                                                                                        |
+| `roomSessionId`   | The `roomSessionId` for the meeting.                                                                                                                                                                                                               |
 | `transcriptionId` | The identifier of the transcription that has finished processing or failed to process.                                                                                                                                                             |
 | `type`            | The type of transcription, `LIVE_TRANSCRIPTION` for Session Transcription or `RECORDING_TRANSCRIPTION` for recording based transcription                                                                                                           |
-| status            | The status of the transcription. Starts in `in_progress` and transitions to `ready` once the transcript has been successfully written to storage. If any errors occurred in the processing of the transcription then this will be set to `failed`. |
+| `status`          | The status of the transcription. Starts in `in_progress` and transitions to `ready` once the transcript has been successfully written to storage. If any errors occurred in the processing of the transcription then this will be set to `failed`. |
 
 Additional properties in data for just `transcription.finished`:
 

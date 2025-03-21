@@ -13,7 +13,7 @@
     * [Using Whereby's Browser SDK with React Hooks for a fully custom UI](whereby-101/create-your-video/in-a-web-page/using-whereby-react-hooks-build-a-telehealth-app.md)
   * [Embedding Whereby in a mobile app](whereby-101/create-your-video/in-a-mobile-app/README.md)
     * [Embedding Whereby in iOS](whereby-101/create-your-video/in-a-mobile-app/in-ios-apps/README.md)
-      * [Using Whereby's Native SDK](whereby-101/create-your-video/in-a-mobile-app/in-ios-apps/using-wherebys-native-sdk.md)
+      * [Using Whereby's Native iOS SDK](whereby-101/create-your-video/in-a-mobile-app/in-ios-apps/using-wherebys-native-sdk.md)
     * [Embedding Whereby in Android](whereby-101/create-your-video/in-a-mobile-app/in-android-apps/README.md)
       * [Using Whereby's Native SDK](whereby-101/create-your-video/in-a-mobile-app/in-android-apps/using-wherebys-native-sdk.md)
     * [Using Flutter](whereby-101/create-your-video/in-a-mobile-app/in-flutter.md)

@@ -15,15 +15,15 @@ Embedding into an app is not required in order for mobile users to join calls, a
 
 Learn how to embed Whereby rooms in your native iOS app.&#x20;
 
-* [WebView and SFSafariViewController](in-ios-apps/)
-* [Whereby's Native SDK](in-ios-apps/using-wherebys-native-sdk.md)
+* [WebView](in-ios-apps/)
+* [Whereby's native iOS SDK](in-ios-apps/using-wherebys-native-sdk.md)
 
 ### In Android apps
 
 Learn how to embed Whereby rooms in your native Android app.
 
 * [WebView](in-android-apps/)
-* [Whereby's Native SDK](in-android-apps/using-wherebys-native-sdk.md)
+* [Whereby's native Android SDK](in-android-apps/using-wherebys-native-sdk.md)
 
 
 

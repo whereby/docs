@@ -1,19 +1,34 @@
 ---
 description: >-
-  Below are the recommended approaches to embed a Whereby room depending on the
-  iOS version.
+  Below are the recommended approaches to embed Whereby in a native iOS app
+  using a WebView.
 ---
 
-# On iOS
+# Embedding Whereby in iOS
+
+WebViews are powerful built-in components that allow loading URLs within a native app. When embedding Whereby, depending on your implementation, you can use the following types of URLs:
+
+* A Whereby room URL (which takes the user directly to the Whereby pre-call screen).
+* A custom web app that embeds Whereby using the Embedded element.
+* A React app that embeds Whereby with the React Hooks SDK.
 
 {% hint style="info" %}
-We offer native SDKs that allow you to tap into powerful features such as listening to room events and use custom buttons to send commands to the room from your application.\
+This solution is based on `Whereby Web`, which provides advanced tools such as integrations and breakout groups. However, we also offer a native iOS SDK that allows you to customize the user experience in your iOS app. With the iOS SDK, you can create custom iOS UIButtons and UIViews, send commands to the room, and listen to room events to implement custom callbacks.\
 [Read more](using-wherebys-native-sdk.md)
 {% endhint %}
 
-## iOS 14.5 and onwards
+## Permissions
 
-[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) supports embedding pages that use WebRTC from iOS 14.5 onwards. To access the microphone and camera, it is necessary to add both [NSMicrophoneUsageDescription](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple\_ref/doc/uid/TP40009251-SW25) and [NSCameraUsageDescription](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple\_ref/doc/plist/info/NSCameraUsageDescription) keys to the app’s Info.plist file.
+Ensure the following permissions are declared in your `Info.plist` file:
+
+* **NSMicrophoneUsageDescription** - [Microphone Access](https://developer.apple.com/documentation/bundleresources/information_property_list/nsmicrophoneusagedescription)
+* **NSCameraUsageDescription** - [Camera Access](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription)
+* **NSPhotoLibraryUsageDescription** - [Photo Library Access](https://developer.apple.com/documentation/bundleresources/information_property_list/nsphotolibraryusagedescription) (for file sharing)
+* **NSPhotoLibraryAddUsageDescription** - [Photo Library Additions](https://developer.apple.com/documentation/bundleresources/information_property_list/nsphotolibraryaddusagedescription) (for file sharing)
+
+### WKWebView (WebKit)
+
+[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) supports embedding pages that use WebRTC from iOS 14.5 onwards. Below is a basic example of how to implement a WKWebView.
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -42,9 +57,19 @@ class WKWebViewController: UIViewController, WKNavigationDelegate {
 {% endtab %}
 {% endtabs %}
 
-## iOS 14.3 and 14.4
+{% hint style="info" %}
+This is a minimal implementation that sticks to the default behavior of WKWebView. It is recommended to extend the configuration by implementing delegate methods to improve the user experience. For example, you can:
 
-For iOS 14.3 and 14.4 use [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) to open a website containing an iframe with its `src` specified as a Whereby room, alongside a custom user interface:
+* Avoid repeated media permission prompts.
+* Enable and manage file sharing.
+* Handle external link redirections.
+
+For a complete example, check out our public repository: [ios-webview-demo](https://github.com/whereby/ios-webview-demo).
+{% endhint %}
+
+## SFSafariViewController
+
+For iOS 14.3 and 14.4, use [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) to open a website containing an iframe with its `src` specified as a Whereby room, alongside a custom user interface:
 
 {% tabs %}
 {% tab title="Swift" %}
@@ -69,7 +94,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
 {% endtab %}
 {% endtabs %}
 
-## iOS 14.2 and earlier
+## Redirect to browser
 
 Redirect to a browser (Safari by default) for iOS versions lower than 14.3:
 

@@ -13,7 +13,7 @@ When using HTML or a static project:
 ```html
 <html>
     <head>
-        <script src="https://cdn.srv.whereby.com/embed/v2-embed.js" type="module"></script>
+        <script src="https://cdn.srv.whereby.com/embed/v3-embed.js" type="module"></script>
     </head>
     <body>
         <div class="container">

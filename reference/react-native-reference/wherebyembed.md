@@ -26,7 +26,7 @@ The `WherebyEmbed` renders a [react-native-webview](https://github.com/react-nat
 The `WherebyEmbed` component accepts attributes that you can use to customize the room and user experience. Every one of these attributes can be passed in as props.&#x20;
 
 {% hint style="info" %}
-Attributes that accept `on/off` values in the list, can be used as normal boolean props in the react-native-sdk.
+Attributes that accept `on/off` values in the list must be used as normal boolean props in the react-native-sdk.
 {% endhint %}
 
 [#attributes-of-the-component](../using-the-whereby-embed-element.md#attributes-of-the-component "mention")

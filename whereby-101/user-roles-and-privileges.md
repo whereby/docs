@@ -87,6 +87,10 @@ This is a 1.0 feature and might change in the future.
 Meetings created in "[group](using-the-rest-api/#creating-rooms)" mode can support up to 200 hosts or participants. Viewer mode can support an additional 400 viewers for a total of 600 viewers, hosts, and participants.&#x20;
 {% endhint %}
 
+{% hint style="warning" %}
+Using Viewer Mode for meetings created in "normal" mode (2-4 people) may present technical issues. Viewer Mode is intended to be used in "group" meetings instead.&#x20;
+{% endhint %}
+
 
 
 **Example request body:**

@@ -147,7 +147,7 @@ There is no need to do anything to enable the HIPAA compliant file sharing as it
 
 ### Session Transcriptions
 
-[Session Transcriptions](../../meeting-content-and-quality/transcribing/session-transcription.md) is designed to protect ePHI (Electronic protected health information) and supports compliance with the HIPAA Security Rule.
+[Session Transcriptions](../../meeting-content-and-quality/transcribing/session-transcription.md) is designed to protect ePHI (Electronic protected health information) and supports compliance with the HIPAA Security Rule. To remain HIPAA compliant while using Session Transcriptions, you need to store the transcriptions in an S3 storage managed by your organisation.
 
 ### Encryption in transit&#x20;
 

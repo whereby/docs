@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
----
-
 # REST API Reference
 
 ### Versioning
@@ -44,7 +30,7 @@ Here are some examples of how a 1000 point budget could be spent within **1 minu
 * 333 POST requests (333 x 3 = 999 points)
 * 200 DELETE + 100 POST + 300 GET requests (200 x 2 + 100 x 3 + 300 x 1 = 1000 points)
 
-_Grow_ [plans](https://whereby.com/information/embedded/pricing/) have 1000 points in total per minute, and _Build_ plans have 100. The limits are global and are shared across all your API keys. Talk to us if you need higher limits.
+_Enterprise_ [plans](https://whereby.com/information/embedded/pricing/) have 1000 points in total per minute, and _Build_ plans have 100. The limits are global and are shared across all your API keys. Talk to us if you need higher limits.
 
 You may read the `Retry-After` (seconds) or `X-RateLimit-Reset` (date) response headers in order to know when you can restart your requests. In addition, the `X-RateLimit-Limit` header includes the total number of points for your organization, and the `X-RateLimit-Remaining` header displays the remaining available points.
 

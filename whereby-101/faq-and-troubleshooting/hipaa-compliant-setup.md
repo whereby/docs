@@ -13,7 +13,7 @@ Our HIPAA compliant setup information was updated in May 2023 to include rooms o
 
 ## Pricing and packaging&#x20;
 
-The HIPAA compliant on-demand capability for Whereby is available only on our [Grow plans](https://whereby.com/information/embedded/pricing). For any questions about pricing options or enabling the HIPAA add-on, reach out to your Whereby contact or [contact sales](https://whereby.com/information/contact-sales).&#x20;
+Whereby’s HIPAA-compliant on-demand capability is included at no additional cost for customers on our Enterprise plan. Build Plan customers can access this feature through a paid add-on. For any questions about pricing options or enabling the HIPAA add-on, reach out to your Whereby contact or [contact sales](https://whereby.com/information/contact-sales).
 
 ## HIPAA compliance prerequisites
 

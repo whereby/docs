@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # useRoomConnection
 
 The `useRoomConnection` hook provides the ability to connect participants in a given room, subscribe to state updates, and perform actions on the connection like toggling the camera or microphone.

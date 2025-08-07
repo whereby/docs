@@ -3,17 +3,6 @@ description: >-
   Our web component allows you to embed a Whereby room in any webpage. It
   provides a simple readable integration and exposes local client events that
   are sent from the component to your platform.
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Using Whereby's Web Component & Pre-built UI

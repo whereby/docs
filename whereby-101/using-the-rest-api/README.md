@@ -3,17 +3,6 @@ description: >-
   Rooms are where video calls (sessions) take place. Create or delete Whereby
   rooms programmatically using a simple API request. Rooms can be created on
   demand, or ahead of time for scheduled meetings.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Generating Room URLs

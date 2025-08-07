@@ -3,17 +3,6 @@ description: >-
   The allowed domains feature lets you control which domains can be used for
   embedding your room and is also required in order to enable some specific
   features.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: false
-  pagination:
-    visible: false
 ---
 
 # Allowed Domains & Localhost

@@ -56,6 +56,7 @@
 * [Quality Insights](meeting-content-and-quality/insights-suite-and-api/README.md)
   * [Real-time troubleshooting](meeting-content-and-quality/insights-suite-and-api/real-time-troubleshooting.md)
   * [Using the Insights dashboard](meeting-content-and-quality/insights-suite-and-api/using-the-insights-dashboard.md)
+  * [Session Ratings](meeting-content-and-quality/insights-suite-and-api/session-ratings.md)
   * [Improving call quality](meeting-content-and-quality/insights-suite-and-api/improving-call-quality.md)
   * [Tracking room events with Webhooks](meeting-content-and-quality/insights-suite-and-api/webhooks.md)
 

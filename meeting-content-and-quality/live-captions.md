@@ -16,7 +16,21 @@ Live captions automatically generate real-time text on the screen of a meeting r
 Primarily used for real-time accessibility, helping participants follow along as the meeting progresses without needing to listen to the audio.
 
 {% hint style="info" %}
-Live captions is a supplementary feature of our paid Whereby Embedded plans. You can review the pricing and options [on our site](https://whereby.com/information/embedded/pricing/).
+Live captions is a supplementary feature of our paid Whereby Embedded plans. The price will depend on your **Embedded plan** type and the **language** chosen.
+
+**Primary languages\*:**
+
+* **Build (monthly)** plan: $0.0065 per unmuted participant minute.
+* **Enterprise (annual)** plan:
+  * $0.0055 per unmuted participant minute (for pre-purchased minutes).\*\*
+  * $0.0065 per unmuted participant minute (for over usage).
+
+**Secondary languages\***:
+
+* Both plan types: $0.024 per unmuted participant minute.
+
+**\*** Currently, only English is available as a primary language. All other languages are secondary languages. We are working to add more languages to the primary language list.\
+\*\* To pre-purchase minutes, please reach out to your CSM.
 {% endhint %}
 
 {% hint style="info" %}
@@ -38,6 +52,10 @@ If you want to use Live Captions for all of your meetings, you can enable it glo
 ### Per room configuration <a href="#per-room-configuration" id="per-room-configuration"></a>
 
 If you want to use Live Captions for some of your meetings, or if you need a different configuration for some of them, you can configure Live Captions individually for the room. Room parameters will override the global Live Captions settings.
+
+{% hint style="warning" %}
+The default language set on your organization’s dashboard can be overridden on a room level. This could result in the price charged for your use of live captions/session transcriptions being impacted. Please refer to the price for different languages at the top of the page for further details.
+{% endhint %}
 
 To do so, create the room with [POST /meetings](https://docs.whereby.com/reference/whereby-rest-api-reference/meetings) request and specify the live caption configuration. It's a sub-property of the `liveTranscription` object.
 
@@ -96,10 +114,6 @@ Live captions generate real-time speech to text in the specified language. You n
 
 ### Known limitations
 
-{% hint style="warning" %}
-We don’t show data related to Live captions in the Insights Dashboard.
-{% endhint %}
-
-{% hint style="warning" %}
-Live captions are not available in the Whereby iOS app.&#x20;
-{% endhint %}
+1. Currently, the language spoken cannot be auto-detected. For example, if the meeting is configured for English but French is spoken in the meeting, the language output will likely be incoherent. In this case, you will still be charged per unmuted participant minute for the configured language.
+2. We don't show data related to Live captions in the Insights Dashboard.
+3. Live captions are not available in the Whereby iOS app.&#x20;

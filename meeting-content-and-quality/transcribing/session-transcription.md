@@ -15,6 +15,24 @@ Session Transcriptions is currently in Public Beta.
 _What is an unmuted participant minute?_ This is calculated using the number of participants who are unmuted during a call. For example, a 60 minute meeting containing 2 people who are unmuted for the whole meeting would use 120 unmuted participant minutes. Alternatively, a 60 minute meeting with 3 participants, where only 2 participants were unmuted and the third participant was muted for the whole meeting, would also use 120 unmuted participant minutes. From the moment a participant is unmuted, this usage counts towards the number of unmuted participant minutes, even if they do not actively talk or engage on the call.
 {% endhint %}
 
+{% hint style="info" %}
+Session Transcriptions is a supplementary feature of our paid Whereby Embedded plans. The price will depend on your **Embedded plan** type and the **language** chosen.
+
+**Primary languages\*:**
+
+* **Build (monthly)** plan: $0.0065 per unmuted participant minute.
+* **Enterprise (annual)** plan:
+  * $0.0055 per unmuted participant minute (for pre-purchased minutes).\*\*
+  * $0.0065 per unmuted participant minute (for over usage).
+
+**Secondary languages\***:
+
+* Both plan types: $0.024 per unmuted participant minute.
+
+**\*** Currently, only English is available as a primary language. All other languages are secondary languages. We are working to add more languages to the primary language list.\
+\*\* To pre-purchase minutes, please reach out to your CSM.
+{% endhint %}
+
 Session transcripts are created by live streaming Whereby session audio in real time. After the session is finished they are saved as text files accessible from the dashboard or via [the API](../../reference/whereby-rest-api-reference/transcriptions.md). You can use the transcripts as a standalone resource (eg. for compliance purposes) or send to an external service for post processing (eg. to derive key topics or create a session summary).&#x20;
 
 ## Storage options
@@ -61,6 +79,10 @@ You can choose between the following transcription triggers:
 ### Per room configuration
 
 If you want to use Session Transcription for some of your sessions, or if you need a different configuration for some of the sessions, you can configure Session Transcription individually for the room. Room parameters will override the global Session Transcription settings.&#x20;
+
+{% hint style="warning" %}
+The default language set on your organization’s dashboard can be overridden on a room level. This could result in the price charged for your use of live captions/session transcriptions being impacted. Please refer to the price for different languages at the top of the page for further details.
+{% endhint %}
 
 To do so, create the room with [POST /meetings](../../reference/whereby-rest-api-reference/meetings.md) request and specify the transcription options of your choice:&#x20;
 
@@ -153,6 +175,7 @@ You can to automate your transcription process programmatically with a combinati
 
 1. Session Transcriptions **are not compatible with** [**Breakout Groups**](../../whereby-101/customizing-rooms/breakout-groups-with-embedded.md) **feature**. When using Breakout Groups, the transcript will cover the conversation from the main room, but the audio from individual groups will not be transcribed.&#x20;
 2. Session Transcription is available for sessions up to 12 hours long.
+3. Currently, the language spoken cannot be auto-detected. For example, if the meeting is configured for English but French is spoken in the meeting, the language output will likely be incoherent. In this case, you will still be charged per unmuted participant minute for the configured language.
 
 ### Coming soon...
 

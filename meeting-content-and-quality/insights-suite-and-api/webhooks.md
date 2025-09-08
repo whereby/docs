@@ -48,6 +48,7 @@ Properties in `data` that are common to all in-room webhook events:
 | ----------- | ----------------------------------------------------------------------------------------------------------- |
 | `meetingId` | The identifier of the meeting that the user has joined/left or where the session has started/ended.         |
 | `roomName`  | The string that identifies the room assigned to the meeting. It’s the last path parameter of the `roomUrl`. |
+| `subdomain` | The string that identifies your organization.                                                               |
 
 Additional properties in `data` for `room.client.joined` , `room.client.left room.client.knocked` and `room.client.knockCancelled`:
 
@@ -90,6 +91,7 @@ An example of a webhook event object:
     "displayName": "Joe Bloggs",
     "meetingId": "134",
     "roomName": "/af0b7b66-c738-4981-887a-ad416754f32d",
+    "subdomain": "JoeBloggsInc"
     "numClients": 8,
     "numClientsByRoleName": {
       "host": 1,

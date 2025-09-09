@@ -83,32 +83,32 @@ Live captions generate real-time speech to text in the specified language. You n
 * Danish (da)
 * Dutch (nl)
 * English (en)
-* English - United Kingdom (en-GB)
-* Finnish (fi)&#x20;
-* French (fr)
-* German (de)
-* German - Switzerland (de-CH)&#x20;
-* Greek (el)
-* Hindi (hi)
-* Indonesian (id)&#x20;
-* Italian (it)&#x20;
-* Japanese (ja)&#x20;
-* Korean (ko)&#x20;
-* Latvian (lv)
-* Malay (ms)
-* Norwegian (no)
-* Polish (pl)
-* Portuguese (pt)&#x20;
-* Brazilian Portuguese (pt-BR)&#x20;
-* Romanian (ro)&#x20;
-* Russian (ru)&#x20;
-* Slovak (sk)&#x20;
-* Spanish (es)&#x20;
-* Swedish (sv)&#x20;
-* Thai (th)&#x20;
-* Turkish (tr)&#x20;
-* Ukrainian (uk)&#x20;
-* Vietnamese (vi)
+
+- Finnish (fi)&#x20;
+- French (fr)
+- German (de)
+- German - Switzerland (de-CH)&#x20;
+- Greek (el)
+- Hindi (hi)
+- Indonesian (id)&#x20;
+- Italian (it)&#x20;
+- Japanese (ja)&#x20;
+- Korean (ko)&#x20;
+- Latvian (lv)
+- Malay (ms)
+- Norwegian (no)
+- Polish (pl)
+- Portuguese (pt)&#x20;
+- Brazilian Portuguese (pt-BR)&#x20;
+- Romanian (ro)&#x20;
+- Russian (ru)&#x20;
+- Slovak (sk)&#x20;
+- Spanish (es)&#x20;
+- Swedish (sv)&#x20;
+- Thai (th)&#x20;
+- Turkish (tr)&#x20;
+- Ukrainian (uk)&#x20;
+- Vietnamese (vi)
 
 </details>
 

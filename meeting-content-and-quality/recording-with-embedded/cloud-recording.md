@@ -90,7 +90,7 @@ You can access all recordings saved in the Whereby-provided storage from the “
 ## Setup and information in S3
 
 {% hint style="warning" %}
-This feature requires the use of Amazon S3 storage. You can review their plans and pricing on the [AWS site](https://aws.amazon.com/s3/pricing/). Amazon also offers some [free tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank\&all-free-tier.sort-order=asc\&awsf.Free%20Tier%20Types=\*all\&awsf.Free%20Tier%20Categories=\*all) options to explore. Note that if you're creating an AWS account from scratch it can sometimes take up to 24 hours.
+This feature requires the use of Amazon S3 storage. You can review their plans and pricing on the [AWS site](https://aws.amazon.com/s3/pricing/). Amazon also offers some [free tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank\&all-free-tier.sort-order=asc\&awsf.Free%20Tier%20Types=*all\&awsf.Free%20Tier%20Categories=*all) options to explore. Note that if you're creating an AWS account from scratch it can sometimes take up to 24 hours.
 {% endhint %}
 
 {% embed url="https://youtu.be/iLRCdQNK7FY" %}
@@ -127,6 +127,19 @@ For more information, check out Amazon's support article:\
 
 
 ![Where to create Access Keys](<../../.gitbook/assets/access key s3.png>)
+
+**Key & secret rotation:**
+
+If you wish to rotate the access key at regular intervals, Whereby supports setting new keys on the organization level using our admin UI, or on a per room level using our [REST api](../../reference/whereby-rest-api-reference/).
+
+Please ensure however, that any recording started before updating the key is allowed to finish before invalidating the old key. The following steps should ensure continuous operation:\
+\
+(One day before invalidation of old key)
+
+1. Create a new access key & secret with identical permissions to the existing one
+2. Update cloud recording settings in the admin UI with the new key / update code which uses our REST api to include new key
+3. Wait until all existing recordings have completed (max recording duration is 24 hours)
+4. Delete / invalidate old key
 {% endtab %}
 {% endtabs %}
 

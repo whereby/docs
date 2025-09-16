@@ -2,6 +2,7 @@
 description: >-
   Turn the content of Whereby sessions into meeting notes, clinical
   documentation and educational material with the power of AI.
+hidden: true
 ---
 
 # Session summaries

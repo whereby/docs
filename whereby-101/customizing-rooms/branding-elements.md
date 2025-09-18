@@ -11,9 +11,9 @@ description: >-
 
 ## Using the Branding tools in your Embedded Dashboard
 
-The branding tools can be found under “Configure” → “Appearance”. Any configuration done here will be applied to all your rooms, unless overridden by individual room settings applied via the [Room Theme API](branding-elements.md#using-the-room-theme-api).
+The branding tools can be found under “**Configure**” → “**Appearance**”. Any configuration done here will be applied to all your rooms, unless overridden by individual room settings applied via the [Room Theme API](branding-elements.md#using-the-room-theme-api).
 
-![](<../../.gitbook/assets/branding dashboard.png>)
+![](../../.gitbook/assets/Appearance.png)
 
 ## Using the Room Theme API
 

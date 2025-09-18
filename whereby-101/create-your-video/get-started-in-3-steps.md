@@ -24,7 +24,7 @@ Get [started for free](https://whereby.com/information/embedded/pricing)!
 
 ### **Step 1: Generate an API key**
 
-From your account dashboard, go to the _Configure_ screen. Under the API keys panel, click the **Generate key** button to create a new key.
+From your account dashboard, go to "**Configure**” **→** “**API**”. Under the **API keys** panel, click the **Generate key** button to create a new key.
 
 Your API key is only displayed once. Copy the key and save it to your secrets manager. You'll need it to send requests to our REST API.
 

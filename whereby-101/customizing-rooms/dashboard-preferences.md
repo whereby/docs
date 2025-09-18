@@ -8,7 +8,7 @@ description: >-
 
 The feature preferences can be found under "**Configure**” **→** “**Features**”. Any adjustments made here will be applied to all your rooms, unless overridden by specific [URL parameters](using-url-parameters.md) added to the meeting URL.
 
-![](<../../.gitbook/assets/dashboard-features (1).jpg>)
+![](../../.gitbook/assets/precallfeatures.png)
 
 ### Pre-call review
 

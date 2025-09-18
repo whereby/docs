@@ -59,9 +59,9 @@ You can enable and configure Session Transcription globally for your account, or
 When you enable Session Transcription globally through the dashboard, these settings become the default for all rooms and sessions. Enabling Session Transcription globally will result in all sessions being transcribed, including sessions in rooms created previously. You can override these global settings by specifying the transcription on a [per room](session-transcription.md#per-room-configuration) basis
 {% endhint %}
 
-If you want to use Session Transcription for all your sessions, you can enable it globally for your account. Go to “Configure” → “Transcription” section of your customer portal and choose either "Whereby-hosted session transcriptions" or "Self-hosted session transcriptions" options. Then choose the trigger and the main language of your sessions.
+If you want to use Session Transcription for all your sessions, you can enable it globally for your account. Go to “**Configure**” → “**Transcription**” section of your customer portal and choose either "Whereby-hosted session transcriptions" or "Self-hosted session transcriptions" options. Then choose the trigger and the main language of your sessions.
 
-<figure><img src="../../.gitbook/assets/396a9990-7860-4967-ac50-f999c453f7b8.png" alt=""><figcaption><p>Global configuration of Session Transcription</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/TranscriptionConfiguration.png" alt=""><figcaption><p>Global configuration of Session Transcription</p></figcaption></figure>
 
 To set up your own self-hosted storage option for Session Transcription you will need AWS S3 credentials. Please refer to the guide provided for self-hosted recordings [here](../recording-with-embedded/cloud-recording.md#setup-and-information-in-s3) for further information on obtaining these credentials from AWS directly.
 

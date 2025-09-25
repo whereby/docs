@@ -24,9 +24,9 @@
 
 ## WherebyWebhookTriggers
 
-| Property                                                                                                          |                                                                                                                                                                                                         |
-| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `keyof` [`WherebyWebhookTriggerTypes`](trigger-types.md#wherebywebhooktriggertypes-less-than-object-greater-than) | A function that receives the payload defined for this webhook type (`WherebyWebhookTriggerTypes[Key]`) and returns a boolean. Returning `true` indicates that the trigger should start an Assistant. \| |
+| Property                                                                                                          |                                                                                                                                                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `keyof` [`WherebyWebhookTriggerTypes`](trigger-types.md#wherebywebhooktriggertypes-less-than-object-greater-than) | A function that receives the payload defined for this webhook type (`WherebyWebhookTriggerTypes[Key]`) and returns a `boolean` or `Promise<boolean>`. Returning `true` indicates that the trigger should start an Assistant. \| |
 
 ## WherebyWebhookTriggerTypes<<mark style="color:$success;">Object</mark>>
 

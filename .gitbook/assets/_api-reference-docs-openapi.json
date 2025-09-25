@@ -336,7 +336,7 @@
                   "roomNamePrefix": {
                     "type": "string",
                     "maxLength": 39,
-                    "pattern": "[a-z0-9]{0,39}",
+                    "pattern": "[a-z0-9-]{0,39}",
                     "example": "example-prefix",
                     "description": "This will be used as the prefix for the room name. The string should be lowercase, and spaces\nwill be automatically removed. 39 character max\n"
                   },

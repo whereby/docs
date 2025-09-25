@@ -1,7 +1,7 @@
 ---
 description: >-
   Whereby Assistants let you connect AI agents to video rooms, stream and
-  process audio, and automate real-time interactions.”
+  process audio, and automate real-time interactions.
 ---
 
 # Assistants

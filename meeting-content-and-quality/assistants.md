@@ -108,7 +108,7 @@ There are no additional costs for enabling assistants - they are treated as norm
 
 ## What next?
 
-* Take a look at our [Assistant SDK Reference](https://app.gitbook.com/o/UqLY7vLb01EgY68ZG0GF/s/c7hN8ZKHNZris5300KEl/~/changes/710/reference/assistant-sdk-reference#installing-ffmpeg) documentation for more details and to get started building a Whereby Assistant.
+* Take a look at our [Assistant SDK Reference](../reference/assistant-sdk-reference/) documentation for more details and to get started building a Whereby Assistant.
 
 
 

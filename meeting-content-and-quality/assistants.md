@@ -15,7 +15,7 @@ Assistants are headless participants that connect to a Whereby room to enhance y
 
 They can:&#x20;
 
-* Grant access to audio and video streams, including a combined audio stream of all participants
+* Access all participant audio and video streams in a connected room, including a combined audio stream of all participants
 * Perform in room actions like sending chat messages, starting cloud recording, letting participants into the room
 * Alongside our [Trigger API](../reference/assistant-sdk-reference/api-reference/trigger.md) be triggered automatically via webhooks (e.g. when a first participant joins a room or when two or more participants join and a room session starts).&#x20;
 

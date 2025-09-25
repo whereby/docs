@@ -2,10 +2,6 @@
 
 The `Trigger` API lets you run an `express` server that listens for Whereby [webhooks](../../../meeting-content-and-quality/insights-suite-and-api/webhooks.md) and, based on your rules, returns a `TRIGGER_EVENT_SUCCESS` event if the conditions of your trigger are met.&#x20;
 
-{% hint style="info" %}
-When using Assistant's, i
-{% endhint %}
-
 ## Constructor
 
 ```jsx
@@ -24,7 +20,7 @@ const trigger = new Trigger(options: TriggerOptions)
 
 ## Events
 
-The `Trigger` API extends `EventEmitter` and emits lifecycle events after your trigger predicate returns `true``.`    &#x20;
+The `Trigger` API extends `EventEmitter` and emits lifecycle events after your trigger predicate returns `true.`    &#x20;
 
 ```jsx
 import { TRIGGER_EVENT_SUCCESS, Trigger } from "@whereby.com/assistant";

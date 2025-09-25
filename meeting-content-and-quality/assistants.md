@@ -54,15 +54,17 @@ Once enabled, any Whereby Assistant that now provides the `assistantKey` copied 
 
 That's it for the configuration steps!
 
-Now let's see how it looks when a Whereby Assistant joins a room. When joining a room, a notification will be shown to all participants currently in the room.
+When an assistant now joins any room (using its `assistantKey`) an in-room notification will be shown to all participants.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-09-25 at 11.36.18.png" alt=""><figcaption></figcaption></figure>
 
-A Whereby Assistant sits in the room status bar until it leaves the room. Interacting with the icon displays the title of the assistant.
+A Whereby Assistant then sits in the room status bar for the duration that it is connected and until it leaves the room.&#x20;
+
+Interacting with the assistant icon in the room status displays the title of the assistant.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-09-25 at 11.36.32.png" alt=""><figcaption></figcaption></figure>
 
-When an assistant leaves the room it will announce that it is leaving to all participants remaining in the room.
+When the assistant leaves the room it will announce that it is leaving to all participants remaining in the room.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-09-25 at 11.42.49 1.png" alt=""><figcaption></figcaption></figure>
 

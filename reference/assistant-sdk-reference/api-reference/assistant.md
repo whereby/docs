@@ -41,7 +41,7 @@ import {
   Assistant,
   ASSISTANT_JOINED_ROOM,
   ASSISTANT_LEFT_ROOM,
-} from "@whereby.com/assistant";
+} from "@whereby.com/assistant-sdk";
 
 <strong>const assistant = new Assistant({
 </strong>  assistantKey: process.env.ASSISTANT_KEY
@@ -88,7 +88,7 @@ import {
   ASSISTANT_LEFT_ROOM,
   PARTICIPANT_VIDEO_TRACK_ADDED,
   PARTICIPANT_AUDIO_TRACK_ADDED,
-} from "@whereby.com/assistant";
+} from "@whereby.com/assistant-sdk";
 
 <strong>const assistant = new Assistant({
 </strong>  assistantKey: process.env.ASSISTANT_KEY

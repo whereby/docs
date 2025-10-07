@@ -29,27 +29,35 @@ import "@whereby.com/assistant-sdk/polyfills";
 ```
 
 ```jsx
+import { Assistant } from "@whereby.com/assistant-sdk";
+
 const assistant = new Assistant({ assistantKey: "my-assistant-key" });
 ```
 
-3. Have the assistant join the room:&#x20;
+3. Have the assistant start to join the room and wait until the room is connected:&#x20;
+
+<pre class="language-jsx"><code class="lang-jsx"><strong>await assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
+</strong></code></pre>
+
+4. Once the room is connected start using your assistant!&#x20;
+
+<pre class="language-jsx"><code class="lang-jsx"><strong>const roomConnection = assistant.getRoomConnection();
+</strong>roomConnection.sendChatMessage("Hello! I'm your assistant, how can I help you?");
+</code></pre>
+
+The above steps can be written in with promise-formatting as follows:
 
 ```jsx
-assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
-```
-
-4. Start using your assistant!&#x20;
-
-```jsx
-assistant.sendChatMessage("Hello! I'm your assistant, how can I help you?");
-```
-
-```jsx
-function main() {
-    const assistant = new Assistant({ assistantKey: "my-assistant-key" });
-    assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
-    assistant.sendChatMessage("Hello! I'm your assistant, how can I help you?");
-}
+const assistant = new Assistant({ assistantKey: "my-assistant-key" });
+assistant
+  .joinRoom("https://your-subdomain.whereby.com/your-room-name")
+  .then(() => {
+    const roomConnection = assistant.getRoomConnection();
+    roomConnection.sendChatMessage("Hello! I'm your assistant, how can I help you?");
+  })
+  .catch(error => {
+    console.error("An error has occurred", error);
+  });
 ```
 
 ### Using Trigger API
@@ -63,16 +71,16 @@ If you'd like the assistant to join the room automatically, you can make some sm
 2. Set up start [trigger](api-reference/trigger.md)&#x20;
 
 ```jsx
+import { Trigger } from "@whereby.com/assistant-sdk";
+
 let hasAssistantJoined = false;
 
 const trigger = new Trigger({
-        webhookTriggers: {
-            "room.client.joined": () => !hasAssistantJoined,
-        },
-        port: 3000,
-
-    });
-
+  webhookTriggers: {
+    "room.client.joined": () => !hasAssistantJoined,
+  },
+  port: 3000,
+});
 ```
 
 3. Start the trigger server
@@ -81,57 +89,70 @@ const trigger = new Trigger({
 trigger.start();
 ```
 
-4. Listen for the  [`TRIGGER_EVENT_SUCCESS`](types/trigger-types.md#triggerevents) event - this indicates that the trigger predicate has been a match, and that your assistant should now join the room. Here, you can create the assistant and join the room and then listen for a [ASSISTANT\_JOINED\_ROOM](types/assistant-types.md) event before sending a chat message in to the connected room.
+4. Listen for the  [`TRIGGER_EVENT_SUCCESS`](types/trigger-types.md#triggerevents) event - this indicates that the trigger predicate has been a match, and that your assistant should now join the room. Here, you can create the assistant and join the room before sending a chat message in to the connected room.
 
 ```jsx
-trigger.on(TRIGGER_EVENT_SUCCESS, ({ roomUrl }) => {
+trigger.on(TRIGGER_EVENT_SUCCESS, async ({ roomUrl }) => {
+  console.log("Webhook trigger has been matched!");
   const assistant = new Assistant({ assistantKey: "my-assistant-key" });
-  assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
   
-  assistant.on(ASSISTANT_JOINED_ROOM, () => {
-    assistant.sendChatMessage("Hello! I'm your assistant, how can I help you?");
-  })
+  await assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
+  console.log("Connected to room");
+  hasAssistantJoined = true;
+  
+  const roomConnection = assistant.getRoomConnection();
+  roomConnection.sendChatMessage("Hello! I'm your assistant, how can I help you?");
 });
 ```
 
-5. If you’re using combined audio, wait for [`AUDIO_STREAM_READY`](types/assistant-types.md#assistantevents-less-than-object-greater-than) - this event will return the a single track capturing all audio in a Whereby room.
+5. Finally, clean up any open listeners when the assistant eventually leaves the room (e.g. reset the webhook trigger for this room).
 
 ```jsx
-assistant.on(AUDIO_STREAM_READY, ({ track }) => {
-  console.log("Assistant audio track ready!");
+assistant.on(ASSISTANT_LEFT_ROOM, () => {
+  console.log("Disconnected from room");
+  hasAssistantJoined = false;
 });
 ```
 
-6. Start building! Here’s a minimal example, using the trigger API and creating an assistant that will send a chat message into the session.&#x20;
+5. Start building! Here’s a minimal example, using the trigger API and creating an assistant that will send a chat message into the room session and subscribe to the room session's combined audio stream.&#x20;
 
 ```jsx
+import "@whereby.com/assistant-sdk/polyfills";
+
+import {
+    Trigger,
+    Assistant,
+    TRIGGER_EVENT_SUCCESS,
+    ASSISTANT_LEFT_ROOM,
+} from "@whereby.com/assistant-sdk";
+
 let hasAssistantJoined = false;
 
-function main() {
+const trigger = new Trigger({
+  webhookTriggers: {
+    "room.client.joined": () => !hasAssistantJoined,
+  },
+  port: 3000,
+});
 
-  const trigger = new Trigger({
-    webhookTriggers: {
-      "room.client.joined": () => !hasAssistantJoined,
-    },
-    port: 3000,
+trigger.start();
+
+trigger.on(TRIGGER_EVENT_SUCCESS, async ({ roomUrl }) => {
+  console.log("Webhook trigger has been matched!");
+  const assistant = new Assistant({ assistantKey: "my-assistant-key" });
+  
+  await assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
+  console.log("Connected to room");
+  hasAssistantJoined = true;
+    
+  const roomConnection = assistant.getRoomConnection();
+  roomConnection.sendChatMessage("Hello! I'm your assistant, how can I help you?");
+    
+  assistant.on(ASSISTANT_LEFT_ROOM, () => {
+    console.log("Disconnected from room");
+    hasAssistantJoined = false;
   });
-
-  trigger.start();
-
-  trigger.on(TRIGGER_EVENT_SUCCESS, ({ roomUrl }) => {
-    console.log("Webhook has been triggered!");
-    const assistant = new Assistant({ assistantKey: "my-assistant-key" });
-    assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
-
-    assistant.on(ASSISTANT_JOINED_ROOM, () => {
-      assistant.sendChatMessage("Hello! I'm your assistant, how can I help you?");
-      
-      assistant.on(AUDIO_STREAM_READY, ({ track }) => {
-        console.log("Assistant audio track ready!");
-      });
-    });
-  });
-}
+});
 ```
 
 This demonstrates the most basic functionality of the library. From this example, you can go on to implement more advanced functionality that is explained in more detail in the next sections of the documentation: [API Reference](api-reference/).

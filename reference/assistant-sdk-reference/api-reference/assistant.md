@@ -4,88 +4,119 @@ The `Assistant` class is the main entry point of the Assistants SDK. It runs in 
 
 ## Constructor
 
-```jsx
+```tsx
 const assistant = new Assistant(options: AssistantOptions)
 ```
 
 ### AssistantOptions
 
-| Parameter                   | Type      | Default | Description                                                                                                                                                                                                  |
-| --------------------------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `assistantKey`              | `string`  |  -      | Assistant key generated from the Whereby Dashboard                                                                                                                                                           |
-| `startCombinedAudioStream?` | `boolean` | false   | <p>If true, creates a mixed audio stream of all remote participants<br><span data-gb-custom-inline data-tag="emoji" data-code="2757">❗</span><strong>FFmpeg is required if using this feature.</strong> </p> |
-| `startLocalMedia?`          | `boolean` | false   | If true, initializes  local media for the assistant                                                                                                                                                          |
+| Parameter      | Type     | Default | Description                                        |
+| -------------- | -------- | ------- | -------------------------------------------------- |
+| `assistantKey` | `string` |  -      | Assistant key generated from the Whereby Dashboard |
 
 ## Methods
 
 ### Room Lifecycle
 
-<table><thead><tr><th>Method</th><th>Parameters</th><th width="226.72918701171875">Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>joinRoom</code></td><td><code>roomUrl: string</code></td><td><code>Promise&#x3C;void></code></td><td>Connects the assistant to the specified room</td></tr><tr><td><code>getRoomConnection</code></td><td></td><td><a href="../../core-sdk-reference/api-reference/roomconnectionclient.md"><code>RoomConnectionClient</code></a></td><td>Returns the underlying room connection</td></tr></tbody></table>
+To join a room or to then subsequenty perform any in-room actions, the following methods are available.
+
+<table><thead><tr><th width="176.14453125">Method</th><th width="155.6328125">Parameters</th><th width="256.57293701171875">Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>joinRoom</code></td><td><code>roomUrl: string</code></td><td><code>Promise&#x3C;</code><a href="../../core-sdk-reference/types/roomconnection-types.md#roomjoinedsuccess-less-than-object-greater-than"><code>RoomJoinedSuccess</code></a><code>></code></td><td>Connects the assistant to the specified room</td></tr><tr><td><code>getRoomConnection</code></td><td></td><td><a href="../../core-sdk-reference/api-reference/roomconnectionclient.md"><code>RoomConnectionClient</code></a></td><td>Returns the underlying room connection controller.</td></tr></tbody></table>
+
+{% hint style="info" %}
+With a [RoomConnectionClient](../../core-sdk-reference/api-reference/roomconnectionclient.md) object the Whereby Assistant can then perform host-level in-room actions including:&#x20;
+
+* controlling room access for knocking participants,&#x20;
+* control participant spotlighting and audio/video muting/unmuting
+* sending chat messages,
+* enabling and disabling cloud recording.
+{% endhint %}
 
 ### Media
 
-| Method                   | Parameters | Returns                                                            | Description                                                   |
-| ------------------------ | ---------- | ------------------------------------------------------------------ | ------------------------------------------------------------- |
-| `startLocalMedia`        |            | `void`                                                             | Creates and starts local media for the assistant              |
-| `getLocalMediaStream`    |            | [`MediaStream`](../types/assistant-types.md#mediastream) `\| null` | Returns the assistant's local media stream if started         |
-| `getLocalAudioSource`    |            | `RTCAudioSource \| null`                                           | Returns the raw Node WebRTC audio source                      |
-| `getCombinedAudioStream` |            | [`MediaStream`](../types/assistant-types.md#mediastream) `\| null` | Returns the mixed audio stream of all the remote participants |
+To obtain audio and/or media streams from the room or if you want to inject audio and/or video back in to the room from the Assistant then you can use the following media APIs to do so.
 
-### Remote Participants
+<pre class="language-jsx"><code class="lang-jsx">import "@whereby.com/assistant-sdk/polyfills";
 
-| Method                     | Parameters                    | Returns                                                                   | Description                                                  |
-| -------------------------- | ----------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| `getRemoteParticipants`    |                               | [`RemoteParticipantState`](../types/assistant-types.md#remoteparticipant) | List of current participants in the room                     |
-| `spotlightParticipant`     | `id: string`                  | `void`                                                                    | Spotlights the specified participant in the room             |
-| `` removeSpotlight` ``     |                               | `void`                                                                    | Removes spotlight from a participant in the room             |
-| `requestAudioEnable`       | `id: string, enable: boolean` | `void`                                                                    | Requests that the specified participant enables their audio  |
-| `requestVideoEnabled`      | `id: string, enable: boolean` | `void`                                                                    | Requests that the specified participant enables their video  |
-| `acceptWaitingParticipant` | `id string`                   | `void`                                                                    | Accepts a participant from the waiting room                  |
-| `rejectWaitingParticipant` |                               | `void`                                                                    | Rejects a participant in the waiting room                    |
+import { 
+  Assistant,
+  ASSISTANT_JOINED_ROOM,
+  ASSISTANT_LEFT_ROOM,
+} from "@whereby.com/assistant";
 
-### Chat
+<strong>const assistant = new Assistant({
+</strong>  assistantKey: process.env.ASSISTANT_KEY
+});
 
-| Method            | Parameters        | Returns | Description                       |
-| ----------------- | ----------------- | ------- | --------------------------------- |
-| `sendChatMessage` | `message: string` | `void`  | Send a chat message into the room |
+assistant.on(ASSISTANT_JOINED_ROOM, ({ roomUrl }) => {
+  console.log("Assistant has joined the room: ", roomUrl);
+  
+  const combinedAudioSink = assistant.getCombinedAudioSink();
+  // recieve raw PCM audio data of all audio in the room with e.g.:
+  // const unsubscribeCombinedAudioSink = combinedAudioSink.subscribe(({ samples, sampleRate }) => { console.log(`${samples.length} samples received @ ${sampleRate}Hz`)});
+  
+  assistant.startLocalMedia();
+  
+  const { data: audioSource } = assistant.getLocalAudioSource();
+  // continuously push raw PCM audio data in to the room with e.g.:
+  // audioSource.onData({ sampleRate: 8000, samples: new Int16Array(8000 / 100) });
+  
+  const { data: videoSource } = assistant.getLocalVideoSource();
+  // continuously push raw I420 video data in to the room with e.g.:
+  // videoSource.onFrame({ width: 320, height: 240, data: new Uint8ClampedArray(320 * 240 * 1.5) });
+  
+<strong>  assistant.on(ASSISTANT_LEFT_ROOM, ({ roomUrl }) => {
+</strong>    console.log("Assistant has left the room: ", roomUrl);
+    // unsubscribeCombinedAudioSink();
+  })
+});
 
-### Recording
+void assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
 
-| Method                | Parameters | Returns | Description                                                                                                                                     |
-| --------------------- | ---------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `startCloudRecording` |            | `void`  | Starts a [cloud recording](../../../meeting-content-and-quality/recording-with-embedded/cloud-recording.md). Must be enabled to be successful.  |
-| `stopCloudRecording`  |            | `void`  | Stops the active cloud recording.                                                                                                               |
+</code></pre>
 
-## State Subscriptions
-
-All subscribe methods follow this format:
-
-* Call signature: `subscribeX(callback: (payload: T) => void: () => void`
-* Contract: Invokes a callback on initial subscription and whenever the state changes.
-* Returns: an unsubscribe function
-
-<table><thead><tr><th width="256.01348876953125">Method</th><th>Payload Type</th><th>Description</th></tr></thead><tbody><tr><td><code>subscribeToChatMessages</code></td><td><code>messages:</code> <a href="../types/assistant-types.md#chatmessage"><code>ChatMessage</code></a><code>[]</code> </td><td>Emits chat messages from remote participants</td></tr><tr><td><code>subscribeToRemoteParticipants</code></td><td><code>participants:</code> <a href="../types/assistant-types.md#remoteparticipantstate-less-than-object-greater-than"><code>RemoteParticipantState</code></a><code>[]</code> </td><td>Emits the remote participant state</td></tr></tbody></table>
+<table><thead><tr><th width="224.19921875">Method</th><th width="116.9765625">Parameters</th><th>Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>startLocalMedia</code></td><td></td><td><code>void</code></td><td>Creates and starts local media for the assistant</td></tr><tr><td><code>stopLocalMedia</code></td><td></td><td><code>void</code></td><td>Stops local media for the assistant</td></tr><tr><td><code>getLocalMedia</code></td><td></td><td><a href="../../core-sdk-reference/api-reference/localmediaclient.md"><code>LocalMediaClient</code></a></td><td>Returns the underlying local media client controller. </td></tr><tr><td><code>getLocalAudioSource</code></td><td></td><td><a href="../types/assistant-types.md#audiosource-less-than-object-greater-than"><code>AudioSource</code></a> <code>| null</code></td><td>Returns a raw audio source object</td></tr><tr><td><code>getLocalVideoSource</code></td><td></td><td><a href="../types/assistant-types.md#videosource-less-than-object-greater-than"><code>VideoSource</code></a> <code>| null</code></td><td>Returns a raw video source object</td></tr><tr><td><code>getCombinedAudioSink</code></td><td></td><td> <a href="../types/assistant-types.md#audiosink-less-than-object-greater-than"><code>AudioSink</code></a> <code>| null</code></td><td>Returns a raw audio sink object</td></tr></tbody></table>
 
 ## Events
 
 `Assistant` extends `EventEmitter` . You can listen to lifecycle and state change events directly:&#x20;
 
-```jsx
-import { Assistant } from "@whereby.com/assistant";
+<pre class="language-jsx"><code class="lang-jsx">import "@whereby.com/assistant-sdk/polyfills";
 
-const assistant = new Assistant({
-  assistantKey: process.env.ASSISTANT_KEY,
-  startCombinedAudioStream: true,
+import { 
+  Assistant,
+  ASSISTANT_JOINED_ROOM,
+  ASSISTANT_LEFT_ROOM,
+  PARTICIPANT_VIDEO_TRACK_ADDED,
+  PARTICIPANT_AUDIO_TRACK_ADDED,
+} from "@whereby.com/assistant";
+
+<strong>const assistant = new Assistant({
+</strong>  assistantKey: process.env.ASSISTANT_KEY
 });
 
-assistant.on(AUDIO_STREAM_READY, ({ stream }) => {
-  console.log("Combined audio stream available", stream.id);
+assistant.on(ASSISTANT_JOINED_ROOM, ({ roomUrl }) => {
+  console.log("Assistant has joined the room: ", roomUrl);
 });
 
 assistant.on(ASSISTANT_LEFT_ROOM, ({ roomUrl }) => {
   console.log("Assistant has left the room: ", roomUrl);
 });
 
-```
+assistant.on(PARTICIPANT_VIDEO_TRACK_ADDED, ({ participantId, trackId, data }) => {
+  console.log("Remote participant video track available: ", participantId, trackId);
+  // recieve raw I420 video data of this video track in the room with e.g.:
+  // data.subscribe(({ width, height, data }) => { console.log(`${data.length} video samples received @ ${width}x${height} pixels`)});
+});
 
-<table><thead><tr><th>Event </th><th width="257.26788330078125">Payload</th><th>Emitted when</th></tr></thead><tbody><tr><td><code>AUDIO_STREAM_READY</code></td><td><code>{stream:</code> <a href="../types/assistant-types.md#mediastream"><code>MediaStream</code></a><code>; track:</code> <a href="../types/assistant-types.md#mediastreamtrack"><code>MediaStreamTrack</code></a><code>}</code>    </td><td>Combined audio stream is available</td></tr><tr><td><code>ASSISTANT_JOINED_ROOM</code></td><td><code>{ roomUrl: string }</code></td><td>Assistant has joined the room</td></tr><tr><td><code>ASSISTANT_LEFT_ROOM</code></td><td><code>{ roomUrl: string }</code></td><td>Assistant has left the room</td></tr><tr><td><code>PARTICIPANT_VIDEO_TRACK_ADDED</code></td><td><code>{ participantId: string; stream: MediaStream; track: MediaStreamTrack }</code></td><td>A remote participant has added or changed a video track</td></tr><tr><td><code>PARTICIPANT_VIDEO_TRACK_REMOVED</code></td><td><code>{ participantId: string; stream: MediaStream; track: MediaStreamTrack }</code></td><td>A remote participant has removed a video track</td></tr><tr><td><code>PARTICIPANT_AUDIO_TRACK_ADDED</code></td><td><code>{ participantId: string; stream: MediaStream; track: MediaStreamTrack }</code></td><td>A remote participant has added or changed an audio track</td></tr><tr><td><code>PARTICIPANT_AUDIO_TRACK_REMOVED</code></td><td><code>{ participantId: string; stream: MediaStream; track: MediaStreamTrack }</code></td><td>A remote participant has removed an audio track</td></tr></tbody></table>
+assistant.on(PARTICIPANT_AUDIO_TRACK_ADDED, ({ participantId, trackId, data }) => {
+  console.log("Remote participant audio track available: ", participantId, trackId);
+  // recieve raw PCM audio data of this audio track in the room with e.g.:
+  // data.subscribe(({ samples, sampleRate }) => { console.log(`${samples.length} audio samples received @ ${sampleRate}Hz`)});
+});
+
+void assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
+
+</code></pre>
+
+<table><thead><tr><th width="287.91796875">Event </th><th width="237.89678955078125">Payload</th><th>Emitted when</th></tr></thead><tbody><tr><td><code>ASSISTANT_JOINED_ROOM</code></td><td><code>{ roomUrl: string }</code></td><td>Assistant has joined the room</td></tr><tr><td><code>ASSISTANT_LEFT_ROOM</code></td><td><code>{ roomUrl: string }</code></td><td>Assistant has left the room</td></tr><tr><td><code>PARTICIPANT_VIDEO_TRACK_ADDED</code></td><td><p><code>{</code></p><p>   <code>participantId: string;</code> </p><p>   <code>trackId: string;</code> </p><p> <code>data:</code> <a href="../types/assistant-types.md#videosink-less-than-object-greater-than"><code>VideoSink</code></a> </p><p><code>}</code></p></td><td>A remote participant has added or changed a video track</td></tr><tr><td><code>PARTICIPANT_VIDEO_TRACK_REMOVED</code></td><td><p><code>{</code></p><p>   <code>participantId: string;</code> </p><p>   <code>trackId: string</code> </p><p><code>}</code></p></td><td>A remote participant has removed a video track</td></tr><tr><td><code>PARTICIPANT_AUDIO_TRACK_ADDED</code></td><td><p><code>{</code></p><p>   <code>participantId: string;</code> </p><p>   <code>trackId: string;</code> </p><p> <code>data:</code> <a href="../types/assistant-types.md#audiosink-less-than-object-greater-than"><code>AudioSink</code></a> </p><p><code>}</code></p></td><td>A remote participant has added or changed an audio track</td></tr><tr><td><code>PARTICIPANT_AUDIO_TRACK_REMOVED</code></td><td><p><code>{</code></p><p>   <code>participantId: string;</code> </p><p>   <code>trackId: string</code> </p><p><code>}</code></p></td><td>A remote participant has removed an audio track</td></tr></tbody></table>
+

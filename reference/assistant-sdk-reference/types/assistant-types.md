@@ -1,41 +1,44 @@
 # Assistant Types
 
-## MediaStream
+## AudioSource: <mark style="color:green;">\<Object></mark>
 
-{% embed url="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream" %}
+| Property                                                                                                        | Description                                             |
+| --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| `onData: (data:` [`RTCAudioData`](assistant-types.md#rtcaudiodata-less-than-object-greater-than)`) => void`     | Raw PCM-encoded audio samples to inject in to the room. |
 
-## MediaStreamTrack
+## AudioSink: <mark style="color:green;">\<Object></mark>
 
-{% embed url="https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack" %}
+| Property                                                                                                                                 | Description                                                                                                   |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `subscribe: (callback: (data:` [`RTCAudioData`](assistant-types.md#rtcaudiodata-less-than-object-greater-than)`) => void) => () => void` | Subscribe to live raw PCM-encoded audio samples received from the room delivered at 10 millisecond intervals. |
 
-## RemoteParticipantState:<<mark style="color:green;">Object</mark>>
+## VideoSource: <mark style="color:green;">\<Object></mark>
 
-| Property                                  | Description                                                                                                                                                                                                                                                                         |
-| ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `displayName: string`                     | Display name of the remote participant                                                                                                                                                                                                                                              |
-| `id: string`                              | <p>Id of the remote </p><p>participant</p>                                                                                                                                                                                                                                          |
-| `roleName: string`                        | <p>The role of the local participant. This will be one of the following values:<br><br><code>none</code>, <code>visitor</code>, <code>granted_visitor</code>, <code>viewer</code>, <code>granted_viewer</code>, <code>host</code>, <code>recorder</code>, <code>streamer</code></p> |
-| `stream?:MediaStream`                     | Stream of the remote participant                                                                                                                                                                                                                                                    |
-| `isAudioEnabled:boolean`                  | The remote participant has their camera enabled                                                                                                                                                                                                                                     |
-| `isVideoEnabled:boolean`                  | The remote participant has their microphone enabled                                                                                                                                                                                                                                 |
-| `isLocalParticipant:boolean`              | For remote participants, this value is always false                                                                                                                                                                                                                                 |
-| `presentationStream: MediaStream \| null` | If the participant is sharing their screen                                                                                                                                                                                                                                          |
-| `externalId: string \| null`              | A custom identifier for the participant.                                                                                                                                                                                                                                            |
-| `stickyReaction?: StickyReaction`         | Whether the participant has hand raised                                                                                                                                                                                                                                             |
-| `isDialIn: boolean`                       | True if participant is a dial in agent                                                                                                                                                                                                                                              |
+| Property                                                                                                         | Description                                              |
+| ---------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| `onFrame: (data:` [`RTCVideoData`](assistant-types.md#rtcvideodata-less-than-object-greater-than)`) => void`     | Raw I420-encoded video samples to inject in to the room. |
 
-## ChatMessage: <mark style="color:green;">\<Object></mark> <a href="#chatmessage" id="chatmessage"></a>
+## VideoSink: <mark style="color:green;">\<Object></mark>
 
-| Property             | Description                                     |
-| -------------------- | ----------------------------------------------- |
-| `senderId: string`   | Id of the participant who sent the chat message |
-| `text: string`       | Content of the chat message                     |
-| `timestamp: string`  | Timestamp of when the message was sent          |
+| Property                                                                                                                                 | Description                                                                                                                                                             |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `subscribe: (callback: (data:` [`RTCVideoData`](assistant-types.md#rtcvideodata-less-than-object-greater-than)`) => void) => () => void` | Subscribe to live raw I420-encoded video frames received from the room delivered at the input video's frame rate (e.g. 24 frames per second = every \~42 milliseconds). |
 
-## AssistantEvents:<<mark style="color:green;">Object</mark>>
+## RTCAudioData: <mark style="color:green;">\<Object></mark>
 
-| Property                                                                                                                                                      | Description                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
-| `[AUDIO_STREAM_READY]: [ { stream:` [`MediaStream`](assistant-types.md#mediastream)`; track:` [`MediaStreamTrack`](assistant-types.md#mediastreamtrack)`} ];` | Emitted when combined audio stream is ready |
-| `[ASSISTANT_JOINED_ROOM]: [{ roomUrl: string }]+`                                                                                                             | Emitted when the assistant joins the room   |
-| `[ASSISTANT_LEFT_ROOM]: [{ roomUrl: string }]`                                                                                                                | Emitted when the assistant leaves the room  |
+| Property                 | Description                                  |
+| ------------------------ | -------------------------------------------- |
+| `sampleRate: number`     | Sample rate of data (in Hertz)               |
+| `samples: Int16Array`    | Raw PCM audio sample data                    |
+| `channelCount: number`   | Number of PCM channels in data. Default: `1` |
+| `bitsPerSamples: number` | Number of bits per sample. Default: `16`     |
+| `numberOfFrames: number` | Number of frames represented in `samples`    |
+
+## RTCVideoData: <mark style="color:green;">\<Object></mark>
+
+| Property                        | Description                            |
+| ------------------------------- | -------------------------------------- |
+| `width: number`                 | Video width (in pixels)                |
+| `height: number`                | Video height (in pixels)               |
+| `data:`` ``Uint8ClampedArray`   | Raw I420 video sample data             |
+| `rotation: number`              | Orientation of the video. Default: `0` |

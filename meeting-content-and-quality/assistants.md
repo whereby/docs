@@ -106,7 +106,9 @@ See the [Core API Reference](../reference/core-sdk-reference/api-reference/roomc
 
 ## Usage and Pricing
 
-There are no additional costs for enabling assistants - they are treated as normal participants in a room. Standard Whereby participant minute billing applies.&#x20;
+Enabling assistants is not charged as an additional feature - they are treated as normal participants in a room. Your standard Whereby participant minute billing applies to this usage.
+
+&#x20;
 
 ## What next?
 

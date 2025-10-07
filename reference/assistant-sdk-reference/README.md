@@ -100,3 +100,5 @@ Or download a prebuilt binary directly from [ffmpeg.org/download](https://ffmpeg
 {% hint style="info" %}
 After installation, make sure ffmpeg is available in your system PATH so the Assistant SDK can call it.&#x20;
 {% endhint %}
+
+On the [next page](quick-start.md) you can learn how to start working with Whereby Assistants in your code base.

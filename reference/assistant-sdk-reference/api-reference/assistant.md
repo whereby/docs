@@ -99,7 +99,8 @@ assistant
 
 `Assistant` extends `EventEmitter` . You can listen to lifecycle and state change events directly:&#x20;
 
-<pre class="language-jsx"><code class="lang-jsx">import "@whereby.com/assistant-sdk/polyfills";
+```jsx
+import "@whereby.com/assistant-sdk/polyfills";
 
 import { 
   Assistant,
@@ -111,8 +112,8 @@ import {
 
 const mediaDataSubscriptions = [];
 
-<strong>const assistant = new Assistant({
-</strong>  assistantKey: process.env.ASSISTANT_KEY
+const assistant = new Assistant({
+  assistantKey: process.env.ASSISTANT_KEY
 });
 
 assistant.on(ASSISTANT_JOINED_ROOM, ({ roomUrl }) => {
@@ -154,7 +155,7 @@ try {
   console.error("An error occurred joining the room", error);
 }); 
 
-</code></pre>
+```
 
 <table><thead><tr><th width="287.91796875">Event </th><th width="237.89678955078125">Payload</th><th>Emitted when</th></tr></thead><tbody><tr><td><code>ASSISTANT_JOINED_ROOM</code></td><td><code>{ roomUrl: string }</code></td><td>Assistant has joined the room</td></tr><tr><td><code>ASSISTANT_LEFT_ROOM</code></td><td><code>{ roomUrl: string }</code></td><td>Assistant has left the room</td></tr><tr><td><code>PARTICIPANT_VIDEO_TRACK_ADDED</code></td><td><p><code>{</code></p><p>   <code>participantId: string;</code> </p><p>   <code>trackId: string;</code> </p><p> <code>data:</code> <a href="../types/assistant-types.md#videosink-less-than-object-greater-than"><code>VideoSink</code></a> </p><p><code>}</code></p></td><td>A remote participant has added or changed a video track</td></tr><tr><td><code>PARTICIPANT_VIDEO_TRACK_REMOVED</code></td><td><p><code>{</code></p><p>   <code>participantId: string;</code> </p><p>   <code>trackId: string</code> </p><p><code>}</code></p></td><td>A remote participant has removed a video track</td></tr><tr><td><code>PARTICIPANT_AUDIO_TRACK_ADDED</code></td><td><p><code>{</code></p><p>   <code>participantId: string;</code> </p><p>   <code>trackId: string;</code> </p><p> <code>data:</code> <a href="../types/assistant-types.md#audiosink-less-than-object-greater-than"><code>AudioSink</code></a> </p><p><code>}</code></p></td><td>A remote participant has added or changed an audio track</td></tr><tr><td><code>PARTICIPANT_AUDIO_TRACK_REMOVED</code></td><td><p><code>{</code></p><p>   <code>participantId: string;</code> </p><p>   <code>trackId: string</code> </p><p><code>}</code></p></td><td>A remote participant has removed an audio track</td></tr></tbody></table>
 

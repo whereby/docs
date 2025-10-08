@@ -34,16 +34,22 @@ import { Assistant } from "@whereby.com/assistant-sdk";
 const assistant = new Assistant({ assistantKey: "my-assistant-key" });
 ```
 
-3. Have the assistant start to join the room and wait until the room is connected:&#x20;
+3. Have the assistant start to join the room and wait until the room is connected. We should also wrap this call in a try/catch block in case any errors happen during the join room flow:  &#x20;
 
-<pre class="language-jsx"><code class="lang-jsx"><strong>await assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
-</strong></code></pre>
+```jsx
+try { 
+  await assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
+} catch(error => {
+  console.error("An error occurred joining the room", error);
+}); 
+```
 
 4. Once the room is connected start using your assistant!&#x20;
 
-<pre class="language-jsx"><code class="lang-jsx"><strong>const roomConnection = assistant.getRoomConnection();
-</strong>roomConnection.sendChatMessage("Hello! I'm your assistant, how can I help you?");
-</code></pre>
+```jsx
+const roomConnection = assistant.getRoomConnection();
+roomConnection.sendChatMessage("Hello! I'm your assistant, how can I help you?");
+```
 
 The above steps can be written in with promise-formatting as follows:
 
@@ -55,7 +61,7 @@ assistant
     const roomConnection = assistant.getRoomConnection();
     roomConnection.sendChatMessage("Hello! I'm your assistant, how can I help you?");
   })
-  .catch(error => {
+  .catch((error) => {
     console.error("An error has occurred", error);
   });
 ```
@@ -96,10 +102,14 @@ trigger.on(TRIGGER_EVENT_SUCCESS, async ({ roomUrl }) => {
   console.log("Webhook trigger has been matched!");
   const assistant = new Assistant({ assistantKey: "my-assistant-key" });
   
-  await assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
-  console.log("Connected to room");
-  hasAssistantJoined = true;
-  
+  try { 
+    await assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
+    console.log("Connected to room");
+    hasAssistantJoined = true;
+  } catch((error) => {
+    console.error("An error occurred joining the room", error);
+  });
+
   const roomConnection = assistant.getRoomConnection();
   roomConnection.sendChatMessage("Hello! I'm your assistant, how can I help you?");
 });
@@ -141,9 +151,13 @@ trigger.on(TRIGGER_EVENT_SUCCESS, async ({ roomUrl }) => {
   console.log("Webhook trigger has been matched!");
   const assistant = new Assistant({ assistantKey: "my-assistant-key" });
   
-  await assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
-  console.log("Connected to room");
-  hasAssistantJoined = true;
+  try { 
+    await assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
+    console.log("Connected to room");
+    hasAssistantJoined = true;
+  } catch((error) => {
+    console.error("An error occurred joining the room", error);
+  });
     
   const roomConnection = assistant.getRoomConnection();
   roomConnection.sendChatMessage("Hello! I'm your assistant, how can I help you?");

@@ -20,7 +20,7 @@ const assistant = new Assistant(options: AssistantOptions)
 
 To join a room or to then subsequenty perform any in-room actions, the following methods are available.
 
-<table><thead><tr><th width="176.14453125">Method</th><th width="155.6328125">Parameters</th><th width="256.57293701171875">Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>joinRoom</code></td><td><code>roomUrl: string</code></td><td><code>Promise&#x3C;</code><a href="../../core-sdk-reference/types/roomconnection-types.md#roomjoinedsuccess-less-than-object-greater-than"><code>RoomJoinedSuccess</code></a><code>></code></td><td>Connects the assistant to the specified room</td></tr><tr><td><code>getRoomConnection</code></td><td></td><td><a href="../../core-sdk-reference/api-reference/roomconnectionclient.md"><code>RoomConnectionClient</code></a></td><td>Returns the underlying room connection controller.</td></tr></tbody></table>
+<table><thead><tr><th width="176.14453125">Method</th><th width="155.6328125">Parameters</th><th width="256.57293701171875">Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>joinRoom</code></td><td><code>roomUrl: string</code></td><td><code>Promise&#x3C;</code><a href="../../core-sdk-reference/types/roomconnection-types.md#roomjoinedsuccess-less-than-object-greater-than"><code>RoomJoinedSuccess</code></a><code>></code></td><td>Connects the assistant to the specified room. In case the room can not be joined the Promise will be rejected with a room joined error code.</td></tr><tr><td><code>getRoomConnection</code></td><td></td><td><a href="../../core-sdk-reference/api-reference/roomconnectionclient.md"><code>RoomConnectionClient</code></a></td><td>Returns the underlying room connection controller.</td></tr></tbody></table>
 
 {% hint style="info" %}
 With a [RoomConnectionClient](../../core-sdk-reference/api-reference/roomconnectionclient.md) object the Whereby Assistant can then perform host-level in-room actions including:&#x20;
@@ -40,7 +40,6 @@ import "@whereby.com/assistant-sdk/polyfills";
 
 import { 
   Assistant,
-  ASSISTANT_JOINED_ROOM,
   ASSISTANT_LEFT_ROOM,
 } from "@whereby.com/assistant-sdk";
 
@@ -48,44 +47,47 @@ const assistant = new Assistant({
   assistantKey: process.env.ASSISTANT_KEY
 });
 
-assistant.on(ASSISTANT_JOINED_ROOM, ({ roomUrl }) => {
-  console.log("Assistant has joined the room: ", roomUrl);
+assistant
+  .joinRoom("https://your-subdomain.whereby.com/your-room-name")
+  .then(({ roomUrl }) => {
+    console.log("Assistant has joined the room: ", roomUrl);
   
-  // To receive all audio data from the call:
-  const combinedAudioSink = assistant.getCombinedAudioSink();
-  // recieve raw PCM audio data of all audio in the room with e.g.:
-  const unsubscribeCombinedAudioSink = combinedAudioSink.subscribe(({ samples, sampleRate }) => { 
-    console.log(`${samples.length} samples received @ ${sampleRate}Hz`)
-    // <your audio samples processing here>
-  });
-  
-  // To inject audio and/or video data in to the call:
-  assistant.startLocalMedia({
-    audio: true,
-    video: true,
-  }).then(({ audioSource, videoSource }) => {
-    setInterval(() => {
-      console.log("Injecting media in to room");
-    
-      // continuously push raw PCM audio data in to the room with e.g.:
-      audioSource.onData({ sampleRate: 8000, samples: new Int16Array(8000 / 100) });
-    
-      // continuously push raw I420 video data in to the room with e.g.:
-      videoSource.onFrame({ width: 320, height: 240, data: new Uint8ClampedArray(320 * 240 * 1.5) });
+    // To receive all audio data from the call:
+    const combinedAudioSink = assistant.getCombinedAudioSink();
+    // recieve raw PCM audio data of all audio in the room with e.g.:
+    const unsubscribeCombinedAudioSink = combinedAudioSink.subscribe(({ samples, sampleRate }) => { 
+      console.log(`${samples.length} samples received @ ${sampleRate}Hz`)
+      // <your audio samples processing here>
     });
-  }).catch((error) => {
-    console.error("An error occurred starting local media", error);
-  });
   
-  assistant.on(ASSISTANT_LEFT_ROOM, ({ roomUrl }) => {
-    console.log("Assistant has left the room: ", roomUrl);
+    // To inject audio and/or video data in to the call:
+    assistant.startLocalMedia({
+      audio: true,
+      video: true,
+    }).then(({ audioSource, videoSource }) => {
+      setInterval(() => {
+        console.log("Injecting media in to room");
     
-    // Clean up any subscribers created above:
-    // unsubscribeCombinedAudioSink();
+        // continuously push raw PCM audio data in to the room with e.g.:
+        audioSource.onData({ sampleRate: 8000, samples: new Int16Array(8000 / 100) });
+    
+        // continuously push raw I420 video data in to the room with e.g.:
+        videoSource.onFrame({ width: 320, height: 240, data: new Uint8ClampedArray(320 * 240 * 1.5) });
+      });
+    }).catch((error) => {
+      console.error("An error occurred starting local media", error);
+    });
+  
+    assistant.on(ASSISTANT_LEFT_ROOM, ({ roomUrl }) => {
+      console.log("Assistant has left the room: ", roomUrl);
+    
+      // Clean up any subscribers created above:
+      // unsubscribeCombinedAudioSink();
+    })
   })
-});
-
-void assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
+  .catch((error) => {
+    console.error("An error occurred joining the room", error);
+  });
 
 ```
 
@@ -131,7 +133,11 @@ assistant.on(PARTICIPANT_AUDIO_TRACK_ADDED, ({ participantId, trackId, data }) =
   // data.subscribe(({ samples, sampleRate }) => { console.log(`${samples.length} audio samples received @ ${sampleRate}Hz`)});
 });
 
-void assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
+try {
+  void assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
+} catch((error) => {
+  console.error("An error occurred joining the room", error);
+}); 
 
 </code></pre>
 

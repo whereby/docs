@@ -39,4 +39,4 @@ trigger.on(TRIGGER_EVENT_SUCCESS, ({ roomUrl }) => {
 });
 ```
 
-<table><thead><tr><th>Event</th><th width="257.26788330078125">Payload</th><th>Emitted when</th></tr></thead><tbody><tr><td><code>TRIGGER_EVENT_SUCCESS</code></td><td><code>{ roomUrl:string; triggerWebhook:</code> <a href="../types/trigger-types.md#wherebywebhooktype-less-than-type-greater-than"><code>WherebyWebhookType</code></a>    </td><td>Trigger has met the required conditions</td></tr></tbody></table>
+<table><thead><tr><th width="204.91015625">Event</th><th width="339.75225830078125">Payload</th><th>Emitted when</th></tr></thead><tbody><tr><td><code>TRIGGER_EVENT_SUCCESS</code></td><td><p><code>{</code> </p><p> <code>roomUrl:string;</code> </p><p><code>triggerWebhook:</code> <a href="../types/trigger-types.md#wherebywebhooktype-less-than-type-greater-than"><code>WherebyWebhookType</code></a></p><p><code>}</code>    </p></td><td>Trigger has met the required conditions</td></tr></tbody></table>

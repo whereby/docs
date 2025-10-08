@@ -1,6 +1,6 @@
 # Assistant
 
-The `Assistant` class is the main entry point of the Assistants SDK. It runs in Node.js and provides everything that you need to connect an AI agent into a Whereby room - to access audio, manage in room actions and integrate with external services of your choice.&#x20;
+The `Assistant` class is the main entry point of the Assistants SDK. It runs in Node.js and provides everything that you need to connect an AI agent into a Whereby room - to access in-room audio and video streams, manage in-room actions and integrate with external services of your choice.&#x20;
 
 ## Constructor
 

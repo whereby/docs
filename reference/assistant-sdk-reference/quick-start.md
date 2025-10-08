@@ -51,7 +51,7 @@ const roomConnection = assistant.getRoomConnection();
 roomConnection.sendChatMessage("Hello! I'm your assistant, how can I help you?");
 ```
 
-The above steps can be written in with promise-formatting as follows:
+The above steps can collectively be written in promise-formatted code as follows:
 
 ```jsx
 const assistant = new Assistant({ assistantKey: "my-assistant-key" });
@@ -62,7 +62,7 @@ assistant
     roomConnection.sendChatMessage("Hello! I'm your assistant, how can I help you?");
   })
   .catch((error) => {
-    console.error("An error has occurred", error);
+    console.error("An error occurred joining the room", error);
   });
 ```
 

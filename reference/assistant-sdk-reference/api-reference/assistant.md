@@ -28,7 +28,10 @@ With a [RoomConnectionClient](../../core-sdk-reference/api-reference/roomconnect
 * controlling room access for knocking participants,&#x20;
 * control participant spotlighting and audio/video muting/unmuting
 * sending chat messages,
-* enabling and disabling cloud recording.
+* starting and stopping cloud recording (if enabled in the room)
+* subscribing to room state changes
+
+For a full overview of available in-room functionality refer to the [RoomConnectionClient reference pages](../../core-sdk-reference/api-reference/roomconnectionclient.md).
 {% endhint %}
 
 ### Media

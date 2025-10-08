@@ -36,10 +36,6 @@ Note: The SDK can not be run in the browser - use [Core](../core-sdk-reference/)
 
 ## Getting started
 
-{% hint style="warning" %}
-The Assistant SDK is currently in **Early Access** and has not yet been published publicly.
-{% endhint %}
-
 ### Installation
 
 Install the `@whereby.com/assistant-sdk` package from the public [npm registry.](https://www.npmjs.com/package/@whereby.com/assistant-sdk)

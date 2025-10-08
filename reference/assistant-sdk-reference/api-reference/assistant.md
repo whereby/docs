@@ -109,6 +109,8 @@ import {
   PARTICIPANT_AUDIO_TRACK_ADDED,
 } from "@whereby.com/assistant-sdk";
 
+const mediaDataSubscriptions = [];
+
 <strong>const assistant = new Assistant({
 </strong>  assistantKey: process.env.ASSISTANT_KEY
 });
@@ -117,20 +119,33 @@ assistant.on(ASSISTANT_JOINED_ROOM, ({ roomUrl }) => {
   console.log("Assistant has joined the room: ", roomUrl);
 });
 
-assistant.on(ASSISTANT_LEFT_ROOM, ({ roomUrl }) => {
-  console.log("Assistant has left the room: ", roomUrl);
+assistant.on(PARTICIPANT_AUDIO_TRACK_ADDED, ({ participantId, trackId, data }) => {
+  console.log("Remote participant audio track available: ", participantId, trackId);
+  
+  mediaDataSubscriptions.push(
+    // recieve raw PCM audio data of this audio track in the room with e.g.:
+    data.subscribe(({ samples, sampleRate }) => { 
+      console.log(`${samples.length} audio samples received @ ${sampleRate}Hz`);
+    })
+  );
 });
 
 assistant.on(PARTICIPANT_VIDEO_TRACK_ADDED, ({ participantId, trackId, data }) => {
   console.log("Remote participant video track available: ", participantId, trackId);
-  // recieve raw I420 video data of this video track in the room with e.g.:
-  // data.subscribe(({ width, height, data }) => { console.log(`${data.length} video samples received @ ${width}x${height} pixels`)});
+  
+  mediaDataSubscriptions.push(
+    // recieve raw I420 video data of this video track in the room with e.g.:
+    data.subscribe(({ width, height, data }) => { 
+      console.log(`${data.length} video samples received @ ${width}x${height} pixels`);
+    });
+  );
 });
 
-assistant.on(PARTICIPANT_AUDIO_TRACK_ADDED, ({ participantId, trackId, data }) => {
-  console.log("Remote participant audio track available: ", participantId, trackId);
-  // recieve raw PCM audio data of this audio track in the room with e.g.:
-  // data.subscribe(({ samples, sampleRate }) => { console.log(`${samples.length} audio samples received @ ${sampleRate}Hz`)});
+assistant.on(ASSISTANT_LEFT_ROOM, ({ roomUrl }) => {
+  console.log("Assistant has left the room: ", roomUrl);]
+  
+  // Clean-up all media data subscriptions on exit
+  mediaDataSubscriptions.forEach(unsubscribeFn => unsubscribeFn());
 });
 
 try {

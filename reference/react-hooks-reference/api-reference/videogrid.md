@@ -18,7 +18,7 @@ The `VideoGrid` component renders a grid with all participants in the room rende
     const [isLocalScreenshareActive, setIsLocalScreenshareActive] = useState(false);
 
     const { actions } = useRoomConnection(roomUrl, { localMediaOptions: { audio: false, video: true } });
-    const { toggleCamera, toggleMicrophone, startScreenshare, stopScreenshare} = actions;
+    const { toggleCamera, toggleMicrophone, startScreenshare, stopScreenshare } = actions;
 
     return (
         <>

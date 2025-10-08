@@ -40,7 +40,11 @@ const localMedia = client.getLocalMedia();
             roomUrl,
         });
         
-        await roomConnection.joinRoom();
+        try {
+            await roomConnection.joinRoom();
+        } catch(error) {
+            console.error("Could not join room", error);
+        }
    }
 ```
 
@@ -76,7 +80,12 @@ async function main(roomUrl: string) {
     localMediaOptions: { audio: false, video: false },
     roomUrl,
   });
-  await roomConnection.joinRoom();
+  
+  try {
+    await roomConnection.joinRoom();
+  } catch(error) {
+    console.error("Could not join room", error);
+  }       
 
   const unsubscribe = subscribeToRemoteParticipants((participants) => {
     console.log(

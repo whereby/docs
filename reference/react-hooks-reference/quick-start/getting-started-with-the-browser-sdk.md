@@ -12,7 +12,7 @@ The Whereby Browser SDK takes advantage of React. This tutorial assumes that you
 
 To follow along with this tutorial, you'll need to do two things.
 
-* Sign up for a [Whereby Embedded](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded\_free) account. You can get started with Whereby's free plan. It provides you with 2,000 participant minutes each month.
+* Sign up for a [Whereby Embedded](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded_free) account. You can get started with Whereby's free plan. It provides you with 2,000 participant minutes each month.
 * Create a Whereby meeting room. You'll need the meeting room's URL. Create your room using the wizard on your account dashboard or with Whereby's [REST API](https://docs.whereby.com/whereby-101/creating-and-deleting-rooms). For this tutorial, leave the room unlocked.
 
 You should also have a basic React project set up. [Vite](https://vitejs.dev/guide/) or [Parcel](https://parceljs.org/recipes/react/) will get you up-and-running quickly.
@@ -91,7 +91,7 @@ const connection = useRoomConnection(MEETING_URL, mediaOptions);
 const { actions: { joinRoom, leaveRoom } } = connection;
 
 useEffect(() => {
-  joinRoom();
+  joinRoom().catch(error => console.error("Could not join room", error));
   return () => {
     leaveRoom();
   }
@@ -117,7 +117,7 @@ Each `localParticipant` and `remoteParticipants` object contains a `stream` prop
 To see your own video stream, use the `localParticipant` property. Check whether `localParticipant` has an active stream, then conditionally render the [`VideoView`](../api-reference/videoview.md) component as shown below.
 
 {% hint style="info" %}
-**Note**: The examples in this tutorial use [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring\_assignment), a syntax that allows you to extract Object properties into variables.&#x20;
+**Note**: The examples in this tutorial use [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment), a syntax that allows you to extract Object properties into variables.&#x20;
 
 If you prefer, you can use [dot-syntax](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics) (e.g. connection.components.VideoView or connection.state.localParticipant) to access these values.
 {% endhint %}
@@ -204,7 +204,7 @@ In the click handler for each button, you'll first need to update state for your
 
 ### **Add friends and colleagues**
 
-Talking to yourself is normal, but it's not a video call until you're talking to someone else. Use the `remoteParticipants` property and [`Array.prototype.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/map) to display the other participants' video streams.
+Talking to yourself is normal, but it's not a video call until you're talking to someone else. Use the `remoteParticipants` property and [`Array.prototype.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to display the other participants' video streams.
 
 ```jsx
 //…
@@ -317,7 +317,7 @@ const Meeting = () => {
     };
 
     React.useEffect(() => {
-        joinRoom();
+        joinRoom().catch(error => console.error("Could not join room", error));
         return () => {
             leaveRoom()
         };

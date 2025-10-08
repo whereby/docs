@@ -30,7 +30,7 @@ function MyVideoApp( { roomUrl, localStream }) {
     const { joinRoom, leaveRoom } = actions;
     
     React.useEffect(() => {
-        joinRoom();
+        joinRoom().catch(error => console.error("Could not join room", error));
         return () => leaveRoom();
     }, []);
 

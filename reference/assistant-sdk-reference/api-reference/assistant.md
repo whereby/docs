@@ -154,9 +154,9 @@ assistant.on(ASSISTANT_LEFT_ROOM, ({ roomUrl }) => {
 
 try {
   void assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
-} catch((error) => {
+} catch(error) {
   console.error("An error occurred joining the room", error);
-}); 
+}; 
 
 ```
 

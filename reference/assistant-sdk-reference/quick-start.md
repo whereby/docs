@@ -39,9 +39,9 @@ const assistant = new Assistant({ assistantKey: "my-assistant-key" });
 ```jsx
 try { 
   await assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
-} catch(error => {
+} catch(error) {
   console.error("An error occurred joining the room", error);
-}); 
+}; 
 ```
 
 4. Once the room is connected start using your assistant!&#x20;
@@ -106,9 +106,9 @@ trigger.on(TRIGGER_EVENT_SUCCESS, async ({ roomUrl }) => {
     await assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
     console.log("Connected to room");
     hasAssistantJoined = true;
-  } catch((error) => {
+  } catch(error) {
     console.error("An error occurred joining the room", error);
-  });
+  };
 
   const roomConnection = assistant.getRoomConnection();
   roomConnection.sendChatMessage("Hello! I'm your assistant, how can I help you?");
@@ -155,9 +155,9 @@ trigger.on(TRIGGER_EVENT_SUCCESS, async ({ roomUrl }) => {
     await assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
     console.log("Connected to room");
     hasAssistantJoined = true;
-  } catch((error) => {
+  } catch(error) {
     console.error("An error occurred joining the room", error);
-  });
+  }
     
   const roomConnection = assistant.getRoomConnection();
   roomConnection.sendChatMessage("Hello! I'm your assistant, how can I help you?");

@@ -108,7 +108,7 @@ const App = ({roomUrl}) => {
   const { joinRoom } = actions;
 
   React.useEffect(() => {
-    joinRoom();
+    joinRoom().catch(error => console.error("Could not join room", error));
   }, []);
 
   return (
@@ -283,7 +283,7 @@ import Leave from './Leave';
 import './style.css';
 ```
 
-As designed, each toolbar button is circle-shaped. Buttons are centered within the toolbar and have an equal amount of space between them. [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS\_flexible\_box\_layout) works well for this. Add a `.toolbar` rule set for `style.css`.
+As designed, each toolbar button is circle-shaped. Buttons are centered within the toolbar and have an equal amount of space between them. [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout) works well for this. Add a `.toolbar` rule set for `style.css`.
 
 ```css
 .toolbar {

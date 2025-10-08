@@ -35,7 +35,8 @@ With a [RoomConnectionClient](../../core-sdk-reference/api-reference/roomconnect
 
 To obtain audio and/or media streams from the room or if you want to inject audio and/or video back in to the room from the Assistant then you can use the following media APIs to do so.
 
-<pre class="language-jsx"><code class="lang-jsx">import "@whereby.com/assistant-sdk/polyfills";
+```jsx
+import "@whereby.com/assistant-sdk/polyfills";
 
 import { 
   Assistant,
@@ -43,38 +44,54 @@ import {
   ASSISTANT_LEFT_ROOM,
 } from "@whereby.com/assistant-sdk";
 
-<strong>const assistant = new Assistant({
-</strong>  assistantKey: process.env.ASSISTANT_KEY
+const assistant = new Assistant({
+  assistantKey: process.env.ASSISTANT_KEY
 });
 
 assistant.on(ASSISTANT_JOINED_ROOM, ({ roomUrl }) => {
   console.log("Assistant has joined the room: ", roomUrl);
   
+  // To receive all audio data from the call:
   const combinedAudioSink = assistant.getCombinedAudioSink();
   // recieve raw PCM audio data of all audio in the room with e.g.:
-  // const unsubscribeCombinedAudioSink = combinedAudioSink.subscribe(({ samples, sampleRate }) => { console.log(`${samples.length} samples received @ ${sampleRate}Hz`)});
+  const unsubscribeCombinedAudioSink = combinedAudioSink.subscribe(({ samples, sampleRate }) => { 
+    console.log(`${samples.length} samples received @ ${sampleRate}Hz`)
+    // <your audio samples processing here>
+  });
   
-  assistant.startLocalMedia();
+  // To inject audio and/or video data in to the call:
+  assistant.startLocalMedia({
+    audio: true,
+    video: true,
+  }).then(({ audioSource, videoSource }) => {
+    setInterval(() => {
+      console.log("Injecting media in to room");
+    
+      // continuously push raw PCM audio data in to the room with e.g.:
+      audioSource.onData({ sampleRate: 8000, samples: new Int16Array(8000 / 100) });
+    
+      // continuously push raw I420 video data in to the room with e.g.:
+      videoSource.onFrame({ width: 320, height: 240, data: new Uint8ClampedArray(320 * 240 * 1.5) });
+    });
+  }).catch((error) => {
+    console.error("An error occurred starting local media", error);
+  });
   
-  const { data: audioSource } = assistant.getLocalAudioSource();
-  // continuously push raw PCM audio data in to the room with e.g.:
-  // audioSource.onData({ sampleRate: 8000, samples: new Int16Array(8000 / 100) });
-  
-  const { data: videoSource } = assistant.getLocalVideoSource();
-  // continuously push raw I420 video data in to the room with e.g.:
-  // videoSource.onFrame({ width: 320, height: 240, data: new Uint8ClampedArray(320 * 240 * 1.5) });
-  
-<strong>  assistant.on(ASSISTANT_LEFT_ROOM, ({ roomUrl }) => {
-</strong>    console.log("Assistant has left the room: ", roomUrl);
+  assistant.on(ASSISTANT_LEFT_ROOM, ({ roomUrl }) => {
+    console.log("Assistant has left the room: ", roomUrl);
+    
+    // Clean up any subscribers created above:
     // unsubscribeCombinedAudioSink();
   })
 });
 
 void assistant.joinRoom("https://your-subdomain.whereby.com/your-room-name");
 
-</code></pre>
+```
 
-<table><thead><tr><th width="224.19921875">Method</th><th width="116.9765625">Parameters</th><th>Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>startLocalMedia</code></td><td></td><td><code>void</code></td><td>Creates and starts local media for the assistant</td></tr><tr><td><code>stopLocalMedia</code></td><td></td><td><code>void</code></td><td>Stops local media for the assistant</td></tr><tr><td><code>getLocalMedia</code></td><td></td><td><a href="../../core-sdk-reference/api-reference/localmediaclient.md"><code>LocalMediaClient</code></a></td><td>Returns the underlying local media client controller. </td></tr><tr><td><code>getLocalAudioSource</code></td><td></td><td><a href="../types/assistant-types.md#audiosource-less-than-object-greater-than"><code>AudioSource</code></a> <code>| null</code></td><td>Returns a raw audio source object</td></tr><tr><td><code>getLocalVideoSource</code></td><td></td><td><a href="../types/assistant-types.md#videosource-less-than-object-greater-than"><code>VideoSource</code></a> <code>| null</code></td><td>Returns a raw video source object</td></tr><tr><td><code>getCombinedAudioSink</code></td><td></td><td> <a href="../types/assistant-types.md#audiosink-less-than-object-greater-than"><code>AudioSink</code></a> <code>| null</code></td><td>Returns a raw audio sink object</td></tr></tbody></table>
+
+
+<table><thead><tr><th width="187.4921875">Method</th><th width="180.984375">Parameters</th><th width="241.48046875">Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>startLocalMedia</code></td><td><a href="../../core-sdk-reference/types/roomconnection-types.md#localmediaoptions-less-than-object-greater-than"><code>LocalMediaOptions</code></a></td><td><p><code>Promise&#x3C;{</code></p><p>  <code>audioSource:</code> <a href="../types/assistant-types.md#audiosource-less-than-object-greater-than"><code>AudioSource</code></a> <code>| null,</code></p><p><code>videoSource:</code> <a href="../types/assistant-types.md#videosource-less-than-object-greater-than"><code>VideoSource</code></a> <code>| null</code></p><p><code>}></code></p></td><td>Creates and starts local audio and/or video media for the assistant based on parameters and returns media objects that can be used to inject media data in to the room</td></tr><tr><td><code>stopLocalMedia</code></td><td></td><td><code>void</code></td><td>Stops local media for the assistant</td></tr><tr><td><code>getLocalMedia</code></td><td></td><td><a href="../../core-sdk-reference/api-reference/localmediaclient.md"><code>LocalMediaClient</code></a></td><td>Returns the underlying local media client controller. </td></tr><tr><td><code>getLocalAudioSource</code></td><td></td><td><a href="../types/assistant-types.md#audiosource-less-than-object-greater-than"><code>AudioSource</code></a> <code>| null</code></td><td>Returns a raw audio source object</td></tr><tr><td><code>getLocalVideoSource</code></td><td></td><td><a href="../types/assistant-types.md#videosource-less-than-object-greater-than"><code>VideoSource</code></a> <code>| null</code></td><td>Returns a raw video source object</td></tr><tr><td><code>getCombinedAudioSink</code></td><td></td><td> <a href="../types/assistant-types.md#audiosink-less-than-object-greater-than"><code>AudioSink</code></a> <code>| null</code></td><td>Returns a raw audio sink object</td></tr></tbody></table>
 
 ## Events
 

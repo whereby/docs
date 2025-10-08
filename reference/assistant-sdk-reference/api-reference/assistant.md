@@ -82,7 +82,7 @@ assistant
       console.log("Assistant has left the room: ", roomUrl);
     
       // Clean up any subscribers created above:
-      // unsubscribeCombinedAudioSink();
+      unsubscribeCombinedAudioSink();
     })
   })
   .catch((error) => {

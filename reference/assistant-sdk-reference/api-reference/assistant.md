@@ -137,12 +137,12 @@ assistant.on(PARTICIPANT_VIDEO_TRACK_ADDED, ({ participantId, trackId, data }) =
     // recieve raw I420 video data of this video track in the room with e.g.:
     data.subscribe(({ width, height, data }) => { 
       console.log(`${data.length} video samples received @ ${width}x${height} pixels`);
-    });
+    })
   );
 });
 
 assistant.on(ASSISTANT_LEFT_ROOM, ({ roomUrl }) => {
-  console.log("Assistant has left the room: ", roomUrl);]
+  console.log("Assistant has left the room: ", roomUrl);
   
   // Clean-up all media data subscriptions on exit
   mediaDataSubscriptions.forEach(unsubscribeFn => unsubscribeFn());

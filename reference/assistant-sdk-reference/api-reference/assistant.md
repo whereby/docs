@@ -79,6 +79,7 @@ assistant
       });
     }).catch((error) => {
       console.error("An error occurred starting local media", error);
+      return;
     });
   
     assistant.on(ASSISTANT_LEFT_ROOM, ({ roomUrl }) => {

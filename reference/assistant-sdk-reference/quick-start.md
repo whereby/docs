@@ -108,6 +108,7 @@ trigger.on(TRIGGER_EVENT_SUCCESS, async ({ roomUrl }) => {
     hasAssistantJoined = true;
   } catch(error) {
     console.error("An error occurred joining the room", error);
+    return;
   };
 
   const roomConnection = assistant.getRoomConnection();
@@ -124,7 +125,7 @@ assistant.on(ASSISTANT_LEFT_ROOM, () => {
 });
 ```
 
-5. Start building! Here’s a minimal example, using the trigger API and creating an assistant that will send a chat message into the room session and subscribe to the room session's combined audio stream.&#x20;
+5. Start building! Here’s a minimal example, using the trigger API and creating an assistant that will send a chat message into the room session.
 
 ```jsx
 import "@whereby.com/assistant-sdk/polyfills";
@@ -157,6 +158,7 @@ trigger.on(TRIGGER_EVENT_SUCCESS, async ({ roomUrl }) => {
     hasAssistantJoined = true;
   } catch(error) {
     console.error("An error occurred joining the room", error);
+    return;
   }
     
   const roomConnection = assistant.getRoomConnection();

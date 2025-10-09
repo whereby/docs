@@ -44,6 +44,7 @@ const localMedia = client.getLocalMedia();
             await roomConnection.joinRoom();
         } catch(error) {
             console.error("Could not join room", error);
+            return;
         }
    }
 ```
@@ -85,6 +86,7 @@ async function main(roomUrl: string) {
     await roomConnection.joinRoom();
   } catch(error) {
     console.error("Could not join room", error);
+    return;
   }       
 
   const unsubscribe = subscribeToRemoteParticipants((participants) => {

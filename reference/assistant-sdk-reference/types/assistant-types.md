@@ -31,14 +31,14 @@
 | `sampleRate: number`     | Sample rate of data (in Hertz)               |
 | `samples: Int16Array`    | Raw PCM audio sample data                    |
 | `channelCount: number`   | Number of PCM channels in data. Default: `1` |
-| `bitsPerSamples: number` | Number of bits per sample. Default: `16`     |
+| `bitsPerSample: number`  | Number of bits per sample. Default: `16`     |
 | `numberOfFrames: number` | Number of frames represented in `samples`    |
 
 ## RTCVideoData: <mark style="color:green;">\<Object></mark>
 
-| Property                        | Description                            |
-| ------------------------------- | -------------------------------------- |
-| `width: number`                 | Video width (in pixels)                |
-| `height: number`                | Video height (in pixels)               |
-| `data:`` ``Uint8ClampedArray`   | Raw I420 video sample data             |
-| `rotation: number`              | Orientation of the video. Default: `0` |
+| Property                    | Description                            |
+| --------------------------- | -------------------------------------- |
+| `width: number`             | Video width (in pixels)                |
+| `height: number`            | Video height (in pixels)               |
+| `data: Uint8ClampedArray`   | Raw I420 video sample data             |
+| `rotation: number`          | Orientation of the video. Default: `0` |

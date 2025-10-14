@@ -1,69 +1,21 @@
 # Trigger Types
 
-## WebhookType: <mark style="color:green;">\<string></mark>
+## WherebyWebhookTriggers: <mark style="color:green;">\<Object></mark>
 
-| Value                  | Description                                                                                                                                                                                                             |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `room.client.joined`   | This is sent when a user joins the meeting room                                                                                                                                                                         |
-| `room.client.left`     | This is sent when a user leaves the meeting room (this could be via the leave button or by closing the browser tab)                                                                                                     |
-| `room.session.started` | Sent when a room session starts, which is when there are at least 2 users in a room.                                                                                                                                    |
-| `room.session.ended`   | Sent when a room session ends. Currently, a session will end when the number of participants has been less than 2 for some time. This heuristic could change in the future to better determine that a session has ended |
-
-## TriggerOptions: <mark style="color:green;">\<Object></mark>
-
-| Property                                                                                | Description                                                      |
-| --------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `webhookTriggers:` [`WherebyWebhookTriggers`](trigger-types.md#wherebywebhooktriggers)  | Webhook trigger that should be listened for to trigger room join |
-| `port?: number`                                                                         | The port that this service should run on - default is `8080`     |
-
-## WherebyWebhookTriggers: <mark style="color:green;">\<enum></mark>
-
-| Property                                                                                                          |                                                                                                                                                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `keyof` [`WherebyWebhookTriggerTypes`](trigger-types.md#wherebywebhooktriggertypes-less-than-object-greater-than) | A function that receives the payload defined for this webhook type (`WherebyWebhookTriggerTypes[Key]`) and returns a `boolean` or `Promise<boolean>`. Returning `true` indicates that the trigger should start an Assistant. \| |
-
-## WherebyWebhookTriggerTypes: <mark style="color:green;">\<Object></mark>
-
-<table><thead><tr><th width="514.1484375">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>"room.client.joined":</code> <a href="trigger-types.md#wherebywebhookroomclientjoined-less-than-object-greater-than"><code>WherebyWebhookRoomClientJoined</code></a></td><td>Room client joined event</td></tr><tr><td><code>"room.client.left":</code><a href="trigger-types.md#wherebywebhookroomclientleft-less-than-object-greater-than"><code>WherebyWebhookRoomClientLeft</code></a>  </td><td>Room client left event</td></tr><tr><td><code>"room.session.started":</code> <a href="trigger-types.md#wherebywebhookroomsessionstarted-less-than-object-greater-than"><code>WherebyWebhookRoomSessionStarted</code></a></td><td>Room session started event</td></tr><tr><td><code>"room.session.ended":</code> <a href="trigger-types.md#wherebywebhookroomsessionended-less-than-object-greater-than"><code>WherebyWebhookRoomSessionEnded</code></a></td><td>Room session ended event</td></tr></tbody></table>
+<table><thead><tr><th width="390.96484375">Property</th><th width="173.77734375">Default</th><th>Description</th></tr></thead><tbody><tr><td><p><code>"room.client.joined": (</code></p><p> <code>webhookData:</code> <a href="trigger-types.md#wherebywebhookroomclientjoined-less-than-object-greater-than"><code>WherebyWebhookRoomClientJoined</code></a>   <code>) => Promise&#x3C;boolean> | boolean</code></p></td><td><code>() => false</code>  </td><td>Custom matcher on incoming <a href="../../../meeting-content-and-quality/insights-suite-and-api/webhooks.md#in-room-data-properties">"room.client.joined" webhook events</a>. Return <code>true</code> if a match should be triggered or `false`</td></tr><tr><td><p><code>"room.client.left": (</code></p><p><code>webhookData:</code> <a href="trigger-types.md#wherebywebhookroomclientleft-less-than-object-greater-than"><code>WherebyWebhookRoomClientLeft</code></a>   <code>) => Promise&#x3C;boolean> | boolean</code></p></td><td><code>() => false</code>  </td><td>Custom matcher on incoming <a href="../../../meeting-content-and-quality/insights-suite-and-api/webhooks.md#in-room-data-properties">"room.client.left" webhook events</a>. Return <code>true</code> if a match should be triggered or `false`</td></tr><tr><td><p><code>"room.session.started": (</code></p><p><code>webhookData:</code> <a href="trigger-types.md#wherebywebhookroomsessionstarted-less-than-object-greater-than"><code>WherebyWebhookRoomSessionStarted</code></a>   <code>) => Promise&#x3C;boolean> | boolean</code></p></td><td><code>() => false</code>  </td><td>Custom matcher on incoming <a href="../../../meeting-content-and-quality/insights-suite-and-api/webhooks.md#event-objects">"room.session.started" webhook events.</a> Return <code>true</code> if a match should be triggered or `false`</td></tr><tr><td><p><code>"room.session.ended": (</code></p><p><code>webhookData:</code> <a href="trigger-types.md#wherebywebhookroomsessionended-less-than-object-greater-than"><code>WherebyWebhookRoomSessionEnded</code></a>   <code>) => Promise&#x3C;boolean> | boolean</code></p></td><td><code>() => false</code>  </td><td>Custom matcher on incoming <a href="../../../meeting-content-and-quality/insights-suite-and-api/webhooks.md#event-objects">"room.session.ended" webhook events.</a> Return <code>true</code> if a match should be triggered or `false`</td></tr></tbody></table>
 
 ## WherebyWebhookBase: <mark style="color:green;">\<Object></mark>
 
-| Property            | Description                     |
-| ------------------- | ------------------------------- |
-| `type: WebhookType` | Type of webhook                 |
-| `apiVersion: 1.0`   | Api version                     |
-| `id: string`        | Webhook ID                      |
-| `createdAt: string` | Time the webhook was created at |
-
-## WherebyWebhookType: <mark style="color:green;">\<enum></mark>
-
-| Type                                                                                                                  |
-| --------------------------------------------------------------------------------------------------------------------- |
-| [`WherebyWebhookRoomClientJoined`](trigger-types.md#wherebywebhookroomclientjoined-less-than-object-greater-than)     |
-| [`WherebyWebhookRoomClientLeft`](trigger-types.md#wherebywebhookroomclientleft-less-than-object-greater-than)         |
-| [`WherebyWebhookRoomSessionStarted`](trigger-types.md#wherebywebhookroomsessionstarted-less-than-object-greater-than) |
-| [`WherebyWebhookRoomSessionEnded`](trigger-types.md#wherebywebhookroomsessionended-less-than-object-greater-than)     |
-
-## WherebyRoleName: <mark style="color:green;">\<string></mark>
-
-| Type                |
-| ------------------- |
-| "`owner"`           |
-| `"member"`          |
-| `"host"`            |
-| `"granted_visitor"` |
-| `"viewer"`          |
-| `"granted_viewer"`  |
-| `"recorder"`        |
-| `"streamer"`        |
-| `"captioner"`       |
-| `"assistant"`       |
-
-
+| Property            | Description                    |
+| ------------------- | ------------------------------ |
+| `type: WebhookType` | Type of webhook                |
+| `apiVersion: 1.0`   | API version                    |
+| `id: string`        | Webhook ID                     |
+| `createdAt: string` | Time the webhook was generated |
 
 ## WherebyWebhookInRoom: <mark style="color:green;">\<Object></mark>
 
-<table><thead><tr><th width="300.578125">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>meetingId?: string</code></td><td>Meeting identifier from the meeting that the webhook was fired from</td></tr><tr><td><code>roomName: string</code></td><td>Name of the room from which the webhook was fired from</td></tr><tr><td><code>roomSessionId: string | null</code></td><td>Session ID of the meeting that the webhook was fired from</td></tr><tr><td><code>subdoman: string</code></td><td>The identifier for your organization</td></tr></tbody></table>
+<table><thead><tr><th width="300.578125">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>meetingId?: string</code></td><td>Meeting identifier from the meeting that the webhook was fired from</td></tr><tr><td><code>roomName: string</code></td><td>Name of the room from which the webhook was fired from</td></tr><tr><td><code>roomSessionId: string | null</code></td><td>Session ID of the meeting that the webhook was fired from (if any)</td></tr><tr><td><code>subdoman: string</code></td><td>The subdomain identifier for your organization</td></tr></tbody></table>
 
 ## WherebyWebhookDataClient: <mark style="color:green;">\<Object></mark>
 
@@ -104,3 +56,18 @@ Extends [WherebyWebhookBase](trigger-types.md#wherebywebhookbase-less-than-objec
 | Property                                                                                               | Description           |
 | ------------------------------------------------------------------------------------------------------ | --------------------- |
 | `data:` [`WherebyWebhookInRoom`](trigger-types.md#wherebywebhookinroom-less-than-object-greater-than)  | Payload of this event |
+
+## WherebyRoleName: <mark style="color:green;">\<string></mark>
+
+| Type                |
+| ------------------- |
+| "`owner"`           |
+| `"member"`          |
+| `"host"`            |
+| `"granted_visitor"` |
+| `"viewer"`          |
+| `"granted_viewer"`  |
+| `"recorder"`        |
+| `"streamer"`        |
+| `"captioner"`       |
+| `"assistant"`       |

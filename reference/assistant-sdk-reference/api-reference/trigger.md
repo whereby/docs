@@ -10,13 +10,13 @@ const trigger = new Trigger(options: TriggerOptions)
 
 ### TriggerOptions
 
-<table><thead><tr><th>Parameter</th><th width="279.11981201171875">Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>webhookTriggers</code></td><td><a href="../types/trigger-types.md#wherebywebhooktriggers"><code>WherebyWebhookTriggers</code></a></td><td></td><td></td></tr><tr><td><code>port</code></td><td><code>number</code></td><td><code>4999</code></td><td>Port for the HTTP server</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th width="216.40106201171875">Type</th><th width="73.640625">Default</th><th>Description</th></tr></thead><tbody><tr><td><code>webhookTriggers</code></td><td><a href="../types/trigger-types.md#wherebywebhooktriggers"><code>WherebyWebhookTriggers</code></a></td><td></td><td><p>Custom matcher functions that the assistant can use to self-trigger <code>TRIGGER_EVENT_SUCCESS</code> events.</p><p></p><p>Return <code>true</code> from a <a href="../types/trigger-types.md#wherebywebhooktriggers"><code>WherebyWebhookTriggers</code></a> callback to fire this event or <code>false</code> to ignore the incoming webhook.</p></td></tr><tr><td><code>port</code></td><td><code>number</code></td><td><code>4999</code></td><td>Port for the HTTP server listening for Whereby <a href="../../../meeting-content-and-quality/insights-suite-and-api/webhooks.md">webhooks</a>.</td></tr></tbody></table>
 
 ## Methods
 
-| Method  | Parameters | Returns | Description                                             |
-| ------- | ---------- | ------- | ------------------------------------------------------- |
-| `start` |            | `void`  | Starts the Express server and begins accepting webhooks |
+| Method  | Parameters | Returns | Description                                              |
+| ------- | ---------- | ------- | -------------------------------------------------------- |
+| `start` |            | `void`  | Starts the Express server and begins accepting webhooks. |
 
 ## Events
 
@@ -39,4 +39,4 @@ trigger.on(TRIGGER_EVENT_SUCCESS, ({ roomUrl }) => {
 });
 ```
 
-<table><thead><tr><th width="204.91015625">Event</th><th width="339.75225830078125">Payload</th><th>Emitted when</th></tr></thead><tbody><tr><td><code>TRIGGER_EVENT_SUCCESS</code></td><td><p><code>{</code> </p><p> <code>roomUrl:string;</code> </p><p><code>triggerWebhook:</code> <a href="../types/trigger-types.md#wherebywebhooktype-less-than-type-greater-than"><code>WherebyWebhookType</code></a></p><p><code>}</code>    </p></td><td>Trigger has met the required conditions</td></tr></tbody></table>
+<table><thead><tr><th width="204.91015625">Event</th><th width="339.75225830078125">Payload</th><th>Emitted when</th></tr></thead><tbody><tr><td><code>TRIGGER_EVENT_SUCCESS</code></td><td><p><code>{</code> </p><p> <code>roomUrl:string;</code> </p><p><code>triggerWebhook:</code> <a href="../types/trigger-types.md#wherebywebhooktype-less-than-type-greater-than"><code>WherebyWebhookType</code></a></p><p><code>}</code>    </p></td><td>Trigger has met the required custom conditions in a webhook trigger matcher function (matcher function returned <code>true</code>).</td></tr></tbody></table>

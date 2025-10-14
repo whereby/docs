@@ -16,7 +16,7 @@ Assistants are headless participants that connect to a Whereby room to enhance y
 They can:&#x20;
 
 * Access all participant audio and video streams in a connected room, including a combined audio stream of all participants
-* Perform in room actions like sending chat messages, starting cloud recording, letting participants into the room
+* Perform in-room actions like sending chat messages, starting cloud recording, letting participants into the room
 * Alongside our [Trigger API](../reference/assistant-sdk-reference/api-reference/trigger.md) be triggered automatically via webhooks (e.g. when a first participant joins a room or when two or more participants join and a room session starts).&#x20;
 
 Assistants run in **Node.js** environments and are designed for backend integrations and realtime AI use cases. The SDK can not be run in the browser - instead use [Core](../reference/core-sdk-reference/) or [Browser](../reference/react-hooks-reference/quick-start/getting-started-with-the-browser-sdk.md) SDK for creating frontend-based integrations.
@@ -70,7 +70,7 @@ When the assistant leaves the room it will announce that it is leaving to all pa
 
 And that's it!
 
-Now, you can view our [Quick Start](../reference/assistant-sdk-reference/quick-start.md) guides or see our example apps to set up and explore the possibilities for your Assistant.&#x20;
+Now, you can view our [Quick Start](../reference/assistant-sdk-reference/quick-start.md) guide to set up and explore the possibilities for your Assistant.&#x20;
 
 ## Key Features
 
@@ -82,9 +82,9 @@ Access the individual audio and media streams of all participants in a session.&
 
 ### Combined Audio&#x20;
 
-All remote participant audio mixed into a single `MediaStream`
+All remote participant audio mixed into a single audio stream.
 
-**Use cases**: live transcription, AI models. sentiment analysis, audio only recording
+**Use cases**: single track live transcription, AI models. sentiment analysis, audio only recording
 
 ### Trigger API&#x20;
 
@@ -102,13 +102,11 @@ Assistants can perform a variety of actions inside a room - they are given the s
 * Request audio / video to be enabled for participants
 * Admitting waiting participants
 
-See the [Core API Reference](../reference/core-sdk-reference/api-reference/roomconnectionclient.md#actions) the full list of in room actions available.&#x20;
+See the [Core API Reference](../reference/core-sdk-reference/api-reference/roomconnectionclient.md#actions) for the full list of in-room actions available.&#x20;
 
 ## Usage and Pricing
 
 Enabling assistants is not charged as an additional feature - they are treated as normal participants in a room. Your standard Whereby participant minute billing applies to this usage.
-
-&#x20;
 
 ## What next?
 

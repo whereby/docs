@@ -7,8 +7,8 @@ description: >-
 # Assistants
 
 {% hint style="warning" %}
-⚠️ **Early Access Only**\
-This feature is currently available by invite only. If your organization has been granted access,  you can follow the documentation below. For others, stay tuned - Assistants will be available in a wider beta soon.&#x20;
+⚠️ **Closed Beta**\
+The Assistants feature is currently in Closed Beta and available to committed customers. If your organisation is on a committed plan, you can request access by emailing [embedded@whereby.com](mailto:embedded@whereby.com). Assistants will be made generally available after the beta.
 {% endhint %}
 
 Assistants are headless participants that connect to a Whereby room to enhance your user experience.&#x20;

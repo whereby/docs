@@ -125,4 +125,8 @@
 * [React Native Reference](reference/react-native-reference/README.md)
   * [Quick Start](reference/react-native-reference/quick-start.md)
   * [WherebyEmbed](reference/react-native-reference/wherebyembed.md)
+* [Camera Effects Reference](reference/camera-effects-reference/README.md)
+  * [Quick Start](reference/camera-effects-reference/quick-start.md)
+  * [API Reference](reference/camera-effects-reference/api-reference/README.md)
+    * [getUsablePresets](reference/camera-effects-reference/api-reference/getusablepresets.md)
 * [Webhooks Reference](meeting-content-and-quality/insights-suite-and-api/webhooks.md)

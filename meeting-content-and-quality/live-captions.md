@@ -29,7 +29,7 @@ Live captions is a supplementary feature of our paid Whereby Embedded plans. The
 
 * Both plan types: $0.024 per unmuted participant minute.
 
-**\*** Currently, our primary languages include: English, Spanish, Italian, French, Portuguese, and German. All other languages are secondary languages at this time. \
+**\*** Currently, only English is available as a primary language. All other languages are secondary languages. We are working to add more languages to the primary language list.\
 \*\* To pre-purchase minutes, please reach out to your CSM.
 {% endhint %}
 
@@ -83,31 +83,32 @@ Live captions generate real-time speech to text in the specified language. You n
 * Danish (da)
 * Dutch (nl)
 * English (en)
-* Finnish (fi)&#x20;
-* French (fr)
-* German (de)
-* German - Switzerland (de-CH)&#x20;
-* Greek (el)
-* Hindi (hi)
-* Indonesian (id)&#x20;
-* Italian (it)&#x20;
-* Japanese (ja)&#x20;
-* Korean (ko)&#x20;
-* Latvian (lv)
-* Malay (ms)
-* Norwegian (no)
-* Polish (pl)
-* Portuguese (pt)&#x20;
-* Brazilian Portuguese (pt-BR)&#x20;
-* Romanian (ro)&#x20;
-* Russian (ru)&#x20;
-* Slovak (sk)&#x20;
-* Spanish (es)&#x20;
-* Swedish (sv)&#x20;
-* Thai (th)&#x20;
-* Turkish (tr)&#x20;
-* Ukrainian (uk)&#x20;
-* Vietnamese (vi)
+
+- Finnish (fi)&#x20;
+- French (fr)
+- German (de)
+- German - Switzerland (de-CH)&#x20;
+- Greek (el)
+- Hindi (hi)
+- Indonesian (id)&#x20;
+- Italian (it)&#x20;
+- Japanese (ja)&#x20;
+- Korean (ko)&#x20;
+- Latvian (lv)
+- Malay (ms)
+- Norwegian (no)
+- Polish (pl)
+- Portuguese (pt)&#x20;
+- Brazilian Portuguese (pt-BR)&#x20;
+- Romanian (ro)&#x20;
+- Russian (ru)&#x20;
+- Slovak (sk)&#x20;
+- Spanish (es)&#x20;
+- Swedish (sv)&#x20;
+- Thai (th)&#x20;
+- Turkish (tr)&#x20;
+- Ukrainian (uk)&#x20;
+- Vietnamese (vi)
 
 </details>
 

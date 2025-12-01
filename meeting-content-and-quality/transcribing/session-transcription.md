@@ -29,7 +29,7 @@ Session Transcriptions is a supplementary feature of our paid Whereby Embedded p
 
 * Both plan types: $0.024 per unmuted participant minute.
 
-**\*** Currently, only English is available as a primary language. All other languages are secondary languages. We are working to add more languages to the primary language list.\
+\* Currently, our primary languages include: English, Spanish, Italian, French, Portuguese, and German. All other languages are secondary languages at this time. \
 \*\* To pre-purchase minutes, please reach out to your CSM.
 {% endhint %}
 

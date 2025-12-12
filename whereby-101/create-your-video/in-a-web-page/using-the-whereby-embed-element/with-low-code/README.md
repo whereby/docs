@@ -19,7 +19,7 @@ Use a `roomUrl` you've created as the `src` attribute as in the example below.
 ```
 
 {% hint style="success" %}
-If you'd like more programmatic control around the meeting experience with things like browser events and commands, we recommend reviewing our documentation about the [Web Component](broken-reference) from our SDK
+If you'd like more programmatic control around the meeting experience with things like browser events and commands, we recommend reviewing our documentation about the [Web Component](/broken/pages/qgd4rKCAOpWuZfE1fpuL) from our SDK
 {% endhint %}
 
 The above code can be used for in website builders like [Squarespace or wordpress](embedding-in-squarespace-or-wordpress.md). When embedding, you can customize the room by [toggling features and behaviors via URL parameters](../../../../customizing-rooms/using-url-parameters.md).&#x20;

@@ -29,7 +29,7 @@ There are a few steps required to set up Assistants to be used in your Whereby s
 
 Before an Assistant will be granted access to your sessions, they must first be created in the Whereby dashboard. This will assign each individual assistant an `assistantKey`  This key uniquely identifies every assistant and will be later used in the implementation stage when joining a call as a Whereby Assistant.&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-09-25 at 09.54.31.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-11 at 16.02.35.png" alt=""><figcaption></figcaption></figure>
 
 In this stage, you can assign some key details to your Assistant including:&#x20;
 
@@ -44,7 +44,7 @@ Once you've assigned these details, you can save the Assistant and obtain the `a
 You can always edit an Assistant's configuration, view its `assistantKey` and enable or disable it in your organization after it has been created.&#x20;
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-09-25 at 09.56.31.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-11 at 17.04.12.png" alt=""><figcaption></figcaption></figure>
 
 Your Assistant will be created in a `disabled` state initially. Once you're ready to start using your Assistant, you can toggle it to the `enabled` state via the dashboard.&#x20;
 
@@ -52,7 +52,15 @@ Your Assistant will be created in a `disabled` state initially. Once you're read
 
 Once enabled, any Whereby Assistant that now provides the `assistantKey` copied from this interface will self-identify as this assistant.
 
+If you'd like room hosts to be able to request this assistant from within the room, you can enable **Manual** **Invite**. More on that below.
+
+{% hint style="info" %}
+You'll need an Endpoint URL configured before Manual Invite can be enabled
+{% endhint %}
+
 That's it for the configuration steps!
+
+## In Room
 
 When an assistant now joins any room (using its `assistantKey`) an in-room notification will be shown to all participants.
 
@@ -60,9 +68,21 @@ When an assistant now joins any room (using its `assistantKey`) an in-room notif
 
 A Whereby Assistant then sits in the room status bar for the duration that it is connected and until it leaves the room.&#x20;
 
-Interacting with the assistant icon in the room status displays the title of the assistant.
+Interacting with the assistant icon in the room status displays the assistants menu.&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-09-25 at 11.36.32.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-11 at 17.05.53.png" alt=""><figcaption></figcaption></figure>
+
+### Manual Invite
+
+When enabled, hosts will be able to invite your Whereby Assistant into their room with the **Invite** button in the assistants menu.
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-11 at 17.02.47.png" alt=""><figcaption></figcaption></figure>
+
+The **Invite** button will send a webhook event with the type `assistant.requested`  endpoint URL configured for this assistant. You can configure your webhook server to start the requested assistant and have it join the room specified in the webhook event payload.
+
+Once an assistant has joined the room, hosts have the ability to remove it through the assistants menu.
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-11 at 17.03.23.png" alt=""><figcaption></figcaption></figure>
 
 When the assistant leaves the room it will announce that it is leaving to all participants remaining in the room.
 

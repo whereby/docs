@@ -38,24 +38,17 @@ Users can easily access meeting diagnostics and check:
 * Video transmission
 * CPU usage (exclusive to Chrome on desktop)
 
-<div align="center">
-
-<figure><img src="../../.gitbook/assets/image (9).png" alt="" width="255"><figcaption><p>Outlined in red is a new button that provides access to the Meeting diagnostics tools. Clicking this button opens the side panel.</p></figcaption></figure>
-
-</div>
+<div align="center"><figure><img src="../../.gitbook/assets/image (9).png" alt="" width="255"><figcaption><p>Outlined in red is a new button that provides access to the Meeting diagnostics tools. Clicking this button opens the side panel.</p></figcaption></figure></div>
 
 #### Detection of poor network conditions
 
-1.  In case of poor network conditions, users see a notification and a red indicator appears\
-
+1.  In case of poor network conditions, users see a notification and a red indicator appears<br>
 
     <figure><img src="../../.gitbook/assets/toptoolbar.png" alt="" width="285"><figcaption></figcaption></figure>
-2.  Users can expand the panel to access more details and see actionable tips on how to improve the connection\
-
+2.  Users can expand the panel to access more details and see actionable tips on how to improve the connection<br>
 
     <figure><img src="../../.gitbook/assets/image (16).png" alt="" width="563"><figcaption><p>Meeting diagnostics - example of poor connection.<br></p></figcaption></figure>
-3.  Meeting participants with poor network conditions will appear with an indicator on their video tile. This helps other participants understand why the affected participant's audio or video quality is lower.\
-
+3.  Meeting participants with poor network conditions will appear with an indicator on their video tile. This helps other participants understand why the affected participant's audio or video quality is lower.<br>
 
     <figure><img src="../../.gitbook/assets/image (7).png" alt="" width="375"><figcaption><p>A red indicator is visible next to the name of any participant experiencing connection issues.</p></figcaption></figure>
 

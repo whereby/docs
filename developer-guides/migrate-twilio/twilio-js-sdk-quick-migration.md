@@ -11,7 +11,7 @@ It may not offer the complete customization you'd initially be looking for, but 
 ### Requirements
 
 1. Install SDK via NPM or CDN&#x20;
-2. Create a [Free Whereby account](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded\_free)
+2. Create a [Free Whereby account](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded_free)
 3. Create an API key in the "configure" section of your dashboard
 4. Create a room with API or dashboard
 
@@ -69,9 +69,8 @@ You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the us
 
 ### Account and API key creation
 
-1. Sign up for a [Free Whereby Embedded](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded\_free) account
-2.  From the **Configure** section of the dashboard, select **Generate Key**\
-
+1. Sign up for a [Free Whereby Embedded](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded_free) account
+2.  From the **Configure** section of the dashboard, select **Generate Key**<br>
 
     <figure><img src="../../.gitbook/assets/Twilio JS SDK Quick migration screenshot.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -243,8 +242,7 @@ After you've installed the Web Component and created your rooms, you can begin c
 
 When leveraging Whereby's pre-built experience, there are multiple portions of Twilio's SDK that you receive out of the box as part of the rooms being generated:
 
-* [Set up local media](https://www.twilio.com/docs/video/javascript-getting-started#set-up-local-media) -> Built in as part of our pre-call waiting room experience. Users are prompted to provide cam and mic access, and can manage I/O devices as they see fit. Enable pre-call review globally via the features section of your dashboard, or on a per room basis with the [?precallReview](https://docs.whereby.com/whereby-101/customizing-rooms/using-url-parameters#precallreview-less-than-on-or-off-greater-than)\
-
+* [Set up local media](https://www.twilio.com/docs/video/javascript-getting-started#set-up-local-media) -> Built in as part of our pre-call waiting room experience. Users are prompted to provide cam and mic access, and can manage I/O devices as they see fit. Enable pre-call review globally via the features section of your dashboard, or on a per room basis with the [?precallReview](https://docs.whereby.com/whereby-101/customizing-rooms/using-url-parameters#precallreview-less-than-on-or-off-greater-than)<br>
 * [Connect to a room](https://www.twilio.com/docs/video/javascript-getting-started#connect-to-a-room) & [Join a room](https://www.twilio.com/docs/video/javascript-getting-started#join-a-room) -> This logic is handled for you in our PWA and pre-call experience. Based on the lock status of the room, they will either have the option to "join meeting" or "knock". Set `"isLocked": true` in the body of your API request to require your participants to knock. Then provide your [hosts](../../whereby-101/user-roles-and-privileges.md), speakers, doctors, etc with a corresponding `hostRoomUrl` so they can join a locked room to provide others access!
 * [Working with remote participants](https://www.twilio.com/docs/video/javascript-getting-started#working-with-remote-participants) events, media, etc -> All participants follow the above mentioned pre-call experience and connect in the rooms via the underlying Whereby `roomUrl`. No rendering, grid, or connection logic is required from your engineering team!
 

@@ -26,4 +26,4 @@ You can also programmatically predefine the number of groups and their names bef
 
 After you've implemented, we have a [series of guides](../../end-user/end-user-support-guides/using-breakout-groups.md) you can use to train your hosts on using the Breakout Groups feature.
 
-\
+<br>

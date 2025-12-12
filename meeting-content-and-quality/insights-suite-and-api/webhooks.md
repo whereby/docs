@@ -25,6 +25,7 @@ At the moment the following event types are supported:
 * `transcription.finished`: Sent when a transcription has finished processing.
 * `transcription.failed`: Sent when a transcription has failed to process.
 * `recording.finished`: Sent when a cloud recording has finished and the recording has uploaded successfully.
+* `assistant.requested`: Sent when a host invites a Whereby Assistant into their room. See the [Whereby Assistants documentation](../assistants.md) for more information.
 
 ## Event objects
 

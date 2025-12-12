@@ -85,8 +85,7 @@ In Windows 10, you're able to set a default Microphone, but there are also syste
 
 1. Type "Cam" into the search bar
 2. Select camera in the app permissions
-3. Verify your browser has permission to access your camera\
-
+3. Verify your browser has permission to access your camera<br>
 {% endtab %}
 
 {% tab title="Mobile" %}

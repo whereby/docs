@@ -68,8 +68,7 @@ function MyVideoApp( { roomUrl, localStream }) {
 
 ## useRoomConnection.components
 
-From version `3`, the `useRoomConnection.components` field is deprecated. It's no longer needed to bind components to the room connection, since we have the provider. The only change required is to import components directly from the library, instead of getting them from the hook.\
-
+From version `3`, the `useRoomConnection.components` field is deprecated. It's no longer needed to bind components to the room connection, since we have the provider. The only change required is to import components directly from the library, instead of getting them from the hook.<br>
 
 This is an example of rendering a `VideoView` in version `2`.&#x20;
 

@@ -49,6 +49,6 @@ w
 
 <figure><img src="../../../../../.gitbook/assets/Word press html block.png" alt="" width="563"><figcaption></figcaption></figure>
 
-**3** Enter in your iframe code into the block. You can see an [example iframe code here](broken-reference). You may need to include height and width attributes to fit your site accordingly.
+**3** Enter in your iframe code into the block. You can see an [example iframe code here](/broken/pages/f4AiIiksLiGW87XTTCeZ). You may need to include height and width attributes to fit your site accordingly.
 
 <figure><img src="../../../../../.gitbook/assets/wordpress3.png" alt="" width="563"><figcaption></figcaption></figure>

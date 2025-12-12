@@ -19,7 +19,7 @@ Once you have secured your API key, you can create a room by sending an HTTP req
 
 `endDate` is interpreted as UTC by default, but other time zones are supported by including an offset in hours and minutes. For example, Eastern Standard Time (EST) would be expressed as `2099-08-11T07:56:01-05:00`.
 
-Rooms are fully functional from the time they are created. They can then be used alongside [our SDK to embed](broken-reference) on your platform
+Rooms are fully functional from the time they are created. They can then be used alongside [our SDK to embed](/broken/pages/FndEOX1m4zX0DWHGe8Yp) on your platform
 
 {% tabs %}
 {% tab title="cURL" %}

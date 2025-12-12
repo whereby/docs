@@ -19,8 +19,7 @@ When participants return from breakout groups to the main room, their cameras ar
 {% tab title="Group Assignments" %}
 1. Before selecting start, drag and drop participants names to assign them to a group.
 2. Or, select "Assign all" to have Whereby do the work for you. You can press "Shuffle" to re-assign the groups until you're happy with the allocation.
-3.  Leave your participants in the unassigned section to allow them the freedom of choice.\
-
+3.  Leave your participants in the unassigned section to allow them the freedom of choice.<br>
 
     <figure><img src="../../.gitbook/assets/file-4VezVUDlFq.gif" alt=""><figcaption></figcaption></figure>
 {% endtab %}
@@ -45,12 +44,10 @@ You can broadcast to all groups via chat or by getting on stage. Messages sent w
 1.  Check the "Broadcast to all groups" box in the chat to send everyone a written message.
 
     ![](../../.gitbook/assets/file-qnSyU1TEKF.png)
-2.  Select "Go on stage" to communicate with everyone via audio.\
-
+2.  Select "Go on stage" to communicate with everyone via audio.<br>
 
     <figure><img src="../../.gitbook/assets/file-Ze9qbAh00B.png" alt=""><figcaption></figcaption></figure>
-3.  While "on stage" all groups will be able to hear you. You can get "off stage" to stop broadcasting to all groups.\
-
+3.  While "on stage" all groups will be able to hear you. You can get "off stage" to stop broadcasting to all groups.<br>
 
     <figure><img src="../../.gitbook/assets/file-JdkbZMehFm.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
@@ -58,4 +55,4 @@ You can broadcast to all groups via chat or by getting on stage. Messages sent w
 
 
 
-\
+<br>

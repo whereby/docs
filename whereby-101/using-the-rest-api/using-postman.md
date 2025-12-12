@@ -10,7 +10,7 @@ description: >-
 {% embed url="https://youtu.be/9zDEvN0BZ4E" %}
 
 {% hint style="info" %}
-**Note**: To use the API, you’ll need to [create an API key](broken-reference). A new key is generated from the “Configure” section in the Embedded dashboard. Your API key is secret and should only be used from your server.
+**Note**: To use the API, you’ll need to [create an API key](/broken/pages/Vnv8oT7qM30PMA1U4TyG). A new key is generated from the “Configure” section in the Embedded dashboard. Your API key is secret and should only be used from your server.
 {% endhint %}
 
 Postman is an API platform for building and using APIs. You can use Postman to interact with the Whereby REST API. If you don’t have a Postman account already, sign up for one here: [https://www.postman.com/](https://www.postman.com/)
@@ -19,11 +19,11 @@ Next, open [Whereby’s Embedded API Postman collection](https://www.postman.com
 
 Start by creating your own copy of the collection by clicking the “Fork” button and add the copy to your own Postman workspace
 
-![](<../../../.gitbook/assets/postman 1.png>)
+![](<../../.gitbook/assets/postman 1.png>)
 
 In your forked collection, paste your API token into the "Token" field, and then click "Save".
 
-![](<../../../.gitbook/assets/postman 2.png>)
+![](<../../.gitbook/assets/postman 2.png>)
 
 Now you're ready to create a room.&#x20;
 
@@ -31,7 +31,7 @@ Now you're ready to create a room.&#x20;
 2. Click "Send"
 3. You should receive a response containing meeting information and URL
 
-![](<../../../.gitbook/assets/postman 3.png>)
+![](<../../.gitbook/assets/postman 3.png>)
 
 Copy the room URL from the response and open it in your browser.
 

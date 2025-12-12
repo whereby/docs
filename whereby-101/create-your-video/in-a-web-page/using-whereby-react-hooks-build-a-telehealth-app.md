@@ -22,7 +22,7 @@ Click **Open Sandbox** to run the code and see the result. (You will need to add
 
 #### Create a Whereby room
 
-You will need a Whereby Embedded account with a Whereby room to follow this tutorial. [Sign up for a free Embedded account here](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded\_free) or login to your existing account. Then create the room using a wizard available on the homepage of your Customer Portal or with the API request. [Learn more how to programatically create a Whereby room](https://docs.whereby.com/creating-and-deleting-rooms).
+You will need a Whereby Embedded account with a Whereby room to follow this tutorial. [Sign up for a free Embedded account here](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded_free) or login to your existing account. Then create the room using a wizard available on the homepage of your Customer Portal or with the API request. [Learn more how to programatically create a Whereby room](https://docs.whereby.com/creating-and-deleting-rooms).
 
 For this tutorial **make sure that your room is unlocked**, so that we don't have to implement the knock functionality.&#x20;
 
@@ -129,8 +129,7 @@ If you do, then congrats! Click "Allow", and you are now connected to your room.
 
 ### Rendering your own video cell
 
-Once we are connected to the room, we can begin rendering the video UI. A logical first step is to render our own video cell. The `useRoomConnection` hook consists of three main properties: `actions`, `components`, and `state`.\
-
+Once we are connected to the room, we can begin rendering the video UI. A logical first step is to render our own video cell. The `useRoomConnection` hook consists of three main properties: `actions`, `components`, and `state`.<br>
 
 #### `actions`
 
@@ -149,7 +148,7 @@ This is the state of the provided room. Here you have access to your own video s
 Now let's use the functionality of the `useRoomConnection` hook to render our own video cell. We need the `VideoView` from `components` and the `localParticipant` from `state`.&#x20;
 
 {% hint style="info" %}
-In this tutorial we use [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring\_assignment) syntax, but you can also access the properties in the following way:&#x20;
+In this tutorial we use [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) syntax, but you can also access the properties in the following way:&#x20;
 
 `const components = roomConnection.components`
 

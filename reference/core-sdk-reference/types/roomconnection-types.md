@@ -21,16 +21,16 @@
 
 ## WherebyClientOptions: <mark style="color:green;">\<Object></mark>
 
-| Property                                  | Description                                                                                                              |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `localMediaOptions: localMediaOptions`    | Options for starting local media                                                                                         |
-| `displayName?: string`                    | Display name of the client                                                                                               |
-| `roomUrl?: string`                        | Room url of the session                                                                                                  |
-| `assistantKey?: string \| null`           | If initializing [`Assistant`](../../assistant-sdk-reference/api-reference/assistant.md) the `assistantKey` is  required  |
-| `roomKey?: string \| null`                | URL of the room to join                                                                                                  |
-| `externalId?: string \| null`             | A custom identifier for the participant. Gets saved in Insights data                                                     |
-| `isNodeSDK?: boolean`                     | True if initializing in a Node environment                                                                               |
-| `isAssistant`                             | True if initializing an `Assistant`                                                                                      |
+| Property                                  | Description                                                                                                                 |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `localMediaOptions: localMediaOptions`    | Options for starting local media                                                                                            |
+| `displayName?: string`                    | Display name of the client                                                                                                  |
+| `roomUrl?: string`                        | Room url of the session                                                                                                     |
+| `assistantKey?: string \| null`           | If initializing [`Assistant`](../../assistant-sdk-reference/api-reference/assistant.md) the `assistantKey` is  required     |
+| `roomKey?: string \| null`                | URL of the room to join                                                                                                     |
+| `externalId?: string \| null`             | A custom identifier for the participant. Gets saved in Insights data. Supports any **English alphabet characters** `(A-Z)`. |
+| `isNodeSDK?: boolean`                     | True if initializing in a Node environment                                                                                  |
+| `isAssistant`                             | True if initializing an `Assistant`                                                                                         |
 
 ## RemoteParticipantState: <mark style="color:green;">\<Object></mark>
 

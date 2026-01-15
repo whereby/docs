@@ -60,6 +60,10 @@
   * [Improving call quality](meeting-content-and-quality/insights-suite-and-api/improving-call-quality.md)
   * [Tracking room events with Webhooks](meeting-content-and-quality/insights-suite-and-api/webhooks.md)
 * [Assistants](meeting-content-and-quality/assistants.md)
+* [Authentication for S3 Storage](meeting-content-and-quality/authentication-for-s3-storage/README.md)
+  * [Understanding authentication types](meeting-content-and-quality/authentication-for-s3-storage/understanding-authentication-types.md)
+  * [Configure Access Key Authentication](meeting-content-and-quality/authentication-for-s3-storage/configure-access-key-authentication.md)
+  * [Configure OIDC Authentication](meeting-content-and-quality/authentication-for-s3-storage/configure-oidc-authentication.md)
 
 ## 🤷 End User
 

@@ -35,3 +35,32 @@ pnpm add @whereby.com/camera-effects
 ```
 {% endtab %}
 {% endtabs %}
+
+### Usage
+
+```javascript
+// Use alongside @whereby.com/core. Can also be used with @whereby.com/browser-sdk
+import { WherebyClient } from "@whereby.com/core";
+
+const client = new WherebyClient();
+const roomConnection = client.getRoomConnection();
+
+// Join the room as usual
+
+// list of available effects
+const [effectPresets, setEffectPresets] = useState<Array<string>>([]);
+
+// Lazy-loaded and can be called when needed
+async function loadBackgroundEffects() {
+    if (!showCameraEffects) return;
+
+    const { getUsablePresets } = await import("@whereby.com/camera-effects");
+    const usablePresets = getUsablePresets();
+    setEffectPresets(usablePresets);
+}
+    
+// Switch to the selected effect
+async function setCameraEffect(effectPreset: string) {
+    await roomConnection.switchCameraEffect(effectPreset);
+}
+```

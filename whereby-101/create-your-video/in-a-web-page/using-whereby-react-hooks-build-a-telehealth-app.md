@@ -22,7 +22,7 @@ Click **Open Sandbox** to run the code and see the result. (You will need to add
 
 #### Create a Whereby room
 
-You will need a Whereby Embedded account with a Whereby room to follow this tutorial. [Sign up for a free Embedded account here](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded_free) or login to your existing account. Then create the room using a wizard available on the homepage of your Customer Portal or with the API request. [Learn more how to programatically create a Whereby room](https://docs.whereby.com/creating-and-deleting-rooms).
+You will need a Whereby Embedded account with a Whereby room to follow this tutorial. [Sign up for a free Embedded account here](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded_free) or login to your existing account. Then create the room using a wizard available on the homepage of your Customer Portal or with the API request. [Learn more how to programmatically create a Whereby room](https://docs.whereby.com/creating-and-deleting-rooms).
 
 For this tutorial **make sure that your room is unlocked**, so that we don't have to implement the knock functionality.&#x20;
 

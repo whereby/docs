@@ -1,14 +1,28 @@
 # Using the Insights dashboard
 
+{% hint style="info" %}
+To be HIPAA compliant while using Insights, personal participant information needs to be removed. To do so, navigate to your Configuration settings, choose the Features tab, and scroll down to Privacy Features to enable the privacy toggle.&#x20;
+{% endhint %}
+
 ## Rooms and sessions
 
-On the Rooms page, you can see a list of all the rooms that currently exist and have been created in your account. They are listed by most to least recently used. You can easily filter the list by searching a room name.&#x20;
+On the **Rooms** page, you can see a list of all the rooms that currently exist and have been created in your account. They are listed by most to least recently used. You can easily filter the list by searching a room name.&#x20;
 
-You can also access details of all the sessions that have happened within a specific room. A session starts once there are two or more people in a call.&#x20;
+You can also access details of all the **sessions** that have happened within a specific room by clicking on the room name. A session starts once there are two or more people in a call.&#x20;
 
 ## Participants
 
-Within a session, you can find the participants that attended the session. Each time your user reconnects to the room, they will receive a new, unique participant ID from us. You will be able to match participant IDs based on the display name they enter the room with, which is currently available in the event logs.&#x20;
+Within a session, you can find the **Session details**. The default view is an **Overview** of the participants that attended the session. A single timeline is created for each participant. Any time your user reconnects to the room, the reconnection displays as a new "segment" within the participant's timeline.
+
+<figure><img src="../../.gitbook/assets/Session Details.png" alt=""><figcaption></figcaption></figure>
+
+### Display name
+
+The display name of the participant is the name they enter the call with. Your users can either enter this name themselves, or you can pass in for them using the [displayName parameter](https://docs.whereby.com/customizing-rooms/using-url-parameters#displayname-less-than-name-greater-than).&#x20;
+
+Some customers choose to use generic names, such as `Doctor` or `Patient` for added anonymity. If you would like for names not to appear in your Insights, you can configure this in your account settings by going to "**Configure**" > "**Features**", then scrolling down to the **Privacy features** section and toggling on '**Remove participant display names**'.&#x20;
+
+Display names will then appear as Participant 1, Participant 2, etc. Participants who leave their name blank when joining a session will appear as Guest 1, Guest 2, etc.&#x20;
 
 {% hint style="success" %}
 #### Participant Call Ratings
@@ -18,15 +32,7 @@ Whereby has a call ratings feature in **beta** that you can ask us to turn on fo
 If you have this feature turned on, each participant will be asked at the end of their call to rate the call quality, and you can track these ratings in a dashboard will will provide to you. Contact Whereby to get this feature enabled.
 {% endhint %}
 
-## Display name
-
-The display name of the participant is the name they enter the call with. Your users can either enter this name themselves or you can pass in for them using the [displayName parameter](https://docs.whereby.com/customizing-rooms/using-url-parameters#displayname-less-than-name-greater-than).&#x20;
-
-Some customers choose to use generic names, such as `Doctor`  or `Patient` for added anonymity. If you would like for names not to appear in your Insights, please reach out and we can turn this feature off for you.&#x20;
-
-Only room sessions after July 20, 2023 will include display name in the session details pages.&#x20;
-
-## Browser and operating system
+### Browser and operating system
 
 You can use this information to determine if there were any compatibility issues, since not all devices or browsers fully support WebRTC.&#x20;
 
@@ -40,9 +46,21 @@ All dates and times in the Insights UI and API are in UTC.&#x20;
 We capture values for each chart every 2 seconds. We believe this frequency helps capture the spontaneous nature of call issues.
 {% endhint %}
 
+### Activity
+
+The **Activity** view provides an events timeline of the participants' camera and microphone. You can use this information to diagnose video or audio issues that your users report.
+
+<figure><img src="../../.gitbook/assets/Session Insights - Activity.png" alt=""><figcaption></figcaption></figure>
+
+### Connection&#x20;
+
+The **Connection** view provides an overview of the data being transferred over the course of the session, as well as the connection quality.&#x20;
+
+<figure><img src="../../.gitbook/assets/Session Details - Connection.png" alt=""><figcaption></figcaption></figure>
+
 #### Sending & receiving
 
-We've separated packet loss and bitrate out into separate charts for sending and receiving. Each participant is both sending data in the form of audio and video to others on the call and receiving audio and video data in return.
+We've separated packet loss and bitrate out into separate charts for sending and receiving. Each participant is both sending data in the form of audio and video to others on the call and receiving audio and video data in return. Further details can be seen when clicking the toggle next to **Sending** or **Receiving**.
 
 {% tabs %}
 {% tab title="Packet Loss" %}
@@ -94,9 +112,15 @@ If you use `normal` rooms, each participant on the call is sending a video strea
 
 Every room created with  `"roomMode": "group"` is using our selective forwarding unit (SFU) mesh for data transfer. This means that every participant is sending only one single video stream to our SFU which then forwards the stream on to every other participant. This is one of [many reasons](https://docs.whereby.com/monitoring-usage/insights-suite-and-api/improving-call-quality#use-group-rooms) why we recommend using `"roomMode": "group"` for better call quality.
 
+## Known limitations
+
+When sessions exceed 30 participants or 3 hours duration, the system will not fetch participant activity and connection data. In these cases, support teams will see an explicit message directing them to retrieve the full data via API instead. This approach prevents performance issues that would arise from loading all participant details in very large sessions.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2026-02-09 at 11.19.11.png" alt=""><figcaption><p>Message shown when exceeding our limit</p></figcaption></figure>
+
 ## Running into issues?
 
-If you are having difficulty troubleshooting or have questions about the content of the insights data provided, please feel free to engage with us in our [Community Discord](https://docs.whereby.com/#joining-our-developer-community). Diagnosing call quality issues is not the most straightforward endeavor and we are happy to get your feedback so we can improve these features.&#x20;
+If you are having difficulty troubleshooting or have questions about the content of the insights data provided, please feel free to reach out to our Support team at embedded@whereby.com. Diagnosing call quality issues is not the most straightforward endeavor, and we are happy to get your feedback so we can improve these features.&#x20;
 
 We also have some information and recommendations in our document about [improving call quality](improving-call-quality.md).
 

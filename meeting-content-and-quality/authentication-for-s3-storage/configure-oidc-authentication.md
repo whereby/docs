@@ -90,4 +90,40 @@ The final step is to input these values into your Whereby dashboard:&#x20;
 4. Enter your bucket name (from step 1) and your Role ARN (from step 3)
 5. From here, you can test your connection and then save these credentials to be used during your next Whereby meeting!&#x20;
 {% endtab %}
+
+{% tab title="Restrict the role to Whereby's OIDC Sub ID" %}
+Once you have added your configuration to the dashboard, we can provide you with the\
+exact `sub` value used in our OIDC token for your organization. You can update the IAM role trust policy **to allow only this subject** to assume the role.
+
+1. Get the `sub` value from your Whereby dashboard
+
+* Copy the exact `sub` string we provide for your organization (hidden behind the Show Sub ID button).
+
+<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+
+2\. Open the IAM role
+
+* In the AWS Console, go to IAM
+* In the left sidebar, click Roles
+* Search for and select the role you created for Whereby.
+
+3. Edit the trust policy
+
+* Go to the Trust relationships tab
+* Click Edit trust policy
+
+4. Add the `sub` condition
+
+* In the JSON editor, find the statement with:
+* Under `"Condition"`, extend the `StringEquals` condition for the subject claim:
+
+```json
+"Condition": {
+  "StringEquals": {
+    "<your-oidc-provider-host>:aud": "<your-audience>",
+    "<your-oidc-provider-host>:sub": "<whereby-sub-value>"
+  }
+}
+```
+{% endtab %}
 {% endtabs %}

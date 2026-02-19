@@ -1,7 +1,7 @@
 # Configure OIDC Authentication
 
 {% hint style="warning" %}
-OIDC Authentication is currently in **Early Access** only. Currently, we only support OIDC authentication with **AWS,** with hopes to expand this to other providers in the future. If you'd like to discuss early access or suggest alternate providers, please contact us at embedded@whereby.com.&#x20;
+OIDC Authentication is currently in Public Beta.
 {% endhint %}
 
 If you choose S3 storage with OIDC authentication, there are a few things you’ll need to set up in AWS before configuring your storage in Whereby.

@@ -28,10 +28,6 @@ This documentation explains:
 
 For most production environments, **OIDC authentication is recommended.**
 
-{% hint style="warning" %}
-OIDC Authentication is currently in **Early Access** only. Currently, we only support OIDC authentication with **AWS,** with hopes to expand this to other providers in the future. If you'd like to discuss early access or suggest alternate providers, please contact us at embedded@whereby.com. .&#x20;
-{% endhint %}
-
 {% content-ref url="understanding-authentication-types.md" %}
 [understanding-authentication-types.md](understanding-authentication-types.md)
 {% endcontent-ref %}

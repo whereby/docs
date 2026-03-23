@@ -27,7 +27,11 @@
 
 ### CloudRecordingState:  <mark style="color:green;">\<Object></mark> <a href="#cloudrecordingstate" id="cloudrecordingstate"></a>
 
-<table><thead><tr><th>Property</th><th width="294.3333333333333">Type</th><th>Description</th></tr></thead><tbody><tr><td>status</td><td><code>"recording"</code></td><td>Cloud recording is active</td></tr><tr><td>startedAt</td><td><code>number</code></td><td>When the recording started</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th width="294.3333333333333">Type</th><th>Description</th></tr></thead><tbody><tr><td>status</td><td><code>"requested" | "recording" | "error"</code></td><td>Cloud recording status</td></tr><tr><td>startedAt</td><td><code>number</code></td><td>If <code>status</code> is <code>"recording"</code> then this field will show when the cloud recording started</td></tr><tr><td>error</td><td><code>string</code></td><td>If <code>status</code> is <code>"error"</code> then this field will show the error message received from the service</td></tr></tbody></table>
+
+### LiveTranscriptionState:  <mark style="color:green;">\<Object></mark> <a href="#localscreensharestatus" id="localscreensharestatus"></a>
+
+<table><thead><tr><th>Property</th><th width="294.3333333333333">Type</th><th>Description</th></tr></thead><tbody><tr><td>status</td><td><code>"requested" | "transcribing" | "error"</code></td><td>Live transcription status</td></tr><tr><td>startedAt</td><td><code>number</code></td><td>If <code>status</code> is <code>"transcribing"</code> then this field will show when the live transcription started</td></tr><tr><td>error</td><td><code>string</code></td><td>If <code>status</code> is <code>"error"</code> then this field will show the error message received from the service</td></tr></tbody></table>
 
 ### LocalScreenshareStatus: <mark style="color:green;">\<string></mark> <a href="#localscreensharestatus" id="localscreensharestatus"></a>
 

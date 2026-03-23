@@ -67,19 +67,19 @@
 
 <table><thead><tr><th width="210">Value</th><th>Description</th></tr></thead><tbody><tr><td><code>"inactive"</code></td><td>Local screenshare is inactive</td></tr><tr><td><code>"starting"</code></td><td>Local screenshare is currently starting, eg the local user is selecting what to share</td></tr><tr><td><code>"active"</code></td><td>Local screenshare is active</td></tr></tbody></table>
 
-## CloudRecordingState: <mark style="color:green;">\<Object></mark> <a href="#cloudrecordingstate" id="cloudrecordingstate"></a>
-
-| Property                                           | Description                            |
-| -------------------------------------------------- | -------------------------------------- |
-| `status:"recording"\|"requested"\|"error"`         | Cloud recording is active              |
-| `startedAt?: number`                               | When the recording started             |
-| `error?: string`                                   | If error when starting cloud recording |
-
 ## ClientView: <mark style="color:green;">\<Object></mark> <a href="#clientview" id="clientview"></a>
 
 A client view can be either a participant or a screenshare.
 
 <table><thead><tr><th width="380.4270833333333">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>id: string</code></td><td>Internal id</td></tr><tr><td><code>clientId: string</code></td><td>Id of the participant</td></tr><tr><td><code>displayName?: string</code></td><td>Display name of the participant or screenshare</td></tr><tr><td><code>stream?: MediaStream</code></td><td>Media stream of the client view</td></tr><tr><td><code>isLocalCliend: boolean</code></td><td>Is the client view owned by the local participant?</td></tr><tr><td><code>isAudioEnabled: boolean</code></td><td>The client view has their microphone enabled</td></tr><tr><td><code>isVideoEnabled: boolean</code></td><td>The client view has their camera enabled</td></tr><tr><td><code>isPresentation: boolean</code></td><td>The client view is a presentation (screenshare)</td></tr></tbody></table>
+
+## CloudRecordingState: <mark style="color:green;">\<Object></mark> <a href="#screenshare" id="screenshare"></a>
+
+<table><thead><tr><th width="224.390625">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>status: "requested" | "recording" | "error"</code></td><td>Cloud recording status</td></tr><tr><td><code>startedAt?: string</code></td><td>If <code>status</code> is <code>"recording"</code> then this field will show when the cloud recording started</td></tr><tr><td><code>error?: string</code></td><td>If <code>status</code> is <code>"error"</code> then this field will show the error message received from the service</td></tr></tbody></table>
+
+## LiveTranscriptionState: <mark style="color:green;">\<Object></mark> <a href="#screenshare" id="screenshare"></a>
+
+<table><thead><tr><th width="220.73828125">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>status: "requested" | "transcribing" | "error"</code></td><td>Live transcription status</td></tr><tr><td><code>startedAt?: string</code></td><td>If <code>status</code> is <code>"transcribing"</code> then this field will show when the live transcription started. Otherwise this field will be <code>undefined</code>.</td></tr><tr><td><code>error?: string</code></td><td>If <code>status</code> is <code>"error"</code> then this field will show the error message received from the service. Otherwise this field will be <code>undefined</code>.</td></tr></tbody></table>
 
 ## ScreenshareState: <mark style="color:green;">\<Object></mark> <a href="#screenshare" id="screenshare"></a>
 

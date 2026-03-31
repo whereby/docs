@@ -4,17 +4,17 @@ description: >-
   integrating a fully custom video experience into your web application.
 ---
 
-# React Hooks Reference
+# React SDK Reference
 
 {% hint style="warning" %}
-This is the documentation for version 3x of Whereby's browser-sdk. If you are still on version 2x, please refer to the [legacy documentation here](https://whereby.gitbook.io/legacy-docs). If you are upgrading from version 2x, please see the [migration guide](guides-and-concepts/migrate-from-version-2.x-to-3.md).
+This is the documentation for version 3x of Whereby's browser-sdk. If you are still on version 2x, please refer to the [legacy documentation here](https://whereby.gitbook.io/legacy-docs). If you are upgrading from version 2x, please see the [migration guide](../../whereby-for-web-browser/react-based-browser-sdk/migrate-from-version-2.x-to-3.md).
 {% endhint %}
 
 
 
 Check out our toolkit helping your designers plan and implement video call experiences
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Video Call UI Kit</td><td></td><td></td><td><a href="https://www.figma.com/community/file/1411023646481069706/video-call-ui-kit-by-whereby">https://www.figma.com/community/file/1411023646481069706/video-call-ui-kit-by-whereby</a></td><td><a href="../../.gitbook/assets/Docs_landing@2x.jpg">Docs_landing@2x.jpg</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Video Call UI Kit</td><td></td><td></td><td><a href="https://www.figma.com/community/file/1411023646481069706/video-call-ui-kit-by-whereby">https://www.figma.com/community/file/1411023646481069706/video-call-ui-kit-by-whereby</a></td><td><a href="../../.gitbook/assets/Docs_landing@2x (1).jpg">Docs_landing@2x (1).jpg</a></td></tr></tbody></table>
 
 ## Getting started
 
@@ -44,30 +44,30 @@ pnpm add @whereby.com/browser-sdk
 
 ## Quick Start
 
-{% content-ref url="quick-start/" %}
-[quick-start](quick-start/)
+{% content-ref url="../../whereby-for-web-browser/react-based-browser-sdk/quick-start.md" %}
+[quick-start.md](../../whereby-for-web-browser/react-based-browser-sdk/quick-start.md)
 {% endcontent-ref %}
 
 ## Available hooks
 
-{% content-ref url="api-reference/useroomconnection.md" %}
-[useroomconnection.md](api-reference/useroomconnection.md)
+{% content-ref url="useroomconnection.md" %}
+[useroomconnection.md](useroomconnection.md)
 {% endcontent-ref %}
 
-{% content-ref url="api-reference/uselocalmedia.md" %}
-[uselocalmedia.md](api-reference/uselocalmedia.md)
+{% content-ref url="uselocalmedia.md" %}
+[uselocalmedia.md](uselocalmedia.md)
 {% endcontent-ref %}
 
 ## Available components
 
-{% content-ref url="api-reference/wherebyprovider.md" %}
-[wherebyprovider.md](api-reference/wherebyprovider.md)
+{% content-ref url="wherebyprovider.md" %}
+[wherebyprovider.md](wherebyprovider.md)
 {% endcontent-ref %}
 
-{% content-ref url="api-reference/videoview.md" %}
-[videoview.md](api-reference/videoview.md)
+{% content-ref url="videoview.md" %}
+[videoview.md](videoview.md)
 {% endcontent-ref %}
 
-{% content-ref url="api-reference/videogrid.md" %}
-[videogrid.md](api-reference/videogrid.md)
+{% content-ref url="videogrid.md" %}
+[videogrid.md](videogrid.md)
 {% endcontent-ref %}

@@ -20,7 +20,7 @@ Without a trigger, an Assistant can only be started manually, which limits its a
    1. Visit Configure > Assistant and create an assistant
    2. Grab your assistant key
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-09-25 at 09.56.31 (1).png" alt="The Assistant Dashboard"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-09-25 at 09.56.31.png" alt="The Assistant Dashboard"><figcaption></figcaption></figure>
 
 2. Import polyfills and initialize assistant
 
@@ -95,7 +95,7 @@ const trigger = new Trigger({
 trigger.start();
 ```
 
-4. Listen for the  [`TRIGGER_EVENT_SUCCESS`](types/trigger-types.md#triggerevents) event - this indicates that the trigger predicate has been a match, and that your assistant should now join the room. Here, you can create the assistant and join the room before sending a chat message in to the connected room.
+4. Listen for the  [`TRIGGER_EVENT_SUCCESS`](types/trigger-types.md) event - this indicates that the trigger predicate has been a match, and that your assistant should now join the room. Here, you can create the assistant and join the room before sending a chat message in to the connected room.
 
 ```jsx
 trigger.on(TRIGGER_EVENT_SUCCESS, async ({ roomUrl }) => {

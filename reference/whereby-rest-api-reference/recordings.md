@@ -1,22 +1,21 @@
 # /recordings
 
-{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings" method="get" %}
+{% openapi src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings" method="get" %}
 [_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
-{% endswagger %}
+{% endopenapi %}
 
-{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}" method="get" %}
+{% openapi src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}" method="get" %}
 [_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
-{% endswagger %}
+{% endopenapi %}
 
-{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}/access-link" method="get" %}
+{% openapi src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}/access-link" method="get" %}
 [_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
-{% endswagger %}
+{% endopenapi %}
 
-{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/bulk-delete" method="post" %}
+{% openapi src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/bulk-delete" method="post" %}
 [_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
-{% endswagger %}
+{% endopenapi %}
 
-{% swagger src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}" method="delete" %}
+{% openapi src="../../.gitbook/assets/_api-reference-docs-openapi.json" path="/recordings/{recordingId}" method="delete" %}
 [_api-reference-docs-openapi.json](../../.gitbook/assets/_api-reference-docs-openapi.json)
-{% endswagger %}
-
+{% endopenapi %}

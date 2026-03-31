@@ -50,10 +50,10 @@
 
 ## WaitingParticipantState: <mark style="color:green;">\<Object></mark>
 
-| Property                          | Description                                         |
-| --------------------------------- | --------------------------------------------------- |
-| `id: string`                      | Id of the participant in the waiting room           |
-| `displayName?: string \| null`    | Display name of the participant in the waiting room |
+| Property                       | Description                                         |
+| ------------------------------ | --------------------------------------------------- |
+| `id: string`                   | Id of the participant in the waiting room           |
+| `displayName?: string \| null` | Display name of the participant in the waiting room |
 
 ## ChatMessage: <mark style="color:green;">\<Object></mark> <a href="#chatmessage" id="chatmessage"></a>
 

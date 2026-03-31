@@ -5,7 +5,7 @@
 The Assistants feature is currently in Closed Beta and available to Enterprise plan customers on annual plans. If your organisation is on a Enterprise plan, you can request access by emailing [embedded@whereby.com](mailto:embedded@whereby.com). Assistants will be made generally available after the beta.
 {% endhint %}
 
-The **Whereby Assistant SDK** is a Node.js-focused SDK for building assistants that can join Whereby rooms. It provides all the polyfills and plumbing needed to join a Whereby Room in Node, and exposes a simple API to connect assistants, manage their lifecycle and access audio and video streams and other in-room features for all participants. This SDK can be used in conjunction with our Trigger API to listen for [webhooks ](../../meeting-content-and-quality/insights-suite-and-api/webhooks.md)and join the room on certain room conditions being met.
+The **Whereby Assistant SDK** is a Node.js-focused SDK for building assistants that can join Whereby rooms. It provides all the polyfills and plumbing needed to join a Whereby Room in Node, and exposes a simple API to connect assistants, manage their lifecycle and access audio and video streams and other in-room features for all participants. This SDK can be used in conjunction with our Trigger API to listen for [webhooks](../../whereby-product-features/insights-suite-and-api/webhooks.md) and join the room on certain room conditions being met.
 
 ### Audience
 
@@ -31,7 +31,7 @@ The Assistant SDK is intended for Node.js environments and depends on some exter
 * [**FFmpeg**](https://ffmpeg.org/) must be installed on the host machine if you wish to make use of the **combined audio stream** functionality.&#x20;
 
 {% hint style="info" %}
-Note: The SDK can not be run in the browser - use [Core](../core-sdk-reference/) or [Browser](../react-hooks-reference/quick-start/getting-started-with-the-browser-sdk.md) SDK for creating user-interface based integrations.&#x20;
+Note: The SDK can not be run in the browser - use [Core](../core-sdk-reference/) or [Browser](../../whereby-for-web-browser/react-based-browser-sdk/quick-start.md) SDK for creating user-interface based integrations.&#x20;
 {% endhint %}
 
 ## Getting started

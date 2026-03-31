@@ -1,6 +1,6 @@
 # Core SDK Reference
 
-The **Whereby Core SDK** is the low-level foundation of the Whereby SDK. It exposes a set of containers, actions, and client classes for working with local media and room connections. It's used to power the [Whereby Browser SDK,](../react-hooks-reference/quick-start/getting-started-with-the-browser-sdk.md) [Whereby Assistants](../assistant-sdk-reference/api-reference/assistant.md),[ React Native](../react-native-reference/) and other forms of Whereby meetings. It also contains utils which may be useful in custom experiences.&#x20;
+The **Whereby Core SDK** is the low-level foundation of the Whereby SDK. It exposes a set of containers, actions, and client classes for working with local media and room connections. It's used to power the [Whereby Browser SDK,](../../whereby-for-web-browser/react-based-browser-sdk/quick-start.md) [Whereby Assistants](../assistant-sdk-reference/api-reference/assistant.md),[ React Native](../react-native-reference/) and other forms of Whereby meetings. It also contains utils which may be useful in custom experiences.&#x20;
 
 ### Audience
 
@@ -11,7 +11,7 @@ Core is designed for developers who need fine-grained control over the Whereby e
 * Want direct access to connection, media and layout state
 * Are working on advanced use cases such as automation or headless integrations where you want to orchestrate media yourself at a lower level
 
-For most web applications, we recommend starting with our higher level [`@whereby.com/browser-sdk`](../../whereby-101/create-your-video/in-a-web-page/using-whereby-react-hooks-build-a-telehealth-app.md) , or if you can [`@whereby.com/assistant`](../assistant-sdk-reference/api-reference/assistant.md) to create custom bots that might work for your use case. Reach for `@whereby.com/core` when you need deeper controls.&#x20;
+For most web applications, we recommend starting with our higher level [`@whereby.com/browser-sdk`](../../whereby-for-web-browser/react-based-browser-sdk/quick-start.md) , or if you can [`@whereby.com/assistant`](../assistant-sdk-reference/api-reference/assistant.md) to create custom bots that might work for your use case. Reach for `@whereby.com/core` when you need deeper controls.&#x20;
 
 ### Use Cases
 

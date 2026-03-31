@@ -117,5 +117,5 @@ If you have Apple's iCloud Private relay feature turned on for your device, you 
 
 When we detect a network issue during the call, you will see a yellow indicator appear. The indicator doesn’t mean that you will perceive any reduced quality; it means your network conditions are in such a state where you _might_ experience reduced quality.&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 

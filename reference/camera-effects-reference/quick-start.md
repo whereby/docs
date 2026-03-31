@@ -31,4 +31,3 @@ description: >-
         await roomConnection.switchCameraEffect(effectPreset);
     }
 ```
-

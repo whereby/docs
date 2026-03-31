@@ -1,13 +1,50 @@
-# Create Your Video Experience
+---
+description: >-
+  Whereby Embedded is the easiest way to add video calls to your web page or
+  mobile app. Get up and running in minutes, not months, so you're free to focus
+  on what you do best — your business.
+---
 
-Whereby is the easiest way to add video calls to your web page or mobile app. Get up and running in minutes, not months, so you're free to focus on what you do best — your business.
+# Welcome to Whereby Embedded
 
-Explore the various ways you can build, integrate, and customize the perfect video experience for your users.
+### Create your video experience
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-type="content-ref"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>REST API</td><td></td><td></td><td><a href=".gitbook/assets/Rest API.jpg">Rest API.jpg</a></td><td><a href="reference/whereby-rest-api-reference/">whereby-rest-api-reference</a></td><td><a href="reference/whereby-rest-api-reference/">whereby-rest-api-reference</a></td></tr><tr><td>Pre-built UI</td><td></td><td></td><td><a href=".gitbook/assets/Pre-built UI.jpg">Pre-built UI.jpg</a></td><td><a href="whereby-101/create-your-video/in-a-web-page/using-the-whereby-embed-element/">using-the-whereby-embed-element</a></td><td><a href="whereby-101/create-your-video/in-a-web-page/using-the-whereby-embed-element/">using-the-whereby-embed-element</a></td></tr><tr><td>Custom UI</td><td></td><td></td><td><a href=".gitbook/assets/Custom UI.jpg">Custom UI.jpg</a></td><td><a href="whereby-101/create-your-video/in-a-web-page/using-whereby-react-hooks-build-a-telehealth-app.md">using-whereby-react-hooks-build-a-telehealth-app.md</a></td><td><a href="whereby-101/create-your-video/in-a-web-page/using-whereby-react-hooks-build-a-telehealth-app.md">using-whereby-react-hooks-build-a-telehealth-app.md</a></td></tr><tr><td>Integrating in Mobile Apps</td><td></td><td></td><td><a href=".gitbook/assets/Integrating in Mobile Apps.jpg">Integrating in Mobile Apps.jpg</a></td><td></td><td><a href="whereby-101/create-your-video/in-a-mobile-app/">in-a-mobile-app</a></td></tr><tr><td>Webhooks</td><td></td><td></td><td><a href=".gitbook/assets/Web hooks.jpg">Web hooks.jpg</a></td><td></td><td><a href="meeting-content-and-quality/insights-suite-and-api/webhooks.md">webhooks.md</a></td></tr><tr><td>Migrate from Twilio</td><td></td><td></td><td><a href=".gitbook/assets/Twilio_on_Red.webp">Twilio_on_Red.webp</a></td><td></td><td><a href="developer-guides/migrate-twilio/">migrate-twilio</a></td></tr></tbody></table>
+{% columns %}
+{% column %}
+#### 🚀 Start here
+
+* [Overview of Whereby Embedded](getting-started/overview-of-whereby-embedded/)
+* [Set up your Embedded account](getting-started/overview-of-whereby-embedded/initial-setup.md)<br>
+{% endcolumn %}
+
+{% column %}
+#### 🌐 Build for web
+
+* [Web component & Pre-built UI](whereby-for-web-browser/web-component-and-pre-built-ui/)
+* [Web app quickstart](whereby-for-web-browser/web-component-and-pre-built-ui/web-app-quickstart.md)
+{% endcolumn %}
+{% endcolumns %}
+
+{% columns %}
+{% column %}
+#### 📱 Mobile app integration
+
+* [Android](whereby-for-mobile-development/whereby-for-android/)
+* [iOS](whereby-for-mobile-development/whereby-for-ios/)
+{% endcolumn %}
+
+{% column %}
+#### ⚙️ Advanced / custom setups
+
+* [React-based Browser SDK](whereby-for-web-browser/react-based-browser-sdk/)
+* [Whereby Core SDK](/broken/pages/qft5z9lpKf3HxLO3aJAi)
+{% endcolumn %}
+{% endcolumns %}
 
 ***
 
-Stay informed or collaborate with other builders! Join our community today
+### Further resources
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Discord</td><td></td><td></td><td><a href="https://discord.gg/uWRcPWbGJB">https://discord.gg/uWRcPWbGJB</a></td><td><a href=".gitbook/assets/whereby-discord.webp">whereby-discord.webp</a></td></tr><tr><td>Launch Notes</td><td></td><td></td><td><a href="https://whereby.launchnotes.io/">https://whereby.launchnotes.io/</a></td><td><a href=".gitbook/assets/Launch Notes share image.png">Launch Notes share image.png</a></td></tr><tr><td>Video Call UI Kit</td><td></td><td></td><td><a href="https://www.figma.com/community/file/1411023646481069706/video-call-ui-kit-by-whereby">https://www.figma.com/community/file/1411023646481069706/video-call-ui-kit-by-whereby</a></td><td><a href=".gitbook/assets/Docs_landing@2x.jpg">Docs_landing@2x.jpg</a></td></tr></tbody></table>
+* Join our [Discord developer community](https://discord.com/invite/uWRcPWbGJB) to collaborate and find answers.
+* ﻿﻿Design a better, faster video call experience with our [Figma Video Call Ul Kit](https://www.figma.com/community/file/1411023646481069706/video-call-ui-kit-by-whereby).
+* ﻿﻿Consult our [End User Support Center](end-user/end-user-support-guides/) for product help.

@@ -14,12 +14,12 @@
 
 ### RoomConnectionOptions: <mark style="color:green;">\<Object></mark> <a href="#roomconnectionoptions" id="roomconnectionoptions"></a>
 
-| Property                                                                              | Description                                                                                                                                                      |
-| ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `displayName?: string`                                                                | <p>The name to use for the local participant </p><p>(you) in the call</p>                                                                                        |
-| `localMediaConstraints?:` [`MediaStreamConstraints`](types.md#mediastreamconstraints) | Constraints to use for the local participant media (camera and microphone)                                                                                       |
-| `localMedia: LocalMedia`                                                              | Existing local media to use, as provided by the [`useLocalMedia`](api-reference/uselocalmedia.md) hook                                                           |
-| `roomKey?: string`                                                                    | Room key to use if the local participant should assume a non-standard role in the room, such as [host or viewer](../../whereby-101/user-roles-and-privileges.md) |
+| Property                                                                              | Description                                                                                                                                                                   |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `displayName?: string`                                                                | <p>The name to use for the local participant </p><p>(you) in the call</p>                                                                                                     |
+| `localMediaConstraints?:` [`MediaStreamConstraints`](types.md#mediastreamconstraints) | Constraints to use for the local participant media (camera and microphone)                                                                                                    |
+| `localMedia: LocalMedia`                                                              | Existing local media to use, as provided by the [`useLocalMedia`](uselocalmedia.md) hook                                                                                      |
+| `roomKey?: string`                                                                    | Room key to use if the local participant should assume a non-standard role in the room, such as [host or viewer](../../whereby-product-features/user-roles-and-privileges.md) |
 
 ### ChatMessage: <mark style="color:green;">\<Object></mark> <a href="#chatmessage" id="chatmessage"></a>
 
@@ -112,4 +112,3 @@ All events are of type `NotificationEvent`, with&#x20;
 | ----------- | ----------------------------------------------- | ----------- |
 | client      | [RemoteParticipant](types.md#remoteparticipant) |             |
 | chatMessage | [ChatMessage](types.md#chatmessage)             |             |
-

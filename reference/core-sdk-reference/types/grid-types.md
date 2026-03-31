@@ -4,6 +4,8 @@ hidden: true
 
 # Grid Types
 
+
+
 ## GridState
 
 | Property                                | Description                          |

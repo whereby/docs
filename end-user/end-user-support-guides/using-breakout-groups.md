@@ -1,6 +1,6 @@
 # Using Breakout Groups
 
-Once you have Breakout Groups [implemented](../../whereby-101/customizing-rooms/breakout-groups-with-embedded.md), it will be important that Hosts know how to use them. For this, we have a series of guides that all Hosts should review before getting started:
+Once you have Breakout Groups [implemented](../../whereby-product-features/breakout-groups-with-embedded.md), it will be important that Hosts know how to use them. For this, we have a series of guides that all Hosts should review before getting started:
 
 {% tabs %}
 {% tab title="Start Breakout Groups" %}

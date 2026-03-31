@@ -51,3 +51,5 @@ grid.on(NUMBER_OF_CLIENT_VIEWS_CHANGED, numberOfClientsChanged);
 
 <table><thead><tr><th>Event (constant)</th><th>Event name (string)</th><th width="205.98529052734375">Payload</th><th>Emitted when</th></tr></thead><tbody><tr><td><code>CLIENT_VIEW_CHANGED</code></td><td><code>grid:client-view-changed</code></td><td><code>clientViews: ClientView[]</code></td><td>Client view changes</td></tr><tr><td><code>CLIENT_VIEW_SPOTLIGHTS_CHANGED</code></td><td><code>grid:client-view-spotlights-changed</code></td><td><code>clientViews: ClientView[]</code></td><td>Client is spotlighted</td></tr><tr><td><code>NUMBER_OF_CLIENT_VIEWS_CHANGED</code></td><td><code>grid:number-of-client-views-changed</code></td><td><code>numClients: number</code></td><td>Number of client views change</td></tr></tbody></table>
 
+
+

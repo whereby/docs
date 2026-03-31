@@ -1,5 +1,7 @@
 # Types
 
+
+
 {% content-ref url="assistant-types.md" %}
 [assistant-types.md](assistant-types.md)
 {% endcontent-ref %}

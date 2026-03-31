@@ -14,10 +14,10 @@ Screen sharing on Mobile (both phone and tablet) devices is not currently availa
 
 As the platform holder, there are few options you have for managing the available screen sharing feature.
 
-* Enabling screen sharing for all rooms via a [dashboard preference](../../whereby-101/customizing-rooms/dashboard-preferences.md)
-* Enabling screen sharing on a per room/user basis with a [URL parameter](../../whereby-101/customizing-rooms/using-url-parameters.md#screenshare-less-than-on-or-off-greater-than)
+* Enabling screen sharing for all rooms via a [dashboard preference](../../whereby-product-features/dashboard-preferences/)
+* Enabling screen sharing on a per room/user basis with a [URL parameter](../../whereby-for-web-browser/web-component-and-pre-built-ui/configuring-with-attributes.md#screenshare-less-than-on-or-off-greater-than)
 * Listening for the [screen sharing event](../../reference/using-the-whereby-embed-element.md#listening-to-events) with our Web Component to facilitate in app messages or notifications
-* Using the [browser method](../../reference/using-the-whereby-embed-element.md#sending-commands) for stopping/starting screen sharing
+* Using the [browser method](../../whereby-product-features/screen-sharing.md) for stopping/starting screen sharing
 
 ## Browser sharing options
 
@@ -91,7 +91,7 @@ This activates a pop-out of the currently active videos within the meeting room.
 
 ### Annotating Screen share
 
-Users can extend the capability of screen sharing by installing extensions in Chrome or Chromium browsers. Tools like "[Draw on page](https://chrome.google.com/webstore/detail/draw-on-page/ngmfehckdahhmlbabjemcepfhgnoddlo?utm\_source=ext\_sidebar\&hl=en-US)" or "[Paint](https://chrome.google.com/webstore/detail/paint/ejllkedmklophclpgonojjkaliafeilj)" work well to highlight and indicate content in your browser while screen sharing.
+Users can extend the capability of screen sharing by installing extensions in Chrome or Chromium browsers. Tools like "[Draw on page](https://chrome.google.com/webstore/detail/draw-on-page/ngmfehckdahhmlbabjemcepfhgnoddlo?utm_source=ext_sidebar\&hl=en-US)" or "[Paint](https://chrome.google.com/webstore/detail/paint/ejllkedmklophclpgonojjkaliafeilj)" work well to highlight and indicate content in your browser while screen sharing.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-08-14 at 2.29.27 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 

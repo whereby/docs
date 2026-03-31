@@ -37,7 +37,7 @@ description: >-
 #### ⚙️ Advanced / custom setups
 
 * [React-based Browser SDK](whereby-for-web-browser/react-based-browser-sdk/)
-* [Whereby Core SDK](/broken/pages/qft5z9lpKf3HxLO3aJAi)
+* [Whereby Core SDK](reference/core-sdk-reference/)
 {% endcolumn %}
 {% endcolumns %}
 

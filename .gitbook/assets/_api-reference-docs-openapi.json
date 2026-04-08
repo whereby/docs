@@ -1751,6 +1751,16 @@
                             "type": "integer",
                             "description": "The total number of sessions in the room.",
                             "example": 2
+                          },
+                          "rating": {
+                            "type": ["number", "null"],
+                            "description": "Average quality rating for the last session in the room. Requires session ratings to be enabled for the organization.",
+                            "example": 4.5
+                          },
+                          "totalRatings": {
+                            "type": ["number", "null"],
+                            "description": "Total number of ratings submitted for the last session in the room. Requires session ratings to be enabled for the organization.",
+                            "example": 3
                           }
                         }
                       }
@@ -1894,6 +1904,16 @@
                             "type": "integer",
                             "description": "The total number of distinct streamers in the session.",
                             "example": 2
+                          },
+                          "rating": {
+                            "type": ["number", "null"],
+                            "description": "Average quality rating for the session. Requires session ratings to be enabled for the organization.",
+                            "example": 4.5
+                          },
+                          "totalRatings": {
+                            "type": ["number", "null"],
+                            "description": "Total number of ratings submitted for the session. Requires session ratings to be enabled for the organization.",
+                            "example": 2
                           }
                         }
                       }
@@ -2026,6 +2046,24 @@
                           "externalId": {
                             "type": "string",
                             "description": "The external identifier of the participant."
+                          },
+                          "rating": {
+                            "type": ["number", "null"],
+                            "description": "The participant's quality rating. Requires session ratings to be enabled for the organization.",
+                            "example": 5
+                          },
+                          "tags": {
+                            "type": ["array", "null"],
+                            "items": {
+                              "type": "string"
+                            },
+                            "description": "Tags the participant selected (e.g. issue categories). Requires session ratings to be enabled for the organization.",
+                            "example": ["audio-quality", "video-quality"]
+                          },
+                          "comment": {
+                            "type": ["string", "null"],
+                            "description": "Free-text comment from the participant. Requires session ratings to be enabled for the organization.",
+                            "example": "Great call quality!"
                           }
                         }
                       }

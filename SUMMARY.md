@@ -39,7 +39,7 @@
 
 ## Whereby for Server
 
-* [Whereby Core SDK (no framework)](reference/core-sdk-reference/README.md)
+* [Core SDK Reference](reference/core-sdk-reference/README.md)
 
 ## Integrating Whereby in specific environments
 

@@ -12,7 +12,7 @@ The **Whereby Assistant SDK** is a Node.js-focused SDK for building assistants t
 This package is designed for **backend developers** and **AI/assistant builders** who want to:&#x20;
 
 * Run assistants, bots or agents **headlessly** (no browser UI)
-* Integrate Whereby with **real-time transcription**s services
+* Integrate Whereby with **real-time transcriptions** services
 * Stream room audio into **LLM-based agents** for conversation, summarization or automation
 * Trigger assistants to join rooms automatically using **webhooks**
 

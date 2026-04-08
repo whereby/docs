@@ -44,8 +44,6 @@ There is an additional storage fee applied to recordings saved in Whereby-provid
 
 When storing recordings and transcriptions in your own S3 bucket, you’ll need to configure how Whereby authenticates with your storage.
 
-When storing recordings and transcriptions in your own S3 bucket, you’ll need to configure how Whereby authenticates with your storage.
-
 {% content-ref url="../secure-authentication-for-s3-storage/" %}
 [secure-authentication-for-s3-storage](../secure-authentication-for-s3-storage/)
 {% endcontent-ref %}

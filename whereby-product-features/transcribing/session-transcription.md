@@ -9,8 +9,8 @@ description: >-
 
 ## Summary
 
-{% hint style="warning" %}
-Session Transcriptions is currently in Public Beta.
+{% hint style="success" %}
+Session Transcriptions is currently in Open Beta.
 {% endhint %}
 
 {% hint style="info" %}

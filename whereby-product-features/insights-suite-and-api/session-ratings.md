@@ -7,8 +7,12 @@ description: >-
 
 # Session Ratings
 
+{% hint style="success" %}
+Session Ratings is currently in Open Beta.
+{% endhint %}
+
 {% hint style="info" %}
-Session Ratings is currently in closed Beta and available to selected customers only. Email us at [embedded@whereby.com](mailto:embedded@whereby.com) to join our pilot program (terms and conditions apply)
+Session Ratings is a supplementary feature of our paid Whereby Embedded plans.
 {% endhint %}
 
 ## How does it work? <a href="#how-does-it-work" id="how-does-it-work"></a>

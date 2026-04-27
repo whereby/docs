@@ -9,8 +9,8 @@ description: >-
 
 ## Summary
 
-{% hint style="warning" %}
-Live Captions are currently in Public Beta.
+{% hint style="success" %}
+Live Captions are currently in Open Beta.
 {% endhint %}
 
 {% hint style="info" %}

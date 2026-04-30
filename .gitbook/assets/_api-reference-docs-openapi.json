@@ -370,7 +370,12 @@
                           "provider": {
                             "type": "string",
                             "enum": ["s3", "whereby"],
-                            "description": "The provider being used to store the stream.\n- `s3` - Use your S3 bucket to store recordings. The `bucket`, `accessKeyId` and\n`accessKeySecret` fields are required for this option.\n- `whereby` - Store recordings on Whereby hosted storage. The `bucket`, `accessKeyId`\nand `accessKeySecret` fields are not required for this option."
+                            "description": "The provider being used to store the stream.\n- `s3` - Use your S3 bucket to store recordings. There are two valdidation methods for authentication. `accessKey` - The `bucket`, `region`, `accessKeyId` and `accessKeySecret` fields are required for this option. `roleBased` - The `bucket` and `oidcRoleArn` fields are required for this option.\n- `whereby` - Store recordings on Whereby hosted storage. The `bucket`, `accessKeyId`\nand `accessKeySecret` fields are not required for this option."
+                          },
+                          "authenticationType": {
+                            "type": "string",
+                            "enum": ["accessKey", "roleBased"],
+                            "description": "Authentication type to use for S3 storage. See [here](https://docs.whereby.com/meeting-content-and-quality/authentication-for-s3-storage) for more details"
                           },
                           "bucket": {
                             "type": "string",
@@ -388,6 +393,10 @@
                             "type": "string",
                             "enum": ["mkv", "mp4"],
                             "description": "The format of the recording. By default the value should be taken from the\norganization settings.\n"
+                          },
+                          "oidcRoleArn": {
+                            "type": "string",
+                            "description": "The role ARN for OIDC authentication. Only available when `authenticationType` is set to `roleBased`"
                           }
                         }
                       },
@@ -416,7 +425,12 @@
                           "provider": {
                             "type": "string",
                             "enum": ["s3", "whereby"],
-                            "description": "The provider being used to store the transcript.\n- `s3` - Use your S3 bucket to store transcriptions. The `bucket`, `region`, `accessKeyId` and\n`accessKeySecret` fields are required for this option.\n- `whereby` - Store transcriptions on Whereby hosted storage. The `bucket`, `region`, `accessKeyId`\nand `accessKeySecret` fields are not required for this option."
+                            "description": "The provider being used to store the transcript.\n- `s3` - Use your S3 bucket to store transcriptions. There are two valdidation methods for authentication. `accessKey` - The `bucket`, `region`, `accessKeyId` and `accessKeySecret` fields are required for this option. `roleBased` - The `bucket` and `oidcRoleArn` fields are required for this option.\n- `whereby` - Store transcriptions on Whereby hosted storage. The `bucket`, `region`, `accessKeyId`\nand `accessKeySecret` fields are not required for this option."
+                          },
+                          "authenticationType": {
+                            "type": "string",
+                            "enum": ["accessKey", "roleBased"],
+                            "description": "Authentication type to use for S3 storage. See here for more details: https://docs.whereby.com/meeting-content-and-quality/authentication-for-s3-storage"
                           },
                           "bucket": {
                             "type": "string",
@@ -433,6 +447,10 @@
                           "region": {
                             "type": "string",
                             "description": "The s3 region\n"
+                          },
+                          "oidcRoleArn": {
+                            "type": "string",
+                            "description": "The role ARN for OIDC authentication. Only available when `authenticationType` is set to `roleBased`"
                           }
                         }
                       },

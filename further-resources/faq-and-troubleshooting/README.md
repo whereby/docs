@@ -11,7 +11,7 @@ You can check for service outages and issues on our status page:
 {% embed url="https://wherebystatus.com" %}
 
 {% hint style="danger" %}
-We're currently aware of an issue with users running Avast antivirus. The "Avast Web Shield" feature conflicts with sites using port 443 and can cause video feeds to appear as black frames in Whereby. We're working with Avast on a way for them to account for this in their platform, however to resolve Whereby related issues you'll need to disable that feature. [Avast Support Article](https://support.avast.com/en-us/article/antivirus-shield-settings/)
+If you are running **Avast antivirus**, the "Avast Web Shield" feature conflicts with sites using port 443 and can cause video feeds to appear as black frames in Whereby. To resolve Whereby-related connection issues, you'll need to disable that feature. [Avast Support Article](https://support.avast.com/en-us/article/antivirus-shield-settings/)
 {% endhint %}
 
 ### Tips & Tricks
@@ -38,9 +38,9 @@ We always recommend testing Whereby in an incognito/private browser if possible.
 
 <summary>Connections in UAE, China, and Russia</summary>
 
-We're aware of restrictions that have been put in place for peer to peer applications like Whereby. In these areas we've had reports from users that they have spotty access to Whereby, or that the service doesn't work for them at all.&#x20;
+We're aware of restrictions that have been put in place for peer to peer applications like Whereby. In these areas we've had reports from users that they have spotty access to Whereby, or that the service doesn't work for them at all.
 
-Unfortunately, because these are government-level restrictions that have been put in place on the internet, there isn't anything we can do to address issues like this at this time.&#x20;
+Unfortunately, because these are government-level restrictions that have been put in place on the internet, there isn't anything we can do to address issues like this at this time.
 
 </details>
 
@@ -60,8 +60,6 @@ Yes! The powered by Whereby is automatically removed when you upgrade to a paid 
 
 When creating a room you can specify two different modes, `normal` and `group`. Normal has a capacity of 4 and group has a capacity of 200. There is a limit of 24 active cameras at one time in any meeting room.
 
-
-
 When using `viewerRoomUrls` you can have an additional 400 passive users within the room for a more "webinar" style setup.
 
 </details>
@@ -70,7 +68,7 @@ When using `viewerRoomUrls` you can have an additional 400 passive users within 
 
 <summary>What is the video quality in Whereby?</summary>
 
-We support up to 720p with 30fps at both 4:3 and 16:9 aspect ratios for video.&#x20;
+We support up to 720p with 30fps at both 4:3 and 16:9 aspect ratios for video.
 
 Screen sharing will broadcast from 1-5 FPS (frames per second) by default, and up to 1080p based on network and CPU restraints.
 

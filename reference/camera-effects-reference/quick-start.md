@@ -6,28 +6,48 @@ description: >-
 
 # Quick Start
 
-1. Get the effect presets from the library
+Camera effects ship with `@whereby.com/core` and `@whereby.com/browser-sdk` — there's nothing extra to install. The effect code is loaded on demand the first time you use it.
 
+1. Get the usable effect presets for the current browser
+
+{% tabs %}
+{% tab title="React (browser-sdk)" %}
 ```jsx
-   const [effectPresets, setEffectPresets] = React.useState<Array<string>>([]);
-   
-   // Lazy-loaded and can be called when needed
-    async function loadBackgroundEffects() {
-        const { getUsablePresets } = await import("@whereby.com/camera-effects");
-        const usablePresets = getUsablePresets();
-        setEffectPresets(usablePresets);
-    }
+import { getUsableCameraEffectPresets } from "@whereby.com/browser-sdk/react";
+
+const [effectPresets, setEffectPresets] = React.useState<Array<string>>([]);
+
+// Lazy-loaded; can be called when needed
+async function loadBackgroundEffects() {
+    const usablePresets = await getUsableCameraEffectPresets();
+    setEffectPresets(usablePresets);
+}
 ```
+{% endtab %}
 
-2. Use the effect in the Core SDK
+{% tab title="Core" %}
+```jsx
+import { getUsableCameraEffectPresets } from "@whereby.com/core";
+
+// Lazy-loaded; can be called when needed
+const effectPresets = await getUsableCameraEffectPresets();
+```
+{% endtab %}
+{% endtabs %}
+
+2. Switch to one of the presets using the room connection
+
+
 
 ```jsx
-  import { WherebyClient } from "@whereby.com/core";
+import { useRoomConnection } from "@whereby.com/browser-sdk/react";
 
-    const client = new WherebyClient();
-    const roomConnection = client.getRoomConnection();
-    
-    async function setCameraEffect(effectPreset: string) {
-        await roomConnection.switchCameraEffect(effectPreset);
-    }
+const { actions } = useRoomConnection(roomUrl, { localMediaOptions: { audio: true, video: true } });
+const { switchCameraEffect, clearCameraEffect } = actions;
+
+// Apply a preset
+await switchCameraEffect(effectPresets[0]);
+
+// ...or remove the active effect
+await clearCameraEffect();
 ```

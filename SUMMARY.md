@@ -132,6 +132,10 @@
   * [Quick Start](reference/camera-effects-reference/quick-start.md)
   * [API Reference](reference/camera-effects-reference/api-reference/README.md)
     * [getUsablePresets](reference/camera-effects-reference/api-reference/getusablepresets.md)
+* [Audio Denoiser Reference](reference/camera-effects-reference-1/README.md)
+  * [Quick Start](reference/camera-effects-reference-1/quick-start.md)
+  * [API Reference](reference/camera-effects-reference-1/api-reference/README.md)
+    * [isAudioDenoiserSupported](reference/camera-effects-reference-1/api-reference/getusablepresets.md)
 * [Webhooks Reference](whereby-product-features/insights-suite-and-api/webhooks.md)
 
 ## Further resources

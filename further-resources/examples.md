@@ -11,43 +11,35 @@ Browse example apps and demos to see how Whereby can be used across different pl
 
 ### Browse examples
 
-
-
 {% columns %}
 {% column %}
-#### 🏥 Telehealth app example
+**🏥 Telehealth app example**
 
 Demonstrates using the Whereby browser SDK to create a telehealth application.
 
 **→** [View on GitHub](https://github.com/whereby/sdk/blob/main/apps/telehealth-tutorial-app/README.md)
-
-
 {% endcolumn %}
 
 {% column %}
-#### 🎮 React Hooks Quiz Game
+**🎮 React Hooks Quiz Game**
 
 A Jackbox-esque quiz game with working audio and video tiles for the players.
 
 **→** [View on GitHub](https://github.com/whereby/sdk/blob/main/apps/quiz-app/README.md)
-
-
 {% endcolumn %}
 {% endcolumns %}
 
 {% columns %}
 {% column %}
-#### 🍎 iOS SDK demo
+**🍎 iOS SDK demo**
 
 A sample app in Swift using the Whereby iOS SDK.
 
 **→** [View on GitHub](https://github.com/whereby/ios-sdk-demo/blob/main/README.md)
-
-
 {% endcolumn %}
 
 {% column %}
-#### 🤖 Android SDK demo
+**🤖 Android SDK demo**
 
 Two sample apps in Java and Kotlin using the Whereby Android SDK.
 
@@ -57,7 +49,7 @@ Two sample apps in Java and Kotlin using the Whereby Android SDK.
 
 {% columns %}
 {% column %}
-#### 🎙 Whereby Assistant Audio Recorder
+**🎙 Whereby Assistant Audio Recorder**
 
 A Whereby Assistant implementation to generate audio-only recordings.
 

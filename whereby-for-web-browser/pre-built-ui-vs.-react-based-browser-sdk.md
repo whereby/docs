@@ -10,7 +10,7 @@ Choosing how to integrate Whereby depends on how much control you need over the 
 
 {% columns %}
 {% column %}
-#### 🚀 Pre-built UI (Recommended)
+**🚀 Pre-built UI (Recommended)**
 
 Fastest way to add video calls to your product using our ready-made interface.
 
@@ -20,7 +20,7 @@ Fastest way to add video calls to your product using our ready-made interface.
 {% endcolumn %}
 
 {% column %}
-#### 🛠 React-based Browser SDK
+**🛠 React-based Browser SDK**
 
 Flexible toolkit for building a fully custom video experience using React.
 
@@ -44,13 +44,13 @@ Flexible toolkit for building a fully custom video experience using React.
 
 {% columns %}
 {% column %}
-#### 🚀 Start with pre-built UI
+**🚀 Start with pre-built UI**
 
 * [Web component & pre-built UI](web-component-and-pre-built-ui/)
 {% endcolumn %}
 
 {% column %}
-#### 🛠 Explore the SDK
+**🛠 Explore the SDK**
 
 * [React-based Browser SDK](react-based-browser-sdk/)
 {% endcolumn %}

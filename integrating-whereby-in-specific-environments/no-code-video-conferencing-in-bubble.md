@@ -29,4 +29,4 @@ Our friends at Planet No Code have put together a robust series of tutorials to 
 ### Further resources
 
 * [Overview of Whereby Embedded](../getting-started/overview-of-whereby-embedded/) — Get started
-* [Healthcare video conferencing](/broken/pages/CKwCYR5YpkxwRLverKy0) — Telehealth industry solution guides
+* [Healthcare video conferencing](https://app.gitbook.com/s/LH2UIJDLc2EElQvYUxWX/telehealth-industry-solutions) — Telehealth industry solution guides

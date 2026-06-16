@@ -27,8 +27,8 @@ The [Web Component](../../reference/using-the-whereby-embed-element.md) included
 
 ***
 
-### Further resources&#x20;
+### Further resources
 
-* [Product features](/broken/pages/uZSYSPD1Cpncmxpkrz58)
+* [Product features](https://app.gitbook.com/s/LH2UIJDLc2EElQvYUxWX/whereby-product-features)
 * [Web component reference](../../reference/using-the-whereby-embed-element.md)
 * [Full customization with React-based SDK](../react-based-browser-sdk/)

@@ -19,7 +19,7 @@ Once you have secured your API key, you can create a room by sending an HTTP req
 
 `endDate` is interpreted as UTC by default, but other time zones are supported by including an offset in hours and minutes. For example, Eastern Standard Time (EST) would be expressed as `2099-08-11T07:56:01-05:00`.
 
-Rooms are fully functional from the time they are created. They can then be used alongside [our SDK to embed](/broken/pages/FndEOX1m4zX0DWHGe8Yp) on your platform
+Rooms are fully functional from the time they are created. They can then be used alongside [our SDK to embed](https://app.gitbook.com/s/LH2UIJDLc2EElQvYUxWX/reference) on your platform
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -176,7 +176,7 @@ System.out.println("Body: " + response.body());
 
 ### endDate and deleting rooms
 
-Creating rooms via the API, produces a room with a unique URL and a limited lifespan. The `endDate` property is used to indicate the time at which the room will be marked for deactivation. It **does not** indicate when a meeting will end and remove participants.&#x20;
+Creating rooms via the API, produces a room with a unique URL and a limited lifespan. The `endDate` property is used to indicate the time at which the room will be marked for deactivation. It **does not** indicate when a meeting will end and remove participants.
 
 One hour after the `endDate` the room will be deactivated and things like [Webhook](../insights-suite-and-api/webhooks.md) events, [host](../user-roles-and-privileges.md) privileges, new cloud recordings, and participant minutes consumption will no longer function. The room will then automatically be deleted within 24 hours of the `endDate` provided.
 

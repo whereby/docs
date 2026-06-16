@@ -10,7 +10,7 @@ Looking for an alternative to Twilio to integrate into your products? Choose the
 
 {% columns %}
 {% column %}
-#### **⚡ Quick migration**
+**⚡ Quick migration**
 
 Use our pre-built meeting UI to migrate faster with less setup.
 
@@ -18,7 +18,7 @@ Use our pre-built meeting UI to migrate faster with less setup.
 {% endcolumn %}
 
 {% column %}
-#### **🛠 Custom migration**
+**🛠 Custom migration**
 
 Use the React SDK if you want full control over the meeting experience.
 

@@ -11,14 +11,14 @@ description: >-
 
 {% columns %}
 {% column %}
-#### 🚀 Start here
+**🚀 Start here**
 
 * [Overview of Whereby Embedded](getting-started/overview-of-whereby-embedded/)
 * [Set up your Embedded account](getting-started/overview-of-whereby-embedded/initial-setup.md)<br>
 {% endcolumn %}
 
 {% column %}
-#### 🌐 Build for web
+**🌐 Build for web**
 
 * [Web component & Pre-built UI](whereby-for-web-browser/web-component-and-pre-built-ui/)
 * [Web app quickstart](whereby-for-web-browser/web-component-and-pre-built-ui/web-app-quickstart.md)
@@ -27,14 +27,14 @@ description: >-
 
 {% columns %}
 {% column %}
-#### 📱 Mobile app integration
+**📱 Mobile app integration**
 
 * [Android](whereby-for-mobile-development/whereby-for-android/)
 * [iOS](whereby-for-mobile-development/whereby-for-ios/)
 {% endcolumn %}
 
 {% column %}
-#### ⚙️ Advanced / custom setups
+**⚙️ Advanced / custom setups**
 
 * [React-based Browser SDK](whereby-for-web-browser/react-based-browser-sdk/)
 * [Whereby Core SDK](reference/core-sdk-reference/)

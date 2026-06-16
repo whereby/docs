@@ -1,6 +1,6 @@
 # API Reference
 
-The WherebyClient is the entry point for this API. Construct it once, and then you can retrieve each of the sub-clients.&#x20;
+The WherebyClient is the entry point for this API. Construct it once, and then you can retrieve each of the sub-clients.
 
 ```jsx
 import { WherebyClient } from "@whereby.com/core";
@@ -20,7 +20,6 @@ const roomConnection = client.getRoomConnection();
 [localmediaclient.md](localmediaclient.md)
 {% endcontent-ref %}
 
-{% content-ref url="roomconnectionclient.md" %}
-[roomconnectionclient.md](roomconnectionclient.md)
+{% content-ref url="roomconnectionclient/" %}
+[roomconnectionclient](roomconnectionclient/)
 {% endcontent-ref %}
-

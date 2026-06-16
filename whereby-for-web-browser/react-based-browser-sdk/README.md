@@ -13,7 +13,7 @@ description: >-
 
 * [Start here to get your first implementation running](quick-start.md)
 
-#### 🎨 Customize the experience&#x20;
+#### 🎨 Customize the experience
 
 * [Customizing the toolbar](how-to-customize-the-toolbar.md)
 * [Customizing video tiles](custom-video-tiles-with-react.md)
@@ -24,13 +24,13 @@ description: >-
 
 {% columns %}
 {% column %}
-#### ⚙️ Core concepts
+**⚙️ Core concepts**
 
 * [Grid logic](grid-logic.md)
 {% endcolumn %}
 
 {% column %}
-#### 🔄 Migration
+**🔄 Migration**
 
 * [Migrating from version 2.x to 3](migrate-from-version-2.x-to-3.md)
 {% endcolumn %}

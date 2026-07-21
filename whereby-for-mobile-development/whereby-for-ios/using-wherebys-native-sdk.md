@@ -2,7 +2,7 @@
 
 {% embed url="https://www.youtube.com/watch?v=ZX27LEH_Ut4" %}
 
-The Whereby iOS SDK enables you to integrate Whereby into your iOS app as a native component, rather than a web-based experience. This offers control and customization over the meeting experience, and allows you to hook into powerful features such as listening to room events and sending commands to the room from the host application. Please note that certain features available on web may not yet be supported in the native iOS SDK.&#x20;
+The Whereby iOS SDK enables you to integrate Whereby into your iOS app as a native component, rather than a web-based experience. This offers control and customization over the meeting experience, and allows you to hook into powerful features such as listening to room events and sending commands to the room from the host application. Please note that certain features available on web may not yet be supported in the native iOS SDK.
 
 ## Quickstart guide
 
@@ -21,7 +21,7 @@ Create a new project for a simple app using the latest version of Xcode.
 #### Using Swift Package Manager
 
 1. Open your project in Xcode and select File > Add Package Dependencies...
-2.  In the Search or Enter Package URL text field, search for `Whereby`  or enter the repository URL:
+2.  In the Search or Enter Package URL text field, search for `Whereby` or enter the repository URL:
 
     ```
     https://github.com/whereby/ios-sdk.git
@@ -31,6 +31,10 @@ Create a new project for a simple app using the latest version of Xcode.
 For more details, see [Adding Package Dependencies to Your App](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app).
 
 #### Using CocoaPods
+
+{% hint style="warning" %}
+CocoaPods: New versions of the Whereby iOS SDK will no longer be published to CocoaPods after **October 2026**. Existing CocoaPods versions will remain available and installations will remain functional. Please migrate to Swift Package Manager.
+{% endhint %}
 
 1.  Add the `WherebySDK` pod to your project's Podfile:
 
@@ -65,7 +69,7 @@ Declare the required permissions in your `Info.plist` file like so:
 <string>This app requires access to your photo library to view and select photos for uploading or sharing</string>
 ```
 
-### Embedding Whereby&#x20;
+### Embedding Whereby
 
 Replace the initial/main `UIViewController` with the code below and update the room URL in the example to your own Whereby room URL.
 
@@ -111,7 +115,7 @@ Note that URL Parameters are not supported with the Native iOS SDK
 
 You can modify the room configuration (`WherebyRoomConfig`) to preselect the media mode (audio-only or video).
 
-You can also customize the `WherebyRoomViewController` to tailor the user experience to your use case. For example, you can:&#x20;
+You can also customize the `WherebyRoomViewController` to tailor the user experience to your use case. For example, you can:
 
 * Show or hide specific UI elements (header, buttons, control bar, etc.).
 * Set a background color, like any standard `UIViewController`.

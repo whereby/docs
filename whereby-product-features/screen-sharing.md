@@ -11,7 +11,7 @@ To keep an optimal level of performance in the room, screen sharing will broadca
 Depending on the browser being used, there will be different options for what can be shared.
 
 {% hint style="danger" %}
-Screen sharing on Mobile (both phone and tablet) devices is not currently available.&#x20;
+Screen sharing on Mobile (both phone and tablet) devices is not currently available.
 {% endhint %}
 
 ## Setup and Management
@@ -29,7 +29,7 @@ As the platform holder, there are few options you have for managing the availabl
 {% tab title="Chrome/Chromium" %}
 You can share an image of your entire screen. If you have multiple monitors, you can also select which one you'd like to show.
 
-If you select the "Window" section, you can select a specific application like Word or Chrome that you want to share.&#x20;
+If you select the "Window" section, you can select a specific application like Word or Chrome that you want to share.
 
 lastly, you can use the Chrome Tab option if you only want to share one tab from your Browser.
 
@@ -53,7 +53,7 @@ Safari allows for the sharing of an entire screen, or of an app window. When sel
 
 ### Screen sharing with audio
 
-Sharing computer audio is possible while screen sharing and using Chrome or Chromium browsers.&#x20;
+Sharing computer audio is possible while screen sharing and using Chrome or Chromium browsers.
 
 Depending on the sharing option selected and the operating system, a checkbox that says "Share Audio" will be present that you can check to share audio.
 
@@ -81,7 +81,7 @@ Sharing the audio of the entire screen that contains a Whereby room will cause a
 {% endtab %}
 {% endtabs %}
 
-### Picture in picture
+### Picture in Picture
 
 {% hint style="warning" %}
 Due to a bug in Safari for macOS, we've temporarily disabled our Picture in Picture feature for versions 17.x
@@ -91,7 +91,9 @@ Allowing the use of "[Picture in Picture](https://docs.whereby.com/customizing-r
 
 <figure><img src="../.gitbook/assets/file-I2HcA3GVNZ.png" alt="" width="480"><figcaption></figcaption></figure>
 
-This activates a pop-out of the currently active videos within the meeting room.&#x20;
+This activates a pop-out of the currently active videos within the meeting room.
+
+Users can also set picture-in-picture to automatically launch when they're switching between tabs. We have a guide here with the possible automatic options: [Picture in Picture (PiP) — Automatically](https://whereby.frontkb.com/en/articles/4507650#automatically)
 
 ### Annotating Screen share
 
@@ -106,14 +108,14 @@ Users can extend the capability of screen sharing by installing extensions in Ch
 If you are seeing the above error message, it could mean a few things. Either the request was canceled or your browser doesn't have permission to access screen sharing.
 
 {% hint style="info" %}
-**Windows Permissions**:  At the moment Windows doesn't have any system-level permissions for screen access. if you're running into problems or getting an error, double-check your browser settings.
+**Windows Permissions**: At the moment Windows doesn't have any system-level permissions for screen access. if you're running into problems or getting an error, double-check your browser settings.
 
 **Chrome and Chromium**: At the moment Chrome doesn't have any specific settings related to screen access.
 {% endhint %}
 
 {% tabs %}
 {% tab title="macOS permissions" %}
-In the more recent versions of macOS, Apple has introduced system-level permissions for applications like your browser for accessing screen sharing.&#x20;
+In the more recent versions of macOS, Apple has introduced system-level permissions for applications like your browser for accessing screen sharing.
 
 If you've recently updated or upgraded your device and can't screen share anymore, you'll need to update the preferences by doing the following:
 

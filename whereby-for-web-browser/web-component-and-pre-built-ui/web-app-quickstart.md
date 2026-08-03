@@ -18,7 +18,7 @@ The prebuilt web component is available as part of the [Whereby Browser SDK](htt
 
 ### Install methods
 
-To install the web component, there are different methods that can be used. You can either use a `<script>` element, import via the package manager, or by importing the SDK.&#x20;
+To install the web component, there are different methods that can be used. You can either use a `<script>` element, import via the package manager, or by importing the SDK.
 
 #### Using a \<script> element
 
@@ -87,7 +87,7 @@ Now that you’ve got a basic app running, you’ll want to customize it to your
 * Per-room settings via component [attributes](configuring-with-attributes.md) and [room creation settings](../../whereby-product-features/using-the-rest-api/).
 * Creating custom behavior and controls using [commands](using-commands.md) and [events](using-whereby-events.md).
 
-Our next steps are to explore a couple of the customization options that Whereby has to offer. Subsequent sections will explain all the options in full.&#x20;
+Our next steps are to explore a couple of the customization options that Whereby has to offer. Subsequent sections will explain all the options in full.
 
 ### Setting custom brand colors
 
@@ -122,4 +122,4 @@ You’ve just built a working video calling app with Whereby Embedded and custom
 
 ## See also
 
-* [Meeting controls](https://whereby.helpscoutdocs.com/article/458-meeting-controls)
+* [Meeting controls](https://whereby.frontkb.com/en/categories/1013762-meeting-controls)

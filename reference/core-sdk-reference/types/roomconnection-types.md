@@ -106,11 +106,71 @@ A client view can be either a participant or a screenshare.
 
 ## BreakoutState: <mark style="color:green;">\<Object></mark> <a href="#breakout" id="breakout"></a>
 
-<table><thead><tr><th width="294.3333333333333">Type</th><th>Description</th></tr></thead><tbody><tr><td><code>isActive: boolean</code></td><td>The state of the breakout session. If it's true, a breakout session is currently ongoing in the room</td></tr><tr><td><code>currentGroup: { id: string, name: string } | null</code></td><td>An object containing the information of the breakout group that the participant is currently in. <code>null</code>if the SDK participant is not in a group.</td></tr><tr><td><code>groupedParticipants: { clients:</code> <a href="roomconnection-types.md#remoteparticipant"><code>RemoteParticipant</code></a> <code>[], group: { id: string, name: string } []</code><br></td><td>List of the groups in the current breakout session, including the participants in each group.</td></tr><tr><td><code>participantsInCurrentGroup:</code><a href="roomconnection-types.md#remoteparticipant"><code>RemoteParticipant</code></a> <code>[]</code></td><td>Participants in the current breakout group. Empty list if the SDK participants is not currently in a group.</td></tr></tbody></table>
+Timestamp fields are epoch milliseconds unless noted, so they can be compared directly against `Date.now()` to drive countdowns.
+
+| Type                                                                                            | Description                                                                                                                                                           |
+| ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `isAvailable: boolean`                                                                          | Breakout groups require a group (SFU) room. `false` in peer-to-peer rooms, where breakout actions are refused                                                         |
+| `error: string \| null`                                                                         | Set when a breakout action was refused, for example starting a session in a peer-to-peer room                                                                         |
+| `isActive: boolean`                                                                             | The state of the breakout session. If it's true, a breakout session is currently ongoing in the room                                                                  |
+| `currentGroup: { id: string, name: string } \| null`                                            | An object containing the information of the breakout group that the participant is currently in. `null` if the SDK participant is not in a group.                     |
+| `groups: { [groupId: string]: string } \| null`                                                 | The configured groups, as a map of group id to group name                                                                                                             |
+| `enforceAssignment: boolean`                                                                    | When `true`, participants are meant to stay in the group they are assigned to. The SDK surfaces the flag but does not block `joinBreakoutGroup`, honour it in your UI |
+| `autoMoveToGroup: boolean`                                                                      | When `true`, assigned participants are moved into their group automatically when the session starts                                                                   |
+| `moveToGroupGracePeriod: number \| null`                                                        | Seconds between the session starting and that automatic move. Defaults to 10                                                                                          |
+| `autoMoveToMain: boolean`                                                                       | When `true`, participants are moved back to the main room automatically when the session ends                                                                         |
+| `moveToMainGracePeriod: number \| null`                                                         | Seconds between the session ending and that automatic move. Defaults to 30                                                                                            |
+| `breakoutTimerSetting: boolean`                                                                 | Whether the session runs on a timer                                                                                                                                   |
+| `breakoutTimerDuration: number`                                                                 | Length of the timer in seconds. Defaults to 1800 (30 minutes)                                                                                                         |
+| `startedAt: Date \| null`                                                                       | When the breakout session was started                                                                                                                                 |
+| `endTime: number \| null`                                                                       | When the timer runs out, as a timestamp                                                                                                                               |
+| `moveToGroupAt: number \| null`                                                                 | Timestamp of the upcoming automatic move into the group, or `null` when `autoMoveToGroup` is off                                                                      |
+| `moveToMainAt: number \| null`                                                                  | Timestamp of the upcoming automatic move back to the main room, or `null` when `autoMoveToMain` is off                                                                |
+| `groupedParticipants: { clients: ClientView[], group: { id: string, name: string } \| null }[]` | List of the groups in the current breakout session, including the participants in each group.                                                                         |
+| `participantsInCurrentGroup: ClientView[]`                                                      | Participants in the current breakout group. Empty list if the SDK participants is not currently in a group.                                                           |
+| `broadcastingParticipants: ClientView[]`                                                        | Main-room participants currently being broadcast into every group. Only populated for participants who are inside a group                                             |
+
+## BreakoutSessionSettings: <mark style="color:green;">\<Object></mark>
+
+The settings shared by `startBreakoutSession` and `updateBreakoutSession`. All fields are optional, anything you leave out keeps its current value.
+
+| Type                                      | Description                                                                                                   |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `enforceAssignment?: boolean`             | Signal that participants should stay in their assigned group instead of picking one                           |
+| `autoMoveToGroup?: boolean`               | Move assigned participants into their group automatically when the session starts                             |
+| `moveToGroupGracePeriod?: number \| null` | Seconds to wait before that automatic move. Defaults to 10 if you enable `autoMoveToGroup` without setting it |
+| `autoMoveToMain?: boolean`                | Move participants back to the main room automatically when the session ends                                   |
+| `moveToMainGracePeriod?: number \| null`  | Seconds to wait before that automatic move. Defaults to 30 if you enable `autoMoveToMain` without setting it  |
+| `breakoutTimerSetting?: boolean`          | Run the session on a timer                                                                                    |
+| `breakoutTimerDuration?: number`          | Timer length in seconds. Defaults to 1800 (30 minutes) if you enable the timer without setting it             |
+
+## StartBreakoutSessionOptions: <mark style="color:green;">\<Object></mark>
+
+`BreakoutSessionSettings`, plus:
+
+| Type                                           | Description                                                            |
+| ---------------------------------------------- | ---------------------------------------------------------------------- |
+| `groups: { [groupId: string]: string }`        | **Required.** The groups to create, as a map of group id to group name |
+| `assignments?: { [clientId: string]: string }` | Which participants go where, as a map of `clientId → groupId`          |
+
+## UpdateBreakoutSessionOptions: <mark style="color:green;">\<Object></mark>
+
+Same shape as `StartBreakoutSessionOptions`, except that `groups` is optional too. Every field you omit is left as it is.
+
+## Breakout group helpers
+
+Exported from `@whereby.com/core` for building the `groups` map:
+
+| Export                              | Description                                                                            |
+| ----------------------------------- | -------------------------------------------------------------------------------------- |
+| `createBreakoutGroups(count?)`      | Returns `count` groups (`{ a: "Group A", … }`), clamped to the supported range         |
+| `defaultBreakoutGroupName(groupId)` | The default display name for a group id, e.g. `"Group A"`                              |
+| `BREAKOUT_GROUPS_MIN_MAX`           | `[2, 20]`, the minimum and maximum number of groups                                    |
+| `DEFAULT_BREAKOUT_TIMER_DURATION`   | `1800`, the timer duration used when the timer is enabled without an explicit duration |
 
 ## ConnectionStatus: <mark style="color:green;">\<string></mark>
 
-<table><thead><tr><th width="222">Value</th><th>Description</th></tr></thead><tbody><tr><td><code>"ready"</code></td><td>Ready to join the room</td></tr><tr><td><code>"connecting"</code></td><td>Currently in the process of doing the initial connection in the room</td></tr><tr><td><code>"connected"</code></td><td>Connected in the room, this is the "stable" state</td></tr><tr><td><code>"room_locked"</code></td><td>Connection failed due to the room being locked, a knock is required to proceed</td></tr><tr><td><code>"knocking"</code></td><td>Waiting for the room host to respond to the knock request</td></tr><tr><td><code>"knock_rejected"</code></td><td>The host rejected your knock request</td></tr><tr><td><code>"kicked"</code></td><td><p>The current participant was kicked from the room.</p><p>This can happen in the following scenarios:</p><ul><li>when a meeting host ends the meeting for all participants in the room</li><li>when a meeting host kicks the current participant individually from the room</li></ul></td></tr><tr><td><code>"leaving"</code></td><td>The current participant has invoked the <code>leaveRoom</code> action to exit the room.</td></tr><tr><td><code>"left"</code></td><td>The current participant has now successfully left the room and all other room participants have been notified.</td></tr><tr><td><code>"disconnected"</code></td><td><p>The current participant has been disconnected from the room due to an unplanned loss of network connection.</p><p>This can happen during temporary network outage (e.g. loss of network or switching networks). If/when the network connection returns the SDK will change the room connection status to <code>reconnecting</code>automatically.</p></td></tr><tr><td><code>"reconnecting"</code></td><td><p>A lost internet connection has been re-established.</p><p>The SDK will now automatically re-connect the current participant to the previous room and the room connection state will change to either: a.) <code>knocking</code> if the room is locked, or; b.) <code>connected</code> if the room is unlocked.</p></td></tr></tbody></table>
+<table><thead><tr><th width="222">Value</th><th>Description</th></tr></thead><tbody><tr><td><code>"ready"</code></td><td>Ready to join the room</td></tr><tr><td><code>"connecting"</code></td><td>Currently in the process of doing the initial connection in the room</td></tr><tr><td><code>"connected"</code></td><td>Connected in the room, this is the "stable" state</td></tr><tr><td><code>"room_locked"</code></td><td>Connection failed due to the room being locked, a knock is required to proceed</td></tr><tr><td><code>"knocking"</code></td><td>Waiting for the room host to respond to the knock request</td></tr><tr><td><code>"knock_on_hold"</code></td><td>The host put your knock request on hold. You are still in the waiting room and the host can accept or reject you later, so keep showing a waiting state rather than sending the participant away.<br><br>If the host included a message, it is available as <code>knockResponse</code> on the room connection state.</td></tr><tr><td><code>"knock_rejected"</code></td><td>The host rejected your knock request. If the host included a message, it is available as <code>knockResponse</code></td></tr><tr><td><code>"kicked"</code></td><td><p>The current participant was kicked from the room.</p><p>This can happen in the following scenarios:</p><ul><li>when a meeting host ends the meeting for all participants in the room</li><li>when a meeting host kicks the current participant individually from the room</li></ul></td></tr><tr><td><code>"leaving"</code></td><td>The current participant has invoked the <code>leaveRoom</code> action to exit the room.</td></tr><tr><td><code>"left"</code></td><td>The current participant has now successfully left the room and all other room participants have been notified.</td></tr><tr><td><code>"disconnected"</code></td><td><p>The current participant has been disconnected from the room due to an unplanned loss of network connection.</p><p>This can happen during temporary network outage (e.g. loss of network or switching networks). If/when the network connection returns the SDK will change the room connection status to <code>reconnecting</code>automatically.</p></td></tr><tr><td><code>"reconnecting"</code></td><td><p>A lost internet connection has been re-established.</p><p>The SDK will now automatically re-connect the current participant to the previous room and the room connection state will change to either: a.) <code>knocking</code> if the room is locked, or; b.) <code>connected</code> if the room is unlocked.</p></td></tr></tbody></table>
 
 ## LocalParticipantState: <mark style="color:green;">\<Object></mark>
 
@@ -141,3 +201,19 @@ A client view can be either a participant or a screenshare.
 | `room: object`                  | Room state data on room joined                                                                                   |
 | `selfId: string`                | Id of the participant who joined the room                                                                        |
 | `breakoutGroup: string \| null` | Name of breakout group that the participant joined, or `null` if user is not in a breakout group on room joined. |
+
+## KnockResponse: <mark style="color:green;">\<Object></mark>
+
+The host's response to your knock, delivered when they put you on hold or reject you. Available as `knockResponse` on the room connection state. It is `null` until a response arrives, and a host who responds without writing anything produces a response with no `message`, so always guard on `knockResponse?.message` rather than on `knockResponse` alone.
+
+| Type                           | Description                                                                                                                                      |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `message?: string`             | The message the host wrote when calling `holdWaitingParticipant` or `rejectWaitingParticipant`. Absent when the host responded without a message |
+| `sender?: KnockResponseSender` | Who the message came from. Populated with the host's display name for on-hold responses; rejections are delivered without sender details         |
+
+## KnockResponseSender: <mark style="color:green;">\<Object></mark>
+
+| Type                           | Description                                      |
+| ------------------------------ | ------------------------------------------------ |
+| `displayName?: string \| null` | Display name of the host who responded           |
+| `avatarUrl?: string \| null`   | Avatar of the host who responded, when available |

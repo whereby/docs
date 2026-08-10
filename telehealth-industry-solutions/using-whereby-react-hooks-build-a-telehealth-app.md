@@ -6,31 +6,23 @@ description: >-
 
 # Case Study: Using Whereby's Browser SDK with React Hooks to Build a Telehealth App
 
-{% embed url="https://www.youtube.com/watch?v=bojiydinLTg" %}
-Video version of the tutorial below
-{% endembed %}
-
 ### What are you building?
 
-This sample app will connect two participants in a video chat with custom UI, which is the most common scenario in telehealth video solutions. The app will allow the participants to control their camera and microphone, share their screen, and send chat messages.
+In this tutorial you will build a fully functional video-conferencing app using the Whereby browser SDK with [React hooks](../../../reference/react-hooks-reference/). This sample app will connect two participants in a video chat with custom UI, which is the most common scenario in telehealth video solutions. The app will allow the participants to control their camera and microphone, share their screen and send chat messages.
 
 Here is a preview of what you will achieve:
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>Screenshot of the final app</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption><p>Screenshot of the final app</p></figcaption></figure>
 
-{% embed url="https://codesandbox.io/embed/whereby-react-sdk-final-pdf972?fontsize=14&hidenavigation=1&theme=dark&view=editor" %}
-CodeSandbox with the finished code.
-{% endembed %}
-
-Click **Open Sandbox** to run the code and see the result. (You will need to add your own room URL). The final code can also be found on [Github](https://github.com/whereby/sdk/tree/main/apps/telehealth-tutorial-app).
+The finished code for this tutorial lives on [GitHub](https://github.com/whereby/sdk/tree/main/apps/telehealth-tutorial-app), in Whereby's SDK monorepo. We'll build it up step by step below.
 
 ## Setup for the tutorial
 
 #### Create a Whereby room
 
-You will need a Whereby Embedded account with a Whereby room to follow this tutorial. [Sign up for a free Embedded account here](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded_free), or login to your existing account. Then, create the room using the Create room button on your account dashboard, or with the API request. [Learn more how to programmatically create a Whereby room](https://docs.whereby.com/creating-and-deleting-rooms).
+You will need a Whereby Embedded account with a Whereby room to follow this tutorial. [Sign up for a free Embedded account here](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded_free) or login to your existing account. Then create the room using a wizard available on the homepage of your Customer Portal or with the API request. [Learn more how to programmatically create a Whereby room](https://docs.whereby.com/creating-and-deleting-rooms).
 
-For this tutorial **make sure that your room is unlocked**, so that we don't have to implement the knock functionality.
+For this tutorial **make sure that your room is unlocked**, so that we don't have to spend time on the knock/waiting-room flow.
 
 Copy the participant link to the room. In its most basic form, the room link has the following structure:
 
@@ -40,62 +32,79 @@ https://[subdomain].whereby.com/e5a4b3c2-8d1a-9f0e-7c6b-2d8f4e6a9db7
 
 This will be your room URL, which you will need to later paste into the code.
 
-#### Initiate the CodeSandbox
+#### Get the starter code
 
-In this tutorial we're using CodeSandbox - an online web development environment, which lets you write the code in your browser and immediately preview how your users will see the app that you’ve created. In the live code editor below, click **Open Sandbox** in the bottom-right corner to open the editor in a new tab. You will see some text and the starter code of the project.
+Clone the `whereby/sdk` repository and open the `apps/telehealth-tutorial-app` package - this is the starter project we'll build on throughout this tutorial:
 
-{% embed url="https://codesandbox.io/embed/whereby-react-sdk-starter-3w7xcz?fontsize=14&hidenavigation=1&theme=dark&view=editor" %}
-CodeSandbox with the starter code.
-{% endembed %}
+```bash
+git clone https://github.com/whereby/sdk.git
+cd sdk/apps/telehealth-tutorial-app
+```
 
-{% hint style="info" %}
-**Note**
+Install dependencies and start the dev server:
 
-You can also follow this tutorial using your local development environment. To do this, you need to:
+```bash
+npm install
+npm run dev
+```
 
-1. Install [Node.js](https://nodejs.org/en/)
-2. In the CodeSandbox tab you opened earlier, press the top-left button <img src="../.gitbook/assets/codesandbox-menu.png" alt="" data-size="line"> to open the menu, and then choose **File > Export to ZIP** to download an archive of the files locally
-3. Unzip the archive, then open a terminal and `cd` to the directory you unzipped
-4. Change the ROOM\_URL constant in `App.tsx` to your own Whereby room URL
-5. Install the dependencies with `npm install` or `yarn install`
-6. Run `npm start` or `yarn start` to start the development server
-{% endhint %}
+(or `yarn install` / `yarn dev`, if you prefer Yarn.)
+
+The starter project does not include any code from the Whereby browser SDK - it's a React and TypeScript example project, but it has the SDK already installed as visible in the `package.json` file. We also added some CSS classes in the `App.css` file and an `IconButton` component. These will be used throughout the tutorial. These have been added so we can focus on the functionality of the SDK instead of styling. Take some time to look around and get familiar with the starter code before proceeding with the tutorial.
+
+The `App.tsx` file is the main component in our project and is where we will be building our app. Let's clear it out and start from scratch:
+
+```tsx
+import "./App.css";
+
+export default function App() {
+  return <div className="App"></div>;
+}
+```
 
 ## Overview <a href="#overview" id="overview"></a>
 
 Now that you are set up, let's see how the Whereby browser SDK works.
 
-### Inspecting the starter code <a href="#inspecting-the-starter-code" id="inspecting-the-starter-code"></a>
+### Wrapping the app in `WherebyProvider`
 
-The starter project does not include any code from the Whereby browser SDK. It's a React and TypeScript example project, but it has the SDK already installed as visible in the `package.json` file. We also added some CSS classes in the `styles.css` file and an `IconButton` component. These will be used throughout the tutorial. These have been added, so we can focus on the functionality of the SDK instead of styling. Take some time to look around and get familiar with the starter code before proceeding with the tutorial.
+Before we can use the SDK's hooks, our app needs to be wrapped in a `WherebyProvider`. This gives the hooks access to the underlying Whereby client - without it, you'll get an error telling you the client hasn't been initialized.
 
-The `App.tsx` file is the main component in our project and is where we will be building our app.
+Open `index.tsx` and wrap `<App />`:
+
+```tsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { WherebyProvider } from "@whereby.com/browser-sdk/react";
+
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement,
+);
+root.render(
+  <React.StrictMode>
+    <WherebyProvider>
+      <App />
+    </WherebyProvider>
+  </React.StrictMode>,
+);
+```
+
+You only need to do this once - everything else in this tutorial happens inside `App.tsx`.
 
 ### Connecting to the room
 
 The first natural step is to connect to the room. When we connect to a room using the browser SDK, it is essentially the same as connecting to a standard Whereby room via a direct URL. Therefore, it is possible to run a session where some participants join the room from an app using the SDK client, while others use the regular Whereby room URL directly in the browser or embedded in another platform.
 
-Initially, there is some disposable text in the `App.tsx` component. Let's remove it and add the `App` CSS class to the top div to achieve the following state:
+The browser SDK exposes a `useRoomConnection` React hook to connect to any Whereby room, and a `VideoView` component to render video streams. Let's import both:
 
 ```tsx
-import "./styles.css";
+import "./App.css";
+import { useRoomConnection, VideoView } from "@whereby.com/browser-sdk/react";
 
 export default function App() {
-  return (
-    <div className="App">
-    </div>
-  );
-}
-```
-
-The browser SDK exposes a `useRoomConnection` React hook to connect to any Whereby room. Let's import it to our app:
-
-```tsx
-import "./styles.css";
-import { useRoomConnection } from "@whereby.com/browser-sdk/react";
-
-export default function App() {
-    //...
+  //...
 }
 ```
 
@@ -103,126 +112,168 @@ The `useRoomConnection` hook accepts two parameters: a Whereby room URL and a se
 
 For the Whereby room URL you need to provide the link to the unlocked Whereby room that you created initially. Declare it as a constant named `ROOM_URL`.
 
-You can then use `localMediaOptions` parameter to control the access to the camera and microphone of the meeting participant. Here, you can set the video and audio properties to `true` to allow the app access to both devices:
+You can then use the `localMediaOptions` parameter to control access to the camera and microphone of the meeting participant. Here, you can set the `video` and `audio` properties to `true` to allow the app access to both devices:
 
 ```tsx
-import "./styles.css";
-import { useRoomConnection } from "@whereby.com/browser-sdk/react";
+import "./App.css";
+import { useRoomConnection, VideoView } from "@whereby.com/browser-sdk/react";
 
 // Put your room URL here.
 const ROOM_URL = "";
 
 export default function App() {
-    const roomConnection = useRoomConnection(ROOM_URL, {
-        localMediaOptions: {
-            audio: true,
-            video: true,
-        }
-    });    
-    
-    return (
-        <div className="App">
-        </div>
-    );  
+  const roomConnection = useRoomConnection(ROOM_URL, {
+    localMediaOptions: {
+      audio: true,
+      video: true,
+    },
+  });
+
+  return <div className="App"></div>;
 }
 ```
 
-Try saving the file. If your room URL is valid, you should see this prompt:
+Try saving the file. Your browser should prompt you to allow camera and microphone access:
 
-<figure><img src="../.gitbook/assets/sandbox-devices.webp" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/sandbox-devices.webp" alt=""><figcaption></figcaption></figure>
 
-If you do, then congrats! Click "Allow", and you are now connected to your room. You can verify that you are connected by opening the room URL in a different tab. You should see a "Guest" user, which is the participant joining from the SDK.
+Click "Allow" - but note that granting media permissions doesn't put you in the room yet. Calling `useRoomConnection` prepares the connection; actually joining is a separate, explicit step, which we'll add next.
+
+### Handling connection status
+
+The hook's `state` object exposes a `connectionStatus` field that tells you where you are in the connection lifecycle. Its possible values are:
+
+| Status                 | Meaning                                                                  |
+| ---------------------- | ------------------------------------------------------------------------ |
+| `initializing`         | The connection is being set up.                                          |
+| `connecting` / `ready` | Ready to join - this is when you'll typically show a "Join room" button. |
+| `knocking`             | You've asked to join a locked room and are waiting for the host.         |
+| `knock_rejected`       | The host declined your knock.                                            |
+| `room_locked`          | The room is locked; you'll need to knock before joining.                 |
+| `connected`            | You're in the room.                                                      |
+| `left` / `kicked`      | You've left, or been removed from, the room.                             |
+
+Let's destructure `state` and `actions`, and branch on `connectionStatus`:
+
+```tsx
+export default function App() {
+  const roomConnection = useRoomConnection(ROOM_URL, {
+    localMediaOptions: {
+      audio: true,
+      video: true,
+    },
+  });
+
+  const { state, actions } = roomConnection;
+  const { joinRoom, knock } = actions;
+
+  if (
+    state.connectionStatus === "connecting" ||
+    state.connectionStatus === "ready"
+  ) {
+    return <button onClick={() => joinRoom()}>Join room</button>;
+  }
+
+  if (
+    state.connectionStatus === "left" ||
+    state.connectionStatus === "kicked"
+  ) {
+    return (
+      <button onClick={() => joinRoom()}>
+        Re-join {state.connectionStatus} room
+      </button>
+    );
+  }
+
+  if (state.connectionStatus === "knocking") {
+    return <p>Knocking...</p>;
+  }
+
+  if (state.connectionStatus === "knock_rejected") {
+    return <p>You have been rejected access</p>;
+  }
+
+  // room_locked and connected are handled below
+
+  return <div className="App"></div>;
+}
+```
+
+{% hint style="info" %}
+**About locked rooms**
+
+Since your room is unlocked, you can safely skip the `room_locked` case - you'll go straight to `connected` after clicking "Join room". But in case you want to handle locked rooms too, here's what that looks like:
+
+```tsx
+const WaitingArea = ({ knock }: { knock: () => void }) => {
+  return (
+    <div>
+      <h1>Room locked</h1>
+      <p>Waiting for host to let you in</p>
+      <button onClick={knock}>Knock</button>
+    </div>
+  );
+};
+
+// ...inside App():
+if (state.connectionStatus === "room_locked") {
+  return <WaitingArea knock={knock} />;
+}
+```
+
+{% endhint %}
+
+Click "Join room", and you're connected! You can verify this by opening the room URL in a different tab - you should see a "Guest" user, which is the participant joining from the SDK.
+
+From here on, everything we build (video cells, chat, controls) goes inside the `return` for the `connected` state.
 
 ### Rendering your own video cell
 
-Once we are connected to the room, we can begin rendering the video UI. A logical first step is to render our own video cell. The `useRoomConnection` hook consists of three main properties: `actions`, `components`, and `state`.
+Once we are connected to the room, we can begin rendering the video UI. A logical first step is to render our own video cell. The `useRoomConnection` hook's `state` object gives us access to our own video stream through the `localParticipant` object, as well as a list of remote participants in the `remoteParticipants` array - plus other room state such as screenshare and chat.
 
-#### `actions`
+A full list of available actions and state can be [found in our docs](../../../reference/react-hooks-reference/api-reference/useroomconnection.md).
 
-Actions consist of a set of functions that you can trigger inside a room, such as `toggleCamera`, `toggleMicrophone`, `startScreenshare`, `stopScreenshare`, `sendChatMessage`, and more. A full list of available actions can be [found in our docs](../reference/react-hooks-reference/useroomconnection/#actions).
-
-#### `components`
-
-Components expose a `VideoView` component that can be used to render video cells. This is essentially a standard `<video />` element with additional properties to enhance the user experience.
-
-#### `state`
-
-This is the state of the provided room. Here you have access to your own video stream through the `localParticipant` object, as well as a list of remote participants in the `remoteParticipants` array. This [also includes features](../reference/react-hooks-reference/useroomconnection/#state) such as screenshare and cloud recording status.
-
-***
-
-Now let's use the functionality of the `useRoomConnection` hook to render our own video cell. We need the `VideoView` from `components` and the `localParticipant` from `state`.
-
-{% hint style="info" %}
-In this tutorial we use [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) syntax, but you can also access the properties in the following way:
-
-`const components = roomConnection.components`
-
-Both of these approaches achieve the same result. The only difference is that with the latter, you have the flexibility to name the variable as you wish. However, for this tutorial, we prefer destructuring as it makes the code more concise, especially when dealing with multiple properties.
-{% endhint %}
-
-First, capture the `components` property from `roomConnection` and store it in a variable. Next, create another variable to hold the `VideoView`. Then, integrate `VideoView` into the JSX element returned by our `App` component:
+Let's use `VideoView` (imported earlier, alongside `useRoomConnection`) together with `localParticipant` to render our own video:
 
 ```tsx
 //...
 
 export default function App() {
   //...
-  
-  const { components } = roomConnection; 
-  const { VideoView } = components;
-  
-  return (
-    <div className="App">
-      <VideoView />
-    </div>
-  );  
-}
-```
 
-This won't actually render anything yet, as we don't have a stream to attach to the `VideoView`. This is where we need to pull in our `state` object and access the `localParticipant` property:
-
-```tsx
-//...
-
-export default function App() {
-  //...
-  
-  const { components, state } = roomConnection; 
-  const { VideoView } = components;
+  const { state } = roomConnection;
   const { localParticipant } = state;
-  
+
   return (
     <div className="App">
       <VideoView stream={localParticipant.stream} />
     </div>
-  );  
+  );
 }
 ```
 
 If you run this code, you'll get the following error:
 
-<figure><img src="../.gitbook/assets/type-error.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/type-error.webp" alt=""><figcaption></figcaption></figure>
 
-This happens because we are trying to access the `stream` property of the `localParticipant` before it is mounted. To resolve this, you can use conditional rendering of the `VideoView,` depending on the availability of `localParticipant.stream`. We should also mute the local audio, otherwise we will hear ourselves in the audio feedback loop.
+This happens because we are trying to access the `stream` property of the `localParticipant` before it is mounted. To resolve this, you can use conditional rendering of the `VideoView`, depending on the availability of `localParticipant.stream`. We should also mute the local audio, otherwise we will hear ourselves in the audio feedback loop. Let's also add the `mirror` prop, so your own camera feed behaves like a mirror, which feels more natural for a self-view:
 
 ```tsx
 //...
 
 export default function App() {
-   //...
-   
-   const { components, state } = roomConnection; 
-   const { VideoView } = components;
-   const { localParticipant } = state;
-   
-   return (
-      <div className="App">
-         {localParticipant?.stream ? (
-            <VideoView muted stream={localParticipant.stream} />
-          ) : null}
-      </div>
-   );  
+  //...
+
+  const { state } = roomConnection;
+  const { localParticipant } = state;
+
+  return (
+    <div className="App">
+      {localParticipant?.stream ? (
+        <VideoView mirror muted stream={localParticipant.stream} />
+      ) : null}
+    </div>
+  );
 }
 ```
 
@@ -235,32 +286,27 @@ In the project, there are already CSS classes available for use. First, we will 
 
 export default function App() {
   //...
-    
-  const { components, state } = roomConnection; 
-  const { VideoView } = components;
+
+  const { state } = roomConnection;
   const { localParticipant } = state;
-    
+
   return (
     <div className="App">
       <div className="left-section">
         {localParticipant?.stream ? (
           <div className="self-view-wrapper">
-            <VideoView muted stream={localParticipant.stream} />
+            <VideoView mirror muted stream={localParticipant.stream} />
           </div>
         ) : null}
       </div>
     </div>
-  );  
+  );
 }
 ```
 
 Now your video cell appears as an oval in the bottom left corner. Well done!
 
-<figure><img src="../.gitbook/assets/telehealth-localview.webp" alt=""><figcaption></figcaption></figure>
-
-At this point, your code should look something like this:
-
-{% embed url="https://codesandbox.io/embed/whereby-react-sdk-step-2-msj62r?fontsize=14&hidenavigation=1&theme=dark&view=editor" %}
+<figure><img src="../../../.gitbook/assets/telehealth-localview.webp" alt=""><figcaption></figcaption></figure>
 
 ### Rendering the remote participant(s)
 
@@ -270,39 +316,39 @@ As mentioned before, we can access the remote participants through the `remotePa
 
 The initial step is to render a video cell for each participant:
 
-<pre class="language-tsx"><code class="lang-tsx"><strong>//...
-</strong>
+```tsx
+//...
+
 export default function App() {
   //...
-    
-  const { components, state } = roomConnection; 
-  const { VideoView } = components;
+
+  const { state } = roomConnection;
   const { localParticipant, remoteParticipants } = state;
-    
+
   return (
-    &#x3C;div className="App">
-      &#x3C;div className="left-section">
+    <div className="App">
+      <div className="left-section">
         {localParticipant?.stream ? (
-          &#x3C;div className="self-view-wrapper">
-            &#x3C;VideoView muted stream={localParticipant.stream} />
-          &#x3C;/div>
+          <div className="self-view-wrapper">
+            <VideoView mirror muted stream={localParticipant.stream} />
+          </div>
         ) : null}
-      &#x3C;/div>
-      
+      </div>
+
       {remoteParticipants.map((participant) => (
-        &#x3C;VideoView stream={participant.stream} />
+        <VideoView stream={participant.stream} />
       ))}
-    &#x3C;/div>
-  );  
+    </div>
+  );
 }
-</code></pre>
+```
 
 You can now see all the other participants in the room! Join the room from a separate browser, and you will see yourself twice - one small circle in the bottom left corner (The SDK self-view), and one big video. The big video represents the remote participant. If there are more people in the call, they will be displayed side-by-side.
 
 As this tutorial is focused on a one-on-one telehealth meeting, we are only interested in **one** remote participant. Therefore, we will modify our code to only render the first participant.
 
 {% hint style="warning" %}
-The following process is **not** recommended for a real app, as there may still be other participants connected to the room, and they will be hidden with this implementation.
+The following process is **not** recommended for a real app, as there may still be other participants connected to the room and they will be hidden with this implementation.
 
 However, for the purpose of this tutorial, we will assume that there will only ever be two participants in the meeting.
 {% endhint %}
@@ -314,21 +360,20 @@ Let's update our code to only render one participant and add some classes. We wi
 
 export default function App() {
   //...
-    
-  const { components, state } = roomConnection; 
-  const { VideoView } = components;
+
+  const { state } = roomConnection;
   const { localParticipant, remoteParticipants } = state;
-    
+
   return (
     <div className="App">
       <div className="left-section">
         {localParticipant?.stream ? (
           <div className="self-view-wrapper">
-            <VideoView muted stream={localParticipant.stream} />
+            <VideoView mirror muted stream={localParticipant.stream} />
           </div>
         ) : null}
       </div>
-      
+
       <div className="video-stage">
         {remoteParticipants[0]?.stream ? (
           <div className="remote-view-wrapper">
@@ -337,37 +382,17 @@ export default function App() {
         ) : null}
       </div>
     </div>
-  );  
+  );
 }
 ```
 
 Great! Now, the remote participant is visible in the center of the screen within an oval video cell.
 
-<figure><img src="../.gitbook/assets/telehealth2-local&#x26;remote.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/telehealth2-local&#x26;remote.png" alt=""><figcaption></figcaption></figure>
 
 ### Adding the display name
 
-To identify the participants during a conversation, we can add a label on the video cell displaying their names. We can achieve this by implementing a helper function that takes a participant's `id` as input. This function will return the participant's display name, or the string "Guest" if the display name is blank.
-
-```tsx
-//...
-
-export default function App() {
-  //...
-    
-  const { components, state } = roomConnection; 
-  const { VideoView } = components;
-  const { localParticipant, remoteParticipants } = state;
-  
-  function getDisplayName(id: string) {
-    return remoteParticipants.find((p) => p.id === id)?.displayName || "Guest";
-  }
-    
-  return (
-    //...
-  );  
-}
-```
+To identify the participants during a conversation, we can add a label on the remote participant's video cell displaying their name, using the `displayName` property that's already available on each entry in `remoteParticipants`.
 
 For the local participant, there is no need to have a display name, so we can simply use the string "You". We will add a `<p />` tag with a class of `self-name`:
 
@@ -376,62 +401,69 @@ For the local participant, there is no need to have a display name, so we can si
 
 export default function App() {
   //...
-    
-  const { components, state } = roomConnection; 
-  const { VideoView } = components;
+
+  const { state } = roomConnection;
   const { localParticipant, remoteParticipants } = state;
-    
+
   return (
     <div className="App">
       <div className="left-section">
         {localParticipant?.stream ? (
           <div className="self-view-wrapper">
-            <VideoView muted stream={localParticipant.stream} />
+            <VideoView mirror muted stream={localParticipant.stream} />
             <p className="self-name">You</p>
           </div>
         ) : null}
       </div>
-      
       //...
     </div>
-  );  
+  );
 }
 ```
 
-For the remote participant, we will add a `<p />` tag with the class `remote-name`, and use our newly created helper function `getDisplayName`:
+For the remote participant, we will add a `<p />` tag with the class `remote-name`, and read the name straight off `remoteParticipants[0].displayName` (falling back to "Guest" if it's blank):
 
-<pre class="language-tsx"><code class="lang-tsx"><strong>//...
-</strong>
+```tsx
+//...
+
 export default function App() {
   //...
-    
-  const { components, state } = roomConnection; 
-  const { VideoView } = components;
+
+  const { state } = roomConnection;
   const { localParticipant, remoteParticipants } = state;
-    
+
   return (
-    &#x3C;div className="App">
+    <div className="App">
       //...
-      
-      &#x3C;div className="video-stage">
+      <div className="video-stage">
         {remoteParticipants[0]?.stream ? (
-          &#x3C;div
-            className="remote-view-wrapper"
-          >
-            &#x3C;VideoView stream={remoteParticipants[0].stream} />
-            &#x3C;p className="remote-name">
-              {getDisplayName(remoteParticipants[0].id)}
-            &#x3C;/p>
-          &#x3C;/div>
+          <div className="remote-view-wrapper">
+            <VideoView stream={remoteParticipants[0].stream} />
+            <p className="remote-name">
+              {remoteParticipants[0].displayName || "Guest"}
+            </p>
+          </div>
         ) : null}
-    &#x3C;/div>
-  );  
+      </div>
+    </div>
+  );
 }
-</code></pre>
+```
 
 Now we can see the name of the participants in the call!
 
-<figure><img src="../.gitbook/assets/telehealth3-displayname.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/telehealth3-displayname.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+We'll also want to look participants up by `id` later, when we build the chat feature - chat messages only carry a `senderId`, not a name. Let's add a small helper for that now:
+
+```tsx
+function getDisplayName(id: string) {
+  return remoteParticipants.find((p) => p.id === id)?.displayName || "Guest";
+}
+```
+
+{% endhint %}
 
 ### Adding in-room actions
 
@@ -444,76 +476,74 @@ The SDK provides a function called `toggleCamera` which accepts a single paramet
 
 export default function App() {
   const [isCameraActive, setIsCameraActive] = React.useState(true);
-    
+
   //...
-    
+
   return (
     //...
-  );  
+  );
 }
 ```
 
-We set the default value to `true` because we join the room with the camera turned on by default. With this local state, we can now make use of the `toggleCamera` function on the `roomConnection`'s action object:
+We set the default value to `true` because we join the room with the camera turned on by default. With this local state, we can now make use of the `toggleCamera` function on the `roomConnection`'s `actions` object:
 
 ```tsx
 //...
 
 export default function App() {
   const [isCameraActive, setIsCameraActive] = React.useState(true);
-  
-  //...    
-  const { components, state, actions } = roomConnection; 
-  const { VideoView } = components;
+
+  //...
+  const { state, actions } = roomConnection;
   const { localParticipant, remoteParticipants } = state;
   const { toggleCamera } = actions;
-    
+
   return (
     //...
-  );  
+  );
 }
 ```
 
-Let's render the button. As mentioned earlier, we will use the `<IconButton />` component. In this case, we'll set the `variant` prop to `camera`. The `<IconButton />` component also has a propererty called `isActive`, which is a boolean value that determines whether to show the "on" or "off" version of the button. We can pass our newly created `isCameraActive` variable to this prop.
+Let's render the button. As mentioned earlier, we will use the `<IconButton />` component. In this case, we'll set the `variant` prop to `camera`. The `<IconButton />` component also has a property called `isActive`, which is a boolean value that determines whether to show the "on" or "off" version of the button. We can pass our newly created `isCameraActive` variable to this prop.
 
 The last prop is the `onClick` handler. Here, we need to do two things: change the value of our `isCameraActive` state variable to the opposite of its current value, and call the `toggleCamera` function to actually turn the camera on or off.
 
-To style this section, we'll add two divs. The first div will have a class name of `controls-wrapper` and will act as the outer wrapper. The second div, with the class name `buttons`, will hold our buttons. We'll place this code **after** the video stage (the remote video container):
+To style this section, we'll add two divs. The first div will have a class name of `control-wrapper` and will act as the outer wrapper. The second div, with the class name `buttons`, will hold our buttons. We'll place this code **after** the video stage (the remote video container):
 
-<pre class="language-tsx"><code class="lang-tsx"><strong>//...
-</strong>import IconButton from "./IconButton";
+```tsx
+//...
+import IconButton from "./IconButton";
 
 //...
 
 export default function App() {
   //...
-    
-  const { components, state, actions } = roomConnection; 
-  const { VideoView } = components;
+
+  const { state, actions } = roomConnection;
   const { localParticipant, remoteParticipants } = state;
   const { toggleCamera } = actions;
-    
+
   return (
-    &#x3C;div className="App">
+    <div className="App">
       //...
-      
-        &#x3C;div className="control-wrapper">
-          &#x3C;div className="buttons">
-            &#x3C;IconButton
-              variant="camera"
-              isActive={isCameraActive}
-              onClick={() => {
-                setIsCameraActive((prev) => !prev);
-                toggleCamera();
-              }}
-            >
-              Cam
-            &#x3C;/IconButton>
-          &#x3C;/div>
-        &#x3C;/div>
-    &#x3C;/div>
-  );  
+      <div className="control-wrapper">
+        <div className="buttons">
+          <IconButton
+            variant="camera"
+            isActive={isCameraActive}
+            onClick={() => {
+              setIsCameraActive((prev) => !prev);
+              toggleCamera();
+            }}
+          >
+            Cam
+          </IconButton>
+        </div>
+      </div>
+    </div>
+  );
 }
-</code></pre>
+```
 
 Follow the same pattern for the microphone:
 
@@ -524,52 +554,46 @@ export default function App() {
   const [isCameraActive, setIsCameraActive] = React.useState(true);
   const [isMicrophoneActive, setIsMicrophoneActive] = React.useState(true);
   //...
-    
-  const { components, state, actions } = roomConnection; 
-  const { VideoView } = components;
+
+  const { state, actions } = roomConnection;
   const { localParticipant, remoteParticipants } = state;
   const { toggleCamera, toggleMicrophone } = actions;
-    
+
   return (
     <div className="App">
       //...
-      
-        <div className="control-wrapper">
-          <div className="buttons">
-            <IconButton
-              variant="camera"
-              isActive={isCameraActive}
-              onClick={() => {
-                setIsCameraActive((prev) => !prev);
-                toggleCamera();
-              }}
-            >
-              Cam
-            </IconButton>
-            <IconButton
-              variant="microphone"
-              isActive={isMicrophoneActive}
-              onClick={() => {
-                setIsMicrophoneActive((prev) => !prev);
-                toggleMicrophone();
-              }}
-            >
-              Mic
-            </IconButton>
-          </div>
+      <div className="control-wrapper">
+        <div className="buttons">
+          <IconButton
+            variant="camera"
+            isActive={isCameraActive}
+            onClick={() => {
+              setIsCameraActive((prev) => !prev);
+              toggleCamera();
+            }}
+          >
+            Cam
+          </IconButton>
+          <IconButton
+            variant="microphone"
+            isActive={isMicrophoneActive}
+            onClick={() => {
+              setIsMicrophoneActive((prev) => !prev);
+              toggleMicrophone();
+            }}
+          >
+            Mic
+          </IconButton>
         </div>
+      </div>
     </div>
-  );  
+  );
 }
 ```
 
 We now have two functional action buttons! Cool.
 
-<figure><img src="../.gitbook/assets/telehealth4-cam&#x26;micbtn.webp" alt=""><figcaption></figcaption></figure>
-
-At this point, your code should look something like this:
-
-{% embed url="https://codesandbox.io/embed/whereby-react-sdk-step-3-rq7ms7?fontsize=14&hidenavigation=1&theme=dark&view=editor" %}
+<figure><img src="../../../.gitbook/assets/telehealth4-cam&#x26;micbtn.webp" alt=""><figcaption></figcaption></figure>
 
 ### Screen sharing
 
@@ -581,8 +605,6 @@ In this step we will display the screen shared by the remote participant.
 
 The SDK exposes the `screenshares` array within the `state` object of the `useRoomConnection` hook. This array includes the screenshare stream of both the local and remote participant. They can be distinguished using the `isLocal: boolean` prop. First, we need to destructure the `screenshares` prop from the `state` object. Then, render the first screenshare in the array, similar to how we did it for the remote participant video.
 
-We will wrap Add a class with the name of `screenshare-view-wrapper` in a div wrapping the `VideoView`.
-
 Wrap the `VideoView` component in a `<div />` element with a class name of `screenshare-view-wrapper`:
 
 ```tsx
@@ -590,30 +612,26 @@ Wrap the `VideoView` component in a `<div />` element with a class name of `scre
 
 export default function App() {
   //...
-    
-  const { components, state, actions } = roomConnection; 
-  const { VideoView } = components;
+
+  const { state, actions } = roomConnection;
   const { localParticipant, remoteParticipants, screenshares } = state;
   const { toggleCamera, toggleMicrophone } = actions;
   //...
-    
+
   return (
     <div className="App">
       //...
-      
       <div className="video-stage">
         //...
         {screenshares[0]?.stream ? (
-          <div
-            className="screenshare-view-wrapper"
-          >
+          <div className="screenshare-view-wrapper">
             <VideoView stream={screenshares[0].stream} />
           </div>
         ) : null}
-        </div>
-        //...
+      </div>
+      //...
     </div>
-  );  
+  );
 }
 ```
 
@@ -621,24 +639,22 @@ To test the screen sharing functionality, open the room URL in a new browser tab
 
 Here is how we modify the rendering of the remote video view: if there are any active screenshares (`screenshares.length > 0`), add the class `remote-view-small` to the wrapper div. If there are no active screenshares, keep the existing `remote-view-wrapper` class.
 
-Similarly, for the remote display name, add the class `screenshare-remote-name` if there are any active screenshares, and keep the `remote-name` class if there are none.
+Similarly, for the remote display name add the class `screenshare-remote-name` if there are any active screenshares, and keep the `remote-name` class if there are none.
 
 ```tsx
 //...
 
 export default function App() {
   //...
-    
-  const { components, state, actions } = roomConnection; 
-  const { VideoView } = components;
+
+  const { state, actions } = roomConnection;
   const { localParticipant, remoteParticipants, screenshares } = state;
   const { toggleCamera, toggleMicrophone } = actions;
   //...
-    
+
   return (
     <div className="App">
       //...
-      
       <div className="video-stage">
         {remoteParticipants[0]?.stream ? (
           <div
@@ -652,24 +668,24 @@ export default function App() {
                 !screenshares.length ? "remote-name" : "screenshare-remote-name"
               }
             >
-              {getDisplayName(remoteParticipants[0].id)}
+              {remoteParticipants[0].displayName || "Guest"}
             </p>
           </div>
         ) : null}
-        </div>
-        //...
+      </div>
+      //...
     </div>
-  );  
+  );
 }
 ```
 
 As a result, the screen shared by the remote participant is centered and their video cell appears in the top-right corner:
 
-<figure><img src="../.gitbook/assets/telehealth5-screenshare.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/telehealth5-screenshare.webp" alt=""><figcaption></figcaption></figure>
 
 #### Local screenshare
 
-In this step we will enable local screen sharing from our app. The SDK provides two actions for this: `startScreenshare` and `stopScreenshare`. The implementation for local screen sharing will be very similar to the camera and microphone actions. We will keep track of the screenshare state by using the `useState` local component, with a default value of `false`. We will also desctructure the `startScreenshare` and `stopScreenshare` actions from the `actions` object, and then add an `IconButton` with a variant of `share`.
+In this step we will enable local screen sharing from our app. The SDK provides two actions for this: `startScreenshare` and `stopScreenshare`. The implementation for local screen sharing will be very similar to the camera and microphone actions. We will keep track of the screenshare state by using the `useState` local component, with a default value of `false`. We will also destructure the `startScreenshare` and `stopScreenshare` actions from the `actions` object, and then add an `IconButton` with a variant of `share`.
 
 ```tsx
 //...
@@ -677,50 +693,42 @@ In this step we will enable local screen sharing from our app. The SDK provides 
 export default function App() {
   const [isCameraActive, setIsCameraActive] = React.useState(true);
   const [isMicrophoneActive, setIsMicrophoneActive] = React.useState(true);
-  const [
-    isLocalScreenshareActive,
-    setIsLocalScreenshareActive
-  ] = React.useState(false);
-    
-  const { components, state, actions } = roomConnection; 
-  const { VideoView } = components;
+  const [isLocalScreenshareActive, setIsLocalScreenshareActive] =
+    React.useState(false);
+
+  const { state, actions } = roomConnection;
   const { localParticipant, remoteParticipants, screenshares } = state;
-  const {
-    toggleCamera,
-    toggleMicrophone,
-    startScreenshare,
-    stopScreenshare
-  } = actions;
-    
+  const { toggleCamera, toggleMicrophone, startScreenshare, stopScreenshare } =
+    actions;
+
   return (
     <div className="App">
       //...
-      
-        <div className="control-wrapper">
-          <div className="buttons">
-            //...
-            <IconButton
-              variant="share"
-              isActive={isLocalScreenshareActive}
-              onClick={() => {
-                if (isLocalScreenshareActive) {
-                  stopScreenshare();
-                } else {
-                  startScreenshare();
-                }
-                setIsLocalScreenshareActive((prev) => !prev);
-              }}
-            >
-              {isLocalScreenshareActive ? "Stop" : "Share"}
-            </IconButton>
-          </div>
+      <div className="control-wrapper">
+        <div className="buttons">
+          //...
+          <IconButton
+            variant="share"
+            isActive={isLocalScreenshareActive}
+            onClick={() => {
+              if (isLocalScreenshareActive) {
+                stopScreenshare();
+              } else {
+                startScreenshare();
+              }
+              setIsLocalScreenshareActive((prev) => !prev);
+            }}
+          >
+            {isLocalScreenshareActive ? "Stop" : "Share"}
+          </IconButton>
         </div>
+      </div>
     </div>
-  );  
+  );
 }
 ```
 
-As a result, we have a new action button, and we can start and stop sharing the screen from our app.
+As a result we have a new action button, and we can start and stop sharing the screen from our app.
 
 ### Chat
 
@@ -728,62 +736,103 @@ The last functionality that we will add to the app is the ability to exchange me
 
 #### Receiving chat messages
 
-In the first step, we will display the incoming messages in the app.
+In the first step we will display the incoming messages in the app.
 
-Similarly to other updates that take place in the room, the SDK exposes an array of chat messages within the `state` object. To begin, let's destructure this array and loop through the messages in the start of the `left-section` that we created earlier. Additionally, we will wrap all the messages with a `<div />` element using the `chat-wrapper` class.
+Similarly to other updates that take place in the room, the SDK exposes an array of chat messages within the `state` object. To begin, let's destructure this array and loop through the messages at the start of the `left-section` that we created earlier. Additionally, we will wrap all the messages with a `<div />` element using the `chat-wrapper` class.
 
-We can also utilize the previously defined helper function to retrieve the display name of the participant who sent the chat message. Each chat object includes a `senderId` field, which represents the participant's id. If the message is from ourselves, we can simply display "You" as the sender's name.
+We can use the `getDisplayName` helper from earlier to retrieve the display name of the participant who sent the chat message. Each chat object includes a `senderId` field, which represents the participant's id:
 
 ```tsx
 //...
 
 export default function App() {
   //...
-    
-  const { components, state, actions } = roomConnection; 
-  const { VideoView } = components;
-  const {
-    localParticipant,
-    remoteParticipants,
-    screenshares,
-    chatMessages
-  } = state;
-  const {
-    toggleCamera,
-    toggleMicrophone,
-    startScreenshare,
-    stopScreenshare
-  } = actions;
-    
+
+  const { state, actions } = roomConnection;
+  const { localParticipant, remoteParticipants, screenshares, chatMessages } =
+    state;
+  const { toggleCamera, toggleMicrophone, startScreenshare, stopScreenshare } =
+    actions;
+
+  function getDisplayName(id: string) {
+    return remoteParticipants.find((p) => p.id === id)?.displayName || "Guest";
+  }
+
   return (
     <div className="App">
       <div className="left-section">
         <div className="chat-wrapper">
-          {chatMessages.map((msg) => (
+          {chatMessages.map((message) => (
             <>
-              <p className="chat-message">{msg.text}</p>
+              <p className="chat-message">{message.text}</p>
               <p className="chat-message-name">
-                {msg.senderId === localParticipant?.id
-                  ? "You"
-                  : getDisplayName(msg.senderId)}
+                {getDisplayName(message.senderId)}
               </p>
             </>
           ))}
         </div>
         //...
       </div>
-      
       //...
     </div>
-  );  
-}       
+  );
+}
 ```
 
 Now we can see incoming chat messages. To test it, open the room URL in a new browser tab, and type some messages as the remote participant.
 
+As the chat grows, it's a nice touch to automatically scroll to the newest message. Let's add a ref just after the last message, and scroll it into view whenever `chatMessages` changes:
+
+```tsx
+//...
+
+export default function App() {
+  //...
+  const chatMessageBottomRef = React.useRef<HTMLDivElement>(null);
+
+  const { state, actions } = roomConnection;
+  const { localParticipant, remoteParticipants, screenshares, chatMessages } =
+    state;
+  const { toggleCamera, toggleMicrophone, startScreenshare, stopScreenshare } =
+    actions;
+
+  function getDisplayName(id: string) {
+    return remoteParticipants.find((p) => p.id === id)?.displayName || "Guest";
+  }
+
+  function scrollToBottom() {
+    chatMessageBottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  React.useEffect(() => {
+    scrollToBottom();
+  }, [chatMessages]);
+
+  return (
+    <div className="App">
+      <div className="left-section">
+        <div className="chat-wrapper">
+          {chatMessages.map((message) => (
+            <>
+              <p className="chat-message">{message.text}</p>
+              <p className="chat-message-name">
+                {getDisplayName(message.senderId)}
+              </p>
+            </>
+          ))}
+          <div ref={chatMessageBottomRef} />
+        </div>
+        //...
+      </div>
+      //...
+    </div>
+  );
+}
+```
+
 #### Sending chat messages
 
-To enable sending chat messages from our app, let's add an input field. The SDK provides an action called `sendChatMessage`, which takes a string as its only parameter. We will use this action to send chat messages to the room. To implement this, let's create a form and render it after the local participant in our HTML markup. We also need to keep track of the input values, so let's create a new local state called `text`:
+To enable sending chat messages from our app, let's add an input field. The SDK provides an action called `sendChatMessage`, which takes a string as its only parameter. We will use this action to send chat messages to the room. To implement this, let's create a form and render it after the local participant in our HTML markup. We also need to keep track of the input value, so let's create a new local state called `text`:
 
 ```tsx
 //...
@@ -791,23 +840,18 @@ To enable sending chat messages from our app, let's add an input field. The SDK 
 export default function App() {
   //...
   const [text, setText] = React.useState("");
-    
-  const { components, state, actions } = roomConnection; 
-  const { VideoView } = components;
-  const {
-    localParticipant,
-    remoteParticipants,
-    screenshares,
-    chatMessages
-  } = state;
+
+  const { state, actions } = roomConnection;
+  const { localParticipant, remoteParticipants, screenshares, chatMessages } =
+    state;
   const {
     toggleCamera,
     toggleMicrophone,
     startScreenshare,
     stopScreenshare,
-    sendChatMessage
+    sendChatMessage,
   } = actions;
-    
+
   return (
     <div className="App">
       <div className="left-section">
@@ -829,29 +873,28 @@ export default function App() {
           <button type="submit">Send message</button>
         </form>
       </div>
-      
       //...
     </div>
-  );  
+  );
 }
 ```
 
-This enables us to send chat messages. However, you might notice a bug: whenever we type in the input field, the whole component re-renders, causing a flash on the video feeds. This happens because all the state is contained within the same component, causing it to re-render whenever a value changes. We can fix that easily by extracting the chat input in to a separate component. Let's create a new file called `ChatInput.tsx` and move the code there:
+This enables us to send chat messages. However, you might notice a bug: whenever we type in the input field, the whole component re-renders, causing a flash on the video feeds. This happens because all the state is contained within the same component, causing it to re-render whenever a value changes. We can fix that easily by extracting the chat input into a separate component. Let's create a new file called `ChatInput.tsx` and move the code there:
 
 ```tsx
 // ChatInput.tsx
 import * as React from "react";
 
-function ChatInput({
-  sendChatMessage
-}: {
+interface Props {
   sendChatMessage: (text: string) => void;
-}) {
+}
+
+function ChatInput({ sendChatMessage }: Props) {
   const [text, setText] = React.useState("");
 
   return (
     <form
-      className={"input-wrapper"}
+      className="input-wrapper"
       onSubmit={(e) => {
         e.preventDefault();
         sendChatMessage(text);
@@ -860,9 +903,8 @@ function ChatInput({
     >
       <input
         value={text}
-        onChange={(e) => setText(e.target.value)}
-        type="text"
         placeholder="Type here..."
+        onChange={(e) => setText(e.target.value)}
       />
       <button type="submit">Send message</button>
     </form>
@@ -872,7 +914,7 @@ function ChatInput({
 export default ChatInput;
 ```
 
-Now we can import this component into our app and pass the `sendChatMessage` function as a prop. Remove all the code that we just added to `App.tsx` and replace it with this:
+Now we can import this component into our app, and pass the `sendChatMessage` function as a prop. Remove all the code that we just added to `App.tsx`, and replace it with this:
 
 ```tsx
 //...
@@ -880,57 +922,49 @@ import ChatInput from "./ChatInput";
 
 export default function App() {
   //...
-    
-  const { components, state, actions } = roomConnection; 
-  const { VideoView } = components;
-  const {
-    localParticipant,
-    remoteParticipants,
-    screenshares,
-    chatMessages
-  } = state;
+
+  const { state, actions } = roomConnection;
+  const { localParticipant, remoteParticipants, screenshares, chatMessages } =
+    state;
   const {
     toggleCamera,
     toggleMicrophone,
     startScreenshare,
     stopScreenshare,
-    sendChatMessage
+    sendChatMessage,
   } = actions;
-    
+
   return (
     <div className="App">
       <div className="left-section">
         //...
         <ChatInput sendChatMessage={sendChatMessage} />
       </div>
-      
       //...
     </div>
-  );  
+  );
 }
 ```
 
-Well done! We can now type chat messages without triggering re-renders. However, there are still re-renders whenever a new chat message is received, or when the camera and microphone are turned on or off. These issues can be fixed using the same above approach.
+Well done! We can now type chat messages without triggering re-renders. However, there are still re-renders whenever a new chat message is received or when the camera and microphone are turned on or off. These issues can be fixed using the same approach above.
 
 ### Conclusion
 
 Congrats! You have created a fully custom video app that:
 
-* Connects to a Whereby room
-* Acquires media permissions
-* Renders the local video stream
-* Renders the remote participant's video stream
-* Renders screenshares
-* Allows users to toggle their camera and microphone on and off
-* Allows users to share their screen
-* Shows chat messages as they come are received
-* Allows users to send chat messages to other participants in the room
+- Connects to a Whereby room
+- Acquires media permissions
+- Renders the local video stream
+- Renders the remote participant's video stream
+- Renders screenshares
+- Allows users to toggle their camera and microphone on and off
+- Allows users to share their screen
+- Shows chat messages as they are received
+- Allows users to send chat messages to other participants in the room
 
 Great job! We hope this tutorial has given you a better understanding of how the React hooks in Whereby browser SDK work, and that you will continue to build with it.
 
-The final code can be viewed here:
-
-{% embed url="https://codesandbox.io/embed/whereby-react-sdk-final-pdf972?fontsize=14&hidenavigation=1&theme=dark&view=editor" %}
+The final code can be viewed on [GitHub](https://github.com/whereby/sdk/tree/main/apps/telehealth-tutorial-app).
 
 ### Next steps
 

@@ -60,6 +60,9 @@
       },
       "NotFoundError": {
         "description": "The requested resource doesn't exist"
+      },
+      "InvalidContentTypeError": {
+        "description": "Content-Type must be multipart/form-data or application/json"
       }
     },
     "parameters": {
@@ -1479,6 +1482,9 @@
           "204": {
             "description": "The logo was saved successfully."
           },
+          "400": {
+            "$ref": "#/components/responses/InvalidContentTypeError"
+          },
           "401": {
             "$ref": "#/components/responses/UnauthorizedError"
           },
@@ -1536,6 +1542,9 @@
           "204": {
             "description": "The background image was saved successfully."
           },
+          "400": {
+            "$ref": "#/components/responses/InvalidContentTypeError"
+          },
           "401": {
             "$ref": "#/components/responses/UnauthorizedError"
           },
@@ -1592,6 +1601,9 @@
         "responses": {
           "204": {
             "description": "The knock page background image was saved successfully."
+          },
+          "400": {
+            "$ref": "#/components/responses/InvalidContentTypeError"
           },
           "401": {
             "$ref": "#/components/responses/UnauthorizedError"

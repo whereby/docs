@@ -41,7 +41,7 @@ The Browser SDK centers around the `useRoomConnection` hook, which manages the c
 
 ```javascript
 import React, { useEffect } from "react";
-import { useRoomConnection } from "@whereby.com/browser-sdk/react";
+import { useRoomConnection, VideoView } from "@whereby.com/browser-sdk/react";
 ```
 
 2. **Set up the room connection**:
@@ -50,16 +50,15 @@ import { useRoomConnection } from "@whereby.com/browser-sdk/react";
 const ROOM_URL = "https://your-subdomain.whereby.com/your-room-id";
 
 function MyVideoApp() {
-  const { state, actions, components } = useRoomConnection(ROOM_URL, {
+  const { state, actions } = useRoomConnection(ROOM_URL, {
     localMediaOptions: {
       audio: true,
       video: true,
     }
   });
 
-  const { connectionState, localParticipant, remoteParticipants } = state;
+  const { connectionStatus, localParticipant, remoteParticipants } = state;
   const { joinRoom, leaveRoom } = actions;
-  const { VideoView } = components;
 
   useEffect(() => {
     joinRoom();
@@ -126,7 +125,7 @@ function MyVideoApp() {
   const [isCameraOn, setIsCameraOn] = React.useState(true);
   const [isMicrophoneOn, setIsMicrophoneOn] = React.useState(true);
   
-  const { state, actions, components } = useRoomConnection(ROOM_URL, {
+  const { state, actions } = useRoomConnection(ROOM_URL, {
     localMediaOptions: {
       audio: true,
       video: true,
@@ -135,7 +134,6 @@ function MyVideoApp() {
 
   const { localParticipant, remoteParticipants } = state;
   const { joinRoom, leaveRoom, toggleCamera, toggleMicrophone } = actions;
-  const { VideoView } = components;
 
   useEffect(() => {
     joinRoom();
@@ -184,7 +182,7 @@ Here's a fully functional video app that demonstrates the core Browser SDK featu
 
 ```javascript
 import React, { useEffect, useState } from "react";
-import { useRoomConnection } from "@whereby.com/browser-sdk/react";
+import { useRoomConnection, VideoView } from "@whereby.com/browser-sdk/react";
 
 const ROOM_URL = "https://your-subdomain.whereby.com/your-room-id";
 
@@ -201,23 +199,22 @@ function MyVideoApp() {
   const [isCameraOn, setIsCameraOn] = useState(true);
   const [isMicrophoneOn, setIsMicrophoneOn] = useState(true);
   
-  const { state, actions, components } = useRoomConnection(ROOM_URL, {
+  const { state, actions } = useRoomConnection(ROOM_URL, {
     localMediaOptions: {
       audio: true,
       video: true,
     }
   });
 
-  const { localParticipant, remoteParticipants, connectionState } = state;
+  const { localParticipant, remoteParticipants, connectionStatus } = state;
   const { joinRoom, leaveRoom, toggleCamera, toggleMicrophone } = actions;
-  const { VideoView } = components;
 
   useEffect(() => {
     joinRoom();
     return () => leaveRoom();
   }, [joinRoom, leaveRoom]);
 
-  if (connectionState === "connecting") {
+  if (connectionStatus === "connecting") {
     return <div>Connecting to room...</div>;
   }
 

@@ -67,9 +67,9 @@
 | `text: string`      | Text content of the chat message to be displayed                                                                                                                                                                                                                                            |
 | `removed: boolean`  | If `true` then this chat message should be considered removed from any ongoing chat display                                                                                                                                                                                                 |
 
-## LocalScreenshareStatus: <mark style="color:green;">\<string></mark>
+## LocalScreenshareState: <mark style="color:green;">\<Object></mark> <a href="#clientview" id="clientview"></a>
 
-<table><thead><tr><th width="210">Value</th><th>Description</th></tr></thead><tbody><tr><td><code>"inactive"</code></td><td>Local screenshare is inactive</td></tr><tr><td><code>"starting"</code></td><td>Local screenshare is currently starting, eg the local user is selecting what to share</td></tr><tr><td><code>"active"</code></td><td>Local screenshare is active</td></tr></tbody></table>
+<table><thead><tr><th width="220.73828125">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>status: "inactive" | "starting" | "active" | "error"</code></td><td>Local screen sharing status</td></tr><tr><td><code>startedAt?: string</code></td><td>If <code>status</code> is <code>"screensharing"</code> then this field will show when the local screen share started. Otherwise this field will be <code>undefined</code>.</td></tr><tr><td><code>error?: string</code></td><td>If <code>status</code> is <code>"error"</code> then this field will provide an error object received from the service. Otherwise this field will be <code>undefined</code>.</td></tr></tbody></table>
 
 ## LiveCaption: <mark style="color:green;">\<Object></mark> <a href="#clientview" id="clientview"></a>
 

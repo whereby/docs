@@ -183,6 +183,13 @@ All events are of type `NotificationEvent`, with
 | client   | [RemoteParticipant](types.md#remoteparticipant) |             |
 | enable   | `boolean`                                       |             |
 
+### RequestScreenshareEvent
+
+| Property | Type                                            | Description |
+| -------- | ----------------------------------------------- | ----------- |
+| client   | [RemoteParticipant](types.md#remoteparticipant) |             |
+| enable   | `boolean`                                       |             |
+
 ### SignalStatusEvent
 
 | Property | Type | Description |

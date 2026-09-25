@@ -27,7 +27,7 @@ Session Transcriptions is a supplementary feature of our paid Whereby Embedded p
 
 * Both plan types: $0.024 per unmuted participant minute.
 
-**\*** Currently, our primary languages include: English, Spanish, Italian, French, Portuguese, and German. All other languages are secondary languages at this time. \
+**\*** Currently, our primary languages include: English, Spanish, Italian, French, Portuguese, and German. All other languages are secondary languages at this time.\
 \*\* To pre-purchase minutes, please reach out to your CSM.
 {% endhint %}
 
@@ -37,11 +37,11 @@ _What is an unmuted participant minute?_ This is calculated using the number of 
 
 ## How does it work?
 
-Session transcripts are created by live streaming Whereby session audio in real time. After the session is finished, they are saved as text files accessible from the dashboard or via [the API](../../reference/whereby-rest-api-reference/). You can use the transcripts as a standalone resource (eg. for compliance purposes) or send to an external service for post processing (eg. to derive key topics or create a session summary).&#x20;
+Session transcripts are created by live streaming Whereby session audio in real time. After the session is finished, they are saved as text files accessible from the dashboard or via [the API](../../reference/whereby-rest-api-reference/). You can use the transcripts as a standalone resource (eg. for compliance purposes) or send to an external service for post processing (eg. to derive key topics or create a session summary).
 
 ### Storage options
 
-We offer two storage options for the Session Transcription feature.&#x20;
+We offer two storage options for the Session Transcription feature.
 
 #### Whereby-provided storage
 
@@ -80,17 +80,17 @@ To set up your own self-hosted storage option for Session Transcription, you wil
 You can choose between the following transcription triggers:
 
 * **Manual**\
-  The host will start and stop the transcription manually.&#x20;
-* **Auto-start (1 person)** \
-  Transcription will start when the first person joins and end when the last person leaves.&#x20;
+  The host will start and stop the transcription manually.
+* **Auto-start (1 person)**\
+  Transcription will start when the first person joins and end when the last person leaves.
 * **Auto-start (2 people)**\
   Transcription will start when 2 people join a room and end when the last person leaves.
 
 ### Per room configuration
 
-If you want to use Session Transcription for some of your sessions, or if you need a different configuration for some of the sessions, you can configure Session Transcription individually for the room. Room parameters will override the global Session Transcription settings.&#x20;
+If you want to use Session Transcription for some of your sessions, or if you need a different configuration for some of the sessions, you can configure Session Transcription individually for the room. Room parameters will override the global Session Transcription settings.
 
-To do so, create the room with [POST /meetings](../../reference/whereby-rest-api-reference/meetings.md#post-meetings) request and specify the transcription options of your choice:&#x20;
+To do so, create the room with [POST /meetings](../../reference/whereby-rest-api-reference/meetings.md#post-meetings) request and specify the transcription options of your choice:
 
 ```json
 "liveTranscription": { 
@@ -104,10 +104,10 @@ To do so, create the room with [POST /meetings](../../reference/whereby-rest-api
 
 In the `"destination.provider"` option, you can choose between `"whereby"` and `"s3"`. Please refer to the [POST /meetings](../../reference/whereby-rest-api-reference/meetings.md#post-meetings) API reference docs for further `"destination"` configuration options.
 
-For the `"startTrigger"` option, you can choose between `"manual"`, `"automatic"`,  or `"automatic-2nd-participant"` triggers.&#x20;
+For the `"startTrigger"` option, you can choose between `"manual"`, `"automatic"`, or `"automatic-2nd-participant"` triggers.
 
 {% hint style="info" %}
-It is not possible to combine multiple transcription triggers. If you choose one of the automatic triggers, the host will not be able to stop the transcription during the session.&#x20;
+It is not possible to combine multiple transcription triggers. If you choose one of the automatic triggers, the host will not be able to stop the transcription during the session.
 {% endhint %}
 
 When the session is transcribed, the participants see a notification circle in the top-left meeting status bar:
@@ -120,7 +120,7 @@ For the `"language"` option please refer to the [list of supported languages](se
 
 ### Supported languages
 
-Session Transcription generates a transcript in the specified language. You need to declare the language used by your session participants in advance - in the [global configuration](session-transcription.md#global-configuration) or [per room](session-transcription.md#per-room-configuration) with the POST /meetings request. After the room is created, you cannot change the language of the Session Transcription.&#x20;
+Session Transcription generates a transcript in the specified language. You need to declare the language used by your session participants in advance - in the [global configuration](session-transcription.md#global-configuration) or [per room](session-transcription.md#per-room-configuration) with the POST /meetings request. After the room is created, you cannot change the language of the Session Transcription.
 
 <details>
 
@@ -165,7 +165,7 @@ Session Transcription generates a transcript in the specified language. You need
 This section only applies when you have chosen **Whereby-provided storage** in your transcription setup. There are no webhooks for S3 storage currently.
 {% endhint %}
 
-Transcripts are saved in Whereby-provided storage and are available for download soon after the session is finished.&#x20;
+Transcripts are saved in Whereby-provided storage and are available for download soon after the session is finished.
 
 Download the transcript manually from the "**Configure**" **>** "**Transcriptions**" section of your Dashboard.
 
@@ -175,20 +175,15 @@ Transcripts are downloaded as .`md` files. If you want to convert to a different
 
 You can automate your transcription process programmatically with a combination of [API requests](../../reference/whereby-rest-api-reference/) and webhook events:
 
-1. When a transcript is ready, Whereby sends a `transcription.finished` [webhook](../insights-suite-and-api/webhooks.md) event. Hook onto that event to fetch the `transcriptionId` of the session that you want to transcribe.&#x20;
-2. Using the `transcriptionId`, send a [GET request](../../reference/whereby-rest-api-reference/meetings.md) to retrieve the download link of the transcription file. Transcripts are downloaded as `.md` files.&#x20;
-3. All transcripts will be stored in the Whereby-provided storage until you delete them. If you want to  minimize the time when your sessions' content is stored in the Whereby-provided storage, you can delete the transcript with a [DELETE request](../../reference/whereby-rest-api-reference/meetings.md#delete-meetings-meetingid).
+1. When a transcript is ready, Whereby sends a `transcription.finished` [webhook](../insights-suite-and-api/webhooks.md) event. Hook onto that event to fetch the `transcriptionId` of the session that you want to transcribe.
+2. Using the `transcriptionId`, send a [GET request](../../reference/whereby-rest-api-reference/meetings.md) to retrieve the download link of the transcription file. Transcripts are downloaded as `.md` files.
+3. All transcripts will be stored in the Whereby-provided storage until you delete them. If you want to minimize the time when your sessions' content is stored in the Whereby-provided storage, you can delete the transcript with a [DELETE request](../../reference/whereby-rest-api-reference/meetings.md#delete-meetings-meetingid).
 
 ## Known limitations
 
-1. Session Transcriptions **are not compatible with** [**Breakout Groups**](../breakout-groups-with-embedded.md) **feature**. When using Breakout Groups, the transcript will cover the conversation from the main room, but the audio from individual groups will not be transcribed.&#x20;
+1. Session Transcriptions **are not compatible with** [**Breakout Groups**](../breakout-groups-with-embedded.md) **feature**. When using Breakout Groups, the transcript will cover the conversation from the main room, but the audio from individual groups will not be transcribed.
 2. Session Transcription is available for sessions up to 12 hours long.
 3. Currently, the language spoken cannot be auto-detected. For example, if the meeting is configured for English but French is spoken in the meeting, the language output will likely be incoherent. In this case, you will still be charged per unmuted participant minute for the configured language.
 
-### Coming soon...
 
-We’re excited about the future of API-assisted content processing and wanted to give you a sneak peek at what’s on the horizon. Upcoming features and improvements that we’re actively working on:
 
-* Live preview of the transcript, visible to all session participants.
-* Ability to download the transcript by the host or participants.
-* Integration point to plug into the live transcript in real-time (eg. to send it into 3rd party processing tool, like a chatbot).

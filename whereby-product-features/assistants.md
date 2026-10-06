@@ -8,12 +8,17 @@ description: >-
 
 {% hint style="warning" %}
 ⚠️ **Closed Beta**\
-The Assistants feature is currently in Closed Beta and available to Enterprise plan customers on annual plans. If your organisation is on a Enterprise plan, you can request access by emailing [embedded@whereby.com](mailto:embedded@whereby.com). Assistants will be made generally available after the beta.
+The Assistants feature is currently in Closed Beta. You can request access by emailing [embedded@whereby.com](mailto:embedded@whereby.com). Assistants will be made generally available after the beta.
 {% endhint %}
 
-Assistants are headless participants that connect to a Whereby room to enhance your user experience.
+{% hint style="info" %}
+Assistants is a supplementary feature of our paid Whereby Embedded plans. The price will depend on your **Embedded plan** type.&#x20;
 
-They can:
+* **Build (monthly)** plan: $0.006 per minute.
+* **Enterprise (annual)** plan: Please contact your Customer Success Manager, or email embedded@whereby.com.&#x20;
+{% endhint %}
+
+Assistants are headless participants that connect to a Whereby room to enhance your user experience. They can:
 
 * Access all participant audio and video streams in a connected room, including a combined audio stream of all participants
 * Perform in-room actions like sending chat messages, starting cloud recording, letting participants into the room

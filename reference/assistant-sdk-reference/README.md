@@ -2,14 +2,14 @@
 
 {% hint style="warning" %}
 ⚠️ **Closed Beta**\
-The Assistants feature is currently in Closed Beta and available to Enterprise plan customers on annual plans. If your organisation is on a Enterprise plan, you can request access by emailing [embedded@whereby.com](mailto:embedded@whereby.com). Assistants will be made generally available after the beta.
+The Assistants feature is currently in Closed Beta. You can request access by emailing [embedded@whereby.com](mailto:embedded@whereby.com). Assistants will be made generally available after the beta.
 {% endhint %}
 
 The **Whereby Assistant SDK** is a Node.js-focused SDK for building assistants that can join Whereby rooms. It provides all the polyfills and plumbing needed to join a Whereby Room in Node, and exposes a simple API to connect assistants, manage their lifecycle and access audio and video streams and other in-room features for all participants. This SDK can be used in conjunction with our Trigger API to listen for [webhooks](../../whereby-product-features/insights-suite-and-api/webhooks.md) and join the room on certain room conditions being met.
 
 ### Audience
 
-This package is designed for **backend developers** and **AI/assistant builders** who want to:&#x20;
+This package is designed for **backend developers** and **AI/assistant builders** who want to:
 
 * Run assistants, bots or agents **headlessly** (no browser UI)
 * Integrate Whereby with **real-time transcriptions** services
@@ -25,13 +25,13 @@ This package is designed for **backend developers** and **AI/assistant builders*
 
 ### Requirements
 
-The Assistant SDK is intended for Node.js environments and depends on some external tooling:&#x20;
+The Assistant SDK is intended for Node.js environments and depends on some external tooling:
 
 * **Node.js ≥ 20**
-* [**FFmpeg**](https://ffmpeg.org/) must be installed on the host machine if you wish to make use of the **combined audio stream** functionality.&#x20;
+* [**FFmpeg**](https://ffmpeg.org/) must be installed on the host machine if you wish to make use of the **combined audio stream** functionality.
 
 {% hint style="info" %}
-Note: The SDK can not be run in the browser - use [Core](../core-sdk-reference/) or [Browser](../../whereby-for-web-browser/react-based-browser-sdk/quick-start.md) SDK for creating user-interface based integrations.&#x20;
+Note: The SDK can not be run in the browser - use [Core](../core-sdk-reference/) or [Browser](../../whereby-for-web-browser/react-based-browser-sdk/quick-start.md) SDK for creating user-interface based integrations.
 {% endhint %}
 
 ## Getting started
@@ -62,13 +62,13 @@ pnpm add @whereby.com/assistant-sdk
 
 ### Installing FFmpeg
 
-To use the **combined audio stream** functionality you will need FFmpeg to be installed on the machine running your assistant. You can check if FFmpeg is already installed on your local machine by running:&#x20;
+To use the **combined audio stream** functionality you will need FFmpeg to be installed on the machine running your assistant. You can check if FFmpeg is already installed on your local machine by running:
 
 ```bash
 ffmpeg -version
 ```
 
-If you see the version number, you're good to go! if not, install it using one of the methods below:&#x20;
+If you see the version number, you're good to go! if not, install it using one of the methods below:
 
 {% tabs %}
 {% tab title="macOS (Homebrew)" %}
@@ -94,7 +94,7 @@ choco install ffmpeg
 Or download a prebuilt binary directly from [ffmpeg.org/download](https://ffmpeg.org/download.html).
 
 {% hint style="info" %}
-After installation, make sure ffmpeg is available in your system PATH so the Assistant SDK can call it.&#x20;
+After installation, make sure ffmpeg is available in your system PATH so the Assistant SDK can call it.
 {% endhint %}
 
 On the [next page](quick-start.md) you can learn how to start working with Whereby Assistants in your code base.

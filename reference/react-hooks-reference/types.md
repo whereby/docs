@@ -155,6 +155,138 @@ The settings shared by `startBreakoutSession` and `updateBreakoutSession`. All f
 
 Carries no props. The `message` on the NotificationEvent describes what happened, and the current timer state is available in `state.breakout`.
 
+## Room integrations
+
+Types for [room integrations](useroomconnection/room-integrations.md). All of them are exported from `@whereby.com/browser-sdk/react`. `RoomIntegrations` is the React name for core's `RoomIntegrationsState`.
+
+### RoomIntegrations: <mark style="color:green;">\<Object></mark> <a href="#roomintegrations" id="roomintegrations"></a>
+
+`state.roomIntegrations` on [`useRoomConnection`](useroomconnection/).
+
+| Property   | Type                                                                  | Description |
+| ---------- | --------------------------------------------------------------------- | ----------- |
+| hasFetched | `boolean`                                                             | `true` once the room's list of integrations has loaded |
+| isFetching | `boolean`                                                             | `true` while the list is loading |
+| error      | [`RoomIntegrationErrorDetail`](types.md#roomintegrationerrordetail)` \| null` | The last error from a fetch, start, stop or props update |
+| enabled    | [`RoomIntegration`](types.md#roomintegration)`[]`                     | Integrations switched on for the room, including ones the SDK can't run |
+| embeddable | [`RoomIntegration`](types.md#roomintegration)`[]`                     | The subset of `enabled` that can run in an SDK app (YouTube and Miro) |
+| running    | [`RoomIntegrationSessionView`](types.md#roomintegrationsessionview)`[]` | Sessions running in the main room or your current breakout group |
+
+### RoomIntegration: <mark style="color:green;">\<Object></mark> <a href="#roomintegration" id="roomintegration"></a>
+
+An integration the room offers, such as YouTube.
+
+| Property          | Type                                | Description |
+| ----------------- | ----------------------------------- | ----------- |
+| roomIntegrationId | `string`                            | Id to pass to `startRoomIntegration` |
+| name              | `string`                            | Machine name, for example `"youtube"` or `"miro"` |
+| title             | `string`                            | Display name, for example `"YouTube"` |
+| description       | `string`                            | Short description, for menus |
+| type              | `string`                            | The integration's category, for example `"video"` |
+| icons             | `{ small: string; large: string }`  | Icon URLs |
+| link              | `{ href: string; text: string }`    | The provider's website |
+| contentTagName    | `string`                            | Custom element name of the content, for example `"youtube-integration-contentframe"` |
+| entrypoint        | `string`                            | URL of the integration's script. Used by the Whereby app, not by the SDK |
+| webview           | `string`                            | URL of the page that shows running content. The picker is `bootstrap.html` next to it |
+| matcher           | `RegExp`                            | Matches links this integration can show |
+| isEmbeddable      | `boolean`                           | `true` if the integration can run in an SDK app |
+
+### RoomIntegrationSession: <mark style="color:green;">\<Object></mark> <a href="#roomintegrationsession" id="roomintegrationsession"></a>
+
+A running integration as the server describes it.
+
+| Property                        | Type                                                | Description |
+| ------------------------------- | --------------------------------------------------- | ----------- |
+| roomIntegrationSessionId        | `string`                                            | Id of the running session. Pass it to `stopRoomIntegration` |
+| roomIntegrationId               | `string`                                            | The integration that's running |
+| breakoutGroupId                 | `string`                                            | The breakout group it runs in. `""` in the main room |
+| tagName                         | `string`                                            | Custom element name of the content |
+| shareUrl                        | `string`                                            | The `https` URL of the shared content |
+| props                           | [`RoomIntegrationProps`](types.md#roomintegrationprops) | The content's current state, such as the video position |
+| clientId                        | `string`                                            | Id of the participant who started it |
+| roomIntegrationSessionStartedAt | `number \| null`                                    | When it started, in epoch milliseconds |
+
+### RoomIntegrationSessionView: <mark style="color:green;">\<Object></mark> <a href="#roomintegrationsessionview" id="roomintegrationsessionview"></a>
+
+The entries in `state.roomIntegrations.running`. A [`RoomIntegrationSession`](types.md#roomintegrationsession), plus:
+
+| Property             | Type                                          | Description |
+| -------------------- | --------------------------------------------- | ----------- |
+| integration          | [`RoomIntegration`](types.md#roomintegration) | The integration that's running |
+| isPresenter          | `boolean`                                     | `true` if you started it |
+| presenterDisplayName | `string \| null`                              | Display name of the participant who started it. `null` if that's you, or if they've left |
+| canStop              | `boolean`                                     | `true` if you can stop it: you started it, or you're a host |
+
+### RoomIntegrationProps: <mark style="color:green;">\<Object></mark> <a href="#roomintegrationprops" id="roomintegrationprops"></a>
+
+```ts
+type RoomIntegrationProps = { [key: string]: string | number | boolean | null };
+```
+
+A flat object of primitive values. Each integration defines its own keys. YouTube uses keys such as `videoref`, `seek`, `paused` and `aspectratio`.
+
+### RoomIntegrationErrorDetail: <mark style="color:green;">\<Object></mark> <a href="#roomintegrationerrordetail" id="roomintegrationerrordetail"></a>
+
+| Property | Type                                                  | Description |
+| -------- | ----------------------------------------------------- | ----------- |
+| code     | [`RoomIntegrationError`](types.md#roomintegrationerror) | What went wrong. Switch on this |
+| message  | `string`                                              | A description for developers |
+
+### RoomIntegrationError: <mark style="color:green;">\<string></mark> <a href="#roomintegrationerror" id="roomintegrationerror"></a>
+
+`"unknown_integration"`, `"integration_not_enabled"`, `"invalid_content"`, `"not_allowed_to_stop"`, `"not_in_a_room"`, `"forbidden"`, `"missing_parameters"`, `"invalid_parameters"`, `"internal_server_error"` or `"unknown"`. See [Errors](useroomconnection/room-integrations.md#errors) for what each one means.
+
+### RoomIntegrationContent: <mark style="color:green;">\<Object></mark> <a href="#roomintegrationcontent" id="roomintegrationcontent"></a>
+
+What `startRoomIntegration` needs besides the integration id. Returned by `roomIntegrationContent.youtube()` and `.miro()`.
+
+| Property | Type                                                | Description |
+| -------- | --------------------------------------------------- | ----------- |
+| tagName  | `string`                                            | Custom element name of the content |
+| shareUrl | `string`                                            | The `https` URL of the content |
+| props    | [`RoomIntegrationProps`](types.md#roomintegrationprops) | The content's starting state |
+
+`RoomIntegrationPickerResult`, the value `onPicked` receives, has the same shape.
+
+### RoomIntegrationPickerOutcome: <mark style="color:green;">\<Object></mark> <a href="#roomintegrationpickeroutcome" id="roomintegrationpickeroutcome"></a>
+
+What `subscribeToRoomIntegrationPicker` passes to `onOutcome`.
+
+```ts
+type RoomIntegrationPickerOutcome =
+    | { type: "submitted"; content: RoomIntegrationPickerResult }
+    | { type: "cancelled" }
+    | { type: "error"; error: Error };
+```
+
+### RoomIntegrationIframeProps: <mark style="color:green;">\<Object></mark> <a href="#roomintegrationiframeprops" id="roomintegrationiframeprops"></a>
+
+Returned as `iframeProps` by [`useRoomIntegrationPicker`](useroomintegrationpicker.md) and [`useRoomIntegrationView`](useroomintegrationview.md). Spread all of it onto your `<iframe>`.
+
+| Property | Type                                           | Description |
+| -------- | ---------------------------------------------- | ----------- |
+| ref      | `React.RefObject<HTMLIFrameElement \| null>`   | Lets the hook check that messages come from this frame. Required |
+| src      | `string`                                       | The page to load |
+| title    | `string`                                       | Accessible name of the frame |
+| allow    | `string`                                       | Permissions policy for the frame |
+
+### CellView: <mark style="color:green;">\<Object></mark> <a href="#cellview" id="cellview"></a>
+
+A cell in the grid layout, as returned by [`useGrid`](videogrid.md#usegrid). Integration cells are only returned when `useGrid` is called with `includeIntegrations: true`. Either a `VideoCellView` or an `IntegrationCellView`, told apart by `type`.
+
+| Property     | Type                                      | Description |
+| ------------ | ----------------------------------------- | ----------- |
+| type         | `"video" \| "integration"`                | What the cell shows |
+| cellId       | `string`                                  | Stable id. The participant's id for video cells, `"room-integration:<roomIntegrationSessionId>"` for integration cells. Use it as the React `key` |
+| clientId     | `string`                                  | Same as `cellId` for integration cells |
+| aspectRatio  | `number?`                                 | Width divided by height |
+| isDraggable  | `boolean?`                                | Whether the cell can be dragged. `false` for integration cells |
+| isSubgrid    | `boolean?`                                | `true` for cells in the subgrid |
+| client       | [`ClientView`](types.md#clientview)`?`    | `VideoCellView` only. The participant or screenshare |
+| session      | [`RoomIntegrationSessionView`](types.md#roomintegrationsessionview) | `IntegrationCellView` only. The running integration |
+
+Video cells can also carry `avatarSize`, `cellPaddings` and `isPlaceholder`, used by the default layout.
+
 ## Events
 
 ### NotificationEvent

@@ -217,3 +217,80 @@ The host's response to your knock, delivered when they put you on hold or reject
 | ------------------------------ | ------------------------------------------------ |
 | `displayName?: string \| null` | Display name of the host who responded           |
 | `avatarUrl?: string \| null`   | Avatar of the host who responded, when available |
+
+## RoomIntegrationsState: <mark style="color:green;">\<Object></mark> <a href="#roomintegrationsstate" id="roomintegrationsstate"></a>
+
+`roomIntegrations` on the room connection state. See [Room Integrations](../api-reference/roomconnectionclient/room-integrations.md).
+
+| Type                                                | Description |
+| --------------------------------------------------- | ----------- |
+| `hasFetched: boolean`                               | `true` once the room's list of integrations has loaded |
+| `isFetching: boolean`                               | `true` while the list is loading |
+| `error: RoomIntegrationErrorDetail \| null`         | The last error from a fetch, start, stop or props update |
+| `enabled: RoomIntegration[]`                        | Integrations switched on for the room, including ones the SDK can't run |
+| `embeddable: RoomIntegration[]`                     | The subset of `enabled` that can run in an SDK app (YouTube and Miro) |
+| `running: RoomIntegrationSessionView[]`             | Sessions running in the main room or your current breakout group |
+
+## RoomIntegration: <mark style="color:green;">\<Object></mark> <a href="#roomintegration" id="roomintegration"></a>
+
+| Type                                       | Description |
+| ------------------------------------------ | ----------- |
+| `roomIntegrationId: string`                | Id to pass to `startRoomIntegration` |
+| `name: string`                             | Machine name, for example `"youtube"` or `"miro"` |
+| `title: string`                            | Display name, for example `"YouTube"` |
+| `description: string`                      | Short description, for menus |
+| `type: string`                             | The integration's category, for example `"video"` |
+| `icons: { small: string; large: string }`  | Icon URLs |
+| `link: { href: string; text: string }`     | The provider's website |
+| `contentTagName: string`                   | Custom element name of the content |
+| `entrypoint: string`                       | URL of the integration's script. Used by the Whereby app, not by the SDK |
+| `webview: string`                          | URL of the content frame page. The picker is `bootstrap.html` next to it. Its origin is the one to check and post to |
+| `matcher: RegExp`                          | Matches links this integration can show |
+| `isEmbeddable: boolean`                    | `true` if the integration can run in an SDK app |
+
+## RoomIntegrationSession: <mark style="color:green;">\<Object></mark> <a href="#roomintegrationsession" id="roomintegrationsession"></a>
+
+| Type                                             | Description |
+| ------------------------------------------------ | ----------- |
+| `roomIntegrationSessionId: string`               | Id of the running session |
+| `roomIntegrationId: string`                      | The integration that's running |
+| `breakoutGroupId: string`                        | The breakout group it runs in. `""` in the main room |
+| `tagName: string`                                | Custom element name of the content |
+| `shareUrl: string`                               | The `https` URL of the shared content |
+| `props: RoomIntegrationProps`                    | The content's current state |
+| `clientId: string`                               | Id of the participant who started it |
+| `roomIntegrationSessionStartedAt: number \| null` | When it started, in epoch milliseconds |
+
+## RoomIntegrationSessionView: <mark style="color:green;">\<Object></mark> <a href="#roomintegrationsessionview" id="roomintegrationsessionview"></a>
+
+The entries in `roomIntegrations.running`. A `RoomIntegrationSession`, plus:
+
+| Type                                    | Description |
+| --------------------------------------- | ----------- |
+| `integration: RoomIntegration`          | The integration that's running |
+| `isPresenter: boolean`                  | `true` if you started it |
+| `presenterDisplayName: string \| null`  | Display name of the participant who started it. `null` if that's you, or if they've left |
+| `canStop: boolean`                      | `true` if you started it or you're a host |
+
+## RoomIntegrationProps: <mark style="color:green;">\<Object></mark> <a href="#roomintegrationprops" id="roomintegrationprops"></a>
+
+```ts
+type RoomIntegrationProps = { [key: string]: string | number | boolean | null };
+```
+
+## RoomIntegrationErrorDetail: <mark style="color:green;">\<Object></mark> <a href="#roomintegrationerrordetail" id="roomintegrationerrordetail"></a>
+
+| Type                          | Description |
+| ----------------------------- | ----------- |
+| `code: RoomIntegrationError`  | `"unknown_integration"`, `"integration_not_enabled"`, `"invalid_content"`, `"not_allowed_to_stop"`, `"not_in_a_room"`, `"forbidden"`, `"missing_parameters"`, `"invalid_parameters"`, `"internal_server_error"` or `"unknown"`. See [Errors](../api-reference/roomconnectionclient/room-integrations.md#errors) |
+| `message: string`             | A description for developers |
+
+## RoomIntegrationContent: <mark style="color:green;">\<Object></mark> <a href="#roomintegrationcontent" id="roomintegrationcontent"></a>
+
+Returned by `roomIntegrationContent.youtube()` and `.miro()`. `RoomIntegrationPickerResult` has the same shape.
+
+| Type                          | Description |
+| ----------------------------- | ----------- |
+| `tagName: string`             | Custom element name of the content |
+| `shareUrl: string`            | The `https` URL of the content |
+| `props: RoomIntegrationProps` | The content's starting state |

@@ -18,6 +18,11 @@ description: >-
 * [Customizing the toolbar](how-to-customize-the-toolbar.md)
 * [Customizing video tiles](custom-video-tiles-with-react.md)
 
+#### Share content in the room
+
+* [Sharing YouTube and Miro](sharing-youtube-and-miro.md)
+* [Room integrations without React](room-integrations-without-react.md)
+
 ***
 
 ### Further resources

@@ -26,3 +26,14 @@ The video grid consists of all participants that have enabled video, are not spo
 ### Subgrid
 
 The general rule is that all participants with their video off, will move to the subgrid. Any participant joining after the video limit in the `Videogrid` is reached, will also be automatically moved into the subgrid.
+
+## Room integrations
+
+When someone shares a YouTube video or a Miro board, `<VideoGrid />` places it like a cell and shows it in an iframe. You can draw the cell yourself with [`renderIntegration`](../../reference/react-hooks-reference/videogrid.md#rendering-room-integrations), or turn this off with `enableIntegrations={false}`.
+
+* The first running integration takes the `Presentationgrid`. While it's there, spotlighted participants move to the `Videogrid` instead of sharing the stage with it.
+* Any further running integrations go to the `Subgrid`.
+* Maximizing a participant gives them the stage. The integration stays mounted in a hidden cell, so a video keeps playing, and it returns to the stage when the participant is restored. The same happens to extra integrations when the subgrid is turned off.
+* An integration cell takes the content's aspect ratio, 16:9 by default.
+
+An iframe reloads when React moves it in the DOM, so the grid always renders integration cells first in its list, with a key built from the session id. Participants joining, leaving or getting spotlighted don't move them. See [Sharing YouTube and Miro](sharing-youtube-and-miro.md) for the full feature.

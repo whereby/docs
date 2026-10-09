@@ -27,7 +27,7 @@ All subscribe methods follow this format:
 
 ### Methods
 
-<table><thead><tr><th width="278.92578125">Method</th><th>Payload Type</th><th>Description</th></tr></thead><tbody><tr><td><code>subscribeClientViews</code></td><td><code>clientViews: ClientView[]</code> </td><td>Emits client views</td></tr><tr><td><code>subscribeSpotlightedParticipants</code></td><td><code>spotlighted:ClientView[]</code> </td><td>Emits spotlighted client views</td></tr><tr><td><code>subscribeNumberOfClientViews</code></td><td><code>num:number</code> </td><td>Emits number of client views</td></tr></tbody></table>
+<table><thead><tr><th width="278.92578125">Method</th><th>Payload Type</th><th>Description</th></tr></thead><tbody><tr><td><code>subscribeClientViews</code></td><td><code>clientViews: ClientView[]</code> </td><td>Emits client views</td></tr><tr><td><code>subscribeSpotlightedParticipants</code></td><td><code>spotlighted:ClientView[]</code> </td><td>Emits spotlighted client views</td></tr><tr><td><code>subscribeNumberOfClientViews</code></td><td><code>num:number</code> </td><td>Emits number of client views</td></tr><tr><td><code>subscribeRunningRoomIntegrations</code></td><td><code>sessions: RoomIntegrationSessionView[]</code></td><td>Emits the running <a href="roomconnectionclient/room-integrations.md">room integrations</a> in the main room or your current breakout group. Only called on changes, so read <code>getState().runningRoomIntegrations</code> for the current value</td></tr></tbody></table>
 
 ## Actions
 
@@ -49,7 +49,7 @@ function numberOfClientsChanged(numClients: number) {
 grid.on(NUMBER_OF_CLIENT_VIEWS_CHANGED, numberOfClientsChanged);
 ```
 
-<table><thead><tr><th>Event (constant)</th><th>Event name (string)</th><th width="205.98529052734375">Payload</th><th>Emitted when</th></tr></thead><tbody><tr><td><code>CLIENT_VIEW_CHANGED</code></td><td><code>grid:client-view-changed</code></td><td><code>clientViews: ClientView[]</code></td><td>Client view changes</td></tr><tr><td><code>CLIENT_VIEW_SPOTLIGHTS_CHANGED</code></td><td><code>grid:client-view-spotlights-changed</code></td><td><code>clientViews: ClientView[]</code></td><td>Client is spotlighted</td></tr><tr><td><code>NUMBER_OF_CLIENT_VIEWS_CHANGED</code></td><td><code>grid:number-of-client-views-changed</code></td><td><code>numClients: number</code></td><td>Number of client views change</td></tr></tbody></table>
+<table><thead><tr><th>Event (constant)</th><th>Event name (string)</th><th width="205.98529052734375">Payload</th><th>Emitted when</th></tr></thead><tbody><tr><td><code>CLIENT_VIEW_CHANGED</code></td><td><code>grid:client-view-changed</code></td><td><code>clientViews: ClientView[]</code></td><td>Client view changes</td></tr><tr><td><code>CLIENT_VIEW_SPOTLIGHTS_CHANGED</code></td><td><code>grid:client-view-spotlights-changed</code></td><td><code>clientViews: ClientView[]</code></td><td>Client is spotlighted</td></tr><tr><td><code>NUMBER_OF_CLIENT_VIEWS_CHANGED</code></td><td><code>grid:number-of-client-views-changed</code></td><td><code>numClients: number</code></td><td>Number of client views change</td></tr><tr><td><code>RUNNING_ROOM_INTEGRATIONS_CHANGED</code></td><td><code>grid:running-room-integrations-changed</code></td><td><code>sessions: RoomIntegrationSessionView[]</code></td><td>A room integration starts or stops, or anything about a running one changes, such as its props</td></tr></tbody></table>
 
 
 

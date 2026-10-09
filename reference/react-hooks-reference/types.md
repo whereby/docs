@@ -155,6 +155,12 @@ The settings shared by `startBreakoutSession` and `updateBreakoutSession`. All f
 
 Carries no props. The `message` on the NotificationEvent describes what happened, and the current timer state is available in `state.breakout`.
 
+### ToggleAudioOnlyModeOptions: <mark style="color:green;">\<Object></mark> <a href="#toggleaudioonlymodeoptions" id="toggleaudioonlymodeoptions"></a>
+
+| Type                               | Description                                                                                                                         |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `autoDisableLocalCamera?: boolean` | Also turn off the local camera when enabling audio-only mode. The camera is not turned back on when audio-only mode is disabled |
+
 ## Room integrations
 
 Types for [room integrations](useroomconnection/room-integrations.md). All of them are exported from `@whereby.com/browser-sdk/react`. `RoomIntegrations` is the React name for core's `RoomIntegrationsState`.

@@ -157,6 +157,12 @@ The settings shared by `startBreakoutSession` and `updateBreakoutSession`. All f
 
 Same shape as `StartBreakoutSessionOptions`, except that `groups` is optional too. Every field you omit is left as it is.
 
+## ToggleAudioOnlyModeOptions: <mark style="color:green;">\<Object></mark> <a href="#toggleaudioonlymodeoptions" id="toggleaudioonlymodeoptions"></a>
+
+| Type                               | Description                                                                                                                         |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `autoDisableLocalCamera?: boolean` | Also turn off the local camera when enabling audio-only mode. The camera is not turned back on when audio-only mode is disabled |
+
 ## Breakout group helpers
 
 Exported from `@whereby.com/core` for building the `groups` map:

@@ -10,15 +10,7 @@ Room integrations let a participant share a YouTube video or a Miro board with t
 
 This guide builds the feature in four steps: pick, start, show, stop. It assumes you already have a room working with `useRoomConnection`. If you don't, start with the [Browser SDK quickstart](quick-start.md).
 
-{% hint style="info" %}
-**TODO:** add the `@whereby.com/browser-sdk` version that ships room integrations before publishing.
-{% endhint %}
-
 Room integrations are available in every room, on every plan.
-
-{% hint style="info" %}
-**TODO:** say how an integration gets switched on for an Embedded room. `state.roomIntegrations.enabled` only lists integrations that are switched on for the room.
-{% endhint %}
 
 ## How it works
 

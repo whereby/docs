@@ -98,7 +98,6 @@
   * [/insights](reference/whereby-rest-api-reference/insights.md)
   * [/recordings](reference/whereby-rest-api-reference/recordings.md)
   * [/transcriptions](reference/whereby-rest-api-reference/transcriptions.md)
-  * [/summaries](reference/whereby-rest-api-reference/summaries.md)
   * [/rooms](reference/whereby-rest-api-reference/rooms.md)
 * [Web Component Reference](reference/using-the-whereby-embed-element.md)
 * [Core SDK Reference](reference/core-sdk-reference/README.md)

@@ -163,6 +163,18 @@ Same shape as `StartBreakoutSessionOptions`, except that `groups` is optional to
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | `autoDisableLocalCamera?: boolean` | Also turn off the local camera when enabling audio-only mode. The camera is not turned back on when audio-only mode is disabled |
 
+## CallQualityLevel: <mark style="color:green;">\<string></mark> <a href="#callqualitylevel" id="callqualitylevel"></a>
+
+`"ok" | "warning" | "critical"`
+
+## RemoteParticipantQualityReport: <mark style="color:green;">\<Object></mark> <a href="#remoteparticipantqualityreport" id="remoteparticipantqualityreport"></a>
+
+The call quality of each remote participant, keyed by `clientId`: `{ [clientId: string]: { quality: CallQualityLevel } }`. The local participant is not included. Empty (`{}`) until the first quality scores arrive after joining a room, and reset to empty after leaving.
+
+| Type                                             | Description                                                                        |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| [`quality: CallQualityLevel`](#callqualitylevel) | The participant's overall call quality: the worse of their video and audio quality |
+
 ## Breakout group helpers
 
 Exported from `@whereby.com/core` for building the `groups` map:

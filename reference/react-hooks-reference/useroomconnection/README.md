@@ -33,6 +33,7 @@ The current state of the room. Use this state to render your custom video experi
 | spotlightedParticipants | [ClientView](../types.md#clientview)\[]                                                             | A list of spotlighted participants                                                                                                                                       |
 | breakout                | [Breakout](../types.md#breakout)                                                                    | The breakout group state of the room                                                                                                                                     |
 | isAudioOnlyModeEnabled  | `boolean`                                                                                           | Whether audio-only mode is enabled. See [Audio-only mode](#audio-only-mode)                                                                                              |
+| remoteParticipantQualityReport | [`RemoteParticipantQualityReport`](../types.md#remoteparticipantqualityreport)        | The call quality of each remote participant, keyed by `clientId`. See [Remote participant call quality](#remote-participant-call-quality)                                 |
 | knockResponse           | `KnockResponse \| null`                                                                             | The host's response to your knock when you were put on hold or rejected. `null` until a response arrives, and it may carry no message, guard on `knockResponse?.message` |
 
 ### actions
@@ -66,6 +67,31 @@ console.log(state.isAudioOnlyModeEnabled); // true or false
 
 {% hint style="info" %}
 Audio-only mode only affects what you receive. Other participants are not told when you turn it on.
+{% endhint %}
+
+#### Remote participant call quality
+
+`state.remoteParticipantQualityReport` gives each remote participant in the room a call quality level of `"ok"`, `"warning"` or `"critical"`. Use it to show a connection quality indicator next to each participant.
+
+```javascript
+function MyRoom() {
+    const { actions, state } = useRoomConnection("whereby_room_url");
+
+    // A RemoteParticipantQualityReport object, keyed by clientId, with one entry per remote
+    // participant. The component re-renders when it changes.
+    console.log(state.remoteParticipantQualityReport);
+
+    // e.g. look up the quality for a single participant
+    const remoteParticipantQuality = state.remoteParticipantQualityReport[state.remoteParticipants[0]?.id]?.quality;
+
+    // ...
+}
+```
+
+`quality` is the worse of the participant's video and audio quality. The local participant is not included.
+
+{% hint style="info" %}
+The report reflects the quality of the media you receive from each remote participant. It is empty (`{}`) until the first quality scores arrive after joining a room, and is reset to empty after leaving, so a participant may not have an entry yet.
 {% endhint %}
 
 #### Host-only actions

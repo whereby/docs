@@ -59,6 +59,5 @@ The bearer token will be provided upon request and it is up to the client to kee
 * [/insights](insights.md)
 * [/recordings](recordings.md)
 * [/transcriptions](transcriptions.md)
-* [/summaries](summaries.md)
 * [/rooms](rooms.md)
 

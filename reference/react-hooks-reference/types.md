@@ -173,6 +173,19 @@ The call quality of each remote participant, keyed by `clientId`: `{ [clientId: 
 | ------------------------------------------------ | ---------------------------------------------------------------------------------- |
 | [`quality: CallQualityLevel`](#callqualitylevel) | The participant's overall call quality: the worse of their video and audio quality |
 
+### CPUQualityLevel: <mark style="color:green;">\<string></mark> <a href="#cpuqualitylevel" id="cpuqualitylevel"></a>
+
+`"ok" | "warning" | "critical"`
+
+### LocalParticipantQualityReport: <mark style="color:green;">\<Object></mark> <a href="#localparticipantqualityreport" id="localparticipantqualityreport"></a>
+
+The call quality of the local participant: `{ quality?: CallQualityLevel; cpu?: CPUQualityLevel }`. Empty (`{}`) until the first quality score arrives after joining a room, and reset to empty after leaving.
+
+| Type                                               | Description                                                                                                                                                                                                                  |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`quality?: CallQualityLevel`](#callqualitylevel)  | The local participant's overall call quality: the worse of their video and audio quality                                                                                                                                    |
+| [`cpu?: CPUQualityLevel`](#cpuqualitylevel)        | CPU pressure on the local device. Does not affect `quality`. Left out in browsers without the [Compute Pressure API](https://developer.mozilla.org/en-US/docs/Web/API/Compute_Pressure_API) (currently all but Chromium-based browsers) |
+
 ## Room integrations
 
 Types for [room integrations](useroomconnection/room-integrations.md). All of them are exported from `@whereby.com/browser-sdk/react`. `RoomIntegrations` is the React name for core's `RoomIntegrationsState`.

@@ -34,6 +34,7 @@ The current state of the room. Use this state to render your custom video experi
 | breakout                       | [Breakout](../types.md#breakout)                                                                    | The breakout group state of the room                                                                                                                                                                                                                                                                             |
 | isAudioOnlyModeEnabled         | `boolean`                                                                                           | Whether audio-only mode is enabled. See [Audio-only mode](./#audio-only-mode)                                                                                                                                                                                                                                    |
 | remoteParticipantQualityReport | [`RemoteParticipantQualityReport`](../types.md#remoteparticipantqualityreport)                      | The call quality of each remote participant, keyed by `clientId`. See [Remote participant call quality](./#remote-participant-call-quality)                                                                                                                                                                      |
+| localParticipantQualityReport  | [`LocalParticipantQualityReport`](../types.md#localparticipantqualityreport)                        | The call quality and CPU level of the local participant. See [Local participant call quality](./#local-participant-call-quality)                                                                                                                                                                                 |
 | knockResponse                  | `KnockResponse \| null`                                                                             | The host's response to your knock when you were put on hold or rejected. `null` until a response arrives, and it may carry no message, guard on `knockResponse?.message`                                                                                                                                         |
 | roomSessionId                  | `string \| null`                                                                                    | The ID of the room's current session, or `null` when the re is no active session. A new session starts when a second participant joins and ends when e veryone has left. All participants in the same session see the same ID, and it stays the same if you reload and rejoin while others are still in the room |
 
@@ -93,6 +94,32 @@ function MyRoom() {
 
 {% hint style="info" %}
 The report reflects the quality of the media you receive from each remote participant. It is empty (`{}`) until the first quality scores arrive after joining a room, and is reset to empty after leaving, so a participant may not have an entry yet.
+{% endhint %}
+
+#### Local participant call quality
+
+`state.localParticipantQualityReport` gives the local participant (you) a call quality level of `"ok"`, `"warning"` or `"critical"`, and a separate CPU level for the local device. Use it to warn users when their own connection or device is struggling.
+
+```javascript
+function MyRoom() {
+    const { actions, state } = useRoomConnection("whereby_room_url");
+
+    // A LocalParticipantQualityReport object.
+    // The component re-renders when it changes.
+    console.log(state.localParticipantQualityReport);
+
+    console.log(`Call quality status for local client: ${state.localParticipantQualityReport.quality}`);
+    // `cpu` is left out when the browser can't measure CPU pressure (no Compute Pressure API)
+    console.log(`CPU status for local client: ${state.localParticipantQualityReport.cpu ?? "unsupported"}`);
+
+    // ...
+}
+```
+
+`quality` is the worse of the local participant's video and audio quality. `cpu` reflects CPU pressure on the local device, and does not affect `quality`.
+
+{% hint style="info" %}
+The report is empty (`{}`) until the first quality score arrives after joining a room, and is reset to empty after leaving, so `quality` may be `undefined`. `cpu` is only included in browsers that support the [Compute Pressure API](https://developer.mozilla.org/en-US/docs/Web/API/Compute_Pressure_API) (currently Chromium-based browsers), so a missing `cpu` means it isn't measured, not that it's `"ok"`.
 {% endhint %}
 
 #### Host-only actions

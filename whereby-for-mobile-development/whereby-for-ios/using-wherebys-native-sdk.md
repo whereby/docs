@@ -52,9 +52,9 @@ CocoaPods: New versions of the Whereby iOS SDK will no longer be published to Co
 
 For more details, see [Cocoapods Instructions](https://cocoapods.org/pods/Instructions).
 
-### Setting the required permissions
+### Setting the required permissions and capabilities
 
-To get a Whereby instance running on iOS, you need to set a series of permissions — Whereby requires access to the phone's camera, microphone, and photo library (for file sharing).
+To get a Whereby instance running on iOS, you need to set a series of **permissions** — Whereby requires access to the phone's camera, microphone, and photo library (for file sharing).
 
 Declare the required permissions in your `Info.plist` file like so:
 
@@ -68,6 +68,13 @@ Declare the required permissions in your `Info.plist` file like so:
 <key>NSPhotoLibraryUsageDescription</key>
 <string>This app requires access to your photo library to view and select photos for uploading or sharing</string>
 ```
+
+We also recommend enabling two **background modes** in your app target, under the `Signing & Capabilities` tab:&#x20;
+
+* Audio, AirPlay, and Picture in Picture
+* Voice over IP
+
+Without them, iOS suspends your app shortly after the user locks the screen or switches to another app. A user waiting to be let into a locked room silently disappears from the host's view; a call in progress could lose its connection. With the audio background mode enabled, the Whereby SDK keeps the call's audio session running so the connection stays alive in the background. The Voice over IP mode complements the SDK's CallKit integration, which shows the calls in the system call UI and on the lock screen.
 
 ### Embedding Whereby
 

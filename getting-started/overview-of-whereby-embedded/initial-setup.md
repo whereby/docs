@@ -22,7 +22,11 @@ Note that Whereby has another product — [Whereby Meetings](https://whereby.com
 
 ### 2. Generate an API key
 
-From your account dashboard, go to “**Configure**” → “**API**” section of your account dashboard. Under the **API keys** portion, click the **Generate key** button to create a new key.
+From your account dashboard, go to “**Configure**” → “**API**” section. Under the **API keys** portion, click the **Generate key** button to create a new key.
+
+Here you will be prompted to name your key and set an expiration date. You can choose between: 7 days, 30 days, 90 days, or Never. When you're done generating your new key, click **Save**.
+
+<div align="left"><figure><img src="../../.gitbook/assets/APIkey.png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 Your API key is only displayed once. Copy the key and save it to your secrets manager. You'll need it to send requests to our REST API.
 
@@ -70,7 +74,7 @@ curl https://api.whereby.dev/v1/meetings \
 **Note**: While not mandatory for a valid API request, we've included the following data fields, as they are very useful to become familiar with early on:
 
 * `roomMode` allows you to specify the capacity of the room you are creating. The default value, `normal`, allows up to 4 people to join the meeting. Setting `roomMode` to `group` allows more than 4 people to join.
-* `fields.hostRoomUrl` causes a host URL to be provided in the response. Joining via this URL allows you to join the room as a host. See [User roles & Meeting Permissions](../../whereby-product-features/user-roles-and-privileges.md) for more details of host privileges.&#x20;
+* `fields.hostRoomUrl` causes a host URL to be provided in the response. Joining via this URL allows you to join the room as a host. See [User roles & Meeting Permissions](../../whereby-product-features/user-roles-and-privileges.md) for more details of host privileges.
 {% endhint %}
 
 #### Getting the meeting room URL

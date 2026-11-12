@@ -10,7 +10,7 @@ It may not offer the complete customization you'd initially be looking for, but 
 
 ### Requirements
 
-1. Install SDK via NPM or CDN&#x20;
+1. Install SDK via NPM or CDN
 2. Create a [Free Whereby account](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded_free)
 3. Create an API key in the "configure" section of your dashboard
 4. Create a room with API or dashboard
@@ -63,16 +63,16 @@ You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the us
 
 Create roomUrl's via <mark style="background-color:orange;">POST request to our REST API</mark>
 
-You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the user host privileges.&#x20;
+You can use a `hostRoomUrl` instead of the `roomUrl`, if you want to give the user host privileges.
 {% endtab %}
 {% endtabs %}
 
 ### Account and API key creation
 
 1. Sign up for a [Free Whereby Embedded](https://whereby.com/org/signup/embedded?signupFlowPlanType=embedded_free) account
-2.  From the **Configure** section of the dashboard, select **Generate Key**<br>
+2.  From your account dashboard, go to “**Configure**” → “**API**” section.<br>
 
-    <figure><img src="../../.gitbook/assets/Twilio JS SDK Quick migration screenshot.jpg" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/APILandingPage.png" alt=""><figcaption></figcaption></figure>
 
 ### Create Rooms
 
@@ -238,7 +238,7 @@ curl https://api.whereby.dev/v1/meetings \
 
 ### Customization
 
-After you've installed the Web Component and created your rooms, you can begin customizing the room experience to your liking.&#x20;
+After you've installed the Web Component and created your rooms, you can begin customizing the room experience to your liking.
 
 When leveraging Whereby's pre-built experience, there are multiple portions of Twilio's SDK that you receive out of the box as part of the rooms being generated:
 

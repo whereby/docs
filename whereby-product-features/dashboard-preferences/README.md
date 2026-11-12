@@ -6,15 +6,15 @@ description: >-
 
 # Global room customizations
 
-The feature preferences can be found under "**Configure**” **→** “**Features**”. Any adjustments made here will be applied to all of your rooms, unless overridden by specific [URL parameters](../../whereby-for-web-browser/web-component-and-pre-built-ui/configuring-with-attributes.md) added to the meeting URL, or as query parameters in the API request when creating the meeting.&#x20;
+The feature preferences can be found under "**Configure**” **→** “**Features**”. Any adjustments made here will be applied to all of your rooms, unless overridden by specific [URL parameters](../../whereby-for-web-browser/web-component-and-pre-built-ui/configuring-with-attributes.md) added to the meeting URL, or as query parameters in the API request when creating the meeting.
 
 ## Pre-call features
 
-![Overview of what is available in the Pre-call features section ](../../.gitbook/assets/precallfeatures.png)
+![Overview of what is available in the Pre-call features section](../../.gitbook/assets/precallfeatures.png)
 
 #### Display login/signup buttons
 
-We provide a way for your users to log into their Whereby account (if they have one) or sign up for a Whereby account. Disabling these buttons is helpful in the case where you are embedding Whereby onto your own platform and want your own sign up and login options.&#x20;
+We provide a way for your users to log into their Whereby account (if they have one) or sign up for a Whereby account. Disabling these buttons is helpful in the case where you are embedding Whereby onto your own platform and want your own sign up and login options.
 
 <figure><img src="../../.gitbook/assets/withoutloginsignup.png" alt=""><figcaption><p>When this setting is disabled, no login or signup buttons appear</p></figcaption></figure>
 
@@ -26,7 +26,7 @@ You can prompt guests to enter their name before joining a room. When the guest 
 
 #### Pre-call review
 
-We provide waiting room options for your users to verify their device permissions and even test their internet connection in preparation for a call. By enabling pre-call review, you can specify if you'd like a simpler, single-page standard review.&#x20;
+We provide waiting room options for your users to verify their device permissions and even test their internet connection in preparation for a call. By enabling pre-call review, you can specify if you'd like a simpler, single-page standard review.
 
 Or, a dedicated test for each device including camera, microphone, and speakers, as well as a connectivity test. This can also be enabled for specific rooms with the [?precallCeremony parameter](../../whereby-for-web-browser/web-component-and-pre-built-ui/configuring-with-attributes.md#precallceremony-less-than-on-or-off-greater-than).
 
@@ -44,11 +44,11 @@ You can add a custom link that appears when users accidentally block their permi
 
 ## Room Features
 
-<figure><img src="../../.gitbook/assets/Roomfeatures.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Roomfeatures (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Invite panel
 
-We provide an invitation panel that allows a user to copy and share the room link easily. This is visible when only one person is in the room. Having this enabled could be particularly helpful for ad hoc meetings, or inviting someone last minute. If meeting access needs to be limited or private, you may consider disabling this feature.&#x20;
+We provide an invitation panel that allows a user to copy and share the room link easily. This is visible when only one person is in the room. Having this enabled could be particularly helpful for ad hoc meetings, or inviting someone last minute. If meeting access needs to be limited or private, you may consider disabling this feature.
 
 <figure><img src="../../.gitbook/assets/invitepanel.png" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -58,6 +58,8 @@ We provide an invitation panel that allows a user to copy and share the room lin
 
 <figure><img src="../../.gitbook/assets/image.png" alt="" width="295"><figcaption></figcaption></figure>
 
+Within this configuration, you also have the option to show or hide the "Can you see my screen?" notification that appears to all other participants. You may decide you don't need this prompt if your use case requires high-frequency screen shares.&#x20;
+
 #### Highlight speaker
 
 This feature detects and visually emphasizes the person currently speaking during video calls. This is disabled by default but can be enabled globally. This is great for larger group-sessions, where identifying who’s talking might be difficult. Alternatively, the URL parameter `highlightActiveSpeaker=<on|off>` toggles the feature at a room level.
@@ -66,7 +68,7 @@ This feature detects and visually emphasizes the person currently speaking durin
 
 #### Chat
 
-We allow users to send and receive messages within the meeting room. If this is disabled, then no written communication is available to meeting participants. This could be helpful in classroom settings or in a large webinar event.&#x20;
+We allow users to send and receive messages within the meeting room. If this is disabled, then no written communication is available to meeting participants. This could be helpful in classroom settings or in a large webinar event.
 
 <figure><img src="../../.gitbook/assets/Chattoolbar.png" alt=""><figcaption></figcaption></figure>
 
@@ -76,7 +78,7 @@ Within the chat feature, we provide a way for [**file sharing**](../file-sharing
 Chat must be enabled for file sharing to work. You can enable chat for all rooms on the dashboard or per room.
 {% endhint %}
 
-We also provide a way for the **chat to be downloadable**. Chat downloads allow users to save chat conversations, both during and after a session. You can choose to make this available to everyone, or only for the hosts. This is useful to have enabled for many use cases, like healthcare providers sharing treatment plans with patients. This is disabled by default but can be enabled globally. The URL parameter `chatDownload=<on|off>` toggles the feature at a room level.&#x20;
+We also provide a way for the **chat to be downloadable**. Chat downloads allow users to save chat conversations, both during and after a session. You can choose to make this available to everyone, or only for the hosts. This is useful to have enabled for many use cases, like healthcare providers sharing treatment plans with patients. This is disabled by default but can be enabled globally. The URL parameter `chatDownload=<on|off>` toggles the feature at a room level.
 
 {% hint style="danger" %}
 To be HIPAA compliant, '**Make chat downloadable**' should be toggled **off**, and you should not use the URL parameters to turn on chat export.
@@ -86,7 +88,7 @@ To be HIPAA compliant, '**Make chat downloadable**' should be toggled **off**, a
 
 #### Reactions
 
-We provide a way for guests to express their reactions to in-meeting happenings through the use of emojis. We also have a hand raise feature included to manage interruptions. In the global configuration, we allow for you to customize if you want the reactions feature to be condensed into one button with the Chat button, or to have it show as a separate button. <br>
+We provide a way for guests to express their reactions to in-meeting happenings through the use of emojis. We also have a hand raise feature included to manage interruptions. In the global configuration, we allow for you to customize if you want the reactions feature to be condensed into one button with the Chat button, or to have it show as a separate button.<br>
 
 When you include reactions with chat, they can be accessed by hovering over the Chat button. Some users want reactions separate so they can hide the Chat button — they don't want a chat function in their meetings, but they do want participants to feel engaged. We also provide an option to show a separate button for reactions.
 

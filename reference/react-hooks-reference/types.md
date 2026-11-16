@@ -322,7 +322,7 @@ A cell in the grid layout, as returned by [`useGrid`](videogrid.md#usegrid). Int
 | Property     | Type                                      | Description |
 | ------------ | ----------------------------------------- | ----------- |
 | type         | `"video" \| "integration"`                | What the cell shows |
-| cellId       | `string`                                  | Stable id. The participant's id for video cells, `"room-integration:<roomIntegrationSessionId>"` for integration cells. Use it as the React `key` |
+| cellId       | `string`                                  | Stable id. The client view id (`client.id`) for video cells, so a screenshare and the sharer's camera have different ids. `"room-integration:<roomIntegrationSessionId>"` for integration cells. Use it as the React `key` |
 | clientId     | `string`                                  | Same as `cellId` for integration cells |
 | aspectRatio  | `number?`                                 | Width divided by height |
 | isDraggable  | `boolean?`                                | Whether the cell can be dragged. `false` for integration cells |

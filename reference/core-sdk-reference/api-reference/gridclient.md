@@ -31,7 +31,31 @@ All subscribe methods follow this format:
 
 ## Actions
 
-<table><thead><tr><th width="186.70442708333331">Method</th><th width="144.67578125">Parameters</th><th>Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>spotlightParticipant</code></td><td><code>id: string</code></td><td> <code>void</code></td><td>Spotlights the specified participant</td></tr><tr><td><code>removeSpotlight</code></td><td><code>id: string</code></td><td> <code>void</code></td><td>Removes spotlight on specified participant (if spotlighted)</td></tr></tbody></table>
+<table><thead><tr><th width="186.70442708333331">Method</th><th width="144.67578125">Parameters</th><th>Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>spotlightParticipant</code></td><td><code>id: string</code></td><td> <code>void</code></td><td>Spotlights the specified participant</td></tr><tr><td><code>removeSpotlight</code></td><td><code>id: string</code></td><td> <code>void</code></td><td>Removes spotlight on specified participant (if spotlighted)</td></tr><tr><td><code>reorderClientViews</code></td><td><code>{ id: string, withId: string }</code></td><td> <code>void</code></td><td>Swaps two client views in <code>allClientViews</code>, for this participant only. See <a href="#reordering">Reordering</a></td></tr><tr><td><code>setClientViewOrder</code></td><td><code>ids: string[]</code></td><td> <code>void</code></td><td>Sets the order of <code>allClientViews</code>, for this participant only. Pass <code>[]</code> to go back to the default order</td></tr><tr><td><code>swapSpotlightOrder</code></td><td><code>{ id: string, withId: string }</code></td><td> <code>void</code></td><td>Swaps two spotlighted client views for everyone in the room. Needs <code>canSpotlight</code></td></tr></tbody></table>
+
+### Reordering
+
+All ids are client view ids (`ClientView.id`). A screenshare is its own client view with its own id, so it moves separately from the camera of the participant sharing it.
+
+`reorderClientViews` and `setClientViewOrder` change the order of `allClientViews` for this participant only. Other participants keep their own order. Client views keep their ids when they move, so video elements don't remount.
+
+```javascript
+const grid = client.getGrid();
+
+// Swap two tiles
+grid.reorderClientViews({ id: "a", withId: "b" });
+
+// Move a participant who raised a hand to the front
+const ids = grid.getState().allClientViews.map((view) => view.id);
+grid.setClientViewOrder([raisedHandId, ...ids.filter((id) => id !== raisedHandId)]);
+```
+
+With `setClientViewOrder`, client views that aren't in the list, such as participants who join later, go at the end in their default order. `reorderClientViews` does nothing when either id isn't a client view in the room.
+
+`swapSpotlightOrder` swaps two spotlighted client views for everyone in the room. Only participants who can spotlight, such as hosts, can call it: check `canSpotlight` in the grid state. It does nothing when either client view isn't spotlighted. The order of `spotlightedParticipants` changes when the server confirms the swap, so it doesn't change straight away.
+
+In a React app, [`moveCell`](../../react-hooks-reference/videogrid.md#reordering-tiles) on `VideoGrid` picks the right one of these for a dropped tile.
+
 
 ## Events
 

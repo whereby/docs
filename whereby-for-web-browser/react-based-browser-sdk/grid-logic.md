@@ -37,3 +37,17 @@ When someone shares a YouTube video or a Miro board, `<VideoGrid />` places it l
 * An integration cell takes the content's aspect ratio, 16:9 by default.
 
 An iframe reloads when React moves it in the DOM, so the grid always renders integration cells first in its list, with a key built from the session id. Participants joining, leaving or getting spotlighted don't move them. See [Sharing YouTube and Miro](sharing-youtube-and-miro.md) for the full feature.
+
+## Tile order
+
+By default your own tile comes first, and the others follow in the order they joined. Spotlighted participants are in the order they were spotlighted.
+
+You can let people reorder tiles with [`moveCell`](../../reference/react-hooks-reference/videogrid.md#reordering-tiles), which follows the same rules as dragging a tile in a Whereby room:
+
+* Two tiles in the `Videogrid` or `Subgrid` swap places for you only.
+* Two spotlighted tiles in the `Presentationgrid` swap places for everyone, if you can spotlight.
+* A tile can't move between the `Presentationgrid` and the rest of the grid.
+* Swapping a tile with the maximized tile moves the maximize to it.
+* Dropping a tile on the room integration on the stage maximizes the tile.
+
+A screenshare is its own tile, separate from the camera of the participant sharing it.

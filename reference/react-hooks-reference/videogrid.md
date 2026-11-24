@@ -59,6 +59,79 @@ To leave integrations out of the grid, pass `enableIntegrations={false}`.
 
 The first running integration takes the presentation stage, and spotlighted participants move to the video grid while it's there. Other running integrations go to the subgrid. If a participant is maximized, the integration leaves the stage but stays mounted in a hidden cell, so a video keeps playing. See [Grid logic](../../whereby-for-web-browser/react-based-browser-sdk/grid-logic.md#room-integrations) and the [room integrations guide](../../whereby-for-web-browser/react-based-browser-sdk/sharing-youtube-and-miro.md).
 
+## Reordering tiles
+
+`VideoGrid` doesn't come with drag and drop. You build the UI you want, such as native drag and drop, a drag library or buttons, and call `moveCell(id, targetId)` when one tile is dropped on another. The grid works out what the drop means, the same way the Whereby room does.
+
+`moveCell` is on [`useGridCell()`](#usegridcell), inside a cell, and on [`useGrid()`](#usegrid), for your own grid renderer.
+
+| Function                 | Parameters                   | Description |
+| ------------------------ | ---------------------------- | ----------- |
+| `moveCell(id, targetId)` | `id: string, targetId: string` | Drop the tile `id` on the tile `targetId`. Both are cell ids, see below |
+
+### Tile ids
+
+The ids are client view ids ([`ClientView`](types.md#clientview)`.id`), which are also the `cellId` of video cells and the `participant.id` in `renderParticipant`. A screenshare is its own client view with its own id, so it moves separately from the camera of the participant sharing it. Integration cells have the id `"room-integration:<roomIntegrationSessionId>"`.
+
+`GridCell` always sets a `data-cell-id` attribute on its element with the tile's id, defaulting to the participant's id when you don't pass `cellId`. Use it to find the tile under the pointer:
+
+```tsx
+const targetId = (event.target as Element).closest("[data-cell-id]")?.getAttribute("data-cell-id");
+```
+
+### What a drop does
+
+| Drop                                                                 | Result |
+| -------------------------------------------------------------------- | ------ |
+| A tile in the subgrid, or the floating tile, on either side          | Nothing happens, whatever the other tile is |
+| A tile on the room integration on the stage, or the integration on a tile | The tile is maximized. Other drops onto or from an integration do nothing |
+| Two spotlighted tiles on the stage                                   | The spotlights swap places for everyone in the room, if you can spotlight. Otherwise nothing happens |
+| A tile on the stage and a tile in the video grid                     | Nothing happens, as in the Whereby room |
+| Anything else                                                        | The two tiles swap places for you only. Other participants keep their own order. If either tile is maximized, the maximize moves to the other one |
+
+While a tile is maximized, the stage rules don't apply: any two tiles outside the subgrid swap for you, spotlighted ones included. Dropping a tile on itself does nothing.
+
+Tiles keep their React keys when they move, so they don't remount and video keeps playing.
+
+### Example: drag to reorder
+
+A custom cell that uses native drag and drop:
+
+```tsx
+import { VideoGrid, GridVideoView, useGridCell } from "@whereby.com/browser-sdk/react";
+
+function DraggableTile() {
+    const { participant, moveCell } = useGridCell();
+
+    return (
+        <div
+            draggable
+            onDragStart={(e) => e.dataTransfer.setData("text/plain", participant.id)}
+            onDragOver={(e) => e.preventDefault()}
+            onDrop={(e) => {
+                const target = (e.target as Element).closest("[data-cell-id]")?.getAttribute("data-cell-id");
+                if (target) {
+                    moveCell(e.dataTransfer.getData("text/plain"), target);
+                }
+            }}
+            style={{ width: "100%", height: "100%" }}
+        >
+            <GridVideoView />
+        </div>
+    );
+}
+
+<VideoGrid renderParticipant={() => <DraggableTile />} />;
+```
+
+`VideoGrid` wraps whatever `renderParticipant` returns in a `GridCell`, so `useGridCell()` works inside it and the drop target has a `data-cell-id`. Subgrid tiles can't be reordered, so there's no need to make `renderSubgridParticipant` draggable.
+
+To set the whole order at once, for example to move someone who raised a hand to the front, use [`GridClient.setClientViewOrder`](../core-sdk-reference/api-reference/gridclient.md#reordering) from `@whereby.com/core`.
+
+## `useGridCell`
+
+`useGridCell()` returns the cell's `participant` ([`ClientView`](types.md#clientview)), `moveCell`, and the grid's layout state, such as `maximizedCellId` and `setMaximizedCellId`. Call it inside a `GridCell`, which includes anything `renderParticipant` or `renderSubgridParticipant` returns. It throws outside one.
+
 ## `useGrid`
 
 `useGrid` is the layout hook that `VideoGrid` uses. It's exported for building your own grid renderer with the same rules. Most apps don't need it. Use `VideoGrid` with `renderParticipant` and `renderIntegration` unless you need to place cells yourself.
@@ -111,8 +184,9 @@ All options are optional.
 | `setFloatingCellId`           | `React.Dispatch<React.SetStateAction<string \| null>>` | Float a participant's cell by its `cellId`, or pass `null` to stop. |
 | `floatingParticipant`         | `ClientView \| null`                                  | The participant in the floating cell. |
 | `isConstrained`               | `boolean`                                             | `true` when the compact layout is active. |
+| `moveCell`                    | `(id: string, targetId: string) => void`                | Drop the cell `id` on the cell `targetId`. See [Reordering tiles](#reordering-tiles). |
 
-Each cell has a `cellId`. For a participant it's the participant's id. For an integration it's `"room-integration:<roomIntegrationSessionId>"`. Use it as the React `key`. Render integration cells first and keep their keys stable, or React will move their iframes, and moving an iframe reloads it.
+Each cell has a `cellId`. For a participant or a screenshare it's the client view id (`ClientView.id`). For an integration it's `"room-integration:<roomIntegrationSessionId>"`. Use it as the React `key`. Render integration cells first and keep their keys stable, or React will move their iframes, and moving an iframe reloads it.
 
 ## Usage
 

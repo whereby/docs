@@ -14,3 +14,4 @@ hidden: true
 | `spotlightedParticipants: ClientView[]` | List of all spotlighted participants |
 | `numParticipants: number`               | Number of participants in a session  |
 | `runningRoomIntegrations: RoomIntegrationSessionView[]` | Running [room integrations](roomconnection-types.md#roomintegrationsessionview) in the main room or your current breakout group |
+| `canSpotlight: boolean`                 | Whether this participant can spotlight, and so swap spotlights with `swapSpotlightOrder` |
